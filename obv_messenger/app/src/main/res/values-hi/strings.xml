@@ -26,8 +26,8 @@
 	<string name="button_label_create_group" state="needs_review" hash="1102939673">ग्रुप बनाएं</string>
 	<string name="button_label_discard" state="needs_review" hash="795591204">त्याग करें</string>
 	<string name="button_label_exchange_digits_with_user" state="needs_review" hash="339599327">%1$s के साथ कोड का आदान-प्रदान करें</string>
-	<string name="button_label_generate_new_id" state="needs_review" hash="92014734">एक नया आईडी उत्पन्न करें</string>
-	<string name="button_label_generate_my_id" state="needs_review" hash="-1007060207">मेरी आईडी उत्पन्न करें</string>
+	<string name="button_label_generate_new_id" state="needs_review" hash="-1130516787">एक नया प्रोफ़ाइल बनाएं</string>
+	<string name="button_label_generate_my_id" state="needs_review" hash="239641058">मेरा प्रोफ़ाइल बनाएं</string>
 	<string name="button_label_ignore" state="needs_review" hash="-806373746">अनदेखा करें</string>
 	<string name="button_label_reject" state="needs_review" hash="-2094664161">अस्वीकार करें</string>
 	<string name="button_label_introduce" state="needs_review" hash="193852909">परिचय कराएं</string>
@@ -80,6 +80,12 @@
 	<string name="dialog_title_rename_group" state="needs_review" hash="1461324427">ग्रुप का नाम बदलें</string>
 	<string name="dialog_title_restart_channel_establishment" state="needs_review" hash="-645769680">चैनल स्थापना फिर से शुरू करें?</string>
 	<string name="dialog_title_share_with" state="needs_review" hash="854107768">के साथ साझा करें…</string>
+	<string name="dialog_title_share_recipients" state="needs_review" hash="1157053138">प्राप्तकर्ताओं का चयन करें</string>
+	<string name="share_label_from" state="needs_review" hash="2049052075">से:</string>
+	<string name="share_label_to" state="needs_review" hash="-1785690373">को:</string>
+	<string name="share_label_choose_recipients" state="needs_review" hash="1157053138">प्राप्तकर्ताओं का चयन करें</string>
+	<string name="hint_share_message" state="needs_review" hash="-763169957">एक संदेश जोड़ें…</string>
+	<string name="content_description_delete_attachment" state="needs_review" hash="-220348329">अटैचमेंट हटाएं</string>
 	<string name="dialog_title_shortcut_to" state="needs_review" hash="-1193591200">…के लिए शॉर्टकट बनाएं</string>
 	<string name="explanation_choose_display_name" state="needs_review" hash="1162066686">कृपया एक नाम दर्ज करें जो आपके संपर्कों को दिखाया जाएगा। ये विवरण कभी भी Olvid के सर्वर पर नहीं भेजे जाएंगे।</string>
 	<string name="explanation_empty_contact_list" state="needs_review" hash="1240778508">अभी कोई संपर्क नहीं</string>
@@ -104,7 +110,7 @@
 	<string name="explanation_no_message_found" state="needs_review" hash="-1329622990">कोई संदेश नहीं मिला</string>
 	<string name="explanation_no_attachment_found" state="needs_review" hash="156593369">कोई अटैचमेंट नहीं मिला</string>
 	<string name="explanation_no_link_found" state="needs_review" hash="-1419950450">कोई लिंक नहीं मिला</string>
-	<string name="hint_company" state="needs_review" hash="379200324">कंपनी (वैकल्पिक)</string>
+	<string name="hint_company" state="needs_review" hash="988571519">कंपनी</string>
 	<string name="hint_compose_your_message" state="needs_review" hash="-25761578">संदेश लिखें</string>
 	<string name="hint_compose_your_message_ephemeral" state="needs_review" hash="-1527208333">अस्थायी संदेश</string>
 	<string name="label_edit_your_message" state="needs_review" hash="1091877412">अपना संदेश संपादित करें</string>
@@ -133,7 +139,7 @@
 	<string name="hint_last_name" state="needs_review" hash="1701170359">अंतिम नाम</string>
 	<string name="hint_new_name" state="needs_review" hash="709842168">नया नाम</string>
 	<string name="hint_notification_reply" state="needs_review" hash="1095144032">जवाब</string>
-	<string name="hint_position" state="needs_review" hash="-55145181">पदनाम (वैकल्पिक)</string>
+	<string name="hint_position" state="needs_review" hash="1338817744">पद का नाम</string>
 	<string name="invitation_label_their_code" state="needs_review" hash="1402501614">उनका कोड</string>
 	<string name="invitation_label_your_code" state="needs_review" hash="1944546233">आपका कोड</string>
 	<string name="invitation_status_accept_invite" state="needs_review" hash="2100924901">निमंत्रण प्राप्त हुआ</string>
@@ -170,6 +176,11 @@
 	<string name="label_group_members" state="needs_review" hash="1460220752">ग्रुप सदस्य</string>
 	<string name="label_other_group_members" state="needs_review" hash="-2121490032">अन्य समूह सदस्य</string>
 	<string name="label_groups_common" state="needs_review" hash="1252823567">साझा समूह</string>
+	<string name="label_create_group_with_contact" state="needs_review" hash="1950649899">%1$s के साथ एक समूह बनाएं</string>
+	<string name="label_add_contact_to_a_group" state="needs_review" hash="-682192937">किसी समूह में %1$s जोड़ें</string>
+	<string name="label_add_to_groups" state="needs_review" hash="-654216617">समूहों में जोड़ें</string>
+	<string name="explanation_no_admin_group_to_add_contact" state="needs_review" hash="402908162">आप किसी भी ऐसे समूह के व्यवस्थापक नहीं हैं जिसमें %1$s को जोड़ा जा सके।</string>
+	<string name="toast_message_adding_contact_to_groups" state="needs_review" hash="1201697547">चयनित समूहों में %1$s जोड़ना…</string>
 	<string name="label_invitation_declined" state="needs_review" hash="2038173833">आमंत्रण अस्वीकृत</string>
 	<string name="label_new_group_card" state="needs_review" hash="1006740909">समूह विवरण अपडेट किए गए</string>
 	<string name="label_not_part_of_a_group" state="needs_review" hash="1667979596">अभी तक किसी समूह का हिस्सा नहीं</string>
@@ -183,6 +194,7 @@
 	<string name="menu_action_create_shortcut" state="needs_review" hash="-1949455873">शॉर्टकट बनाएं</string>
 	<string name="menu_action_delete" state="needs_review" hash="-232100842">हटाएं</string>
 	<string name="menu_action_delete_discussion" state="needs_review" hash="2059656471">चर्चा हटाएं</string>
+	<string name="menu_action_export_discussion" state="needs_review" hash="1736692296">चर्चा निर्यात करें</string>
 	<string name="label_swipe_details" state="needs_review" hash="171468732">विवरण</string>
 	<string name="menu_action_disband_group" state="needs_review" hash="-1767089289">ग्रुप भंग करें</string>
 	<string name="menu_action_edit_group_details" state="needs_review" hash="310205135">ग्रुप विवरण संपादित करें</string>
@@ -482,7 +494,14 @@
 	<string name="dialog_title_backup_choices" state="needs_review" hash="281222223">बैकअप विधि चुनें</string>
 	<string name="menu_action_choose_picture" state="needs_review" hash="-1655172909">एक छवि चुनें</string>
 	<string name="menu_action_take_photo" state="needs_review" hash="-1123080444">तस्वीर लो</string>
+	<string name="menu_action_choose_image_from_olvid" state="needs_review" hash="1585248356">प्राप्त छवि चुनें</string>
 	<string name="menu_action_remove_image" state="needs_review" hash="1094977672">तस्वीर हटाएं</string>
+	<string name="menu_action_use_image_as" state="needs_review" hash="587310096">इस छवि को इस रूप में उपयोग करें…</string>
+	<string name="label_use_photo_for_my_profile" state="needs_review" hash="-1005809580">मेरी प्रोफ़ाइल तस्वीर</string>
+	<string name="label_use_photo_for_target" state="needs_review" hash="283541521">%s के लिए फ़ोटो</string>
+	<string name="label_use_photo_for_discussion_background" state="needs_review" hash="1925733151">%s के लिए पृष्ठभूमि</string>
+	<string name="toast_message_photo_set" state="needs_review" hash="-1641885203">तस्वीर अपडेट की गई</string>
+	<string name="toast_message_background_set" state="needs_review" hash="1642873459">पृष्ठभूमि अपडेट की गई</string>
 	<string name="dialog_title_create_empty_group" state="needs_review" hash="-663434464">खाली समूह बनाएं?</string>
 	<string name="dialog_message_create_empty_group" state="needs_review" hash="-297923005">आपने अपने समूह में जोड़ने के लिए कोई संपर्क नहीं चुना है। क्या आप निश्चित हैं कि आप एक खाली समूह बनाना चाहते हैं?</string>
 	<string name="pref_dark_mode_title" state="needs_review" hash="816474245">डार्क मोड</string>
@@ -862,7 +881,7 @@
 	<string name="button_label_check_options" state="needs_review" hash="-759177128">विकल्प जांचें</string>
 	<string name="hint_olvid_server" state="needs_review" hash="1097391633">ओलविड सर्वर</string>
 	<string name="hint_license_activation_code" state="needs_review" hash="102193320">लाइसेंस सक्रियण कोड</string>
-	<string name="activity_title_identity_creation_options" state="needs_review" hash="1180456032">आईडी बनाने के विकल्प</string>
+	<string name="activity_title_identity_creation_options" state="needs_review" hash="-774054913">प्रोफ़ाइल बनाने के विकल्प</string>
 	<string name="activity_title_scan_configuration" state="needs_review" hash="-386259993">कॉन्फ़िगरेशन स्कैन करें</string>
 	<string name="menu_action_import_activation_from_clipboard" state="needs_review" hash="-70842935">क्लिपबोर्ड से लिंक आयात करें</string>
 	<string name="troubleshooting_update_valid_title" state="needs_review" hash="741828768">ओलविड अपडेटेड है</string>
@@ -871,7 +890,6 @@
 	<string name="dialog_message_update_available" state="needs_review" hash="416187645">Olvid का एक नया संस्करण उपलब्ध है।\n\nनवीनतम सुविधाओं का लाभ उठाने के लिए कृपया अपडेट करें।</string>
 	<string name="dialog_title_call_initiation_not_supported" state="needs_review" hash="-2088021831">कॉल शुरू करना समर्थित नहीं है</string>
 	<string name="dialog_message_call_initiation_not_supported" state="needs_review" hash="1760333819">ऐसा लगता है कि आपका Olvid सर्वर सुरक्षित कॉल शुरू करने का समर्थन नहीं करता है।\n\nअधिक जानकारी के लिए कृपया अपने व्यवस्थापक से संपर्क करें।</string>
-	<string name="label_identity_creation_options" state="needs_review" hash="1180456032">आईडी बनाने के विकल्प</string>
 	<string name="text_option_server" state="needs_review" hash="-1130676431">सर्वर: %1$s</string>
 	<string name="dialog_title_non_default_server" state="needs_review" hash="2119192219">एक गैर-डिफ़ॉल्ट सर्वर का उपयोग करना</string>
 	<string name="dialog_message_non_default_server" state="needs_review" hash="459308900">आप निम्नलिखित सर्वर पर एक प्रोफ़ाइल बनाने वाले हैं:\n\n%1$s\n\nयह डिफ़ॉल्ट Olvid सर्वर नहीं है। केवल तभी आगे बढ़ें जब आप इस सर्वर पर भरोसा करते हों।</string>
@@ -900,7 +918,7 @@
 	<string name="toast_message_unable_to_keycloak_revoke" state="needs_review" hash="-1368037130">पिछली Olvid ID बदलने में विफल, कृपया पुनः प्रयास करें।</string>
 	<string name="toast_message_keycloak_revoke_successful" state="needs_review" hash="-1216369809">पिछला Olvid ID सफलतापूर्वक बदल दिया गया</string>
 	<string name="dialog_title_keycloak_authentication_required_user_id_changed" state="needs_review" hash="-896407029">उपयोगकर्ता परिवर्तन का पता चला</string>
-	<string name="dialog_message_keycloak_authentication_required_user_id_changed" state="needs_review" hash="876252686">आपका प्रोफ़ाइल वर्तमान में आपके संगठन द्वारा प्रबंधित किया जा रहा है। ऐसा लगता है कि आपने सामान्य से अलग उपयोगकर्ता के रूप में प्रमाणित किया है। यह समर्थित नहीं है।\n\nकृपया अपने व्यवस्थापक से संपर्क करें या सही उपयोगकर्ता के रूप में फिर से प्रमाणित करें।</string>
+	<string name="dialog_message_keycloak_authentication_required_user_id_changed" state="needs_review" hash="2080839829">आपका प्रोफ़ाइल वर्तमान में आपके संगठन द्वारा प्रबंधित किया जा रहा है। ऐसा लगता है कि आपने सामान्य से अलग उपयोगकर्ता के रूप में प्रमाणीकरण किया है। यह समर्थित नहीं है।\n\nकृपया अपने व्यवस्थापक से संपर्क करें या सही उपयोगकर्ता के रूप में फिर से प्रमाणीकरण करें।</string>
 	<string name="dialog_title_add_keycloak_user" state="needs_review" hash="-1050193239">संपर्क जोड़ें</string>
 	<string name="dialog_message_add_keycloak_user" state="needs_review" hash="-1755937035">आपने %1$s को अपने संपर्कों में जोड़ने के लिए चुना है। क्या आप आगे बढ़ना चाहते हैं?</string>
 	<string name="explanation_keycloak_update_new" state="needs_review" hash="1136733528">आप Olvid में अपनी कंपनी के पहचान प्रदाता को कॉन्फ़िगर करने वाले हैं। एक बार कॉन्फ़िगर हो जाने के बाद, आप इस सर्वर के साथ प्रमाणित कर सकते हैं और Olvid आपको अपने संपर्कों में अन्य कर्मचारियों को आसानी से जोड़ने देगा।\nअधिक जानकारी के लिए कृपया अपने व्यवस्थापक से संपर्क करें।</string>
@@ -1031,6 +1049,8 @@
 	<string name="label_storage_discussions" state="needs_review" hash="491497248">चर्चाएँ</string>
 	<string name="pref_use_internal_image_viewer_title" state="needs_review" hash="1319400578">आंतरिक छवि दर्शक का उपयोग करें</string>
 	<string name="pref_use_internal_image_viewer_summary" state="needs_review" hash="1248137666">सक्रिय होने पर, किसी छवि अटैचमेंट पर क्लिक करने से वह आंतरिक दर्शक में खुल जाएगी। अन्यथा, आपके डिवाइस का डिफ़ॉल्ट छवि ऐप इस्तेमाल किया जाएगा।</string>
+	<string name="pref_image_text_recognition_title" state="needs_review" hash="1877261687">चित्रों में मौजूद पाठ को पहचानें और अनुक्रमित करें</string>
+	<string name="pref_image_text_recognition_summary" state="needs_review" hash="1217699919">यह आपको छवि अटैचमेंट में पाए गए टेक्स्ट को खोजने और कॉपी करने की अनुमति देता है। यह कम-एंड डिवाइस पर संसाधन-गहन हो सकता है: यदि आपको इसकी आवश्यकता नहीं है तो इसे अक्षम करें।</string>
 	<string name="label_unable_to_display_image" state="needs_review" hash="-1495534207">छवि प्रदर्शित करने में असमर्थ</string>
 	<string name="dialog_title_backup_requires_sign_in" state="needs_review" hash="-720389674">क्लाउड प्रदाता साइन-इन आवश्यक है</string>
 	<string name="dialog_message_backup_requires_sign_in" state="needs_review" hash="119557495">आपने Olvid को किसी क्लाउड प्रदाता के लिए स्वचालित बैकअप का उपयोग करने के लिए कॉन्फ़िगर किया है, लेकिन आपका सत्र समाप्त हो गया है। आपको फिर से इस प्रदाता में साइन इन करने की आवश्यकता है।\n\nयदि आप अब स्वचालित बैकअप नहीं चाहते हैं, तो आप उन्हें ऐप सेटिंग्स में अक्षम कर सकते हैं। ध्यान रखें कि स्वचालित बैकअप आपके संपर्कों को खोने से रोकने का एकमात्र तरीका है यदि आपका डिवाइस खो जाता है या क्षतिग्रस्त हो जाता है।</string>
@@ -1149,7 +1169,7 @@
 	<string name="pref_hidden_profile_close_policy_dialog_entry_screen_lock" state="needs_review" hash="-1520400811">जब Olvid लॉक स्क्रीन सक्रिय होता है</string>
 	<string name="pref_hidden_profile_close_policy_dialog_entry_background" state="needs_review" hash="-2099539114">जब Olvid बैकग्राउंड में जाता है…</string>
 	<string name="activity_title_enter_backup_key" state="needs_review" hash="1035967309">बैकअप कुंजी दर्ज करें</string>
-	<string name="activity_title_identity_creation" state="needs_review" hash="-1361520151">आईडी निर्माण</string>
+	<string name="activity_title_identity_creation" state="needs_review" hash="2027618284">प्रोफ़ाइल बनाएं</string>
 	<string name="menu_action_manual_configuration" state="needs_review" hash="-1495974502">मैन्युअल उन्नत कॉन्फ़िगरेशन</string>
 	<string name="toast_message_invalid_configuration_link" state="needs_review" hash="1387412522">अमान्य कॉन्फ़िगरेशन लिंक</string>
 	<string name="toast_message_invalid_link" state="needs_review" hash="1265454437">अमान्य लिंक</string>
@@ -1171,6 +1191,7 @@
 	<string name="dialog_title_chose_profile_web_client" state="needs_review" hash="1860298414">Olvid वेब क्लाइंट से कनेक्ट करने के लिए प्रोफ़ाइल चुनें</string>
 	<string name="dialog_title_chose_profile_invitation" state="needs_review" hash="-2063034787">इस संपर्क को आमंत्रित करने के लिए प्रोफ़ाइल चुनें</string>
 	<string name="toast_message_create_new_profile_then_reopen_this_link" state="needs_review" hash="1770827346">कृपया पहले एक नया प्रोफ़ाइल बनाएं, फिर इस लिंक को दोबारा खोलें।</string>
+	<string name="toast_message_invitation_link_deferred_to_end_of_onboarding" state="needs_review" hash="-189914806">आपका प्रोफ़ाइल बनने के बाद आपका निमंत्रण अपने आप खुल जाएगा।</string>
 	<string name="button_label_switch_profile" state="needs_review" hash="-2007633024">प्रोफ़ाइल बदलें</string>
 	<string name="text_no_other_profile_to_switch_to" state="needs_review" hash="-112306213">कोई अन्य प्रोफ़ाइल नहीं</string>
 	<string name="button_label_configure_lock_screen" state="needs_review" hash="870348426">लॉक स्क्रीन कॉन्फ़िगर करें</string>
@@ -1181,7 +1202,7 @@
 	<string name="dialog_message_delete_profile_multi" state="needs_review" hash="-2003495595">प्रोफ़ाइल को हटाने से आपके डिवाइस पर इस प्रोफ़ाइल से संबंधित सभी जानकारी हटा दी जाएगी. इसमें आपके संपर्क, समूह और इस प्रोफ़ाइल के लिए सभी चर्चाओं (संदेश और अटैचमेंट) की सामग्री शामिल है. इस ऑपरेशन से आपके अन्य प्रोफ़ाइल प्रभावित नहीं होंगे.\n\nइस प्रोफ़ाइल को कैसे हटाया जाए, यह चुनने के लिए "अगला" दबाएं।</string>
 	<string name="dialog_message_delete_last_profile_multi" state="needs_review" hash="-103140781">प्रोफ़ाइल हटाने से आपके डिवाइस पर इस प्रोफ़ाइल से जुड़ी सभी जानकारी हट जाएगी। इसमें आपके संपर्क, समूह और इस प्रोफ़ाइल के सभी वार्तालापों (संदेश और अटैचमेंट) की सामग्री शामिल है।\n\n<b>यह आपकी एकमात्र दृश्यमान प्रोफ़ाइल है और यदि आपके पास कोई छिपी हुई प्रोफ़ाइल है, तो वे भी एक साथ हटा दी जाएंगी।</b>\n\nइस प्रोफ़ाइल को कैसे हटाया जाए, यह चुनने के लिए \"अगला\" दबाएं।</string>
 	<string name="switch_label_delete_profile_everywhere" state="needs_review" hash="-74965346">प्रोफ़ाइल <b>हर जगह</b> हटाएं</string>
-	<string name="hint_type_delete_here_to_proceed" state="needs_review" hash="-1622625725">जारी रखने के लिए यहां \\"%1$s\\" दर्ज करें</string>
+	<string name="hint_type_delete_here_to_proceed" state="needs_review" hash="-1622625725">जारी रखने के लिए यहां \"%1$s\" दर्ज करें</string>
 	<string name="explanation_delete_owned_identity" state="needs_review" hash="2036375772">यदि आप अपनी प्रोफ़ाइल को <b>हर जगह</b> हटाने का विकल्प चुनते हैं:\n - यह स्थानीय रूप से <b>और</b> आपके संपर्कों के उपकरणों पर हटा दी जाएगी\n - आप उन समूहों को छोड़ देंगे जिनमें आपने शामिल हुए थे\n - आपके द्वारा प्रबंधित किए गए समूह भंग कर दिए जाएंगे\n\nयदि आप अपनी प्रोफ़ाइल को हर जगह नहीं हटाते हैं, तो यह केवल आपके डिवाइस पर स्थानीय रूप से हटा दी जाएगी। जब तक आप किसी अन्य डिवाइस पर बैकअप पुनर्स्थापित करने की योजना नहीं बनाते हैं, आपके संपर्क आपको संदेश भेजने का प्रयास जारी रख सकते हैं और यह महसूस नहीं कर सकते हैं कि इन संदेशों को वितरित नहीं किया जा सकता है।</string>
 	<string name="explanation_delete_inactive_owned_identity" state="needs_review" hash="-575337242">ऐसा प्रतीत होता है कि आपका वर्तमान प्रोफ़ाइल निष्क्रिय है, शायद आपने इसे किसी अन्य डिवाइस पर स्थानांतरित कर दिया है। यदि आप इस प्रोफ़ाइल का उपयोग अपने दूसरे डिवाइस पर जारी रखने की योजना बना रहे हैं, तो आप इसे यहां सुरक्षित रूप से हटा सकते हैं।\n\nयदि आप इस प्रोफ़ाइल का फिर कभी उपयोग नहीं करना चाहते हैं, तो आपको पहले इसे इस डिवाइस पर फिर से सक्रिय करना होगा, अपने संपर्कों के साथ सुरक्षित चैनलों के फिर से बनने का इंतजार करना होगा, और तभी इस प्रोफ़ाइल को "हर जगह हटाएं" विकल्प चुनकर हटाना होगा।</string>
 	<string name="explanation_delete_owned_identity_multi" state="needs_review" hash="-184045089">आपका प्रोफ़ाइल वर्तमान में कई डिवाइसों पर सक्रिय है।\n\nयदि आप <b>हर जगह</b> अपना प्रोफ़ाइल हटाने का विकल्प चुनते हैं:\n - यह आपके सभी डिवाइसों <b>और</b> आपके संपर्कों के डिवाइसों से हटा दिया जाएगा\n - आप उन समूहों को छोड़ देंगे जिनमें आपने शामिल हुए थे\n - आपके द्वारा प्रबंधित किए गए समूह भंग कर दिए जाएंगे\n\nयदि आप <b>हर जगह</b> अपना प्रोफ़ाइल नहीं हटाते हैं, तो यह केवल स्थानीय रूप से हटा दिया जाएगा और आप इसे अपने अन्य डिवाइसों पर सामान्य रूप से उपयोग करना जारी रख सकते हैं।</string>
@@ -1442,23 +1463,17 @@
 	<string name="button_label_send" state="needs_review" hash="-185402948">भेजें</string>
 	<string name="button_label_start_sharing" state="needs_review" hash="682254052">शेयर करना शुरू करें</string>
 	<string name="location_sharing_duration_one_hour_short_string" state="needs_review" hash="1004063951">1 घंटा</string>
-	<string name="location_sharing_duration_one_hour_full_string" state="needs_review" hash="-58118972">
-		<b>1 घंटे</b> के लिए स्थान साझा करें</string>
+	<string name="location_sharing_duration_one_hour_full_string" state="needs_review" hash="-58118972"><b>1 घंटे</b> के लिए स्थान साझा करें</string>
 	<string name="location_sharing_duration_three_hours_short_string" state="needs_review" hash="228095183">3 घंटे</string>
-	<string name="location_sharing_duration_three_hours_full_string" state="needs_review" hash="754857804">
-		<b>3 घंटे</b> के लिए स्थान साझा करें</string>
+	<string name="location_sharing_duration_three_hours_full_string" state="needs_review" hash="754857804"><b>3 घंटे</b> के लिए स्थान साझा करें</string>
 	<string name="location_sharing_duration_endless_short_string" state="needs_review" hash="55208442">अनंत काल तक</string>
-	<string name="location_sharing_duration_endless_full_string" state="needs_review" hash="1710814259">स्थान साझा करें <b>जब तक रोका न जाए</b>
-	</string>
+	<string name="location_sharing_duration_endless_full_string" state="needs_review" hash="1710814259">स्थान साझा करें <b>जब तक रोका न जाए</b></string>
 	<string name="location_sharing_quality_precise_short_string" state="needs_review" hash="351442529">सटीक</string>
 	<string name="location_sharing_quality_balanced_short_string" state="needs_review" hash="-1925315592">संतुलित</string>
 	<string name="location_sharing_quality_power_save_short_string" state="needs_review" hash="-14275273">पावर सेव करें</string>
-	<string name="location_sharing_quality_precise_full_string" state="needs_review" hash="-1255374893">
-		<b>सटीक</b> स्थान साझा करने का मोड</string>
-	<string name="location_sharing_quality_balanced_full_string" state="needs_review" hash="-421322514">
-		<b>संतुलित</b> स्थान साझाकरण मोड</string>
-	<string name="location_sharing_quality_power_save_full_string" state="needs_review" hash="792896333">
-		<b>पावर सेव</b> लोकेशन शेयरिंग मोड</string>
+	<string name="location_sharing_quality_precise_full_string" state="needs_review" hash="-1255374893"><b>सटीक</b> स्थान साझा करने का मोड</string>
+	<string name="location_sharing_quality_balanced_full_string" state="needs_review" hash="-421322514"><b>संतुलित</b> स्थान साझाकरण मोड</string>
+	<string name="location_sharing_quality_power_save_full_string" state="needs_review" hash="792896333"><b>पावर सेव</b> लोकेशन शेयरिंग मोड</string>
 	<string name="label_sharing_location_until" state="needs_review" hash="187977459">स्थान साझा करना: %1$s तक</string>
 	<string name="label_location_sharing_ended" state="needs_review" hash="1028490137">स्थान साझा करना समाप्त हो गया</string>
 	<string name="label_gps_coordinates" state="needs_review" hash="-1537356414">जीपीएस निर्देशांक</string>
@@ -2041,11 +2056,14 @@
 	<string name="button_label_configure_backups" state="needs_review" hash="-990646398">बैकअप सक्षम करें</string>
 	<string name="tip_write_backup_key_title" state="needs_review" hash="-1652757003">अपने बैकअप कुंजी को लिखना न भूलें ‌😇</string>
 	<string name="tip_write_backup_key_message" state="needs_review" hash="931018791">आपकी बैकअप कुंजी आपके प्रोफाइल को पुनर्स्थापित करने के लिए आवश्यक है यदि आप इस डिवाइस तक पहुंच खो देते हैं।</string>
+	<string name="tip_legacy_backup_end_of_life_title" state="needs_review" hash="810495149">आपके द्वारा उपयोग किए जा रहे पुराने बैकअप अब समर्थित नहीं हैं।</string>
+	<string name="tip_legacy_backup_end_of_life_message" state="needs_review" hash="-314257210">अगले ओल्विड अपडेट में पुराने बैकअप का समर्थन बंद कर दिया जाएगा। अपने खाते को सुरक्षित रखने के लिए, अभी नए बैकअप अनुभव पर स्विच करें।</string>
 	<string name="tip_troubleshooting_title" state="needs_review" hash="-393739108">अपने Olvid अनुभव को बेहतर बनाएं 🚀</string>
 	<string name="tip_troubleshooting_message" state="needs_review" hash="-935493349">आपके डिवाइस पर कुछ पैरामीटर ठीक से कॉन्फ़िगर नहीं किए गए हैं और ये Olvid के साथ आपके अनुभव को प्रभावित कर सकते हैं।</string>
 	<string name="button_label_this_way" state="needs_review" hash="747183939">इस तरह</string>
 	<string name="toast_code_copied" state="needs_review" hash="-1522785848">कोड कॉपी किया गया</string>
 	<string name="explanation_choose_members" state="needs_review" hash="-1385158706">कृपया चुनें कि इस समूह में किसे जोड़ना है।</string>
+	<string name="explanation_choose_share_recipients" state="needs_review" hash="-1406265940">कृपया चुनें कि किसके साथ साझा करना है।</string>
 	<string name="explanation_choose_contact_introduction" state="needs_review" hash="1113777517">कृपया चुनें कि आप %1$s को किससे परिचित कराना चाहते हैं।</string>
 	<string name="label_group_administration" state="needs_review" hash="871355986">ग्रुप व्यवस्थापन</string>
 	<string name="dialog_title_call_blocked" state="needs_review" hash="1594606530">कॉल ब्लॉक किया गया</string>
@@ -2171,7 +2189,7 @@
 	<string name="store_link_olvid_store" state="needs_review" hash="-1825630369">Olvid स्टोर पर जाएं</string>
 	<string name="toast_message_reminder_set" state="needs_review" hash="-961055414">रिमाइंडर सेट हो गया</string>
 	<string name="dialog_title_keycloak_authentication_impossible" state="needs_review" hash="325273853">प्रमाणीकरण संभव नहीं है</string>
-	<string name="dialog_message_keycloak_authentication_impossible" state="needs_review" hash="390830785">आपका प्रोफ़ाइल वर्तमान में आपके संगठन द्वारा प्रबंधित किया जा रहा है और पुन: प्रमाणीकरण की आवश्यकता है। हालाँकि, ऐसा लगता है कि कोई भी समर्थित प्रमाणीकरण विधि उपलब्ध नहीं है।\n\nअधिक जानकारी के लिए कृपया अपने व्यवस्थापक से संपर्क करें।</string>
+	<string name="dialog_message_keycloak_authentication_impossible" state="needs_review" hash="-2031322232">आपका प्रोफ़ाइल वर्तमान में आपके संगठन द्वारा प्रबंधित किया जा रहा है और पुन: प्रमाणीकरण की आवश्यकता है। हालाँकि, ऐसा लगता है कि कोई भी समर्थित प्रमाणीकरण विधि उपलब्ध नहीं है। कृपया अधिक जानकारी के लिए अपने व्यवस्थापक से संपर्क करें।</string>
 	<string name="onboarding_transfer_keycloak_error_message_authentication_impossible" state="needs_review" hash="-1891385979">कोई भी समर्थित प्रमाणीकरण विधि उपलब्ध नहीं है।</string>
 	<string name="pref_use_alt_turn_servers_title" state="needs_review" hash="-1956132776">वैकल्पिक TURN सर्वर का उपयोग करें</string>
 	<string name="pref_use_alt_turn_servers_summary" state="needs_review" hash="357427162">घूर्णनशील आईपी पतों के साथ TURN सर्वर का उपयोग करने के लिए इस विकल्प को सक्रिय करें। यदि आप अनिश्चित हैं, तो इस विकल्प को बंद रखें 😁</string>
@@ -2282,5 +2300,45 @@
 	<string name="label_error_loading_openstreetmap_style_file" state="needs_review" hash="-2596045">OpenStreetMap स्टाइल फ़ाइल लोड करते समय एक त्रुटि हुई।</string>
 	<string name="dialog_title_subscriptions_not_available" state="needs_review" hash="336174241">ऐप के अंदर सदस्यता उपलब्ध नहीं है</string>
 	<string name="dialog_message_subscriptions_not_available" state="needs_review" hash="2093768678">आपके द्वारा इंस्टॉल किया गया Olvid संस्करण Google के बिलिंग लाइब्रेरी को शामिल नहीं करता है और यह इन-ऐप खरीदारी का समर्थन नहीं करता है।\n\nअधिक जानकारी के लिए, कृपया **feedback@olvid.io** पर हमसे संपर्क करें।</string>
+	<string name="ftux_next" state="needs_review" hash="1158639077">अगला</string>
+	<string name="ftux_start" state="needs_review" hash="646298532">शुरू करें</string>
+	<string name="ftux_page_indicator" state="needs_review" hash="1987610035">पृष्ठ %1$d / %2$d</string>
+	<string name="ftux_page_welcome_title" state="needs_review" hash="1173832630"><b>Olvid</b> में आपका स्वागत है।</string>
+	<string name="ftux_page_welcome_body" state="needs_review" hash="-2085198139">सभी के लिए निजी संदेश।</string>
+	<string name="ftux_page_private_title" state="needs_review" hash="1815927819"><b>निजी</b> संदेश</string>
+	<string name="ftux_page_private_body" state="needs_review" hash="-590644231">%1$s पर, आप चुनते हैं कि आप किसके साथ चैट करना चाहते हैं। कोई स्पैम नहीं, कोई अनुशंसा नहीं, कोई अनावश्यक सूचनाएं नहीं, और अजनबियों से कोई संदेश नहीं।\n\nआपकी सहमति के बिना कोई भी आपसे संपर्क नहीं कर सकता।\n\n%1$s आपका डिजिटल बबल है।</string>
+	<string name="ftux_page_everyone_title" state="needs_review" hash="1506796386"><b>सभी</b> के लिए मैसेजिंग</string>
+	<string name="ftux_page_everyone_body" state="needs_review" hash="-586100377">आप जो भी हों, %1$s आपको सुरक्षा के मामले में सर्वश्रेष्ठ सुविधा प्रदान करता है। किसी ईमेल या फ़ोन नंबर की आवश्यकता नहीं है।\n\n%1$s आपसे कुछ भी नहीं पूछता है, और इससे सब कुछ बदल जाता है।</string>
+	<string name="ftux_page_protect_title" state="needs_review" hash="1969120191">Olvid आपको <b>सुरक्षित</b> रखता है। Olvid उन लोगों की रक्षा करता है जो आपके लिए महत्वपूर्ण हैं।</string>
+	<string name="ftux_page_protect_body" state="needs_review" hash="881847930">यह सिर्फ एक वादा नहीं है — %1$s क्रिप्टोग्राफ़िक प्रमाण प्रदान करता है।\n\nचाहे आप दूर से या आमने-सामने संपर्क जोड़ें, आपके आदान-प्रदान व्यवस्थित रूप से प्रामाणिक और एंड-टू-एंड एन्क्रिप्टेड होते हैं।</string>
+	<string name="ftux_page_pricing_title" state="needs_review" hash="-1948277889">एक <b>पारदर्शी</b> व्यावसायिक मॉडल</string>
+	<string name="ftux_page_pricing_body" state="needs_review" hash="-1064278870">%1$s आपके व्यक्तिगत डेटा से खुद को वित्तपोषित नहीं करता है - क्योंकि यह कोई भी डेटा नहीं मांगता!\n\nजो कुछ भी मुफ्त है, वह मुफ्त है। जो कुछ भी भुगतान किया जाता है, उसमें एक कीमत दिखाई जाती है।</string>
+	<string name="ftux_page_media_title" state="needs_review" hash="558110518">Olvid के पास <b>सब कुछ</b> है</string>
+	<string name="ftux_page_media_body" state="needs_review" hash="1807247240">कोई अटैचमेंट आकार सीमा नहीं, उच्च-रिज़ॉल्यूशन फ़ोटो साझाकरण, पोल, ऑडियो और वीडियो कॉल, मल्टी-डिवाइस, जियोलोकेशन - यह सब इसमें है!</string>
 	<string name="menu_action_cancel_upload" state="needs_review" hash="1672681586">अपलोड रद्द करें</string>
+	<string name="label_suggested_contacts" state="needs_review" hash="816810770">सुझाए गए संपर्क</string>
+	<string name="label_suggested_contacts_subtitle" state="needs_review" hash="131522501">आसानी से उपयोगकर्ताओं को आमंत्रित करें</string>
+	<string name="label_suggested_contact_already_a_contact" state="needs_review" hash="-1177848651">पहले से ही संपर्क में है</string>
+	<string name="label_suggested_contact_invitation_received" state="needs_review" hash="2100924901">आमंत्रण प्राप्त हुआ</string>
+	<string name="label_suggested_contact_invitation_sent" state="needs_review" hash="310679275">निमंत्रण भेजा गया</string>
+	<string name="label_suggested_contacts_all_done" state="needs_review" hash="-127525104">आप नवीनतम संस्करण पर हैं!\nसुझाने के लिए और कोई संपर्क नहीं है।</string>
+	<string name="button_label_suggested_contact_later" state="needs_review" hash="-1933816039">बाद में</string>
+	<string name="button_label_close" state="needs_review" hash="1454843231">बंद करें</string>
+	<string name="button_label_skip" state="needs_review" hash="2056258301">छोड़ें</string>
+	<string name="button_label_understood" state="needs_review" hash="829780875">समझ गया</string>
+	<string name="label_suggested_contacts_onboarding_title_1" state="needs_review" hash="491881039">एक स्वाइप से आमंत्रित करें</string>
+	<string name="label_suggested_contacts_onboarding_message_1" state="needs_review" hash="331320806">उपयोगकर्ता को आमंत्रित करने के लिए कार्ड को दाईं ओर स्वाइप करें, या अगले उपयोगकर्ता पर जाने के लिए बाईं ओर स्वाइप करें।</string>
+	<string name="label_suggested_contacts_onboarding_title_2" state="needs_review" hash="-788798380">ये संपर्क कहाँ से आए हैं?</string>
+	<string name="label_suggested_contacts_onboarding_message_2" state="needs_review" hash="1536681696">ये Olvid के वे उपयोगकर्ता हैं जो अभी तक आपके संपर्कों में नहीं हैं।</string>
+	<string name="label_suggested_contacts_onboarding_caption" state="needs_review" hash="-1299179969">आप एक रिश्ते दूर हैं: आप कम से कम एक साझा समूह में शामिल हैं।</string>
+	<string name="label_suggested_contacts_you" state="needs_review" hash="672009142">आप</string>
+	<string name="label_suggested_contacts_common_group" state="needs_review" hash="-1739793963">साझा समूह</string>
+	<string name="explanation_suggested_contacts_others_tab" state="needs_review" hash="852096678">नीचे दिए गए उपयोगकर्ता आपकी संपर्क सूची में नहीं हैं, और आप अभी उनके साथ निजी बातचीत नहीं कर सकते। लेकिन आप उन्हें आसानी से आमंत्रित कर सकते हैं! 🚀</string>
+	<string name="label_suggested_contacts_invite_in_one_gesture" state="needs_review" hash="438220313">इन उपयोगकर्ताओं को एक स्वाइप के साथ आमंत्रित करें</string>
+	<string name="menu_action_suggested_contacts_see_full_list" state="needs_review" hash="603082500">पूरी सूची देखें</string>
+	<string name="menu_action_suggested_contacts_replay_onboarding" state="needs_review" hash="-1552704243">ट्यूटोरियल फिर से देखें</string>
+	<string name="button_label_uninvite" state="needs_review" hash="771825501">निमंत्रण रद्द करें</string>
+	<string name="button_label_accept_invitation" state="needs_review" hash="-1778405034">निमंत्रण स्वीकार करें</string>
+	<string name="label_suggested_contacts_already_swiped" state="needs_review" hash="427042318">पहले ही देखा जा चुका है</string>
+	<string name="label_suggested_contacts_not_swiped_yet" state="needs_review" hash="310924358">अभी तक देखा नहीं गया</string>
 </resources>

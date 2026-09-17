@@ -412,6 +412,9 @@ public class FyleMessageJoinWithStatus {
                 db.fyleMessageJoinWithStatusDao().updateTextContent(messageId, fyleId, content);
             }
         } else if (mimeType != null && mimeType.startsWith("image/") && App.absolutePathFromRelative(fyle.filePath) != null) {
+            if (!SettingsActivity.isImageTextRecognitionEnabled()) {
+                return;
+            }
             GoogleTextRecognizer.recognizeTextFromImage(Uri.fromFile(new File(App.absolutePathFromRelative(fyle.filePath))), texts -> {
                 if (texts == null) {
                     return Unit.INSTANCE;

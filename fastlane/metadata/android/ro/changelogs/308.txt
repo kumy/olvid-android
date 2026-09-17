@@ -1,0 +1,3 @@
+- Nouă funcție de invitare prin glisare, pentru a invita cu ușurință membrii unui grup într-o discuție directă.
+- Nou proces de inițiere pentru a prezenta Olvid noilor utilizatori.
+- Vizualizator de imagini/video îmbunătățit, cu posibilitatea de a face zoom la videoclipuri.

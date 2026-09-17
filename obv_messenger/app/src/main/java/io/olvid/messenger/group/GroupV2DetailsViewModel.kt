@@ -206,38 +206,7 @@ class GroupV2DetailsViewModel : ViewModel() {
     fun getPermissions(
         groupType: GroupTypeModel,
         isAdmin: Boolean
-    ): java.util.HashSet<Permission> {
-        return when (groupType) {
-            SimpleGroup -> Permission.DEFAULT_ADMIN_PERMISSIONS.toHashSet()
-            ReadOnlyGroup -> if (isAdmin) Permission.DEFAULT_ADMIN_PERMISSIONS.toHashSet() else hashSetOf(Permission.EDIT_OR_REMOTE_DELETE_OWN_MESSAGES)
-            is CustomGroup -> {
-                if (isAdmin) {
-                    Permission.DEFAULT_ADMIN_PERMISSIONS.toHashSet()
-                } else {
-                    if (groupType.readOnlySetting) {
-                        hashSetOf(Permission.EDIT_OR_REMOTE_DELETE_OWN_MESSAGES)
-                    } else {
-                        Permission.DEFAULT_MEMBER_PERMISSIONS.toHashSet()
-                    }
-                }
-            }
-            // PrivateGroup case
-            else -> if (isAdmin) Permission.DEFAULT_ADMIN_PERMISSIONS.toHashSet() else Permission.DEFAULT_MEMBER_PERMISSIONS.toHashSet()
-        }.apply {
-            if (groupType is CustomGroup) {// REMOTE_DELETE_ANYTHING
-                when (groupType.remoteDeleteSetting) {
-                    ADMINS ->
-                        if (isAdmin) {
-                            add(Permission.REMOTE_DELETE_ANYTHING)
-                        } else {
-                            remove(Permission.REMOTE_DELETE_ANYTHING)
-                        }
-                    NOBODY -> remove(Permission.REMOTE_DELETE_ANYTHING)
-                    EVERYONE -> add(Permission.REMOTE_DELETE_ANYTHING)
-                }
-            }
-        }
-    }
+    ): java.util.HashSet<Permission> = groupType.getDefaultPermissions(isAdmin)
 
     val groupMembers: LiveData<List<Group2MemberOrPending>?>
         get() = editedGroupMembersLiveData
@@ -415,9 +384,9 @@ class GroupV2DetailsViewModel : ViewModel() {
             }
         }
 
-        if (obvChangeSet.isEmpty.not()) {
+        if (obvChangeSet.isEmpty().not()) {
             // until we have a UI to modify this, always reset own permissions to default admin, just in case!
-            obvChangeSet.permissionChanges[ObvBytesKey(bytesOwnedIdentity)] = adminPermissions
+            obvChangeSet.permissionChanges[ObvBytesKey(bytesOwnedIdentity!!)] = adminPermissions
         }
         return obvChangeSet
     }
@@ -513,7 +482,7 @@ class GroupV2DetailsViewModel : ViewModel() {
         val obvChangeSet = getObvChangeSet()
 
 
-        if (obvChangeSet.isEmpty) {
+        if (obvChangeSet.isEmpty()) {
             publishingGroupMembers = false
             discardGroupEdits()
             return

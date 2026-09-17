@@ -1,0 +1,4 @@
+- Novo recurso de compartilhamento de tela, permitindo postar em várias conversas simultaneamente.
+- Nova função de convite por deslizar, para convidar facilmente membros do grupo para uma conversa privada.
+- Novo guia de introdução para explicar o Olvid aos novos usuários.
+- Visualizador de imagens/vídeos aprimorado, com a possibilidade de ampliar vídeos.

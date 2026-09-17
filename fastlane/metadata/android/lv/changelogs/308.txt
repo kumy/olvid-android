@@ -1,0 +1,3 @@
+- Jauna, intuitīva sistēma, lai vienkārši uzaicinātu grupas dalībniekus uz tiešu sarunu.
+- Jauna ievades sistēma, kas jaunajiem lietotājiem izskaidro, kas ir Olvid.
+- Uzlabots attēlu/video skatītājs, iespēja palielināt video.

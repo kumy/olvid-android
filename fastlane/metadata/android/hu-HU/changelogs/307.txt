@@ -1,0 +1,3 @@
+- Új, egyszerű gesztussal meghívhatók a csoporttagok egy privát beszélgetésre.
+- Új bevezető a friss felhasználók számára, hogy megismertessük az Olvid-ot.
+- Javított kép- és videó-megjelenítő, lehetőség a videók nagyítására.

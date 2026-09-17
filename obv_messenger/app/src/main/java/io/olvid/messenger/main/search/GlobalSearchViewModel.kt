@@ -172,6 +172,7 @@ class GlobalSearchViewModel : ViewModel() {
             .filter { contact ->
                 filterRegexes?.all { it.containsMatchIn(contact.fullSearchDisplayName) } == true
             }
+            .sortedBy { StringUtils2.searchMatchRank(it.fullSearchDisplayName, filter) }
     }
 
     private fun searchDiscussions(bytesOwnedIdentity: ByteArray) {
@@ -190,6 +191,11 @@ class GlobalSearchViewModel : ViewModel() {
                     }
                 }
             }
+
+        // rank discussions whose title words start with the filter first (matches in the
+        // group member names only are ranked last)
+        groups.sortBy { StringUtils2.searchMatchRank(it.title, filter) }
+        otherDiscussions.sortBy { StringUtils2.searchMatchRank(it.title, filter) }
 
         groupsFound = groups
         otherDiscussionsFound = otherDiscussions

@@ -26,7 +26,7 @@ If you find a bug, or have any feedback about Olvid, please contact the team at 
 # Structure of the project
 
 Olvid is built of two main components:
-- a **cryptographic engine**, written in pure Java (no Android APIs) located in the `obv_engine` folder
+- a **cryptographic engine**, initially written in pure Java (no Android APIs). In version 4.5 of the app, it was rewritten in Kotlin and moved to its [own repository](https://github.com/olvid-io/olvid-kotlin-engine).
 - an **application layer**, using the Android APIs for the graphical interface and OS integration , locate in the `obv_messenger` folder
 
 The engine is in charge of all the encryption, contacts and groups management, and network communications, while the application layer implements the instant messaging functionalities on top of the engine.
@@ -56,9 +56,21 @@ Compiling and running Olvid should work straight out of the box. If you run into
 
 ## Push notifications and `nogoogle` flavor
 
-Olvid provides 2 different build flavors: a `full` version including some Google closed sources libraries (like Firebase, Billing, Google drive API) and a `nogoogle` version containing only FOSS dependencies.
+Olvid provides 2 different build flavors: a `full` version including some Google closed sources libraries (like Firebase, Billing, Google Drive API) and a `nogoogle` version containing only FOSS dependencies. The `zfdroid` third variant is identical to the `nogoogle` version with only a difference in version numbering to match F-Droid's split-ABI recommendations. 
 
 The `full` version is the one distributed on [Google Play](https://play.google.com/store/apps/details?id=io.olvid.messenger). Unfortunately, even if you have Google Services installed on your device, you will not be able to get push notifications when compiling this version from the sources. The Olvid server uses specific credentials to send push notifications, and these credentials are tied to the signature of the "official" Google Play version of Olvid. You may activate the "Maintain a permanent WebSocket connection" option in the privacy settings of the app in order to be notified instantly of new messages.
+
+
+## Co-development of the Olvid engine
+
+By default, when compiling the application, the Olvid engine if pulled as a dependency from Maven Central and modifications to the code of the engine are not possible.
+
+If you wish to apply modifications to the engine code, you should:
+- clone the [engine repository](https://github.com/olvid-io/olvid-kotlin-engine),
+- check out the tag corresponding to the Olvid engine version set in [`libs.versions.toml`](obv_messenger/gradle/libs.versions.toml) (engine APIs may change between versions, so your application may not compile if you pick the wrong version),
+- set the `olvid.engineDir` property in your global `gradle.properties` file (usually located in `$HOME/.gradle/gradle.properties`) to point to the directory you cloned the engine repository to.
+
+After syncing the project with Gradle, you should see a new `olvid-kotlin-engine` folder in your project with the engine sources.
 
 
 ## The WebRTC library

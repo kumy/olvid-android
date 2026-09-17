@@ -24,7 +24,6 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -53,7 +52,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -73,6 +71,8 @@ import io.olvid.messenger.designsystem.components.OlvidOutlinedActionButton
 import io.olvid.messenger.designsystem.components.OlvidOutlinedSecondaryButton
 import io.olvid.messenger.designsystem.theme.OlvidTypography
 import io.olvid.messenger.main.InitialView
+import io.olvid.messenger.main.contacts.suggested.MutualGroupUi
+import io.olvid.messenger.main.contacts.suggested.MutualGroupsRow
 import io.olvid.messenger.openid.KeycloakManager
 import io.olvid.messenger.openid.KeycloakManager.KeycloakCallback
 
@@ -163,45 +163,7 @@ fun ContactInvitationPopup(
                             color = Color(0xFF8B8D97),
                             style = OlvidTypography.body1
                         )
-                        groups?.let {
-                            if (it.isNotEmpty()) {
-                                Spacer(modifier = Modifier.height(24.dp))
-                                FlowRow(
-                                    horizontalArrangement = Arrangement.spacedBy((-10).dp),
-                                    verticalArrangement = Arrangement.spacedBy(6.dp)
-                                ) {
-                                    it.forEachIndexed { index, group ->
-                                        InitialView(
-                                            modifier = Modifier.size(
-                                                24.dp
-                                            ),
-                                            initialViewSetup = { initialView ->
-                                                initialView.setDiscussion(group.discussion)
-                                            })
-                                    }
-                                }
-                                Spacer(modifier = Modifier.height(8.dp))
-                                Text(
-                                    text =
-                                        if (groups?.size == 1) {
-                                            stringResource(
-                                                R.string.text_common_group,
-                                                groups?.first()?.discussion?.title.orEmpty()
-                                            )
-                                        } else {
-                                            pluralStringResource(
-                                                R.plurals.text_common_groups,
-                                                (groups?.size ?: 1) - 1,
-                                                groups?.first()?.discussion?.title.orEmpty(),
-                                                (groups?.size ?: 1) - 1
-                                            )
-                                        },
-                                    textAlign = TextAlign.Center,
-                                    color = Color(0xFF8B8D97),
-                                    style = OlvidTypography.body1
-                                )
-                            }
-                        }
+                        MutualGroupsRow(groups?.map { MutualGroupUi(it.discussion) })
                         Spacer(modifier = Modifier.height(24.dp))
                         OlvidActionButton(
                             modifier = Modifier.fillMaxWidth(),

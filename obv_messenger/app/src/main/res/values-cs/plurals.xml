@@ -282,4 +282,20 @@
 		<item quantity="one" state="needs_review" hash="-1393207312">%1$d zpráva byla zkopírována do schránky</item>
 		<item quantity="other" state="needs_review" hash="-604999755">%1$d zprávy zkopírovány do schránky</item>
 	</plurals>
+	<plurals name="label_share_destinations_count" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="423387012">%1$d příjemce</item>
+		<item quantity="other" state="needs_review" hash="-431979656">%1$d příjemci</item>
+	</plurals>
+	<plurals name="label_share_to_recipients" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="-1217959784">Sdílejte s %1$d příjemcem</item>
+		<item quantity="other" state="needs_review" hash="1864148690">Sdílejte s %1$d příjemci</item>
+	</plurals>
+	<plurals name="toast_message_shared_to_recipients" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="-373807760">Sdíleno s příjemcem %1$d</item>
+		<item quantity="other" state="needs_review" hash="-1412037000">Sdíleno s %1$d příjemci</item>
+	</plurals>
+	<plurals name="button_label_add_to_groups" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="1622654043">Přidat do skupiny %1$d</item>
+		<item quantity="other" state="needs_review" hash="-1655824151">Přidat do %1$d skupin</item>
+	</plurals>
 </resources>

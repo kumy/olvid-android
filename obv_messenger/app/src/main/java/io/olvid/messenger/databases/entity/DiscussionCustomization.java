@@ -57,6 +57,7 @@ public class DiscussionCustomization {
     public static final String PREF_MUTE_NOTIFICATIONS = "pref_mute_notifications";
     public static final String PREF_MUTE_NOTIFICATIONS_EXCEPT_MENTIONED = "pref_mute_notifications_except_mentioned";
     public static final String PREF_MUTE_NOTIFICATIONS_TIMESTAMP = "pref_mute_notifications_timestamp"; // when to stop muting notifications, null if unlimited
+    public static final String PREF_MUTE_NOTIFICATIONS_START_TIMESTAMP = "pref_mute_notifications_start_timestamp"; // when the current mute started, null when not muted; used to recap missed notifications on mute end
     public static final String PREF_AUTO_OPEN_LIMITED_VISIBILITY_INBOUND_MESSAGES = "pref_auto_open_limited_visibility_inbound";
     public static final String PREF_RETAIN_WIPED_OUTBOUND_MESSAGES = "pref_retain_wiped_outbound_messages";
     public static final String PREF_DISCUSSION_RETENTION_COUNT = "pref_discussion_retention_count"; // number of messages to keep -> null = use app setting, 0 = keep everything,
@@ -104,6 +105,10 @@ public class DiscussionCustomization {
     @ColumnInfo(name = PREF_MUTE_NOTIFICATIONS_TIMESTAMP)
     @Nullable
     public Long prefMuteNotificationsTimestamp;
+
+    @ColumnInfo(name = PREF_MUTE_NOTIFICATIONS_START_TIMESTAMP)
+    @Nullable
+    public Long prefMuteNotificationsStartTimestamp;
 
     @ColumnInfo(name = PREF_AUTO_OPEN_LIMITED_VISIBILITY_INBOUND_MESSAGES)
     @Nullable
@@ -167,7 +172,7 @@ public class DiscussionCustomization {
 
 
     // default constructor required by Room
-    public DiscussionCustomization(long discussionId, @Nullable String serializedColorJson, @Nullable String backgroundImageUrl, @Nullable Boolean prefSendReadReceipt, boolean prefMuteNotifications, boolean prefMuteNotificationsExceptMentioned, @Nullable Long prefMuteNotificationsTimestamp, @Nullable Boolean prefAutoOpenLimitedVisibilityInboundMessages, @Nullable Boolean prefRetainWipedOutboundMessages, @Nullable Long prefDiscussionRetentionCount, @Nullable Long prefDiscussionRetentionDuration, boolean prefUseCustomMessageNotification, @Nullable String prefMessageNotificationRingtone, @Nullable String prefMessageNotificationVibrationPattern, @Nullable String prefMessageNotificationLedColor, boolean prefUseCustomCallNotification, @Nullable String prefCallNotificationRingtone, @Nullable String prefCallNotificationVibrationPattern, boolean prefCallNotificationUseFlash, @Nullable Integer sharedSettingsVersion, @Nullable Long settingExistenceDuration, @Nullable Long settingVisibilityDuration, boolean settingReadOnce) {
+    public DiscussionCustomization(long discussionId, @Nullable String serializedColorJson, @Nullable String backgroundImageUrl, @Nullable Boolean prefSendReadReceipt, boolean prefMuteNotifications, boolean prefMuteNotificationsExceptMentioned, @Nullable Long prefMuteNotificationsTimestamp, @Nullable Long prefMuteNotificationsStartTimestamp, @Nullable Boolean prefAutoOpenLimitedVisibilityInboundMessages, @Nullable Boolean prefRetainWipedOutboundMessages, @Nullable Long prefDiscussionRetentionCount, @Nullable Long prefDiscussionRetentionDuration, boolean prefUseCustomMessageNotification, @Nullable String prefMessageNotificationRingtone, @Nullable String prefMessageNotificationVibrationPattern, @Nullable String prefMessageNotificationLedColor, boolean prefUseCustomCallNotification, @Nullable String prefCallNotificationRingtone, @Nullable String prefCallNotificationVibrationPattern, boolean prefCallNotificationUseFlash, @Nullable Integer sharedSettingsVersion, @Nullable Long settingExistenceDuration, @Nullable Long settingVisibilityDuration, boolean settingReadOnce) {
         this.discussionId = discussionId;
         this.serializedColorJson = serializedColorJson;
         this.backgroundImageUrl = backgroundImageUrl;
@@ -175,6 +180,7 @@ public class DiscussionCustomization {
         this.prefMuteNotifications = prefMuteNotifications;
         this.prefMuteNotificationsExceptMentioned = prefMuteNotificationsExceptMentioned;
         this.prefMuteNotificationsTimestamp = prefMuteNotificationsTimestamp;
+        this.prefMuteNotificationsStartTimestamp = prefMuteNotificationsStartTimestamp;
         this.prefAutoOpenLimitedVisibilityInboundMessages = prefAutoOpenLimitedVisibilityInboundMessages;
         this.prefRetainWipedOutboundMessages = prefRetainWipedOutboundMessages;
         this.prefDiscussionRetentionCount = prefDiscussionRetentionCount;
@@ -202,6 +208,7 @@ public class DiscussionCustomization {
         this.prefMuteNotifications = false;
         this.prefMuteNotificationsExceptMentioned = true;
         this.prefMuteNotificationsTimestamp = null;
+        this.prefMuteNotificationsStartTimestamp = null;
         this.prefAutoOpenLimitedVisibilityInboundMessages = null;
         this.prefRetainWipedOutboundMessages = null;
         this.prefDiscussionRetentionCount = null;

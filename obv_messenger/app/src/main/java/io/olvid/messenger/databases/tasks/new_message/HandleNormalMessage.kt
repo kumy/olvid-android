@@ -68,7 +68,7 @@ fun handleNormalMessage(
 ): HandleMessageOutput {
     if (putMessageOnHoldIfDiscussionIsMissing(
             db,
-            obvMessage.identifier,
+            obvMessage.identifier!!,
             obvMessage.serverTimestamp,
             messageSender,
             jsonMessage.oneToOneIdentifier,
@@ -231,7 +231,7 @@ fun handleNormalMessage(
             var firstAttachmentName: String? = null
             for (i in 0..<obvMessage.attachments.size) {
                 try {
-                    val metadata = AppSingleton.getJsonObjectMapper().readValue(obvMessage.attachments[i].metadata, JsonMetadata::class.java)
+                    val metadata = AppSingleton.getJsonObjectMapper().readValue(obvMessage.attachments[i]?.metadata, JsonMetadata::class.java)
                     attachmentMetadatas[i] = metadata
 
                     val mimeType = PreviewUtils.getNonNullMimeType(metadata.type, metadata.fileName)
@@ -527,10 +527,10 @@ fun handleNormalMessage(
                                     fyle.id,
                                     message.id,
                                     messageSender.bytesOwnedIdentity,
-                                    attachment.url,
+                                    attachment.url!!,
                                     attachmentMetadata.fileName,
                                     attachmentMetadata.type,
-                                    if (attachment.isUploadCancelledByTheSender) FyleMessageJoinWithStatus.STATUS_FAILED else if (attachment.isDownloadRequested) FyleMessageJoinWithStatus.STATUS_DOWNLOADING else FyleMessageJoinWithStatus.STATUS_DOWNLOADABLE,
+                                    if (attachment.isUploadCancelledByTheSender) FyleMessageJoinWithStatus.STATUS_FAILED else if (attachment.isDownloadRequested()) FyleMessageJoinWithStatus.STATUS_DOWNLOADING else FyleMessageJoinWithStatus.STATUS_DOWNLOADABLE,
                                     attachment.expectedLength,
                                     attachment.messageIdentifier,
                                     attachment.number,
@@ -560,10 +560,10 @@ fun handleNormalMessage(
                                 newFyle.id,
                                 message.id,
                                 messageSender.bytesOwnedIdentity,
-                                attachment.url,
+                                attachment.url!!,
                                 attachmentMetadata.fileName,
                                 attachmentMetadata.type,
-                                if (attachment.isUploadCancelledByTheSender) FyleMessageJoinWithStatus.STATUS_FAILED else if (attachment.isDownloadRequested) FyleMessageJoinWithStatus.STATUS_DOWNLOADING else FyleMessageJoinWithStatus.STATUS_DOWNLOADABLE,
+                                if (attachment.isUploadCancelledByTheSender) FyleMessageJoinWithStatus.STATUS_FAILED else if (attachment.isDownloadRequested()) FyleMessageJoinWithStatus.STATUS_DOWNLOADING else FyleMessageJoinWithStatus.STATUS_DOWNLOADABLE,
                                 attachment.expectedLength,
                                 attachment.messageIdentifier,
                                 attachment.number,

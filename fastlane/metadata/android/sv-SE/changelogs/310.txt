@@ -1,0 +1,4 @@
+- Ny funktion för att dela skärm, vilket gör att du kan publicera i flera konversationer samtidigt.
+- Nytt sätt att bjuda in gruppmedlemmar till en privat konversation med en enkel gest.
+- Ny introduktion för att förklara Olvid för nya användare.
+- Förbättrad bild- och videovisare, möjlighet att zooma in på videor.

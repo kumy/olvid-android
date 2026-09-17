@@ -68,6 +68,10 @@ public interface InvitationDao {
     LiveData<List<Invitation>> getAllForOwnedIdentity(@NonNull byte[] bytesOwnedIdentity);
 
     @Query("SELECT * FROM " + Invitation.TABLE_NAME +
+            " WHERE " + Invitation.BYTES_OWNED_IDENTITY + " = :bytesOwnedIdentity ")
+    List<Invitation> getAllForOwnedIdentitySync(@NonNull byte[] bytesOwnedIdentity);
+
+    @Query("SELECT * FROM " + Invitation.TABLE_NAME +
             " WHERE " + Invitation.DIALOG_UUID + " = :dialogUuid")
     @Nullable Invitation getByDialogUuid(@NonNull UUID dialogUuid);
 

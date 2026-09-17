@@ -67,6 +67,7 @@ import io.olvid.messenger.designsystem.theme.olvidDefaultTextFieldColors
 import io.olvid.messenger.group.GroupV2DetailsActivity
 import io.olvid.messenger.group.OwnedGroupDetailsViewModel
 import io.olvid.messenger.main.InitialView
+import io.olvid.messenger.owneddetails.ImagePickerActivity
 
 @Composable
 fun EditGroupDetailsScreen(
@@ -119,14 +120,6 @@ fun EditGroupDetailsScreen(
                     expanded = photoMenuExpanded,
                     onDismissRequest = { photoMenuExpanded = false }
                 ) {
-                    if (initialViewContent?.absolutePhotoUrl != null) {
-                        OlvidDropdownMenuItem(
-                            text = stringResource(R.string.menu_action_remove_image),
-                            onClick = {
-                                editGroupDetailsViewModel.setAbsolutePhotoUrl(null)
-                                photoMenuExpanded = false
-                            })
-                    }
                     OlvidDropdownMenuItem(
                         text = stringResource(R.string.menu_action_choose_picture),
                         onClick = {
@@ -146,6 +139,25 @@ fun EditGroupDetailsScreen(
                             onTakePicture()
                             photoMenuExpanded = false
                         })
+                    OlvidDropdownMenuItem(
+                        text = stringResource(R.string.menu_action_choose_image_from_olvid),
+                        onClick = {
+                            // internal activity, no need for App.startActivityForResult
+                            activity.startActivityForResult(
+                                Intent(activity, ImagePickerActivity::class.java),
+                                GroupV2DetailsActivity.REQUEST_CODE_CHOOSE_IMAGE
+                            )
+                            photoMenuExpanded = false
+                        })
+                    if (initialViewContent?.absolutePhotoUrl != null) {
+                        OlvidDropdownMenuItem(
+                            text = stringResource(R.string.menu_action_remove_image),
+                            textColor = colorResource(R.color.red),
+                            onClick = {
+                                editGroupDetailsViewModel.setAbsolutePhotoUrl(null)
+                                photoMenuExpanded = false
+                            })
+                    }
                 }
             }
             Spacer(modifier = Modifier.height(24.dp))

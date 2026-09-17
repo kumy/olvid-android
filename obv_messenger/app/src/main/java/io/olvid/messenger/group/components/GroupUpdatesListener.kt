@@ -46,8 +46,8 @@ fun GroupUpdatesListener(
         val groupListener =
             object : EngineNotificationListener {
                 override fun callback(
-                    notificationName: String,
-                    userInfo: java.util.HashMap<String, Any>
+                    notificationName: String?,
+                    userInfo: java.util.HashMap<String, Any?>
                 ) {
                     when (notificationName) {
                         EngineNotifications.GROUP_V2_CREATED_OR_UPDATED -> {

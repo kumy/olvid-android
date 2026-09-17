@@ -337,7 +337,7 @@ public class ShortcutActivity extends LockScreenOrNotActivity {
 
 
     // region Shortcut publication
-    private static final String CATEGORY_SHARE_TARGET = "io.olvid.messenger.activities.ShareActivity.SHARE";
+    private static final String CATEGORY_SHARE_TARGET = "io.olvid.messenger.share.ShareActivity.SHARE";
 
     private static Long[] publishedDiscussionIds;
     private static int MAX_SHORTCUTS = 5;

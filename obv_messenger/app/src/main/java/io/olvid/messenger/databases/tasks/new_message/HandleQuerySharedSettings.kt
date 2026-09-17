@@ -19,6 +19,7 @@
 
 package io.olvid.messenger.databases.tasks.new_message
 
+import io.olvid.engine.engine.types.ObvMessage
 import io.olvid.messenger.databases.AppDatabase
 import io.olvid.messenger.databases.entity.Message
 import io.olvid.messenger.databases.entity.jsons.JsonQuerySharedSettings
@@ -28,7 +29,8 @@ import io.olvid.messenger.databases.entity.jsons.JsonQuerySharedSettings
 fun handleQuerySharedSettings(
     db: AppDatabase,
     jsonQuerySharedSettings: JsonQuerySharedSettings,
-    messageSender: MessageSender
+    messageSender: MessageSender,
+    obvMessage: ObvMessage
 ): HandleMessageOutput {
     // the query only makes sense for discussion you know about
     getDiscussion(
@@ -63,7 +65,7 @@ fun handleQuerySharedSettings(
                     messageSender.bytesOwnedIdentity,
                     true,
                     null
-                )?.postSettingsMessage(true, messageSender.senderIdentity)
+                )?.postSettingsMessage(true, messageSender.senderIdentity, obvMessage.bytesFromDeviceUid)
         }
     }
     return HandleMessageOutput.DELETE_MESSAGE_AND_ATTACHMENTS

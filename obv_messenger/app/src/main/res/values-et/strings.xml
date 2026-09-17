@@ -26,8 +26,8 @@
 	<string name="button_label_create_group" state="needs_review" hash="1102939673">Loo grupi</string>
 	<string name="button_label_discard" state="needs_review" hash="795591204">Loobu</string>
 	<string name="button_label_exchange_digits_with_user" state="needs_review" hash="339599327">Vaheta koode %1$s-ga.</string>
-	<string name="button_label_generate_new_id" state="needs_review" hash="92014734">Looge uus ID</string>
-	<string name="button_label_generate_my_id" state="needs_review" hash="-1007060207">Loo minu ID</string>
+	<string name="button_label_generate_new_id" state="needs_review" hash="-1130516787">Loo uus profiil</string>
+	<string name="button_label_generate_my_id" state="needs_review" hash="239641058">Loo minu profiil</string>
 	<string name="button_label_ignore" state="needs_review" hash="-806373746">Ignoreeri</string>
 	<string name="button_label_reject" state="needs_review" hash="-2094664161">Tagasi lükata</string>
 	<string name="button_label_introduce" state="needs_review" hash="193852909">Tutvusta</string>
@@ -80,6 +80,12 @@
 	<string name="dialog_title_rename_group" state="needs_review" hash="1461324427">Muutke grupi nime</string>
 	<string name="dialog_title_restart_channel_establishment" state="needs_review" hash="-645769680">Kas taastada kanali loomine?</string>
 	<string name="dialog_title_share_with" state="needs_review" hash="854107768">Jaga…</string>
+	<string name="dialog_title_share_recipients" state="needs_review" hash="1157053138">Vali saajad</string>
+	<string name="share_label_from" state="needs_review" hash="2049052075">Saadetavalt:</string>
+	<string name="share_label_to" state="needs_review" hash="-1785690373">Saaja:</string>
+	<string name="share_label_choose_recipients" state="needs_review" hash="1157053138">Vali saajad</string>
+	<string name="hint_share_message" state="needs_review" hash="-763169957">Lisa sõnum…</string>
+	<string name="content_description_delete_attachment" state="needs_review" hash="-220348329">Eemalda manusefail</string>
 	<string name="dialog_title_shortcut_to" state="needs_review" hash="-1193591200">Loo kiirend…</string>
 	<string name="explanation_choose_display_name" state="needs_review" hash="1162066686">Palun sisestage nimi, mis kuvatakse teie kontaktidele. Seda teavet ei saadeta kunagi Olvid\'i serveritesse.</string>
 	<string name="explanation_empty_contact_list" state="needs_review" hash="1240778508">Praegu pole ühtegi kontakti</string>
@@ -104,7 +110,7 @@
 	<string name="explanation_no_message_found" state="needs_review" hash="-1329622990">Ühtegi sõnumit ei leitud</string>
 	<string name="explanation_no_attachment_found" state="needs_review" hash="156593369">Ühtegi manust ei leitud</string>
 	<string name="explanation_no_link_found" state="needs_review" hash="-1419950450">Ühtegi linki ei leitud</string>
-	<string name="hint_company" state="needs_review" hash="379200324">Ettevõte (valikuline)</string>
+	<string name="hint_company" state="needs_review" hash="988571519">Ettevõte</string>
 	<string name="hint_compose_your_message" state="needs_review" hash="-25761578">Kirjuta sõnum</string>
 	<string name="hint_compose_your_message_ephemeral" state="needs_review" hash="-1527208333">Ajutine sõnum</string>
 	<string name="label_edit_your_message" state="needs_review" hash="1091877412">Muuda oma sõnumit</string>
@@ -133,7 +139,7 @@
 	<string name="hint_last_name" state="needs_review" hash="1701170359">Perekonnanimi</string>
 	<string name="hint_new_name" state="needs_review" hash="709842168">Uus nimi</string>
 	<string name="hint_notification_reply" state="needs_review" hash="1095144032">Vastaus</string>
-	<string name="hint_position" state="needs_review" hash="-55145181">Ametikoht (valikuline)</string>
+	<string name="hint_position" state="needs_review" hash="1338817744">Ametikoht</string>
 	<string name="invitation_label_their_code" state="needs_review" hash="1402501614">Nende kood</string>
 	<string name="invitation_label_your_code" state="needs_review" hash="1944546233">Teie kood</string>
 	<string name="invitation_status_accept_invite" state="needs_review" hash="2100924901">Kutse vastu võetud</string>
@@ -170,6 +176,11 @@
 	<string name="label_group_members" state="needs_review" hash="1460220752">Grupi liikmed</string>
 	<string name="label_other_group_members" state="needs_review" hash="-2121490032">Muud grupi liikmed</string>
 	<string name="label_groups_common" state="needs_review" hash="1252823567">Ühised grupid</string>
+	<string name="label_create_group_with_contact" state="needs_review" hash="1950649899">Loo grupi koos %1$s</string>
+	<string name="label_add_contact_to_a_group" state="needs_review" hash="-682192937">Lisa %1$s gruppi</string>
+	<string name="label_add_to_groups" state="needs_review" hash="-654216617">Lisa gruppidesse</string>
+	<string name="explanation_no_admin_group_to_add_contact" state="needs_review" hash="402908162">Sa ei ole ühegi grupi administraator, millele %1$s saaks lisada.</string>
+	<string name="toast_message_adding_contact_to_groups" state="needs_review" hash="1201697547">Lisatakse %1$s valitud gruppidesse…</string>
 	<string name="label_invitation_declined" state="needs_review" hash="2038173833">Kutse on tagastatud</string>
 	<string name="label_new_group_card" state="needs_review" hash="1006740909">Grupi üksikasjad on värskendatud</string>
 	<string name="label_not_part_of_a_group" state="needs_review" hash="1667979596">Sa ei ole veel ühegi grupi liige</string>
@@ -183,6 +194,7 @@
 	<string name="menu_action_create_shortcut" state="needs_review" hash="-1949455873">Loo kiireteed</string>
 	<string name="menu_action_delete" state="needs_review" hash="-232100842">Kustuta</string>
 	<string name="menu_action_delete_discussion" state="needs_review" hash="2059656471">Vestluse kustutamine</string>
+	<string name="menu_action_export_discussion" state="needs_review" hash="1736692296">Vestluse eksportimine</string>
 	<string name="label_swipe_details" state="needs_review" hash="171468732">Üksikasjad</string>
 	<string name="menu_action_disband_group" state="needs_review" hash="-1767089289">Grupi laiali</string>
 	<string name="menu_action_edit_group_details" state="needs_review" hash="310205135">Grupi üksuste muutmine</string>
@@ -482,7 +494,14 @@
 	<string name="dialog_title_backup_choices" state="needs_review" hash="281222223">Valige varundusmeetod</string>
 	<string name="menu_action_choose_picture" state="needs_review" hash="-1655172909">Vali pilt</string>
 	<string name="menu_action_take_photo" state="needs_review" hash="-1123080444">Tee pilt</string>
+	<string name="menu_action_choose_image_from_olvid" state="needs_review" hash="1585248356">Vali pildi, mille olete saanud</string>
 	<string name="menu_action_remove_image" state="needs_review" hash="1094977672">Pildi eemaldamine</string>
+	<string name="menu_action_use_image_as" state="needs_review" hash="587310096">Kasuta seda pilti kui…</string>
+	<string name="label_use_photo_for_my_profile" state="needs_review" hash="-1005809580">Minu profiilipilt</string>
+	<string name="label_use_photo_for_target" state="needs_review" hash="283541521">Foto jaoks %s</string>
+	<string name="label_use_photo_for_discussion_background" state="needs_review" hash="1925733151">Taustapilt %s-le</string>
+	<string name="toast_message_photo_set" state="needs_review" hash="-1641885203">Pilt on uuendatud</string>
+	<string name="toast_message_background_set" state="needs_review" hash="1642873459">Taustapilt on värskendatud</string>
 	<string name="dialog_title_create_empty_group" state="needs_review" hash="-663434464">Kas luua tühi grupp?</string>
 	<string name="dialog_message_create_empty_group" state="needs_review" hash="-297923005">Te pole olete valinud ühtegi kontakti, keda oma gruppi lisada. Kas olete kindel, et soovite luua tühja grupi?</string>
 	<string name="pref_dark_mode_title" state="needs_review" hash="816474245">Tume režiim</string>
@@ -862,7 +881,7 @@
 	<string name="button_label_check_options" state="needs_review" hash="-759177128">Kontrolli valikuid</string>
 	<string name="hint_olvid_server" state="needs_review" hash="1097391633">Olvid server</string>
 	<string name="hint_license_activation_code" state="needs_review" hash="102193320">Litsentsi aktiveerimiskood</string>
-	<string name="activity_title_identity_creation_options" state="needs_review" hash="1180456032">ID loomise valikud</string>
+	<string name="activity_title_identity_creation_options" state="needs_review" hash="-774054913">Profiili loomise valikud</string>
 	<string name="activity_title_scan_configuration" state="needs_review" hash="-386259993">Konfiguratsiooni skannimine</string>
 	<string name="menu_action_import_activation_from_clipboard" state="needs_review" hash="-70842935">Impordi link lõikelauast</string>
 	<string name="troubleshooting_update_valid_title" state="needs_review" hash="741828768">Olvid on värskendatud</string>
@@ -871,7 +890,6 @@
 	<string name="dialog_message_update_available" state="needs_review" hash="416187645">Olvidist on saadaval uuem versioon.\n\nUute funktsioonide kasutamiseks palun värskendage rakendus.</string>
 	<string name="dialog_title_call_initiation_not_supported" state="needs_review" hash="-2088021831">Kõne alustamine pole võimalik</string>
 	<string name="dialog_message_call_initiation_not_supported" state="needs_review" hash="1760333819">Näib, et teie Olvid-server ei toeta turvaliste kõnede alustamist.\n\nLisateabe saamiseks võtke ühendust oma administraatoriga.</string>
-	<string name="label_identity_creation_options" state="needs_review" hash="1180456032">ID loomise valikud</string>
 	<string name="text_option_server" state="needs_review" hash="-1130676431">Server: %1$s</string>
 	<string name="dialog_title_non_default_server" state="needs_review" hash="2119192219">Erakordse serveri kasutamine</string>
 	<string name="dialog_message_non_default_server" state="needs_review" hash="459308900">Sa olete valmis looma profiili järgmisel serveris:\n\n%1$s\n\nSee ei ole vaikimisi Olvid server. Jätkake ainult siis, kui te usaldate seda serverit.</string>
@@ -900,7 +918,7 @@
 	<string name="toast_message_unable_to_keycloak_revoke" state="needs_review" hash="-1368037130">Eelmine Olvid ID ei saanud asendada, proovige uuesti.</string>
 	<string name="toast_message_keycloak_revoke_successful" state="needs_review" hash="-1216369809">Eelmine Olvid ID on edukalt asendatud</string>
 	<string name="dialog_title_keycloak_authentication_required_user_id_changed" state="needs_review" hash="-896407029">Kasutaja muudatust on tuvastatud</string>
-	<string name="dialog_message_keycloak_authentication_required_user_id_changed" state="needs_review" hash="876252686">Teie profiili haldab praegu teie organisatsioon. Tundub, et olete sisse loginud teise kasutajaga kui tavaliselt. Seda ei toetata.\n\nPalun võtke ühendust oma administraatoriga või logige uuesti sisse õige kasutajana.</string>
+	<string name="dialog_message_keycloak_authentication_required_user_id_changed" state="needs_review" hash="2080839829">Teie profiili haldab praegu teie organisatsioon. Tundub, et olete sisse loginud teise kasutajaga kui tavaliselt. Seda ei toeta.\n\nPalun võtke ühendust oma administraatoriga või logige uuesti sisse õige kasutajana.</string>
 	<string name="dialog_title_add_keycloak_user" state="needs_review" hash="-1050193239">Lisa kontakt</string>
 	<string name="dialog_message_add_keycloak_user" state="needs_review" hash="-1755937035">Olete valinud, et soovite lisada %1$s oma kontaktide hulka. Kas soovite jätkata?</string>
 	<string name="explanation_keycloak_update_new" state="needs_review" hash="1136733528">Olete valmis konfigureerima oma ettevõtte identiteedipakkujat Olvidis. Pärast konfigureerimist saate selle serveriga autentida ja Olvid võimaldab teil sujuvalt lisada teisi töötajaid oma kontaktide hulka.\nLisateabe saamiseks võtke ühendust oma administraatoriga.</string>
@@ -1031,6 +1049,8 @@
 	<string name="label_storage_discussions" state="needs_review" hash="491497248">Vestlused</string>
 	<string name="pref_use_internal_image_viewer_title" state="needs_review" hash="1319400578">Kasuta sisseehitatud pildivaaturit</string>
 	<string name="pref_use_internal_image_viewer_summary" state="needs_review" hash="1248137666">Kui see valik on aktiveeritud, avatakse pildile vajutades see sisemises vaaturis. Vastasel juhul kasutatakse teie seadme vaikepildirakendust.</string>
+	<string name="pref_image_text_recognition_title" state="needs_review" hash="1877261687">Piltidel oleva teksti tuvastamine ja indekseerimine</string>
+	<string name="pref_image_text_recognition_summary" state="needs_review" hash="1217699919">Võimaldab otsida ja kopeerida piltide manustest leitud teksti. See võib nõuda palju ressursse, eriti vanematel seadmetel: kui te seda ei vaja, lülitage see välja.</string>
 	<string name="label_unable_to_display_image" state="needs_review" hash="-1495534207">Pilti ei saa kuvada</string>
 	<string name="dialog_title_backup_requires_sign_in" state="needs_review" hash="-720389674">Pilveteenuse pakkujaga sisselogimine on vajalik</string>
 	<string name="dialog_message_backup_requires_sign_in" state="needs_review" hash="119557495">Olete seadistanud Olvidi nii, et see teeb automaatselt varukoopiaid pilveteenusele, kuid teie seanss on aegunud. Peate uuesti selle teenusega sisse logima.\n\nKui te ei soovi enam automaatseid varukoopiaid, saate need rakenduse seadetes välja lülitada. Pidage meeles, et automaatsed varukoopiad on ainus viis, kuidas vältida kontaktide kaotust, kui teie seade on kadunud või kahjustatud.</string>
@@ -1149,7 +1169,7 @@
 	<string name="pref_hidden_profile_close_policy_dialog_entry_screen_lock" state="needs_review" hash="-1520400811">Kui Olvidi lukustuskuva aktiveerub</string>
 	<string name="pref_hidden_profile_close_policy_dialog_entry_background" state="needs_review" hash="-2099539114">Kui Olvid taandub taustale…</string>
 	<string name="activity_title_enter_backup_key" state="needs_review" hash="1035967309">Sisesta varundusvõti</string>
-	<string name="activity_title_identity_creation" state="needs_review" hash="-1361520151">ID loomine</string>
+	<string name="activity_title_identity_creation" state="needs_review" hash="2027618284">Profiili loomine</string>
 	<string name="menu_action_manual_configuration" state="needs_review" hash="-1495974502">Täpsemad käsitsi seaded</string>
 	<string name="toast_message_invalid_configuration_link" state="needs_review" hash="1387412522">Vigane konfiguratsioonilink</string>
 	<string name="toast_message_invalid_link" state="needs_review" hash="1265454437">Vigane link</string>
@@ -1171,6 +1191,7 @@
 	<string name="dialog_title_chose_profile_web_client" state="needs_review" hash="1860298414">Vali profiil, millega ühendada Olvid veebikliendiga.</string>
 	<string name="dialog_title_chose_profile_invitation" state="needs_review" hash="-2063034787">Vali profiil, millega seda kontakti kutsuda</string>
 	<string name="toast_message_create_new_profile_then_reopen_this_link" state="needs_review" hash="1770827346">Palun looge kõigepealt uus profiil ja seejärel avage see link uuesti.</string>
+	<string name="toast_message_invitation_link_deferred_to_end_of_onboarding" state="needs_review" hash="-189914806">Teie kutse avaneb automaatselt, kui teie profiil on loodud.</string>
 	<string name="button_label_switch_profile" state="needs_review" hash="-2007633024">Vaheta profiili</string>
 	<string name="text_no_other_profile_to_switch_to" state="needs_review" hash="-112306213">Ükski muu profiil pole saadaval</string>
 	<string name="button_label_configure_lock_screen" state="needs_review" hash="870348426">Konfigureeri lukustusekraan</string>
@@ -1181,7 +1202,7 @@
 	<string name="dialog_message_delete_profile_multi" state="needs_review" hash="-2003495595">Profiili kustutamine kustutab kõik selle profiiliga seotud andmed teie seadmest. See hõlmab teie kontakte, gruppe ja kõigi teie vestluste (sõnumite ja manuste) sisu selle profiili jaoks. See toiming ei mõjuta teie teisi profiile.\n\nVajutage nuppu „edasi”, et valida, kuidas see profiil kustutada.</string>
 	<string name="dialog_message_delete_last_profile_multi" state="needs_review" hash="-103140781">Profiili kustutamine kustutab kõik selle profiiliga seotud andmed teie seadmest. See hõlmab teie kontakte, gruppe ja kõigi teie vestluste (sõnumite ja manuste) sisu selle profiili jaoks.\n\n<b>See on teie ainus nähtav profiil ja kui teil on peidetud profiile, need kustutatakse samal ajal.</b>\n\nVajutage „edasi”, et valida, kuidas see profiil kustutada.</string>
 	<string name="switch_label_delete_profile_everywhere" state="needs_review" hash="-74965346">Kustuta profiil <b>kõigist</b> kohtadest</string>
-	<string name="hint_type_delete_here_to_proceed" state="needs_review" hash="-1622625725">Sisestage siia \\"%1$s\\", et vajuta edasi.</string>
+	<string name="hint_type_delete_here_to_proceed" state="needs_review" hash="-1622625725">Sisestage siia \"%1$s\", et vajuta edasi.</string>
 	<string name="explanation_delete_owned_identity" state="needs_review" hash="2036375772">Kui te otsustate kustutada oma profiili <b>kõikjal</b>:\n\u00a0-\u00a0see kustutatakse kohapeal <b>ja</b> teie kontaktide seadmetes\n\u00a0-\u00a0te lahkute liitunud rühmadest\n\u00a0-\u00a0te hallatavad rühmad kaotavad oma liikmed\n\nKui te <b>ei</b> kustuta oma profiili kõikjal, siis see kustutatakse ainult kohapeal teie seadmes. Kui te ei plaani taastada varukoopiat teises seadmes, võivad teie kontaktid jätkata teile sõnumite saatmist ja ei pruugi aru saada, et neid sõnumeid ei saa kohale toimetada.</string>
 	<string name="explanation_delete_inactive_owned_identity" state="needs_review" hash="-575337242">Teie praegune profiil näib olevat inaktiivne, mis tähendab, et olete selle tõenäoliselt teisaldanud teisele seadmele. Kui plaanite seda profiili edaspidi kasutada oma teisel seadmel, saate selle siin turvaliselt kustutada.\n\nKui te ei soovi seda profiili enam kunagi kasutada, peate kõigepealt taastama selle sellel seadmel, ootama, kuni teie kontaktidega turvalised kanalid on uuesti loodud, ja alles siis kustutama selle profiili, valides valiku „kustuta kõikjal”.</string>
 	<string name="explanation_delete_owned_identity_multi" state="needs_review" hash="-184045089">Teie profiil on praegu lubatud mitmes seadmes.\n\nKui otsustate oma profiili <b>kõigist</b> seadmetest kustutada:\u00a0-\u00a0see kustutatakse kõigist teie seadmetest <b>ja</b> teie kontaktide seadmetest\u00a0-\u00a0te lahkute kõigist liitunud rühmadest\u00a0-\u00a0te hallatavad rühmad kaotavad oma liikmed.\n\nKui te <b>ei</b> kustuta oma profiili kõigist seadmetest, siis see kustutatakse ainult kohalikult ja te saate seda edasi kasutada teistes seadmetes.</string>
@@ -1209,7 +1230,7 @@
 	<string name="pref_text_font_scale_1_1" state="needs_review" hash="460876079">Veidi suurem (110\%)</string>
 	<string name="pref_text_font_scale_1_25" state="needs_review" hash="2016139388">Suur (125%)</string>
 	<string name="pref_text_font_scale_1_5" state="needs_review" hash="2018099487">Väga suur (150\%)</string>
-	<string name="pref_send_with_hardware_enter" state="needs_review" hash="613314226">Saada sõnum, kui vajutada klahvi \\"Enter\\"</string>
+	<string name="pref_send_with_hardware_enter" state="needs_review" hash="613314226">Saada sõnum, kui vajutada klahvi \"Enter\"</string>
 	<string name="pref_send_with_hardware_enter_summary" state="needs_review" hash="1694640710">Kui see funktsioon on aktiveeritud ja kasutate füüsilist klaviatuuri, siis sõnumi saatmiseks vajutage klahvi „Enter”. Uue rea lisamiseks vajutage „Shift + Enter”.</string>
 	<string name="pref_ping_connectivity_indicator_title" state="needs_review" hash="1245192677">Võrguühenduse indikaator</string>
 	<string name="pref_text_ping_connectivity_indicator_none" state="needs_review" hash="-1725558072">Ühenduse indikaator puudub</string>
@@ -1326,7 +1347,7 @@
 	<string name="label_no_backup_found" state="needs_review" hash="-823699919">Varuvkoopiaid ei leitud</string>
 	<string name="label_no_account_selected" state="needs_review" hash="1896894632">Ühtegi kontot ei ole valitud</string>
 	<string name="label_tap_to_select_cloud_account" state="needs_review" hash="2044265832">Vajutage nuppu „Vaheta konto”, ethe valige pilveteenuse pakkuja konto</string>
-	<string name="label_error_connecting_to_cloud" state="needs_review" hash="85877605">Ühenduse loomine pilveteenuse pakkujaga ebaõnnestus: proovige uuesti, vajutades nupule \\"Vaheta konto\\"</string>
+	<string name="label_error_connecting_to_cloud" state="needs_review" hash="85877605">Ühenduse loomine pilveteenuse pakkujaga ebaõnnestus: proovige uuesti, vajutades nupule \"Vaheta konto\"</string>
 	<string name="dialog_title_delete_cloud_backup" state="needs_review" hash="-1354092851">Kustuta pilvevarukoopia</string>
 	<string name="dialog_message_delete_cloud_backup" state="needs_review" hash="1870910875">Kas olete kindel, et soovite kustutada valitud pilvevarukoopia? Seda toimingut ei saa tagasi pöörata.\n\nJätkamiseks vajutage nuppu „OK”.</string>
 	<string name="dialog_title_cloud_provider_sign_in" state="needs_review" hash="-1009058134">Pilveteenuse pakkuja sisselogimine</string>
@@ -1446,17 +1467,13 @@
 	<string name="location_sharing_duration_three_hours_short_string" state="needs_review" hash="228095183">3 tundi</string>
 	<string name="location_sharing_duration_three_hours_full_string" state="needs_review" hash="754857804">Jaga asukoosaadet <b>3 tunni</b> jooksul</string>
 	<string name="location_sharing_duration_endless_short_string" state="needs_review" hash="55208442">Lõputult</string>
-	<string name="location_sharing_duration_endless_full_string" state="needs_review" hash="1710814259">Jaga asukoosaadet <b>kuni peatamiseni</b>
-	</string>
+	<string name="location_sharing_duration_endless_full_string" state="needs_review" hash="1710814259">Jaga asukoosaadet <b>kuni peatamiseni</b></string>
 	<string name="location_sharing_quality_precise_short_string" state="needs_review" hash="351442529">Täpne</string>
 	<string name="location_sharing_quality_balanced_short_string" state="needs_review" hash="-1925315592">Tasakaalukas</string>
 	<string name="location_sharing_quality_power_save_short_string" state="needs_review" hash="-14275273">Energiasäästurežiim</string>
-	<string name="location_sharing_quality_precise_full_string" state="needs_review" hash="-1255374893">
-		<b>Täpne</b> asukoha jagamisrežiim</string>
-	<string name="location_sharing_quality_balanced_full_string" state="needs_review" hash="-421322514">
-		<b>Tasakaalustatud</b> asukoha jagamisrežiim</string>
-	<string name="location_sharing_quality_power_save_full_string" state="needs_review" hash="792896333">
-		<b>Energiasäästurežiim</b> asukoha jagamise režiim</string>
+	<string name="location_sharing_quality_precise_full_string" state="needs_review" hash="-1255374893"><b>Täpne</b> asukoha jagamisrežiim</string>
+	<string name="location_sharing_quality_balanced_full_string" state="needs_review" hash="-421322514"><b>Tasakaalustatud</b> asukoha jagamisrežiim</string>
+	<string name="location_sharing_quality_power_save_full_string" state="needs_review" hash="792896333"><b>Energiasäästurežiim</b> asukoha jagamise režiim</string>
 	<string name="label_sharing_location_until" state="needs_review" hash="187977459">Asukoha jagamine kuni: %1$s</string>
 	<string name="label_location_sharing_ended" state="needs_review" hash="1028490137">Asukoha jagamine lõpetati</string>
 	<string name="label_gps_coordinates" state="needs_review" hash="-1537356414">GPS-koordinaadid</string>
@@ -1591,7 +1608,7 @@
 	<string name="text_clone_v1_to_v2_explanation" state="needs_review" hash="121764398">See grupp ei toeta rohkem kui ühte administraatorit. Saate selle aga kloonida uude gruppi, mis seda võimaldab! 🚀</string>
 	<string name="button_label_clone_this_group" state="needs_review" hash="578525433">Kopeeri see grupp</string>
 	<string name="dialog_title_introducing_groups_v2" state="needs_review" hash="-1619270351">Tutvustame uusi gruppe!</string>
-	<string name="dialog_message_introducing_groups_v2" state="needs_review" hash="-176932921">Olvid toetab nüüd uusi gruppe, kus on mitu administraatorit 👑! See ei muuda midagi teie olemasolevatele \\"vanadele gruppidele\\", kuid kehtib kõigi gruppide kohta, mille loote edaspidi. Selle kasutamiseks peavad teie kontaktid kasutama Olvidi uusimat versiooni.\n\nKas soovite seda proovida? Puudutage grupi vahekaarti ja looge uus grupp. Pärast loomist saate seda muuta, et anda administraatori õigused nii paljudele liikmetele, kui soovite!</string>
+	<string name="dialog_message_introducing_groups_v2" state="needs_review" hash="-176932921">Olvid toetab nüüd uusi gruppe, kus on mitu administraatorit 👑! See ei muuda midagi teie olemasolevatele \"vanadele gruppidele\", kuid kehtib kõigi gruppide kohta, mille loote edaspidi. Selle kasutamiseks peavad teie kontaktid kasutama Olvidi uusimat versiooni.\n\nKas soovite seda proovida? Puudutage grupi vahekaarti ja looge uus grupp. Pärast loomist saate seda muuta, et anda administraatori õigused nii paljudele liikmetele, kui soovite!</string>
 	<string name="dialog_message_about_last_push_notification" state="needs_review" hash="-598113792">Viimane teavitus: %1$s</string>
 	<string name="dialog_message_about_deprioritized_push_notification" state="needs_review" hash="-1325409642">Madalamaprioriteediga teavitused: %1$d/%2$d</string>
 	<string name="text_message_too_large_for_webclient" state="needs_review" hash="581194084">[Sõnum on liiga pikk, et seda veebikliendis kuvada]</string>
@@ -1629,7 +1646,7 @@
 	<string name="text_last_online" state="needs_review" hash="-307031777">Viimati võrgus: %1$s</string>
 	<string name="text_deactivates_on" state="needs_review" hash="-948374904">Deaktiveeritakse: %1$s</string>
 	<string name="text_device_is_inactive" state="needs_review" hash="-1269909292">Seade on deaktiveeritud</string>
-	<string name="dialog_message_rename_current_device" state="needs_review" hash="1877085196">Palun sisestage nimi, mida soovite kasutada oma praeguse seadme tuvastamiseks.\nVajutage \\"Vaike\\", et kasutada selle seadme vaikenime.</string>
+	<string name="dialog_message_rename_current_device" state="needs_review" hash="1877085196">Palun sisestage nimi, mida soovite kasutada oma praeguse seadme tuvastamiseks.\nVajutage \"Vaike\", et kasutada selle seadme vaikenime.</string>
 	<string name="dialog_message_rename_other_device" state="needs_review" hash="1342525083">Palun sisestage nimi, mida soovite kasutada selle seadme tuvastamiseks.</string>
 	<string name="hint_device_name" state="needs_review" hash="1739868247">Seadme nimi</string>
 	<string name="button_label_default" state="needs_review" hash="-1574133633">Vaike</string>
@@ -1686,7 +1703,7 @@
 	<string name="button_label_create_new_profile" state="needs_review" hash="-1130516787">Loo uus profiil</string>
 	<string name="label_device_name" state="needs_review" hash="-1693256515">Seadme nimi</string>
 	<string name="toast_message_profile_activation_failed" state="needs_review" hash="593290647">Profiili importimine ebaõnnestus</string>
-	<string name="button_label_add_device_xxx" state="needs_review" hash="-1479212354">Lisa seade \\"%1$s\\"</string>
+	<string name="button_label_add_device_xxx" state="needs_review" hash="-1479212354">Lisa seade \"%1$s\"</string>
 	<string name="notification_title_device_trust" state="needs_review" hash="-1568042777">Uus seade: \"%1$s\"</string>
 	<string name="notification_title_unnamed_device_trust" state="needs_review" hash="1704207127">Uus seade</string>
 	<string name="notification_message_device_trust" state="needs_review" hash="753501294">Üks uus seade lisati ühele teie Olvid profiilidest</string>
@@ -1694,7 +1711,7 @@
 	<string name="notification_channel_device_name" state="needs_review" hash="1347557771">Seadmete haldus</string>
 	<string name="notification_channel_device_description" state="needs_review" hash="-36703170">Teatised teie seadmete kohta</string>
 	<string name="notification_title_device_expiration" state="needs_review" hash="202400638">„%1$s“ deaktiveerimine</string>
-	<string name="notification_message_device_expiration" state="needs_review" hash="-449434000">Teie Olvid seade \\"%1$s\\" deaktiveeritakse %2$s jooksul.</string>
+	<string name="notification_message_device_expiration" state="needs_review" hash="-449434000">Teie Olvid seade \"%1$s\" deaktiveeritakse %2$s jooksul.</string>
 	<string name="notification_title_unnamed_device_expiration" state="needs_review" hash="1863987850">Seadme deaktiveerimine</string>
 	<string name="notification_message_unnamed_device_expiration" state="needs_review" hash="-50322120">Teie Olvid seade deaktiveerit %1$s jooksul.</string>
 	<string name="dialog_title_add_device_explanation" state="needs_review" hash="156848899">Kas seade lisada?</string>
@@ -1704,7 +1721,7 @@
 	<string name="button_label_activate_another_profile" state="needs_review" hash="-164415629">Impordi teine profiil</string>
 	<string name="text_new_device" state="needs_review" hash="1704207127">Uus seade</string>
 	<string name="onboarding_transfer_source_confirmation_title" state="needs_review" hash="821556628">Kas olete valmis lisama oma profiili uuele seadmesse?</string>
-	<string name="button_label_activate_profile_on_xxx" state="needs_review" hash="-275831566">Lisage oma profiil saidile \\"%1$s\\"</string>
+	<string name="button_label_activate_profile_on_xxx" state="needs_review" hash="-275831566">Lisage oma profiil saidile \"%1$s\"</string>
 	<string name="onboarding_transfer_source_confirmation_activating_profile" state="needs_review" hash="1396160794">Profiili lisamine:</string>
 	<string name="onboarding_transfer_source_confirmation_on_device" state="needs_review" hash="1757946868">Seadmes:</string>
 	<string name="onboarding_transfer_source_confirmation_new_device_remain_active" state="needs_review" hash="-1939698670">See uus seade jääb aktiivseks.</string>
@@ -1736,11 +1753,11 @@
 	<string name="troubleshooting_location_permissions_valid_description" state="needs_review" hash="-527872954">Olvidile juurdepääsu andmine teie asukohale võimaldab teil kasutada funktsiooni „Jaga oma asukohta”.</string>
 	<string name="troubleshooting_location_permissions_invalid_title" state="needs_review" hash="-296757597">Asukoha lubade keelamine</string>
 	<string name="troubleshooting_battery_optimization_valid_title" state="needs_review" hash="489481166">Aku optimeerimine</string>
-	<string name="troubleshooting_battery_optimization_valid_description" state="needs_review" hash="634228343">Androidi aku optimeerimine toimib nii, et teatud taustaprotsesse lükatakse edasi, et neid hiljem üheskoos käivitada. See võib viivitada Olvidi saabuvate sõnumite ja kõnede kättesaamist.\n\nOlvidil on praegu lubatud \\"alati taustal töötada\\".</string>
-	<string name="troubleshooting_battery_optimization_invalid_description" state="needs_review" hash="688616134">Androidi aku optimeerimine toimib nii, et teatud taustaprotsesse lükatakse edasi, et neid hiljem üheskoos käivitada. See võib viivitada Olvidi saabuvate sõnumite ja kõnede kättesaamist.\n\nSelle tagamiseks, et teie sõnumid jõuaksid kiiresti kohale, peaksite lubama Olvidil \\"alati taustal töötada\\".</string>
+	<string name="troubleshooting_battery_optimization_valid_description" state="needs_review" hash="634228343">Androidi aku optimeerimine toimib nii, et teatud taustaprotsesse lükatakse edasi, et neid hiljem üheskoos käivitada. See võib viivitada Olvidi saabuvate sõnumite ja kõnede kättesaamist.\n\nOlvidil on praegu lubatud \"alati taustal töötada\".</string>
+	<string name="troubleshooting_battery_optimization_invalid_description" state="needs_review" hash="688616134">Androidi aku optimeerimine toimib nii, et teatud taustaprotsesse lükatakse edasi, et neid hiljem üheskoos käivitada. See võib viivitada Olvidi saabuvate sõnumite ja kõnede kättesaamist.\n\nSelle tagamiseks, et teie sõnumid jõuaksid kiiresti kohale, peaksite lubama Olvidil \"alati taustal töötada\".</string>
 	<string name="troubleshooting_background_restriction_valid_title" state="needs_review" hash="-1653431113">Taustapiirang</string>
 	<string name="troubleshooting_background_restriction_valid_description" state="needs_review" hash="-562490603">Olvid peab saama taustal töötamise loa, et korralikult toimida. Taustal töötamise piirangute lubamine takistaks Olvidil näiteks taustal sõnumeid vastu võtmast.</string>
-	<string name="troubleshooting_background_restriction_invalid_description" state="needs_review" hash="-1942040454">Olvidil on aktiveeritud \\"taustapiirang\\". Olvid ei tööta korralikult, kuni te ei eemalda seda \\"piiratud rakenduste\\" loendist.\n\nSaate selle parandada, vajutades \\"Rakenduse sätted\\" ja seejärel minnes aku kasutuse jaotisse.</string>
+	<string name="troubleshooting_background_restriction_invalid_description" state="needs_review" hash="-1942040454">Olvidil on aktiveeritud \"taustapiirang\". Olvid ei tööta korralikult, kuni te ei eemalda seda \"piiratud rakenduste\" loendist.\n\nSaate selle parandada, vajutades \"Rakenduse sätted\" ja seejärel minnes aku kasutuse jaotisse.</string>
 	<string name="troubleshooting_alarm_valid_title" state="needs_review" hash="-2113413915">Luba seadistada alarmeid</string>
 	<string name="troubleshooting_alarm_valid_description" state="needs_review" hash="184003925">Olvid kasutab alarme, et täpselt ajastada ekraani lukustamist ja ajutiste sõnumite kustutamist. See luba on õigesti seadistatud.</string>
 	<string name="troubleshooting_alarm_invalid_description" state="needs_review" hash="-1221338357">Olvid kasutab ekraaniluku ja ajutiste sõnumite kustutamise täpseks ajastamiseks alarmeid.\nLuba selliste alarmide seadmiseks on tühistatud, mis võib põhjustada nende turvaelementide vale toimimise.\n\nSoovitame tungavalt lubada alarmi ja meeldetuletuste seadmine, vajutades nuppu „Rakenduse sätted”.</string>
@@ -2017,7 +2034,7 @@
 	<string name="button_label_restore_my_profile" state="needs_review" hash="418284480">Taasta minu profiil</string>
 	<string name="button_label_keep_all_with_olvid_plus" state="needs_review" hash="622534541">Hoidke need kõik alles Olvid+ abil.</string>
 	<string name="explanation_backup_v2_choose_device_after_restore" state="needs_review" hash="292969815">Kui teie profiil on taastatud, saate valida, millise seadme soovite aktiivsena hoida, profiili seadetest.</string>
-	<string name="explanation_backup_v2_device_expiration_start" state="needs_review" hash="-147053489">Taastades oma profiili \\"</string>
+	<string name="explanation_backup_v2_device_expiration_start" state="needs_review" hash="-147053489">Taastades oma profiili \"</string>
 	<string name="explanation_backup_v2_device_expiration_nickname" state="needs_review" hash="2093353377">(%1$s)</string>
 	<string name="toast_message_no_key_found" state="needs_review" hash="-1984410678">Varuvõtme ei leitud.</string>
 	<string name="label_backup_headers_title" state="needs_review" hash="-846183546">Teie varukoopiad</string>
@@ -2039,11 +2056,14 @@
 	<string name="button_label_configure_backups" state="needs_review" hash="-990646398">Lülita varukoopiad sisse</string>
 	<string name="tip_write_backup_key_title" state="needs_review" hash="-1652757003">Ära unusta üles kirjutada oma varukoodi 😇</string>
 	<string name="tip_write_backup_key_message" state="needs_review" hash="931018791">Teie varukood on hädavajalik teie profiilide taastamiseks, kui teil kaob juurdepääs sellele seadmele.</string>
+	<string name="tip_legacy_backup_end_of_life_title" state="needs_review" hash="810495149">Teie praegused varukoopiad on muutunud aegumata.</string>
+	<string name="tip_legacy_backup_end_of_life_message" state="needs_review" hash="-314257210">Järgmine Olvidi värskendus lõpetab vanade varunduskoobiate toetamise. Et teie konto oleks turvaline, lülituge kohe üle uuele varunduskogemusele.</string>
 	<string name="tip_troubleshooting_title" state="needs_review" hash="-393739108">Täienda oma Olvid\'i kasutuskogemust 🚀</string>
 	<string name="tip_troubleshooting_message" state="needs_review" hash="-935493349">Mõned seaded ei ole teie seadmes õigesti konfigureeritud ja see võib mõjutada teie kogemust Olvidiga.</string>
 	<string name="button_label_this_way" state="needs_review" hash="747183939">Siin</string>
 	<string name="toast_code_copied" state="needs_review" hash="-1522785848">Koodi kopeeriti</string>
 	<string name="explanation_choose_members" state="needs_review" hash="-1385158706">Palun vali, kes lisada sellele grupile.</string>
+	<string name="explanation_choose_share_recipients" state="needs_review" hash="-1406265940">Palun valige, kellega jagada.</string>
 	<string name="explanation_choose_contact_introduction" state="needs_review" hash="1113777517">Palun vali, kellele sa tahad %1$s tutvustada.</string>
 	<string name="label_group_administration" state="needs_review" hash="871355986">Grupi haldus</string>
 	<string name="dialog_title_call_blocked" state="needs_review" hash="1594606530">Kõne blokeeritud</string>
@@ -2084,7 +2104,7 @@
 	<string name="label_poll_answers_sorted_by_poll_order" state="needs_review" hash="685632215">Küsitluse järjekord</string>
 	<string name="label_poll_answers_sorted_by_answer_count" state="needs_review" hash="516869301">Vastuste arv</string>
 	<string name="notification_public_title_new_poll_vote" state="needs_review" hash="-1901040080">Uus vastus teie küsitlusele</string>
-	<string name="toast_message_remove_none_answer" state="needs_review" hash="277924655">Eemalda kõigepealt vastus \\"%1$s\\"</string>
+	<string name="toast_message_remove_none_answer" state="needs_review" hash="277924655">Eemalda kõigepealt vastus \"%1$s\"</string>
 	<string name="text_poll" state="needs_review" hash="-153643506">küsitlus</string>
 	<string name="poll_csv_headers" state="needs_review" hash="1869917931">Küsitluse küsimus,Hääletaja nimi,Hääletus,Kuupäev</string>
 	<string name="label_poll_no_votes_yet" state="needs_review" hash="-981251817">Vastuseid pole veel saadud</string>
@@ -2169,7 +2189,7 @@
 	<string name="store_link_olvid_store" state="needs_review" hash="-1825630369">Külastage Olvidi poodi</string>
 	<string name="toast_message_reminder_set" state="needs_review" hash="-961055414">Märkus on seatud</string>
 	<string name="dialog_title_keycloak_authentication_impossible" state="needs_review" hash="325273853">Autentimine ebaõnnestus</string>
-	<string name="dialog_message_keycloak_authentication_impossible" state="needs_review" hash="390830785">Teie profiili haldab praegu teie organisatsioon ja on vaja uuesti autentida. Kahjuks ei näi olevat ühtegi sobivat autentimismeetodit.\n\nLisateabe saamiseks võtke ühendust oma administraatoriga.</string>
+	<string name="dialog_message_keycloak_authentication_impossible" state="needs_review" hash="-2031322232">Teie profiili haldab praegu teie organisatsioon ja on vaja uuesti autentida. Kahjuks ei näi olevat ühtegi toetatud autentimismeetodit.\n\nLisateabe saamiseks võtke palun ühendust oma administraatoriga.</string>
 	<string name="onboarding_transfer_keycloak_error_message_authentication_impossible" state="needs_review" hash="-1891385979">Ühtegi sobivat autentimismeetodit ei näi olevat saadaval.</string>
 	<string name="pref_use_alt_turn_servers_title" state="needs_review" hash="-1956132776">Kasuta alternatiivseid TURN-servereid</string>
 	<string name="pref_use_alt_turn_servers_summary" state="needs_review" hash="357427162">Lülitage see valik sisse, et saaksite kasutada TURN-servereid, mis kasutavad vahelduvaid IP-aadresse. Kui te pole kindel, jätke see valik välja 😁</string>
@@ -2280,5 +2300,45 @@
 	<string name="label_error_loading_openstreetmap_style_file" state="needs_review" hash="-2596045">OpenStreetMap stiilifaili laadimisel tekkis viga.</string>
 	<string name="dialog_title_subscriptions_not_available" state="needs_review" hash="336174241">Rakendusesiseseid tellimusi ei saa osta</string>
 	<string name="dialog_message_subscriptions_not_available" state="needs_review" hash="2093768678">Teie installitud Olvid\'i versioon ei sisalda Google\'i arvelduste raamatukogu ja ei toeta rakendusesiseseid oste.\n\nLisateabe saamiseks võtke meiega ühendust aadressil **feedback@olvid.io**.</string>
+	<string name="ftux_next" state="needs_review" hash="1158639077">Järgmine</string>
+	<string name="ftux_start" state="needs_review" hash="646298532">Alustage</string>
+	<string name="ftux_page_indicator" state="needs_review" hash="1987610035">Lehekülg %1$d lehekülgedest %2$d</string>
+	<string name="ftux_page_welcome_title" state="needs_review" hash="1173832630">Tere tulemast <b>Olvid</b>\'isse.</string>
+	<string name="ftux_page_welcome_body" state="needs_review" hash="-2085198139">Privaatne sõnumside kõigile.</string>
+	<string name="ftux_page_private_title" state="needs_review" hash="1815927819"><b>Privaatne</b> sõnumside</string>
+	<string name="ftux_page_private_body" state="needs_review" hash="-590644231">%1$s-s saate valida, kellega soovite vestelda. Ühtegi rämpsposti, soovitust, tarbetut teavitust ega võõrastelt saabuvatest sõnumitest ei ole.\n\nKeegi ei saa teiega ühendust ilma teie nõusolekuta.\n\n%1$s on teie digitaalne turvaline ruum.</string>
+	<string name="ftux_page_everyone_title" state="needs_review" hash="1506796386">Sõnumside <b>kõigile</b></string>
+	<string name="ftux_page_everyone_body" state="needs_review" hash="-586100377">Ükskõik, kes sa oled, %1$s pakub sulle parimat turvalisust. E-posti aadress või telefoninumber pole vajalik.\n\n%1$s ei küsi sinult midagi ja see muudab kõik.</string>
+	<string name="ftux_page_protect_title" state="needs_review" hash="1969120191">Olvid <b>kaitseb</b> sind. Olvid kaitseb neid, kes teile olulised on.</string>
+	<string name="ftux_page_protect_body" state="needs_review" hash="881847930">See ei ole lihtsalt lubadus – %1$s pakub krüptograafilist tõendit.\n\nÜkskõik, kas lisate kontakte kaugsideme kaudu või isiklikult, on teie suhtlus alati autentne ja otsast lõpuni krüpteeritud.</string>
+	<string name="ftux_page_pricing_title" state="needs_review" hash="-1948277889"><b>läbipaistev</b> ärimudel</string>
+	<string name="ftux_page_pricing_body" state="needs_review" hash="-1064278870">%1$s ei kasuta teie isikuandmeid oma rahastamiseks – sest see ei küsi neid!\n\nTasuta on tasuta. Tasulise teenuse puhul näidatakse hinda.</string>
+	<string name="ftux_page_media_title" state="needs_review" hash="558110518">Olvidil on <b>kõik</b></string>
+	<string name="ftux_page_media_body" state="needs_review" hash="1807247240">Piiranguteta failide suurus, kõrge eraldusvõimega fotode jagamine, küsitlused, heli- ja videokõned, mitme seadme tugi, asukoha määramine – kõik see on saadaval!</string>
 	<string name="menu_action_cancel_upload" state="needs_review" hash="1672681586">Lae üleslaadimine</string>
+	<string name="label_suggested_contacts" state="needs_review" hash="816810770">Soovitatud kontaktid</string>
+	<string name="label_suggested_contacts_subtitle" state="needs_review" hash="131522501">Kutsu kasutajaid hõlpsalt</string>
+	<string name="label_suggested_contact_already_a_contact" state="needs_review" hash="-1177848651">Olete juba kontaktis</string>
+	<string name="label_suggested_contact_invitation_received" state="needs_review" hash="2100924901">Kutse vastu võetud</string>
+	<string name="label_suggested_contact_invitation_sent" state="needs_review" hash="310679275">Kutse saadetud</string>
+	<string name="label_suggested_contacts_all_done" state="needs_review" hash="-127525104">Olete värskendatud versiooniga!\nLisaks ei ole soovitada kontakte.</string>
+	<string name="button_label_suggested_contact_later" state="needs_review" hash="-1933816039">Hiljem</string>
+	<string name="button_label_close" state="needs_review" hash="1454843231">Sulge</string>
+	<string name="button_label_skip" state="needs_review" hash="2056258301">Jätta vahele</string>
+	<string name="button_label_understood" state="needs_review" hash="829780875">Maas sain</string>
+	<string name="label_suggested_contacts_onboarding_title_1" state="needs_review" hash="491881039">Kutsu sõbrad lihtsa žestiga</string>
+	<string name="label_suggested_contacts_onboarding_message_1" state="needs_review" hash="331320806">Pühkige kaarti paremale, et kutsuda kasutaja või vasakule, et liikuda edasi järgmise kasutaja juurde.</string>
+	<string name="label_suggested_contacts_onboarding_title_2" state="needs_review" hash="-788798380">Mistest need kontaktid on pärit?</string>
+	<string name="label_suggested_contacts_onboarding_message_2" state="needs_review" hash="1536681696">Need on Olvidi kasutajad, keda sul pole veel kontaktide hulgas.</string>
+	<string name="label_suggested_contacts_onboarding_caption" state="needs_review" hash="-1299179969">Olete üksteisest ühe suhtega seotud: teil on vähemalt üks ühine grupp.</string>
+	<string name="label_suggested_contacts_you" state="needs_review" hash="672009142">Sina</string>
+	<string name="label_suggested_contacts_common_group" state="needs_review" hash="-1739793963">Ühine grupp</string>
+	<string name="explanation_suggested_contacts_others_tab" state="needs_review" hash="852096678">Allpool olevad kasutajad ei ole teie kontaktide nimekirjas ja te ei saa nendega veel privaatset vestlust pidada. Kuid saate neid hõlpsalt vestlusse kutsuda! 🚀</string>
+	<string name="label_suggested_contacts_invite_in_one_gesture" state="needs_review" hash="438220313">Kutsu need kasutajad, libistades sõrmega</string>
+	<string name="menu_action_suggested_contacts_see_full_list" state="needs_review" hash="603082500">Vaata kogu loendit</string>
+	<string name="menu_action_suggested_contacts_replay_onboarding" state="needs_review" hash="-1552704243">Tutvustuse uuesti vaatamine</string>
+	<string name="button_label_uninvite" state="needs_review" hash="771825501">Kutse tühista</string>
+	<string name="button_label_accept_invitation" state="needs_review" hash="-1778405034">Võta kutse vastu</string>
+	<string name="label_suggested_contacts_already_swiped" state="needs_review" hash="427042318">Olete juba vaadanud</string>
+	<string name="label_suggested_contacts_not_swiped_yet" state="needs_review" hash="310924358">Pole veel vaadatud</string>
 </resources>

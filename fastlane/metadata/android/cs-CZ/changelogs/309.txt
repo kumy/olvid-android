@@ -1,0 +1,4 @@
+- Nová funkce pro sdílení obrazovky, umožňující současné publikování do více konverzací.
+- Nový způsob pozvání kontaktů do soukromé konverzace jednoduchým gestem.
+- Nový úvodní průvodce, který novým uživatelům představí Olvid.
+- Vylepšený prohlížeč obrázků a videí, s možností přibližování videí.

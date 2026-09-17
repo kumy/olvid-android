@@ -58,8 +58,6 @@ import java.io.ByteArrayOutputStream
 import java.util.UUID
 
 
-
-
 class OnboardingFlowViewModel : ViewModel() {
     companion object {
         const val BACKUP_TYPE_FILE = 1
@@ -68,32 +66,43 @@ class OnboardingFlowViewModel : ViewModel() {
 
     var firstName by mutableStateOf("")
         private set
+
     fun updateFirstName(input: String) {
         firstName = input
     }
+
     var lastName by mutableStateOf("")
         private set
+
     fun updateLastName(input: String) {
         lastName = input
     }
+
     var deviceName by mutableStateOf("")
         private set
+
     fun updateDeviceName(input: String) {
         deviceName = input
     }
+
     var sessionNumber by mutableStateOf("")
         private set
+
     fun updateSessionNumber(input: String) {
         validationError = false
         sessionNumber = input
     }
+
     var validationInProgress by mutableStateOf(false)
         private set
+
     fun updateValidationInProgress(input: Boolean) {
         validationInProgress = input
     }
+
     var validationError by mutableStateOf(false)
         private set
+
     fun updateValidationError(input: Boolean) {
         validationError = input
     }
@@ -108,6 +117,7 @@ class OnboardingFlowViewModel : ViewModel() {
 
     var sas by mutableStateOf("")
         private set
+
     fun updateSas(input: String) {
         validationError = false
         sas = input
@@ -115,6 +125,7 @@ class OnboardingFlowViewModel : ViewModel() {
 
     var correctSas by mutableStateOf<String?>(null)
         private set
+
     fun updateCorrectSas(input: String?) {
         correctSas = input
     }
@@ -150,7 +161,14 @@ class OnboardingFlowViewModel : ViewModel() {
         private set
     var keycloakSessionNumber: Long? = null
         private set
-    fun setTransferKeycloakParameters(keycloakServerUrl: String, keycloakClientId: String, keycloakClientSecret: String?, fullSas: String, sessionNumber: Long) {
+
+    fun setTransferKeycloakParameters(
+        keycloakServerUrl: String,
+        keycloakClientId: String,
+        keycloakClientSecret: String?,
+        fullSas: String,
+        sessionNumber: Long
+    ) {
         this.keycloakServerUrl = keycloakServerUrl
         this.keycloakClientId = keycloakClientId
         this.keycloakClientSecret = keycloakClientSecret
@@ -177,21 +195,24 @@ class OnboardingFlowViewModel : ViewModel() {
             dialog = null
         }
     }
+
     fun finalizeTransfer() {
         try {
             dialog?.let {
-                it.setTransferSasAndDeviceUid(correctSas, transferSelectedDevice?.uid)
+                it.setTransferSasAndDeviceUid(correctSas!!, transferSelectedDevice?.uid)
                 AppSingleton.getEngine().respondToDialog(it)
             }
         } catch (e: java.lang.Exception) {
             e.printStackTrace()
         }
     }
+
     fun createSimpleIdentity(onSuccess: (ObvIdentity?) -> Unit) {
         creatingSimpleIdentity = true
         val apiKey: UUID?
         @Suppress("SENSELESS_COMPARISON")
-        apiKey = if (BuildConfig.HARDCODED_API_KEY != null) UUID.fromString(BuildConfig.HARDCODED_API_KEY) else null
+        apiKey =
+            if (BuildConfig.HARDCODED_API_KEY != null) UUID.fromString(BuildConfig.HARDCODED_API_KEY) else null
 
         AppSingleton.getInstance().generateIdentity(
             BuildConfig.SERVER_NAME,
@@ -217,7 +238,7 @@ class OnboardingFlowViewModel : ViewModel() {
     }
 
 
-    var dialog : ObvDialog? by mutableStateOf(null)
+    var dialog: ObvDialog? by mutableStateOf(null)
 
     // endregion
 
@@ -238,7 +259,7 @@ class OnboardingFlowViewModel : ViewModel() {
 
     fun clearSelectedBackup() {
         backupName = null
-        backupContent= null
+        backupContent = null
         backupReady = false
     }
 
@@ -348,7 +369,8 @@ class OnboardingFlowViewModel : ViewModel() {
                                                         view.findViewById<TextView>(R.id.backup_device_text_view)
                                                     val timestampTextView =
                                                         view.findViewById<TextView>(R.id.backup_timestamp_text_view)
-                                                    val backupItem = getItem(position) ?: return view
+                                                    val backupItem =
+                                                        getItem(position) ?: return view
                                                     deviceTextView.text = backupItem.deviceName
                                                     timestampTextView.text =
                                                         StringUtils.getLongNiceDateString(
@@ -437,6 +459,7 @@ class OnboardingFlowViewModel : ViewModel() {
         this.backupSeed = backupSeed
         backupKeyValid = false
     }
+
     fun validateBackupSeed(): Int {
         return if (backupSeed == null || backupContent == null) {
             this.backupKeyValid = false
@@ -444,7 +467,8 @@ class OnboardingFlowViewModel : ViewModel() {
         } else {
             val verificationOutput =
                 AppSingleton.getEngine().validateBackupSeed(backupSeed, backupContent)
-            backupKeyValid = verificationOutput.verificationStatus == ObvBackupKeyVerificationOutput.STATUS_SUCCESS
+            backupKeyValid =
+                verificationOutput.verificationStatus == ObvBackupKeyVerificationOutput.STATUS_SUCCESS
             verificationOutput.verificationStatus
         }
     }

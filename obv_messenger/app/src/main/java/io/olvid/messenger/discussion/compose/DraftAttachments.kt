@@ -315,7 +315,16 @@ fun DraftPreview(
     sizePx: Int,
     isImageMode: Boolean
 ) {
-    var model by remember { mutableStateOf<Any?>(null) }
+    // seed with the memory-cached preview (cheap, main-thread safe) to avoid a blank flash
+    var model by remember(attachment) {
+        mutableStateOf<Any?>(
+            PreviewUtils.getCachedBitmapPreview(
+                attachment.fyle,
+                attachment.fyleMessageJoinWithStatus,
+                sizePx
+            )
+        )
+    }
 
     LaunchedEffect(attachment, attachment.fyleMessageJoinWithStatus.status) {
         launch(Dispatchers.IO) {
@@ -435,7 +444,7 @@ fun DraftAttachmentSizeOrDuration(
                 ) {
                 }
 
-                override fun setFailed(f: Boolean) {}
+                override fun setFailed(failed: Boolean) {}
                 override fun setAudioOutput(
                     audioOutput: AudioOutput,
                     somethingPlaying: Boolean

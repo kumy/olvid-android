@@ -1,0 +1,4 @@
+- Funcție nouă de partajare a ecranului, permițând postarea simultană în mai multe conversații.
+- Experiență nouă de invitare prin glisare, pentru a invita cu ușurință membrii grupului într-o conversație privată.
+- Nou ghid de prezentare pentru a explica Olvid utilizatorilor noi.
+- Vizualizator de imagini/video îmbunătățit, cu posibilitatea de a face zoom la videoclipuri.

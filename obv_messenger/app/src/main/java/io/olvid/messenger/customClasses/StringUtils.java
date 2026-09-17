@@ -190,54 +190,6 @@ public class StringUtils {
         return displayName;
     }
 
-    public static boolean isShortEmojiString(String text, int maxLength) {
-        // Alternate method based on EmojiCompat library --> we use the legacy method for now, it still works well :)
-//        CharSequence emojiSequence = EmojiCompat.get().process(text, 0, text.length(), maxLength);
-//        if (emojiSequence instanceof Spanned) {
-//            Spanned spannable = (Spanned) emojiSequence;
-//            int regionEnd;
-//            for (int regionStart = 0; regionStart < spannable.length(); regionStart = regionEnd) {
-//                regionEnd = spannable.nextSpanTransition(regionStart, spannable.length(), EmojiSpan.class);
-//
-//                EmojiSpan[] spans = spannable.getSpans(regionStart, regionEnd, EmojiSpan.class);
-//                if (spans.length == 0) {
-//                    return false;
-//                }
-//            }
-//            return true;
-//        }
-//        return false;
-
-        if (text == null || text.isEmpty()) {
-            return false;
-        }
-
-        BreakIterator breakIterator = BreakIterator.getCharacterInstance();
-        breakIterator.setText(text);
-
-        int computedEmojiLength = 0;
-        int offset;
-        int glue;
-        int codePoint = text.codePointAt(0);
-
-        do {
-            do {
-                if (!isEmojiCodepoint(codePoint)) {
-                    return false;
-                }
-                offset = breakIterator.next();
-                glue = text.charAt(offset - 1);
-                codePoint = (offset < text.length()) ? text.codePointAt(offset) : 0;
-            } while ((glue == 0x200d) || ((0x1f3fb <= codePoint) && (codePoint <= 0x1f3ff)));
-            computedEmojiLength++;
-            if (offset >= text.length()) {
-                break;
-            }
-        } while (computedEmojiLength <= maxLength);
-
-        return computedEmojiLength <= maxLength;
-    }
-
     static boolean isEmojiCodepoint(int codePoint) {
         if (codePoint >= 0x1f000 && codePoint <= 0x1faff) {
             return true;
@@ -257,7 +209,7 @@ public class StringUtils {
         return codePoint == 0x200d;
     }
 
-    public static String unAccent(CharSequence source) {
+    public static String unAccent(@NonNull CharSequence source) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             return UCharacter.toLowerCase(unAccentPattern.matcher(Normalizer.normalize(source, Normalizer.Form.NFD)).replaceAll(""));
         } else {

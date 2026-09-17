@@ -79,6 +79,9 @@ public class EngineNotificationProcessorForMessages implements EngineNotificatio
 
     @Override
     public void callback(String notificationName, final HashMap<String, Object> userInfo) {
+        if (notificationName == null) {
+            return;
+        }
         switch (notificationName) {
             case EngineNotifications.NEW_MESSAGE_RECEIVED: {
                 ObvMessage obvMessage = (ObvMessage) userInfo.get(EngineNotifications.NEW_MESSAGE_RECEIVED_MESSAGE_KEY);

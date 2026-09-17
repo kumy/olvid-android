@@ -36,7 +36,7 @@ fun handleLimitedVisibilityMessageOpened(
     }?.messageReference?.let { messageReference ->
         if (putMessageOnHoldIfDiscussionIsMissing(
                 db,
-                obvMessage.identifier,
+                obvMessage.identifier!!,
                 obvMessage.serverTimestamp,
                 messageSender,
                 jsonLimitedVisibilityMessageOpened.oneToOneIdentifier,
@@ -73,7 +73,7 @@ fun handleLimitedVisibilityMessageOpened(
             } ?: run {
                 putMessageOnHoldBecauseOfMissingMessage(
                     db,
-                    obvMessage.identifier,
+                    obvMessage.identifier!!,
                     obvMessage.serverTimestamp,
                     discussion,
                     messageReference

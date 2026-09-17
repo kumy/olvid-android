@@ -282,4 +282,20 @@
 		<item quantity="one" state="needs_review" hash="-1393207312">%1$d kinopya ang mensahe sa clipboard</item>
 		<item quantity="other" state="needs_review" hash="-604999755">%1$d mensahe ay kinopya sa clipboard</item>
 	</plurals>
+	<plurals name="label_share_destinations_count" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="423387012">%1$d tatanggap</item>
+		<item quantity="other" state="needs_review" hash="-431979656">%1$d mga tatanggap</item>
+	</plurals>
+	<plurals name="label_share_to_recipients" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="-1217959784">Ibahagi sa %1$d na tatanggap</item>
+		<item quantity="other" state="needs_review" hash="1864148690">Ibahagi sa %1$d na tatanggap</item>
+	</plurals>
+	<plurals name="toast_message_shared_to_recipients" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="-373807760">Ibinahagi sa %1$d na tatanggap</item>
+		<item quantity="other" state="needs_review" hash="-1412037000">Ibinahagi sa %1$d na tatanggap</item>
+	</plurals>
+	<plurals name="button_label_add_to_groups" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="1622654043">Idagdag sa grupong %1$d</item>
+		<item quantity="other" state="needs_review" hash="-1655824151">Idagdag sa mga grupong %1$d</item>
+	</plurals>
 </resources>

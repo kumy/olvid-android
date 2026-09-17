@@ -50,6 +50,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalClipboard
 import androidx.compose.ui.platform.LocalContext
@@ -91,7 +92,15 @@ fun LinkPreview(
     message.linkPreviewFyleId?.let { linkPreviewFyleId ->
         val linkPreviewFyle by AppDatabase.getInstance()
             .fyleMessageJoinWithStatusDao()
-            .getFyleAndStatusObservable(message.id, linkPreviewFyleId).map { fyleAndStatus: FyleMessageJoinWithStatusDao.FyleAndStatus? -> fyleAndStatus?.let { Attachment(fyleAndStatus.fyle, fyleAndStatus.fyleMessageJoinWithStatus) } }
+            .getFyleAndStatusObservable(message.id, linkPreviewFyleId)
+            .map { fyleAndStatus: FyleMessageJoinWithStatusDao.FyleAndStatus? ->
+                fyleAndStatus?.let {
+                    Attachment(
+                        fyleAndStatus.fyle,
+                        fyleAndStatus.fyleMessageJoinWithStatus
+                    )
+                }
+            }
             .observeAsState()
         linkPreviewFyle?.let { fyleAndStatus ->
             if (fyleAndStatus.fyle.isComplete) {
@@ -117,7 +126,10 @@ fun LinkPreview(
             }
         }
     }
-    if (message.linkPreviewFyleId == null && message.messageType == Message.TYPE_INBOUND_MESSAGE && SettingsActivity.isLinkPreviewInbound(LocalContext.current)) {
+    if (message.linkPreviewFyleId == null && message.messageType == Message.TYPE_INBOUND_MESSAGE && SettingsActivity.isLinkPreviewInbound(
+            LocalContext.current
+        )
+    ) {
         val density = LocalDensity.current
         LaunchedEffect(message.id) {
             val size = with(density) {
@@ -153,7 +165,7 @@ fun LinkPreview(
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-private fun LinkPreviewContent(
+fun LinkPreviewContent(
     modifier: Modifier = Modifier,
     openGraph: OpenGraph,
     onLongClick: () -> Unit = {},
@@ -164,28 +176,29 @@ private fun LinkPreviewContent(
     val clipboardManager = LocalClipboard.current
     var showMenu by remember { mutableStateOf(false) }
 
-    Box(modifier = modifier
-        .border(
-            width = 1.dp,
-            color = colorResource(id = R.color.attachmentBorder),
-            shape = RoundedCornerShape(4.dp)
-        )
-        .background(
-            color = colorResource(id = R.color.greyTint),
-            shape = RoundedCornerShape(4.dp)
-        )
-        .then(
-            if (blockClicks)
-                Modifier
-            else
-                Modifier.combinedClickable(
-                    interactionSource = remember { MutableInteractionSource() },
-                    indication = ripple(),
-                    onLongClick = {
-                        onLongClick()
-                    }) {
-                    App.openLink(context, openGraph.getSafeUri())
-                })
+    Box(
+        modifier = modifier
+            .border(
+                width = 1.dp,
+                color = colorResource(id = R.color.attachmentBorder),
+                shape = RoundedCornerShape(4.dp)
+            )
+            .background(
+                color = colorResource(id = R.color.greyTint),
+                shape = RoundedCornerShape(4.dp)
+            )
+            .then(
+                if (blockClicks)
+                    Modifier
+                else
+                    Modifier.combinedClickable(
+                        interactionSource = remember { MutableInteractionSource() },
+                        indication = ripple(),
+                        onLongClick = {
+                            onLongClick()
+                        }) {
+                        App.openLink(context, openGraph.getSafeUri())
+                    })
     ) {
         Box {
             Row(
@@ -194,14 +207,28 @@ private fun LinkPreviewContent(
                     .padding(start = 4.dp)
                     .background(color = colorResource(id = R.color.almostWhite))
             ) {
+                // When blockClicks=true (share-sheet preview, message-bubble selection mode), neutralize
+                // the thumbnail's click/long-click — otherwise a tap launches the browser even though
+                // the surrounding card is non-interactive, yanking the user out of the share flow.
+                val imageClick: () -> Unit = if (blockClicks) { {} }
+                else { { App.openLink(context, openGraph.getSafeUri()) } }
+                val imageLongClick: () -> Unit = if (blockClicks) { {} }
+                else { { showMenu = true } }
                 if (openGraph.hasLargeImageToDisplay()) {
                     Column(modifier = Modifier.padding(4.dp)) {
                         LinkTitleAndDescription(openGraph = openGraph, highlighter)
-                        LinkImage(openGraph.bitmap, isLarge = true, onClick = {App.openLink(context, openGraph.getSafeUri())}, onLongClick = { showMenu = true })
+                        LinkImage(
+                            openGraph.bitmap,
+                            isLarge = true,
+                            onClick = imageClick,
+                            onLongClick = imageLongClick)
                     }
                 } else {
                     Row(modifier = Modifier.padding(4.dp)) {
-                        LinkImage(openGraph.bitmap, onClick = {App.openLink(context, openGraph.getSafeUri())}, onLongClick = { showMenu = true })
+                        LinkImage(
+                            openGraph.bitmap,
+                            onClick = imageClick,
+                            onLongClick = imageLongClick)
                         Spacer(modifier = Modifier.width(4.dp))
                         LinkTitleAndDescription(openGraph = openGraph, highlighter)
                     }
@@ -256,19 +283,28 @@ private fun LinkPreviewContent(
 }
 
 @Composable
-private fun LinkImage(bitmap: Bitmap?, isLarge: Boolean = false, onClick : () -> Unit = {}, onLongClick : () -> Unit) {
+private fun LinkImage(
+    bitmap: Bitmap?,
+    isLarge: Boolean = false,
+    onClick: () -> Unit = {},
+    onLongClick: () -> Unit
+) {
     Image(
-        modifier = Modifier.combinedClickable(
-            interactionSource = remember { MutableInteractionSource() },
-            indication = ripple(),
-            onClick = onClick,
-            onLongClick = onLongClick)
+        modifier = Modifier
+            .combinedClickable(
+                interactionSource = remember { MutableInteractionSource() },
+                indication = ripple(),
+                onClick = onClick,
+                onLongClick = onLongClick
+            )
             .then(if (isLarge) bitmap?.let {
-                Modifier.aspectRatio(
-                    (it.width / it.height.toFloat()).coerceAtLeast(
-                        .7f
+                Modifier.clipToBounds()
+                    .fillMaxWidth()
+                    .aspectRatio(
+                        (it.width / it.height.toFloat()).coerceAtLeast(
+                            .7f
+                        )
                     )
-                )
             } ?: Modifier.size(56.dp) else Modifier.size(56.dp)),
         painter = rememberAsyncImagePainter(
             model = bitmap

@@ -26,8 +26,8 @@
 	<string name="button_label_create_group" state="needs_review" hash="1102939673">Gumawa ng grupo</string>
 	<string name="button_label_discard" state="needs_review" hash="795591204">Iwan</string>
 	<string name="button_label_exchange_digits_with_user" state="needs_review" hash="339599327">Magpalitan ng mga code sa %1$s</string>
-	<string name="button_label_generate_new_id" state="needs_review" hash="92014734">Bumuo ng bagong ID</string>
-	<string name="button_label_generate_my_id" state="needs_review" hash="-1007060207">Bumuo ng aking ID</string>
+	<string name="button_label_generate_new_id" state="needs_review" hash="-1130516787">Gumawa ng bagong profile</string>
+	<string name="button_label_generate_my_id" state="needs_review" hash="239641058">Gumawa ng aking profile</string>
 	<string name="button_label_ignore" state="needs_review" hash="-806373746">Balewalain</string>
 	<string name="button_label_reject" state="needs_review" hash="-2094664161">Tanggihan</string>
 	<string name="button_label_introduce" state="needs_review" hash="193852909">Ipakilala</string>
@@ -80,6 +80,12 @@
 	<string name="dialog_title_rename_group" state="needs_review" hash="1461324427">Palitan ang pangalan ng grupo</string>
 	<string name="dialog_title_restart_channel_establishment" state="needs_review" hash="-645769680">I-restart ba ang pagtatatag ng channel?</string>
 	<string name="dialog_title_share_with" state="needs_review" hash="854107768">Ibahagi sa…</string>
+	<string name="dialog_title_share_recipients" state="needs_review" hash="1157053138">Pumili ng mga tatanggap</string>
+	<string name="share_label_from" state="needs_review" hash="2049052075">Mula:</string>
+	<string name="share_label_to" state="needs_review" hash="-1785690373">Para sa:</string>
+	<string name="share_label_choose_recipients" state="needs_review" hash="1157053138">Pumili ng mga tatanggap</string>
+	<string name="hint_share_message" state="needs_review" hash="-763169957">Magdagdag ng mensahe…</string>
+	<string name="content_description_delete_attachment" state="needs_review" hash="-220348329">Alisin ang kalakip</string>
 	<string name="dialog_title_shortcut_to" state="needs_review" hash="-1193591200">Gumawa ng shortcut sa…</string>
 	<string name="explanation_choose_display_name" state="needs_review" hash="1162066686">Mangyaring ilagay ang isang pangalan na ipapakita sa iyong mga contact. Ang mga detalyeng ito ay hindi kailanman ipapadala sa mga server ng Olvid.</string>
 	<string name="explanation_empty_contact_list" state="needs_review" hash="1240778508">Walang contact sa ngayon</string>
@@ -104,7 +110,7 @@
 	<string name="explanation_no_message_found" state="needs_review" hash="-1329622990">Walang nakitang mensahe</string>
 	<string name="explanation_no_attachment_found" state="needs_review" hash="156593369">Walang nakitang attachment</string>
 	<string name="explanation_no_link_found" state="needs_review" hash="-1419950450">Walang nakitang link</string>
-	<string name="hint_company" state="needs_review" hash="379200324">Kumpanya (opsyonal)</string>
+	<string name="hint_company" state="needs_review" hash="988571519">Kumpanya</string>
 	<string name="hint_compose_your_message" state="needs_review" hash="-25761578">Sumulat ng mensahe</string>
 	<string name="hint_compose_your_message_ephemeral" state="needs_review" hash="-1527208333">Pansamantalang mensahe</string>
 	<string name="label_edit_your_message" state="needs_review" hash="1091877412">I-edit ang iyong mensahe</string>
@@ -133,7 +139,7 @@
 	<string name="hint_last_name" state="needs_review" hash="1701170359">Apelyido</string>
 	<string name="hint_new_name" state="needs_review" hash="709842168">Bagong pangalan</string>
 	<string name="hint_notification_reply" state="needs_review" hash="1095144032">Sumagot</string>
-	<string name="hint_position" state="needs_review" hash="-55145181">Pamagat ng Trabaho (opsyonal)</string>
+	<string name="hint_position" state="needs_review" hash="1338817744">Pamagat ng Trabaho</string>
 	<string name="invitation_label_their_code" state="needs_review" hash="1402501614">Ang kanilang code</string>
 	<string name="invitation_label_your_code" state="needs_review" hash="1944546233">Ang iyong code</string>
 	<string name="invitation_status_accept_invite" state="needs_review" hash="2100924901">Natanggap na ang imbitasyon</string>
@@ -170,6 +176,11 @@
 	<string name="label_group_members" state="needs_review" hash="1460220752">Mga Miyembro ng Grupo</string>
 	<string name="label_other_group_members" state="needs_review" hash="-2121490032">Ibang mga miyembro ng grupo</string>
 	<string name="label_groups_common" state="needs_review" hash="1252823567">Mga grupong pinagsamahan</string>
+	<string name="label_create_group_with_contact" state="needs_review" hash="1950649899">Gumawa ng grupo kasama ang %1$s</string>
+	<string name="label_add_contact_to_a_group" state="needs_review" hash="-682192937">Idagdag ang %1$s sa isang grupo</string>
+	<string name="label_add_to_groups" state="needs_review" hash="-654216617">Idagdag sa mga grupo</string>
+	<string name="explanation_no_admin_group_to_add_contact" state="needs_review" hash="402908162">Hindi ka administrator ng anumang grupo kung saan maaaring idagdag ang %1$s.</string>
+	<string name="toast_message_adding_contact_to_groups" state="needs_review" hash="1201697547">Idinaragdag ang %1$s sa mga piling grupo...</string>
 	<string name="label_invitation_declined" state="needs_review" hash="2038173833">Tanggihan ang imbitasyon</string>
 	<string name="label_new_group_card" state="needs_review" hash="1006740909">Na-update ang mga detalye ng grupo</string>
 	<string name="label_not_part_of_a_group" state="needs_review" hash="1667979596">Hindi pa kasama sa anumang grupo</string>
@@ -183,6 +194,7 @@
 	<string name="menu_action_create_shortcut" state="needs_review" hash="-1949455873">Gumawa ng Shortcut</string>
 	<string name="menu_action_delete" state="needs_review" hash="-232100842">Burahin</string>
 	<string name="menu_action_delete_discussion" state="needs_review" hash="2059656471">Burahin ang pag-uusap</string>
+	<string name="menu_action_export_discussion" state="needs_review" hash="1736692296">I-export ang pag-uusap</string>
 	<string name="label_swipe_details" state="needs_review" hash="171468732">Mga Detalye</string>
 	<string name="menu_action_disband_group" state="needs_review" hash="-1767089289">Wakasain ang grupo</string>
 	<string name="menu_action_edit_group_details" state="needs_review" hash="310205135">I-edit ang mga detalye ng grupo</string>
@@ -482,7 +494,14 @@
 	<string name="dialog_title_backup_choices" state="needs_review" hash="281222223">Pumili ng paraan ng pag-backup</string>
 	<string name="menu_action_choose_picture" state="needs_review" hash="-1655172909">Pumili ng isang larawan</string>
 	<string name="menu_action_take_photo" state="needs_review" hash="-1123080444">Kumuha ng larawan</string>
+	<string name="menu_action_choose_image_from_olvid" state="needs_review" hash="1585248356">Pumili ng isang larawang natanggap</string>
 	<string name="menu_action_remove_image" state="needs_review" hash="1094977672">Tanggalin ang larawan</string>
+	<string name="menu_action_use_image_as" state="needs_review" hash="587310096">Gamitin ang larawang ito bilang...</string>
+	<string name="label_use_photo_for_my_profile" state="needs_review" hash="-1005809580">Aking larawan sa profile</string>
+	<string name="label_use_photo_for_target" state="needs_review" hash="283541521">Larawan para sa %s</string>
+	<string name="label_use_photo_for_discussion_background" state="needs_review" hash="1925733151">Background para sa %s</string>
+	<string name="toast_message_photo_set" state="needs_review" hash="-1641885203">Na-update na ang larawan</string>
+	<string name="toast_message_background_set" state="needs_review" hash="1642873459">Na-update na ang background.</string>
 	<string name="dialog_title_create_empty_group" state="needs_review" hash="-663434464">Gusto mo bang gumawa ng walang laman na grupo?</string>
 	<string name="dialog_message_create_empty_group" state="needs_review" hash="-297923005">Hindi ka pumili ng anumang contact para idagdag sa iyong grupo. Sigurado ka bang gusto mong gumawa ng isang walang laman na grupo?</string>
 	<string name="pref_dark_mode_title" state="needs_review" hash="816474245">Madilim na tema</string>
@@ -862,7 +881,7 @@
 	<string name="button_label_check_options" state="needs_review" hash="-759177128">Suriin ang mga opsyon</string>
 	<string name="hint_olvid_server" state="needs_review" hash="1097391633">Olvid server</string>
 	<string name="hint_license_activation_code" state="needs_review" hash="102193320">Kode ng pag-activate ng lisensya</string>
-	<string name="activity_title_identity_creation_options" state="needs_review" hash="1180456032">Mga opsyon sa paglikha ng ID</string>
+	<string name="activity_title_identity_creation_options" state="needs_review" hash="-774054913">Mga opsyon para sa paggawa ng profile</string>
 	<string name="activity_title_scan_configuration" state="needs_review" hash="-386259993">I-scan ang konfigurasyon</string>
 	<string name="menu_action_import_activation_from_clipboard" state="needs_review" hash="-70842935">I-import ang link mula sa clipboard</string>
 	<string name="troubleshooting_update_valid_title" state="needs_review" hash="741828768">Napapanahon na ang Olvid</string>
@@ -871,7 +890,6 @@
 	<string name="dialog_message_update_available" state="needs_review" hash="416187645">May bagong bersyon ng Olvid na available.\n\nMangyaring i-update upang magamit ang pinakabagong mga feature.</string>
 	<string name="dialog_title_call_initiation_not_supported" state="needs_review" hash="-2088021831">Hindi sinusuportahan ang pagsisimula ng tawag</string>
 	<string name="dialog_message_call_initiation_not_supported" state="needs_review" hash="1760333819">Mukhang hindi sinusuportahan ng iyong Olvid server ang secure na pag-uumpisa ng tawag.\n\nMangyaring makipag-ugnayan sa iyong administrator para sa karagdagang detalye.</string>
-	<string name="label_identity_creation_options" state="needs_review" hash="1180456032">Mga opsyon sa paglikha ng ID</string>
 	<string name="text_option_server" state="needs_review" hash="-1130676431">Server: %1$s</string>
 	<string name="dialog_title_non_default_server" state="needs_review" hash="2119192219">Paggamit ng server na hindi default</string>
 	<string name="dialog_message_non_default_server" state="needs_review" hash="459308900">Malapit mo nang gumawa ng profile sa sumusunod na server:\n\n%1$s\n\nHindi ito ang default na server ng Olvid. Magpatuloy lamang kung pinagkakatiwalaan mo ang server na ito.</string>
@@ -900,7 +918,7 @@
 	<string name="toast_message_unable_to_keycloak_revoke" state="needs_review" hash="-1368037130">Nabigo ang pagpapalit ng nakaraang Olvid ID, mangyaring subukan muli.</string>
 	<string name="toast_message_keycloak_revoke_successful" state="needs_review" hash="-1216369809">Matagumpay na napalitan ang nakaraang Olvid ID</string>
 	<string name="dialog_title_keycloak_authentication_required_user_id_changed" state="needs_review" hash="-896407029">Natukoy ang pagbabago sa gumagamit</string>
-	<string name="dialog_message_keycloak_authentication_required_user_id_changed" state="needs_review" hash="876252686">Ang iyong profile ay kasalukuyang pinamamahalaan ng iyong organisasyon. Mukhang nag-authenticate ka bilang ibang user kaysa sa karaniwan. Hindi ito sinusuportahan.\n\nMangyaring makipag-ugnayan sa iyong administrator o muling mag-authenticate bilang tamang user.</string>
+	<string name="dialog_message_keycloak_authentication_required_user_id_changed" state="needs_review" hash="2080839829">Ang iyong profile ay kasalukuyang pinamamahalaan ng iyong organisasyon. Mukhang nag-authenticate ka bilang ibang user kaysa sa karaniwan. Hindi ito sinusuportahan.\n\nMangyaring makipag-ugnayan sa iyong administrator o mag-re-authenticate bilang tamang user.</string>
 	<string name="dialog_title_add_keycloak_user" state="needs_review" hash="-1050193239">Magdagdag ng kontak</string>
 	<string name="dialog_message_add_keycloak_user" state="needs_review" hash="-1755937035">Pinili mong idagdag ang %1$s sa iyong mga contact. Gusto mo bang ipagpatuloy?</string>
 	<string name="explanation_keycloak_update_new" state="needs_review" hash="1136733528">Iko\'y magtatakda ng identity provider ng iyong kumpanya sa Olvid. Kapag na-configure na, maaari kang mag-authenticate sa server na ito at papayagan ka ng Olvid na idagdag ang iba pang mga empleyado sa iyong mga contact nang walang kahirap-hirap.\nMangyaring makipag-ugnayan sa iyong administrator para sa karagdagang detalye.</string>
@@ -1031,6 +1049,8 @@
 	<string name="label_storage_discussions" state="needs_review" hash="491497248">Mga pag-uusap</string>
 	<string name="pref_use_internal_image_viewer_title" state="needs_review" hash="1319400578">Gamitin ang panloob na tagatingin ng larawan</string>
 	<string name="pref_use_internal_image_viewer_summary" state="needs_review" hash="1248137666">Kapag aktibo, ang pag-click sa isang larawan na naka-attach ay magbubukas nito sa panloob na viewer. Kung hindi, gagamitin ang default na image app ng iyong device.</string>
+	<string name="pref_image_text_recognition_title" state="needs_review" hash="1877261687">Kilalanin at i-index ang teksto sa mga larawan</string>
+	<string name="pref_image_text_recognition_summary" state="needs_review" hash="1217699919">Pinapayagan kang maghanap at kopyahin ang teksto na matatagpuan sa mga larawan na naka-attach. Maaaring gumamit ito ng maraming resources sa mga low-end na device: i-disable ito kung hindi mo ito kailangan.</string>
 	<string name="label_unable_to_display_image" state="needs_review" hash="-1495534207">Hindi maipakita ang larawan</string>
 	<string name="dialog_title_backup_requires_sign_in" state="needs_review" hash="-720389674">Kinakailangan ang pag-sign in sa iyong cloud provider.</string>
 	<string name="dialog_message_backup_requires_sign_in" state="needs_review" hash="119557495">Nai-configure mo ang Olvid upang gumamit ng awtomatikong pag-backup sa isang cloud provider, ngunit nag-expire na ang iyong session. Kailangan mong mag-sign in muli sa provider na ito.\n\nKung hindi mo na gustong gumamit ng awtomatikong pag-backup, maaari mo itong i-disable sa Mga Setting ng App. Tandaan na ang awtomatikong pag-backup ang tanging paraan upang maiwasan ang pagkawala ng iyong mga contact kung mawala o masira ang iyong device.</string>
@@ -1149,7 +1169,7 @@
 	<string name="pref_hidden_profile_close_policy_dialog_entry_screen_lock" state="needs_review" hash="-1520400811">Kapag aktibo na ang lock screen ng Olvid</string>
 	<string name="pref_hidden_profile_close_policy_dialog_entry_background" state="needs_review" hash="-2099539114">Kapag ang Olvid ay nasa background na…</string>
 	<string name="activity_title_enter_backup_key" state="needs_review" hash="1035967309">Ilagay ang backup key</string>
-	<string name="activity_title_identity_creation" state="needs_review" hash="-1361520151">Paglikha ng ID</string>
+	<string name="activity_title_identity_creation" state="needs_review" hash="2027618284">Paglikha ng profile</string>
 	<string name="menu_action_manual_configuration" state="needs_review" hash="-1495974502">Manu-manong advanced na konfigurasyon</string>
 	<string name="toast_message_invalid_configuration_link" state="needs_review" hash="1387412522">Hindi wastong link ng konfigurasyon</string>
 	<string name="toast_message_invalid_link" state="needs_review" hash="1265454437">Hindi balidong link</string>
@@ -1171,6 +1191,7 @@
 	<string name="dialog_title_chose_profile_web_client" state="needs_review" hash="1860298414">Piliin ang profile na ikokonekta sa Olvid web client.</string>
 	<string name="dialog_title_chose_profile_invitation" state="needs_review" hash="-2063034787">Piliin ang profile na gagamitin para imbitahan ang contact na ito.</string>
 	<string name="toast_message_create_new_profile_then_reopen_this_link" state="needs_review" hash="1770827346">Mangyaring gumawa muna ng bagong profile, pagkatapos ay buksan muli ang link na ito.</string>
+	<string name="toast_message_invitation_link_deferred_to_end_of_onboarding" state="needs_review" hash="-189914806">Awtomatikong magbubukas ang iyong imbitasyon kapag nalikha na ang iyong profile.</string>
 	<string name="button_label_switch_profile" state="needs_review" hash="-2007633024">Palitan ang profile</string>
 	<string name="text_no_other_profile_to_switch_to" state="needs_review" hash="-112306213">Walang ibang profile</string>
 	<string name="button_label_configure_lock_screen" state="needs_review" hash="870348426">I-configure ang lock screen</string>
@@ -1180,8 +1201,7 @@
 	<string name="dialog_message_delete_last_profile" state="needs_review" hash="-2123774331">Ang pagtanggal ng isang profile ay magbubura ng anumang impormasyon na nauugnay sa profile na ito sa iyong device. Kasama rito ang iyong mga contact, grupo, at ang nilalaman ng lahat ng iyong mga pag-uusap (mga mensahe at mga attachment) para sa profile na ito.\n\n<b>Ito ang iyong tanging nakikitang profile, at kung mayroon kang anumang nakatagong profile, ang mga ito ay buburahin din.</b>\n\nKung pinagana mo ang mga backup sa Olvid, ang iyong mga susunod na backup ay hindi maglalaman ng anumang bakas ng profile na ito, at maaaring hindi mo na ito maibalik.\n\nI-click ang \"susunod\" upang piliin kung paano dapat burahin ang profile na ito.</string>
 	<string name="dialog_message_delete_profile_multi" state="needs_review" hash="-2003495595">Ang pagtanggal ng isang profile ay magbubura ng anumang impormasyon na nauugnay sa profile na ito sa iyong device. Kasama rito ang iyong mga contact at grupo, at ang nilalaman ng lahat ng iyong mga pag-uusap (mga mensahe at mga attachment) para sa profile na ito. Ang iyong iba pang mga profile ay hindi maaapektuhan ng operasyong ito.\n\nI-press ang \"susunod\" upang piliin kung paano dapat tanggalin ang profile na ito.</string>
 	<string name="dialog_message_delete_last_profile_multi" state="needs_review" hash="-103140781">Ang pagtanggal ng isang profile ay magbubura ng anumang impormasyon na nauugnay sa profile na ito sa iyong device. Kasama rito ang iyong mga contact, grupo, at ang nilalaman ng lahat ng iyong mga pag-uusap (mga mensahe at mga attachment) para sa profile na ito.\n\n<b>Ito lamang ang iyong nakikitang profile, at kung mayroon kang anumang nakatagong profile, ang mga ito ay buburahin din.</b>\n\nI-click ang \"susunod\" upang piliin kung paano dapat burahin ang profile na ito.</string>
-	<string name="switch_label_delete_profile_everywhere" state="needs_review" hash="-74965346">Burahin ang profile sa <b>lahat ng lugar</b>
-	</string>
+	<string name="switch_label_delete_profile_everywhere" state="needs_review" hash="-74965346">Burahin ang profile sa <b>lahat ng lugar</b></string>
 	<string name="hint_type_delete_here_to_proceed" state="needs_review" hash="-1622625725">I-type ang \"%1$s\" dito upang magpatuloy</string>
 	<string name="explanation_delete_owned_identity" state="needs_review" hash="2036375772">Kung pipiliin mong burahin ang iyong profile <b>sa lahat ng dako</b>:\n\u00a0-\u00a0buburahin ito nang lokal <b>at</b> sa mga device ng iyong mga contact\n\u00a0-\u00a0aalis ka sa mga grupong sinalihan mo\n\u00a0-\u00a0ang mga grupong pinamamahalaan mo ay mawawala\n\nKung <b>hindi</b> mo buburahin ang iyong profile sa lahat ng dako, buburahin lamang ito nang lokal sa iyong device. Maliban kung plano mong ibalik ang isang backup sa ibang device, maaaring patuloy pa rin subukan ng iyong mga contact na magpadala sa iyo ng mga mensahe at maaaring hindi nila mapagtanto na hindi maaaring maihatid ang mga mensaheng ito.</string>
 	<string name="explanation_delete_inactive_owned_identity" state="needs_review" hash="-575337242">Mukhang hindi aktibo ang iyong kasalukuyang profile, na nangangahulugang malamang na inilipat mo ito sa ibang device. Kung plano mong ipagpatuloy ang paggamit ng profile na ito sa iyong iba pang device, maaari mo itong ligtas na burahin dito.\n\nKung hindi mo na gustong gamitin ang profile na ito, kailangan mo muna itong i-reactivate sa device na ito, maghintay na muling mabuo ang mga secure na channel sa iyong mga contact, at saka mo lamang burahin ang profile na ito sa pamamagitan ng pagpili ng opsyon na \"burahin sa lahat ng dako\".</string>
@@ -1354,7 +1374,7 @@
 	<string name="label_metadata_kind_undelivered" state="needs_review" hash="-374973995">Hindi matagumpay ang pagpapadala</string>
 	<string name="text_rejected_call" state="needs_review" hash="2010856222">Tinanggihan ang tawag</string>
 	<string name="text_rejected_call_other_device" state="needs_review" hash="-1084958076">Tinanggihan ang tawag sa ibang device.</string>
-	<string name="pref_sending_foreground_service" state="needs_review" hash="-1445808256">I-enable ang notipikasyon na \\"nagpapadala ng mensahe\\"</string>
+	<string name="pref_sending_foreground_service" state="needs_review" hash="-1445808256">I-enable ang notipikasyon na \"nagpapadala ng mensahe\"</string>
 	<string name="pref_sending_foreground_service_summary" state="needs_review" hash="-605111460">Kapag in-activate mo ang setting na ito, magsisimula ang isang foreground service kapag may ipinapadalang mensahe. Maaari nitong pigilan ang sistema na patayin ang Olvid habang ina-upload ang isang attachment.</string>
 	<string name="menu_action_select_all" state="needs_review" hash="346006780">Piliin lahat</string>
 	<string name="label_swipe_reply" state="needs_review" hash="-410287287">Sumagot</string>
@@ -1443,23 +1463,17 @@
 	<string name="button_label_send" state="needs_review" hash="-185402948">Ipadala</string>
 	<string name="button_label_start_sharing" state="needs_review" hash="682254052">Magsimulang magbahagi</string>
 	<string name="location_sharing_duration_one_hour_short_string" state="needs_review" hash="1004063951">1 oras</string>
-	<string name="location_sharing_duration_one_hour_full_string" state="needs_review" hash="-58118972">Ibahagi ang lokasyon sa loob ng <b>1 oras</b>
-	</string>
+	<string name="location_sharing_duration_one_hour_full_string" state="needs_review" hash="-58118972">Ibahagi ang lokasyon sa loob ng <b>1 oras</b></string>
 	<string name="location_sharing_duration_three_hours_short_string" state="needs_review" hash="228095183">3 oras</string>
-	<string name="location_sharing_duration_three_hours_full_string" state="needs_review" hash="754857804">Ibahagi ang lokasyon sa loob ng <b>3 oras</b>
-	</string>
+	<string name="location_sharing_duration_three_hours_full_string" state="needs_review" hash="754857804">Ibahagi ang lokasyon sa loob ng <b>3 oras</b></string>
 	<string name="location_sharing_duration_endless_short_string" state="needs_review" hash="55208442">Walang katapusan</string>
-	<string name="location_sharing_duration_endless_full_string" state="needs_review" hash="1710814259">Ibahagi ang lokasyon <b>hanggang sa ihinto</b>
-	</string>
+	<string name="location_sharing_duration_endless_full_string" state="needs_review" hash="1710814259">Ibahagi ang lokasyon <b>hanggang sa ihinto</b></string>
 	<string name="location_sharing_quality_precise_short_string" state="needs_review" hash="351442529">Tumpak</string>
 	<string name="location_sharing_quality_balanced_short_string" state="needs_review" hash="-1925315592">Balansyado</string>
 	<string name="location_sharing_quality_power_save_short_string" state="needs_review" hash="-14275273">Pagtitipid sa baterya</string>
-	<string name="location_sharing_quality_precise_full_string" state="needs_review" hash="-1255374893">Paraan ng pagbabahagi ng lokasyon na <b>eksakto</b>
-	</string>
-	<string name="location_sharing_quality_balanced_full_string" state="needs_review" hash="-421322514">
-		<b>Balanseng</b> paraan ng pagbabahagi ng lokasyon</string>
-	<string name="location_sharing_quality_power_save_full_string" state="needs_review" hash="792896333">Mode ng pagbabahagi ng lokasyon na <b>nakakatipid ng baterya</b>
-	</string>
+	<string name="location_sharing_quality_precise_full_string" state="needs_review" hash="-1255374893">Paraan ng pagbabahagi ng lokasyon na <b>eksakto</b></string>
+	<string name="location_sharing_quality_balanced_full_string" state="needs_review" hash="-421322514"><b>Balanseng</b> paraan ng pagbabahagi ng lokasyon</string>
+	<string name="location_sharing_quality_power_save_full_string" state="needs_review" hash="792896333">Mode ng pagbabahagi ng lokasyon na <b>nakakatipid ng baterya</b></string>
 	<string name="label_sharing_location_until" state="needs_review" hash="187977459">Pagbabahagi ng lokasyon hanggang: %1$s</string>
 	<string name="label_location_sharing_ended" state="needs_review" hash="1028490137">Natapos na ang pagbabahagi ng lokasyon</string>
 	<string name="label_gps_coordinates" state="needs_review" hash="-1537356414">Mga koordinat ng GPS</string>
@@ -1560,7 +1574,7 @@
 	<string name="text_setting_address_lookup_server" state="needs_review" hash="-1680866462">\"• Pasadyang server ng address: \"</string>
 	<string name="text_setting_disable_address_lookup" state="needs_review" hash="-1481615256">\"• Huwag paganahin ang paghahanap ng address: \"</string>
 	<string name="text_setting_notify_certificate_change" state="needs_review" hash="-1831192863">\"\u2023 Ipaalam kapag nagbago ang isang sertipiko ng server: \"</string>
-	<string name="text_setting_sending_foreground_service" state="needs_review" hash="-406116991">\"\u2023 I-enable ang notipikasyon na \\"nagpapadala ng mensahe\\": \"</string>
+	<string name="text_setting_sending_foreground_service" state="needs_review" hash="-406116991">\"\u2023 I-enable ang notipikasyon na \"nagpapadala ng mensahe\": \"</string>
 	<string name="text_setting_auto_join_groups" state="needs_review" hash="522515555">• Awtomatikong tanggapin ang mga imbitasyon sa grupo mula sa:</string>
 	<string name="text_setting_lock_delay" state="needs_review" hash="820821201">\"\u2023 Pagkaantala ng pag-lock ng screen: \"</string>
 	<string name="text_setting_auto_download_size" state="needs_review" hash="585840560">\"\u2023 Awtomatikong i-download ang mga kalakip: \"</string>
@@ -1689,7 +1703,7 @@
 	<string name="button_label_create_new_profile" state="needs_review" hash="-1130516787">Gumawa ng bagong profile</string>
 	<string name="label_device_name" state="needs_review" hash="-1693256515">Pangalan ng aparato</string>
 	<string name="toast_message_profile_activation_failed" state="needs_review" hash="593290647">Nabigo ang pag-import ng profile</string>
-	<string name="button_label_add_device_xxx" state="needs_review" hash="-1479212354">Idagdag ang device na \\"%1$s\\"</string>
+	<string name="button_label_add_device_xxx" state="needs_review" hash="-1479212354">Idagdag ang device na \"%1$s\"</string>
 	<string name="notification_title_device_trust" state="needs_review" hash="-1568042777">Bagong aparato: \"%1$s\"</string>
 	<string name="notification_title_unnamed_device_trust" state="needs_review" hash="1704207127">Bagong aparato</string>
 	<string name="notification_message_device_trust" state="needs_review" hash="753501294">Isang bagong device ang idinagdag sa isa sa iyong mga profile ng Olvid.</string>
@@ -1743,13 +1757,13 @@
 	<string name="troubleshooting_battery_optimization_invalid_description" state="needs_review" hash="688616134">Gumagana ang pag-optimize ng baterya sa Android sa pamamagitan ng pagpapaliban ng ilang mga kaganapan sa background upang patakbuhin ang mga ito nang sabay-sabay. Maaaring maantala nito ang pagtanggap ng mga papasok na mensahe at tawag ng Olvid.\n\nUpang matiyak na natatanggap mo ang iyong mga mensahe sa lalong madaling panahon, dapat mong payagan ang Olvid na \"palaging tumakbo sa background\".</string>
 	<string name="troubleshooting_background_restriction_valid_title" state="needs_review" hash="-1653431113">Paghihigpit sa background</string>
 	<string name="troubleshooting_background_restriction_valid_description" state="needs_review" hash="-562490603">Kailangang payagan ang Olvid na tumakbo sa background upang gumana nang maayos. Ang pagpapagana ng mga paghihigpit sa background ay pipigil sa Olvid na makatanggap ng mga mensahe sa background.</string>
-	<string name="troubleshooting_background_restriction_invalid_description" state="needs_review" hash="-1942040454">Ang Olvid ay may naka-enable na \\"paghihigpit sa background\\". Hindi gagana nang maayos ang Olvid hangga\'t hindi mo ito inaalis sa listahan ng \\"mga app na may paghihigpit\\".\n\nMaaari mong ayusin ito sa pamamagitan ng pagpindot sa \\"Mga setting ng app\\" at pagpunta sa seksyon ng paggamit ng baterya.</string>
+	<string name="troubleshooting_background_restriction_invalid_description" state="needs_review" hash="-1942040454">Ang Olvid ay may naka-enable na \"paghihigpit sa background\". Hindi gagana nang maayos ang Olvid hangga\'t hindi mo ito inaalis sa listahan ng \"mga app na may paghihigpit\".\n\nMaaari mong ayusin ito sa pamamagitan ng pagpindot sa \"Mga setting ng app\" at pagpunta sa seksyon ng paggamit ng baterya.</string>
 	<string name="troubleshooting_alarm_valid_title" state="needs_review" hash="-2113413915">Pahintulot na magtakda ng mga alarma</string>
 	<string name="troubleshooting_alarm_valid_description" state="needs_review" hash="184003925">Gumagamit ang Olvid ng mga alarm upang tumpak na i-iskedyul ang pag-lock ng screen at pagtanggal ng mga pansamantalang mensahe. Tama ang pagkaka-set ng pahintulot na ito.</string>
 	<string name="troubleshooting_alarm_invalid_description" state="needs_review" hash="-1221338357">Gumagamit ang Olvid ng mga alarm upang tumpak na i-iskedyul ang pag-lock ng screen at pagtanggal ng mga pansamantalang mensahe.\nAng pahintulot na magtakda ng mga ganitong alarm ay binawi, na maaaring magdulot ng hindi wastong paggana ng mga tampok na ito sa seguridad.\n\nMariin naming hinihikayat kang payagan ang pagtatakda ng mga alarm at paalala sa pamamagitan ng pagpindot sa \"Mga setting ng app\".</string>
 	<string name="troubleshooting_incoming_call_valid_title" state="needs_review" hash="1166672465">Mga abiso para sa papasok na tawag</string>
 	<string name="troubleshooting_incoming_call_valid_description" state="needs_review" hash="-856478096">Kailangan ipakita ang isang buong screen na notipikasyon na nagsasabing \"Sagutin ang tawag\" kapag may papasok na tawag. Tama ang pagkaka-set up ng pahintulot na ito.</string>
-	<string name="troubleshooting_incoming_call_invalid_description" state="needs_review" hash="998007777">Kailangan ipakita ng mga papasok na tawag ang isang buong screen na notipikasyon na \\"Sagutin ang tawag\\". Sa kasalukuyan, walang pahintulot ang Olvid na buksan ang ganitong uri ng buong screen na notipikasyon. Pindutin ang \\"Mga setting ng app\\" upang payagan ang mga buong screen na notipikasyon.</string>
+	<string name="troubleshooting_incoming_call_invalid_description" state="needs_review" hash="998007777">Kailangan ipakita ng mga papasok na tawag ang isang buong screen na notipikasyon na \"Sagutin ang tawag\". Sa kasalukuyan, walang pahintulot ang Olvid na buksan ang ganitong uri ng buong screen na notipikasyon. Pindutin ang \"Mga setting ng app\" upang payagan ang mga buong screen na notipikasyon.</string>
 	<string name="troubleshooting_google_valid_title" state="needs_review" hash="-1672388922">Hindi magagamit ang Google Play Services</string>
 	<string name="troubleshooting_google_valid_description" state="needs_review" hash="2096293716">Ang permanenteng koneksyon ng WebSocket sa mga server ng Olvid ay na-configure nang tama.</string>
 	<string name="troubleshooting_google_invalid_description" state="needs_review" hash="-47932147">Hindi available ang Google Play Services sa iyong device. Umaasa ang Olvid sa mga serbisyong ito upang maabisuhan tungkol sa mga papasok na mensahe. Kung wala ang mga ito, matatanggap mo lamang ang mga bagong mensahe kapag nasa foreground ang Olvid.\n\nMaaari mo ring i-enable ang isang permanenteng koneksyon sa WebSocket sa mga server ng Olvid na maaaring gampanan ang parehong layunin (ngunit maaaring bahagyang maubos ang iyong baterya).</string>
@@ -2020,7 +2034,7 @@
 	<string name="button_label_restore_my_profile" state="needs_review" hash="418284480">Ibalik ang aking profile</string>
 	<string name="button_label_keep_all_with_olvid_plus" state="needs_review" hash="622534541">Itago silang lahat gamit ang Olvid+</string>
 	<string name="explanation_backup_v2_choose_device_after_restore" state="needs_review" hash="292969815">Kapag naibalik na ang iyong profile, maaari kang pumili kung aling device ang gusto mong panatilihing aktibo mula sa mga setting ng iyong profile.</string>
-	<string name="explanation_backup_v2_device_expiration_start" state="needs_review" hash="-147053489">Sa pamamagitan ng pagbabalik ng iyong profile \\"</string>
+	<string name="explanation_backup_v2_device_expiration_start" state="needs_review" hash="-147053489">Sa pamamagitan ng pagbabalik ng iyong profile \"</string>
 	<string name="explanation_backup_v2_device_expiration_nickname" state="needs_review" hash="2093353377">(%1$s)</string>
 	<string name="toast_message_no_key_found" state="needs_review" hash="-1984410678">Walang natagpuang backup key.</string>
 	<string name="label_backup_headers_title" state="needs_review" hash="-846183546">Ang iyong mga backup</string>
@@ -2042,11 +2056,14 @@
 	<string name="button_label_configure_backups" state="needs_review" hash="-990646398">I-enable ang mga backup</string>
 	<string name="tip_write_backup_key_title" state="needs_review" hash="-1652757003">Huwag kalimutang isulat ang iyong backup key 😇</string>
 	<string name="tip_write_backup_key_message" state="needs_review" hash="931018791">Mahalaga ang iyong backup key para maibalik ang iyong mga profile kung mawala mo ang access sa device na ito.</string>
+	<string name="tip_legacy_backup_end_of_life_title" state="needs_review" hash="810495149">Ang mga lumang backup na ginagamit mo ay hindi na sinusuportahan.</string>
+	<string name="tip_legacy_backup_end_of_life_message" state="needs_review" hash="-314257210">Ang susunod na update ng Olvid ay hindi na susuportahan ang mga lumang backup. Para mapanatiling ligtas ang iyong account, lumipat sa bagong sistema ng pag-backup ngayon.</string>
 	<string name="tip_troubleshooting_title" state="needs_review" hash="-393739108">Pagandahin ang iyong karanasan sa Olvid 🚀</string>
 	<string name="tip_troubleshooting_message" state="needs_review" hash="-935493349">May ilang mga parameter na hindi wastong na-configure sa iyong device at maaaring makaapekto sa iyong karanasan sa Olvid.</string>
 	<string name="button_label_this_way" state="needs_review" hash="747183939">Dito</string>
 	<string name="toast_code_copied" state="needs_review" hash="-1522785848">Nakopya ang code</string>
 	<string name="explanation_choose_members" state="needs_review" hash="-1385158706">Mangyaring piliin kung sino ang idadagdag sa grupong ito.</string>
+	<string name="explanation_choose_share_recipients" state="needs_review" hash="-1406265940">Mangyaring piliin kung kanino mo gustong ibahagi.</string>
 	<string name="explanation_choose_contact_introduction" state="needs_review" hash="1113777517">Mangyaring piliin kung kanino mo ipapakilala si %1$s.</string>
 	<string name="label_group_administration" state="needs_review" hash="871355986">Pamamahala ng grupo</string>
 	<string name="dialog_title_call_blocked" state="needs_review" hash="1594606530">Tinanggihan ang tawag</string>
@@ -2087,7 +2104,7 @@
 	<string name="label_poll_answers_sorted_by_poll_order" state="needs_review" hash="685632215">Pagkakasunod-sunod ng botohan</string>
 	<string name="label_poll_answers_sorted_by_answer_count" state="needs_review" hash="516869301">Bilang ng mga sagot</string>
 	<string name="notification_public_title_new_poll_vote" state="needs_review" hash="-1901040080">Bagong sagot sa iyong botohan</string>
-	<string name="toast_message_remove_none_answer" state="needs_review" hash="277924655">Alisin muna ang sagot na \\"%1$s\\"</string>
+	<string name="toast_message_remove_none_answer" state="needs_review" hash="277924655">Alisin muna ang sagot na \"%1$s\"</string>
 	<string name="text_poll" state="needs_review" hash="-153643506">botohan</string>
 	<string name="poll_csv_headers" state="needs_review" hash="1869917931">Tanong sa botohan, Pangalan ng botante, Boto, Petsa</string>
 	<string name="label_poll_no_votes_yet" state="needs_review" hash="-981251817">Wala pang sagot</string>
@@ -2172,7 +2189,7 @@
 	<string name="store_link_olvid_store" state="needs_review" hash="-1825630369">Bisitahin ang Olvid Store</string>
 	<string name="toast_message_reminder_set" state="needs_review" hash="-961055414">Itinakdang paalala</string>
 	<string name="dialog_title_keycloak_authentication_impossible" state="needs_review" hash="325273853">Hindi posible ang pagpapatunay</string>
-	<string name="dialog_message_keycloak_authentication_impossible" state="needs_review" hash="390830785">Ang iyong profile ay kasalukuyang pinamamahalaan ng iyong organisasyon at kinakailangan ang muling pagpapatunay. Gayunpaman, tila walang magagamit na suportadong paraan ng pagpapatunay.\n\nMangyaring makipag-ugnayan sa iyong administrator para sa karagdagang detalye.</string>
+	<string name="dialog_message_keycloak_authentication_impossible" state="needs_review" hash="-2031322232">Kasalukuyang pinamamahalaan ng iyong organisasyon ang iyong profile at kinakailangan ang muling pagpapatunay. Gayunpaman, mukhang walang available na suportadong paraan ng pagpapatunay.\nMangyaring makipag-ugnayan sa iyong administrator para sa karagdagang detalye.</string>
 	<string name="onboarding_transfer_keycloak_error_message_authentication_impossible" state="needs_review" hash="-1891385979">Mukhang walang magagamit na suportadong paraan ng pagpapatunay.</string>
 	<string name="pref_use_alt_turn_servers_title" state="needs_review" hash="-1956132776">Gumamit ng ibang mga server ng TURN</string>
 	<string name="pref_use_alt_turn_servers_summary" state="needs_review" hash="357427162">I-activate ang opsyon na ito upang gumamit ng mga TURN server na may mga nagbabagong IP address. Kung hindi ka sigurado, panatilihing naka-off ang opsyon na ito 😁</string>
@@ -2184,7 +2201,7 @@
 	<string name="dialog_message_wants_to_transfer_history" state="needs_review" hash="-1902805890">nais ilipat ang iyong kasaysayan ng pag-uusap sa aparatong ito</string>
 	<string name="notification_content_wants_to_transfer_history" state="needs_review" hash="968115404">\"%1$s\" ay gustong ilipat ang iyong kasaysayan ng pag-uusap sa aparatong ito.</string>
 	<string name="button_label_start_transfer" state="needs_review" hash="208526116">Simulan ang paglilipat</string>
-	<string name="pref_disable_secondary_notifications_title" state="needs_review" hash="29372078">I-disable ang mga \\"pangalawang\\" notipikasyon</string>
+	<string name="pref_disable_secondary_notifications_title" state="needs_review" hash="29372078">I-disable ang mga \"pangalawang\" notipikasyon</string>
 	<string name="pref_disable_secondary_notifications_summary" state="needs_review" hash="-402927980">Pinapagana ng setting na ito ang mga notification para sa mga reaksyon sa iyong mga mensahe o mga bagong tugon sa iyong mga botohan.</string>
 	<string name="template_copy_multiple_messages" state="needs_review" hash="-1584473750">[%1$s] %2$s:\n%3$s</string>
 	<string name="label_export_your_chat_history" state="needs_review" hash="30036193">I-export ang iyong kasaysayan ng pag-uusap</string>
@@ -2283,5 +2300,45 @@
 	<string name="label_error_loading_openstreetmap_style_file" state="needs_review" hash="-2596045">Nagkaroon ng error habang kinukuha ang OpenStreetMap style file.</string>
 	<string name="dialog_title_subscriptions_not_available" state="needs_review" hash="336174241">Hindi available ang mga subscription sa loob ng app</string>
 	<string name="dialog_message_subscriptions_not_available" state="needs_review" hash="2093768678">Ang bersyon ng Olvid na iyong in-install ay hindi kasama ang Google Billing library at hindi sinusuportahan ang mga pagbili sa loob ng app.\n\nPara sa karagdagang impormasyon, mangyaring makipag-ugnayan sa amin sa **feedback@olvid.io**.</string>
+	<string name="ftux_next" state="needs_review" hash="1158639077">Susunod</string>
+	<string name="ftux_start" state="needs_review" hash="646298532">Magsimula</string>
+	<string name="ftux_page_indicator" state="needs_review" hash="1987610035">Pahina %1$d ng %2$d</string>
+	<string name="ftux_page_welcome_title" state="needs_review" hash="1173832630">Maligayang pagdating sa <b>Olvid</b>.</string>
+	<string name="ftux_page_welcome_body" state="needs_review" hash="-2085198139">Pribadong pagmemensahe para sa lahat.</string>
+	<string name="ftux_page_private_title" state="needs_review" hash="1815927819"><b>Pribadong</b> pagmemensahe</string>
+	<string name="ftux_page_private_body" state="needs_review" hash="-590644231">Sa %1$s, ikaw ang pumipili kung sino ang gusto mong kausapin. Walang spam, walang mga rekomendasyon, walang hindi kinakailangang abiso, at walang mensahe mula sa mga estranghero.\n\nWalang makakapag-ugnay sa iyo nang walang iyong pahintulot.\n\nAng %1$s ay ang iyong digital na mundo.</string>
+	<string name="ftux_page_everyone_title" state="needs_review" hash="1506796386">Pagmemensahe para sa <b>lahat</b></string>
+	<string name="ftux_page_everyone_body" state="needs_review" hash="-586100377">Nasaan ka man, ang %1$s ay nag-aalok sa iyo ng pinakamahusay na seguridad. Hindi kailangan ng email o numero ng telepono.\n\nHindi nanghihingi ng anumang impormasyon tungkol sa iyo ang %1$s, at binabago nito ang lahat.</string>
+	<string name="ftux_page_protect_title" state="needs_review" hash="1969120191">Pinoprotektahan ka ng Olvid. Pinoprotektahan ng Olvid ang mga taong mahalaga sa iyo.</string>
+	<string name="ftux_page_protect_body" state="needs_review" hash="881847930">Hindi lamang ito isang pangako — nagbibigay ang %1$s ng kriptograpikong patunay.\n\nKahit na idagdag mo ang iyong mga contact nang malayo o harapan, ang iyong mga pag-uusap ay palaging tunay at naka-encrypt mula sa dulo hanggang sa dulo.</string>
+	<string name="ftux_page_pricing_title" state="needs_review" hash="-1948277889">Isang <b>malinaw</b> na modelo ng negosyo</string>
+	<string name="ftux_page_pricing_body" state="needs_review" hash="-1064278870">Hindi ginagamit ng %1$s ang iyong personal na datos para kumita — dahil wala itong hinihingi!\n\nAng libre ay libre. Ang may bayad, may presyo.</string>
+	<string name="ftux_page_media_title" state="needs_review" hash="558110518">Mayroon nang <b>lahat</b> si Olvid</string>
+	<string name="ftux_page_media_body" state="needs_review" hash="1807247240">Walang limitasyon sa laki ng attachment, pagbabahagi ng mga larawan na may mataas na resolusyon, mga botohan, audio at video call, suporta para sa maraming device, geolocation—lahat ay narito!</string>
 	<string name="menu_action_cancel_upload" state="needs_review" hash="1672681586">Kanselahin ang pag-upload</string>
+	<string name="label_suggested_contacts" state="needs_review" hash="816810770">Mga iminungkahing kontak</string>
+	<string name="label_suggested_contacts_subtitle" state="needs_review" hash="131522501">Madaling mag-imbita ng mga gumagamit</string>
+	<string name="label_suggested_contact_already_a_contact" state="needs_review" hash="-1177848651">Isa na siyang kontak</string>
+	<string name="label_suggested_contact_invitation_received" state="needs_review" hash="2100924901">Natanggap na ang imbitasyon</string>
+	<string name="label_suggested_contact_invitation_sent" state="needs_review" hash="310679275">Naipadala na ang imbitasyon</string>
+	<string name="label_suggested_contacts_all_done" state="needs_review" hash="-127525104">Ikaw ay nasa pinakabagong bersyon na!\nWala nang ibang kontak na imumungkahi.</string>
+	<string name="button_label_suggested_contact_later" state="needs_review" hash="-1933816039">Mamaya</string>
+	<string name="button_label_close" state="needs_review" hash="1454843231">Isara</string>
+	<string name="button_label_skip" state="needs_review" hash="2056258301">Laktawan</string>
+	<string name="button_label_understood" state="needs_review" hash="829780875">Naintindihan ko na</string>
+	<string name="label_suggested_contacts_onboarding_title_1" state="needs_review" hash="491881039">Mag-imbita sa pamamagitan ng pag-swipe</string>
+	<string name="label_suggested_contacts_onboarding_message_1" state="needs_review" hash="331320806">I-swipe ang card sa kanan para imbitahan ang user, o i-swipe sa kaliwa para pumunta sa susunod.</string>
+	<string name="label_suggested_contacts_onboarding_title_2" state="needs_review" hash="-788798380">Saan nanggaling ang mga contact na ito?</string>
+	<string name="label_suggested_contacts_onboarding_message_2" state="needs_review" hash="1536681696">Ito ang mga gumagamit ng Olvid na wala pa sa iyong listahan ng mga contact.</string>
+	<string name="label_suggested_contacts_onboarding_caption" state="needs_review" hash="-1299179969">Mayroon kayong isang koneksyon: Pareho kayong miyembro ng hindi bababa sa isang grupo.</string>
+	<string name="label_suggested_contacts_you" state="needs_review" hash="672009142">Ikaw</string>
+	<string name="label_suggested_contacts_common_group" state="needs_review" hash="-1739793963">Grupong pinagsasaluhan</string>
+	<string name="explanation_suggested_contacts_others_tab" state="needs_review" hash="852096678">Ang mga user sa ibaba ay hindi kasama sa iyong listahan ng mga contact, at hindi ka pa maaaring magkaroon ng pribadong pag-uusap sa kanila. Ngunit madali mo silang maanyayahan! 🚀</string>
+	<string name="label_suggested_contacts_invite_in_one_gesture" state="needs_review" hash="438220313">Imbitahan ang mga user na ito sa pamamagitan ng pag-swipe</string>
+	<string name="menu_action_suggested_contacts_see_full_list" state="needs_review" hash="603082500">Tingnan ang buong listahan</string>
+	<string name="menu_action_suggested_contacts_replay_onboarding" state="needs_review" hash="-1552704243">Ulitin ang tutorial</string>
+	<string name="button_label_uninvite" state="needs_review" hash="771825501">Bawiin ang imbitasyon</string>
+	<string name="button_label_accept_invitation" state="needs_review" hash="-1778405034">Tanggapin ang imbitasyon</string>
+	<string name="label_suggested_contacts_already_swiped" state="needs_review" hash="427042318">Na-swipe na</string>
+	<string name="label_suggested_contacts_not_swiped_yet" state="needs_review" hash="310924358">Hindi pa nasusuri</string>
 </resources>

@@ -108,10 +108,17 @@ fun OnboardingScreen(
         var footerHeight by remember { mutableStateOf(0.dp) }
         Column(
             modifier = Modifier
+                .widthIn(max = 480.dp)
                 .fillMaxWidth()
                 .verticalScroll(rememberScrollState())
                 .windowInsetsPadding(WindowInsets.safeDrawing.only(WindowInsetsSides.Top + WindowInsetsSides.Start + WindowInsetsSides.End))
-                .then(if (footer == null) Modifier.windowInsetsPadding(WindowInsets.safeDrawing.only(WindowInsetsSides.Bottom)) else Modifier)
+                .then(
+                    if (footer == null) Modifier.windowInsetsPadding(
+                        WindowInsets.safeDrawing.only(
+                            WindowInsetsSides.Bottom
+                        )
+                    ) else Modifier
+                )
                 .align(BiasAlignment(horizontalBias = 0f, verticalBias = -0.3f))
                 .padding(vertical = 16.dp)
                 .padding(bottom = footerHeight),
@@ -163,82 +170,86 @@ fun OnboardingScreen(
 
                 step.actions.filter { it.type == BUTTON || it.type == BUTTON_OUTLINED }
                     .takeIf { it.isNotEmpty() }?.run {
-                    Spacer(modifier = Modifier.height(20.dp))
-                    Row(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(horizontal = 8.dp)
-                            .height(IntrinsicSize.Min),
-                        horizontalArrangement = Arrangement.spacedBy(
-                            16.dp,
-                            Alignment.CenterHorizontally
-                        )
-                    ) {
-                        forEach { action ->
-                            if (action.type == BUTTON) {
-                                Button(
-                                    modifier = Modifier.weight(weight = 1f, fill = false)
-                                        .fillMaxHeight(),
-                                    elevation = null,
-                                    shape = RoundedCornerShape(8.dp),
-                                    colors = ButtonDefaults.buttonColors(
-                                        contentColor = colorResource(R.color.alwaysWhite),
-                                        containerColor = colorResource(R.color.olvid_gradient_light),
-                                        disabledContentColor = colorResource(R.color.almostWhite),
-                                        disabledContainerColor = colorResource(R.color.mediumGrey)
-                                    ),
-                                    onClick = action.onClick,
-                                    enabled = action.enabled
-                                ) {
-                                    action.icon?.let {
-                                        Icon(
-                                            modifier = Modifier.size(20.dp),
-                                            painter = painterResource(id = it),
-                                            contentDescription = ""
+                        Spacer(modifier = Modifier.height(20.dp))
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(horizontal = 8.dp)
+                                .height(IntrinsicSize.Min),
+                            horizontalArrangement = Arrangement.spacedBy(
+                                16.dp,
+                                Alignment.CenterHorizontally
+                            )
+                        ) {
+                            forEach { action ->
+                                if (action.type == BUTTON) {
+                                    Button(
+                                        modifier = Modifier
+                                            .weight(weight = 1f, fill = false)
+                                            .fillMaxHeight(),
+                                        elevation = null,
+                                        shape = RoundedCornerShape(8.dp),
+                                        colors = ButtonDefaults.buttonColors(
+                                            contentColor = colorResource(R.color.alwaysWhite),
+                                            containerColor = colorResource(R.color.olvid_gradient_light),
+                                            disabledContentColor = colorResource(R.color.almostWhite),
+                                            disabledContainerColor = colorResource(R.color.mediumGrey)
+                                        ),
+                                        onClick = action.onClick,
+                                        enabled = action.enabled
+                                    ) {
+                                        action.icon?.let {
+                                            Icon(
+                                                modifier = Modifier.size(20.dp),
+                                                painter = painterResource(id = it),
+                                                contentDescription = ""
+                                            )
+                                            Spacer(modifier = Modifier.width(8.dp))
+                                        }
+                                        Text(
+                                            text = action.label,
+                                            style = OlvidTypography.body1,
+                                            textAlign = if (action.icon == null) TextAlign.Center else TextAlign.Start
                                         )
-                                        Spacer(modifier = Modifier.width(8.dp))
                                     }
-                                    Text(
-                                        text = action.label,
-                                        style = OlvidTypography.body1,
-                                        textAlign = if (action.icon == null) TextAlign.Center else TextAlign.Start
-                                    )
-                                }
-                            } else {
-                                OutlinedButton(
-                                    modifier = Modifier.weight(weight = 1f, fill = false)
-                                        .fillMaxHeight(),
-                                    elevation = null,
-                                    shape = RoundedCornerShape(8.dp),
-                                    border = BorderStroke(
-                                        1.dp,
-                                        if (action.enabled) colorResource(R.color.blueOrWhite) else colorResource(id = R.color.mediumGrey)
-                                    ),
-                                    onClick = action.onClick,
-                                    enabled = action.enabled,
-                                    colors = ButtonDefaults.outlinedButtonColors(
-                                        contentColor = colorResource(id = R.color.blueOrWhite),
-                                        disabledContentColor = colorResource(id = R.color.mediumGrey)
-                                    )
-                                ) {
-                                    action.icon?.let {
-                                        Icon(
-                                            modifier = Modifier.size(20.dp),
-                                            painter = painterResource(id = it),
-                                            contentDescription = ""
+                                } else {
+                                    OutlinedButton(
+                                        modifier = Modifier
+                                            .weight(weight = 1f, fill = false)
+                                            .fillMaxHeight(),
+                                        elevation = null,
+                                        shape = RoundedCornerShape(8.dp),
+                                        border = BorderStroke(
+                                            1.dp,
+                                            if (action.enabled) colorResource(R.color.blueOrWhite) else colorResource(
+                                                id = R.color.mediumGrey
+                                            )
+                                        ),
+                                        onClick = action.onClick,
+                                        enabled = action.enabled,
+                                        colors = ButtonDefaults.outlinedButtonColors(
+                                            contentColor = colorResource(id = R.color.blueOrWhite),
+                                            disabledContentColor = colorResource(id = R.color.mediumGrey)
                                         )
-                                        Spacer(modifier = Modifier.width(8.dp))
+                                    ) {
+                                        action.icon?.let {
+                                            Icon(
+                                                modifier = Modifier.size(20.dp),
+                                                painter = painterResource(id = it),
+                                                contentDescription = ""
+                                            )
+                                            Spacer(modifier = Modifier.width(8.dp))
+                                        }
+                                        Text(
+                                            text = action.label,
+                                            style = OlvidTypography.body1,
+                                            textAlign = if (action.icon == null) TextAlign.Center else TextAlign.Start
+                                        )
                                     }
-                                    Text(
-                                        text = action.label,
-                                        style = OlvidTypography.body1,
-                                        textAlign = if (action.icon == null) TextAlign.Center else TextAlign.Start
-                                    )
                                 }
                             }
                         }
                     }
-                }
             }
             contentAfter?.invoke(this)
         }
@@ -299,8 +310,7 @@ private fun OnboardingHeader(title: String, subtitle: String) {
         Text(
             modifier = Modifier.padding(horizontal = 16.dp),
             text = title,
-            style = TextStyle(
-                fontSize = 24.sp,
+            style = OlvidTypography.h1.copy(
                 color = colorResource(id = R.color.almostBlack),
                 textAlign = TextAlign.Center
             )
@@ -311,9 +321,8 @@ private fun OnboardingHeader(title: String, subtitle: String) {
         Text(
             modifier = Modifier.padding(horizontal = 16.dp),
             text = subtitle,
-            style = TextStyle(
-                fontSize = 16.sp,
-                color = Color(0xFF8B8D97),
+            style = OlvidTypography.body1.copy(
+                color = colorResource(R.color.greyTint),
                 textAlign = TextAlign.Center
             )
         )
@@ -322,7 +331,7 @@ private fun OnboardingHeader(title: String, subtitle: String) {
 
 @Composable
 fun OnboardingExplanationSteps(steps: List<String>) {
-    Column (
+    Column(
         modifier = Modifier.fillMaxWidth(),
         verticalArrangement = Arrangement.spacedBy(4.dp)
     ) {
@@ -332,7 +341,7 @@ fun OnboardingExplanationSteps(steps: List<String>) {
                     text = "${index + 1}.",
                     style = OlvidTypography.body1.copy(
                         fontWeight = FontWeight.Bold,
-                        color = Color(0xFF8B8D97),
+                        color = colorResource(R.color.greyTint),
                     )
                 )
 
@@ -342,7 +351,7 @@ fun OnboardingExplanationSteps(steps: List<String>) {
                     modifier = Modifier.weight(1f, true),
                     text = s,
                     style = OlvidTypography.body1.copy(
-                        color = Color(0xFF8B8D97),
+                        color = colorResource(R.color.greyTint),
                         textAlign = TextAlign.Start
                     )
                 )
@@ -424,8 +433,10 @@ fun BoxedCharTextField(
         },
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.NumberPassword),
         decorationBox = {
-            Row(modifier = Modifier.widthIn(max = 300.dp),
-                horizontalArrangement = Arrangement.Center) {
+            Row(
+                modifier = Modifier.widthIn(max = 300.dp),
+                horizontalArrangement = Arrangement.Center
+            ) {
                 repeat(count) { index ->
                     BoxedChar(
                         modifier = Modifier.weight(1f),
@@ -462,7 +473,7 @@ private fun BoxedChar(
     Text(
         modifier = modifier
             .border(
-                1.dp, if (error) Color(0xFFE2594E) else when {
+                1.dp, if (error) colorResource(R.color.red) else when {
                     isFocused -> colorResource(id = R.color.blueOrWhite)
                     else -> colorResource(id = R.color.grey)
                 }, RoundedCornerShape(12.dp)
@@ -476,13 +487,13 @@ private fun BoxedChar(
             fontWeight = FontWeight.SemiBold
         ),
         color =
-        if (error) {
-            Color(0xFFE2594E)
-        } else if (isFocused) {
-            colorResource(id = R.color.blueOrWhite)
-        } else {
-            colorResource(id = R.color.almostBlack)
-        },
+            if (error) {
+                colorResource(R.color.red)
+            } else if (isFocused) {
+                colorResource(id = R.color.blueOrWhite)
+            } else {
+                colorResource(id = R.color.almostBlack)
+            },
         textAlign = TextAlign.Center
     )
 }
@@ -514,8 +525,16 @@ fun OnboardingPreview2() {
             actions = listOf(
                 OnboardingAction(label = AnnotatedString("Button 1"), type = BUTTON_OUTLINED) {},
                 OnboardingAction(label = AnnotatedString("Button 2"), type = BUTTON) {},
-                OnboardingAction(label = AnnotatedString("Button 3"), type = BUTTON_OUTLINED, enabled = false) {},
-                OnboardingAction(label = AnnotatedString("Button 4"), type = BUTTON, enabled = false) {},
+                OnboardingAction(
+                    label = AnnotatedString("Button 3"),
+                    type = BUTTON_OUTLINED,
+                    enabled = false
+                ) {},
+                OnboardingAction(
+                    label = AnnotatedString("Button 4"),
+                    type = BUTTON,
+                    enabled = false
+                ) {},
             )
         ),
         onBack = {},

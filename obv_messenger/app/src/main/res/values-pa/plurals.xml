@@ -282,4 +282,20 @@
 		<item quantity="one" state="needs_review" hash="-1393207312">%1$d ਸੁਨੇਹਾ ਕਲਿੱਪਬੋਰਡ ਵਿੱਚ ਕਾਪੀ ਕੀਤਾ ਗਿਆ</item>
 		<item quantity="other" state="needs_review" hash="-604999755">%1$d ਸੁਨੇਹੇ ਕਲਿੱਪਬੋਰਡ ਵਿੱਚ ਕਾਪੀ ਕੀਤੇ ਗਏ</item>
 	</plurals>
+	<plurals name="label_share_destinations_count" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="423387012">%1$d ਪ੍ਰਾਪਤਕਰਤਾ</item>
+		<item quantity="other" state="needs_review" hash="-431979656">%1$d ਪ੍ਰਾਪਤਕਰਤਾ</item>
+	</plurals>
+	<plurals name="label_share_to_recipients" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="-1217959784">%1$d ਪ੍ਰਾਪਤਕਰਤਾ ਨਾਲ ਸਾਂਝਾ ਕਰੋ</item>
+		<item quantity="other" state="needs_review" hash="1864148690">%1$d ਪ੍ਰਾਪਤਕਰਤਾਵਾਂ ਨਾਲ ਸਾਂਝਾ ਕਰੋ</item>
+	</plurals>
+	<plurals name="toast_message_shared_to_recipients" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="-373807760">%1$d ਪ੍ਰਾਪਤਕਰਤਾ ਨਾਲ ਸਾਂਝਾ ਕੀਤਾ ਗਿਆ</item>
+		<item quantity="other" state="needs_review" hash="-1412037000">%1$d ਪ੍ਰਾਪਤਕਰਤਾਵਾਂ ਨਾਲ ਸਾਂਝਾ ਕੀਤਾ ਗਿਆ</item>
+	</plurals>
+	<plurals name="button_label_add_to_groups" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="1622654043">%1$d ਗਰੁੱਪ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰੋ</item>
+		<item quantity="other" state="needs_review" hash="-1655824151">%1$d ਗਰੁੱਪਾਂ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰੋ</item>
+	</plurals>
 </resources>

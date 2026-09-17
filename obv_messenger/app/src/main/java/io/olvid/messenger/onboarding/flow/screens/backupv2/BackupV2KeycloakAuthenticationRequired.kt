@@ -178,7 +178,7 @@ fun NavGraphBuilder.backupV2KeycloakAuthenticationRequired(
                                             Handler(Looper.getMainLooper()).run {
                                                 fragment?.authenticate(
                                                     discoveryAuthState.jsonSerializeString(),
-                                                    oidc.clientId,
+                                                    oidc.clientId ?: "",
                                                     oidc.clientSecret,
                                                     object :
                                                         KeycloakTasks.AuthenticateCallback {

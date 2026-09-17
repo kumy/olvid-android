@@ -1,0 +1,4 @@
+- New share screen allowing to post to multiple discussions at once.
+- New swipe-to-invite experience to easily invite group members to a private discussion.
+- New onboarding to explain Olvid to first time users.
+- Improved image/video viewer, possibility to zoom on videos.

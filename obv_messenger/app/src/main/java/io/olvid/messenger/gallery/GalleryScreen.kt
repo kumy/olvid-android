@@ -26,6 +26,7 @@ import android.text.format.Formatter
 import android.widget.Toast
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.LinearEasing
+import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
@@ -64,11 +65,14 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableFloatStateOf
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.neverEqualPolicy
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
@@ -78,6 +82,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.input.pointer.positionChanged
 import androidx.compose.ui.input.pointer.util.VelocityTracker
+import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalResources
@@ -96,7 +101,10 @@ import androidx.core.view.WindowInsetsControllerCompat
 import io.olvid.messenger.App
 import io.olvid.messenger.AppSingleton
 import io.olvid.messenger.R
+import io.olvid.messenger.customClasses.attachShareUri
 import io.olvid.messenger.customClasses.formatMarkdownToAnnotatedString
+import androidx.lifecycle.Observer
+import androidx.lifecycle.compose.LocalLifecycleOwner
 import io.olvid.messenger.databases.dao.FyleMessageJoinWithStatusDao.FyleAndStatus
 import io.olvid.messenger.databases.entity.FyleMessageJoinWithStatus
 import io.olvid.messenger.databases.entity.Message
@@ -112,6 +120,8 @@ import io.olvid.messenger.designsystem.components.OlvidTextButton
 import io.olvid.messenger.designsystem.theme.OlvidTypography
 import io.olvid.messenger.designsystem.theme.olvidSwitchDefaults
 import io.olvid.messenger.gallery.GalleryViewModel.GalleryType.DRAFT
+import io.olvid.messenger.owneddetails.UseImageAsProfilePictureActivity
+import io.olvid.messenger.owneddetails.canBeUsedAsProfilePicture
 import kotlinx.coroutines.delay
 import kotlin.math.abs
 import kotlin.time.Duration.Companion.milliseconds
@@ -138,13 +148,32 @@ fun GalleryScreen(
     applyFlagSecure: () -> Unit,
     onGoToDiscussion: ((discussionId: Long, messageId: Long) -> Unit)? = null,
 ) {
-    val fyleList by viewModel.imageAndVideoFyleAndStatusList.observeAsState()
+    // FyleAndStatus.equals() only compares fyle id and message id.
+    // Observe with a never-equal state so every DB emission reaches the pager.
+    val lifecycleOwner = LocalLifecycleOwner.current
+    val fyleListState = remember {
+        mutableStateOf<List<FyleAndStatus>?>(null, neverEqualPolicy())
+    }
+    DisposableEffect(viewModel.imageAndVideoFyleAndStatusList, lifecycleOwner) {
+        val observer = Observer<List<FyleAndStatus>?> { fyleListState.value = it }
+        viewModel.imageAndVideoFyleAndStatusList.observe(lifecycleOwner, observer)
+        onDispose { viewModel.imageAndVideoFyleAndStatusList.removeObserver(observer) }
+    }
+    val fyleList by fyleListState
     val currentFyle by viewModel.currentFyleAndStatus.observeAsState()
     val currentMessage by viewModel.currentAssociatedMessage.observeAsState()
     val currentExpiration by viewModel.currentAssociatedMessageExpiration.observeAsState()
     val textBlocks by viewModel.currentAssociatedTextBlocks.observeAsState()
 
     var controlsShown by rememberSaveable { mutableStateOf(showTextBlocksInitially) }
+    // Lift the download/progress overlay above the bottom bar when the controls are shown
+    val overlayDensity = LocalDensity.current
+    var bottomBarHeightPx by remember { mutableIntStateOf(0) }
+    val overlayBottomPadding by animateDpAsState(
+        targetValue = if (controlsShown) with(overlayDensity) { bottomBarHeightPx.toDp() } else 0.dp,
+        animationSpec = tween(200, easing = LinearEasing),
+        label = "overlayBottomPadding"
+    )
     var showTextBlocks by rememberSaveable { mutableStateOf(showTextBlocksInitially) }
     var isCurrentPageZoomed by remember { mutableStateOf(false) }
     var showDeleteDialog by remember { mutableStateOf(false) }
@@ -174,9 +203,7 @@ fun GalleryScreen(
     // Pause the media player whenever the current page is not a video.
     LaunchedEffect(pagerState.currentPage, fyleList, initialScrollDone) {
         if (!initialScrollDone) return@LaunchedEffect
-        val isCurrentVideo = fyleList?.getOrNull(pagerState.currentPage)
-            ?.fyleMessageJoinWithStatus?.nonNullMimeType?.startsWith("video/") == true
-        if (!isCurrentVideo) {
+        if (!fyleList?.getOrNull(pagerState.currentPage).isVideo()) {
             viewModel.mediaPlayer?.pause()
         }
     }
@@ -188,6 +215,7 @@ fun GalleryScreen(
 
     // Jump to initial position once list arrives, then allow video playback
     LaunchedEffect(fyleList) {
+        if (initialScrollDone) return@LaunchedEffect
         val list = fyleList ?: return@LaunchedEffect
         if (list.isEmpty()) {
             initialScrollDone = true
@@ -368,20 +396,26 @@ fun GalleryScreen(
                 val fyleAndStatus = list?.getOrNull(page)
                 if (fyleAndStatus != null) {
                     val isCurrentPage = page == pagerState.currentPage
-                    val isVideo = fyleAndStatus.fyleMessageJoinWithStatus.nonNullMimeType.startsWith("video/")
-                    if (isVideo) {
+                    // Only the current page may drive the shared zoomed flag: recompositions of
+                    // the neighbor pages kept alive by the pager must not stomp it
+                    val onZoomedChanged = { zoomed: Boolean ->
+                        if (isCurrentPage) {
+                            isCurrentPageZoomed = zoomed
+                        }
+                    }
+                    if (fyleAndStatus.isVideo()) {
                         GalleryVideoPlayer(
                             modifier = Modifier.fillMaxSize(),
                             mediaPlayer = viewModel.mediaPlayer,
                             fyleAndStatus = fyleAndStatus,
                             isCurrentPage = isCurrentPage && initialScrollDone,
                             initialScrollDone = initialScrollDone,
-                            onFlingDown = onFinish,
-                            onFlingUp = onFinishUp,
-                            onDoubleTap = { controlsShown = !controlsShown }
+                            onSingleTap = { controlsShown = !controlsShown },
+                            onZoomedChanged = onZoomedChanged
                         )
                     } else {
                         ZoomableImage(
+                            modifier = Modifier.fillMaxSize(),
                             fyleAndStatus = fyleAndStatus,
                             linkPreviewData = viewModel.linkPreviewOpenGraph,
                             textBlocks = if (isCurrentPage && showTextBlocks) textBlocks else null,
@@ -401,8 +435,8 @@ fun GalleryScreen(
                                     ocrMenuBlocks = tappedBlocks
                                 }
                             },
-                            onZoomedChanged = { zoomed -> isCurrentPageZoomed = zoomed },
-                            modifier = Modifier.fillMaxSize()
+                            onZoomedChanged = onZoomedChanged,
+                            overlayBottomPadding = overlayBottomPadding
                         )
                     }
                 }
@@ -422,12 +456,10 @@ fun GalleryScreen(
                     onSave = { currentFyle?.let { onSave(it) } },
                     onShare = {
                         currentFyle?.let { fyle ->
-                            val shareIntent = Intent(Intent.ACTION_SEND)
-                            shareIntent.putExtra(
-                                Intent.EXTRA_STREAM,
-                                fyle.contentUriForExternalSharing
+                            val shareIntent = Intent(Intent.ACTION_SEND).attachShareUri(
+                                fyle.contentUriForExternalSharing,
+                                fyle.fyleMessageJoinWithStatus.nonNullMimeType
                             )
-                            shareIntent.type = fyle.fyleMessageJoinWithStatus.nonNullMimeType
                             context.startActivity(
                                 Intent.createChooser(
                                     shareIntent,
@@ -448,24 +480,42 @@ fun GalleryScreen(
                     },
                     onGoToDiscussion = onGoToDiscussion?.let { callback ->
                         currentMessage?.let { msg -> { callback(msg.discussionId, msg.id) } }
+                    },
+                    onUseAsProfilePicture = currentFyle?.takeIf { it.canBeUsedAsProfilePicture }?.let { fyle ->
+                        { UseImageAsProfilePictureActivity.launch(context, fyle) }
                     }
                 )
             }
 
-            // Bottom bar
+            // Bottom bar (for videos, the player transport controls sit right above it)
             AnimatedVisibility(
                 visible = controlsShown,
                 enter = slideInVertically(tween(200, easing = LinearEasing)) { it },
                 exit = slideOutVertically(tween(200, easing = LinearEasing)) { it },
-                modifier = Modifier.align(Alignment.BottomCenter)
+                modifier = Modifier
+                    .align(Alignment.BottomCenter)
+                    .onSizeChanged { size ->
+                        if (size.height > 0) bottomBarHeightPx = size.height
+                    }
             ) {
-                GalleryBottomBar(
-                    fyleAndStatus = currentFyle,
-                    showTextBlockToggle = currentFyle?.fyleMessageJoinWithStatus?.textExtracted == true
-                            && !currentFyle?.fyleMessageJoinWithStatus?.textContent.isNullOrEmpty(),
-                    showTextBlocks = showTextBlocks,
-                    onToggleTextBlocks = { showTextBlocks = it }
-                )
+                Column {
+                    if (currentFyle.isVideo()) {
+                        viewModel.mediaPlayer?.let {
+                            Box(
+                                modifier = Modifier.background(Color.Black.copy(alpha = 0.6f))
+                            ) {
+                                VideoControls(player = it)
+                            }
+                        }
+                    }
+                    GalleryBottomBar(
+                        fyleAndStatus = currentFyle,
+                        showTextBlockToggle = currentFyle?.fyleMessageJoinWithStatus?.textExtracted == true
+                                && !currentFyle?.fyleMessageJoinWithStatus?.textContent.isNullOrEmpty(),
+                        showTextBlocks = showTextBlocks,
+                        onToggleTextBlocks = { showTextBlocks = it },
+                    )
+                }
             }
 
             // Expiration badge (top-end corner)
@@ -482,6 +532,13 @@ fun GalleryScreen(
                             WindowInsets.safeDrawing.only(
                                 WindowInsetsSides.Top + WindowInsetsSides.End
                             )
+                        )
+                        .then(
+                            if (controlsShown) {
+                                Modifier.padding(top = 64.dp)
+                            } else {
+                                Modifier
+                            }
                         )
                 )
             }
@@ -584,6 +641,7 @@ private fun GalleryTopBar(
     onShare: () -> Unit,
     onDelete: () -> Unit,
     onGoToDiscussion: (() -> Unit)? = null,
+    onUseAsProfilePicture: (() -> Unit)? = null,
 ) {
     // Items shown as direct icon buttons in the toolbar (showAsAction="always")
     val toolbarItems: List<Pair<Int, () -> Unit>> = when (menuType) {
@@ -605,9 +663,12 @@ private fun GalleryTopBar(
     // Items shown in overflow dropdown (showAsAction="ifRoom")
     val overflowItems: List<Pair<Int, () -> Unit>> = when (menuType) {
         GalleryMenuType.STANDARD,
-        GalleryMenuType.UPLOADING -> listOf(
-            R.string.menu_action_save to onSave,
-        )
+        GalleryMenuType.UPLOADING -> buildList {
+            add(R.string.menu_action_save to onSave)
+            if (onUseAsProfilePicture != null) {
+                add(R.string.menu_action_use_image_as to onUseAsProfilePicture)
+            }
+        }
         else -> emptyList()
     }
 
@@ -806,3 +867,6 @@ private fun GalleryExpirationBadge(
         }
     }
 }
+
+private fun FyleAndStatus?.isVideo() =
+    this?.fyleMessageJoinWithStatus?.nonNullMimeType?.startsWith("video/") == true

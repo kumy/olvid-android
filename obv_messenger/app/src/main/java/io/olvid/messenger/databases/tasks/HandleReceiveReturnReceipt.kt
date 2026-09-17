@@ -74,9 +74,10 @@ fun ObvReturnReceipt.process(
 ) {
     val db = AppDatabase.getInstance()
     val messageRecipientInfos = db.messageRecipientInfoDao().getFromReturnReceipt(
-        bytesOwnedIdentity, bytesContactIdentity,
+        bytesOwnedIdentity, bytesContactIdentity!!,
         returnReceiptNonce, goodReturnReceiptKey
     )
+    val attachmentNumber = attachmentNumber
     for (messageRecipientInfo in messageRecipientInfos) {
         if (attachmentNumber == null) {
             // this is a return receipt for a message

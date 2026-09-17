@@ -1,0 +1,4 @@
+- Új képernyőmegosztási funkció, amellyel egyszerre több beszélgetésbe is küldhet tartalmat.
+- Új, egyszerű gesztussal működő meghívási lehetőség a csoporttagok privát beszélgetésbe való meghívására.
+- Új bevezető, amely bemutatja az Olvidot az új felhasználóknak.
+- Javított kép- és videó-megjelenítő, videóknál lehetőség a nagyításra.

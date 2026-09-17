@@ -19,15 +19,11 @@
 
 package io.olvid.messenger.onboarding.flow.screens
 
-import android.content.Intent
-import androidx.activity.compose.rememberLauncherForActivityResult
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.AnimatedContentTransitionScope.SlideDirection
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
@@ -44,18 +40,17 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import io.olvid.messenger.R
-import io.olvid.messenger.R.color
-import io.olvid.messenger.R.string
 import io.olvid.messenger.designsystem.theme.OlvidTypography
-import io.olvid.messenger.onboarding.OnboardingActivity
 import io.olvid.messenger.onboarding.flow.OnboardingAction
 import io.olvid.messenger.onboarding.flow.OnboardingRoutes
 import io.olvid.messenger.onboarding.flow.OnboardingScreen
 import io.olvid.messenger.onboarding.flow.OnboardingStep
+import io.olvid.messenger.onboarding.flow.screens.profile.ProfileManagedByOrganization
 
 fun NavGraphBuilder.newProfileScreen(
     onImportProfile: () -> Unit,
     onNewProfile: () -> Unit,
+    onManagedProfile: () -> Unit,
     onClose: () -> Unit
 ) {
     composable(
@@ -65,51 +60,24 @@ fun NavGraphBuilder.newProfileScreen(
         popEnterTransition = { slideIntoContainer(SlideDirection.End) },
         popExitTransition = { slideOutOfContainer(SlideDirection.End) },
     ) {
-        val context = LocalContext.current
-        val scanLauncher = rememberLauncherForActivityResult(ActivityResultContracts.StartActivityForResult()) {}
 
         OnboardingScreen(
             step = OnboardingStep(
-                title = stringResource(id = string.onboarding_new_profile_title),
+                title = stringResource(id = R.string.onboarding_new_profile_title),
                 actions = listOf(
                     OnboardingAction(
-                        label = AnnotatedString(stringResource(id = string.button_label_activate_profile)),
+                        label = AnnotatedString(stringResource(id = R.string.button_label_activate_profile)),
                         onClick = onImportProfile
                     ),
                     OnboardingAction(
-                        label = AnnotatedString(stringResource(id = string.button_label_create_new_profile)),
+                        label = AnnotatedString(stringResource(id = R.string.button_label_create_new_profile)),
                         onClick = onNewProfile
                     ),
                 )
             ),
             onClose = onClose,
             footer = {
-                Text(
-                    modifier = Modifier.padding(16.dp),
-                    text = buildAnnotatedString {
-                        append(stringResource(id = R.string.onboarding_managed_profile_question))
-                        append(" ")
-                        withLink(
-                            LinkAnnotation.Clickable(
-                                tag = "",
-                                styles = TextLinkStyles(SpanStyle(color = colorResource(id = color.blueOrWhite))),
-                                linkInteractionListener = {
-                                    scanLauncher.launch(
-                                        Intent(
-                                            context,
-                                            OnboardingActivity::class.java
-                                        )
-                                    )
-                                }
-                            ),
-                        ) {
-                            append(stringResource(id = R.string.onboarding_managed_profile_hyperlink))
-                        }
-                    },
-                    textAlign = TextAlign.Center,
-                    color = colorResource(id = R.color.greyTint),
-                    style = OlvidTypography.body2,
-                )
+                ProfileManagedByOrganization(onClick = onManagedProfile)
             }
         )
     }
@@ -123,6 +91,6 @@ fun ExistingProfilePreview() {
         navController = rememberNavController(),
         startDestination = OnboardingRoutes.NEW_PROFILE_SCREEN,
     ) {
-        newProfileScreen({}, {}, {})
+        newProfileScreen({}, {}, {}, {})
     }
 }

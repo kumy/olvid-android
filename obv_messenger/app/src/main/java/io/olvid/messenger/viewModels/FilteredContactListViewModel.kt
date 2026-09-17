@@ -25,6 +25,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import io.olvid.messenger.App
 import io.olvid.messenger.customClasses.StringUtils
+import io.olvid.messenger.customClasses.StringUtils2
 import io.olvid.messenger.databases.entity.Contact
 import java.util.regex.Pattern
 
@@ -64,6 +65,7 @@ class FilteredContactListViewModel : ViewModel() {
         if (unfilteredContacts != null) {
             App.runThread(
                 FilterContactListTask(
+                    filter,
                     filterPatterns,
                     filteredContacts,
                     unfilteredContacts,
@@ -106,6 +108,7 @@ class FilteredContactListViewModel : ViewModel() {
 
 
     private class FilterContactListTask(
+        private val filter: String?,
         filterPatterns: List<Pattern>?,
         filteredContacts: MutableLiveData<List<SelectableContact>?>,
         unfilteredContacts: List<Contact>?,
@@ -150,14 +153,7 @@ class FilteredContactListViewModel : ViewModel() {
                     list.add(SelectableContact(contact, selectedContactsHashSet.contains(contact)))
                 }
             }
-            val filter = filterPatterns!!.firstOrNull()?.toString()?.removePrefix("\\Q")?.removeSuffix("\\E")
-            filter?.let {
-                list.sortByDescending { contact -> 1 /
-                        StringUtils.unAccent(contact.contact.customDisplayName.orEmpty() + " " + contact.contact.displayName).trim().split(
-                        " "
-                    ).indexOfFirst { it.startsWith(filter) }.toFloat()
-                }
-            }
+            list.sortBy { StringUtils2.searchMatchRank(it.contact.fullSearchDisplayName, filter) }
             filteredContacts.postValue(list)
         }
     }

@@ -33,7 +33,7 @@ fun PingListener(connected: Boolean,pingCallback : (lastPing: Long) -> Unit) {
     val pingListener = remember {
         object : EngineNotificationListener {
             var registrationNumber: Long = 0
-            override fun callback(notificationName: String, userInfo: HashMap<String, Any>) {
+            override fun callback(notificationName: String?, userInfo: HashMap<String, Any?>) {
                 when (notificationName) {
                     EngineNotifications.PING_LOST -> {
                         pingCallback(-1)

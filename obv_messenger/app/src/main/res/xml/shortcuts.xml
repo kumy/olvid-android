@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
-    <share-target android:targetClass="io.olvid.messenger.activities.ShareActivity">
+    <!--
+        Sharing Shortcuts (Direct Share) declaration.
+
+        Mirrors the AndroidManifest intent-filters: specific MIME types first so the
+        Sharesheet matches us against typed shares (image/*, video/*, …) instead of
+        downranking us as a "*/*" target. The trailing "*/*" stays as a fallback.
+    -->
+    <share-target android:targetClass="io.olvid.messenger.share.ShareActivity">
+        <data android:mimeType="image/*" />
+        <data android:mimeType="video/*" />
+        <data android:mimeType="audio/*" />
+        <data android:mimeType="text/*" />
+        <data android:mimeType="application/*" />
         <data android:mimeType="*/*" />
-        <category android:name="io.olvid.messenger.activities.ShareActivity.SHARE" />
+        <category android:name="io.olvid.messenger.share.ShareActivity.SHARE" />
     </share-target>
 </shortcuts>

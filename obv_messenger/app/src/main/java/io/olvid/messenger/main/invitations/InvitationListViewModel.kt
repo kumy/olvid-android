@@ -41,6 +41,7 @@ import io.olvid.messenger.AppSingleton
 import io.olvid.messenger.R
 import io.olvid.messenger.customClasses.InitialView
 import io.olvid.messenger.customClasses.StringUtils
+import io.olvid.messenger.customClasses.formatSerializedIdentityDetails
 import io.olvid.messenger.customClasses.ifNull
 import io.olvid.messenger.databases.AppDatabase
 import io.olvid.messenger.databases.ContactCacheSingleton
@@ -86,7 +87,7 @@ class InvitationListViewModel : ViewModel() {
 
             Category.GROUP_V2_INVITATION_DIALOG_CATEGORY,
             Category.GROUP_V2_FROZEN_INVITATION_DIALOG_CATEGORY -> {
-                initialView.setGroup(dialog.category.obvGroupV2.groupIdentifier.bytes)
+                initialView.setGroup(dialog.category.obvGroupV2?.groupIdentifier?.bytes)
             }
 
             Category.INVITE_SENT_DIALOG_CATEGORY,
@@ -100,17 +101,17 @@ class InvitationListViewModel : ViewModel() {
             Category.MEDIATOR_INVITE_ACCEPTED_DIALOG_CATEGORY -> {
                 val contactIdentity = dialog.category.bytesContactIdentity
                 if (ContactCacheSingleton.getContactCustomDisplayName(contactIdentity) != null) {
-                    initialView.setFromCache(contactIdentity)
+                    initialView.setFromCache(contactIdentity!!)
                 } else {
                     val invitationName =
                         if (categoryId == Category.INVITE_SENT_DIALOG_CATEGORY) dialog.category.contactDisplayNameOrSerializedDetails.toString()
-                        else getFormattedDisplayName(dialog.category.contactDisplayNameOrSerializedDetails ?: "")
+                        else getFormattedDisplayName(dialog.category.contactDisplayNameOrSerializedDetails)
                     initialView.setInitial(contactIdentity, StringUtils.getInitial(invitationName ?: ""))
                 }
             }
 
             else -> {
-                val invitationName = getFormattedDisplayName(dialog.category.contactDisplayNameOrSerializedDetails ?: "")
+                val invitationName = getFormattedDisplayName(dialog.category.contactDisplayNameOrSerializedDetails)
                 initialView.setInitial(
                     invitation.associatedDialog.category.bytesContactIdentity,
                     StringUtils.getInitial(
@@ -130,9 +131,12 @@ class InvitationListViewModel : ViewModel() {
             if (associatedDialog.category
                     .id == Category.ACCEPT_GROUP_INVITE_DIALOG_CATEGORY
             ) {
-                associatedDialog.category.pendingGroupMemberIdentities.map { contactIdentity ->
+                val pendingIdentities = associatedDialog.category.pendingGroupMemberIdentities
+                pendingIdentities?.mapNotNull { contactIdentity ->
+                    contactIdentity ?: return@mapNotNull null
+                    val bytesIdentity = contactIdentity.getBytesIdentity()
                     AppDatabase.getInstance()
-                        .contactDao()[bytesOwnedIdentity, contactIdentity.bytesIdentity]?.getCustomDisplayName()
+                        .contactDao()[bytesOwnedIdentity, bytesIdentity]?.getCustomDisplayName()
                         ?.let {
                             ContactAnnotation(
                                 it,
@@ -146,19 +150,19 @@ class InvitationListViewModel : ViewModel() {
                                 }|${
                                     String(
                                         android.util.Base64.encode(
-                                            contactIdentity.bytesIdentity,
+                                            bytesIdentity,
                                             android.util.Base64.NO_PADDING
                                         )
                                     )
                                 }"
                             )
                         } ?: ContactAnnotation(
-                        contactIdentity.identityDetails.formatDisplayName(
+                        contactIdentity.identityDetails?.formatDisplayName(
                             SettingsActivity.contactDisplayNameFormat,
                             SettingsActivity.uppercaseLastName
-                        )
+                        ) ?: ""
                     )
-                }.sortedWith(Comparator { cs1, cs2 ->
+                }?.sortedWith(Comparator { cs1, cs2 ->
                     val minLen = min(cs1.name.length, cs2.name.length)
                     var i = 0
                     while (i < minLen) {
@@ -168,7 +172,7 @@ class InvitationListViewModel : ViewModel() {
                         i++
                     }
                     cs2.name.length - cs1.name.length
-                }).forEachIndexed { index, contactAnnotation ->
+                })?.forEachIndexed { index, contactAnnotation ->
                     contactAnnotation.annotation?.let {
                         pushStringAnnotation(
                             tag = "CONTACT",
@@ -188,7 +192,7 @@ class InvitationListViewModel : ViewModel() {
                             contactAnnotation.name
                         )
                     }
-                    if (index < associatedDialog.category.pendingGroupMemberIdentities.size - 1) {
+                    if (index < (pendingIdentities.size - 1)) {
                         append(App.getContext().getString(R.string.text_contact_names_separator))
                     }
                 }
@@ -197,7 +201,8 @@ class InvitationListViewModel : ViewModel() {
                 || associatedDialog.category
                     .id == Category.GROUP_V2_FROZEN_INVITATION_DIALOG_CATEGORY
             ) {
-                associatedDialog.category.obvGroupV2.pendingGroupMembers.map { groupV2Member ->
+                val pendingGroupMembers = associatedDialog.category.obvGroupV2?.pendingGroupMembers
+                pendingGroupMembers?.map { groupV2Member ->
                     AppDatabase.getInstance()
                         .contactDao()[bytesOwnedIdentity, groupV2Member.bytesIdentity]?.getCustomDisplayName()
                         ?.let {
@@ -236,7 +241,7 @@ class InvitationListViewModel : ViewModel() {
                             ContactAnnotation("???")
                         }
                     }
-                }.sortedWith(Comparator { cs1, cs2 ->
+                }?.sortedWith(Comparator { cs1, cs2 ->
                     val minLen = min(cs1.name.length, cs2.name.length)
                     var i = 0
                     while (i < minLen) {
@@ -246,7 +251,7 @@ class InvitationListViewModel : ViewModel() {
                         i++
                     }
                     cs2.name.length - cs1.name.length
-                }).forEachIndexed { index, contactAnnotation ->
+                })?.forEachIndexed { index, contactAnnotation ->
                     contactAnnotation.annotation?.let {
                         pushStringAnnotation(
                             tag = "CONTACT",
@@ -265,7 +270,7 @@ class InvitationListViewModel : ViewModel() {
                             contactAnnotation.name
                         )
                     }
-                    if (index < associatedDialog.category.obvGroupV2.pendingGroupMembers.size - 1) {
+                    if (index < (pendingGroupMembers.size - 1)) {
                         append(App.getContext().getString(R.string.text_contact_names_separator))
                     }
                 }
@@ -279,16 +284,8 @@ class InvitationListViewModel : ViewModel() {
         }
     }
 
-    private fun getFormattedDisplayName(serializedDetails: String): String? {
-        return runCatching {
-            AppSingleton.getJsonObjectMapper()
-                .readValue(serializedDetails, JsonIdentityDetails::class.java)
-                .formatDisplayName(
-                    JsonIdentityDetails.FORMAT_STRING_FIRST_LAST_POSITION_COMPANY,
-                    SettingsActivity.uppercaseLastName
-                )
-        }.getOrNull()
-    }
+    private fun getFormattedDisplayName(serializedDetails: String?): String? =
+        serializedDetails.formatSerializedIdentityDetails()
 
     fun displayStatusDescriptionTextAsync(associatedDialog: ObvDialog): String? {
         val context = App.getContext()
@@ -321,7 +318,7 @@ class InvitationListViewModel : ViewModel() {
 
             Category.ACCEPT_MEDIATOR_INVITE_DIALOG_CATEGORY -> {
                 val mediator = AppDatabase.getInstance()
-                    .contactDao()[associatedDialog.bytesOwnedIdentity, associatedDialog.category.bytesMediatorOrGroupOwnerIdentity]
+                    .contactDao()[associatedDialog.bytesOwnedIdentity, associatedDialog.category.bytesMediatorOrGroupOwnerIdentity!!]
                 getFormattedDisplayName(associatedDialog.category.contactDisplayNameOrSerializedDetails)?.let { displayName ->
                     if (mediator != null) {
                         context.getString(
@@ -340,7 +337,7 @@ class InvitationListViewModel : ViewModel() {
 
             Category.MEDIATOR_INVITE_ACCEPTED_DIALOG_CATEGORY -> {
                 val mediator = AppDatabase.getInstance()
-                    .contactDao()[associatedDialog.bytesOwnedIdentity, associatedDialog.category.bytesMediatorOrGroupOwnerIdentity]
+                    .contactDao()[associatedDialog.bytesOwnedIdentity, associatedDialog.category.bytesMediatorOrGroupOwnerIdentity!!]
                 getFormattedDisplayName(associatedDialog.category.contactDisplayNameOrSerializedDetails)?.let { displayName ->
                     if (mediator != null) {
                         context.getString(
@@ -361,7 +358,7 @@ class InvitationListViewModel : ViewModel() {
                 val groupOwner =
                     AppDatabase.getInstance()
                         .contactDao()[associatedDialog.bytesOwnedIdentity, associatedDialog.category
-                        .bytesMediatorOrGroupOwnerIdentity]
+                        .bytesMediatorOrGroupOwnerIdentity!!]
                 if (groupOwner != null) context.getString(
                     R.string.invitation_status_description_accept_group_invite,
                     groupOwner.getCustomDisplayName()
@@ -375,7 +372,7 @@ class InvitationListViewModel : ViewModel() {
             Category.ONE_TO_ONE_INVITATION_SENT_DIALOG_CATEGORY -> {
                 val contact = AppDatabase.getInstance()
                     .contactDao()[associatedDialog.bytesOwnedIdentity, associatedDialog.category
-                    .bytesContactIdentity]
+                    .bytesContactIdentity!!]
                 if (contact != null) {
                     context.getString(
                         R.string.invitation_status_description_one_to_one_invitation_sent,
@@ -389,7 +386,7 @@ class InvitationListViewModel : ViewModel() {
             Category.ACCEPT_ONE_TO_ONE_INVITATION_DIALOG_CATEGORY -> {
                 val contact = AppDatabase.getInstance()
                     .contactDao()[associatedDialog.bytesOwnedIdentity, associatedDialog.category
-                    .bytesContactIdentity]
+                    .bytesContactIdentity!!]
                 if (contact != null) {
                     context.getString(
                         R.string.invitation_status_description_one_to_one_invitation,
@@ -579,11 +576,11 @@ fun Invitation.getAnnotatedTitle(context: Context): AnnotatedString {
             Category.GROUP_V2_INVITATION_DIALOG_CATEGORY, Category.GROUP_V2_FROZEN_INVITATION_DIALOG_CATEGORY -> {
                 try {
                     val groupDetails = AppSingleton.getJsonObjectMapper().readValue(
-                        associatedDialog.category.obvGroupV2.detailsAndPhotos.serializedGroupDetails,
+                        associatedDialog.category.obvGroupV2?.detailsAndPhotos?.serializedGroupDetails,
                         JsonGroupDetails::class.java
                     )
-                    if (groupDetails.isEmpty) {
-                        associatedDialog.category.obvGroupV2.getReadableMembers()?.let {
+                    if (groupDetails.isEmpty()) {
+                        associatedDialog.category.obvGroupV2?.getReadableMembers()?.let {
                             append(it)
                         } ifNull {
                             withStyle(SpanStyle(fontStyle = FontStyle.Italic)) {
@@ -663,7 +660,7 @@ fun Invitation.getTimestamp(): Long {
         Category.ACCEPT_ONE_TO_ONE_INVITATION_DIALOG_CATEGORY,
         Category.SAS_EXCHANGE_DIALOG_CATEGORY,
         Category.ACCEPT_GROUP_INVITE_DIALOG_CATEGORY ->
-            associatedDialog.category.serverTimestamp
+            associatedDialog.category.serverTimestamp ?: 0L
 
         else -> invitationTimestamp
     }

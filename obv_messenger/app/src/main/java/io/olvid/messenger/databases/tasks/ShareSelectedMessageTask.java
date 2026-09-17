@@ -20,6 +20,8 @@
 package io.olvid.messenger.databases.tasks;
 
 
+import android.content.ClipData;
+import android.content.ClipDescription;
 import android.content.Intent;
 import android.net.Uri;
 
@@ -60,32 +62,66 @@ public class ShareSelectedMessageTask implements Runnable {
 
             Intent intent = new Intent();
             String mimeType = null;
-            boolean multiple = ((message.contentBody != null && !message.contentBody.isEmpty()) && (message.totalAttachmentCount > 0)) || (message.totalAttachmentCount > 1);
-            if (message.contentBody != null && !message.contentBody.isEmpty()) {
+            boolean hasText = message.contentBody != null && !message.contentBody.isEmpty();
+            boolean multiple = (hasText && (message.totalAttachmentCount > 0)) || (message.totalAttachmentCount > 1);
+            if (hasText) {
                 intent.putExtra(Intent.EXTRA_TEXT, message.contentBody);
                 mimeType = "text/plain";
             }
+            boolean sharedAttachment = false;
             if (message.hasAttachments()) {
                 List<FyleMessageJoinWithStatusDao.FyleAndStatus> fyleAndStatuses = db.fyleMessageJoinWithStatusDao().getCompleteFylesAndStatusForMessageSyncWithoutLinkPreview(message.id);
                 if (multiple) {
                     ArrayList<Uri> uris = new ArrayList<>(fyleAndStatuses.size());
+                    ArrayList<String> mimes = new ArrayList<>(fyleAndStatuses.size());
                     for (FyleMessageJoinWithStatusDao.FyleAndStatus fyleAndStatus : fyleAndStatuses) {
-                        uris.add(fyleAndStatus.getContentUriForExternalSharing());
-                        mimeType = mimeGcd(mimeType, fyleAndStatus.fyleMessageJoinWithStatus.getNonNullMimeType());
+                        Uri uri = fyleAndStatus.getContentUriForExternalSharing();
+                        // skip incomplete fyles whose sha256 isn't computed yet — sharing a null Uri
+                        // breaks Sharesheet thumbnails and target apps receive an unusable stream
+                        if (uri == null) continue;
+                        String fyleMime = fyleAndStatus.fyleMessageJoinWithStatus.getNonNullMimeType();
+                        uris.add(uri);
+                        mimes.add(fyleMime);
+                        mimeType = mimeGcd(mimeType, fyleMime);
                     }
-                    intent.putParcelableArrayListExtra(Intent.EXTRA_STREAM, uris);
+                    if (!uris.isEmpty()) {
+                        // ClipData per-URI carries per-item mime so receivers can inspect ClipDescription
+                        // for the correct type instead of falling back to the GCD intent type. ClipData +
+                        // FLAG_GRANT_READ_URI_PERMISSION is what lets the system Sharesheet preview and
+                        // the chosen receiver actually read the URI.
+                        ClipData clipData = new ClipData(new ClipDescription(null, mimes.toArray(new String[0])), new ClipData.Item(uris.get(0)));
+                        for (int i = 1; i < uris.size(); i++) {
+                            clipData.addItem(new ClipData.Item(uris.get(i)));
+                        }
+                        intent.putParcelableArrayListExtra(Intent.EXTRA_STREAM, uris);
+                        intent.setClipData(clipData);
+                        sharedAttachment = true;
+                    }
                 } else {
                     FyleMessageJoinWithStatusDao.FyleAndStatus fyleAndStatus = fyleAndStatuses.get(0);
-                    intent.putExtra(Intent.EXTRA_STREAM, fyleAndStatus.getContentUriForExternalSharing());
-                    mimeType = fyleAndStatus.fyleMessageJoinWithStatus.getNonNullMimeType();
+                    Uri uri = fyleAndStatus.getContentUriForExternalSharing();
+                    if (uri != null) {
+                        intent.putExtra(Intent.EXTRA_STREAM, uri);
+                        mimeType = fyleAndStatus.fyleMessageJoinWithStatus.getNonNullMimeType();
+                        intent.setClipData(new ClipData(new ClipDescription(null, new String[]{ mimeType }), new ClipData.Item(uri)));
+                        sharedAttachment = true;
+                    }
                 }
             }
-            if (multiple) {
+            // No shareable attachment (e.g. the only attachment isn't downloaded yet). Still share
+            // the text alone — matches legacy behaviour — but if there's no text either, bail out.
+            if (!sharedAttachment && !hasText) {
+                return;
+            }
+            if (multiple && sharedAttachment) {
                 intent.setAction(Intent.ACTION_SEND_MULTIPLE);
             } else {
                 intent.setAction(Intent.ACTION_SEND);
             }
             intent.setType(mimeType);
+            // Required: without this flag the system Sharesheet and the chosen target app cannot
+            // read the URI(s) and the thumbnail preview falls back to a generic file icon.
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
             FragmentActivity activity = activityWeakReference.get();
             if (activity != null) {
                 activity.startActivity(Intent.createChooser(intent, activity.getString(R.string.title_sharing_chooser)));

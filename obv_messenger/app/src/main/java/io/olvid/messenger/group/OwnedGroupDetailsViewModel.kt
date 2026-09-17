@@ -86,8 +86,8 @@ class OwnedGroupDetailsViewModel : ViewModel() {
         oldPhotoUrl = groupDetails.photoUrl
         oldPersonalNote = personalNote
         setAbsolutePhotoUrl(App.absolutePathFromRelative(groupDetails.photoUrl))
-        setGroupName(groupDetails.groupDetails.name)
-        groupDescription = groupDetails.groupDetails.description
+        setGroupName(groupDetails.groupDetails?.name)
+        groupDescription = groupDetails.groupDetails?.description
         this.personalNote = personalNote
         checkValid()
     }
@@ -107,6 +107,14 @@ class OwnedGroupDetailsViewModel : ViewModel() {
         groupDescription = groupDetails.description
         this.personalNote = personalNote
         checkValid()
+    }
+
+    fun clear() {
+        initialized = false
+        groupName.value = null
+        groupDescription = null
+        personalNote = null
+        absPhotoUrl = null
     }
 
     fun getValid(): LiveData<Boolean> {
@@ -192,6 +200,9 @@ class OwnedGroupDetailsViewModel : ViewModel() {
                     false
                 ).run()
             }
+
+            // clear the view model for the next time we open the edit page
+            clear()
         }
     }
 

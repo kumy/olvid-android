@@ -150,7 +150,7 @@ private fun processObvMessage(
     engine: Engine,
     obvMessage: ObvMessage,
 ): HandleMessageOutput {
-    val count = db.messageDao().getCountForEngineIdentifier(obvMessage.bytesToIdentity, obvMessage.identifier)
+    val count = db.messageDao().getCountForEngineIdentifier(obvMessage.bytesToIdentity!!, obvMessage.identifier!!)
     if (count > 0) {
         // content was already inserted in database
         return HandleMessageOutput.MARK_MESSAGE_FOR_DELETION
@@ -171,7 +171,7 @@ private fun processObvMessage(
             return HandleMessageOutput.DELETE_MESSAGE_AND_ATTACHMENTS
         }
 
-        val messageSender = MessageSender.of(db, obvMessage.bytesToIdentity, obvMessage.bytesFromIdentity)
+        val messageSender = MessageSender.of(db, obvMessage.bytesToIdentity!!, obvMessage.bytesFromIdentity!!)
         if (messageSender == null) {
             // message sender can only be null if the message was sent by an unknown contact, encrypted with a pre-key.
             // The engine already takes care of putting such messages on hold, so this should only happen in edge cases
@@ -186,7 +186,7 @@ private fun processObvMessage(
                     TransferService.handleJsonHistoryTransferMessage(
                         jsonHistoryTransferMessage,
                         messageSender.bytesOwnedIdentity,
-                        obvMessage.bytesFromDeviceUid
+                        obvMessage.bytesFromDeviceUid!!
                     )
                 }
             } else {
@@ -202,7 +202,7 @@ private fun processObvMessage(
                         TransferService.handleJsonHistoryTransferControl(
                             jsonHistoryTransferControl,
                             messageSender.bytesOwnedIdentity,
-                            obvMessage.bytesFromDeviceUid
+                            obvMessage.bytesFromDeviceUid!!
                         )
                     }
                 }
@@ -213,7 +213,7 @@ private fun processObvMessage(
         }
 
         messagePayload.jsonQuerySharedSettings?.let { jsonQuerySharedSettings ->
-            return handleQuerySharedSettings(db, jsonQuerySharedSettings, messageSender)
+            return handleQuerySharedSettings(db, jsonQuerySharedSettings, messageSender, obvMessage)
         }
 
         messagePayload.jsonSharedSettings?.let { jsonSharedSettings ->

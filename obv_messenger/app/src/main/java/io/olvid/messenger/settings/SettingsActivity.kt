@@ -413,8 +413,8 @@ class SettingsActivity : LockableActivity(), OnPreferenceStartFragmentCallback {
             backupsV2ViewModel.resetYourBackups()
 
             try {
-                val hasLegacyBackup = AppSingleton.getEngine().backupKeyInformation != null
-                val hasDeviceBackupSeed = AppSingleton.getEngine().deviceBackupSeed != null
+                val hasLegacyBackup = AppSingleton.getEngine().getBackupKeyInformation() != null
+                val hasDeviceBackupSeed = AppSingleton.getEngine().getDeviceBackupSeed() != null
                 // if there is still some legacy backup key, replace the v2 fragment by the legacy fragment (with a warning)
                 findPreference<Preference>(PREF_HEADER_KEY_BACKUP)?.apply {
                     fragment = if (hasLegacyBackup) {
@@ -490,6 +490,7 @@ class SettingsActivity : LockableActivity(), OnPreferenceStartFragmentCallback {
         const val PREF_KEY_LATEST_APP_VERSION: String = "pref_key_latest_app_version"
         const val PREF_KEY_MIN_APP_VERSION: String = "pref_key_min_app_version"
         const val PREF_KEY_UPDATE_AVAILABLE_TIP_DISMISSED: String = "pref_key_update_available_tip_dismissed"
+        const val PREF_KEY_SUGGESTED_CONTACTS_ONBOARDING_SEEN: String = "pref_key_suggested_contacts_onboarding_seen"
 
         const val PREF_KEY_LAST_OLVID_PLUS_TIP_TIMESTAMP: String = "pref_key_last_olvid_plus_tip_timestamp"
         const val PREF_KEY_OLVID_PLUS_REMINDER_TIMESTAMP: String = "pref_key_olvid_plus_reminder_timestamp"
@@ -554,7 +555,7 @@ class SettingsActivity : LockableActivity(), OnPreferenceStartFragmentCallback {
 
         const val PREF_KEY_PERMANENT_FOREGROUND_SERVICE: String =
             "pref_key_permanent_foreground_service"
-        const val PREF_KEY_PERMANENT_FOREGROUND_SERVICE_DEFAULT: Boolean = false
+        const val PREF_KEY_PERMANENT_FOREGROUND_SERVICE_DEFAULT: Boolean = true
 
 
         // CUSTOMIZATION
@@ -785,6 +786,9 @@ class SettingsActivity : LockableActivity(), OnPreferenceStartFragmentCallback {
 
         const val PREF_KEY_USE_INTERNAL_PDF_VIEWER: String = "pref_key_use_internal_pdf_viewer"
         const val PREF_KEY_USE_INTERNAL_PDF_VIEWER_DEFAULT: Boolean = true
+
+        const val PREF_KEY_IMAGE_TEXT_RECOGNITION: String = "pref_key_image_text_recognition"
+        const val PREF_KEY_IMAGE_TEXT_RECOGNITION_DEFAULT: Boolean = true
 
         const val PREF_KEY_PREFERRED_KEYCLOAK_BROWSER: String =
             "pref_key_preferred_keycloak_browser"
@@ -1980,6 +1984,13 @@ class SettingsActivity : LockableActivity(), OnPreferenceStartFragmentCallback {
         }
 
         @JvmStatic
+        fun isImageTextRecognitionEnabled(): Boolean {
+            return PreferenceManager.getDefaultSharedPreferences(App.getContext()).getBoolean(
+                PREF_KEY_IMAGE_TEXT_RECOGNITION, PREF_KEY_IMAGE_TEXT_RECOGNITION_DEFAULT
+            )
+        }
+
+        @JvmStatic
         fun usePermanentWebSocket(): Boolean {
             return PreferenceManager.getDefaultSharedPreferences(App.getContext()).getBoolean(
                 PREF_KEY_PERMANENT_WEBSOCKET, PREF_KEY_PERMANENT_WEBSOCKET_DEFAULT
@@ -2509,6 +2520,20 @@ class SettingsActivity : LockableActivity(), OnPreferenceStartFragmentCallback {
                     .getDefaultSharedPreferences(App.getContext())
                     .edit {
                         putBoolean(PREF_KEY_UPDATE_AVAILABLE_TIP_DISMISSED, dismissed)
+                    }
+            }
+
+        @JvmStatic
+        var suggestedContactsOnboardingSeen: Boolean
+            get() {
+                return PreferenceManager.getDefaultSharedPreferences(App.getContext())
+                    .getBoolean(PREF_KEY_SUGGESTED_CONTACTS_ONBOARDING_SEEN, false)
+            }
+            set(seen) {
+                PreferenceManager
+                    .getDefaultSharedPreferences(App.getContext())
+                    .edit {
+                        putBoolean(PREF_KEY_SUGGESTED_CONTACTS_ONBOARDING_SEEN, seen)
                     }
             }
 

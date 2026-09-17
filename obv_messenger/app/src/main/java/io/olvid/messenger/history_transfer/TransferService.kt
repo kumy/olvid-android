@@ -28,6 +28,7 @@ import android.os.Build
 import android.os.Handler
 import android.os.Looper
 import android.os.PowerManager
+import android.widget.Toast
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
@@ -38,6 +39,7 @@ import io.olvid.engine.engine.types.ObvBytesKey
 import io.olvid.messenger.App
 import io.olvid.messenger.AppSingleton
 import io.olvid.messenger.FyleProgressSingleton
+import io.olvid.messenger.R
 import io.olvid.messenger.customClasses.BytesKey
 import io.olvid.messenger.customClasses.StringUtils
 import io.olvid.messenger.databases.AppDatabase
@@ -541,7 +543,7 @@ class TransferService(
         val transferProgressCache = mutableMapOf<String, Triple<TransferRole, TransferTransportType, MutableState<TransferProgress>>>()
 
         // this method returns the transferId if a new transfer instance was indeed created
-        fun initiateHistoryTransferToOtherDevice(transferTransportType: TransferTransportType, transferScope: TransferScope) : String? {
+        private fun initiateHistoryTransferToOtherDevice(transferTransportType: TransferTransportType, transferScope: TransferScope) : String? {
             // If an instance has only received a notification (and never actually started) and we receive a new one, delete the old instance
             instance?.let {
                 if (it.transferTransportType != transferTransportType
@@ -600,6 +602,24 @@ class TransferService(
                         transferProtocolState = DstTransferProtocolState()
                     )
                     return transferId
+                }
+            }
+        }
+
+        // initiate a transfer on a background thread and, on success, open HistoryTransferActivity to show its progress (toast on failure)
+        fun initiateHistoryTransferAndShowProgress(context: Context, transferTransportType: TransferTransportType, transferScope: TransferScope) {
+            App.runThread {
+                initiateHistoryTransferToOtherDevice(transferTransportType, transferScope)?.let { transferId ->
+                    Handler(Looper.getMainLooper()).post {
+                        context.startActivity(
+                            Intent(context, HistoryTransferActivity::class.java).apply {
+                                putExtra(HistoryTransferActivity.TRANSFER_ID_INTENT_EXTRA, transferId)
+                                flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                            }
+                        )
+                    }
+                } ?: run {
+                    App.toast(R.string.toast_message_unable_to_start_transfer, Toast.LENGTH_SHORT)
                 }
             }
         }
@@ -762,8 +782,8 @@ class TransferService(
 
                     AppSingleton.getEngine().postToSpecificDevices(
                         AppSingleton.getJsonObjectMapper().writeValueAsBytes(jsonPayload),
-                        listOf(delegate.bytesOwnedIdentity),
-                        listOf(delegate.bytesOtherDeviceUid),
+                        mutableListOf(delegate.bytesOwnedIdentity),
+                        mutableListOf(delegate.bytesOtherDeviceUid),
                         delegate.bytesOwnedIdentity,
                         controlMessageType == JsonWebrtcHistoryTransferControl.REQUEST_TRANSFER, // true only for the first request message
                         false

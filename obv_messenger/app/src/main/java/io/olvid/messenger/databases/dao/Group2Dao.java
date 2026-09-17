@@ -252,6 +252,25 @@ public interface Group2Dao {
             " ORDER BY c." + Contact.SORT_DISPLAY_NAME + " ASC ")
     LiveData<List<Contact>> getAllValidContactsNotInGroup(@NonNull byte[] bytesOwnedIdentity, @NonNull byte[] bytesGroupIdentifier, @NonNull List<byte[]> bytesAddedMemberIdentities, @NonNull List<byte[]> bytesRemovedMemberIdentities);
 
+    @Query("SELECT g.* FROM " + Group2.TABLE_NAME + " AS g " +
+            " WHERE g." + Group2.BYTES_OWNED_IDENTITY + " = :bytesOwnedIdentity " +
+            " AND g." + Group2.OWN_PERMISSION_ADMIN + " = 1 " +
+            " AND g." + Group2.KEYCLOAK_MANAGED + " = 0 " +
+            " AND NOT EXISTS (SELECT 1 FROM " + Group2Member.TABLE_NAME + " AS gm " +
+            " WHERE gm." + Group2Member.BYTES_OWNED_IDENTITY + " = g." + Group2.BYTES_OWNED_IDENTITY +
+            " AND gm." + Group2Member.BYTES_GROUP_IDENTIFIER + " = g." + Group2.BYTES_GROUP_IDENTIFIER +
+            " AND gm." + Group2Member.BYTES_CONTACT_IDENTITY + " = :bytesContactIdentity) " +
+            " AND NOT EXISTS (SELECT 1 FROM " + Group2PendingMember.TABLE_NAME + " AS gpm " +
+            " WHERE gpm." + Group2PendingMember.BYTES_OWNED_IDENTITY + " = g." + Group2.BYTES_OWNED_IDENTITY +
+            " AND gpm." + Group2PendingMember.BYTES_GROUP_IDENTIFIER + " = g." + Group2.BYTES_GROUP_IDENTIFIER +
+            " AND gpm." + Group2PendingMember.BYTES_CONTACT_IDENTITY + " = :bytesContactIdentity) " +
+            " ORDER BY COALESCE(" +
+            " CASE WHEN g." + Group2.CUSTOM_NAME + " = '' THEN NULL ELSE g." + Group2.CUSTOM_NAME + " END, " +
+            " CASE WHEN g." + Group2.NAME + " = '' THEN NULL ELSE g." + Group2.NAME + " END, " +
+            " g." + Group2.GROUP_MEMBERS_NAMES +
+            " ) COLLATE NOCASE ASC ")
+    LiveData<List<Group2>> getAllAdminGroupsNotContainingContact(@NonNull byte[] bytesOwnedIdentity, @NonNull byte[] bytesContactIdentity);
+
     @Query("SELECT " + Group2.CUSTOM_PHOTO_URL + " FROM " + Group2.TABLE_NAME +
             " WHERE " + Group2.CUSTOM_PHOTO_URL + " IS NOT NULL")
     List<String> getAllCustomPhotoUrls();

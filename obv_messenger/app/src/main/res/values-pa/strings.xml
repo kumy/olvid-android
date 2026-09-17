@@ -26,8 +26,8 @@
 	<string name="button_label_create_group" state="needs_review" hash="1102939673">ਨਵਾਂ ਗਰੁੱਪ ਬਣਾਓ</string>
 	<string name="button_label_discard" state="needs_review" hash="795591204">ਰੱਦ ਕਰੋ</string>
 	<string name="button_label_exchange_digits_with_user" state="needs_review" hash="339599327">%1$s ਨਾਲ ਕੋਡਾਂ ਦਾ ਆਦਾਨ-ਪ੍ਰਦਾਨ ਕਰੋ।</string>
-	<string name="button_label_generate_new_id" state="needs_review" hash="92014734">ਇੱਕ ਨਵਾਂ ਆਈਡੀ ਤਿਆਰ ਕਰੋ</string>
-	<string name="button_label_generate_my_id" state="needs_review" hash="-1007060207">ਮੇਰੀ ਆਈਡੀ ਤਿਆਰ ਕਰੋ</string>
+	<string name="button_label_generate_new_id" state="needs_review" hash="-1130516787">ਇੱਕ ਨਵਾਂ ਪ੍ਰੋਫਾਈਲ ਬਣਾਓ</string>
+	<string name="button_label_generate_my_id" state="needs_review" hash="239641058">ਮੇਰਾ ਪ੍ਰੋਫਾਈਲ ਬਣਾਓ</string>
 	<string name="button_label_ignore" state="needs_review" hash="-806373746">ਅਣਗੌਲਿਆ ਕਰੋ</string>
 	<string name="button_label_reject" state="needs_review" hash="-2094664161">ਅਸਵੀਕਾਰ ਕਰੋ</string>
 	<string name="button_label_introduce" state="needs_review" hash="193852909">ਪੇਸ਼ ਕਰੋ</string>
@@ -80,6 +80,12 @@
 	<string name="dialog_title_rename_group" state="needs_review" hash="1461324427">ਗਰੁੱਪ ਦਾ ਨਾਮ ਬਦਲੋ</string>
 	<string name="dialog_title_restart_channel_establishment" state="needs_review" hash="-645769680">ਕੀ ਚੈਨਲ ਸਥਾਪਤ ਕਰਨ ਦੀ ਪ੍ਰਕਿਰਿਆ ਦੁਬਾਰਾ ਸ਼ੁਰੂ ਕਰੀਏ?</string>
 	<string name="dialog_title_share_with" state="needs_review" hash="854107768">ਇਸ ਨਾਲ ਸਾਂਝ ਕਰੋ…</string>
+	<string name="dialog_title_share_recipients" state="needs_review" hash="1157053138">ਸੰਪਰਕਾਂ ਦੀ ਚੋਣ ਕਰੋ</string>
+	<string name="share_label_from" state="needs_review" hash="2049052075">ਤੋਂ:</string>
+	<string name="share_label_to" state="needs_review" hash="-1785690373">ਕਿਸ ਲਈ:</string>
+	<string name="share_label_choose_recipients" state="needs_review" hash="1157053138">ਸੰਪਰਕਾਂ ਦੀ ਚੋਣ ਕਰੋ</string>
+	<string name="hint_share_message" state="needs_review" hash="-763169957">ਇੱਕ ਸੁਨੇਹਾ ਜੋੜੋ…</string>
+	<string name="content_description_delete_attachment" state="needs_review" hash="-220348329">ਅਟੈਚਮੈਂਟ ਹਟਾਓ</string>
 	<string name="dialog_title_shortcut_to" state="needs_review" hash="-1193591200">… ਲਈ ਸ਼ਾਰਟਕੱਟ ਬਣਾਓ</string>
 	<string name="explanation_choose_display_name" state="needs_review" hash="1162066686">ਕਿਰਪਾ ਕਰਕੇ ਇੱਕ ਅਜਿਹਾ ਨਾਮ ਦਰਜ ਕਰੋ ਜੋ ਤੁਹਾਡੇ ਸੰਪਰਕਾਂ ਨੂੰ ਦਿਖਾਇਆ ਜਾਵੇਗਾ। ਇਹ ਜਾਣਕਾਰੀ ਕਦੇ ਵੀ ਓਲਵਿਡ ਦੇ ਸਰਵਰਾਂ \'ਤੇ ਨਹੀਂ ਭੇਜੀ ਜਾਵੇਗੀ।</string>
 	<string name="explanation_empty_contact_list" state="needs_review" hash="1240778508">ਇਸ ਸਮੇਂ ਕੋਈ ਸੰਪਰਕ ਨਹੀਂ ਹਨ।</string>
@@ -104,7 +110,7 @@
 	<string name="explanation_no_message_found" state="needs_review" hash="-1329622990">ਕੋਈ ਵੀ ਸੁਨੇਹਾ ਨਹੀਂ ਮਿਲਿਆ।</string>
 	<string name="explanation_no_attachment_found" state="needs_review" hash="156593369">ਕੋਈ ਵੀ ਅਟੈਚਮੈਂਟ ਨਹੀਂ ਮਿਲੀ</string>
 	<string name="explanation_no_link_found" state="needs_review" hash="-1419950450">ਕੋਈ ਲਿੰਕ ਨਹੀਂ ਮਿਲੀ</string>
-	<string name="hint_company" state="needs_review" hash="379200324">ਕੰਪਨੀ (ਵਿਕਲਪਿਕ)</string>
+	<string name="hint_company" state="needs_review" hash="988571519">ਕੰਪਨੀ</string>
 	<string name="hint_compose_your_message" state="needs_review" hash="-25761578">ਸੁਨੇਹਾ ਲਿਖੋ</string>
 	<string name="hint_compose_your_message_ephemeral" state="needs_review" hash="-1527208333">ਅਸਥਾਈ ਸੁਨੇਹਾ</string>
 	<string name="label_edit_your_message" state="needs_review" hash="1091877412">ਆਪਣੇ ਸੁਨੇਹੇ ਨੂੰ ਸੰਪਾਦਿਤ ਕਰੋ</string>
@@ -133,7 +139,7 @@
 	<string name="hint_last_name" state="needs_review" hash="1701170359">ਆਖਰੀ ਨਾਮ</string>
 	<string name="hint_new_name" state="needs_review" hash="709842168">ਨਵਾਂ ਨਾਮ</string>
 	<string name="hint_notification_reply" state="needs_review" hash="1095144032">ਜਵਾਬ ਦਿਓ</string>
-	<string name="hint_position" state="needs_review" hash="-55145181">ਨੌਕਰੀ ਦਾ ਖ਼ਿਤਾਬ (ਵਿਕਲਪਿਕ)</string>
+	<string name="hint_position" state="needs_review" hash="1338817744">ਨੌਕਰੀ ਦਾ ਖ਼ਿਤਾਬ</string>
 	<string name="invitation_label_their_code" state="needs_review" hash="1402501614">ਉਹਨਾਂ ਦਾ ਕੋਡ</string>
 	<string name="invitation_label_your_code" state="needs_review" hash="1944546233">ਤੁਹਾਡਾ ਕੋਡ</string>
 	<string name="invitation_status_accept_invite" state="needs_review" hash="2100924901">ਸੱਦਾ ਪ੍ਰਾਪਤ ਹੋਇਆ</string>
@@ -170,6 +176,11 @@
 	<string name="label_group_members" state="needs_review" hash="1460220752">ਗਰੁੱਪ ਦੇ ਮੈਂਬਰ</string>
 	<string name="label_other_group_members" state="needs_review" hash="-2121490032">ਹੋਰ ਗਰੁੱਪ ਮੈਂਬਰ</string>
 	<string name="label_groups_common" state="needs_review" hash="1252823567">ਸਾਂਝੇ ਗਰੁੱਪ</string>
+	<string name="label_create_group_with_contact" state="needs_review" hash="1950649899">%1$s ਨਾਲ ਇੱਕ ਗਰੁੱਪ ਬਣਾਓ</string>
+	<string name="label_add_contact_to_a_group" state="needs_review" hash="-682192937">%1$s ਨੂੰ ਇੱਕ ਗਰੁੱਪ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰੋ</string>
+	<string name="label_add_to_groups" state="needs_review" hash="-654216617">ਗਰੁੱਪਾਂ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰੋ</string>
+	<string name="explanation_no_admin_group_to_add_contact" state="needs_review" hash="402908162">ਤੁਸੀਂ ਕਿਸੇ ਵੀ ਅਜਿਹੇ ਗਰੁੱਪ ਦਾ ਪ੍ਰਸ਼ਾਸਕ ਨਹੀਂ ਹੋ ਜਿਸ ਵਿੱਚ %1$s ਨੂੰ ਜੋੜਿਆ ਜਾ ਸਕਦਾ ਹੈ।</string>
+	<string name="toast_message_adding_contact_to_groups" state="needs_review" hash="1201697547">%1$s ਨੂੰ ਚੁਣੇ ਗਏ ਸਮੂਹਾਂ ਵਿੱਚ ਜੋੜਿਆ ਜਾ ਰਿਹਾ ਹੈ...</string>
 	<string name="label_invitation_declined" state="needs_review" hash="2038173833">ਨਿਮੰਤਰਣ ਰੱਦ ਕਰ ਦਿੱਤਾ ਗਿਆ</string>
 	<string name="label_new_group_card" state="needs_review" hash="1006740909">ਗਰੁੱਪ ਦੀ ਜਾਣਕਾਰੀ ਅੱਪਡੇਟ ਕੀਤੀ ਗਈ।</string>
 	<string name="label_not_part_of_a_group" state="needs_review" hash="1667979596">ਤੁਸੀਂ ਅਜੇ ਕਿਸੇ ਵੀ ਗਰੁੱਪ ਦਾ ਮੈਂਬਰ ਨਹੀਂ ਹੋ</string>
@@ -183,6 +194,7 @@
 	<string name="menu_action_create_shortcut" state="needs_review" hash="-1949455873">ਸ਼ਾਰਟਕੱਟ ਬਣਾਓ</string>
 	<string name="menu_action_delete" state="needs_review" hash="-232100842">ਮਿਟਾਓ</string>
 	<string name="menu_action_delete_discussion" state="needs_review" hash="2059656471">ਚੈਟ ਮਿਟਾਓ</string>
+	<string name="menu_action_export_discussion" state="needs_review" hash="1736692296">ਚਰਚਾ ਨੂੰ ਨਿਰਯਾਤ ਕਰੋ</string>
 	<string name="label_swipe_details" state="needs_review" hash="171468732">ਵਿस्तਾਰ</string>
 	<string name="menu_action_disband_group" state="needs_review" hash="-1767089289">ਗਰੁੱਪ ਨੂੰ ਖਤਮ ਕਰੋ</string>
 	<string name="menu_action_edit_group_details" state="needs_review" hash="310205135">ਗਰੁੱਪ ਦੀ ਜਾਣਕਾਰੀ ਸੰਪਾਦਿਤ ਕਰੋ</string>
@@ -482,7 +494,14 @@
 	<string name="dialog_title_backup_choices" state="needs_review" hash="281222223">ਬੈਕਅੱਪ ਕਰਨ ਦਾ ਤਰੀਕਾ ਚੁਣੋ</string>
 	<string name="menu_action_choose_picture" state="needs_review" hash="-1655172909">ਇੱਕ ਤਸਵੀਰ ਚੁਣੋ</string>
 	<string name="menu_action_take_photo" state="needs_review" hash="-1123080444">ਤਸਵੀਰ ਲਵੋ</string>
+	<string name="menu_action_choose_image_from_olvid" state="needs_review" hash="1585248356">ਮਿਲੇ ਹੋਈ ਤਸਵੀਰ ਚੁਣੋ</string>
 	<string name="menu_action_remove_image" state="needs_review" hash="1094977672">ਤਸਵੀਰ ਹਟਾਓ</string>
+	<string name="menu_action_use_image_as" state="needs_review" hash="587310096">ਇਸ ਚਿੱਤਰ ਨੂੰ ਇਸ ਤਰ੍ਹਾਂ ਵਰਤੋ...</string>
+	<string name="label_use_photo_for_my_profile" state="needs_review" hash="-1005809580">ਮੇਰੀ ਪ੍ਰੋਫਾਈਲ ਤਸਵੀਰ</string>
+	<string name="label_use_photo_for_target" state="needs_review" hash="283541521">%s ਲਈ ਫੋਟੋ</string>
+	<string name="label_use_photo_for_discussion_background" state="needs_review" hash="1925733151">%s ਲਈ ਪਿਛੋਕੜ</string>
+	<string name="toast_message_photo_set" state="needs_review" hash="-1641885203">ਤਸਵੀਰ ਅੱਪਡੇਟ ਕੀਤੀ ਗਈ</string>
+	<string name="toast_message_background_set" state="needs_review" hash="1642873459">ਪਿਛੋਕੜ ਅੱਪਡੇਟ ਕੀਤਾ ਗਿਆ</string>
 	<string name="dialog_title_create_empty_group" state="needs_review" hash="-663434464">ਖਾਲੀ ਗਰੁੱਪ ਬਣਾਉਣਾ ਹੈ?</string>
 	<string name="dialog_message_create_empty_group" state="needs_review" hash="-297923005">ਤੁਸੀਂ ਆਪਣੇ ਗਰੁੱਪ ਵਿੱਚ ਜੋੜਨ ਲਈ ਕਿਸੇ ਸੰਪਰਕ ਦੀ ਚੋਣ ਨਹੀਂ ਕੀਤੀ। ਕੀ ਤੁਸੀਂ ਨਿਸ਼ਚਤ ਹੋ ਕਿ ਤੁਸੀਂ ਇੱਕ ਖਾਲੀ ਗਰੁੱਪ ਬਣਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ?</string>
 	<string name="pref_dark_mode_title" state="needs_review" hash="816474245">ਡਾਰਕ ਮੋਡ</string>
@@ -862,7 +881,7 @@
 	<string name="button_label_check_options" state="needs_review" hash="-759177128">ਵਿਕਲਪਾਂ ਦੀ ਜਾਂਚ ਕਰੋ</string>
 	<string name="hint_olvid_server" state="needs_review" hash="1097391633">ਓਲਵੀਡ ਸਰਵਰ</string>
 	<string name="hint_license_activation_code" state="needs_review" hash="102193320">ਲਾਇਸੈਂਸ ਐਕਟੀਵੇਸ਼ਨ ਕੋਡ</string>
-	<string name="activity_title_identity_creation_options" state="needs_review" hash="1180456032">ਆਈਡੀ ਬਣਾਉਣ ਦੇ ਵਿਕਲਪ</string>
+	<string name="activity_title_identity_creation_options" state="needs_review" hash="-774054913">ਪ੍ਰੋਫਾਈਲ ਬਣਾਉਣ ਦੇ ਵਿਕਲਪ</string>
 	<string name="activity_title_scan_configuration" state="needs_review" hash="-386259993">ਕੌਂਫਿਗਰੇਸ਼ਨ ਸਕੈਨ ਕਰੋ</string>
 	<string name="menu_action_import_activation_from_clipboard" state="needs_review" hash="-70842935">ਕਲਿੱਪਬੋਰਡ ਤੋਂ ਲਿੰਕ ਆਯਾਤ ਕਰੋ</string>
 	<string name="troubleshooting_update_valid_title" state="needs_review" hash="741828768">ਓਲਵੀਡ ਅੱਪਡੇਟ ਹੈ।</string>
@@ -871,7 +890,6 @@
 	<string name="dialog_message_update_available" state="needs_review" hash="416187645">ਓਲਵੀਡ ਦਾ ਇੱਕ ਨਵਾਂ ਸੰਸਕਰਣ ਉਪਲਬਧ ਹੈ।\n\nਨਵੀਨਤਮ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ ਦਾ ਲਾਭ ਲੈਣ ਲਈ ਕਿਰਪਾ ਕਰਕੇ ਅਪਡੇਟ ਕਰੋ।</string>
 	<string name="dialog_title_call_initiation_not_supported" state="needs_review" hash="-2088021831">ਕਾਲ ਸ਼ੁਰੂ ਕਰਨ ਦੀ ਸਹੂਲਤ ਉਪਲਬਧ ਨਹੀਂ ਹੈ।</string>
 	<string name="dialog_message_call_initiation_not_supported" state="needs_review" hash="1760333819">ਇਹ ਜਾਪਦਾ ਹੈ ਕਿ ਤੁਹਾਡਾ ਓਲਵੀਡ ਸਰਵਰ ਸੁਰੱਖਿਅਤ ਕਾਲ ਸ਼ੁਰੂ ਕਰਨ ਦਾ ਸਮਰਥਨ ਨਹੀਂ ਕਰਦਾ।\n\nਕਿਰਪਾ ਕਰਕੇ ਵਧੇਰੇ ਜਾਣਕਾਰੀ ਲਈ ਆਪਣੇ ਪ੍ਰਸ਼ਾਸਕ ਨਾਲ ਸੰਪਰਕ ਕਰੋ।</string>
-	<string name="label_identity_creation_options" state="needs_review" hash="1180456032">ਆਈਡੀ ਬਣਾਉਣ ਦੇ ਵਿਕਲਪ</string>
 	<string name="text_option_server" state="needs_review" hash="-1130676431">ਸਰਵਰ: %1$s</string>
 	<string name="dialog_title_non_default_server" state="needs_review" hash="2119192219">ਇੱਕ ਗੈਰ-ਮੂਲ ਸਰਵਰ ਦੀ ਵਰਤੋਂ ਕਰਨਾ</string>
 	<string name="dialog_message_non_default_server" state="needs_review" hash="459308900">ਤੁਸੀਂ ਹੇਠਾਂ ਦਿੱਤੇ ਸਰਵਰ \'ਤੇ ਇੱਕ ਪ੍ਰੋਫਾਈਲ ਬਣਾਉਣ ਜਾ ਰਹੇ ਹੋ: \n\n%1$s\n\nਇਹ ਡਿਫੌਲਟ ਓਲਵੀਡ ਸਰਵਰ ਨਹੀਂ ਹੈ। ਸਿਰਫ਼ ਤਾਂ ਹੀ ਅੱਗੇ ਵਧੋ ਜੇਕਰ ਤੁਸੀਂ ਇਸ ਸਰਵਰ \'ਤੇ ਭਰੋਸਾ ਕਰਦੇ ਹੋ।</string>
@@ -900,7 +918,7 @@
 	<string name="toast_message_unable_to_keycloak_revoke" state="needs_review" hash="-1368037130">ਪਿਛਲੀ ਓਲਵੀਡ ਆਈਡੀ ਨੂੰ ਬਦਲਣ ਵਿੱਚ ਅਸਫਲ, ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।</string>
 	<string name="toast_message_keycloak_revoke_successful" state="needs_review" hash="-1216369809">ਪਿਛਲਾ ਓਲਵੀਡ ਆਈਡੀ ਸਫਲਤਾਪੂਰਵਕ ਬਦਲ ਦਿੱਤਾ ਗਿਆ।</string>
 	<string name="dialog_title_keycloak_authentication_required_user_id_changed" state="needs_review" hash="-896407029">ਉਪਭੋਗਤਾ ਵਿੱਚ ਬਦਲਾਅ ਪਾਇਆ ਗਿਆ।</string>
-	<string name="dialog_message_keycloak_authentication_required_user_id_changed" state="needs_review" hash="876252686">ਤੁਹਾਡੀ ਪ੍ਰੋਫਾਈਲ ਵਰਤਮਾਨ ਵਿੱਚ ਤੁਹਾਡੀ ਸੰਸਥਾ ਦੁਆਰਾ ਪ੍ਰਬੰਧਿਤ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਇਹ ਜਾਪਦਾ ਹੈ ਕਿ ਤੁਸੀਂ ਆਮ ਨਾਲੋਂ ਵੱਖਰੇ ਉਪਭੋਗਤਾ ਵਜੋਂ ਪ੍ਰਮਾਣਿਤ ਹੋਏ ਹੋ। ਇਹ ਸਮਰਥਿਤ ਨਹੀਂ ਹੈ।\n\nਕਿਰਪਾ ਕਰਕੇ ਆਪਣੇ ਪ੍ਰਸ਼ਾਸਕ ਨਾਲ ਸੰਪਰਕ ਕਰੋ ਜਾਂ ਸਹੀ ਉਪਭੋਗਤਾ ਵਜੋਂ ਦੁਬਾਰਾ ਪ੍ਰਮਾਣਿਤ ਕਰੋ।</string>
+	<string name="dialog_message_keycloak_authentication_required_user_id_changed" state="needs_review" hash="2080839829">ਤੁਹਾਡੀ ਪ੍ਰੋਫਾਈਲ ਵਰਤਮਾਨ ਵਿੱਚ ਤੁਹਾਡੇ ਸੰਗਠਨ ਦੁਆਰਾ ਪ੍ਰਬੰਧਿਤ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਇਹ ਲੱਗਦਾ ਹੈ ਕਿ ਤੁਸੀਂ ਆਮ ਨਾਲੋਂ ਵੱਖਰੇ ਉਪਭੋਗਤਾ ਵਜੋਂ ਪ੍ਰਮਾਣਿਤ ਹੋਏ ਹਨ। ਇਸਦਾ ਸਮਰਥਨ ਨਹੀਂ ਕੀਤਾ ਗਿਆ ਹੈ।\n\nPlease ਆਪਣੇ ਪ੍ਰਸ਼ਾਸਕ ਨਾਲ ਸੰਪਰਕ ਕਰੋ ਜਾਂ ਸਹੀ ਉਪਭੋਗਤਾ ਦੇ ਰੂਪ ਵਿੱਚ ਦੁਬਾਰਾ ਪ੍ਰਮਾਣਿਤ ਕਰੋ।</string>
 	<string name="dialog_title_add_keycloak_user" state="needs_review" hash="-1050193239">ਸੰਪਰਕ ਜੋੜੋ</string>
 	<string name="dialog_message_add_keycloak_user" state="needs_review" hash="-1755937035">ਤੁਸੀਂ %1$s ਨੂੰ ਆਪਣੀਆਂ ਸੰਪਰਕਾਂ ਵਿੱਚ ਜੋੜਨ ਲਈ ਚੁਣਿਆ ਹੈ। ਕੀ ਤੁਸੀਂ ਅੱਗੇ ਵਧਣਾ ਚਾਹੁੰਦੇ ਹੋ?</string>
 	<string name="explanation_keycloak_update_new" state="needs_review" hash="1136733528">ਤੁਸੀਂ ਓਲਵਿਡ ਵਿੱਚ ਆਪਣੀ ਕੰਪਨੀ ਦੇ ਆਈਡੈਂਟਿਟੀ ਪ੍ਰੋਵਾਈਡਰ ਨੂੰ ਕੌਂਫਿਗਰ ਕਰਨ ਜਾ ਰਹੇ ਹੋ। ਇੱਕ ਵਾਰ ਕੌਂਫਿਗਰ ਕਰਨ ਤੋਂ ਬਾਅਦ, ਤੁਸੀਂ ਇਸ ਸਰਵਰ ਨਾਲ ਪ੍ਰਮਾਣਿਤ ਹੋ ਸਕਦੇ ਹੋ ਅਤੇ ਓਲਵਿਡ ਤੁਹਾਨੂੰ ਆਪਣੇ ਸੰਪਰਕਾਂ ਵਿੱਚ ਹੋਰ ਕਰਮਚਾਰੀਆਂ ਨੂੰ ਆਸਾਨੀ ਨਾਲ ਜੋੜਨ ਦੇਵੇਗਾ। ਕਿਰਪਾ ਕਰਕੇ ਵਧੇਰੇ ਜਾਣਕਾਰੀ ਲਈ ਆਪਣੇ ਪ੍ਰਸ਼ਾਸਕ ਨਾਲ ਸੰਪਰਕ ਕਰੋ।</string>
@@ -1031,6 +1049,8 @@
 	<string name="label_storage_discussions" state="needs_review" hash="491497248">ਚਰਚਾ</string>
 	<string name="pref_use_internal_image_viewer_title" state="needs_review" hash="1319400578">ਅੰਦਰੂਨੀ ਚਿੱਤਰ ਦਰਸ਼ਕ ਦੀ ਵਰਤੋਂ ਕਰੋ</string>
 	<string name="pref_use_internal_image_viewer_summary" state="needs_review" hash="1248137666">ਜਦੋਂ ਇਹ ਵਿਸ਼ੇਸ਼ਤਾ ਚਾਲੂ ਕੀਤੀ ਜਾਂਦੀ ਹੈ, ਤਾਂ ਕਿਸੇ ਚਿੱਤਰ ਅਟੈਚਮੈਂਟ \'ਤੇ ਕਲਿੱਕ ਕਰਨ ਨਾਲ ਇਹ ਅੰਦਰੂਨੀ ਵਿਊਅਰ ਵਿੱਚ ਖੁੱਲ੍ਹੇਗਾ। ਨਹੀਂ ਤਾਂ, ਤੁਹਾਡੇ ਉਪਕਰਨ ਦੀ ਡਿਫੌਲਟ ਚਿੱਤਰ ਐਪ ਦੀ ਵਰਤੋਂ ਕੀਤੀ ਜਾਵੇਗੀ।</string>
+	<string name="pref_image_text_recognition_title" state="needs_review" hash="1877261687">ਚਿੱਤਰਾਂ ਵਿੱਚ ਟੈਕਸਟ ਨੂੰ ਪਛਾਣੋ ਅਤੇ ਇੰਡੈਕਸ ਕਰੋ</string>
+	<string name="pref_image_text_recognition_summary" state="needs_review" hash="1217699919">ਇਸ ਨਾਲ ਤੁਸੀਂ ਚਿੱਤਰਾਂ ਵਿੱਚ ਮਿਲੇ ਟੈਕਸਟ ਦੀ ਖੋਜ ਅਤੇ ਕਾਪੀ ਕਰ ਸਕਦੇ ਹੋ। ਇਹ ਘੱਟ-ਪਾਵਰ ਵਾਲੇ ਉਪਕਰਣਾਂ \'ਤੇ ਬਹੁਤ ਜ਼ਿਆਦਾ ਸਰੋਤਾਂ ਦੀ ਖਪਤ ਕਰ ਸਕਦਾ ਹੈ: ਜੇਕਰ ਤੁਹਾਨੂੰ ਇਸਦੀ ਲੋੜ ਨਹੀਂ ਹੈ ਤਾਂ ਇਸਨੂੰ ਬੰਦ ਕਰੋ।</string>
 	<string name="label_unable_to_display_image" state="needs_review" hash="-1495534207">ਚਿੱਤਰ ਦਿਖਾਉਣ ਵਿੱਚ ਅਸਮਰੱਥ</string>
 	<string name="dialog_title_backup_requires_sign_in" state="needs_review" hash="-720389674">ਕਲਾਊਡ ਪ੍ਰਦਾਤਾ ਨਾਲ ਸਾਈਨ ਇਨ ਕਰਨ ਦੀ ਲੋੜ ਹੈ।</string>
 	<string name="dialog_message_backup_requires_sign_in" state="needs_review" hash="119557495">ਤੁਸੀਂ ਓਲਵੀਡ ਨੂੰ ਇੱਕ ਕਲਾਉਡ ਪ੍ਰਦਾਤਾ \'ਤੇ ਆਟੋਮੈਟਿਕ ਬੈਕਅੱਪ ਦੀ ਵਰਤੋਂ ਕਰਨ ਲਈ ਕੌਂਫਿਗਰ ਕੀਤਾ ਹੈ, ਪਰ ਤੁਹਾਡਾ ਸੈਸ਼ਨ ਖਤਮ ਹੋ ਗਿਆ ਹੈ। ਤੁਹਾਨੂੰ ਇਸ ਪ੍ਰਦਾਤਾ ਵਿੱਚ ਦੁਬਾਰਾ ਲੌਗਇਨ ਕਰਨ ਦੀ ਲੋੜ ਹੈ।\n\nਜੇਕਰ ਤੁਸੀਂ ਹੁਣ ਆਟੋਮੈਟਿਕ ਬੈਕਅੱਪ ਨਹੀਂ ਚਾਹੁੰਦੇ, ਤਾਂ ਤੁਸੀਂ ਐਪ ਸੈਟਿੰਗਾਂ ਵਿੱਚ ਉਹਨਾਂ ਨੂੰ ਬੰਦ ਕਰ ਸਕਦੇ ਹੋ। ਇਹ ਧਿਆਨ ਵਿੱਚ ਰੱਖੋ ਕਿ ਆਟੋਮੈਟਿਕ ਬੈਕਅੱਪ ਤੁਹਾਡੇ ਸੰਪਰਕਾਂ ਦੇ ਨੁਕਸਾਨ ਨੂੰ ਰੋਕਣ ਦਾ ਇੱਕੋ ਇੱਕ ਤਰੀਕਾ ਹੈ ਜੇਕਰ ਤੁਹਾਡਾ ਡਿਵਾਈਸ ਗੁਆਚ ਜਾਂਦਾ ਹੈ ਜਾਂ ਖਰਾਬ ਹੋ ਜਾਂਦਾ ਹੈ।</string>
@@ -1149,7 +1169,7 @@
 	<string name="pref_hidden_profile_close_policy_dialog_entry_screen_lock" state="needs_review" hash="-1520400811">ਜਦੋਂ ਓਲਵੀਡ ਲੌਕ ਸਕ੍ਰੀਨ ਚਾਲੂ ਹੁੰਦੀ ਹੈ</string>
 	<string name="pref_hidden_profile_close_policy_dialog_entry_background" state="needs_review" hash="-2099539114">ਜਦੋਂ ਓਲਵੀਡ ਬੈਕਗ੍ਰਾਉਂਡ ਵਿੱਚ ਜਾਂਦਾ ਹੈ…</string>
 	<string name="activity_title_enter_backup_key" state="needs_review" hash="1035967309">ਬੈਕਅੱਪ ਕੁੰਜੀ ਦਰਜ ਕਰੋ</string>
-	<string name="activity_title_identity_creation" state="needs_review" hash="-1361520151">ਆਈਡੀ ਬਣਾਉਣਾ</string>
+	<string name="activity_title_identity_creation" state="needs_review" hash="2027618284">ਪ੍ਰੋਫਾਈਲ ਬਣਾਉਣਾ</string>
 	<string name="menu_action_manual_configuration" state="needs_review" hash="-1495974502">ਮੈਨੂਅਲ ਉੱਨਤ ਸੰਰਚਨਾ</string>
 	<string name="toast_message_invalid_configuration_link" state="needs_review" hash="1387412522">ਗਲਤ ਸੰਰਚਨਾ ਲਿੰਕ</string>
 	<string name="toast_message_invalid_link" state="needs_review" hash="1265454437">ਗਲਤ ਲਿੰਕ</string>
@@ -1171,6 +1191,7 @@
 	<string name="dialog_title_chose_profile_web_client" state="needs_review" hash="1860298414">ਓਲਵੀਡ ਵੈੱਬ ਕਲਾਇੰਟ ਨਾਲ ਜੁੜਨ ਲਈ ਪ੍ਰੋਫਾਈਲ ਚੁਣੋ।</string>
 	<string name="dialog_title_chose_profile_invitation" state="needs_review" hash="-2063034787">ਇਸ ਸੰਪਰਕ ਨੂੰ ਸੱਦਾ ਦੇਣ ਲਈ ਉਹ ਪ੍ਰੋਫਾਈਲ ਚੁਣੋ ਜਿਸ ਨਾਲ ਤੁਸੀਂ ਇਸਨੂੰ ਜੋੜਨਾ ਚਾਹੁੰਦੇ ਹੋ।</string>
 	<string name="toast_message_create_new_profile_then_reopen_this_link" state="needs_review" hash="1770827346">ਕਿਰਪਾ ਕਰਕੇ ਪਹਿਲਾਂ ਇੱਕ ਨਵਾਂ ਪ੍ਰੋਫਾਈਲ ਬਣਾਓ, ਫਿਰ ਇਸ ਲਿੰਕ ਨੂੰ ਦੁਬਾਰਾ ਖੋਲ੍ਹੋ।</string>
+	<string name="toast_message_invitation_link_deferred_to_end_of_onboarding" state="needs_review" hash="-189914806">ਤੁਹਾਡਾ ਸੱਦਾ ਆਪਣੇ ਆਪ ਖੁੱਲ੍ਹ ਜਾਵੇਗਾ ਜਦੋਂ ਤੁਹਾਡੀ ਪ੍ਰੋਫਾਈਲ ਬਣ ਜਾਂਦੀ ਹੈ।</string>
 	<string name="button_label_switch_profile" state="needs_review" hash="-2007633024">ਪ੍ਰੋਫਾਈਲ ਬਦਲੋ</string>
 	<string name="text_no_other_profile_to_switch_to" state="needs_review" hash="-112306213">ਕੋਈ ਹੋਰ ਪ੍ਰੋਫਾਈਲ ਨਹੀਂ</string>
 	<string name="button_label_configure_lock_screen" state="needs_review" hash="870348426">ਲਾਕ ਸਕ੍ਰੀਨ ਸੈੱਟ ਕਰੋ</string>
@@ -1180,9 +1201,8 @@
 	<string name="dialog_message_delete_last_profile" state="needs_review" hash="-2123774331">ਇੱਕ ਪ੍ਰੋਫਾਈਲ ਨੂੰ ਮਿਟਾਉਣ ਨਾਲ ਤੁਹਾਡੇ ਡਿਵਾਈਸ \'ਤੇ ਇਸ ਪ੍ਰੋਫਾਈਲ ਨਾਲ ਸਬੰਧਤ ਸਾਰੀ ਜਾਣਕਾਰੀ ਮਿਟਾਈ ਜਾਵੇਗੀ। ਇਸ ਵਿੱਚ ਤੁਹਾਡੇ ਸੰਪਰਕ ਅਤੇ ਗਰੁੱਪ ਅਤੇ ਇਸ ਪ੍ਰੋਫਾਈਲ ਲਈ ਤੁਹਾਡੀਆਂ ਸਾਰੀਆਂ ਗੱਲਬਾਤਾਂ (ਸੁਨੇਹੇ ਅਤੇ ਅਟੈਚਮੈਂਟ) ਦੀ ਸਮੱਗਰੀ ਸ਼ਾਮਲ ਹੈ।\n\n<b />ਇਹ ਤੁਹਾਡੀ ਇੱਕਮਾਤਰ ਦਿਖਾਈ ਦੇਣ ਵਾਲੀ ਪ੍ਰੋਫਾਈਲ ਹੈ ਅਤੇ ਜੇਕਰ ਤੁਹਾਡੇ ਕੋਲ ਕੋਈ ਲੁਕੀ ਹੋਈ ਪ੍ਰੋਫਾਈਲ ਹੈ, ਤਾਂ ਉਹ ਵੀ ਇੱਕੋ ਸਮੇਂ ਮਿਟਾਈ ਦਿੱਤੀਆਂ ਜਾਣਗੀਆਂ।\n\nਜੇਕਰ ਤੁਸੀਂ Olvid ਵਿੱਚ ਬੈਕਅੱਪ ਨੂੰ ਸਮਰੱਥ ਕੀਤਾ ਹੈ, ਤਾਂ ਤੁਹਾਡੇ ਭਵਿੱਖ ਦੇ ਬੈਕਅੱਪ ਵਿੱਚ ਇਸ ਪ੍ਰੋਫਾਈਲ ਦਾ ਕੋਈ ਵੀ ਨਿਸ਼ਾਨ ਨਹੀਂ ਹੋਵੇਗਾ ਅਤੇ ਤੁਸੀਂ ਇਸਨੂੰ ਮੁੜ ਤੋਂ ਬਹਾਲ ਕਰਨ ਦੇ ਯੋਗ ਨਹੀਂ ਹੋ ਸਕੋਗੇ।\n\nਇਸ ਪ੍ਰੋਫਾਈਲ ਨੂੰ ਕਿਵੇਂ ਮਿਟਾਇਆ ਜਾਵੇ, ਇਹ ਚੁਣਨ ਲਈ \"ਅਗਲਾ\" ਦਬਾਓ।</string>
 	<string name="dialog_message_delete_profile_multi" state="needs_review" hash="-2003495595">ਇੱਕ ਪ੍ਰੋਫਾਈਲ ਨੂੰ ਮਿਟਾਉਣ ਨਾਲ ਤੁਹਾਡੇ ਡਿਵਾਈਸ \'ਤੇ ਇਸ ਪ੍ਰੋਫਾਈਲ ਨਾਲ ਸਬੰਧਤ ਸਾਰੀ ਜਾਣਕਾਰੀ ਮਿਟਾਈ ਜਾਵੇਗੀ। ਇਸ ਵਿੱਚ ਤੁਹਾਡੇ ਸੰਪਰਕ ਅਤੇ ਗਰੁੱਪ ਅਤੇ ਇਸ ਪ੍ਰੋਫਾਈਲ ਲਈ ਤੁਹਾਡੀਆਂ ਸਾਰੀਆਂ ਗੱਲਬਾਤਾਂ (ਸੁਨੇਹੇ ਅਤੇ ਅਟੈਚਮੈਂਟ) ਦੀ ਸਮੱਗਰੀ ਸ਼ਾਮਲ ਹੈ। ਇਸ ਕਾਰਵਾਈ ਨਾਲ ਤੁਹਾਡੇ ਹੋਰ ਪ੍ਰੋਫਾਈਲਾਂ \'ਤੇ ਕੋਈ ਅਸਰ ਨਹੀਂ ਪਵੇਗਾ।\n\nਇਸ ਪ੍ਰੋਫਾਈਲ ਨੂੰ ਕਿਵੇਂ ਮਿਟਾਇਆ ਜਾਵੇ, ਇਹ ਚੁਣਨ ਲਈ \"ਅਗਲਾ\" ਦਬਾਓ।</string>
 	<string name="dialog_message_delete_last_profile_multi" state="needs_review" hash="-103140781">ਇੱਕ ਪ੍ਰੋਫਾਈਲ ਨੂੰ ਮਿਟਾਉਣ ਨਾਲ ਤੁਹਾਡੇ ਡਿਵਾਈਸ \'ਤੇ ਇਸ ਪ੍ਰੋਫਾਈਲ ਨਾਲ ਸਬੰਧਤ ਸਾਰੀ ਜਾਣਕਾਰੀ ਮਿਟਾਈ ਜਾਵੇਗੀ। ਇਸ ਵਿੱਚ ਤੁਹਾਡੇ ਸੰਪਰਕ ਅਤੇ ਗਰੁੱਪ ਅਤੇ ਇਸ ਪ੍ਰੋਫਾਈਲ ਲਈ ਤੁਹਾਡੀਆਂ ਸਾਰੀਆਂ ਗੱਲਬਾਤਾਂ (ਸੁਨੇਹੇ ਅਤੇ ਅਟੈਚਮੈਂਟ) ਦੀ ਸਮੱਗਰੀ ਸ਼ਾਮਲ ਹੈ।\n\n<b />ਇਹ ਤੁਹਾਡੀ ਇੱਕਮਾਤਰ ਦਿਖਾਈ ਦੇਣ ਵਾਲੀ ਪ੍ਰੋਫਾਈਲ ਹੈ ਅਤੇ ਜੇਕਰ ਤੁਹਾਡੇ ਕੋਲ ਕੋਈ ਛੁਪੀ ਹੋਈ ਪ੍ਰੋਫਾਈਲ ਹੈ, ਤਾਂ ਉਹ ਵੀ ਇੱਕੋ ਸਮੇਂ ਮਿਟਾਈ ਦਿੱਤੀਆਂ ਜਾਣਗੀਆਂ।\n\nਇਸ ਪ੍ਰੋਫਾਈਲ ਨੂੰ ਕਿਵੇਂ ਮਿਟਾਇਆ ਜਾਵੇ, ਇਹ ਚੁਣਨ ਲਈ \"ਅਗਲਾ\" ਦਬਾਓ।</string>
-	<string name="switch_label_delete_profile_everywhere" state="needs_review" hash="-74965346">ਸਾਰੇ ਥਾਵਾਂ ਤੋਂ ਪ੍ਰੋਫਾਈਲ ਹਟਾਓ <b>ਹਰ ਥਾਂ</b>
-	</string>
-	<string name="hint_type_delete_here_to_proceed" state="needs_review" hash="-1622625725">ਅੱਗੇ ਵਧਣ ਲਈ ਇੱਥੇ \\"%1$s\\" ਦਰਜ ਕਰੋ</string>
+	<string name="switch_label_delete_profile_everywhere" state="needs_review" hash="-74965346">ਸਾਰੇ ਥਾਵਾਂ ਤੋਂ ਪ੍ਰੋਫਾਈਲ ਹਟਾਓ <b>ਹਰ ਥਾਂ</b></string>
+	<string name="hint_type_delete_here_to_proceed" state="needs_review" hash="-1622625725">ਅੱਗੇ ਵਧਣ ਲਈ ਇੱਥੇ \"%1$s\" ਦਰਜ ਕਰੋ</string>
 	<string name="explanation_delete_owned_identity" state="needs_review" hash="2036375772">ਜੇ ਤੁਸੀਂ ਆਪਣੀ ਪ੍ਰੋਫਾਈਲ ਨੂੰ <b>ਹਰ ਥਾਂ</b> ਤੋਂ ਮਿਟਾਉਣ ਦੀ ਚੋਣ ਕਰਦੇ ਹੋ: \n\u00a0-\u00a0ਇਸਨੂੰ ਤੁਹਾਡੇ ਡਿਵਾਈਸ ਅਤੇ ਤੁਹਾਡੇ ਸੰਪਰਕਾਂ ਦੇ ਡਿਵਾਈਸਾਂ ਦੋਵਾਂ ਤੋਂ ਮਿਟਾ ਦਿੱਤਾ ਜਾਵੇਗਾ।\n\u00a0-\u00a0ਤੁਸੀਂ ਉਨ੍ਹਾਂ ਸਮੂਹਾਂ ਤੋਂ ਬਾਹਰ ਹੋ ਜਾਵੋਗੇ ਜਿਨ੍ਹਾਂ ਵਿੱਚ ਤੁਸੀਂ ਸ਼ਾਮਲ ਹੋਏ ਸੀ।\n\u00a0-\u00a0ਤੁਸੀਂ ਜਿਨ੍ਹਾਂ ਸਮੂਹਾਂ ਦਾ ਪ੍ਰਬੰਧ ਕਰਦੇ ਹੋ, ਉਹਨਾਂ ਨੂੰ ਖਤਮ ਕਰ ਦਿੱਤਾ ਜਾਵੇਗਾ।\n\nਜੇ ਤੁਸੀਂ ਆਪਣੀ ਪ੍ਰੋਫਾਈਲ ਨੂੰ <b>ਹਰ ਥਾਂ</b> ਤੋਂ ਮਿਟਾਉਣ ਦੀ ਚੋਣ ਨਹੀਂ ਕਰਦੇ ਹੋ, ਤਾਂ ਇਹ ਸਿਰਫ਼ ਤੁਹਾਡੇ ਡਿਵਾਈਸ ਤੋਂ ਹੀ ਮਿਟਾਈ ਜਾਵੇਗੀ। ਜੇਕਰ ਤੁਸੀਂ ਕਿਸੇ ਹੋਰ ਡਿਵਾਈਸ ਵਿੱਚ ਬੈਕਅੱਪ ਨੂੰ ਰੀਸਟੋਰ ਕਰਨ ਦੀ ਯੋਜਨਾ ਨਹੀਂ ਬਣਾ ਰਹੇ ਹੋ, ਤਾਂ ਤੁਹਾਡੇ ਸੰਪਰਕ ਅਜੇ ਵੀ ਤੁਹਾਨੂੰ ਸੁਨੇਹੇ ਭੇਜਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰ ਸਕਦੇ ਹਨ ਅਤੇ ਸ਼ਾਇਦ ਇਹ ਨਹੀਂ ਜਾਣਦੇ ਹੋਣਗੇ ਕਿ ਇਹ ਸੁਨੇਹੇ ਤੁਹਾਡੇ ਤੱਕ ਨਹੀਂ ਪਹੁੰਚ ਸਕਦੇ।</string>
 	<string name="explanation_delete_inactive_owned_identity" state="needs_review" hash="-575337242">ਤੁਹਾਡਾ ਮੌਜੂਦਾ ਪ੍ਰੋਫਾਈਲ ਗੈਰ-ਸਰਗਰਮ ਜਾਪਦਾ ਹੈ, ਜਿਸਦਾ ਮਤਲਬ ਹੈ ਕਿ ਤੁਸੀਂ ਇਸਨੂੰ ਕਿਸੇ ਹੋਰ ਡਿਵਾਈਸ ਵਿੱਚ ਟਰਾਂਸਫਰ ਕਰ ਦਿੱਤਾ ਹੈ। ਜੇਕਰ ਤੁਸੀਂ ਇਸ ਪ੍ਰੋਫਾਈਲ ਨੂੰ ਆਪਣੇ ਦੂਜੇ ਡਿਵਾਈਸ \'ਤੇ ਵਰਤਣਾ ਜਾਰੀ ਰੱਖਣਾ ਚਾਹੁੰਦੇ ਹੋ, ਤਾਂ ਤੁਸੀਂ ਇਸਨੂੰ ਇੱਥੇ ਸੁਰੱਖਿਅਤ ਢੰਗ ਨਾਲ ਮਿਟਾ ਸਕਦੇ ਹੋ।\n\nਜੇਕਰ ਤੁਸੀਂ ਇਸ ਪ੍ਰੋਫਾਈਲ ਨੂੰ ਹੁਣ ਕਦੇ ਵੀ ਵਰਤਣਾ ਨਹੀਂ ਚਾਹੁੰਦੇ, ਤਾਂ ਤੁਹਾਨੂੰ ਪਹਿਲਾਂ ਇਸਨੂੰ ਇਸ ਡਿਵਾਈਸ \'ਤੇ ਦੁਬਾਰਾ ਸਰਗਰਮ ਕਰਨਾ ਹੋਵੇਗਾ, ਆਪਣੇ ਸੰਪਰਕਾਂ ਨਾਲ ਸੁਰੱਖਿਅਤ ਚੈਨਲਾਂ ਨੂੰ ਦੁਬਾਰਾ ਬਣਾਉਣ ਦੀ ਉਡੀਕ ਕਰਨੀ ਹੋਵੇਗੀ, ਅਤੇ ਫਿਰ ਇਸ ਪ੍ਰੋਫਾਈਲ ਨੂੰ \"ਹਰ ਥਾਂ ਤੋਂ ਮਿਟਾਓ\" ਵਿਕਲਪ ਚੁਣ ਕੇ ਮਿਟਾਉਣਾ ਹੋਵੇਗਾ।</string>
 	<string name="explanation_delete_owned_identity_multi" state="needs_review" hash="-184045089">ਤੁਹਾਡਾ ਪ੍ਰੋਫਾਈਲ ਵਰਤਮਾਨ ਵਿੱਚ ਕਈ ਡਿਵਾਈਸਾਂ \'ਤੇ ਚਾਲੂ ਹੈ।\n\nਜੇ ਤੁਸੀਂ ਆਪਣਾ ਪ੍ਰੋਫਾਈਲ <b>ਹਰ ਥਾਂ</b> ਤੋਂ ਮਿਟਾਉਣ ਦੀ ਚੋਣ ਕਰਦੇ ਹੋ:\n\u00a0-\u00a0ਇਹ ਤੁਹਾਡੇ ਸਾਰੇ ਡਿਵਾਈਸਾਂ ਅਤੇ ਤੁਹਾਡੇ ਸੰਪਰਕਾਂ ਦੇ ਡਿਵਾਈਸਾਂ ਤੋਂ ਮਿਟਾ ਦਿੱਤਾ ਜਾਵੇਗਾ।\n\u00a0-\u00a0ਤੁਸੀਂ ਉਨ੍ਹਾਂ ਸਮੂਹਾਂ ਨੂੰ ਛੱਡ ਦੇਵੋਗੇ ਜਿਨ੍ਹਾਂ ਵਿੱਚ ਤੁਸੀਂ ਸ਼ਾਮਲ ਹੋਏ ਹੋ।\n\u00a0-\u00a0ਤੁਹਾਡੇ ਦੁਆਰਾ ਪ੍ਰਬੰਧਿਤ ਸਮੂਹ ਖਤਮ ਕਰ ਦਿੱਤੇ ਜਾਣਗੇ।\n\nਜੇ ਤੁਸੀਂ ਆਪਣਾ ਪ੍ਰੋਫਾਈਲ <b>ਹਰ ਥਾਂ</b> ਤੋਂ ਮਿਟਾਉਣ ਦੀ ਚੋਣ ਨਹੀਂ ਕਰਦੇ ਹੋ, ਤਾਂ ਇਹ ਸਿਰਫ਼ ਤੁਹਾਡੇ ਡਿਵਾਈਸ ਤੋਂ ਹੀ ਮਿਟਾ ਦਿੱਤਾ ਜਾਵੇਗਾ ਅਤੇ ਤੁਸੀਂ ਇਸਨੂੰ ਆਪਣੇ ਹੋਰ ਡਿਵਾਈਸਾਂ \'ਤੇ ਆਮ ਤੌਰ \'ਤੇ ਵਰਤਦੇ ਰਹਿ ਸਕਦੇ ਹੋ।</string>
@@ -1301,7 +1321,7 @@
 	<string name="dialog_message_remove_contact" state="needs_review" hash="-85916850">%1$s ਨੂੰ ਤੁਹਾਡੇ ਸੰਪਰਕਾਂ ਵਿੱਚੋਂ ਹਟਾਉਣ ਨਾਲ ਤੁਹਾਡੇ ਦੋਵਾਂ ਵਿਚਕਾਰ ਚੱਲ ਰਹੀ ਨਿੱਜੀ ਗੱਲਬਾਤ ਖਤਮ ਹੋ ਜਾਵੇਗੀ। ਹਾਲਾਂਕਿ, ਤੁਸੀਂ ਅਜੇ ਵੀ ਉਹਨਾਂ ਸਮੂਹ ਗੱਲਬਾਤਾਂ ਵਿੱਚ ਸੁਨੇਹੇ ਦੀ ਆਦਾਨ-ਪ੍ਰਤਿ ਕਰ ਸਕੋਗੇ ਜਿਨ੍ਹਾਂ ਵਿੱਚ ਤੁਸੀਂ ਦੋਵੇਂ ਸ਼ਾਮਲ ਹੋ।</string>
 	<string name="notification_content_one_to_one_invitation" state="needs_review" hash="-1518952630">ਇੱਕ ਨਿੱਜੀ ਚਰਚਾ ਲਈ ਸੱਦਾ</string>
 	<string name="notification_public_title_one_to_one_invitation" state="needs_review" hash="-1518952630">ਇੱਕ ਨਿੱਜੀ ਚਰਚਾ ਲਈ ਸੱਦਾ</string>
-	<string name="pref_show_trust_levels_title" state="needs_review" hash="948801258">ਸੰਪਰਕਾਂ ਲਈ ਇੱਕ \\"ਭਰੋਸੇਯੋਗ ਸਰੋਤ\\" ਸੰਕੇਤ ਦਿਖਾਓ</string>
+	<string name="pref_show_trust_levels_title" state="needs_review" hash="948801258">ਸੰਪਰਕਾਂ ਲਈ ਇੱਕ \"ਭਰੋਸੇਯੋਗ ਸਰੋਤ\" ਸੰਕੇਤ ਦਿਖਾਓ</string>
 	<string name="pref_show_trust_levels_summary" state="needs_review" hash="1392702359">ਜਦੋਂ ਇਹ ਵਿਸ਼ੇਸ਼ਤਾ ਚਾਲੂ ਕੀਤੀ ਜਾਂਦੀ ਹੈ, ਤਾਂ ਉਹਨਾਂ ਦੇ ਪ੍ਰੋਫਾਈਲ ਚਿੱਤਰ \'ਤੇ ਇੱਕ ਰੰਗੀਨ ਬਿੰਦੀ ਇਹ ਦਰਸਾਉਂਦੀ ਹੈ ਕਿ ਤੁਸੀਂ ਨਿੱਜੀ ਤੌਰ \'ਤੇ ਕਿਸੇ ਸੰਪਰਕ ਦੀ ਪਛਾਣ ਦੀ ਪੁਸ਼ਟੀ ਕੀਤੀ ਹੈ ਜਾਂ ਉਹ ਤੁਹਾਡੇ ਸਾਹਮਣੇ ਪੇਸ਼ ਕੀਤੇ ਗਏ ਸਨ।</string>
 	<string name="notification_title_sending_message" state="needs_review" hash="-2132863296">ਓਲਵੀਡ ਸੁਨੇਹਾ ਭੇਜਿਆ ਜਾ ਰਿਹਾ ਹੈ</string>
 	<string name="dialog_message_widget_open_hidden_profile_warning" state="needs_review" hash="-793756010">ਸਾਵਧਾਨ: ਇੱਕ ਛੁਪੀ ਹੋਈ ਪ੍ਰੋਫਾਈਲ ਨਾਲ ਇੱਕ ਸ਼ਾਰਟਕੱਟ ਵਿਜੇਟ ਦੀ ਵਰਤੋਂ ਕਰਨ ਨਾਲ ਇਸ ਪ੍ਰੋਫਾਈਲ ਦੇ ਮੌਜੂਦ ਹੋਣ ਦਾ ਖੁਲਾਸਾ ਹੋ ਸਕਦਾ ਹੈ।</string>
@@ -1443,23 +1463,17 @@
 	<string name="button_label_send" state="needs_review" hash="-185402948">ਭੇਜੋ</string>
 	<string name="button_label_start_sharing" state="needs_review" hash="682254052">ਸ਼ੇਅਰ ਕਰਨਾ ਸ਼ੁਰੂ ਕਰੋ</string>
 	<string name="location_sharing_duration_one_hour_short_string" state="needs_review" hash="1004063951">1 ਘੰਟਾ</string>
-	<string name="location_sharing_duration_one_hour_full_string" state="needs_review" hash="-58118972">
-		<b>1 ਘੰਟੇ</b> ਲਈ ਆਪਣੀ ਥਾਂ ਸਾਂਝੀ ਕਰੋ</string>
+	<string name="location_sharing_duration_one_hour_full_string" state="needs_review" hash="-58118972"><b>1 ਘੰਟੇ</b> ਲਈ ਆਪਣੀ ਥਾਂ ਸਾਂਝੀ ਕਰੋ</string>
 	<string name="location_sharing_duration_three_hours_short_string" state="needs_review" hash="228095183">3 ਘੰਟੇ</string>
-	<string name="location_sharing_duration_three_hours_full_string" state="needs_review" hash="754857804">
-		<b>3 ਘੰਟੇ</b> ਲਈ ਆਪਣੀ ਥਾਂ ਸਾਂਝੀ ਕਰੋ</string>
+	<string name="location_sharing_duration_three_hours_full_string" state="needs_review" hash="754857804"><b>3 ਘੰਟੇ</b> ਲਈ ਆਪਣੀ ਥਾਂ ਸਾਂਝੀ ਕਰੋ</string>
 	<string name="location_sharing_duration_endless_short_string" state="needs_review" hash="55208442">ਅਨੰਤ</string>
-	<string name="location_sharing_duration_endless_full_string" state="needs_review" hash="1710814259">ਸਥਾਨ ਸਾਂਝਾ ਕਰੋ <b>ਜਦੋਂ ਤੱਕ ਰੋਕਿਆ ਨਹੀਂ ਜਾਂਦਾ</b>
-	</string>
+	<string name="location_sharing_duration_endless_full_string" state="needs_review" hash="1710814259">ਸਥਾਨ ਸਾਂਝਾ ਕਰੋ <b>ਜਦੋਂ ਤੱਕ ਰੋਕਿਆ ਨਹੀਂ ਜਾਂਦਾ</b></string>
 	<string name="location_sharing_quality_precise_short_string" state="needs_review" hash="351442529">ਸਟੀਕ</string>
 	<string name="location_sharing_quality_balanced_short_string" state="needs_review" hash="-1925315592">ਸੰਤੁਲਿਤ</string>
 	<string name="location_sharing_quality_power_save_short_string" state="needs_review" hash="-14275273">ਪਾਵਰ ਬਚਾਓ</string>
-	<string name="location_sharing_quality_precise_full_string" state="needs_review" hash="-1255374893">
-		<b>ਸਟੀਕ</b> ਸਥਾਨ ਸਾਂਝਾ ਕਰਨ ਦਾ ਢੰਗ</string>
-	<string name="location_sharing_quality_balanced_full_string" state="needs_review" hash="-421322514">
-		<b>ਸੰਤੁਲਿਤ</b> ਸਥਾਨ ਸਾਂਝਾ ਕਰਨ ਦਾ ਢੰਗ</string>
-	<string name="location_sharing_quality_power_save_full_string" state="needs_review" hash="792896333">
-		<b>ਬੈਟਰੀ ਬਚਾਉਣ ਵਾਲੀ</b> ਲੋਕੇਸ਼ਨ ਸ਼ੇਅਰਿੰਗ ਮੋਡ</string>
+	<string name="location_sharing_quality_precise_full_string" state="needs_review" hash="-1255374893"><b>ਸਟੀਕ</b> ਸਥਾਨ ਸਾਂਝਾ ਕਰਨ ਦਾ ਢੰਗ</string>
+	<string name="location_sharing_quality_balanced_full_string" state="needs_review" hash="-421322514"><b>ਸੰਤੁਲਿਤ</b> ਸਥਾਨ ਸਾਂਝਾ ਕਰਨ ਦਾ ਢੰਗ</string>
+	<string name="location_sharing_quality_power_save_full_string" state="needs_review" hash="792896333"><b>ਬੈਟਰੀ ਬਚਾਉਣ ਵਾਲੀ</b> ਲੋਕੇਸ਼ਨ ਸ਼ੇਅਰਿੰਗ ਮੋਡ</string>
 	<string name="label_sharing_location_until" state="needs_review" hash="187977459">%1$s ਤੱਕ ਸਥਾਨ ਸਾਂਝਾ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ।</string>
 	<string name="label_location_sharing_ended" state="needs_review" hash="1028490137">ਸਥਾਨ ਸਾਂਝਾ ਕਰਨਾ ਖ਼ਤਮ ਹੋ ਗਿਆ।</string>
 	<string name="label_gps_coordinates" state="needs_review" hash="-1537356414">ਜੀਪੀਐਸ ਕੋਆਰਡੀਨੇਟਸ</string>
@@ -1536,7 +1550,7 @@
 	<string name="text_setting_disable_push_notifications" state="needs_review" hash="-1611970092">\"• ਪੁਸ਼ ਨੋਟੀਫਿਕੇਸ਼ਨਾਂ ਨੂੰ ਬੰਦ ਕਰੋ: \"</string>
 	<string name="text_setting_permanent_websocket" state="needs_review" hash="540848406">\"• ਸਥਾਈ ਵੈੱਬਸਾਕਟ ਕਨੈਕਸ਼ਨ: \"</string>
 	<string name="text_setting_internal_viewer" state="needs_review" hash="444959480">\"• ਅੰਦਰੂਨੀ ਚਿੱਤਰ ਦਰਸ਼ਕ ਦੀ ਵਰਤੋਂ ਕਰੋ: \"</string>
-	<string name="text_setting_show_trust_level" state="needs_review" hash="-1964618064">\"• ਸੰਪਰਕਾਂ ਲਈ ਇੱਕ \\"ਭਰੋਸੇਯੋਗ ਸਰੋਤ\\" ਸੰਕੇਤ ਦਿਖਾਓ: \"</string>
+	<string name="text_setting_show_trust_level" state="needs_review" hash="-1964618064">\"• ਸੰਪਰਕਾਂ ਲਈ ਇੱਕ \"ਭਰੋਸੇਯੋਗ ਸਰੋਤ\" ਸੰਕੇਤ ਦਿਖਾਓ: \"</string>
 	<string name="text_setting_lock_biometry" state="needs_review" hash="-1698353580">\"• ਬਾਇਓਮੈਟ੍ਰਿਕਸ ਨਾਲ ਅਨਲੌਕ ਕਰੋ: \"</string>
 	<string name="text_setting_lock_notification" state="needs_review" hash="2022286622">\"• ਸਥਾਈ ਲੌਕ ਸਕ੍ਰੀਨ ਨੋਟੀਫਿਕੇਸ਼ਨ: \"</string>
 	<string name="text_setting_lock_wipe_on_fail" state="needs_review" hash="658363602">\"• 3 ਗਲਤ ਪਿੰਨ ਕੋਡ ਦੇ ਬਾਅਦ ਸੰਵੇਦਨਸ਼ੀਲ ਸੁਨੇਹੇ ਮਿਟਾ ਦਿਓ:\"</string>
@@ -2020,7 +2034,7 @@
 	<string name="button_label_restore_my_profile" state="needs_review" hash="418284480">ਮੇਰੀ ਪ੍ਰੋਫਾਈਲ ਨੂੰ ਮੁੜ ਬਹਾਲ ਕਰੋ</string>
 	<string name="button_label_keep_all_with_olvid_plus" state="needs_review" hash="622534541">ਓਲਵੀਡ+ ਨਾਲ ਸਭਨਾਂ ਨੂੰ ਇਕੱਠੇ ਰੱਖੋ।</string>
 	<string name="explanation_backup_v2_choose_device_after_restore" state="needs_review" hash="292969815">ਇੱਕ ਵਾਰ ਤੁਹਾਡੀ ਪ੍ਰੋਫਾਈਲ ਬਹਾਲ ਹੋ ਜਾਣ ਤੋਂ ਬਾਅਦ, ਤੁਸੀਂ ਆਪਣੀ ਪ੍ਰੋਫਾਈਲ ਦੀਆਂ ਸੈਟਿੰਗਾਂ ਤੋਂ ਇਹ ਚੁਣ ਸਕਦੇ ਹੋ ਕਿ ਕਿਹੜਾ ਡਿਵਾਈਸ ਸਰਗਰਮ ਰੱਖਣਾ ਹੈ।</string>
-	<string name="explanation_backup_v2_device_expiration_start" state="needs_review" hash="-147053489">ਆਪਣੀ ਪ੍ਰੋਫਾਈਲ ਨੂੰ ਰੀਸਟੋਰ ਕਰਕੇ \\"</string>
+	<string name="explanation_backup_v2_device_expiration_start" state="needs_review" hash="-147053489">ਆਪਣੀ ਪ੍ਰੋਫਾਈਲ ਨੂੰ ਰੀਸਟੋਰ ਕਰਕੇ \"</string>
 	<string name="explanation_backup_v2_device_expiration_nickname" state="needs_review" hash="2093353377">\u0020(%1$s)</string>
 	<string name="toast_message_no_key_found" state="needs_review" hash="-1984410678">ਕੋਈ ਵੀ ਬੈਕਅੱਪ ਕੁੰਜੀ ਨਹੀਂ ਮਿਲੀ</string>
 	<string name="label_backup_headers_title" state="needs_review" hash="-846183546">ਤੁਹਾਡੇ ਬੈਕਅੱਪ</string>
@@ -2042,11 +2056,14 @@
 	<string name="button_label_configure_backups" state="needs_review" hash="-990646398">ਬੈਕਅੱਪ ਚਾਲੂ ਕਰੋ</string>
 	<string name="tip_write_backup_key_title" state="needs_review" hash="-1652757003">ਆਪਣੀ ਬੈਕਅੱਪ ਕੁੰਜੀ ਨੂੰ ਲਿਖਣਾ ਨਾ ਭੁੱਲੋ 😇</string>
 	<string name="tip_write_backup_key_message" state="needs_review" hash="931018791">ਤੁਹਾਡੀ ਬੈਕਅੱਪ ਕੁੰਜੀ ਤੁਹਾਡੇ ਪ੍ਰੋਫਾਈਲਾਂ ਨੂੰ ਬਹਾਲ ਕਰਨ ਲਈ ਬਹੁਤ ਜ਼ਰੂਰੀ ਹੈ, ਜੇਕਰ ਤੁਸੀਂ ਇਸ ਡਿਵਾਈਸ ਤੱਕ ਪਹੁੰਚ ਗੁਆ ਦਿੰਦੇ ਹੋ।</string>
+	<string name="tip_legacy_backup_end_of_life_title" state="needs_review" hash="810495149">ਤੁਹਾਨੂੰ ਵਰਤ ਰਹੇ ਪੁਰਾਣੇ ਬੈਕਅੱਪ ਹੁਣ ਉਪਲਬਧ ਨਹੀਂ ਹਨ।</string>
+	<string name="tip_legacy_backup_end_of_life_message" state="needs_review" hash="-314257210">ਆਗਾਮੀ ਓਲਵੀਡ ਅਪਡੇਟ ਪੁਰਾਣੇ ਬੈਕਅੱਪਾਂ ਦਾ ਸਮਰਥਨ ਕਰਨਾ ਬੰਦ ਕਰ ਦੇਵੇਗਾ। ਤੁਹਾਡੇ ਖਾਤੇ ਨੂੰ ਸੁਰੱਖਿਅਤ ਰੱਖਣ ਲਈ, ਹੁਣੇ ਨਵੇਂ ਬੈਕਅੱਪ ਵਿਸ਼ੇਸ਼ਤਾ \'ਤੇ ਜਾਓ।</string>
 	<string name="tip_troubleshooting_title" state="needs_review" hash="-393739108">ਆਪਣੇ ਓਲਵੀਡ ਅਨੁਭਵ ਨੂੰ ਬਿਹਤਰ ਬਣਾਓ 🚀</string>
 	<string name="tip_troubleshooting_message" state="needs_review" hash="-935493349">ਤੁਹਾਡੇ ਉਪਕਰਨ \'ਤੇ ਕੁਝ ਪੈਰਾਮੀਟਰ ਸਹੀ ਢੰਗ ਨਾਲ ਕੌਂਫਿਗਰ ਨਹੀਂ ਕੀਤੇ ਗਏ ਹਨ ਅਤੇ ਇਹ Olvid ਨਾਲ ਤੁਹਾਡੇ ਅਨੁਭਵ ਨੂੰ ਪ੍ਰਭਾਵਿਤ ਕਰ ਸਕਦੇ ਹਨ।</string>
 	<string name="button_label_this_way" state="needs_review" hash="747183939">ਇਸ ਤਰ੍ਹਾਂ</string>
 	<string name="toast_code_copied" state="needs_review" hash="-1522785848">ਕੋਡ ਕਾਪੀ ਕੀਤਾ ਗਿਆ।</string>
 	<string name="explanation_choose_members" state="needs_review" hash="-1385158706">ਕਿਰਪਾ ਕਰਕੇ ਚੁਣੋ ਕਿ ਇਸ ਗਰੁੱਪ ਵਿੱਚ ਕਿਸ ਨੂੰ ਸ਼ਾਮਲ ਕਰਨਾ ਹੈ।</string>
+	<string name="explanation_choose_share_recipients" state="needs_review" hash="-1406265940">ਕਿਰਪਾ ਕਰਕੇ ਚੁਣੋ ਕਿ ਤੁਸੀਂ ਕਿਸ ਨਾਲ ਸਾਂਝਾ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ।</string>
 	<string name="explanation_choose_contact_introduction" state="needs_review" hash="1113777517">ਕਿਰਪਾ ਕਰਕੇ ਚੁਣੋ ਕਿ ਤੁਸੀਂ %1$s ਨੂੰ ਕਿਸ ਨਾਲ ਜਾਣ-ਪਛਾਣ ਕਰਵਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ।</string>
 	<string name="label_group_administration" state="needs_review" hash="871355986">ਗਰੁੱਪ ਪ੍ਰਬੰਧਨ</string>
 	<string name="dialog_title_call_blocked" state="needs_review" hash="1594606530">ਕਾਲ ਬਲੌਕ ਕੀਤੀ ਗਈ</string>
@@ -2087,7 +2104,7 @@
 	<string name="label_poll_answers_sorted_by_poll_order" state="needs_review" hash="685632215">ਪੋਲ ਆਰਡਰ</string>
 	<string name="label_poll_answers_sorted_by_answer_count" state="needs_review" hash="516869301">ਜਵਾਬਾਂ ਦੀ ਗਿਣਤੀ</string>
 	<string name="notification_public_title_new_poll_vote" state="needs_review" hash="-1901040080">ਤੁਹਾਡੇ ਪੋਲ ਲਈ ਨਵਾਂ ਜਵਾਬ</string>
-	<string name="toast_message_remove_none_answer" state="needs_review" hash="277924655">ਪਹਿਲਾਂ \\"%1$s\\" ਜਵਾਬ ਹਟਾਓ</string>
+	<string name="toast_message_remove_none_answer" state="needs_review" hash="277924655">ਪਹਿਲਾਂ \"%1$s\" ਜਵਾਬ ਹਟਾਓ</string>
 	<string name="text_poll" state="needs_review" hash="-153643506">ਪੋਲ</string>
 	<string name="poll_csv_headers" state="needs_review" hash="1869917931">ਪੋਲ ਸਵਾਲ, ਵੋਟਰ ਦਾ ਨਾਮ, ਵੋਟ, ਮਿਤੀ</string>
 	<string name="label_poll_no_votes_yet" state="needs_review" hash="-981251817">ਅਜੇ ਕੋਈ ਜਵਾਬ ਨਹੀਂ ਮਿਲਿਆ</string>
@@ -2172,7 +2189,7 @@
 	<string name="store_link_olvid_store" state="needs_review" hash="-1825630369">ਓਲਵੀਡ ਸਟੋਰ \'ਤੇ ਜਾਓ</string>
 	<string name="toast_message_reminder_set" state="needs_review" hash="-961055414">ਰੀਮਾਈਂਡਰ ਸੈੱਟ ਕੀਤਾ ਗਿਆ</string>
 	<string name="dialog_title_keycloak_authentication_impossible" state="needs_review" hash="325273853">ਪ੍ਰਮਾਣੀਕਰਨ ਅਸੰਭਵ</string>
-	<string name="dialog_message_keycloak_authentication_impossible" state="needs_review" hash="390830785">ਤੁਹਾਡੀ ਪ੍ਰੋਫਾਈਲ ਵਰਤਮਾਨ ਵਿੱਚ ਤੁਹਾਡੀ ਸੰਸਥਾ ਦੁਆਰਾ ਪ੍ਰਬੰਧਿਤ ਕੀਤੀ ਜਾਂਦੀ ਹੈ ਅਤੇ ਮੁੜ-ਪ੍ਰਮਾਣੀਕਰਨ ਦੀ ਲੋੜ ਹੈ। ਹਾਲਾਂਕਿ, ਕੋਈ ਵੀ ਸਮਰਥਿਤ ਪ੍ਰਮਾਣੀਕਰਨ ਵਿਧੀ ਉਪਲਬਧ ਨਹੀਂ ਜਾਪਦੀ। ਕਿਰਪਾ ਕਰਕੇ ਵਧੇਰੇ ਜਾਣਕਾਰੀ ਲਈ ਆਪਣੇ ਪ੍ਰਸ਼ਾਸਕ ਨਾਲ ਸੰਪਰਕ ਕਰੋ।</string>
+	<string name="dialog_message_keycloak_authentication_impossible" state="needs_review" hash="-2031322232">ਤੁਹਾਡਾ ਪ੍ਰੋਫਾਈਲ ਵਰਤਮਾਨ ਵਿੱਚ ਤੁਹਾਡੀ ਸੰਸਥਾ ਦੁਆਰਾ ਪ੍ਰਬੰਧਿਤ ਕੀਤਾ ਜਾਂਦਾ ਹੈ ਅਤੇ ਮੁੜ-ਪ੍ਰਮਾਣੀਕਰਣ ਦੀ ਲੋੜ ਹੈ। ਹਾਲਾਂਕਿ, ਕੋਈ ਵੀ ਸਮਰਥਿਤ ਪ੍ਰਮਾਣੀਕਰਨ ਵਿਧੀ ਉਪਲਬਧ ਨਹੀਂ ਜਾਪਦੀ।\n\nਵਧੇਰੇ ਜਾਣਕਾਰੀ ਲਈ ਕਿਰਪਾ ਕਰਕੇ ਆਪਣੇ ਪ੍ਰਸ਼ਾਸਕ ਨਾਲ ਸੰਪਰਕ ਕਰੋ।</string>
 	<string name="onboarding_transfer_keycloak_error_message_authentication_impossible" state="needs_review" hash="-1891385979">ਕੋਈ ਵੀ ਸਮਰਥਿਤ ਪ੍ਰਮਾਣੀਕਰਨ ਵਿਧੀ ਉਪਲਬਧ ਨਹੀਂ ਜਾਪਦੀ।</string>
 	<string name="pref_use_alt_turn_servers_title" state="needs_review" hash="-1956132776">ਵੱਖਰੇ ਟਰਨ ਸਰਵਰਾਂ ਦੀ ਵਰਤੋਂ ਕਰੋ</string>
 	<string name="pref_use_alt_turn_servers_summary" state="needs_review" hash="357427162">ਇਸ ਵਿਕਲਪ ਨੂੰ ਚਾਲੂ ਕਰੋ ਤਾਂ ਜੋ ਘੁੰਮਣ ਵਾਲੇ ਆਈਪੀ ਐਡਰੈਸਾਂ ਨਾਲ ਟਰਨ ਸਰਵਰਾਂ ਦੀ ਵਰਤੋਂ ਕੀਤੀ ਜਾ ਸਕੇ। ਜੇਕਰ ਤੁਹਾਨੂੰ ਯਕੀਨ ਨਹੀਂ ਹੈ, ਤਾਂ ਇਸ ਵਿਕਲਪ ਨੂੰ ਬੰਦ ਰੱਖੋ। 😁</string>
@@ -2283,5 +2300,45 @@
 	<string name="label_error_loading_openstreetmap_style_file" state="needs_review" hash="-2596045">ਓਪਨਸਟ੍ਰੀਟਮੈਪ ਸਟਾਈਲ ਫਾਈਲ ਲੋਡ ਕਰਦੇ ਸਮੇਂ ਇੱਕ ਗਲਤੀ ਹੋਈ।</string>
 	<string name="dialog_title_subscriptions_not_available" state="needs_review" hash="336174241">ਐਪ ਵਿੱਚ ਗਾਹਕੀ ਉਪਲਬਧ ਨਹੀਂ ਹੈ</string>
 	<string name="dialog_message_subscriptions_not_available" state="needs_review" hash="2093768678">ਤੁਹਾਡੇ ਦੁਆਰਾ ਇੰਸਟਾਲ ਕੀਤੀ ਗਈ ਓਲਵੀਡ ਦੀ ਵਰਜ਼ਨ ਵਿੱਚ ਗੂਗਲ ਬਿਲਿੰਗ ਲਾਇਬ੍ਰੇਰੀ ਸ਼ਾਮਲ ਨਹੀਂ ਹੈ ਅਤੇ ਇਹ ਐਪ ਵਿੱਚ ਖਰੀਦਦਾਰੀ ਦਾ ਸਮਰਥਨ ਨਹੀਂ ਕਰਦੀ।\n\nਵਧੇਰੇ ਜਾਣਕਾਰੀ ਲਈ, ਕਿਰਪਾ ਕਰਕੇ ਸਾਡੇ ਨਾਲ **feedback@olvid.io** \'ਤੇ ਸੰਪਰਕ ਕਰੋ।</string>
+	<string name="ftux_next" state="needs_review" hash="1158639077">ਅਗਲਾ</string>
+	<string name="ftux_start" state="needs_review" hash="646298532">ਸ਼ੁਰੂ ਕਰੋ</string>
+	<string name="ftux_page_indicator" state="needs_review" hash="1987610035">ਪੰਨਾ %1$d, ਕੁੱਲ %2$d ਵਿੱਚੋਂ</string>
+	<string name="ftux_page_welcome_title" state="needs_review" hash="1173832630"><b>ਓਲਵੀਡ</b> ਵਿੱਚ ਤੁਹਾਡਾ ਸੁਆਗਤ ਹੈ।</string>
+	<string name="ftux_page_welcome_body" state="needs_review" hash="-2085198139">ਹਰ ਕਿਸੇ ਲਈ ਨਿੱਜੀ ਮੈਸੇਜਿੰਗ।</string>
+	<string name="ftux_page_private_title" state="needs_review" hash="1815927819"><b />ਨਿੱਜੀ ਸੰਦੇਸ਼ਾ</string>
+	<string name="ftux_page_private_body" state="needs_review" hash="-590644231">%1$s \'ਤੇ, ਤੁਸੀਂ ਇਹ ਚੁਣਦੇ ਹੋ ਕਿ ਤੁਸੀਂ ਕਿਸ ਨਾਲ ਗੱਲਬਾਤ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ। ਕੋਈ ਸਪੈਮ ਨਹੀਂ, ਕੋਈ ਸੁਝਾਅ ਨਹੀਂ, ਕੋਈ ਬੇਕਾਰ ਨੋਟੀਫਿਕੇਸ਼ਨ ਨਹੀਂ, ਅਤੇ ਅਜਨਬੀਆਂ ਤੋਂ ਕੋਈ ਸੰਦੇਸ਼ ਨਹੀਂ।\n\nਕੋਈ ਵੀ ਤੁਹਾਡੀ ਇਜਾਜ਼ਤ ਤੋਂ ਬਿਨਾਂ ਤੁਹਾਡੇ ਨਾਲ ਸੰਪਰਕ ਨਹੀਂ ਕਰ ਸਕਦਾ।\n\n%1$s ਤੁਹਾਡਾ ਡਿਜੀਟਲ ਜਗ੍ਹਾ ਹੈ।</string>
+	<string name="ftux_page_everyone_title" state="needs_review" hash="1506796386">ਹਰ ਕਿਸੇ ਲਈ ਮੈਸੇਜਿੰਗ</string>
+	<string name="ftux_page_everyone_body" state="needs_review" hash="-586100377">ਤੁਸੀਂ ਜਿਹੜੇ ਵੀ ਹੋ, %1$s ਤੁਹਾਨੂੰ ਸੁਰੱਖਿਆ ਵਿੱਚ ਵਧੀਆ ਅਨੁਭਵ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ। ਕਿਸੇ ਈਮੇਲ ਜਾਂ ਫ਼ੋਨ ਨੰਬਰ ਦੀ ਲੋੜ ਨਹੀਂ ਹੈ।\n\n%1$s ਤੁਹਾਡੇ ਬਾਰੇ ਕੁਝ ਵੀ ਨਹੀਂ ਪੁੱਛਦਾ, ਅਤੇ ਇਹ ਸਭ ਕੁਝ ਬਦਲ ਦਿੰਦਾ ਹੈ।</string>
+	<string name="ftux_page_protect_title" state="needs_review" hash="1969120191">ਓਲਵੀਡ ਤੁਹਾਨੂੰ <b>ਸੁਰੱਖਿਅਤ</b> ਰੱਖਦਾ ਹੈ। ਓਲਵੀਡ ਉਨ੍ਹਾਂ ਲੋਕਾਂ ਦੀ ਸੁਰੱਖਿਆ ਕਰਦਾ ਹੈ ਜੋ ਤੁਹਾਡੇ ਲਈ ਮਹੱਤਵਪੂਰਨ ਹਨ।</string>
+	<string name="ftux_page_protect_body" state="needs_review" hash="881847930">ਇਹ ਸਿਰਫ਼ ਇੱਕ ਵਾਅਦਾ ਨਹੀਂ ਹੈ—%1$s ਕ੍ਰਿਪਟੋਗ੍ਰਾਫਿਕ ਸਬੂਤ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ।\n\nਭਾਵੇਂ ਤੁਸੀਂ ਦੂਰ ਤੋਂ ਜਾਂ ਆਮਣੇ-ਸਾਮਣੇ ਸੰਪਰਕ ਜੋੜਦੇ ਹੋ, ਤੁਹਾਡੀਆਂ ਗੱਲਬਾਤਾਂ ਲਗਾਤਾਰ ਪ੍ਰਮਾਣਿਤ ਅਤੇ ਐਂਡ-ਟੂ-ਐਂਡ ਏਨਕ੍ਰਿਪਟ ਕੀਤੀਆਂ ਜਾਂਦੀਆਂ ਹਨ।</string>
+	<string name="ftux_page_pricing_title" state="needs_review" hash="-1948277889">ਇੱਕ <b>ਪਾਰਦਰਸ਼ੀ</b> ਕਾਰੋਬਾਰੀ ਮਾਡਲ</string>
+	<string name="ftux_page_pricing_body" state="needs_review" hash="-1064278870">%1$s ਤੁਹਾਡੇ ਨਿੱਜੀ ਡਾਟਾ ਨਾਲ ਆਪਣੇ ਆਪ ਨੂੰ ਫੰਡ ਨਹੀਂ ਕਰਦਾ - ਕਿਉਂਕਿ ਇਹ ਇਸਦੇ ਲਈ ਕੁਝ ਵੀ ਨਹੀਂ ਮੰਗਦਾ!\n\nਜੋ ਮੁਫ਼ਤ ਹੈ, ਉਹ ਮੁਫ਼ਤ ਹੀ ਹੁੰਦੀ ਹੈ। ਜਿਸ ਦੀ ਕੀਮਤ ਲੱਗੀ ਹੈ, ਉਸਦੀ ਕੀਮਤ ਦਿਖਾਈ ਦਿੰਦੀ ਹੈ।</string>
+	<string name="ftux_page_media_title" state="needs_review" hash="558110518">ਓਲਵੀਡ ਕੋਲ ਸਭ ਕੁਝ ਹੈ</string>
+	<string name="ftux_page_media_body" state="needs_review" hash="1807247240">ਕੋਈ ਵੀ ਅਟੈਚਮੈਂਟ ਦੀ ਆਕਾਰ ਸੀਮਾ ਨਹੀਂ, ਉੱਚ-ਰਿਜ਼ੋਲੂਸ਼ਨ ਫੋਟੋ ਸ਼ੇਅਰਿੰਗ, ਪੋਲ, ਆਡੀਓ ਅਤੇ ਵੀਡੀਓ ਕਾਲਾਂ, ਮਲਟੀ-ਡਿਵਾਈਸ, ਭੂ-ਸਥਾਨ - ਇਹ ਸਭ ਇੱਥੇ ਹੈ!</string>
 	<string name="menu_action_cancel_upload" state="needs_review" hash="1672681586">ਅਪਲੋਡ ਰੱਦ ਕਰੋ</string>
+	<string name="label_suggested_contacts" state="needs_review" hash="816810770">ਸੁਝਾਏ ਗਏ ਸੰਪਰਕ</string>
+	<string name="label_suggested_contacts_subtitle" state="needs_review" hash="131522501">ਉਪਭੋਗਤਾਵਾਂ ਨੂੰ ਆਸਾਨੀ ਨਾਲ ਸੱਦਾ ਦਿਓ।</string>
+	<string name="label_suggested_contact_already_a_contact" state="needs_review" hash="-1177848651">ਪਹਿਲਾਂ ਤੋਂ ਹੀ ਸੰਪਰਕ ਵਿੱਚ ਹੈ</string>
+	<string name="label_suggested_contact_invitation_received" state="needs_review" hash="2100924901">ਸੱਦਾ ਪ੍ਰਾਪਤ ਹੋਇਆ</string>
+	<string name="label_suggested_contact_invitation_sent" state="needs_review" hash="310679275">ਸੱਦਾ ਭੇਜਿਆ ਗਿਆ</string>
+	<string name="label_suggested_contacts_all_done" state="needs_review" hash="-127525104">ਤੁਸੀਂ ਨਵੀਨਤਮ ਸੰਸਕਰਣ \'ਤੇ ਹੋ!\nਹੋਰ ਕੋਈ ਸੁਝਾਉਣ ਲਈ ਸੰਪਰਕ ਨਹੀਂ ਹਨ।</string>
+	<string name="button_label_suggested_contact_later" state="needs_review" hash="-1933816039">ਬਾਅਦ ਵਿੱਚ</string>
+	<string name="button_label_close" state="needs_review" hash="1454843231">ਬੰਦ ਕਰੋ</string>
+	<string name="button_label_skip" state="needs_review" hash="2056258301">ਛੱਡੋ</string>
+	<string name="button_label_understood" state="needs_review" hash="829780875">ਸਮਝ ਆ ਗਿਆ</string>
+	<string name="label_suggested_contacts_onboarding_title_1" state="needs_review" hash="491881039">ਇੱਕ ਸਵਾਈਪ ਨਾਲ ਸੱਦਾ ਦਿਓ</string>
+	<string name="label_suggested_contacts_onboarding_message_1" state="needs_review" hash="331320806">ਉਪਭੋਗਤਾ ਨੂੰ ਸੱਦਾ ਦੇਣ ਲਈ ਕਾਰਡ ਨੂੰ ਸੱਜੇ ਵੱਲ ਸਵਾਈਪ ਕਰੋ, ਜਾਂ ਅਗਲੇ ਉਪਭੋਗਤਾ \'ਤੇ ਜਾਣ ਲਈ ਖੱਬੇ ਵੱਲ ਸਵਾਈਪ ਕਰੋ।</string>
+	<string name="label_suggested_contacts_onboarding_title_2" state="needs_review" hash="-788798380">ਇਹ ਸੰਪਰਕ ਕਿੱਥੋਂ ਆਏ ਹਨ?</string>
+	<string name="label_suggested_contacts_onboarding_message_2" state="needs_review" hash="1536681696">ਇਹ ਉਹਨਾਂ ਉਪਭੋਗਤਾਵਾਂ ਦੀ ਸੂਚੀ ਹੈ ਜੋ ਤੁਹਾਡੇ ਸੰਪਰਕ ਵਿੱਚ ਨਹੀਂ ਹਨ।</string>
+	<string name="label_suggested_contacts_onboarding_caption" state="needs_review" hash="-1299179969">ਤੁਸੀਂ ਇੱਕ ਰਿਸ਼ਤੇ ਤੋਂ ਦੂਰ ਹੋ: ਤੁਸੀਂ ਘੱਟੋ-ਘੱਟ ਇੱਕ ਸਾਂਝਾ ਸਮੂਹ ਸਾਂਝਾ ਕਰਦੇ ਹੋ।</string>
+	<string name="label_suggested_contacts_you" state="needs_review" hash="672009142">ਤੁਸੀਂ</string>
+	<string name="label_suggested_contacts_common_group" state="needs_review" hash="-1739793963">ਮਿਲ ਕੇ ਬਣਾਇਆ ਗਰੁੱਪ</string>
+	<string name="explanation_suggested_contacts_others_tab" state="needs_review" hash="852096678">ਹੇਠਾਂ ਦਿੱਤੇ ਉਪਭੋਗਤਾ ਤੁਹਾਡੇ ਸੰਪਰਕਾਂ ਵਿੱਚੋਂ ਨਹੀਂ ਹਨ, ਅਤੇ ਤੁਸੀਂ ਅਜੇ ਤੱਕ ਉਨ੍ਹਾਂ ਨਾਲ ਨਿੱਜੀ ਗੱਲਬਾਤ ਨਹੀਂ ਕਰ ਸਕਦੇ। ਪਰ ਤੁਸੀਂ ਆਸਾਨੀ ਨਾਲ ਉਹਨਾਂ ਨੂੰ ਸੱਦਾ ਦੇ ਸਕਦੇ ਹੋ! 🚀</string>
+	<string name="label_suggested_contacts_invite_in_one_gesture" state="needs_review" hash="438220313">ਇਸ ਸਵਾਈਪ ਨਾਲ ਇਹਨਾਂ ਉਪਭੋਗਤਾਵਾਂ ਨੂੰ ਸੱਦਾ ਦਿਓ</string>
+	<string name="menu_action_suggested_contacts_see_full_list" state="needs_review" hash="603082500">ਪੂਰੀ ਸੂਚੀ ਵੇਖੋ</string>
+	<string name="menu_action_suggested_contacts_replay_onboarding" state="needs_review" hash="-1552704243">ਟਿਊਟੋਰੀਅਲ ਦੁਬਾਰਾ ਚਲਾਓ</string>
+	<string name="button_label_uninvite" state="needs_review" hash="771825501">ਸੱਦਾ ਰੱਦ ਕਰੋ</string>
+	<string name="button_label_accept_invitation" state="needs_review" hash="-1778405034">ਸੱਦਾ ਸਵੀਕਾਰ ਕਰੋ</string>
+	<string name="label_suggested_contacts_already_swiped" state="needs_review" hash="427042318">ਪਹਿਲਾਂ ਹੀ ਸਵਾਈਪ ਕੀਤਾ ਗਿਆ</string>
+	<string name="label_suggested_contacts_not_swiped_yet" state="needs_review" hash="310924358">ਅਜੇ ਤੱਕ ਸਵਾਈਪ ਨਹੀਂ ਕੀਤਾ ਗਿਆ</string>
 </resources>

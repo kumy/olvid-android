@@ -72,6 +72,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import io.olvid.messenger.App
 import io.olvid.messenger.R
 import io.olvid.messenger.designsystem.components.CallButton
+import io.olvid.messenger.designsystem.components.OlvidDragHandle
 import io.olvid.messenger.designsystem.components.OlvidTextButton
 import io.olvid.messenger.designsystem.components.PlusButton
 import io.olvid.messenger.designsystem.theme.OlvidTypography
@@ -205,7 +206,7 @@ fun PlusButtonContainer(
                     if (compact)
                         Box {}
                     else
-                        BottomSheetDefaults.DragHandle()
+                        OlvidDragHandle()
                 },
                 contentWindowInsets = { WindowInsets() }
             ) {

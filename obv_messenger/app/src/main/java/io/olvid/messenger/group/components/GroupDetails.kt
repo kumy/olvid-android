@@ -182,6 +182,16 @@ fun GroupDetailsScreen(
                 maxLines = 2,
                 overflow = TextOverflow.Ellipsis
             )
+            if (group?.customName != null) {
+                Text(
+                    text = group?.name.orEmpty(),
+                    style = OlvidTypography.body1.copy(
+                        color = colorResource(R.color.almostBlack),
+                        fontWeight = FontWeight.SemiBold
+                    ),
+                    textAlign = TextAlign.Center
+                )
+            }
             groupV2DetailsViewModel.detailsAndPhotos?.serializedGroupDetails?.let {
                 val details = AppSingleton.getJsonObjectMapper().readValue(
                     it,
@@ -388,6 +398,7 @@ fun GroupDetailsScreen(
                             jsonIdentityDetails = it.getIdentityDetails(),
                             fullSearchDisplayName = "",
                             isAdmin = group?.ownPermissionAdmin == true,
+                            permissionSendMessage = group?.ownPermissionSendMessage != false,
                             isYou = true,
                             pending = false,
                             selected = false
@@ -825,7 +836,7 @@ fun GroupMemberItem(
             } ?: AdminEndLabel(
                 admin = member.isAdmin,
                 pending = member.pending,
-                nonAdminsReadOnly = nonAdminsReadOnly,
+                readOnly = member.isReadOnly(nonAdminsReadOnly),
             )
         }
     )
@@ -836,13 +847,13 @@ fun GroupMemberItem(
 fun AdminEndLabel(
     admin: Boolean,
     pending: Boolean,
-    nonAdminsReadOnly: Boolean,
+    readOnly: Boolean,
 ) {
     when {
         admin && pending -> AnnotatedString(stringResource(R.string.label_pending_admin))
         admin -> AnnotatedString(stringResource(R.string.label_admin))
-        nonAdminsReadOnly && pending -> AnnotatedString(stringResource(R.string.label_pending_read_only))
-        nonAdminsReadOnly -> AnnotatedString(stringResource(R.string.label_read_only))
+        readOnly && pending -> AnnotatedString(stringResource(R.string.label_pending_read_only))
+        readOnly -> AnnotatedString(stringResource(R.string.label_read_only))
         pending -> AnnotatedString(stringResource(R.string.label_pending))
         else -> null
     }?.let {

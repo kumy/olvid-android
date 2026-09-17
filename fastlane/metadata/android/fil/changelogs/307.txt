@@ -1,0 +1,3 @@
+- Bagong paraan para madaling imbitahan ang mga miyembro ng grupo sa isang direktang pag-uusap sa pamamagitan ng pag-swipe.
+- Bagong onboarding para ipaliwanag ang Olvid sa mga bagong user.
+- Pinahusay na viewer ng larawan/video, may posibilidad na mag-zoom sa mga video.

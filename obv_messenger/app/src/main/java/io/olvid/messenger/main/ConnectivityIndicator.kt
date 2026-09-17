@@ -289,7 +289,7 @@ internal class ConnectivityIndicator(private val activity: Activity) : EngineNot
     }
 
 
-    override fun callback(notificationName: String, userInfo: HashMap<String, Any>) {
+    override fun callback(notificationName: String?, userInfo: HashMap<String, Any?>) {
         when (notificationName) {
             EngineNotifications.PING_LOST -> {
                 lastPing = -1

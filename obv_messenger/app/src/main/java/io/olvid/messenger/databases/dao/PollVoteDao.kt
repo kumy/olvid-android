@@ -140,6 +140,52 @@ interface PollVoteDao {
         creationTimestamp: Long,
     ): List<PollVoteAndMessage>
 
+    // Poll votes cast by a contact (voter != owned identity) on one of my outbound poll messages,
+    // within a [startTimestamp, endTimestamp) window, for a given owned identity. Used to recap
+    // poll-vote notifications that were silenced by a mute. Mirrors the live-notification condition
+    // in handlePollVote (contact voting on my outbound poll).
+    @Query("""
+        SELECT pv.*, ${MessageDao.PREFIX_MESSAGE_COLUMNS} FROM ${PollVote.TABLE_NAME} AS pv
+        INNER JOIN ${Message.TABLE_NAME} AS mess
+        ON mess.id = pv.${PollVote.MESSAGE_ID}
+        INNER JOIN ${Discussion.TABLE_NAME} AS disc
+        ON disc.id = mess.${Message.DISCUSSION_ID}
+        WHERE disc.${Discussion.BYTES_OWNED_IDENTITY} = :bytesOwnedIdentity
+        AND mess.${Message.MESSAGE_TYPE} = ${Message.TYPE_OUTBOUND_MESSAGE}
+        AND mess.${Message.WIPE_STATUS} = ${Message.WIPE_STATUS_NONE}
+        AND pv.${PollVote.VOTER} != :bytesOwnedIdentity
+        AND pv.${PollVote.SERVER_TIMESTAMP} >= :startTimestamp
+        AND pv.${PollVote.SERVER_TIMESTAMP} < :endTimestamp
+        ORDER BY pv.${PollVote.SERVER_TIMESTAMP} ASC
+        """
+    )
+    fun getPollVotesReceivedInWindow(
+        bytesOwnedIdentity: ByteArray,
+        startTimestamp: Long,
+        endTimestamp: Long,
+    ): List<PollVoteAndMessage>
+
+    // Same as above but restricted to a single discussion (used for discussion-only mute recap).
+    @Query("""
+        SELECT pv.*, ${MessageDao.PREFIX_MESSAGE_COLUMNS} FROM ${PollVote.TABLE_NAME} AS pv
+        INNER JOIN ${Message.TABLE_NAME} AS mess
+        ON mess.id = pv.${PollVote.MESSAGE_ID}
+        WHERE mess.${Message.DISCUSSION_ID} = :discussionId
+        AND mess.${Message.MESSAGE_TYPE} = ${Message.TYPE_OUTBOUND_MESSAGE}
+        AND mess.${Message.WIPE_STATUS} = ${Message.WIPE_STATUS_NONE}
+        AND pv.${PollVote.VOTER} != :bytesOwnedIdentity
+        AND pv.${PollVote.SERVER_TIMESTAMP} >= :startTimestamp
+        AND pv.${PollVote.SERVER_TIMESTAMP} < :endTimestamp
+        ORDER BY pv.${PollVote.SERVER_TIMESTAMP} ASC
+        """
+    )
+    fun getPollVotesReceivedInWindowForDiscussion(
+        bytesOwnedIdentity: ByteArray,
+        discussionId: Long,
+        startTimestamp: Long,
+        endTimestamp: Long,
+    ): List<PollVoteAndMessage>
+
     data class PollVoteAndMessage(
         @Embedded val pollVote: PollVote,
         @Embedded(prefix = "mess_") val message: Message

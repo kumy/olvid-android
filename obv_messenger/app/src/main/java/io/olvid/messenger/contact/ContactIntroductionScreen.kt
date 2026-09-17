@@ -29,6 +29,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -53,6 +54,7 @@ fun ContactIntroductionScreen(
     onDone: () -> Unit
 ) {
     val context = LocalContext.current
+    val resources = LocalResources.current
 
     val contacts by
     AppSingleton.getCurrentIdentityLiveData()
@@ -82,7 +84,7 @@ fun ContactIntroductionScreen(
                 startGravity = false,
                 onActionClick = { selectedMembers ->
                     val bytesNewMemberIdentities = selectedMembers
-                        .map { it.bytesIdentity }
+                        .map { it.bytesIdentity as ByteArray? }
                         .toTypedArray()
                     val introducedDisplayNames = StringUtils.joinContactDisplayNames(
                         selectedMembers.map {
@@ -111,7 +113,7 @@ fun ContactIntroductionScreen(
                         .setNegativeButton(R.string.button_label_cancel, null)
                     if (bytesNewMemberIdentities.size == 1) {
                         builder.setMessage(
-                            context.getString(
+                            resources.getString(
                                 R.string.dialog_message_contact_introduction,
                                 displayName,
                                 introducedDisplayNames
@@ -119,7 +121,7 @@ fun ContactIntroductionScreen(
                         )
                     } else {
                         builder.setMessage(
-                            context.getString(
+                            resources.getString(
                                 R.string.dialog_message_contact_introduction_multiple,
                                 displayName,
                                 bytesNewMemberIdentities.size,

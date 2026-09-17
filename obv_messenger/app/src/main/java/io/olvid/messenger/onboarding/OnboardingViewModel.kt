@@ -19,7 +19,6 @@
 package io.olvid.messenger.onboarding
 
 import android.util.Pair
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import io.olvid.engine.datatypes.ObvBase64
@@ -28,10 +27,10 @@ import io.olvid.engine.engine.types.identities.ObvKeycloakAuthType
 import io.olvid.messenger.AppSingleton
 import io.olvid.messenger.BuildConfig
 import io.olvid.messenger.customClasses.ConfigurationPojo
-import io.olvid.messenger.onboarding.OnboardingViewModel.VALIDATED_STATUS.CHECKING
-import io.olvid.messenger.onboarding.OnboardingViewModel.VALIDATED_STATUS.INVALID
-import io.olvid.messenger.onboarding.OnboardingViewModel.VALIDATED_STATUS.UNCHECKED
-import io.olvid.messenger.onboarding.OnboardingViewModel.VALIDATED_STATUS.VALID
+import io.olvid.messenger.onboarding.OnboardingViewModel.ValidatedStatus.CHECKING
+import io.olvid.messenger.onboarding.OnboardingViewModel.ValidatedStatus.INVALID
+import io.olvid.messenger.onboarding.OnboardingViewModel.ValidatedStatus.UNCHECKED
+import io.olvid.messenger.onboarding.OnboardingViewModel.ValidatedStatus.VALID
 import org.jose4j.jwk.JsonWebKey
 import org.jose4j.jwk.JsonWebKeySet
 import java.util.UUID
@@ -50,7 +49,7 @@ class OnboardingViewModel : ViewModel() {
         private set
     private var lastValidatedApiKey: UUID? = null
     private var lastFailedApiKey: String? = null
-    val validatedStatus = MutableLiveData<Pair<VALIDATED_STATUS, VALIDATED_STATUS>>()
+    val validatedStatus = MutableLiveData<Pair<ValidatedStatus, ValidatedStatus>>()
     private val validatedServers: MutableSet<String?> = HashSet(setOf(BuildConfig.SERVER_NAME))
     private val invalidatedServers: MutableSet<String> = HashSet()
     private var currentlyCheckingServer: String? = null
@@ -87,14 +86,14 @@ class OnboardingViewModel : ViewModel() {
     private var lastValidatedKeycloak: String? = null
     private var lastFailedKeycloak: String? = null
     private var currentlyCheckingKeycloak: String? = null
-    val keycloakValidatedStatus = MutableLiveData<VALIDATED_STATUS>()
+    val keycloakValidatedStatus = MutableLiveData<ValidatedStatus>()
 
     val forceDisabled = MutableLiveData(false)
 
     var isDeepLinked: Boolean = false
     var isConfiguredFromMdm: Boolean = false
 
-    enum class VALIDATED_STATUS {
+    enum class ValidatedStatus {
         UNCHECKED,
         CHECKING,
         VALID,
@@ -110,7 +109,7 @@ class OnboardingViewModel : ViewModel() {
         unformattedApiKey = apiKey?.trim { it <= ' ' }
         try {
             this.apiKey = UUID.fromString(unformattedApiKey)
-        } catch (e: Exception) {
+        } catch (_: Exception) {
             this.apiKey = null
         }
         updateValidatedStatus()
@@ -192,6 +191,9 @@ class OnboardingViewModel : ViewModel() {
     }
 
     fun parseScannedConfigurationUri(base64configuration: String?): Boolean {
+        if (base64configuration == null) {
+            return false
+        }
         try {
             val configurationPojo = AppSingleton.getJsonObjectMapper().readValue(
                 ObvBase64.decode(base64configuration),
@@ -219,7 +221,7 @@ class OnboardingViewModel : ViewModel() {
                 }
                 return true
             }
-        } catch (e: Exception) {
+        } catch (_: Exception) {
             // nothing to do
         }
         return false
@@ -238,7 +240,7 @@ class OnboardingViewModel : ViewModel() {
         val serverStatus =
             if (serverValidated) VALID else (if (serverInvalidated) INVALID else (if (unvalidatedServer == currentlyCheckingServer) CHECKING else UNCHECKED))
         val apiKeyStatus =
-            if (lastFailedApiKey != null && lastFailedApiKey!!.isNotEmpty() && lastFailedApiKey == unformattedApiKey) {
+            if (!lastFailedApiKey.isNullOrEmpty() && lastFailedApiKey == unformattedApiKey) {
                 INVALID
             } else if (apiKey != null && apiKey == lastValidatedApiKey) {
                 VALID
@@ -254,12 +256,16 @@ class OnboardingViewModel : ViewModel() {
     private fun updateKeycloakValidatedStatus() {
         var keycloakStatus = UNCHECKED
         if (keycloakServer != null) {
-            if (keycloakServer == lastFailedKeycloak) {
-                keycloakStatus = INVALID
-            } else if (keycloakServer == lastValidatedKeycloak) {
-                keycloakStatus = VALID
-            } else if (keycloakServer == currentlyCheckingKeycloak) {
-                keycloakStatus = CHECKING
+            when (keycloakServer) {
+                lastFailedKeycloak -> {
+                    keycloakStatus = INVALID
+                }
+                lastValidatedKeycloak -> {
+                    keycloakStatus = VALID
+                }
+                currentlyCheckingKeycloak -> {
+                    keycloakStatus = CHECKING
+                }
             }
         }
         keycloakValidatedStatus.postValue(keycloakStatus)
@@ -291,8 +297,5 @@ class OnboardingViewModel : ViewModel() {
     fun setForceDisabled(forceDisabled: Boolean) {
         this.forceDisabled.postValue(forceDisabled)
     }
-
-    fun getForceDisabled(): LiveData<Boolean> {
-        return forceDisabled
-    } // endregion
+    // endregion
 }

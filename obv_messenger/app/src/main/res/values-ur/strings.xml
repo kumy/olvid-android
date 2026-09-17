@@ -26,8 +26,8 @@
 	<string name="button_label_create_group" state="needs_review" hash="1102939673">گروپ بنائیں</string>
 	<string name="button_label_discard" state="needs_review" hash="795591204">ترک کردیں</string>
 	<string name="button_label_exchange_digits_with_user" state="needs_review" hash="339599327">%1$s کے ساتھ کوڈ کا تبادلہ کریں۔</string>
-	<string name="button_label_generate_new_id" state="needs_review" hash="92014734">ایک نیا آئی ڈی بنائیں</string>
-	<string name="button_label_generate_my_id" state="needs_review" hash="-1007060207">میری ID بنائیں</string>
+	<string name="button_label_generate_new_id" state="needs_review" hash="-1130516787">ایک نیا پروفائل بنائیں</string>
+	<string name="button_label_generate_my_id" state="needs_review" hash="239641058">میرا پروفائل بنائیں</string>
 	<string name="button_label_ignore" state="needs_review" hash="-806373746">نظر انداز کریں</string>
 	<string name="button_label_reject" state="needs_review" hash="-2094664161">منظور نہ کرنا</string>
 	<string name="button_label_introduce" state="needs_review" hash="193852909">تعارف کرانا</string>
@@ -80,6 +80,12 @@
 	<string name="dialog_title_rename_group" state="needs_review" hash="1461324427">گروپ کا نام تبدیل کریں</string>
 	<string name="dialog_title_restart_channel_establishment" state="needs_review" hash="-645769680">کیا چینل کی تشکیل دوبارہ شروع کی جائے؟</string>
 	<string name="dialog_title_share_with" state="needs_review" hash="854107768">اس کے ساتھ شیئر کریں…</string>
+	<string name="dialog_title_share_recipients" state="needs_review" hash="1157053138">مستقبلین کا انتخاب کریں۔</string>
+	<string name="share_label_from" state="needs_review" hash="2049052075">سے:</string>
+	<string name="share_label_to" state="needs_review" hash="-1785690373">کو:</string>
+	<string name="share_label_choose_recipients" state="needs_review" hash="1157053138">مستقبلین کا انتخاب کریں۔</string>
+	<string name="hint_share_message" state="needs_review" hash="-763169957">ایک پیغام شامل کریں۔</string>
+	<string name="content_description_delete_attachment" state="needs_review" hash="-220348329">اتാچمنٹ ہٹا دیں</string>
 	<string name="dialog_title_shortcut_to" state="needs_review" hash="-1193591200">…کے لیے شارٹ کٹ بنائیں</string>
 	<string name="explanation_choose_display_name" state="needs_review" hash="1162066686">براہ کرم ایک نام درج کریں جو آپ کے رابطوں کو دکھایا جائے گا۔ یہ معلومات کبھی بھی Olvid کے سرورز پر نہیں بھیجی جائیں گی۔</string>
 	<string name="explanation_empty_contact_list" state="needs_review" hash="1240778508">فی الحال کوئی رابطہ نہیں</string>
@@ -104,7 +110,7 @@
 	<string name="explanation_no_message_found" state="needs_review" hash="-1329622990">کوئی پیغام نہیں ملا</string>
 	<string name="explanation_no_attachment_found" state="needs_review" hash="156593369">کوئی منسلک فائل نہیں ملی</string>
 	<string name="explanation_no_link_found" state="needs_review" hash="-1419950450">کوئی لنک نہیں ملا</string>
-	<string name="hint_company" state="needs_review" hash="379200324">کمپنی (اختیاری)</string>
+	<string name="hint_company" state="needs_review" hash="988571519">کمپنی</string>
 	<string name="hint_compose_your_message" state="needs_review" hash="-25761578">پیغام لکھیں</string>
 	<string name="hint_compose_your_message_ephemeral" state="needs_review" hash="-1527208333">عارضی پیغام</string>
 	<string name="label_edit_your_message" state="needs_review" hash="1091877412">اپنے پیغام کو ایڈٹ کریں۔</string>
@@ -133,7 +139,7 @@
 	<string name="hint_last_name" state="needs_review" hash="1701170359">آخری نام</string>
 	<string name="hint_new_name" state="needs_review" hash="709842168">نیا نام</string>
 	<string name="hint_notification_reply" state="needs_review" hash="1095144032">جواب دو</string>
-	<string name="hint_position" state="needs_review" hash="-55145181">جॉب کا عنوان (اختیاری)</string>
+	<string name="hint_position" state="needs_review" hash="1338817744">منصب کا نام</string>
 	<string name="invitation_label_their_code" state="needs_review" hash="1402501614">ان کا کوڈ</string>
 	<string name="invitation_label_your_code" state="needs_review" hash="1944546233">آپ کا کوڈ</string>
 	<string name="invitation_status_accept_invite" state="needs_review" hash="2100924901">دعوت موصول</string>
@@ -170,6 +176,11 @@
 	<string name="label_group_members" state="needs_review" hash="1460220752">گروپ کے اراکین</string>
 	<string name="label_other_group_members" state="needs_review" hash="-2121490032">دوسرے گروپ کے اراکین</string>
 	<string name="label_groups_common" state="needs_review" hash="1252823567">مشترکہ گروپس</string>
+	<string name="label_create_group_with_contact" state="needs_review" hash="1950649899">%1$s کے ساتھ ایک گروپ بنائیں</string>
+	<string name="label_add_contact_to_a_group" state="needs_review" hash="-682192937">%1$s کو ایک گروپ میں شامل کریں۔</string>
+	<string name="label_add_to_groups" state="needs_review" hash="-654216617">گروپس میں شامل کریں</string>
+	<string name="explanation_no_admin_group_to_add_contact" state="needs_review" hash="402908162">آپ کسی بھی ایسے گروپ کے منتظم نہیں ہیں جس میں %1$s کو شامل کیا جا سکے۔</string>
+	<string name="toast_message_adding_contact_to_groups" state="needs_review" hash="1201697547">منتخب گروپس میں %1$s شامل کیا جا رہا ہے…</string>
 	<string name="label_invitation_declined" state="needs_review" hash="2038173833">دعوت مسترد کر دیا گیا</string>
 	<string name="label_new_group_card" state="needs_review" hash="1006740909">گروپ کی تفصیلات اپ ڈیٹ کر دی گئیں</string>
 	<string name="label_not_part_of_a_group" state="needs_review" hash="1667979596">اب تک کسی گروپ کا حصہ نہیں</string>
@@ -183,6 +194,7 @@
 	<string name="menu_action_create_shortcut" state="needs_review" hash="-1949455873">شارٹ کٹ بنائیں</string>
 	<string name="menu_action_delete" state="needs_review" hash="-232100842">حذف کریں</string>
 	<string name="menu_action_delete_discussion" state="needs_review" hash="2059656471">بات چیت کو حذف کریں</string>
+	<string name="menu_action_export_discussion" state="needs_review" hash="1736692296">بات چیت برآمد کریں</string>
 	<string name="label_swipe_details" state="needs_review" hash="171468732">تفصیلات</string>
 	<string name="menu_action_disband_group" state="needs_review" hash="-1767089289">گروپ ختم کریں</string>
 	<string name="menu_action_edit_group_details" state="needs_review" hash="310205135">گروپ کی تفصیلات میں ترمیم کریں</string>
@@ -482,7 +494,14 @@
 	<string name="dialog_title_backup_choices" state="needs_review" hash="281222223">بیک اپ کا طریقہ منتخب کریں۔</string>
 	<string name="menu_action_choose_picture" state="needs_review" hash="-1655172909">ایک تصویر منتخب کریں۔</string>
 	<string name="menu_action_take_photo" state="needs_review" hash="-1123080444">تصویر لیں</string>
+	<string name="menu_action_choose_image_from_olvid" state="needs_review" hash="1585248356">موصولہ تصویر منتخب کریں۔</string>
 	<string name="menu_action_remove_image" state="needs_review" hash="1094977672">تصویر ہٹا دیں</string>
+	<string name="menu_action_use_image_as" state="needs_review" hash="587310096">اس تصویر کو بطور [PLACEHOLDER_1] استعمال کریں۔</string>
+	<string name="label_use_photo_for_my_profile" state="needs_review" hash="-1005809580">میری پروفائل کی تصویر</string>
+	<string name="label_use_photo_for_target" state="needs_review" hash="283541521">%s کے لیے تصویر</string>
+	<string name="label_use_photo_for_discussion_background" state="needs_review" hash="1925733151">%s کے لیے پس منظر</string>
+	<string name="toast_message_photo_set" state="needs_review" hash="-1641885203">تصویر اپ ڈیٹ کی گئی</string>
+	<string name="toast_message_background_set" state="needs_review" hash="1642873459">پس منظر اپ ڈیٹ کر دیا گیا</string>
 	<string name="dialog_title_create_empty_group" state="needs_review" hash="-663434464">کیا آپ ایک خالی گروپ بنانا چاہتے ہیں؟</string>
 	<string name="dialog_message_create_empty_group" state="needs_review" hash="-297923005">آپ نے اپنے گروپ میں شامل کرنے کے لیے کسی بھی رابطہ کو منتخب نہیں کیا۔ کیا آپ واقعی ایک خالی گروپ بنانا چاہتے ہیں؟</string>
 	<string name="pref_dark_mode_title" state="needs_review" hash="816474245">ڈارک موڈ</string>
@@ -862,7 +881,7 @@
 	<string name="button_label_check_options" state="needs_review" hash="-759177128">اختیارات چیک کریں</string>
 	<string name="hint_olvid_server" state="needs_review" hash="1097391633">اولویڈ سرور</string>
 	<string name="hint_license_activation_code" state="needs_review" hash="102193320">لائسنس ایکٹیویشن کوڈ</string>
-	<string name="activity_title_identity_creation_options" state="needs_review" hash="1180456032">آئی ڈی بنانے کے اختیارات</string>
+	<string name="activity_title_identity_creation_options" state="needs_review" hash="-774054913">پروفائل بنانے کے اختیارات</string>
 	<string name="activity_title_scan_configuration" state="needs_review" hash="-386259993">کنفیگر ایشن کو اسکین کریں۔</string>
 	<string name="menu_action_import_activation_from_clipboard" state="needs_review" hash="-70842935">کلپ بورڈ سے لنک درآمد کریں۔</string>
 	<string name="troubleshooting_update_valid_title" state="needs_review" hash="741828768">اولویڈ تازہ ترین ہے</string>
@@ -871,7 +890,6 @@
 	<string name="dialog_message_update_available" state="needs_review" hash="416187645">اولویڈ کا ایک نیا ورژن دستیاب ہے۔\n\nبراہ کرم تازہ ترین خصوصیات سے فائدہ اٹھانے کے لیے اپ ڈیٹ کریں۔</string>
 	<string name="dialog_title_call_initiation_not_supported" state="needs_review" hash="-2088021831">کال شروع کرنے کی سہولت دستیاب نہیں</string>
 	<string name="dialog_message_call_initiation_not_supported" state="needs_review" hash="1760333819">ایسا لگتا ہے کہ آپ کا Olvid سرور محفوظ کال شروع کرنے کی حمایت نہیں کرتا ہے۔\n\nبراہ کرم مزید تفصیلات کے لیے اپنے منتظم سے رابطہ کریں۔</string>
-	<string name="label_identity_creation_options" state="needs_review" hash="1180456032">آئی ڈی بنانے کے اختیارات</string>
 	<string name="text_option_server" state="needs_review" hash="-1130676431">سرور: %1$s</string>
 	<string name="dialog_title_non_default_server" state="needs_review" hash="2119192219">ایک غیر ڈیفالٹ سرور کا استعمال کرنا</string>
 	<string name="dialog_message_non_default_server" state="needs_review" hash="459308900">آپ مندرجہ ذیل سرور پر ایک پروفائل بنانے والے ہیں: \n\n%1$s\n\nیہ ڈیفالٹ اولوڈ سرور نہیں ہے۔ اگر آپ اس سرور پر بھروسہ کرتے ہیں تو ہی آگے بڑھیں۔</string>
@@ -900,7 +918,7 @@
 	<string name="toast_message_unable_to_keycloak_revoke" state="needs_review" hash="-1368037130">پہلے Olvid ID کو تبدیل کرنے میں ناکامی، براہ کرم دوبارہ کوشش کریں۔</string>
 	<string name="toast_message_keycloak_revoke_successful" state="needs_review" hash="-1216369809">پہلے Olvid ID کو کامیابی سے تبدیل کر دیا گیا۔</string>
 	<string name="dialog_title_keycloak_authentication_required_user_id_changed" state="needs_review" hash="-896407029">صارف میں تبدیلی کا پتہ چلا</string>
-	<string name="dialog_message_keycloak_authentication_required_user_id_changed" state="needs_review" hash="876252686">آپ کا پروفائل فی الحال آپ کی تنظیم کے ذریعے زیرِ انتظام ہے۔ ایسا لگتا ہے کہ آپ نے عام سے مختلف صارف کے طور پر تصدیق کی ہے۔ یہ سپورٹ نہیں کیا جاتا ہے۔\n\nبراہ کرم اپنے منتظم سے رابطہ کریں یا صحیح صارف کے طور پر دوبارہ تصدیق کریں۔</string>
+	<string name="dialog_message_keycloak_authentication_required_user_id_changed" state="needs_review" hash="2080839829">آپ کا پروفائل فی الحال آپ کی تنظیم کے ذریعے زیرِ انتظام ہے۔ ایسا لگتا ہے کہ آپ نے عام سے مختلف صارف کے طور پر تصدیق کی ہے۔ یہ ممکن نہیں ہے۔\n\nبراہ کرم اپنے منتظم سے رابطہ کریں یا صحیح صارف کے طور پر دوبارہ تصدیق کریں۔</string>
 	<string name="dialog_title_add_keycloak_user" state="needs_review" hash="-1050193239">رابط شامل کریں</string>
 	<string name="dialog_message_add_keycloak_user" state="needs_review" hash="-1755937035">آپ نے %1$s کو اپنے رابطوں میں شامل کرنے کا انتخاب کیا۔ کیا آپ آگے بڑھنا چاہتے ہیں؟</string>
 	<string name="explanation_keycloak_update_new" state="needs_review" hash="1136733528">آپ Olvid میں اپنی کمپنی کے آئیڈینٹیٹی پرووائیڈر کو ترتیب دینے والے ہیں۔ ایک بار ترتیب دینے کے بعد، آپ اس سرور کے ساتھ تصدیق کر سکیں گے اور Olvid آپ کو آسانی سے اپنے رابطوں میں دوسرے ملازمین کو شامل کرنے کی اجازت دے گا۔\nبراہ کرم مزید تفصیلات کے لیے اپنے منتظم سے رابطہ کریں۔</string>
@@ -1031,6 +1049,8 @@
 	<string name="label_storage_discussions" state="needs_review" hash="491497248">بات چیت</string>
 	<string name="pref_use_internal_image_viewer_title" state="needs_review" hash="1319400578">اندرونی امیج ویور استعمال کریں۔</string>
 	<string name="pref_use_internal_image_viewer_summary" state="needs_review" hash="1248137666">جب یہ آپشن فعال ہو جائے، تو کسی تصویر پر کلک کرنے سے وہ اندرونی ویوئر میں کھل جائے گی۔ بصورت دیگر، آپ کے آلے کی ڈیفالٹ امیج ایپ استعمال کی جائے گی۔</string>
+	<string name="pref_image_text_recognition_title" state="needs_review" hash="1877261687">تصاویر میں موجود متن کو پہچانیں اور انڈیکس کریں۔</string>
+	<string name="pref_image_text_recognition_summary" state="needs_review" hash="1217699919">اس سے آپ تصاویر میں موجود متن کو تلاش اور کاپی کر سکتے ہیں۔ کم صلاحیت والے آلات پر یہ زیادہ وسائل استعمال کر سکتا ہے: اگر آپ کو اس کی ضرورت نہیں ہے تو اسے بند کر دیں۔</string>
 	<string name="label_unable_to_display_image" state="needs_review" hash="-1495534207">تصویر دکھانا ممکن نہیں</string>
 	<string name="dialog_title_backup_requires_sign_in" state="needs_review" hash="-720389674">کلاؤڈ فراہم کنندہ کے ذریعے سائن ان کرنا ضروری ہے۔</string>
 	<string name="dialog_message_backup_requires_sign_in" state="needs_review" hash="119557495">آپ نے Olvid کو کسی کلاؤڈ فراہم کنندہ کے ساتھ خودکار بیک اپ استعمال کرنے کے لیے ترتیب دیا ہے، لیکن آپ کا سیشن ختم ہو گیا ہے۔ آپ کو دوبارہ اس فراہم کنندہ میں سائن ان کرنے کی ضرورت ہے۔\n\nاگر آپ اب خودکار بیک اپ نہیں چاہتے ہیں، تو آپ ایپ کی ترتیبات میں انہیں غیر فعال کر سکتے ہیں۔ ذہن میں رکھیں کہ خودکار بیک اپ آپ کے رابطوں کے نقصان کو روکنے کا واحد طریقہ ہے اگر آپ کا آلہ کھو جائے یا خراب ہو جائے۔</string>
@@ -1149,7 +1169,7 @@
 	<string name="pref_hidden_profile_close_policy_dialog_entry_screen_lock" state="needs_review" hash="-1520400811">جب اولوڈ لاک اسکرین فعال ہو</string>
 	<string name="pref_hidden_profile_close_policy_dialog_entry_background" state="needs_review" hash="-2099539114">جب اولوڈ بیک گراؤنڈ میں چلا جاتا ہے…</string>
 	<string name="activity_title_enter_backup_key" state="needs_review" hash="1035967309">بیک اپ کی کی لازمی درج کریں</string>
-	<string name="activity_title_identity_creation" state="needs_review" hash="-1361520151">آئی ڈی کی تخلیق</string>
+	<string name="activity_title_identity_creation" state="needs_review" hash="2027618284">پروفائل بنائیں</string>
 	<string name="menu_action_manual_configuration" state="needs_review" hash="-1495974502">دستی ایڈوانسڈ کنفیگریشن</string>
 	<string name="toast_message_invalid_configuration_link" state="needs_review" hash="1387412522">غلط کنفیگریشن لنک</string>
 	<string name="toast_message_invalid_link" state="needs_review" hash="1265454437">غلط لنک</string>
@@ -1171,6 +1191,7 @@
 	<string name="dialog_title_chose_profile_web_client" state="needs_review" hash="1860298414">اولویڈ ویب کلائنٹ سے منسلک کرنے کے لیے پروفائل منتخب کریں۔</string>
 	<string name="dialog_title_chose_profile_invitation" state="needs_review" hash="-2063034787">اس رابطے کو مدعو کرنے کے لیے وہ پروفائل منتخب کریں جس کا آپ استعمال کرنا چاہتے ہیں۔</string>
 	<string name="toast_message_create_new_profile_then_reopen_this_link" state="needs_review" hash="1770827346">براہ کرم پہلے ایک نیا پروفائل بنائیں، پھر اس لنک کو دوبارہ کھولیں۔</string>
+	<string name="toast_message_invitation_link_deferred_to_end_of_onboarding" state="needs_review" hash="-189914806">آپ کا انوائٹیشن خود بخود کھل جائے گا جب آپ کا پروفائل بن جائے گا۔</string>
 	<string name="button_label_switch_profile" state="needs_review" hash="-2007633024">پروفائل تبدیل کریں</string>
 	<string name="text_no_other_profile_to_switch_to" state="needs_review" hash="-112306213">کوئی دوسرا پروفائل نہیں</string>
 	<string name="button_label_configure_lock_screen" state="needs_review" hash="870348426">لاک اسکرین کو ترتیب دیں۔</string>
@@ -1180,9 +1201,8 @@
 	<string name="dialog_message_delete_last_profile" state="needs_review" hash="-2123774331">کسی پروفائل کو ڈیلیٹ کرنے سے آپ کے ڈیوائس پر اس پروفائل سے متعلق تمام معلومات ڈیلیٹ ہو جائیں گی۔ اس میں آپ کے رابطے، گروپس اور اس پروفائل کے لیے آپ کی تمام گفتگو (میسجز اور منسلکات) کا مواد شامل ہے۔\n\n<b>یہ آپ کا واحد نظر آنے والا پروفائل ہے اور اگر آپ کے پاس کوئی پوشیدہ پروفائل ہے، تو وہ بھی بیک وقت ڈیلیٹ ہو جائیں گے۔</b>\n\nاگر آپ نے Olvid میں بیک اپ فعال کر رکھا ہے، تو آپ کے مستقبل کے بیک اپ میں اس پروفائل کا کوئی بھی نشان نہیں ہوگا اور آپ اسے بحال کرنے کے قابل نہیں ہو سکتے۔\n\nاس پروفائل کو کیسے ڈیلیٹ کرنا ہے یہ منتخب کرنے کے لیے \"اگلا\" دبائیں۔</string>
 	<string name="dialog_message_delete_profile_multi" state="needs_review" hash="-2003495595">کسی پروفائل کو ڈیلیٹ کرنے سے آپ کے ڈیوائس پر اس پروفائل سے متعلق تمام معلومات ڈیلیٹ ہو جائیں گی۔ اس میں آپ کے رابطے، گروپ اور اس پروفائل کے لیے آپ کی تمام گفتگو (میسجز اور منسلکات) شامل ہیں۔ آپ کے دیگر پروفائلز پر اس آپریشن کا کوئی اثر نہیں پڑے گا۔\n\nاس پروفائل کو کیسے ڈیلیٹ کرنا ہے، اس کا انتخاب کرنے کے لیے \"اگلا\" دبائیں۔</string>
 	<string name="dialog_message_delete_last_profile_multi" state="needs_review" hash="-103140781">کسی پروفائل کو ڈیلیٹ کرنے سے آپ کے ڈیوائس پر اس پروفائل سے متعلق تمام معلومات ڈیلیٹ ہو جائیں گی۔ اس میں آپ کے رابطے، گروپس اور اس پروفائل کے لیے آپ کی تمام گفتگو (میسجز اور منسلکات) کا مواد شامل ہے۔\n\n<b>یہ آپ کا واحد نظر آنے والا پروفائل ہے اور اگر آپ کے پاس کوئی پوشیدہ پروفائل ہے، تو وہ بھی بیک وقت ڈیلیٹ ہو جائیں گے۔</b>\n\nاس پروفائل کو کیسے ڈیلیٹ کرنا ہے یہ منتخب کرنے کے لیے \"اگلا\" دبائیں۔</string>
-	<string name="switch_label_delete_profile_everywhere" state="needs_review" hash="-74965346">ہر جگہ پروفائل <b>حذف کریں</b>
-	</string>
-	<string name="hint_type_delete_here_to_proceed" state="needs_review" hash="-1622625725">یہاں \\"%1$s\\" درج کریں اور آگے بڑھیں</string>
+	<string name="switch_label_delete_profile_everywhere" state="needs_review" hash="-74965346">ہر جگہ پروفائل <b>حذف کریں</b></string>
+	<string name="hint_type_delete_here_to_proceed" state="needs_review" hash="-1622625725">یہاں \"%1$s\" درج کریں اور آگے بڑھیں</string>
 	<string name="explanation_delete_owned_identity" state="needs_review" hash="2036375772">اگر آپ اپنی پروفائل کو <b>ہر جگہ</b> سے حذف کرنے کا انتخاب کرتے ہیں: \n\u00a0-\u00a0یہ مقامی طور پر اور آپ کے رابطوں کے آلات پر حذف کر دیا جائے گا۔\n\u00a0-\u00a0آپ ان گروپس سے نکل جائیں جن میں آپ شامل ہوئے تھے۔\n\u00a0-\u00a0آپ کے زیر انتظام گروپس ختم کر دیے جائیں گے۔\n\nاگر آپ اپنی پروفائل کو <b>ہر جگہ</b> سے حذف نہیں کرتے ہیں، تو اسے صرف آپ کے آلے پر مقامی طور پر حذف کر دیا جائے گا۔ جب تک آپ کسی دوسرے آلے پر بیک اپ بحال کرنے کا ارادہ نہیں رکھتے ہیں، آپ کے رابطے آپ کو پیغامات بھیجنا جاری رکھ سکتے ہیں اور انہیں احساس نہیں ہو سکتا کہ ان پیغامات کو ڈیلیور نہیں کیا جا سکتا۔</string>
 	<string name="explanation_delete_inactive_owned_identity" state="needs_review" hash="-575337242">آپ کا موجودہ پروفائل غیر فعال نظر آ رہا ہے، اس کا مطلب یہ ہے کہ آپ نے اسے کسی دوسرے ڈیوائس میں منتقل کر دیا ہے۔ اگر آپ اس پروفائل کو اپنے دوسرے ڈیوائس پر استعمال کرنا جاری رکھنا چاہتے ہیں، تو آپ اسے یہاں سے محفوظ طریقے سے حذف کر سکتے ہیں۔\n\nاگر آپ اب کبھی بھی اس پروفائل کو استعمال نہیں کرنا چاہتے ہیں، تو آپ کو پہلے اسے اس ڈیوائس پر دوبارہ فعال کرنا ہوگا، اپنے رابطوں کے ساتھ محفوظ چینلز کے دوبارہ بنائے جانے کا انتظار کرنا ہوگا، اور پھر ہی اس پروفائل کو \"ہر جگہ سے حذف کریں\" آپشن کا انتخاب کرتے ہوئے حذف کریں۔</string>
 	<string name="explanation_delete_owned_identity_multi" state="needs_review" hash="-184045089">آپ کا پروفائل فی الحال متعدد آلات پر فعال ہے۔\n\nاگر آپ اپنا پروفائل <b>ہر جگہ</b> سے حذف کرنے کا انتخاب کرتے ہیں:\n  - یہ آپ کے تمام آلات <b>اور</b> آپ کے رابطوں کے آلات سے حذف ہو جائے گا۔\n  - آپ ان گروپس سے نکل جائیں گے جن میں آپ شامل ہوئے تھے۔\n  - آپ کے زیر انتظام گروپس ختم ہو جائیں گے۔\n\nاگر آپ اپنا پروفائل <b>ہر جگہ</b> سے حذف نہیں کرتے ہیں، تو یہ صرف مقامی طور پر حذف ہو جائے گا اور آپ اسے اپنے دیگر آلات پر معمول کے مطابق استعمال جاری رکھ سکتے ہیں۔</string>
@@ -1443,23 +1463,17 @@
 	<string name="button_label_send" state="needs_review" hash="-185402948">بھیجیں</string>
 	<string name="button_label_start_sharing" state="needs_review" hash="682254052">شیئر کرنا شروع کریں۔</string>
 	<string name="location_sharing_duration_one_hour_short_string" state="needs_review" hash="1004063951">1 گھنٹہ</string>
-	<string name="location_sharing_duration_one_hour_full_string" state="needs_review" hash="-58118972">
-		<b>1 گھنٹے</b> کے لیے مقام شیئر کریں۔</string>
+	<string name="location_sharing_duration_one_hour_full_string" state="needs_review" hash="-58118972"><b>1 گھنٹے</b> کے لیے مقام شیئر کریں۔</string>
 	<string name="location_sharing_duration_three_hours_short_string" state="needs_review" hash="228095183">3 گھنٹے</string>
-	<string name="location_sharing_duration_three_hours_full_string" state="needs_review" hash="754857804">
-		<b>3 گھنٹوں</b> کے لیے مقام شیئر کریں۔</string>
+	<string name="location_sharing_duration_three_hours_full_string" state="needs_review" hash="754857804"><b>3 گھنٹوں</b> کے لیے مقام شیئر کریں۔</string>
 	<string name="location_sharing_duration_endless_short_string" state="needs_review" hash="55208442">لامحدود</string>
-	<string name="location_sharing_duration_endless_full_string" state="needs_review" hash="1710814259">مقام شیئر کریں <b>جب تک کہ اسے روکا نہ جائے</b>
-	</string>
+	<string name="location_sharing_duration_endless_full_string" state="needs_review" hash="1710814259">مقام شیئر کریں <b>جب تک کہ اسے روکا نہ جائے</b></string>
 	<string name="location_sharing_quality_precise_short_string" state="needs_review" hash="351442529">منعقد</string>
 	<string name="location_sharing_quality_balanced_short_string" state="needs_review" hash="-1925315592">متوازن</string>
 	<string name="location_sharing_quality_power_save_short_string" state="needs_review" hash="-14275273">بجلی کی بچت</string>
-	<string name="location_sharing_quality_precise_full_string" state="needs_review" hash="-1255374893">
-		<b>بالکل</b> درست مقام شیئر کرنے کا طریقہ</string>
-	<string name="location_sharing_quality_balanced_full_string" state="needs_review" hash="-421322514">
-		<b>متوازن</b> مقام کی معلومات کے اشتراک کا طریقہ</string>
-	<string name="location_sharing_quality_power_save_full_string" state="needs_review" hash="792896333">
-		<b>بجلی بچانے</b> کے موڈ میں مقام کی معلومات کا اشتراک</string>
+	<string name="location_sharing_quality_precise_full_string" state="needs_review" hash="-1255374893"><b>بالکل</b> درست مقام شیئر کرنے کا طریقہ</string>
+	<string name="location_sharing_quality_balanced_full_string" state="needs_review" hash="-421322514"><b>متوازن</b> مقام کی معلومات کے اشتراک کا طریقہ</string>
+	<string name="location_sharing_quality_power_save_full_string" state="needs_review" hash="792896333"><b>بجلی بچانے</b> کے موڈ میں مقام کی معلومات کا اشتراک</string>
 	<string name="label_sharing_location_until" state="needs_review" hash="187977459">مقام کی معلومات %1$s تک شیئر کی جا رہی ہیں</string>
 	<string name="label_location_sharing_ended" state="needs_review" hash="1028490137">لوکیشن شیئرنگ ختم ہو گیا</string>
 	<string name="label_gps_coordinates" state="needs_review" hash="-1537356414">جی پی ایس کوآرڈینیٹس</string>
@@ -1560,7 +1574,7 @@
 	<string name="text_setting_address_lookup_server" state="needs_review" hash="-1680866462">\"• کسٹم ایڈریس سرور: \"</string>
 	<string name="text_setting_disable_address_lookup" state="needs_review" hash="-1481615256">\"• ایڈریس کی تلاش کو معطل کریں: \"</string>
 	<string name="text_setting_notify_certificate_change" state="needs_review" hash="-1831192863">\"\u2023 جب سرور سرٹیفکیٹ تبدیل ہو تو اطلاع دیں: \"</string>
-	<string name="text_setting_sending_foreground_service" state="needs_review" hash="-406116991">\"\u2023 \\"پیغام بھیجنے\\" کے نوٹیفکیشن کو فعال کریں: \"</string>
+	<string name="text_setting_sending_foreground_service" state="needs_review" hash="-406116991">\"\u2023 \"پیغام بھیجنے\" کے نوٹیفکیشن کو فعال کریں: \"</string>
 	<string name="text_setting_auto_join_groups" state="needs_review" hash="522515555">• خود بخود گروپ کی دعوتیں ان سے قبول کریں: </string>
 	<string name="text_setting_lock_delay" state="needs_review" hash="820821201">\"\u2023 لاک اسکرین تاخیر: \"</string>
 	<string name="text_setting_auto_download_size" state="needs_review" hash="585840560">\"\u2023 منسلکات خود بخود ڈاؤن لوڈ کریں: \"</string>
@@ -1642,7 +1656,7 @@
 	<string name="button_label_remove" state="needs_review" hash="1097276765">حذف کریں</string>
 	<string name="menu_action_remove_expiration" state="needs_review" hash="-156931599">اس ڈیوائس کو فعال رکھیں</string>
 	<string name="dialog_title_set_unexpiring_device" state="needs_review" hash="-1488033285">ایک ڈیوائس کو فعال رکھیں</string>
-	<string name="dialog_message_set_unexpiring_device" state="needs_review" hash="-1457083107">آپ کے پاس فی الحال متعدد فعال آلات رکھنے کا لائسنس موجود نہیں ہے۔ اگر آپ اس طرح کا لائسنس خریدنا چاہتے ہیں، تو اس ڈائیلاگ کو بند کریں اور نیچے \\"سبسکرپشن پلانز دیکھیں\\" پر کلک کریں۔\n\nآگے بڑھنے اور آلہ \\"%1$s\\" کو فعال رکھنے کے لیے، آلہ \\"%2$s\\" کو اس کے بجائے غیر فعال کر دیا جائے گا۔ کیا آپ آگے بڑھنا چاہتے ہیں؟</string>
+	<string name="dialog_message_set_unexpiring_device" state="needs_review" hash="-1457083107">آپ کے پاس فی الحال متعدد فعال آلات رکھنے کا لائسنس موجود نہیں ہے۔ اگر آپ اس طرح کا لائسنس خریدنا چاہتے ہیں، تو اس ڈائیلاگ کو بند کریں اور نیچے \"سبسکرپشن پلانز دیکھیں\" پر کلک کریں۔\n\nآگے بڑھنے اور آلہ \"%1$s\" کو فعال رکھنے کے لیے، آلہ \"%2$s\" کو اس کے بجائے غیر فعال کر دیا جائے گا۔ کیا آپ آگے بڑھنا چاہتے ہیں؟</string>
 	<string name="dialog_title_remove_background_image" state="needs_review" hash="488158841">کیا موجودہ پس منظر کی تصویر کو ہٹانا ہے؟</string>
 	<string name="dialog_title_introducing_markdown" state="needs_review" hash="175399162">پیغام کی فارمیٹنگ متعارف کروا رہے ہیں!</string>
 	<string name="dialog_message_introducing_markdown" state="needs_review" hash="1738415115">اب Olvid آپ کو مارک ڈاؤن نحو کا استعمال کرتے ہوئے اپنے پیغامات کو فارمیٹ کرنے کی اجازت دیتا ہے 🎨!\n\n**<b>بولڈ</b>** میں، *<i>اٹالک</i>* میں لکھیں، # <big>ہیڈنگز</big> شامل کریں، وغیرہ۔\n\nتمام سپورٹڈ ٹیگز کی فہرست یہاں دیکھیں 🦍:\nhttps://www.olvid.io/faq/format-your-messages/</string>
@@ -1689,7 +1703,7 @@
 	<string name="button_label_create_new_profile" state="needs_review" hash="-1130516787">ایک نیا پروفائل بنائیں</string>
 	<string name="label_device_name" state="needs_review" hash="-1693256515">ڈیوائس کا نام</string>
 	<string name="toast_message_profile_activation_failed" state="needs_review" hash="593290647">پروفائل درآمد کرنے میں ناکامی</string>
-	<string name="button_label_add_device_xxx" state="needs_review" hash="-1479212354">ڈیوائس \\"%1$s\\" شامل کریں۔</string>
+	<string name="button_label_add_device_xxx" state="needs_review" hash="-1479212354">ڈیوائس \"%1$s\" شامل کریں۔</string>
 	<string name="notification_title_device_trust" state="needs_review" hash="-1568042777">نیا آلہ: \"%1$s\"</string>
 	<string name="notification_title_unnamed_device_trust" state="needs_review" hash="1704207127">نیا آلہ</string>
 	<string name="notification_message_device_trust" state="needs_review" hash="753501294">آپ کے Olvid پروفائلز میں سے ایک میں ایک نیا ڈیوائس شامل کیا گیا۔</string>
@@ -1743,13 +1757,13 @@
 	<string name="troubleshooting_battery_optimization_invalid_description" state="needs_review" hash="688616134">اینڈروئیڈ پر بیٹری کی آپٹیمائزیشن کچھ بیک گراؤنڈ ایونٹس کو تاخیر سے چلا کر کام کرتی ہے تاکہ انہیں ایک ساتھ چلایا جا سکے۔ اس سے آنے والے اولوڈ پیغامات اور کالوں کی وصولی میں تاخیر ہو سکتی ہے۔\n\nاس بات کو یقینی بنانے کے لیے کہ آپ کے پیغامات جلد سے جلد موصول ہوں، آپ کو اولوڈ کو \"ہمیشہ بیک گراؤنڈ میں چلنے\" کی اجازت دینی چاہیے۔</string>
 	<string name="troubleshooting_background_restriction_valid_title" state="needs_review" hash="-1653431113">پس منظر کی پابندی</string>
 	<string name="troubleshooting_background_restriction_valid_description" state="needs_review" hash="-562490603">Olvid کو صحیح طریقے سے کام کرنے کے لیے بیک گراؤنڈ میں چلنے کی اجازت دینی ہوگی۔ بیک گراؤنڈ میں پابندیوں کو فعال کرنے سے، مثال کے طور پر، Olvid کو بیک گراؤنڈ میں پیغامات وصول کرنے سے روکا جائے گا۔</string>
-	<string name="troubleshooting_background_restriction_invalid_description" state="needs_review" hash="-1942040454">اولویڈ میں \\"بیک گراؤنڈ کی پابندی\\" فعال ہے۔ جب تک آپ اسے \\"محدود ایپس\\" کی فہرست سے نہیں ہٹا دیتے، اولویڈ صحیح طریقے سے کام نہیں کر سکے گا۔\n\nآپ \\"ایپ کی ترتیبات\\" پر ٹیپ کرکے اور بیٹری کے استعمال کے سیکشن میں جا کر اس مسئلے کو حل کر سکتے ہیں۔</string>
+	<string name="troubleshooting_background_restriction_invalid_description" state="needs_review" hash="-1942040454">اولویڈ میں \"بیک گراؤنڈ کی پابندی\" فعال ہے۔ جب تک آپ اسے \"محدود ایپس\" کی فہرست سے نہیں ہٹا دیتے، اولویڈ صحیح طریقے سے کام نہیں کر سکے گا۔\n\nآپ \"ایپ کی ترتیبات\" پر ٹیپ کرکے اور بیٹری کے استعمال کے سیکشن میں جا کر اس مسئلے کو حل کر سکتے ہیں۔</string>
 	<string name="troubleshooting_alarm_valid_title" state="needs_review" hash="-2113413915">الارم مقرر کرنے کی اجازت</string>
 	<string name="troubleshooting_alarm_valid_description" state="needs_review" hash="184003925">اولویڈ سکرین لاک اور عارضی پیغامات کی ڈیلیٹ کرنے کے لیے درست وقت پر الارم کا استعمال کرتا ہے۔ اس کی اجازت کو صحیح طریقے سے سیٹ کیا گیا ہے۔</string>
 	<string name="troubleshooting_alarm_invalid_description" state="needs_review" hash="-1221338357">اولویڈ سکرین لاک اور عارضی پیغامات کی ڈیلیٹ کرنے کے لیے درست وقت پر الارم استعمال کرتا ہے۔\nاس طرح کے الارم سیٹ کرنے کی اجازت منسوخ کر دی گئی ہے، جس کی وجہ سے ان سیکیورٹی فیچرز میں خرابی آ سکتی ہے۔\nہم آپ کو پرزور طریقے سے تجویز کرتے ہیں کہ \"ایپ کی ترتیبات\" پر کلک کر کے الارم اور یاد دہانیاں سیٹ کرنے کی اجازت دیں۔</string>
 	<string name="troubleshooting_incoming_call_valid_title" state="needs_review" hash="1166672465">آنے والی کال کی اطلاعات</string>
 	<string name="troubleshooting_incoming_call_valid_description" state="needs_review" hash="-856478096">آنے والی کالوں کے لیے، ایک مکمل سکرین پر \"کال کا جواب دیں\" نوٹیفکیشن دکھانا ضروری ہے۔ اس اجازت کو صحیح طریقے سے ترتیب دیا گیا ہے۔</string>
-	<string name="troubleshooting_incoming_call_invalid_description" state="needs_review" hash="998007777">آنے والی کالوں کو ایک مکمل سکرین \\"کال کا جواب\\" نوٹیفکیشن دکھانا چاہیے۔ اولوڈ کو فی الحال اس طرح کے مکمل سکرین نوٹیفکیشن کھولنے کی اجازت نہیں ہے۔ مکمل سکرین نوٹیفیکیشن کی اجازت دینے کے لیے \\"ایپ کی ترتیبات\\" پر دبائیں۔</string>
+	<string name="troubleshooting_incoming_call_invalid_description" state="needs_review" hash="998007777">آنے والی کالوں کو ایک مکمل سکرین \"کال کا جواب\" نوٹیفکیشن دکھانا چاہیے۔ اولوڈ کو فی الحال اس طرح کے مکمل سکرین نوٹیفکیشن کھولنے کی اجازت نہیں ہے۔ مکمل سکرین نوٹیفیکیشن کی اجازت دینے کے لیے \"ایپ کی ترتیبات\" پر دبائیں۔</string>
 	<string name="troubleshooting_google_valid_title" state="needs_review" hash="-1672388922">گوگل پلے سروسز دستیاب نہیں</string>
 	<string name="troubleshooting_google_valid_description" state="needs_review" hash="2096293716">اولویڈ کے سرورز سے مستقل WebSocket کنکشن صحیح طریقے سے ترتیب دیا گیا ہے۔</string>
 	<string name="troubleshooting_google_invalid_description" state="needs_review" hash="-47932147">گوگل پلے سروسز آپ کے آلے پر دستیاب نہیں ہیں۔ اولوڈ ان سروسز پر انحصار کرتا ہے تاکہ آنے والے پیغامات کی اطلاع مل سکے۔ ان کے بغیر، آپ کو نئے پیغامات صرف تب ملیں گے جب اولوڈ فارگراؤنڈ میں ہوگا۔\n\nآپ اس کے بجائے اولوڈ کے سرورز سے مستقل WebSocket کنکشن کو فعال کر سکتے ہیں جو اسی مقصد کو پورا کر سکتا ہے (لیکن اس سے آپ کی بیٹری تھوڑی زیادہ تیزی سے ختم ہو سکتی ہے)۔</string>
@@ -2020,7 +2034,7 @@
 	<string name="button_label_restore_my_profile" state="needs_review" hash="418284480">میری پروفائل بحال کریں</string>
 	<string name="button_label_keep_all_with_olvid_plus" state="needs_review" hash="622534541">انہیں سب کو Olvid+ کے ساتھ محفوظ رکھیں</string>
 	<string name="explanation_backup_v2_choose_device_after_restore" state="needs_review" hash="292969815">ایک بار جب آپ کا پروفائل بحال ہو جائے، تو آپ اپنے پروفائل کی ترتیبات سے یہ منتخب کر سکتے ہیں کہ کون سا آلہ فعال رکھا جائے۔</string>
-	<string name="explanation_backup_v2_device_expiration_start" state="needs_review" hash="-147053489">اپنے پروفائل کو بحال کر کے \\"</string>
+	<string name="explanation_backup_v2_device_expiration_start" state="needs_review" hash="-147053489">اپنے پروفائل کو بحال کر کے \"</string>
 	<string name="explanation_backup_v2_device_expiration_nickname" state="needs_review" hash="2093353377">(%1$s)</string>
 	<string name="toast_message_no_key_found" state="needs_review" hash="-1984410678">کوئی بیک اپ کی نہیں ملی</string>
 	<string name="label_backup_headers_title" state="needs_review" hash="-846183546">آپ کے بیک اپ</string>
@@ -2042,11 +2056,14 @@
 	<string name="button_label_configure_backups" state="needs_review" hash="-990646398">بیک اپ کو فعال کریں</string>
 	<string name="tip_write_backup_key_title" state="needs_review" hash="-1652757003">اپنے بیک اپ کی کو یاد رکھنے کے لیے اسے لکھنا نہ بھولیں 😇</string>
 	<string name="tip_write_backup_key_message" state="needs_review" hash="931018791">آپ کی بیک اپ کی ایک اہم بات یہ ہے کہ اگر آپ اس ڈیوائس تک رسائی کھو دیتے ہیں تو آپ اپنے پروفائلز کو بحال کر سکتے ہیں۔</string>
+	<string name="tip_legacy_backup_end_of_life_title" state="needs_review" hash="810495149">آپ جو پرانے بیک اپ استعمال کر رہے ہیں، ان کی مدت ختم ہو گئی ہے۔</string>
+	<string name="tip_legacy_backup_end_of_life_message" state="needs_review" hash="-314257210">اولویڈ کا اگلا اپ ڈیٹ پرانے بیک اپ کو سپورٹ کرنا بند کر دے گا۔ اپنے اکاؤنٹ کو محفوظ رکھنے کے لیے، ابھی نئے بیک اپ فیچر پر منتقل ہو جائیں۔</string>
 	<string name="tip_troubleshooting_title" state="needs_review" hash="-393739108">اپنے Olvid کے تجربے کو بہتر بنائیں 🚀</string>
 	<string name="tip_troubleshooting_message" state="needs_review" hash="-935493349">آپ کے آلے پر کچھ پیرامیٹرز صحیح طریقے سے ترتیب نہیں دیے گئے ہیں اور یہ Olvid کے ساتھ آپ کے تجربے کو متاثر کر سکتے ہیں۔</string>
 	<string name="button_label_this_way" state="needs_review" hash="747183939">اس طرح</string>
 	<string name="toast_code_copied" state="needs_review" hash="-1522785848">کوڈ کاپی ہو گیا</string>
 	<string name="explanation_choose_members" state="needs_review" hash="-1385158706">براہ کرم انتخاب کریں کہ اس گروپ میں کون شامل کیا جائے۔</string>
+	<string name="explanation_choose_share_recipients" state="needs_review" hash="-1406265940">براہ کرم انتخاب کریں کہ آپ کس کے ساتھ شئیر کرنا چاہتے ہیں۔</string>
 	<string name="explanation_choose_contact_introduction" state="needs_review" hash="1113777517">براہ کرم انتخاب کریں کہ آپ %1$s کو کس سے متعارف کرانا چاہتے ہیں۔</string>
 	<string name="label_group_administration" state="needs_review" hash="871355986">گروپ کی انتظامیہ</string>
 	<string name="dialog_title_call_blocked" state="needs_review" hash="1594606530">کال بلاک کر دیا گیا</string>
@@ -2087,7 +2104,7 @@
 	<string name="label_poll_answers_sorted_by_poll_order" state="needs_review" hash="685632215">پول کا ترتیب</string>
 	<string name="label_poll_answers_sorted_by_answer_count" state="needs_review" hash="516869301">جوابوں کی تعداد</string>
 	<string name="notification_public_title_new_poll_vote" state="needs_review" hash="-1901040080">آپ کے پول کے لیے نیا جواب</string>
-	<string name="toast_message_remove_none_answer" state="needs_review" hash="277924655">سب سے پہلے \\"%1$s\\" جواب کو ہٹا دیں۔</string>
+	<string name="toast_message_remove_none_answer" state="needs_review" hash="277924655">سب سے پہلے \"%1$s\" جواب کو ہٹا دیں۔</string>
 	<string name="text_poll" state="needs_review" hash="-153643506">استفتاء</string>
 	<string name="poll_csv_headers" state="needs_review" hash="1869917931">سوال، ووٹر کا نام، ووٹ، تاریخ</string>
 	<string name="label_poll_no_votes_yet" state="needs_review" hash="-981251817">اب تک کوئی جواب نہیں</string>
@@ -2172,7 +2189,7 @@
 	<string name="store_link_olvid_store" state="needs_review" hash="-1825630369">اولویڈ سٹور پر جائیں</string>
 	<string name="toast_message_reminder_set" state="needs_review" hash="-961055414">یاد دہانی ترتیب دی گئی</string>
 	<string name="dialog_title_keycloak_authentication_impossible" state="needs_review" hash="325273853">تصدیق کرنا ممکن نہیں</string>
-	<string name="dialog_message_keycloak_authentication_impossible" state="needs_review" hash="390830785">آپ کا پروفائل فی الحال آپ کی تنظیم کے ذریعے زیرِ انتظام ہے اور دوبارہ تصدیق کی ضرورت ہے۔ تاہم، ایسا لگتا ہے کہ کوئی بھی معاون تصدیقی طریقہ دستیاب نہیں ہے۔\n\nبراہ کرم مزید تفصیلات کے لیے اپنے منتظم سے رابطہ کریں۔</string>
+	<string name="dialog_message_keycloak_authentication_impossible" state="needs_review" hash="-2031322232">آپ کا پروفائل فی الحال آپ کی تنظیم کے ذریعے زیرِ انتظام ہے اور دوبارہ تصدیق کی ضرورت ہے۔ تاہم، ایسا لگتا ہے کہ کوئی بھی معاون تصدیقی طریقہ دستیاب نہیں ہے۔ مزید تفصیلات کے لیے براہ کرم اپنے منتظم سے رابطہ کریں۔</string>
 	<string name="onboarding_transfer_keycloak_error_message_authentication_impossible" state="needs_review" hash="-1891385979">کوئی بھی معاون تصدیقی طریقہ دستیاب نہیں لگتا۔</string>
 	<string name="pref_use_alt_turn_servers_title" state="needs_review" hash="-1956132776">متبادل TURN سرور استعمال کریں۔</string>
 	<string name="pref_use_alt_turn_servers_summary" state="needs_review" hash="357427162">اس آپشن کو فعال کریں تاکہ روٹیٹنگ آئی پی ایڈریس کے ساتھ ٹرن سرور استعمال کیے جا سکیں۔ اگر آپ کو یقین نہیں ہے، تو اس آپشن کو بند رکھیں 😁</string>
@@ -2283,5 +2300,45 @@
 	<string name="label_error_loading_openstreetmap_style_file" state="needs_review" hash="-2596045">اوپن اسٹریٹ میپ اسٹائل فائل لوڈ کرتے وقت ایک غلطی ہوئی۔</string>
 	<string name="dialog_title_subscriptions_not_available" state="needs_review" hash="336174241">ایپ کے اندر سبسکرپشن دستیاب نہیں</string>
 	<string name="dialog_message_subscriptions_not_available" state="needs_review" hash="2093768678">آپ نے جو Olvid ورژن انسٹال کیا ہے، اس میں گوگل کی بلنگ لائبریری شامل نہیں ہے اور یہ ایپ میں خریداریاں کرنے کی سہولت فراہم نہیں کرتا ہے۔\n\n مزید معلومات کے لیے، براہ کرم ہم سے **feedback@olvid.io** پر رابطہ کریں۔</string>
+	<string name="ftux_next" state="needs_review" hash="1158639077">اگلا</string>
+	<string name="ftux_start" state="needs_review" hash="646298532">شروع کریں</string>
+	<string name="ftux_page_indicator" state="needs_review" hash="1987610035">صفحہ %1$d، کل صفحات %2$d</string>
+	<string name="ftux_page_welcome_title" state="needs_review" hash="1173832630"><b>Olvid</b> میں خوش آمدید۔</string>
+	<string name="ftux_page_welcome_body" state="needs_review" hash="-2085198139">ہر ایک کے لیے نجی میسجنگ۔</string>
+	<string name="ftux_page_private_title" state="needs_review" hash="1815927819"><b>ذاتی</b> میسجنگ</string>
+	<string name="ftux_page_private_body" state="needs_review" hash="-590644231">%1$s پر، آپ خود فیصلہ کرتے ہیں کہ آپ کس سے بات کرنا چاہتے ہیں۔ کوئی اسپام نہیں، کوئی سفارشات نہیں، کوئی غیر ضروری اطلاعات نہیں، اور نہ ہی اجنبیوں کے پیغامات۔\n\nکوئی بھی آپ کی رضامندی کے بغیر آپ سے رابطہ نہیں کر سکتا۔\n\n%1$s آپ کا ڈیجیٹل بلبلا ہے۔</string>
+	<string name="ftux_page_everyone_title" state="needs_review" hash="1506796386">ہر ایک کے لیے میسجنگ</string>
+	<string name="ftux_page_everyone_body" state="needs_review" hash="-586100377">آپ جو بھی ہوں، %1$s آپ کو بہترین سیکیورٹی فراہم کرتا ہے۔ کسی ای میل یا فون نمبر کی ضرورت نہیں ہے۔\n\n%1$s آپ سے کچھ بھی نہیں پوچھتا، اور یہ سب کچھ بدل دیتا ہے۔</string>
+	<string name="ftux_page_protect_title" state="needs_review" hash="1969120191">اولویڈ آپ کی حفاظت کرتا ہے۔ اولویڈ ان لوگوں کی حفاظت کرتا ہے جو آپ کے لیے اہم ہیں۔</string>
+	<string name="ftux_page_protect_body" state="needs_review" hash="881847930">یہ محض ایک وعدہ نہیں ہے — %1$s اس کی کرپٹوگرافک تصدیق فراہم کرتا ہے۔\n\n چاہے آپ دور سے یا آمنے سامنہ رابطے شامل کریں، آپ کے تبادلے باضابطہ طور پر مستند اور اینڈ ٹو اینڈ انکرپٹڈ ہوتے ہیں۔</string>
+	<string name="ftux_page_pricing_title" state="needs_review" hash="-1948277889">ایک <b>شفاف</b> کاروباری ماڈل</string>
+	<string name="ftux_page_pricing_body" state="needs_review" hash="-1064278870">%1$s آپ کے ذاتی ڈیٹا سے اپنے اخراجات پورے نہیں کرتا—کیونکہ یہ کوئی بھی ڈیٹا طلب نہیں کرتا!\n\nجو کچھ مفت ہے، وہ مفت ہے۔ جو کچھ ادا کیا جاتا ہے، اس کی قیمت ہوتی ہے۔</string>
+	<string name="ftux_page_media_title" state="needs_review" hash="558110518">اولویڈ کے پاس <b>سب کچھ</b> ہے</string>
+	<string name="ftux_page_media_body" state="needs_review" hash="1807247240">اتैچمنٹ کے سائز کی کوئی حد نہیں، اعلیٰ ریزولوشن والی تصاویر کا اشتراک، پولز، آڈیو اور ویڈیو کالز، ملٹی ڈیوائس سپورٹ، جغرافیائی لوکیشن - یہ سب کچھ موجود ہے!</string>
 	<string name="menu_action_cancel_upload" state="needs_review" hash="1672681586">اپ لوڈ منسوخ کریں</string>
+	<string name="label_suggested_contacts" state="needs_review" hash="816810770">تجویز کردہ رابطے</string>
+	<string name="label_suggested_contacts_subtitle" state="needs_review" hash="131522501">آسانی سے صارفین کو مدعو کریں</string>
+	<string name="label_suggested_contact_already_a_contact" state="needs_review" hash="-1177848651">پہلے سے ہی رابطہ موجود ہے</string>
+	<string name="label_suggested_contact_invitation_received" state="needs_review" hash="2100924901">دعوت موصول</string>
+	<string name="label_suggested_contact_invitation_sent" state="needs_review" hash="310679275">دعوت بھیج دی گئی</string>
+	<string name="label_suggested_contacts_all_done" state="needs_review" hash="-127525104">آپ تازہ ترین ورژن پر ہیں!\nاب مزید رابطوں کی تجویز نہیں ہے۔</string>
+	<string name="button_label_suggested_contact_later" state="needs_review" hash="-1933816039">بعد میں</string>
+	<string name="button_label_close" state="needs_review" hash="1454843231">بند کریں</string>
+	<string name="button_label_skip" state="needs_review" hash="2056258301">چھوڑیں</string>
+	<string name="button_label_understood" state="needs_review" hash="829780875">میں سمجھ گیا</string>
+	<string name="label_suggested_contacts_onboarding_title_1" state="needs_review" hash="491881039">ایک سوائپ کے ساتھ مدعو کریں</string>
+	<string name="label_suggested_contacts_onboarding_message_1" state="needs_review" hash="331320806">کارڈ کو دائیں طرف سوائپ کریں تاکہ صارف کو مدعو کیا جا سکے، یا اگلا دیکھنے کے لیے بائیں۔</string>
+	<string name="label_suggested_contacts_onboarding_title_2" state="needs_review" hash="-788798380">یہ رابطے کہاں سے آئے ہیں؟</string>
+	<string name="label_suggested_contacts_onboarding_message_2" state="needs_review" hash="1536681696">یہ اولوڈ کے وہ صارفین ہیں جو ابھی تک آپ کے رابطوں میں شامل نہیں ہیں۔</string>
+	<string name="label_suggested_contacts_onboarding_caption" state="needs_review" hash="-1299179969">آپ ایک تعلق کے فاصلے پر ہیں: آپ کم از کم ایک مشترکہ گروپ میں شامل ہیں۔</string>
+	<string name="label_suggested_contacts_you" state="needs_review" hash="672009142">آپ</string>
+	<string name="label_suggested_contacts_common_group" state="needs_review" hash="-1739793963">مشترکہ گروپ</string>
+	<string name="explanation_suggested_contacts_others_tab" state="needs_review" hash="852096678">نیچے دیے گئے صارفین آپ کے رابطوں میں شامل نہیں ہیں، اور فی الحال آپ ان سے نجی گفتگو نہیں کر سکتے۔ لیکن آپ انہیں آسانی سے مدعو کر سکتے ہیں! 🚀</string>
+	<string name="label_suggested_contacts_invite_in_one_gesture" state="needs_review" hash="438220313">ان صارفین کو ایک سوائپ کے ذریعے مدعو کریں</string>
+	<string name="menu_action_suggested_contacts_see_full_list" state="needs_review" hash="603082500">مکمل فہرست دیکھیں</string>
+	<string name="menu_action_suggested_contacts_replay_onboarding" state="needs_review" hash="-1552704243">ٹیوٹوریل دوبارہ چلائیں</string>
+	<string name="button_label_uninvite" state="needs_review" hash="771825501">منسوخ کرنا</string>
+	<string name="button_label_accept_invitation" state="needs_review" hash="-1778405034">دعوت قبول کریں</string>
+	<string name="label_suggested_contacts_already_swiped" state="needs_review" hash="427042318">پہلے ہی دیکھا جا چکا ہے</string>
+	<string name="label_suggested_contacts_not_swiped_yet" state="needs_review" hash="310924358">ابھی تک دیکھا نہیں گیا</string>
 </resources>

@@ -82,8 +82,8 @@ class ProfilePictureFetcher(
     }
 
     class Factory: Fetcher.Factory<ProfilePictureLabelAndKey> {
-        override fun create(profilePictureLabelAndKey: ProfilePictureLabelAndKey, options: Options, imageLoader: ImageLoader): Fetcher {
-            return ProfilePictureFetcher(profilePictureLabelAndKey, options)
+        override fun create(data: ProfilePictureLabelAndKey, options: Options, imageLoader: ImageLoader): Fetcher {
+            return ProfilePictureFetcher(data, options)
         }
     }
 }

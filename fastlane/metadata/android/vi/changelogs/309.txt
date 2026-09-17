@@ -1,0 +1,4 @@
+- Tính năng chia sẻ màn hình mới, cho phép đăng lên nhiều cuộc trò chuyện cùng lúc.
+- Cách mời mới, dễ dàng mời các thành viên nhóm vào một cuộc trò chuyện riêng tư.
+- Hướng dẫn ban đầu mới để giới thiệu Olvid cho người dùng mới.
+- Cải thiện trình xem ảnh/video, có thể phóng to video.

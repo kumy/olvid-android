@@ -152,6 +152,7 @@ public abstract class DiscussionDao {
                     "cust." + DiscussionCustomization.PREF_MUTE_NOTIFICATIONS + " AS cust_" + DiscussionCustomization.PREF_MUTE_NOTIFICATIONS + ", " +
                     "cust." + DiscussionCustomization.PREF_MUTE_NOTIFICATIONS_EXCEPT_MENTIONED + " AS cust_" + DiscussionCustomization.PREF_MUTE_NOTIFICATIONS_EXCEPT_MENTIONED + ", " +
                     "cust." + DiscussionCustomization.PREF_MUTE_NOTIFICATIONS_TIMESTAMP + " AS cust_" + DiscussionCustomization.PREF_MUTE_NOTIFICATIONS_TIMESTAMP + ", " +
+                    "cust." + DiscussionCustomization.PREF_MUTE_NOTIFICATIONS_START_TIMESTAMP + " AS cust_" + DiscussionCustomization.PREF_MUTE_NOTIFICATIONS_START_TIMESTAMP + ", " +
                     "cust." + DiscussionCustomization.PREF_AUTO_OPEN_LIMITED_VISIBILITY_INBOUND_MESSAGES + " AS cust_" + DiscussionCustomization.PREF_AUTO_OPEN_LIMITED_VISIBILITY_INBOUND_MESSAGES + ", " +
                     "cust." + DiscussionCustomization.PREF_RETAIN_WIPED_OUTBOUND_MESSAGES + " AS cust_" + DiscussionCustomization.PREF_RETAIN_WIPED_OUTBOUND_MESSAGES + ", " +
                     "cust." + DiscussionCustomization.PREF_DISCUSSION_RETENTION_COUNT + " AS cust_" + DiscussionCustomization.PREF_DISCUSSION_RETENTION_COUNT + ", " +
@@ -478,6 +479,22 @@ public abstract class DiscussionDao {
             " AND disc." + Discussion.STATUS + " = " + Discussion.STATUS_NORMAL +
             " ORDER BY " + PINNED_ORDER + ", disc." + Discussion.LAST_MESSAGE_TIMESTAMP + " DESC")
     public abstract LiveData<List<DiscussionAndGroupMembersNames>> getAllWritableWithGroupMembersNamesOrderedByActivity(@NonNull byte[] ownedIdentityBytes);
+
+    @Query("SELECT " + PREFIX_DISCUSSION_COLUMNS + ", " +
+            " COALESCE(grp." + Group.GROUP_MEMBERS_NAMES + ", grpp." + Group2.GROUP_MEMBERS_NAMES + ") AS groupMemberNames, " +
+            " COALESCE(grp." + Group.FULL_SEARCH_FIELD + ", grpp." + Group2.FULL_SEARCH_FIELD + ") AS patterMatchingField " +
+            " FROM " + Discussion.TABLE_NAME + " AS disc " +
+            " LEFT JOIN " + Group.TABLE_NAME + " AS grp " +
+            " ON disc." + Discussion.BYTES_DISCUSSION_IDENTIFIER + " = grp." + Group.BYTES_GROUP_OWNER_AND_UID +
+            " AND disc." + Discussion.BYTES_OWNED_IDENTITY + " = grp." + Group.BYTES_OWNED_IDENTITY +
+            " AND disc." + Discussion.DISCUSSION_TYPE + " = " + Discussion.TYPE_GROUP +
+            " LEFT JOIN " + Group2.TABLE_NAME + " AS grpp " +
+            " ON disc." + Discussion.BYTES_DISCUSSION_IDENTIFIER + " = grpp." + Group2.BYTES_GROUP_IDENTIFIER +
+            " AND disc." + Discussion.BYTES_OWNED_IDENTITY + " = grpp." + Group2.BYTES_OWNED_IDENTITY +
+            " AND disc." + Discussion.DISCUSSION_TYPE + " = " + Discussion.TYPE_GROUP_V2 +
+            " WHERE disc.id = :discussionId " +
+            " AND disc." + Discussion.STATUS + " = " + Discussion.STATUS_NORMAL)
+    @Nullable public abstract DiscussionAndGroupMembersNames getByIdWithGroupMembersNamesIfWritable(long discussionId);
 
     @Query("SELECT " + PREFIX_DISCUSSION_COLUMNS + ", " +
             " COALESCE(grp." + Group.GROUP_MEMBERS_NAMES + ", grpp." + Group2.GROUP_MEMBERS_NAMES + ") AS groupMemberNames, " +

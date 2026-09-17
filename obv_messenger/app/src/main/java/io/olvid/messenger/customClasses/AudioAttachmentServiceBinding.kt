@@ -170,6 +170,9 @@ class AudioAttachmentServiceBinding(private val activity: AppCompatActivity) {
         }
 
         override fun onMediaItemTransition(mediaItem: MediaItem?, reason: Int) {
+            if (reason == Player.MEDIA_ITEM_TRANSITION_REASON_AUTO) {
+                updatePlayTimeMs(0, true)
+            }
             updateNowPlaying(mediaItem)
         }
 

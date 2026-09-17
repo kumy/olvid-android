@@ -98,7 +98,7 @@ import io.olvid.messenger.designsystem.components.AccessibilityFakeButton
 import io.olvid.messenger.designsystem.components.OlvidTextButton
 import io.olvid.messenger.designsystem.components.OlvidTopAppBar
 import io.olvid.messenger.designsystem.cutoutHorizontalPadding
-import io.olvid.messenger.designsystem.plus
+import androidx.compose.foundation.layout.plus
 import io.olvid.messenger.designsystem.systemBarsHorizontalPadding
 import io.olvid.messenger.designsystem.theme.OlvidTypography
 import io.olvid.messenger.designsystem.theme.olvidDatePickerDefaults

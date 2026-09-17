@@ -1,0 +1,1 @@
+- Rešen problem sa analizom slika pomoću OCR-a.

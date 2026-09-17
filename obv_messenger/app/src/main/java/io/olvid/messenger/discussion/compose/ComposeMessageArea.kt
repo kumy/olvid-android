@@ -134,6 +134,7 @@ import io.olvid.messenger.settings.SettingsActivity
 import io.olvid.messenger.viewModels.FilteredContactListViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlin.time.Duration.Companion.milliseconds
 
 @androidx.annotation.OptIn(UnstableApi::class)
 @OptIn(ExperimentalLayoutApi::class)
@@ -284,7 +285,18 @@ fun ComposeMessageArea(
 
         lastProcessedDraftMessage.value = newDraft
 
-        if (newDraft != null && (oldDraft == null || newDraft.id != oldDraft.id)) {
+        if (newDraft == null && oldDraft != null && messageBeingEdited == null
+            && !oldDraft.contentBody.isNullOrEmpty()
+            && inputEditText?.text?.toString() == oldDraft.contentBody
+        ) {
+            // The draft was removed out from under us while the input still shows its body. This
+            // happens when a share is posted to THIS discussion (ReplaceDiscussionDraftTask creates
+            // a draft that we latch into the input, then PostMessageInDiscussionTask promotes that
+            // draft to a "sent" message): without this clear, the next saveDraft() would resurrect the
+            // already-sent text as a fresh draft. Guarded to the exact-match plain-text case so it
+            // never wipes text the user typed after the draft changed, nor interferes with edit mode.
+            inputEditText?.setText("")
+        } else if (newDraft != null && (oldDraft == null || newDraft.id != oldDraft.id)) {
             if (newDraft.contentBody != null && inputEditText?.text.toString() != newDraft.contentBody) {
                 try {
                     val spannableString = SpannableString(newDraft.contentBody ?: "")
@@ -525,7 +537,10 @@ fun ComposeMessageArea(
                         )
                         .then(
                             if (ephemeralSettingsEnabled == true) {
-                                Modifier.dashedBorder(brush = SolidColor(colorResource(R.color.darkGrey)))
+                                Modifier.dashedBorder(
+                                    brush = SolidColor(colorResource(R.color.darkGrey)),
+                                    shape = RoundedCornerShape(20.dp)
+                                )
                             } else {
                                 Modifier
                             }
@@ -577,13 +592,13 @@ fun ComposeMessageArea(
                                 if (duration > 0) {
                                     playbackProgress = (exoPlayer.currentPosition.toFloat() / duration.toFloat()).coerceIn(0f, 1f)
                                 }
-                                delay(33)
+                                delay(33.milliseconds)
                             }
                         }
                     }
 
                     if (controller.voiceMessageRecorder.isOpened) {
-                        // we add this Box here to prevent clicks to the DiscussionInputEditText beneeth when in voice recorder
+                        // we add this Box here to prevent clicks to the DiscussionInputEditText beneath when in voice recorder
                         Box(
                             modifier = Modifier
                                 .clickable(
@@ -752,7 +767,7 @@ fun ComposeMessageArea(
                         }
                     ) {
                         Icon(
-                            modifier = Modifier.size(18.dp),
+                            modifier = Modifier.size(24.dp),
                             painter = painterResource(R.drawable.ic_audio),
                             contentDescription = stringResource(R.string.content_description_attach_voice_message_button)
                         )
@@ -817,7 +832,7 @@ fun ComposeMessageArea(
 
     LaunchedEffect(keyboardIsShownButNotForEmojis) {
         if (keyboardIsShownButNotForEmojis) {
-            delay(500)
+            delay(500.milliseconds)
             composeMessageViewModel.emojiExpanded = false
         }
     }
@@ -849,7 +864,7 @@ fun ComposeMessageArea(
                         )
                     }
                     scope.launch {
-                        delay(500)
+                        delay(500.milliseconds)
                         composeMessageViewModel.emojiExpanded = false
                     }
                 },

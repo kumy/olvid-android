@@ -282,4 +282,20 @@
 		<item quantity="one" state="needs_review" hash="-1393207312">%1$d tin nhắn đã được sao chép vào khay nhớ tạm</item>
 		<item quantity="other" state="needs_review" hash="-604999755">%1$d tin nhắn đã được sao chép vào khay nhớ tạm</item>
 	</plurals>
+	<plurals name="label_share_destinations_count" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="423387012">%1$d người nhận</item>
+		<item quantity="other" state="needs_review" hash="-431979656">%1$d người nhận</item>
+	</plurals>
+	<plurals name="label_share_to_recipients" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="-1217959784">Chia sẻ với người nhận %1$d</item>
+		<item quantity="other" state="needs_review" hash="1864148690">Chia sẻ với %1$d người nhận</item>
+	</plurals>
+	<plurals name="toast_message_shared_to_recipients" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="-373807760">Đã chia sẻ với người nhận %1$d</item>
+		<item quantity="other" state="needs_review" hash="-1412037000">Đã chia sẻ với %1$d người nhận</item>
+	</plurals>
+	<plurals name="button_label_add_to_groups" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="1622654043">Thêm vào nhóm %1$d</item>
+		<item quantity="other" state="needs_review" hash="-1655824151">Thêm vào %1$d nhóm</item>
+	</plurals>
 </resources>

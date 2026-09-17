@@ -343,6 +343,24 @@ public interface FyleMessageJoinWithStatusDao {
     )
     LiveData<List<FyleAndStatus>> getAllTransferableForOwnedIdentity(@NonNull byte[] bytesOwnedIdentity);
 
+    @Query("SELECT fyle.*, FMjoin.* FROM " + Fyle.TABLE_NAME + " AS fyle " +
+            " INNER JOIN " + FyleMessageJoinWithStatus.TABLE_NAME + " AS FMjoin " +
+            " ON fyle.id = FMjoin." + FyleMessageJoinWithStatus.FYLE_ID +
+            " INNER JOIN " + Message.TABLE_NAME + " AS mess " +
+            " ON FMjoin." + FyleMessageJoinWithStatus.MESSAGE_ID + " = mess.id " +
+            " INNER JOIN " + Discussion.TABLE_NAME + " AS disc " +
+            " ON mess." + Message.DISCUSSION_ID + " = disc.id " +
+            " WHERE disc." + Discussion.BYTES_OWNED_IDENTITY + " = :bytesOwnedIdentity " +
+            " AND FMjoin." + FyleMessageJoinWithStatus.MIME_TYPE + " LIKE 'image/%' " +
+            " AND FMjoin." + FyleMessageJoinWithStatus.MIME_TYPE + " != 'image/svg+xml' " +
+            " AND mess." + Message.MESSAGE_TYPE + " IN ( " + Message.TYPE_OUTBOUND_MESSAGE + "," + Message.TYPE_INBOUND_MESSAGE + ") " +
+            " AND mess." + Message.STATUS + " != " + Message.STATUS_DRAFT +
+            " AND mess." + Message.WIPE_STATUS + " = " + Message.WIPE_STATUS_NONE +
+            " AND fyle." + Fyle.FILE_PATH + " IS NOT NULL " +
+            " GROUP BY fyle." + Fyle.SHA256 +
+            " ORDER BY MAX(mess." + Message.TIMESTAMP + ") DESC")
+    LiveData<List<FyleAndStatus>> getImageFylesForOwnedIdentity(@NonNull byte[] bytesOwnedIdentity);
+
 
     String FYLE_AND_ORIGIN_QUERY = "SELECT " + DiscussionDao.PREFIX_DISCUSSION_COLUMNS + ", " + MessageDao.PREFIX_MESSAGE_COLUMNS + ", fyle.*, FMjoin.* " +
             " FROM " + FyleMessageJoinWithStatus.TABLE_NAME + " AS FMjoin " +

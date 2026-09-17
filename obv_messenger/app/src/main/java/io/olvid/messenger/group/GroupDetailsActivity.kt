@@ -323,7 +323,7 @@ class GroupDetailsActivity : LockableActivity(), OnClickListener, EngineNotifica
                 firstDetailsTitle!!.background =
                     ContextCompat.getDrawable(this, R.drawable.background_identity_title)
                 firstDetailsTextViews!!.removeAllViews()
-                publishedDetails = jsons[0]
+                publishedDetails = jsons[0] ?: return
                 latestDetails = publishedDetails
                 if (publishedDetails.photoUrl != null) {
                     firstDetailsInitialView.setPhotoUrl(
@@ -335,15 +335,16 @@ class GroupDetailsActivity : LockableActivity(), OnClickListener, EngineNotifica
                 }
                 run {
                     val tv = this.textView
-                    tv.text = publishedDetails.groupDetails.name
+                    tv.text = publishedDetails.groupDetails?.name
                     tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16f)
                     firstDetailsTextViews!!.addView(tv)
                 }
-                if (publishedDetails.groupDetails.description.isNullOrEmpty().not()) {
+                if (publishedDetails.groupDetails?.description.isNullOrEmpty().not()) {
                     val tv = textView
-                    tv.text = publishedDetails.groupDetails.description
+                    tv.text = publishedDetails.groupDetails?.description
                     firstDetailsTextViews!!.addView(tv)
                 }
+                val jsons0photoUrl = publishedDetails.photoUrl
                 App.runThread {
                     if (group.newPublishedDetails != Group.PUBLISHED_DETAILS_NOTHING_NEW) {
                         group.newPublishedDetails = Group.PUBLISHED_DETAILS_NOTHING_NEW
@@ -353,8 +354,8 @@ class GroupDetailsActivity : LockableActivity(), OnClickListener, EngineNotifica
                             group.newPublishedDetails
                         )
                     }
-                    if (group.photoUrl == null && jsons[0].photoUrl != null || group.photoUrl != null && group.photoUrl != jsons[0].photoUrl) {
-                        group.photoUrl = jsons[0].photoUrl
+                    if (group.photoUrl == null && jsons0photoUrl != null || group.photoUrl != null && group.photoUrl != jsons0photoUrl) {
+                        group.photoUrl = jsons0photoUrl
                         AppDatabase.getInstance().groupDao().updatePhotoUrl(
                             group.bytesOwnedIdentity,
                             group.bytesGroupOwnerAndUid,
@@ -373,7 +374,7 @@ class GroupDetailsActivity : LockableActivity(), OnClickListener, EngineNotifica
                     secondDetailsTitle!!.setText(R.string.label_group_card_published)
                     acceptUpdateCardView!!.visibility = View.GONE
                     firstDetailsButtons!!.visibility = View.VISIBLE
-                    publishedDetails = jsons[0]
+                    publishedDetails = jsons[0] ?: return
                     if (publishedDetails.photoUrl != null) {
                         secondDetailsInitialView.setPhotoUrl(
                             group.bytesGroupOwnerAndUid,
@@ -384,16 +385,16 @@ class GroupDetailsActivity : LockableActivity(), OnClickListener, EngineNotifica
                     }
                     run {
                         val tv = this.textView
-                        tv.text = publishedDetails.groupDetails.name
+                        tv.text = publishedDetails.groupDetails?.name
                         tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16f)
                         secondDetailsTextViews!!.addView(tv)
                     }
-                    if (publishedDetails.groupDetails.description.isNullOrEmpty().not()) {
+                    if (publishedDetails.groupDetails?.description.isNullOrEmpty().not()) {
                         val tv = textView
-                        tv.text = publishedDetails.groupDetails.description
+                        tv.text = publishedDetails.groupDetails?.description
                         secondDetailsTextViews!!.addView(tv)
                     }
-                    latestDetails = jsons[1]
+                    latestDetails = jsons[1] ?: return
                     if (latestDetails!!.photoUrl != null) {
                         firstDetailsInitialView.setPhotoUrl(
                             group.bytesGroupOwnerAndUid,
@@ -404,21 +405,22 @@ class GroupDetailsActivity : LockableActivity(), OnClickListener, EngineNotifica
                     }
                     run {
                         val tv = this.textView
-                        tv.text = latestDetails!!.groupDetails.name
+                        tv.text = latestDetails!!.groupDetails?.name
                         tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16f)
-                        if (latestDetails!!.groupDetails.name != publishedDetails.groupDetails.name) {
+                        if (latestDetails!!.groupDetails?.name != publishedDetails.groupDetails?.name) {
                             tv.setTypeface(tv.typeface, Typeface.BOLD)
                         }
                         firstDetailsTextViews!!.addView(tv)
                     }
-                    if (latestDetails!!.groupDetails.description.isNullOrEmpty().not()) {
+                    if (latestDetails!!.groupDetails?.description.isNullOrEmpty().not()) {
                         val tv = textView
-                        tv.text = latestDetails!!.groupDetails.description
-                        if (latestDetails!!.groupDetails.description != publishedDetails.groupDetails.description) {
+                        tv.text = latestDetails!!.groupDetails?.description
+                        if (latestDetails!!.groupDetails?.description != publishedDetails.groupDetails?.description) {
                             tv.setTypeface(tv.typeface, Typeface.BOLD)
                         }
                         firstDetailsTextViews!!.addView(tv)
                     }
+                    val jsons0photoUrl2 = publishedDetails.photoUrl
                     App.runThread {
                         if (group.newPublishedDetails != Group.PUBLISHED_DETAILS_UNPUBLISHED_NEW) {
                             group.newPublishedDetails = Group.PUBLISHED_DETAILS_UNPUBLISHED_NEW
@@ -428,8 +430,8 @@ class GroupDetailsActivity : LockableActivity(), OnClickListener, EngineNotifica
                                 group.newPublishedDetails
                             )
                         }
-                        if ((group.photoUrl == null && jsons[0].photoUrl != null || group.photoUrl != null) && group.photoUrl != jsons[0].photoUrl) {
-                            group.photoUrl = jsons[0].photoUrl
+                        if ((group.photoUrl == null && jsons0photoUrl2 != null || group.photoUrl != null) && group.photoUrl != jsons0photoUrl2) {
+                            group.photoUrl = jsons0photoUrl2
                             AppDatabase.getInstance().groupDao().updatePhotoUrl(
                                 group.bytesOwnedIdentity,
                                 group.bytesGroupOwnerAndUid,
@@ -444,7 +446,7 @@ class GroupDetailsActivity : LockableActivity(), OnClickListener, EngineNotifica
                     secondDetailsTitle!!.setText(R.string.label_group_card)
                     acceptUpdateCardView!!.visibility = View.VISIBLE
                     firstDetailsButtons!!.visibility = View.GONE
-                    val trustedDetails = jsons[1]
+                    val trustedDetails = jsons[1] ?: return
                     if (trustedDetails.photoUrl != null) {
                         secondDetailsInitialView.setPhotoUrl(
                             group.bytesGroupOwnerAndUid,
@@ -455,16 +457,16 @@ class GroupDetailsActivity : LockableActivity(), OnClickListener, EngineNotifica
                     }
                     run {
                         val tv = this.textView
-                        tv.text = trustedDetails.groupDetails.name
+                        tv.text = trustedDetails.groupDetails?.name
                         tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16f)
                         secondDetailsTextViews!!.addView(tv)
                     }
-                    if (trustedDetails.groupDetails.description.isNullOrEmpty().not()) {
+                    if (trustedDetails.groupDetails?.description.isNullOrEmpty().not()) {
                         val tv = textView
-                        tv.text = trustedDetails.groupDetails.description
+                        tv.text = trustedDetails.groupDetails?.description
                         secondDetailsTextViews!!.addView(tv)
                     }
-                    publishedDetails = jsons[0]
+                    publishedDetails = jsons[0] ?: return
                     if (publishedDetails.photoUrl != null) {
                         firstDetailsInitialView.setPhotoUrl(
                             group.bytesGroupOwnerAndUid,
@@ -475,21 +477,22 @@ class GroupDetailsActivity : LockableActivity(), OnClickListener, EngineNotifica
                     }
                     run {
                         val tv = this.textView
-                        tv.text = publishedDetails.groupDetails.name
+                        tv.text = publishedDetails.groupDetails?.name
                         tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16f)
-                        if (publishedDetails.groupDetails.name != trustedDetails.groupDetails.name) {
+                        if (publishedDetails.groupDetails?.name != trustedDetails.groupDetails?.name) {
                             tv.setTypeface(tv.typeface, Typeface.BOLD)
                         }
                         firstDetailsTextViews!!.addView(tv)
                     }
-                    if (publishedDetails.groupDetails.description.isNullOrEmpty().not()) {
+                    if (publishedDetails.groupDetails?.description.isNullOrEmpty().not()) {
                         val tv = textView
-                        tv.text = publishedDetails.groupDetails.description
-                        if (publishedDetails.groupDetails.description != trustedDetails.groupDetails.description) {
+                        tv.text = publishedDetails.groupDetails?.description
+                        if (publishedDetails.groupDetails?.description != trustedDetails.groupDetails?.description) {
                             tv.setTypeface(tv.typeface, Typeface.BOLD)
                         }
                         firstDetailsTextViews!!.addView(tv)
                     }
+                    val jsons1photoUrl = trustedDetails.photoUrl
                     App.runThread {
                         if (group.newPublishedDetails == Group.PUBLISHED_DETAILS_NOTHING_NEW) {
                             group.newPublishedDetails = Group.PUBLISHED_DETAILS_NEW_SEEN
@@ -499,8 +502,8 @@ class GroupDetailsActivity : LockableActivity(), OnClickListener, EngineNotifica
                                 group.newPublishedDetails
                             )
                         }
-                        if ((group.photoUrl == null && jsons[1].photoUrl != null || group.photoUrl != null) && group.photoUrl != jsons[1].photoUrl) {
-                            group.photoUrl = jsons[1].photoUrl
+                        if ((group.photoUrl == null && jsons1photoUrl != null || group.photoUrl != null) && group.photoUrl != jsons1photoUrl) {
+                            group.photoUrl = jsons1photoUrl
                             AppDatabase.getInstance().groupDao().updatePhotoUrl(
                                 group.bytesOwnedIdentity,
                                 group.bytesGroupOwnerAndUid,
@@ -565,7 +568,7 @@ class GroupDetailsActivity : LockableActivity(), OnClickListener, EngineNotifica
         }
     }
 
-    override fun callback(notificationName: String, userInfo: HashMap<String, Any>) {
+    override fun callback(notificationName: String?, userInfo: HashMap<String, Any?>) {
         when (notificationName) {
             EngineNotifications.NEW_GROUP_PHOTO -> {
                 val bytesOwnedIdentity =

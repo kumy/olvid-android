@@ -1,0 +1,3 @@
+- Novi način pozivanja članova grupe u izravni razgovor pomoću jednostavnog premazivanja.
+- Novi postupak upoznavanja za nove korisnike, kako bi se predstavio Olvid.
+- Poboljšan pregled slika/videozapisa, mogućnost zumiranja videozapisa.

@@ -188,7 +188,7 @@ internal fun KeycloakContent(
             } catch (_: Exception) {
                 // nothing
             }
-            keycloakState != null && keycloakState.keycloakServer.startsWith(keycloakPojo.server)
+            keycloakState != null && keycloakState.keycloakServer?.startsWith(keycloakPojo.server) == true
         } else {
             false
         }

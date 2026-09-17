@@ -67,7 +67,7 @@ internal fun UnpublishedDetailsCard(
     onPublish: () -> Unit,
     onDiscard: () -> Unit
 ) {
-    val latestIdentityDetails = latestDetails.identityDetails
+    val latestIdentityDetails = latestDetails.identityDetails!!
     val publishedIdentityDetails = publishedDetails?.identityDetails
 
     val latestFirstLine = latestIdentityDetails.formatFirstAndLastName(

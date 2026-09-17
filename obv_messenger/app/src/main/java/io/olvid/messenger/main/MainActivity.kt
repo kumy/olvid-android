@@ -82,9 +82,12 @@ import androidx.core.view.updateMargins
 import androidx.core.view.updatePadding
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.distinctUntilChanged
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.map
 import androidx.lifecycle.switchMap
 import androidx.preference.PreferenceManager
 import androidx.viewpager2.adapter.FragmentStateAdapter
@@ -122,13 +125,14 @@ import io.olvid.messenger.history_transfer.components.TransferNotification
 import io.olvid.messenger.lock_screen.LockableActivity
 import io.olvid.messenger.main.calls.CallLogFragment
 import io.olvid.messenger.main.contacts.ContactListFragment
+import io.olvid.messenger.main.contacts.ContactListViewModel
 import io.olvid.messenger.main.discussions.DiscussionListFragment
 import io.olvid.messenger.main.groups.GroupListFragment
 import io.olvid.messenger.main.search.GlobalSearchViewModel
 import io.olvid.messenger.main.tips.TipsViewModel
 import io.olvid.messenger.notifications.AndroidNotificationManager
-import io.olvid.messenger.onboarding.OnboardingActivity
 import io.olvid.messenger.onboarding.flow.OnboardingFlowActivity
+import io.olvid.messenger.onboarding.flow.PendingInvitationLink
 import io.olvid.messenger.openid.KeycloakManager
 import io.olvid.messenger.owneddetails.OwnedIdentityDetailsActivity
 import io.olvid.messenger.plus_button.PlusButtonContainer
@@ -141,13 +145,18 @@ import io.olvid.messenger.storage_manager.StorageManagerActivity
 import io.olvid.messenger.troubleshooting.TroubleshootingActivity
 import io.olvid.messenger.webrtc.CallNotificationManager
 import io.olvid.messenger.webrtc.components.CallNotification
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlin.getValue
 import kotlin.time.Duration.Companion.milliseconds
 
 
 class MainActivity : LockableActivity(), OnClickListener, SharedPreferences.OnSharedPreferenceChangeListener {
     private val globalSearchViewModel by viewModels<GlobalSearchViewModel>()
+    private var globalSearchDebounceJob: Job? = null
     private val tipsViewModel by viewModels<TipsViewModel>()
+    private val contactListViewModel by viewModels<ContactListViewModel>()
     private val ownInitialView: InitialView by lazy { findViewById(R.id.owned_identity_initial_view) }
     private val titleTextView: TextView by lazy { findViewById(R.id.main_title) }
     private var tabsPagerAdapter: TabsPagerAdapter? = null
@@ -172,7 +181,7 @@ class MainActivity : LockableActivity(), OnClickListener, SharedPreferences.OnSh
             .registerOnSharedPreferenceChangeListener(this)
         App.runThread {
             val identityCount: Int = try {
-                AppSingleton.getEngine().ownedIdentities.size
+                AppSingleton.getEngine().getOwnedIdentities().size
             } catch (_: Exception) {
                 // if we fail to query ownIdentity count from Engine, fallback to querying on App side
                 AppDatabase.getInstance().ownedIdentityDao().countAll()
@@ -496,8 +505,14 @@ class MainActivity : LockableActivity(), OnClickListener, SharedPreferences.OnSh
             val key = AppSingleton.getBytesCurrentIdentity()?.let { BytesKey(it) }
             key != null && countsLiveData.value?.get(key)?.hasNotificationDot() == true
         }.distinctUntilChanged().observe(this) { hasDot ->
-            if (hasDot == true) tabsPagerAdapter!!.showNotificationDot(DISCUSSIONS_TAB)
-            else tabsPagerAdapter!!.hideNotificationDot(DISCUSSIONS_TAB)
+            if (hasDot == true) tabsPagerAdapter?.showNotificationDot(DISCUSSIONS_TAB)
+            else tabsPagerAdapter?.hideNotificationDot(DISCUSSIONS_TAB)
+        }
+
+        // contacts tab red dot ()for suggested contacts
+        contactListViewModel.newSuggestedContactsCount.observe(this) { newSuggestedCount ->
+            if (newSuggestedCount >= ContactListFragment.RED_DOT_THRESHOLD) tabsPagerAdapter?.showNotificationDot(CONTACTS_TAB)
+            else tabsPagerAdapter?.hideNotificationDot(CONTACTS_TAB)
         }
 
         // profile picture red dot — fires when any *other* non-hidden, non-muted identity has unread
@@ -532,6 +547,18 @@ class MainActivity : LockableActivity(), OnClickListener, SharedPreferences.OnSh
             UnifiedForegroundService.finishAndRemoveExtraTasks(this)
         }
         handleIntent(intent)
+
+        // process an invitation link deferred during onboarding, once an identity is selected
+        AppSingleton.getCurrentIdentityLiveData().observe(this) { ownedIdentity ->
+            if (ownedIdentity != null) {
+                PendingInvitationLink.consume()?.let { uri ->
+                    startActivity(
+                        Intent(this, ScanActivity::class.java)
+                            .putExtra(LINK_URI_INTENT_EXTRA, uri)
+                    )
+                }
+            }
+        }
 
         // check notifications permissions
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
@@ -678,7 +705,7 @@ class MainActivity : LockableActivity(), OnClickListener, SharedPreferences.OnSh
                         try {
                             // detect if it is a license or a keycloak
                             val configurationPojo = AppSingleton.getJsonObjectMapper().readValue(
-                                ObvBase64.decode(configurationMatcher.group(2)),
+                                ObvBase64.decode(configurationMatcher.group(2)!!),
                                 ConfigurationPojo::class.java
                             )
                             val dialogTitleResourceId: Int =
@@ -712,10 +739,10 @@ class MainActivity : LockableActivity(), OnClickListener, SharedPreferences.OnSh
                                         override fun onNewProfileCreationSelected() {
                                             val onboardingIntent = Intent(
                                                 this@MainActivity,
-                                                OnboardingActivity::class.java
+                                                OnboardingFlowActivity::class.java
                                             )
                                                 .putExtra(
-                                                    LINK_URI_INTENT_EXTRA,
+                                                    OnboardingFlowActivity.LINK_URI_INTENT_EXTRA,
                                                     uri
                                                 )
                                             startActivity(onboardingIntent)
@@ -757,9 +784,9 @@ class MainActivity : LockableActivity(), OnClickListener, SharedPreferences.OnSh
                                     override fun onNewProfileCreationSelected() {
                                         val onboardingIntent = Intent(
                                             this@MainActivity,
-                                            OnboardingActivity::class.java
+                                            OnboardingFlowActivity::class.java
                                         )
-                                            .putExtra(OnboardingActivity.LINK_URI_INTENT_EXTRA, uri)
+                                            .putExtra(OnboardingFlowActivity.LINK_URI_INTENT_EXTRA, uri)
                                         startActivity(onboardingIntent)
                                     }
                                 })
@@ -795,9 +822,9 @@ class MainActivity : LockableActivity(), OnClickListener, SharedPreferences.OnSh
                                     override fun onNewProfileCreationSelected() {
                                         val onboardingIntent = Intent(
                                             this@MainActivity,
-                                            OnboardingActivity::class.java
+                                            OnboardingFlowActivity::class.java
                                         )
-                                            .putExtra(OnboardingActivity.PROFILE_CREATION, true)
+                                            .putExtra(OnboardingFlowActivity.PROFILE_CREATION_INTENT_EXTRA, true)
 
                                         startActivity(onboardingIntent)
                                         App.toast(
@@ -942,16 +969,21 @@ class MainActivity : LockableActivity(), OnClickListener, SharedPreferences.OnSh
                             }
 
                             override fun onQueryTextChange(newText: String): Boolean {
-                                AppSingleton.getBytesCurrentIdentity()?.let { bytesOwnedIdentity ->
-                                    globalSearchViewModel.search(
-                                        bytesOwnedIdentity = bytesOwnedIdentity,
-                                        text = newText
-                                    )
+                                globalSearchDebounceJob?.cancel()
+                                globalSearchDebounceJob = lifecycleScope.launch {
+                                    delay(300.milliseconds)
+                                    AppSingleton.getBytesCurrentIdentity()?.let { bytesOwnedIdentity ->
+                                        globalSearchViewModel.search(
+                                            bytesOwnedIdentity = bytesOwnedIdentity,
+                                            text = newText
+                                        )
+                                    }
                                 }
                                 return true
                             }
                         })
                         searchView.setOnCloseListener {
+                            globalSearchDebounceJob?.cancel()
                             globalSearchViewModel.clear()
                             false
                         }
@@ -964,6 +996,7 @@ class MainActivity : LockableActivity(), OnClickListener, SharedPreferences.OnSh
                         }
 
                         override fun onMenuItemActionCollapse(item: MenuItem): Boolean {
+                            globalSearchDebounceJob?.cancel()
                             globalSearchViewModel.clear()
                             return true
                         }
@@ -1162,7 +1195,7 @@ class MainActivity : LockableActivity(), OnClickListener, SharedPreferences.OnSh
                 DiscussionActivity::class.java.name,
                 OwnedIdentityDetailsActivity::class.java.name,
                 ScanActivity::class.java.name,
-                OnboardingActivity::class.java.name,
+                OnboardingFlowActivity::class.java.name,
                 ContactDetailsActivity::class.java.name,
                 SettingsActivity::class.java.name
             )

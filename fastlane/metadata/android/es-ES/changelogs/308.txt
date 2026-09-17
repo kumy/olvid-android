@@ -1,0 +1,3 @@
+- Nueva función para invitar fácilmente a miembros de grupos a una conversación directa.
+- Nuevo proceso de bienvenida para explicar Olvid a los nuevos usuarios.
+- Visor de imágenes/vídeos mejorado, con posibilidad de hacer zoom en los vídeos.

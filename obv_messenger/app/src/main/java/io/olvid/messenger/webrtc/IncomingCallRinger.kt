@@ -43,7 +43,7 @@ import io.olvid.messenger.settings.SettingsActivity
 import java.io.IOException
 
 class IncomingCallRinger(private val context: Context) {
-    private val vibrator: Vibrator? = context.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+    private val vibrator: Vibrator? = context.getSystemService(Context.VIBRATOR_SERVICE) as? Vibrator
     private var cameraManager: CameraManager? = null
     private val cameraIdsToFlash: MutableSet<String> = HashSet()
     private val cameraIdsFlashThreads: HashMap<String, Thread> = HashMap()

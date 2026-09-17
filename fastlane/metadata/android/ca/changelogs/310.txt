@@ -1,0 +1,4 @@
+- Nova funció per compartir pantalla, que permet publicar en múltiples xats simultàniament.
+- Nova manera d'invitar contactes a una conversa privada amb un gest senzill.
+- Nou procés d'introducció per explicar Olvid als usuaris que l'utilitzen per primera vegada.
+- Visualitzador d'imatges/vídeos millorat, amb la possibilitat de fer zoom als vídeos.

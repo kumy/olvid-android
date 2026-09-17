@@ -53,7 +53,7 @@ import io.olvid.messenger.R
 import io.olvid.messenger.R.color
 import io.olvid.messenger.databases.dao.Group2Dao.GroupOrGroup2
 import io.olvid.messenger.designsystem.cutoutHorizontalPadding
-import io.olvid.messenger.designsystem.plus
+import androidx.compose.foundation.layout.plus
 import io.olvid.messenger.designsystem.systemBarsHorizontalPadding
 import io.olvid.messenger.main.MainScreenEmptyList
 import io.olvid.messenger.main.RefreshingIndicator

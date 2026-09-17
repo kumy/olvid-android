@@ -1,0 +1,3 @@
+- Nový způsob, jak snadno pozvat členy skupiny do přímé konverzace pomocí gest.
+- Nový úvodní průvodce, který novým uživatelům představí Olvid.
+- Vylepšený prohlížeč obrázků a videí, možnost zvětšení videí.

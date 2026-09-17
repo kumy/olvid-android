@@ -1,0 +1,3 @@
+- Uusi tapa kutsua ryhmän jäseniä suoraan keskusteluun pyyhkäisemällä.
+- Uusi käyttöönotto, joka selittää Olvidin uusille käyttäjille.
+- Parannettu kuva-/videonäkymä, mahdollisuus zoomata videoissa.

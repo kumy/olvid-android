@@ -985,7 +985,7 @@ public class Message {
         return false;
     }
 
-    public void postSettingsMessage(boolean messageNotInDb, byte[] bytesTargetContactIdentity) {
+    public void postSettingsMessage(boolean messageNotInDb, @Nullable byte[] bytesTargetContactIdentity, @Nullable byte[] bytesTargetContactDeviceUid) {
         if (messageType != TYPE_DISCUSSION_SETTINGS_UPDATE) {
             Logger.e("Called Message.postSettingsMessage for a message of type " + messageType);
             return;
@@ -1033,15 +1033,28 @@ public class Message {
             }
 
             if (hasChannels) {
-                ObvPostMessageOutput postMessageOutput = AppSingleton.getEngine().post(
-                        getDiscussionSettingsUpdatePayloadAsBytes(discussion.discussionType, discussion.bytesOwnedIdentity, discussion.bytesDiscussionIdentifier),
-                        null,
-                        new ObvOutboundAttachment[0],
-                        byteContactIdentities,
-                        discussion.bytesOwnedIdentity,
-                        false,
-                        false
-                );
+                ObvPostMessageOutput postMessageOutput;
+                // if requested, post a targeted message (used after a channel creation)
+                if (bytesTargetContactDeviceUid != null && bytesTargetContactIdentity != null && byteContactIdentities.size() == 1) {
+                    postMessageOutput = AppSingleton.getEngine().postToSpecificDevices(
+                            getDiscussionSettingsUpdatePayloadAsBytes(discussion.discussionType, discussion.bytesOwnedIdentity, discussion.bytesDiscussionIdentifier),
+                            byteContactIdentities,
+                            Collections.singletonList(bytesTargetContactDeviceUid),
+                            discussion.bytesOwnedIdentity,
+                            false,
+                            false
+                    );
+                } else {
+                    postMessageOutput = AppSingleton.getEngine().post(
+                            getDiscussionSettingsUpdatePayloadAsBytes(discussion.discussionType, discussion.bytesOwnedIdentity, discussion.bytesDiscussionIdentifier),
+                            null,
+                            new ObvOutboundAttachment[0],
+                            byteContactIdentities,
+                            discussion.bytesOwnedIdentity,
+                            false,
+                            false
+                    );
+                }
 
                 if (!postMessageOutput.isMessagePostedForAtLeastOneContact()) {
                     // sending failed for all contacts, do nothing

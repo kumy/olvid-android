@@ -150,6 +150,7 @@ class ContactDetailsActivity : LockableActivity() {
                                 }
 
                                 Routes.FULL_GROUPS_LIST -> stringResource(R.string.label_groups_common)
+                                Routes.ADD_TO_GROUPS -> stringResource(R.string.label_add_to_groups)
                                 Routes.TRUST_ORIGINS -> stringResource(R.string.label_trust_origins)
                                 Routes.CONTACT_INTRODUCTION -> stringResource(
                                     R.string.dialog_title_introduce_contact,
@@ -172,9 +173,8 @@ class ContactDetailsActivity : LockableActivity() {
                                                     contactDetailsViewModel.publishedAndTrustedDetails.firstOrNull()?.identityDetails?.formatDisplayName(
                                                         JsonIdentityDetails.FORMAT_STRING_FIRST_LAST_POSITION_COMPANY,
                                                         false
-                                                    )
+                                                    ) ?: ""
                                                 ).getUrlRepresentation(false)
-                                                    ?: return@let
                                                 intent.putExtra(Intent.EXTRA_TEXT, identityUrl)
                                                 startActivity(
                                                     Intent.createChooser(
@@ -274,6 +274,10 @@ class ContactDetailsActivity : LockableActivity() {
                                 onFullGroupsList = {
                                     navController.navigate(Routes.FULL_GROUPS_LIST)
                                 },
+                                onAddToGroups = {
+                                    contactDetailsViewModel.clearGroupsToAdd()
+                                    navController.navigate(Routes.ADD_TO_GROUPS)
+                                },
                                 onTrustOrigins = {
                                     navController.navigate(Routes.TRUST_ORIGINS)
                                 },
@@ -282,6 +286,11 @@ class ContactDetailsActivity : LockableActivity() {
                             fullGroupsList(
                                 contactDetailsViewModel = contactDetailsViewModel,
                             )
+                            addToGroups(
+                                contactDetailsViewModel = contactDetailsViewModel,
+                                onDone = {
+                                    navController.navigateUp()
+                                })
                             trustOrigins(
                                 contactDetailsViewModel = contactDetailsViewModel,
                                 onBack = {
@@ -379,8 +388,8 @@ class ContactDetailsActivity : LockableActivity() {
 
     data class MenuItem(
         val action: Action,
-        @StringRes val label: Int,
-        @DrawableRes val icon: Int? = null,
+        @field:StringRes val label: Int,
+        @field:DrawableRes val icon: Int? = null,
         val onClick: () -> Unit = {}
     ) {
         enum class Action { RECREATE, REFRESH, DEBUG, DELETE }

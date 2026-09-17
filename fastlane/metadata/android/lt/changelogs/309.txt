@@ -1,0 +1,4 @@
+- Nauja ekrano dalijimosi funkcija, leidžianti vienu metu skelbti įvairias diskusijas.
+- Nauja funkcija, leidžianti paprastai kviesti grupių narius į privačią diskusiją.
+- Nauja pirmą kartą naudojantiems vartotojams skirta instrukcija, paaiškinanti, kas yra Olvid.
+- Patobulintas vaizdų / vaizdo įrašų peržiūros įrankis, dabar galima priartinti vaizdo įrašus.

@@ -282,4 +282,20 @@
 		<item quantity="one" state="needs_review" hash="-1393207312">%1$d செய்தி கிளிப்போர்டுக்கு நகலெடுக்கப்பட்டது</item>
 		<item quantity="other" state="needs_review" hash="-604999755">%1$d செய்திகள் கிளிப்போர்டுக்கு நகலெடுக்கப்பட்டது</item>
 	</plurals>
+	<plurals name="label_share_destinations_count" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="423387012">%1$d பெறுநர்</item>
+		<item quantity="other" state="needs_review" hash="-431979656">%1$d பெறுநர்கள்</item>
+	</plurals>
+	<plurals name="label_share_to_recipients" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="-1217959784">%1$d பெறுநருடன் பகிரவும்</item>
+		<item quantity="other" state="needs_review" hash="1864148690">%1$d பெறுநர்களுடன் பகிரவும்</item>
+	</plurals>
+	<plurals name="toast_message_shared_to_recipients" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="-373807760">%1$d பெறுநருடன் பகிரப்பட்டது</item>
+		<item quantity="other" state="needs_review" hash="-1412037000">%1$d பெறுநர்களுடன் பகிரப்பட்டது</item>
+	</plurals>
+	<plurals name="button_label_add_to_groups" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="1622654043">%1$d குழுவில் சேர்</item>
+		<item quantity="other" state="needs_review" hash="-1655824151">%1$d குழுக்களில் சேர்க்கவும்</item>
+	</plurals>
 </resources>

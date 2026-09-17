@@ -1,0 +1,3 @@
+- Nuovo sistema per invitare i membri del gruppo a una chat diretta con un semplice gesto.
+- Nuovo processo di onboarding per presentare Olvid ai nuovi utenti.
+- Migliorata la visualizzazione di immagini e video, con possibilità di zoom sui video.

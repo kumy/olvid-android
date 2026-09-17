@@ -282,4 +282,20 @@
 		<item quantity="one" state="needs_review" hash="-1393207312">%1$d messaggio copiato negli appunti</item>
 		<item quantity="other" state="needs_review" hash="-604999755">%1$d messaggio(i) copiato(i) negli appunti</item>
 	</plurals>
+	<plurals name="label_share_destinations_count" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="423387012">%1$d destinatario</item>
+		<item quantity="other" state="needs_review" hash="-431979656">%1$d destinatari</item>
+	</plurals>
+	<plurals name="label_share_to_recipients" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="-1217959784">Condividi con %1$d destinatario</item>
+		<item quantity="other" state="needs_review" hash="1864148690">Condividi con %1$d destinatari</item>
+	</plurals>
+	<plurals name="toast_message_shared_to_recipients" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="-373807760">Condiviso con %1$d destinatario</item>
+		<item quantity="other" state="needs_review" hash="-1412037000">Condiviso con %1$d destinatari</item>
+	</plurals>
+	<plurals name="button_label_add_to_groups" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="1622654043">Aggiungi al gruppo %1$d</item>
+		<item quantity="other" state="needs_review" hash="-1655824151">Aggiungi ai gruppi %1$d</item>
+	</plurals>
 </resources>

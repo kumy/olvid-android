@@ -150,7 +150,7 @@ fun Context.getLocationState() : Boolean {
 
 fun getBackupState(): Int {
     val info: String? = try {
-        AppSingleton.getEngine().deviceBackupSeed
+        AppSingleton.getEngine().getDeviceBackupSeed()
     } catch (_: Exception) {
         // this will be retried the next time MainActivity is started
         Logger.e("Unable to retrieve device backup seed")
@@ -160,7 +160,7 @@ fun getBackupState(): Int {
         // no device seed
         try {
             // still using legacy backups
-            if (AppSingleton.getEngine().backupKeyInformation != null) {
+            if (AppSingleton.getEngine().getBackupKeyInformation() != null) {
                 return 2
             }
         } catch (_: Exception) {
@@ -179,7 +179,7 @@ fun Context.getBackupStateInfo(): BackupStateInfo? {
     var critical = false
     try {
         val info: String? = try {
-            AppSingleton.getEngine().deviceBackupSeed
+            AppSingleton.getEngine().getDeviceBackupSeed()
         } catch (e: Exception) {
             // this will be retried the next time MainActivity is started
             Logger.x(e)
@@ -192,7 +192,7 @@ fun Context.getBackupStateInfo(): BackupStateInfo? {
             description = R.string.dialog_message_setup_backup_explanation
             try {
                 // still using legacy backups
-                if (AppSingleton.getEngine().backupKeyInformation != null) {
+                if (AppSingleton.getEngine().getBackupKeyInformation() != null) {
                     title = R.string.troubleshooting_backup_legacy_title
                     description = R.string.enable_backups_message_with_legacy
                 }

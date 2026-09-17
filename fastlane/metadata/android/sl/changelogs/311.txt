@@ -1,0 +1,1 @@
+- Odpravljena težava pri analizi slik z uporabo OCR.

@@ -79,6 +79,8 @@ public class Contact {
     public static final String ACTIVE = "active";
     public static final String ONE_TO_ONE = "one_to_one";
     public static final String RECENTLY_ONLINE = "recently_online";
+    public static final String STOP_SUGGESTING = "stop_suggesting";
+    public static final String SUGGESTION_SEEN = "suggestion_seen";
     public static final String TRUST_LEVEL = "trust_level";
     public static final String CAPABILITY_WEBRTC_CONTINUOUS_ICE = "capability_webrtc_continuous_ice";
     public static final String CAPABILITY_GROUPS_V2 = "capability_groups_v2";
@@ -168,6 +170,13 @@ public class Contact {
     @ColumnInfo(name = TRUST_LEVEL)
     public int trustLevel;
 
+    @ColumnInfo(name = STOP_SUGGESTING)
+    public boolean stopSuggesting;
+
+    // local only (not synced, not backed up): the contact was already presented in the suggested contacts sheet, so it no longer counts as "new" for the contacts tab red dot
+    @ColumnInfo(name = SUGGESTION_SEEN)
+    public boolean suggestionSeen;
+
     @ColumnInfo(name = CAPABILITY_WEBRTC_CONTINUOUS_ICE)
     public boolean capabilityWebrtcContinuousIce;
 
@@ -180,7 +189,7 @@ public class Contact {
 
 
     // Constructor required by Room
-    public Contact(@NonNull byte[] bytesContactIdentity, @NonNull byte[] bytesOwnedIdentity, @Nullable String customDisplayName, @NonNull String displayName, @Nullable String firstName, @NonNull byte[] sortDisplayName, @NonNull String fullSearchDisplayName, @Nullable String identityDetails, int newPublishedDetails, int deviceCount, int establishedChannelCount, int preKeyCount, @Nullable String photoUrl, @Nullable String customPhotoUrl, boolean keycloakManaged, @Nullable Integer customNameHue, @Nullable String personalNote, boolean active, boolean oneToOne, boolean recentlyOnline, int trustLevel, boolean capabilityWebrtcContinuousIce, boolean capabilityGroupsV2, boolean capabilityOneToOneContacts) {
+    public Contact(@NonNull byte[] bytesContactIdentity, @NonNull byte[] bytesOwnedIdentity, @Nullable String customDisplayName, @NonNull String displayName, @Nullable String firstName, @NonNull byte[] sortDisplayName, @NonNull String fullSearchDisplayName, @Nullable String identityDetails, int newPublishedDetails, int deviceCount, int establishedChannelCount, int preKeyCount, @Nullable String photoUrl, @Nullable String customPhotoUrl, boolean keycloakManaged, @Nullable Integer customNameHue, @Nullable String personalNote, boolean active, boolean oneToOne, boolean recentlyOnline, int trustLevel, boolean stopSuggesting, boolean suggestionSeen, boolean capabilityWebrtcContinuousIce, boolean capabilityGroupsV2, boolean capabilityOneToOneContacts) {
         this.bytesContactIdentity = bytesContactIdentity;
         this.bytesOwnedIdentity = bytesOwnedIdentity;
         this.customDisplayName = customDisplayName;
@@ -202,6 +211,8 @@ public class Contact {
         this.oneToOne = oneToOne;
         this.recentlyOnline = recentlyOnline;
         this.trustLevel = trustLevel;
+        this.stopSuggesting = stopSuggesting;
+        this.suggestionSeen = suggestionSeen;
         this.capabilityWebrtcContinuousIce = capabilityWebrtcContinuousIce;
         this.capabilityGroupsV2 = capabilityGroupsV2;
         this.capabilityOneToOneContacts = capabilityOneToOneContacts;
@@ -231,6 +242,8 @@ public class Contact {
         this.oneToOne = oneToOne;
         this.recentlyOnline = recentlyOnline;
         this.trustLevel = trustLevel;
+        this.stopSuggesting = false;
+        this.suggestionSeen = false;
         this.capabilityWebrtcContinuousIce = false;
         this.capabilityGroupsV2 = false;
         this.capabilityOneToOneContacts = false;
@@ -402,6 +415,8 @@ public class Contact {
                     -1,
                     false,
                     false,
+                    false,
+                    false,
                     false);
         } catch (Exception ex) {
             Logger.w("Unable to parse jsonIdentityDetails");
@@ -441,6 +456,8 @@ public class Contact {
                         true,
                         true,
                         -1,
+                        false,
+                        false,
                         true,
                         true,
                         true);

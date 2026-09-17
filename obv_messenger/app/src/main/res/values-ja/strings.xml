@@ -26,8 +26,8 @@
 	<string name="button_label_create_group" state="needs_review" hash="1102939673">グループを作成</string>
 	<string name="button_label_discard" state="needs_review" hash="795591204">破棄する</string>
 	<string name="button_label_exchange_digits_with_user" state="needs_review" hash="339599327">%1$sとコードを交換する</string>
-	<string name="button_label_generate_new_id" state="needs_review" hash="92014734">新しいIDを生成する</string>
-	<string name="button_label_generate_my_id" state="needs_review" hash="-1007060207">私のIDを生成</string>
+	<string name="button_label_generate_new_id" state="needs_review" hash="-1130516787">新しいプロフィールを作成する</string>
+	<string name="button_label_generate_my_id" state="needs_review" hash="239641058">私のプロフィールを作成する</string>
 	<string name="button_label_ignore" state="needs_review" hash="-806373746">無視する</string>
 	<string name="button_label_reject" state="needs_review" hash="-2094664161">拒否する</string>
 	<string name="button_label_introduce" state="needs_review" hash="193852909">紹介する</string>
@@ -80,6 +80,12 @@
 	<string name="dialog_title_rename_group" state="needs_review" hash="1461324427">グループ名の変更</string>
 	<string name="dialog_title_restart_channel_establishment" state="needs_review" hash="-645769680">チャンネル確立を再開しますか？</string>
 	<string name="dialog_title_share_with" state="needs_review" hash="854107768">～と共有…</string>
+	<string name="dialog_title_share_recipients" state="needs_review" hash="1157053138">受信者を選択</string>
+	<string name="share_label_from" state="needs_review" hash="2049052075">送信者：</string>
+	<string name="share_label_to" state="needs_review" hash="-1785690373">宛先：</string>
+	<string name="share_label_choose_recipients" state="needs_review" hash="1157053138">受信者を選択</string>
+	<string name="hint_share_message" state="needs_review" hash="-763169957">メッセージを追加…</string>
+	<string name="content_description_delete_attachment" state="needs_review" hash="-220348329">添付ファイルを削除</string>
 	<string name="dialog_title_shortcut_to" state="needs_review" hash="-1193591200">…へのショートカットを作成</string>
 	<string name="explanation_choose_display_name" state="needs_review" hash="1162066686">連絡先に表示される名前を入力してください。これらの詳細はOlvidのサーバーに送信されることはありません。</string>
 	<string name="explanation_empty_contact_list" state="needs_review" hash="1240778508">今のところ連絡先はありません</string>
@@ -104,7 +110,7 @@
 	<string name="explanation_no_message_found" state="needs_review" hash="-1329622990">メッセージが見つかりませんでした</string>
 	<string name="explanation_no_attachment_found" state="needs_review" hash="156593369">添付ファイルが見つかりません</string>
 	<string name="explanation_no_link_found" state="needs_review" hash="-1419950450">リンクが見つかりませんでした</string>
-	<string name="hint_company" state="needs_review" hash="379200324">会社 (任意)</string>
+	<string name="hint_company" state="needs_review" hash="988571519">会社</string>
 	<string name="hint_compose_your_message" state="needs_review" hash="-25761578">メッセージを入力</string>
 	<string name="hint_compose_your_message_ephemeral" state="needs_review" hash="-1527208333">一時的なメッセージ</string>
 	<string name="label_edit_your_message" state="needs_review" hash="1091877412">メッセージを編集する</string>
@@ -133,7 +139,7 @@
 	<string name="hint_last_name" state="needs_review" hash="1701170359">姓</string>
 	<string name="hint_new_name" state="needs_review" hash="709842168">新しい名前</string>
 	<string name="hint_notification_reply" state="needs_review" hash="1095144032">返信</string>
-	<string name="hint_position" state="needs_review" hash="-55145181">職位（任意）</string>
+	<string name="hint_position" state="needs_review" hash="1338817744">職位</string>
 	<string name="invitation_label_their_code" state="needs_review" hash="1402501614">彼らのコード</string>
 	<string name="invitation_label_your_code" state="needs_review" hash="1944546233">あなたのコード</string>
 	<string name="invitation_status_accept_invite" state="needs_review" hash="2100924901">招待を受け取りました</string>
@@ -170,6 +176,11 @@
 	<string name="label_group_members" state="needs_review" hash="1460220752">グループメンバー</string>
 	<string name="label_other_group_members" state="needs_review" hash="-2121490032">他のグループメンバー</string>
 	<string name="label_groups_common" state="needs_review" hash="1252823567">共通のグループ</string>
+	<string name="label_create_group_with_contact" state="needs_review" hash="1950649899">%1$sを含めてグループを作成</string>
+	<string name="label_add_contact_to_a_group" state="needs_review" hash="-682192937">%1$sをグループに追加する</string>
+	<string name="label_add_to_groups" state="needs_review" hash="-654216617">グループに追加</string>
+	<string name="explanation_no_admin_group_to_add_contact" state="needs_review" hash="402908162">あなたは、%1$sを追加できるグループの管理者ではありません。</string>
+	<string name="toast_message_adding_contact_to_groups" state="needs_review" hash="1201697547">選択したグループに%1$sを追加しています…</string>
 	<string name="label_invitation_declined" state="needs_review" hash="2038173833">招待を拒否しました</string>
 	<string name="label_new_group_card" state="needs_review" hash="1006740909">グループの詳細が更新されました</string>
 	<string name="label_not_part_of_a_group" state="needs_review" hash="1667979596">まだどのグループにも参加していません</string>
@@ -183,6 +194,7 @@
 	<string name="menu_action_create_shortcut" state="needs_review" hash="-1949455873">ショートカットを作成</string>
 	<string name="menu_action_delete" state="needs_review" hash="-232100842">削除</string>
 	<string name="menu_action_delete_discussion" state="needs_review" hash="2059656471">会話を削除</string>
+	<string name="menu_action_export_discussion" state="needs_review" hash="1736692296">ディスカッションをエクスポート</string>
 	<string name="label_swipe_details" state="needs_review" hash="171468732">詳細</string>
 	<string name="menu_action_disband_group" state="needs_review" hash="-1767089289">グループを解散する</string>
 	<string name="menu_action_edit_group_details" state="needs_review" hash="310205135">グループ詳細を編集</string>
@@ -482,7 +494,14 @@
 	<string name="dialog_title_backup_choices" state="needs_review" hash="281222223">バックアップ方法を選択してください</string>
 	<string name="menu_action_choose_picture" state="needs_review" hash="-1655172909">画像を選択</string>
 	<string name="menu_action_take_photo" state="needs_review" hash="-1123080444">写真を撮る</string>
+	<string name="menu_action_choose_image_from_olvid" state="needs_review" hash="1585248356">受信した画像を選択してください</string>
 	<string name="menu_action_remove_image" state="needs_review" hash="1094977672">写真を削除</string>
+	<string name="menu_action_use_image_as" state="needs_review" hash="587310096">この画像を次のように使用します…</string>
+	<string name="label_use_photo_for_my_profile" state="needs_review" hash="-1005809580">私のプロフィール写真</string>
+	<string name="label_use_photo_for_target" state="needs_review" hash="283541521">%sの写真</string>
+	<string name="label_use_photo_for_discussion_background" state="needs_review" hash="1925733151">%sの背景</string>
+	<string name="toast_message_photo_set" state="needs_review" hash="-1641885203">写真が更新されました</string>
+	<string name="toast_message_background_set" state="needs_review" hash="1642873459">背景が更新されました</string>
 	<string name="dialog_title_create_empty_group" state="needs_review" hash="-663434464">空のグループを作成しますか？</string>
 	<string name="dialog_message_create_empty_group" state="needs_review" hash="-297923005">グループに追加する連絡先を選択していません。空のグループを作成しますか？</string>
 	<string name="pref_dark_mode_title" state="needs_review" hash="816474245">ダークモード</string>
@@ -862,7 +881,7 @@
 	<string name="button_label_check_options" state="needs_review" hash="-759177128">オプションを確認</string>
 	<string name="hint_olvid_server" state="needs_review" hash="1097391633">Olvidサーバー</string>
 	<string name="hint_license_activation_code" state="needs_review" hash="102193320">ライセンス認証コード</string>
-	<string name="activity_title_identity_creation_options" state="needs_review" hash="1180456032">ID作成オプション</string>
+	<string name="activity_title_identity_creation_options" state="needs_review" hash="-774054913">プロファイル作成オプション</string>
 	<string name="activity_title_scan_configuration" state="needs_review" hash="-386259993">設定のスキャン</string>
 	<string name="menu_action_import_activation_from_clipboard" state="needs_review" hash="-70842935">クリップボードからリンクをインポート</string>
 	<string name="troubleshooting_update_valid_title" state="needs_review" hash="741828768">Olvidは最新の状態です</string>
@@ -871,7 +890,6 @@
 	<string name="dialog_message_update_available" state="needs_review" hash="416187645">Olvidの新しいバージョンが利用可能です。\n\n最新の機能を利用するには、アップデートしてください。</string>
 	<string name="dialog_title_call_initiation_not_supported" state="needs_review" hash="-2088021831">通話の開始がサポートされていません</string>
 	<string name="dialog_message_call_initiation_not_supported" state="needs_review" hash="1760333819">Olvidサーバーがセキュアな通話の開始をサポートしていないようです。\n\n詳細については、管理者にお問い合わせください。</string>
-	<string name="label_identity_creation_options" state="needs_review" hash="1180456032">ID作成オプション</string>
 	<string name="text_option_server" state="needs_review" hash="-1130676431">サーバー：%1$s</string>
 	<string name="dialog_title_non_default_server" state="needs_review" hash="2119192219">カスタムサーバーの使用</string>
 	<string name="dialog_message_non_default_server" state="needs_review" hash="459308900">次のサーバーでプロフィールを作成しようとしています:\n\n%1$s\n\nこれはデフォルトのOlvidサーバーではありません。このサーバーを信頼できる場合にのみ続行してください。</string>
@@ -900,7 +918,7 @@
 	<string name="toast_message_unable_to_keycloak_revoke" state="needs_review" hash="-1368037130">以前のOlvid IDの置き換えに失敗しました。もう一度お試しください。</string>
 	<string name="toast_message_keycloak_revoke_successful" state="needs_review" hash="-1216369809">以前のOlvid IDが正常に置き換えられました</string>
 	<string name="dialog_title_keycloak_authentication_required_user_id_changed" state="needs_review" hash="-896407029">ユーザー変更を検出しました</string>
-	<string name="dialog_message_keycloak_authentication_required_user_id_changed" state="needs_review" hash="876252686">あなたのプロフィールは現在、組織によって管理されています。通常とは異なるユーザーとして認証されたようです。これはサポートされていません。\n\n管理者に連絡するか、正しいユーザーとして再認証してください。</string>
+	<string name="dialog_message_keycloak_authentication_required_user_id_changed" state="needs_review" hash="2080839829">あなたのプロフィールは現在、組織によって管理されています。通常とは異なるユーザーとして認証されたようです。この操作はサポートされていません。\n\n管理者にお問い合わせいただくか、正しいユーザーとして再認証してください。</string>
 	<string name="dialog_title_add_keycloak_user" state="needs_review" hash="-1050193239">連絡先を追加</string>
 	<string name="dialog_message_add_keycloak_user" state="needs_review" hash="-1755937035">%1$sを連絡先に追加することを選択しました。続行しますか？</string>
 	<string name="explanation_keycloak_update_new" state="needs_review" hash="1136733528">Olvidで会社のIDプロバイダーを設定しようとしています。設定が完了すると、このサーバーで認証できるようになり、Olvidを使用すると、他の従業員を連絡先にシームレスに追加できます。\n詳細については、管理者にお問い合わせください。</string>
@@ -1031,6 +1049,8 @@
 	<string name="label_storage_discussions" state="needs_review" hash="491497248">ディスカッション</string>
 	<string name="pref_use_internal_image_viewer_title" state="needs_review" hash="1319400578">内蔵画像ビューアーを使用する</string>
 	<string name="pref_use_internal_image_viewer_summary" state="needs_review" hash="1248137666">有効にすると、画像添付をクリックすると内部ビューアーで開きます。そうでない場合、デバイスのデフォルトの画像アプリが使用されます。</string>
+	<string name="pref_image_text_recognition_title" state="needs_review" hash="1877261687">画像内のテキストを認識してインデックス化する</string>
+	<string name="pref_image_text_recognition_summary" state="needs_review" hash="1217699919">画像添付ファイルに含まれるテキストを検索してコピーできます。この機能は、低スペックのデバイスではリソースを大量に消費する可能性があります。必要ない場合は、機能を無効にしてください。</string>
 	<string name="label_unable_to_display_image" state="needs_review" hash="-1495534207">画像の表示に失敗しました</string>
 	<string name="dialog_title_backup_requires_sign_in" state="needs_review" hash="-720389674">クラウドプロバイダーへのサインインが必要です</string>
 	<string name="dialog_message_backup_requires_sign_in" state="needs_review" hash="119557495">Olvidをクラウドプロバイダーへの自動バックアップ用に設定しましたが、セッションが期限切れになりました。このプロバイダーに再度サインインする必要があります。\n\n自動バックアップをもう使用したくない場合は、アプリの設定で無効にすることができます。デバイスを紛失または破損した場合、自動バックアップは連絡先を失うのを防ぐ唯一の方法であることを覚えておいてください。</string>
@@ -1149,7 +1169,7 @@
 	<string name="pref_hidden_profile_close_policy_dialog_entry_screen_lock" state="needs_review" hash="-1520400811">Olvidロック画面が有効になるとき</string>
 	<string name="pref_hidden_profile_close_policy_dialog_entry_background" state="needs_review" hash="-2099539114">Olvidがバックグラウンドに入ると…</string>
 	<string name="activity_title_enter_backup_key" state="needs_review" hash="1035967309">バックアップキーを入力</string>
-	<string name="activity_title_identity_creation" state="needs_review" hash="-1361520151">ID作成</string>
+	<string name="activity_title_identity_creation" state="needs_review" hash="2027618284">プロフィール作成</string>
 	<string name="menu_action_manual_configuration" state="needs_review" hash="-1495974502">手動による高度な設定</string>
 	<string name="toast_message_invalid_configuration_link" state="needs_review" hash="1387412522">無効な設定リンク</string>
 	<string name="toast_message_invalid_link" state="needs_review" hash="1265454437">無効なリンク</string>
@@ -1171,6 +1191,7 @@
 	<string name="dialog_title_chose_profile_web_client" state="needs_review" hash="1860298414">Olvidウェブクライアントに接続するプロファイルを選択してください</string>
 	<string name="dialog_title_chose_profile_invitation" state="needs_review" hash="-2063034787">この連絡先を招待するプロファイルを選択してください</string>
 	<string name="toast_message_create_new_profile_then_reopen_this_link" state="needs_review" hash="1770827346">最初に新しいプロフィールを作成してから、このリンクをもう一度開いてください。</string>
+	<string name="toast_message_invitation_link_deferred_to_end_of_onboarding" state="needs_review" hash="-189914806">プロフィールが作成されると、招待状は自動的に開きます</string>
 	<string name="button_label_switch_profile" state="needs_review" hash="-2007633024">プロフィールを切り替える</string>
 	<string name="text_no_other_profile_to_switch_to" state="needs_review" hash="-112306213">他のプロフィールはありません</string>
 	<string name="button_label_configure_lock_screen" state="needs_review" hash="870348426">ロック画面を設定</string>
@@ -1442,8 +1463,7 @@
 	<string name="button_label_send" state="needs_review" hash="-185402948">送信</string>
 	<string name="button_label_start_sharing" state="needs_review" hash="682254052">共有を開始</string>
 	<string name="location_sharing_duration_one_hour_short_string" state="needs_review" hash="1004063951">1時間</string>
-	<string name="location_sharing_duration_one_hour_full_string" state="needs_review" hash="-58118972">
-		<b>1時間</b>ロケーションを共有</string>
+	<string name="location_sharing_duration_one_hour_full_string" state="needs_review" hash="-58118972"><b>1時間</b>ロケーションを共有</string>
 	<string name="location_sharing_duration_three_hours_short_string" state="needs_review" hash="228095183">3時間</string>
 	<string name="location_sharing_duration_three_hours_full_string" state="needs_review" hash="754857804">位置情報を<b>3時間</b>共有する</string>
 	<string name="location_sharing_duration_endless_short_string" state="needs_review" hash="55208442">永遠に</string>
@@ -1451,12 +1471,9 @@
 	<string name="location_sharing_quality_precise_short_string" state="needs_review" hash="351442529">正確</string>
 	<string name="location_sharing_quality_balanced_short_string" state="needs_review" hash="-1925315592">バランスが取れた</string>
 	<string name="location_sharing_quality_power_save_short_string" state="needs_review" hash="-14275273">省電力モード</string>
-	<string name="location_sharing_quality_precise_full_string" state="needs_review" hash="-1255374893">
-		<b>正確な</b>位置情報共有モード</string>
-	<string name="location_sharing_quality_balanced_full_string" state="needs_review" hash="-421322514">
-		<b>バランス</b>の場所共有モード</string>
-	<string name="location_sharing_quality_power_save_full_string" state="needs_review" hash="792896333">
-		<b>省電力</b>位置情報共有モード</string>
+	<string name="location_sharing_quality_precise_full_string" state="needs_review" hash="-1255374893"><b>正確な</b>位置情報共有モード</string>
+	<string name="location_sharing_quality_balanced_full_string" state="needs_review" hash="-421322514"><b>バランス</b>の場所共有モード</string>
+	<string name="location_sharing_quality_power_save_full_string" state="needs_review" hash="792896333"><b>省電力</b>位置情報共有モード</string>
 	<string name="label_sharing_location_until" state="needs_review" hash="187977459">位置情報の共有は%1$sまで</string>
 	<string name="label_location_sharing_ended" state="needs_review" hash="1028490137">位置情報の共有を終了しました</string>
 	<string name="label_gps_coordinates" state="needs_review" hash="-1537356414">GPS座標</string>
@@ -2039,11 +2056,14 @@
 	<string name="button_label_configure_backups" state="needs_review" hash="-990646398">バックアップを有効にする</string>
 	<string name="tip_write_backup_key_title" state="needs_review" hash="-1652757003">バックアップキーを書き留めるのを忘れないでください 😇</string>
 	<string name="tip_write_backup_key_message" state="needs_review" hash="931018791">このデバイスへのアクセスを失った場合に、プロファイルを復元するには、バックアップキーが不可欠です。</string>
+	<string name="tip_legacy_backup_end_of_life_title" state="needs_review" hash="810495149">現在使用している古いバックアップの有効期限が切れています</string>
+	<string name="tip_legacy_backup_end_of_life_message" state="needs_review" hash="-314257210">次のOlvidアップデートでは、従来のバックアップのサポートが終了します。アカウントを安全に保つために、今すぐ新しいバックアップ機能に切り替えてください。</string>
 	<string name="tip_troubleshooting_title" state="needs_review" hash="-393739108">Olvid体験を向上させましょう🚀</string>
 	<string name="tip_troubleshooting_message" state="needs_review" hash="-935493349">一部のパラメータがデバイスで正しく設定されておらず、Olvidでの体験に影響を与える可能性があります。</string>
 	<string name="button_label_this_way" state="needs_review" hash="747183939">こちら</string>
 	<string name="toast_code_copied" state="needs_review" hash="-1522785848">コードがコピーされました</string>
 	<string name="explanation_choose_members" state="needs_review" hash="-1385158706">このグループに追加する相手を選択してください。</string>
+	<string name="explanation_choose_share_recipients" state="needs_review" hash="-1406265940">共有する相手を選択してください。</string>
 	<string name="explanation_choose_contact_introduction" state="needs_review" hash="1113777517">%1$sを誰に紹介するかお選びください。</string>
 	<string name="label_group_administration" state="needs_review" hash="871355986">グループ管理</string>
 	<string name="dialog_title_call_blocked" state="needs_review" hash="1594606530">通話拒否</string>
@@ -2169,7 +2189,7 @@
 	<string name="store_link_olvid_store" state="needs_review" hash="-1825630369">Olvidストアへアクセス</string>
 	<string name="toast_message_reminder_set" state="needs_review" hash="-961055414">リマインダー設定</string>
 	<string name="dialog_title_keycloak_authentication_impossible" state="needs_review" hash="325273853">認証できません</string>
-	<string name="dialog_message_keycloak_authentication_impossible" state="needs_review" hash="390830785">お客様のプロファイルは現在、お客様の組織によって管理されており、再認証が必要です。ただし、利用可能な認証方法がないようです。\n\n詳細については、管理者にお問い合わせください。</string>
+	<string name="dialog_message_keycloak_authentication_impossible" state="needs_review" hash="-2031322232">現在、お客様のプロファイルは組織によって管理されており、再認証が必要です。ただし、利用可能な認証方法が見つかりません。\n\n詳細については、管理者にお問い合わせください。</string>
 	<string name="onboarding_transfer_keycloak_error_message_authentication_impossible" state="needs_review" hash="-1891385979">利用可能な認証方法が見つかりません。</string>
 	<string name="pref_use_alt_turn_servers_title" state="needs_review" hash="-1956132776">別のTURNサーバーを使用する</string>
 	<string name="pref_use_alt_turn_servers_summary" state="needs_review" hash="357427162">このオプションを有効にすると、IPアドレスが変更されるTURNサーバーを使用できます。不明な場合は、このオプションをオフのままにしてください。😁</string>
@@ -2280,5 +2300,45 @@
 	<string name="label_error_loading_openstreetmap_style_file" state="needs_review" hash="-2596045">OpenStreetMapのスタイルファイルを読み込む際にエラーが発生しました</string>
 	<string name="dialog_title_subscriptions_not_available" state="needs_review" hash="336174241">アプリ内サブスクリプションは利用できません</string>
 	<string name="dialog_message_subscriptions_not_available" state="needs_review" hash="2093768678">インストールしたOlvidのバージョンには、Googleの課金ライブラリが含まれておらず、アプリ内購入をサポートしていません。\n\n詳細については、**feedback@olvid.io**までお問い合わせください。</string>
+	<string name="ftux_next" state="needs_review" hash="1158639077">次へ</string>
+	<string name="ftux_start" state="needs_review" hash="646298532">始めましょう</string>
+	<string name="ftux_page_indicator" state="needs_review" hash="1987610035">%2$dページの%1$dページ</string>
+	<string name="ftux_page_welcome_title" state="needs_review" hash="1173832630"><b>Olvid</b>へようこそ。</string>
+	<string name="ftux_page_welcome_body" state="needs_review" hash="-2085198139">誰でも利用できるプライベートメッセージング。</string>
+	<string name="ftux_page_private_title" state="needs_review" hash="1815927819"><b>プライベートな</b>メッセージ</string>
+	<string name="ftux_page_private_body" state="needs_review" hash="-590644231">%1$sでは、誰とチャットするかを自分で選びます。スパム、おすすめ、不要な通知、見知らぬ人からのメッセージはありません。\n\nあなたの許可なしに誰かがあなたに連絡することはできません。\n\n%1$sは、あなたのデジタルな世界です。</string>
+	<string name="ftux_page_everyone_title" state="needs_review" hash="1506796386"><b>すべての人</b>向けのメッセージング</string>
+	<string name="ftux_page_everyone_body" state="needs_review" hash="-586100377">あなたが誰であろうと、%1$sは最高のセキュリティを提供します。メールアドレスや電話番号は必要ありません。\n\n%1$sはあなたに関する情報を一切要求しません。それはすべてを変えます。</string>
+	<string name="ftux_page_protect_title" state="needs_review" hash="1969120191">Olvidはあなたを<b>守ります</b>。Olvidはあなたにとって大切な人を守ります。</string>
+	<string name="ftux_page_protect_body" state="needs_review" hash="881847930">これは単なる約束ではありません。%1$sは暗号化された証拠を提供します。\n\n連絡先をリモートで追加する場合でも、直接会って追加する場合でも、すべての通信は常に認証され、エンドツーエンドで暗号化されます。</string>
+	<string name="ftux_page_pricing_title" state="needs_review" hash="-1948277889"><b>透明性</b>のあるビジネスモデル</string>
+	<string name="ftux_page_pricing_body" state="needs_review" hash="-1064278870">%1$sは、あなたの個人データを使って資金調達を行いません。なぜなら、個人データを一切要求しないからです。\n\n無料であるものは無料です。有料であるものは、それに見合った価格が設定されています。</string>
+	<string name="ftux_page_media_title" state="needs_review" hash="558110518">Olvidは<b>すべて</b>を持っている</string>
+	<string name="ftux_page_media_body" state="needs_review" hash="1807247240">添付ファイルのサイズ制限なし、高解像度の写真共有、投票、オーディオおよびビデオ通話、マルチデバイス対応、位置情報共有など、必要な機能がすべて揃っています。</string>
 	<string name="menu_action_cancel_upload" state="needs_review" hash="1672681586">アップロードをキャンセル</string>
+	<string name="label_suggested_contacts" state="needs_review" hash="816810770">おすすめの連絡先</string>
+	<string name="label_suggested_contacts_subtitle" state="needs_review" hash="131522501">簡単にユーザーを招待する</string>
+	<string name="label_suggested_contact_already_a_contact" state="needs_review" hash="-1177848651">すでに連絡先です</string>
+	<string name="label_suggested_contact_invitation_received" state="needs_review" hash="2100924901">招待を受け取りました</string>
+	<string name="label_suggested_contact_invitation_sent" state="needs_review" hash="310679275">招待状を送信しました</string>
+	<string name="label_suggested_contacts_all_done" state="needs_review" hash="-127525104">最新バージョンです！\n他に提案する連絡先はありません。</string>
+	<string name="button_label_suggested_contact_later" state="needs_review" hash="-1933816039">後で</string>
+	<string name="button_label_close" state="needs_review" hash="1454843231">閉じる</string>
+	<string name="button_label_skip" state="needs_review" hash="2056258301">スキップ</string>
+	<string name="button_label_understood" state="needs_review" hash="829780875">了解しました</string>
+	<string name="label_suggested_contacts_onboarding_title_1" state="needs_review" hash="491881039">スワイプで招待</string>
+	<string name="label_suggested_contacts_onboarding_message_1" state="needs_review" hash="331320806">ユーザーを招待するにはカードを右にスワイプし、次のユーザーに進むには左にスワイプします。</string>
+	<string name="label_suggested_contacts_onboarding_title_2" state="needs_review" hash="-788798380">これらの連絡先はどこから来たのですか？</string>
+	<string name="label_suggested_contacts_onboarding_message_2" state="needs_review" hash="1536681696">これらは、まだ連絡先に登録されていないOlvidのユーザーです。</string>
+	<string name="label_suggested_contacts_onboarding_caption" state="needs_review" hash="-1299179969">あなたと相手は、共通のグループが少なくとも1つあるため、間接的に繋がっています。</string>
+	<string name="label_suggested_contacts_you" state="needs_review" hash="672009142">あなた</string>
+	<string name="label_suggested_contacts_common_group" state="needs_review" hash="-1739793963">共通グループ</string>
+	<string name="explanation_suggested_contacts_others_tab" state="needs_review" hash="852096678">以下のユーザーはあなたの連絡先に含まれていないため、まだプライベートな会話をすることはできません。しかし、簡単に招待することができます！🚀</string>
+	<string name="label_suggested_contacts_invite_in_one_gesture" state="needs_review" hash="438220313">これらのユーザーをスワイプで招待する</string>
+	<string name="menu_action_suggested_contacts_see_full_list" state="needs_review" hash="603082500">完全なリストを表示</string>
+	<string name="menu_action_suggested_contacts_replay_onboarding" state="needs_review" hash="-1552704243">チュートリアルをもう一度見る</string>
+	<string name="button_label_uninvite" state="needs_review" hash="771825501">招待を取り消す</string>
+	<string name="button_label_accept_invitation" state="needs_review" hash="-1778405034">招待を承諾する</string>
+	<string name="label_suggested_contacts_already_swiped" state="needs_review" hash="427042318">すでにスワイプ済み</string>
+	<string name="label_suggested_contacts_not_swiped_yet" state="needs_review" hash="310924358">まだスワイプされていません</string>
 </resources>

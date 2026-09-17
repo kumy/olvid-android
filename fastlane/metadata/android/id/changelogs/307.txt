@@ -1,0 +1,3 @@
+- Cara baru untuk mengundang anggota grup ke diskusi langsung dengan gerakan sederhana.
+- Pengalaman orientasi baru untuk menjelaskan Olvid kepada pengguna baru.
+- Peningkatan penampil gambar/video, dengan opsi untuk memperbesar video.

@@ -282,4 +282,20 @@
 		<item quantity="one" state="needs_review" hash="-1393207312">%1$d az üzenet a vágólapra másolva</item>
 		<item quantity="other" state="needs_review" hash="-604999755">%1$d üzenet a vágylapra másolva</item>
 	</plurals>
+	<plurals name="label_share_destinations_count" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="423387012">%1$d címzett</item>
+		<item quantity="other" state="needs_review" hash="-431979656">%1$d címzett</item>
+	</plurals>
+	<plurals name="label_share_to_recipients" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="-1217959784">Oszd meg a %1$d címmel</item>
+		<item quantity="other" state="needs_review" hash="1864148690">Oszd meg %1$d címmel</item>
+	</plurals>
+	<plurals name="toast_message_shared_to_recipients" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="-373807760">%1$d címmel megosztva</item>
+		<item quantity="other" state="needs_review" hash="-1412037000">%1$d címmel rendelkező felhasználókkal megosztva</item>
+	</plurals>
+	<plurals name="button_label_add_to_groups" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="1622654043">Hozzáadás a %1$d csoporthoz</item>
+		<item quantity="other" state="needs_review" hash="-1655824151">Hozzáadás a(z) %1$d csoportokhoz</item>
+	</plurals>
 </resources>

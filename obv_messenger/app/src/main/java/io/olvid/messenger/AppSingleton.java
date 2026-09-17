@@ -59,6 +59,8 @@ import javax.net.ssl.SSLContext;
 import io.olvid.engine.Logger;
 import io.olvid.engine.datatypes.NoExceptionSingleThreadExecutor;
 import io.olvid.engine.engine.Engine;
+import io.olvid.engine.engine.EngineConfiguration;
+import io.olvid.engine.storage.PlainFileIo;
 import io.olvid.engine.engine.types.EngineAPI;
 import io.olvid.engine.engine.types.EngineNotificationListener;
 import io.olvid.engine.engine.types.EngineNotifications;
@@ -259,39 +261,41 @@ public class AppSingleton {
         // initialize Engine
         try {
             System.loadLibrary("crypto_3_0");
-            this.engine = new Engine(
+            EngineConfiguration engineConfiguration = new EngineConfiguration(
                     App.getContext().getNoBackupFilesDir(),
-                    new AppBackupAndSyncDelegate(),
-                    DatabaseKey.get(DatabaseKey.ENGINE_DATABASE_SECRET),
-                    this.sslSocketFactory,
-                    MDMConfigurationSingleton.getUserAgentOverride(),
-                    new Logger.LogOutputter() {
-                        @Override
-                        public void d(String tag, String message) {
-                            Log.d(tag, message);
-                        }
+                    new PlainFileIo());
+            engineConfiguration.appBackupAndSyncDelegate = new AppBackupAndSyncDelegate();
+            engineConfiguration.dbKey = DatabaseKey.get(DatabaseKey.ENGINE_DATABASE_SECRET);
+            engineConfiguration.sslSocketFactory = this.sslSocketFactory;
+            engineConfiguration.userAgentOverride = MDMConfigurationSingleton.getUserAgentOverride();
+            engineConfiguration.logOutputter = new Logger.LogOutputter() {
+                @Override
+                public void d(String tag, String message) {
+                    Log.d(tag, message);
+                }
 
-                        @Override
-                        public void i(String tag, String message) {
-                            Log.i(tag, message);
-                        }
+                @Override
+                public void i(String tag, String message) {
+                    Log.i(tag, message);
+                }
 
-                        @Override
-                        public void w(String tag, String message) {
-                            Log.w(tag, message);
-                        }
+                @Override
+                public void w(String tag, String message) {
+                    Log.w(tag, message);
+                }
 
-                        @Override
-                        public void e(String tag, String message) {
-                            Log.e(tag, message);
-                        }
+                @Override
+                public void e(String tag, String message) {
+                    Log.e(tag, message);
+                }
 
-                        @Override
-                        public void x(String tag, Throwable throwable) {
-                            Log.w(tag, "", throwable);
-                        }
-                    },
-                    SettingsActivity.useDebugLogLevel() ? Logger.DEBUG : BuildConfig.LOG_LEVEL);
+                @Override
+                public void x(String tag, Throwable throwable) {
+                    Log.w(tag, "", throwable);
+                }
+            };
+            engineConfiguration.logLevel = SettingsActivity.useDebugLogLevel() ? Logger.DEBUG : BuildConfig.LOG_LEVEL;
+            this.engine = new Engine(engineConfiguration);
         } catch (Exception e) {
             Log.e("Engine", "Error starting obv engine!");
             e.printStackTrace();

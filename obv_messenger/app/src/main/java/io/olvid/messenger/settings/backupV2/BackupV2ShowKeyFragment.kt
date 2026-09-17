@@ -76,7 +76,7 @@ import io.olvid.messenger.settings.backupV2.composables.ReadOnlyBackupKeyTextFie
 
 class BackupV2ShowKeyFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        val backupSeed : String? = AppSingleton.getEngine().deviceBackupSeed
+        val backupSeed : String? = AppSingleton.getEngine().getDeviceBackupSeed()
 
         if (backupSeed == null) {
             activity?.supportFragmentManager?.popBackStack()

@@ -1,0 +1,4 @@
+- Aynı anda birden fazla sohbete gönderi yapmanızı sağlayan yeni ekran paylaşım özelliği.
+- Grup üyelerini özel bir sohbete kolayca davet etmek için yeni kaydırma ile davet deneyimi.
+- Olvid'i ilk kez kullananlara açıklamak için yeni başlangıç ekranı.
+- Geliştirilmiş resim/video görüntüleyici, videolarda yakınlaştırma özelliği.

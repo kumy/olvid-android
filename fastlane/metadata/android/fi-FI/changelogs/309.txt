@@ -1,0 +1,4 @@
+- Uusi jaettu näyttö, jonka avulla voit julkaista useissa keskusteluissa kerralla.
+- Uusi pyyhkäisyliike, jolla voit helposti kutsua ryhmän jäseniä yksityiseen keskusteluun.
+- Uusi käyttöönotto, joka selittää Olvidin uusille käyttäjille.
+- Parannettu kuva-/videonäkymä, mahdollisuus zoomata videoihin.

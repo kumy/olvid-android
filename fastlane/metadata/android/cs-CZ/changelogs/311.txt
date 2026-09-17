@@ -1,0 +1,1 @@
+- Opraven problém s analýzou obrázků pomocí OCR.

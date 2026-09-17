@@ -36,6 +36,13 @@
         android:icon="@drawable/ic_pref_pdf"
         android:order="24" />
     <SwitchPreference
+        android:defaultValue="true"
+        android:key="pref_key_image_text_recognition"
+        android:title="@string/pref_image_text_recognition_title"
+        android:summary="@string/pref_image_text_recognition_summary"
+        android:icon="@drawable/ic_pref_uppercase"
+        android:order="25" />
+    <SwitchPreference
         android:key="pref_key_sending_foreground_service"
         android:defaultValue="true"
         android:title="@string/pref_sending_foreground_service"

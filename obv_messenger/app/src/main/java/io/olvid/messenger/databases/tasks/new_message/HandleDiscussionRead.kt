@@ -40,7 +40,7 @@ fun handleDiscussionRead(
 
     if (putMessageOnHoldIfDiscussionIsMissing(
             db,
-            obvMessage.identifier,
+            obvMessage.identifier!!,
             obvMessage.serverTimestamp,
             messageSender,
             jsonDiscussionRead.oneToOneIdentifier,

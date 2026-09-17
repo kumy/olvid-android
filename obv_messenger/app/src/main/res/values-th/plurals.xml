@@ -282,4 +282,20 @@
 		<item quantity="one" state="needs_review" hash="-1393207312">%1$d ข้อความถูกคัดลอกไปยังคลิปบอร์ดแล้ว</item>
 		<item quantity="other" state="needs_review" hash="-604999755">%1$d ข้อความถูกคัดลอกไปยังคลิปบอร์ดแล้ว</item>
 	</plurals>
+	<plurals name="label_share_destinations_count" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="423387012">%1$d ผู้รับ</item>
+		<item quantity="other" state="needs_review" hash="-431979656">%1$d ผู้รับ</item>
+	</plurals>
+	<plurals name="label_share_to_recipients" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="-1217959784">แชร์กับผู้รับ %1$d</item>
+		<item quantity="other" state="needs_review" hash="1864148690">แชร์กับผู้รับ %1$d คน</item>
+	</plurals>
+	<plurals name="toast_message_shared_to_recipients" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="-373807760">แชร์กับผู้รับ %1$d แล้ว</item>
+		<item quantity="other" state="needs_review" hash="-1412037000">แชร์กับผู้รับ %1$d ราย</item>
+	</plurals>
+	<plurals name="button_label_add_to_groups" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="1622654043">เพิ่มไปยังกลุ่ม %1$d</item>
+		<item quantity="other" state="needs_review" hash="-1655824151">เพิ่มไปยังกลุ่ม %1$d กลุ่ม</item>
+	</plurals>
 </resources>

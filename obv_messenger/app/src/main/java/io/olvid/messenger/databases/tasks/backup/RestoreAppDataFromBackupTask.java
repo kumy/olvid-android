@@ -179,7 +179,7 @@ public class RestoreAppDataFromBackupTask implements Callable<Boolean> {
                                                                 );
                                                                 if (message != null) {
                                                                     message.id = db.messageDao().insert(message);
-                                                                    message.postSettingsMessage(false, null);
+                                                                    message.postSettingsMessage(false, null, null);
                                                                 }
                                                             }
                                                         }
@@ -214,7 +214,7 @@ public class RestoreAppDataFromBackupTask implements Callable<Boolean> {
                                                                 );
                                                                 if (message != null) {
                                                                     message.id = db.messageDao().insert(message);
-                                                                    message.postSettingsMessage(false, null);
+                                                                    message.postSettingsMessage(false, null, null);
                                                                 }
                                                             }
                                                         }

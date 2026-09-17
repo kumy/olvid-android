@@ -282,4 +282,20 @@
 		<item quantity="one" state="needs_review" hash="-1393207312">%1$d సందేశం క్లిప్‌బోర్డ్‌కు కాపీ చేయబడింది</item>
 		<item quantity="other" state="needs_review" hash="-604999755">%1$d సందేశాలు క్లిప్‌బోర్డ్‌కు కాపీ చేయబడ్డాయి</item>
 	</plurals>
+	<plurals name="label_share_destinations_count" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="423387012">%1$d గ్రహీత</item>
+		<item quantity="other" state="needs_review" hash="-431979656">%1$d గ్రహీతలు</item>
+	</plurals>
+	<plurals name="label_share_to_recipients" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="-1217959784">%1$d గ్రహీతతో పంచుకోండి</item>
+		<item quantity="other" state="needs_review" hash="1864148690">%1$d మంది గ్రహీతలతో పంచుకోండి</item>
+	</plurals>
+	<plurals name="toast_message_shared_to_recipients" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="-373807760">%1$d గ్రహీతతో భాగస్వామ్యం చేయబడింది</item>
+		<item quantity="other" state="needs_review" hash="-1412037000">%1$d మంది గ్రహీతలతో భాగస్వామ్యం చేయబడింది</item>
+	</plurals>
+	<plurals name="button_label_add_to_groups" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="1622654043">%1$d సమూహానికి జోడించు</item>
+		<item quantity="other" state="needs_review" hash="-1655824151">%1$d సమూహాలకు జోడించండి</item>
+	</plurals>
 </resources>

@@ -111,6 +111,9 @@ public class EngineNotificationProcessor implements EngineNotificationListener {
 
     @Override
     public void callback(String notificationName, final HashMap<String, Object> userInfo) {
+        if (notificationName == null) {
+            return;
+        }
         switch (notificationName) {
             case EngineNotifications.BACKUP_FINISHED: {
                 byte[] backupKeyUid = (byte[]) userInfo.get(EngineNotifications.BACKUP_FINISHED_BYTES_BACKUP_KEY_UID_KEY);
@@ -237,6 +240,15 @@ public class EngineNotificationProcessor implements EngineNotificationListener {
                         db.invitationDao().insert(invitation);
                         UnreadCountsSingleton.INSTANCE.invitationCreated(invitation.dialogUuid, invitation.bytesOwnedIdentity, invitation.categoryId);
                         db.discussionDao().updateLastMessageTimestamp(discussionId, InvitationListViewModelKt.getTimestamp(invitation));
+
+                        if (dialog.getCategory().getId() == ObvDialog.Category.ONE_TO_ONE_INVITATION_SENT_DIALOG_CATEGORY) {
+                            try {
+                                byte[] bytesContactIdentity = dialog.getCategory().bytesContactIdentity;
+                                if (bytesContactIdentity != null) {
+                                    AppDatabase.getInstance().contactDao().updateStopSuggesting(dialog.bytesOwnedIdentity, bytesContactIdentity, true);
+                                }
+                            } catch (Exception ignored) { }
+                        }
                         break;
                     }
                     case ObvDialog.Category.ACCEPT_INVITE_DIALOG_CATEGORY:
@@ -732,8 +744,7 @@ public class EngineNotificationProcessor implements EngineNotificationListener {
 
             Discussion discussion = null;
             if (dialog.getCategory().getId() == ObvDialog.Category.ACCEPT_MEDIATOR_INVITE_DIALOG_CATEGORY) {
-                Contact mediator = db.contactDao().get(dialog.getBytesOwnedIdentity(), dialog.getCategory()
-                        .getBytesMediatorOrGroupOwnerIdentity());
+                Contact mediator = db.contactDao().get(dialog.getBytesOwnedIdentity(), dialog.getCategory().getBytesMediatorOrGroupOwnerIdentity());
                 if (mediator != null) {
                     discussion = db.discussionDao().getByContactWithAnyStatus(dialog.getBytesOwnedIdentity(), mediator.bytesContactIdentity);
                 }

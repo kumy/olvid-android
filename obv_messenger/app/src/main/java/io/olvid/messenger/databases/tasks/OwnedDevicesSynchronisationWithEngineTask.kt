@@ -45,7 +45,7 @@ class OwnedDevicesSynchronisationWithEngineTask(
     override fun run() {
         val deviceDao = AppDatabase.getInstance().ownedDeviceDao()
 
-        val obvOwnedDevices: List<ObvOwnedDevice> = AppSingleton.getEngine().getOwnedDevices(bytesOwnedIdentity) ?: return
+        val obvOwnedDevices: List<ObvOwnedDevice?> = AppSingleton.getEngine().getOwnedDevices(bytesOwnedIdentity) ?: return
         val dbOwnedDevices: List<OwnedDevice> = deviceDao.getAllSync(bytesOwnedIdentity)
         val dbDeviceMap: MutableMap<BytesKey, OwnedDevice> = HashMap()
         dbOwnedDevices.forEach {
@@ -55,11 +55,12 @@ class OwnedDevicesSynchronisationWithEngineTask(
         val shouldTrustNewDevices = transferredOrRestoredOwnedIdentities.contains(BytesKey(bytesOwnedIdentity))
         var consumeAutoTrust = false
 
-        obvOwnedDevices.forEach {
-            val dbOwnedDevice = dbDeviceMap.remove(BytesKey(it.bytesDeviceUid))
+        obvOwnedDevices.forEach { it ->
+            if (it == null) return@forEach
+            val dbOwnedDevice = dbDeviceMap.remove(BytesKey(it.bytesDeviceUid!!))
             if (dbOwnedDevice == null) {
                 // device not found in app --> insert it as untrusted
-                val newOwnedDevice = OwnedDevice(it.bytesOwnedIdentity, it.bytesDeviceUid, it.serverDeviceInfo.displayName, it.currentDevice, it.currentDevice || shouldTrustNewDevices, it.channelConfirmed, it.hasPreKey, it.serverDeviceInfo.lastRegistrationTimestamp, it.serverDeviceInfo.expirationTimestamp)
+                val newOwnedDevice = OwnedDevice(it.bytesOwnedIdentity!!, it.bytesDeviceUid!!, it.serverDeviceInfo?.displayName, it.currentDevice, it.currentDevice || shouldTrustNewDevices, it.channelConfirmed, it.hasPreKey, it.serverDeviceInfo?.lastRegistrationTimestamp, it.serverDeviceInfo?.expirationTimestamp)
                 deviceDao.insert(newOwnedDevice)
                 if (it.currentDevice.not()) {
                     if (shouldTrustNewDevices) {
@@ -75,8 +76,8 @@ class OwnedDevicesSynchronisationWithEngineTask(
             } else {
                 // db found both in engine and in app --> see what has changed
                 val previousExpirationTimestamp = dbOwnedDevice.expirationTimestamp
-                if (!Objects.equals(it.serverDeviceInfo.displayName, dbOwnedDevice.displayName)) {
-                    dbOwnedDevice.displayName = it.serverDeviceInfo.displayName
+                if (!Objects.equals(it.serverDeviceInfo?.displayName, dbOwnedDevice.displayName)) {
+                    dbOwnedDevice.displayName = it.serverDeviceInfo?.displayName
                     deviceDao.updateDisplayName(dbOwnedDevice.bytesOwnedIdentity, dbOwnedDevice.bytesDeviceUid, dbOwnedDevice.displayName)
                 }
                 if (it.channelConfirmed != dbOwnedDevice.channelConfirmed) {
@@ -91,10 +92,10 @@ class OwnedDevicesSynchronisationWithEngineTask(
                     dbOwnedDevice.currentDevice = it.currentDevice
                     deviceDao.updateCurrentDevice(dbOwnedDevice.bytesOwnedIdentity, dbOwnedDevice.bytesDeviceUid, dbOwnedDevice.currentDevice)
                 }
-                if (!Objects.equals(it.serverDeviceInfo.lastRegistrationTimestamp, dbOwnedDevice.lastRegistrationTimestamp)
-                    || !Objects.equals(it.serverDeviceInfo.expirationTimestamp, dbOwnedDevice.expirationTimestamp)) {
-                    dbOwnedDevice.lastRegistrationTimestamp = it.serverDeviceInfo.lastRegistrationTimestamp
-                    dbOwnedDevice.expirationTimestamp = it.serverDeviceInfo.expirationTimestamp
+                if (!Objects.equals(it.serverDeviceInfo?.lastRegistrationTimestamp, dbOwnedDevice.lastRegistrationTimestamp)
+                    || !Objects.equals(it.serverDeviceInfo?.expirationTimestamp, dbOwnedDevice.expirationTimestamp)) {
+                    dbOwnedDevice.lastRegistrationTimestamp = it.serverDeviceInfo?.lastRegistrationTimestamp
+                    dbOwnedDevice.expirationTimestamp = it.serverDeviceInfo?.expirationTimestamp
                     deviceDao.updateTimestamps(dbOwnedDevice.bytesOwnedIdentity, dbOwnedDevice.bytesDeviceUid, dbOwnedDevice.lastRegistrationTimestamp, dbOwnedDevice.expirationTimestamp)
                 }
                 // notify all untrusted devices so at startup we have the notifications

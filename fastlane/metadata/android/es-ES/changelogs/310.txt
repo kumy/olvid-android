@@ -1,0 +1,4 @@
+- Nueva función para compartir pantalla, que permite publicar en varias conversaciones a la vez.
+- Nueva función de invitación con un simple gesto para invitar fácilmente a los miembros del grupo a una conversación privada.
+- Nuevo proceso de bienvenida para explicar Olvid a los nuevos usuarios.
+- Visor de imágenes/vídeos mejorado, con posibilidad de hacer zoom en los vídeos.

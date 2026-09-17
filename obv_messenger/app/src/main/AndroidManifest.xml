@@ -445,7 +445,7 @@
             android:configChanges="orientation|screenSize|screenLayout"
             android:theme="@style/AppTheme.NoActionBar.Black"/>
         <activity
-            android:name=".activities.ShareActivity"
+            android:name=".share.ShareActivity"
             android:taskAffinity=""
             android:alwaysRetainTaskState="false"
             android:excludeFromRecents="true"
@@ -454,12 +454,25 @@
             android:theme="@style/AppTheme.NoActionBar.Transparent.Dimmed"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
+            <!-- Per Android docs (training/sharing/receive), declare specific MIME types
+                 rather than only "*/*"; the system Sharesheet downranks/filters catch-all
+                 receivers, which is why some senders (notably image/video pickers on
+                 Android 12+) wouldn't surface Olvid. The trailing "*/*" filter stays as a
+                 catch-all for unusual senders. -->
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
                 <action android:name="android.intent.action.SEND_MULTIPLE" />
-
                 <category android:name="android.intent.category.DEFAULT" />
-
+                <data android:mimeType="image/*" />
+                <data android:mimeType="video/*" />
+                <data android:mimeType="audio/*" />
+                <data android:mimeType="text/*" />
+                <data android:mimeType="application/*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <action android:name="android.intent.action.SEND_MULTIPLE" />
+                <category android:name="android.intent.category.DEFAULT" />
                 <data android:mimeType="*/*" />
             </intent-filter>
 
@@ -520,10 +533,6 @@
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateAlwaysVisible" />
         <activity
-            android:name=".onboarding.OnboardingActivity"
-            android:launchMode="singleTop"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".onboarding.flow.OnboardingFlowActivity"
             android:launchMode="singleTop"
             android:windowSoftInputMode="adjustResize"
@@ -539,6 +548,12 @@
         <activity
             android:name=".owneddetails.SelectDetailsPhotoActivity"
             android:theme="@style/AppTheme.NoActionBar.FullScreenBlack" />
+        <activity
+            android:name=".owneddetails.ImagePickerActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".owneddetails.UseImageAsProfilePictureActivity"
+            android:theme="@style/AppTheme.NoActionBar.Transparent.Dimmed" />
         <activity
             android:name=".webrtc.WebrtcCallActivity"
             android:theme="@style/AppTheme.NoActionBar.Black"

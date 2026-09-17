@@ -92,6 +92,53 @@ interface ReactionDao {
         creationTimestamp: Long,
     ): List<ReactionAndMessage>
 
+    // Reactions received from a contact (bytes_identity NOT NULL) on one of my outbound messages,
+    // within a [startTimestamp, endTimestamp) window, for a given owned identity. Used to recap
+    // reaction notifications that were silenced by a mute. Mirrors the live-notification condition
+    // in handleReaction (contact reacting to my outbound message).
+    @Query("""
+        SELECT reac.*, ${MessageDao.PREFIX_MESSAGE_COLUMNS} FROM ${Reaction.TABLE_NAME} AS reac
+        INNER JOIN ${Message.TABLE_NAME} AS mess
+        ON mess.id = reac.${Reaction.MESSAGE_ID}
+        INNER JOIN ${Discussion.TABLE_NAME} AS disc
+        ON disc.id = mess.${Message.DISCUSSION_ID}
+        WHERE disc.${Discussion.BYTES_OWNED_IDENTITY} = :bytesOwnedIdentity
+        AND mess.${Message.MESSAGE_TYPE} = ${Message.TYPE_OUTBOUND_MESSAGE}
+        AND mess.${Message.WIPE_STATUS} = ${Message.WIPE_STATUS_NONE}
+        AND reac.${Reaction.BYTES_IDENTITY} IS NOT NULL
+        AND reac.${Reaction.EMOJI} IS NOT NULL
+        AND reac.${Reaction.TIMESTAMP} >= :startTimestamp
+        AND reac.${Reaction.TIMESTAMP} < :endTimestamp
+        ORDER BY reac.${Reaction.TIMESTAMP} ASC
+        """
+    )
+    fun getReactionsReceivedInWindow(
+        bytesOwnedIdentity: ByteArray,
+        startTimestamp: Long,
+        endTimestamp: Long,
+    ): List<ReactionAndMessage>
+
+    // Same as above but restricted to a single discussion (used for discussion-only mute recap).
+    @Query("""
+        SELECT reac.*, ${MessageDao.PREFIX_MESSAGE_COLUMNS} FROM ${Reaction.TABLE_NAME} AS reac
+        INNER JOIN ${Message.TABLE_NAME} AS mess
+        ON mess.id = reac.${Reaction.MESSAGE_ID}
+        WHERE mess.${Message.DISCUSSION_ID} = :discussionId
+        AND mess.${Message.MESSAGE_TYPE} = ${Message.TYPE_OUTBOUND_MESSAGE}
+        AND mess.${Message.WIPE_STATUS} = ${Message.WIPE_STATUS_NONE}
+        AND reac.${Reaction.BYTES_IDENTITY} IS NOT NULL
+        AND reac.${Reaction.EMOJI} IS NOT NULL
+        AND reac.${Reaction.TIMESTAMP} >= :startTimestamp
+        AND reac.${Reaction.TIMESTAMP} < :endTimestamp
+        ORDER BY reac.${Reaction.TIMESTAMP} ASC
+        """
+    )
+    fun getReactionsReceivedInWindowForDiscussion(
+        discussionId: Long,
+        startTimestamp: Long,
+        endTimestamp: Long,
+    ): List<ReactionAndMessage>
+
     data class ReactionAndMessage(
         @Embedded val reaction: Reaction,
         @Embedded(prefix = "mess_") val message: Message

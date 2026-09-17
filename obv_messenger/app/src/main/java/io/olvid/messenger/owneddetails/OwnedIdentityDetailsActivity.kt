@@ -46,9 +46,11 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.consumeWindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material3.Icon
@@ -67,6 +69,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
@@ -76,6 +79,7 @@ import io.olvid.engine.Logger
 import io.olvid.engine.datatypes.Identity
 import io.olvid.engine.engine.types.ObvDeviceManagementRequest
 import io.olvid.engine.engine.types.identities.ObvUrlIdentity
+import io.olvid.engine.engine.types.sync.ObvSyncAtom
 import io.olvid.messenger.App
 import io.olvid.messenger.AppSingleton
 import io.olvid.messenger.R
@@ -90,12 +94,17 @@ import io.olvid.messenger.databases.entity.OwnedDevice
 import io.olvid.messenger.databases.entity.OwnedIdentity
 import io.olvid.messenger.databases.tasks.DeleteOwnedIdentityAndEverythingRelatedToItTask
 import io.olvid.messenger.databases.tasks.OwnedDevicesSynchronisationWithEngineTask
+import io.olvid.messenger.designsystem.components.BaseDialogContent
+import io.olvid.messenger.designsystem.components.DialogSecure
+import io.olvid.messenger.designsystem.components.OlvidActionButton
 import io.olvid.messenger.designsystem.components.OlvidDropdownMenu
 import io.olvid.messenger.designsystem.components.OlvidDropdownMenuItem
+import io.olvid.messenger.designsystem.components.OlvidTextButton
 import io.olvid.messenger.designsystem.components.OlvidTopAppBar
 import io.olvid.messenger.lock_screen.LockableActivity
 import io.olvid.messenger.notifications.AndroidNotificationManager
 import io.olvid.messenger.openid.KeycloakManager
+import io.olvid.messenger.settings.SettingsActivity
 import io.olvid.messenger.services.MuteExpirationService
 import java.util.Locale
 
@@ -103,6 +112,13 @@ class OwnedIdentityDetailsActivity : LockableActivity() {
 
     private val ownedDetailsViewModel: OwnedIdentityDetailsViewModel by viewModels()
     private var deleteProfileEverywhere = true
+    private var showEditDialog by mutableStateOf(false)
+    private var showUnmuteNotificationsDialog by mutableStateOf(false)
+    private var showNeutralNotificationsDialog by mutableStateOf(false)
+    private var showKeycloakUnbindImpossibleDialog by mutableStateOf(false)
+    private var showKeycloakUnbindConfirmationDialog by mutableStateOf(false)
+
+    private var editDialogDisableHidden by mutableStateOf(false)
 
     @OptIn(ExperimentalSharedTransitionApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -118,6 +134,12 @@ class OwnedIdentityDetailsActivity : LockableActivity() {
         )
 
         super.onCreate(savedInstanceState)
+
+        // the engine only performs an owned device discovery daily: run one when opening this
+        // screen so the "last online" timestamps of other owned devices are up to date
+        AppSingleton.getBytesCurrentIdentity()?.let { bytesOwnedIdentity ->
+            App.runThread { AppSingleton.getEngine().refreshOwnedDeviceList(bytesOwnedIdentity) }
+        }
 
         onBackPressed {
             if (ownedDetailsViewModel.fullScreenPhotoUrl != null) {
@@ -146,7 +168,7 @@ class OwnedIdentityDetailsActivity : LockableActivity() {
                                 // Unmute
                                 if (ownedIdentity?.prefMuteNotifications == true && ownedIdentity?.shouldMuteNotifications() == true) {
                                     IconButton(onClick = {
-                                        unmuteNotifications(ownedIdentity)
+                                        showUnmuteNotificationsDialog = true
                                     }) {
                                         Icon(
                                             painter = painterResource(id = R.drawable.ic_notification_muted),
@@ -322,6 +344,145 @@ class OwnedIdentityDetailsActivity : LockableActivity() {
                     }
                 }
             }
+
+            if (showEditDialog) {
+                EditOwnedIdentityDetailsDialog(
+                    viewModel = ownedDetailsViewModel,
+                    disableHidden = editDialogDisableHidden,
+                    onPublish = { publishEditedDetails() },
+                    onDismiss = { showEditDialog = false },
+                )
+            }
+
+            if (showUnmuteNotificationsDialog) {
+                ownedIdentity?.let { ownedIdentity ->
+                    DialogSecure(
+                        onDismissRequest = { showUnmuteNotificationsDialog = false },
+                    ) {
+                        BaseDialogContent(
+                            title = stringResource(R.string.dialog_title_unmute_notifications),
+                            message = if (ownedIdentity.prefMuteNotificationsTimestamp == null) {
+                                stringResource(R.string.dialog_message_unmute_notifications)
+                            } else {
+                                stringResource(
+                                    R.string.dialog_message_unmute_notifications_muted_until,
+                                    StringUtils.getLongNiceDateString(
+                                        this,
+                                        ownedIdentity.prefMuteNotificationsTimestamp!!
+                                    )
+                                )
+                            },
+                            actions = {
+                                Spacer(modifier = Modifier.weight(1f))
+                                OlvidTextButton(
+                                    text = stringResource(R.string.button_label_cancel),
+                                    onClick = { showUnmuteNotificationsDialog = false },
+                                )
+                                Spacer(Modifier.width(8.dp))
+                                OlvidActionButton(
+                                    text = stringResource(R.string.button_label_unmute_notifications),
+                                    onClick = {
+                                        showUnmuteNotificationsDialog = false
+                                        App.runThread {
+                                            // atomically claims the mute window, clears the DB row, and emits the recap.
+                                            // any concurrent claim (e.g. an alarm firing simultaneously) loses the race
+                                            // and emits nothing, so the user only ever sees one recap.
+                                            MuteExpirationService.clearAndEmitForManualUnmute(
+                                                ownedIdentity.bytesOwnedIdentity
+                                            )
+                                            MuteExpirationService.scheduleNextExpiration()
+                                        }
+                                    }
+                                )
+                            }
+                        )
+                    }
+                }
+            }
+
+            if (showNeutralNotificationsDialog) {
+                ownedIdentity?.let { ownedIdentity ->
+                    DialogSecure(
+                        onDismissRequest = { showNeutralNotificationsDialog = false },
+                    ) {
+                        BaseDialogContent(
+                            title = stringResource(R.string.dialog_title_neutral_notification_when_hidden),
+                            message = stringResource(R.string.dialog_message_neutral_notification_when_hidden),
+                            actions = {
+                                Spacer(modifier = Modifier.weight(1f))
+                                OlvidTextButton(
+                                    text = stringResource(R.string.button_label_cancel),
+                                    onClick = { showNeutralNotificationsDialog = false },
+                                )
+                                Spacer(Modifier.width(8.dp))
+                                OlvidActionButton(
+                                    text = stringResource(R.string.button_label_activate),
+                                    onClick = {
+                                        showNeutralNotificationsDialog = false
+                                        App.runThread {
+                                            AppDatabase.getInstance().ownedIdentityDao()
+                                                .updateShowNeutralNotificationWhenHidden(
+                                                    ownedIdentity.bytesOwnedIdentity, true
+                                                )
+                                        }
+                                    }
+                                )
+                            }
+                        )
+                    }
+                }
+            }
+
+            if (showKeycloakUnbindImpossibleDialog) {
+                DialogSecure(
+                    onDismissRequest = { showKeycloakUnbindImpossibleDialog = false },
+                ) {
+                    BaseDialogContent(
+                        title = stringResource(R.string.dialog_title_unbind_from_keycloak_restricted),
+                        message = stringResource(R.string.dialog_message_unbind_from_keycloak_restricted),
+                        actions = {
+                            Spacer(modifier = Modifier.weight(1f))
+                            OlvidActionButton(
+                                text = stringResource(R.string.button_label_ok),
+                                onClick = {
+                                    showKeycloakUnbindImpossibleDialog = false
+                                }
+                            )
+                        }
+                    )
+                }
+            }
+
+            if (showKeycloakUnbindConfirmationDialog) {
+                ownedIdentity?.let { ownedIdentity ->
+                    DialogSecure(
+                        onDismissRequest = { showKeycloakUnbindConfirmationDialog = false },
+                    ) {
+                        BaseDialogContent(
+                            title = stringResource(R.string.dialog_title_unbind_from_keycloak),
+                            message = stringResource(R.string.dialog_message_unbind_from_keycloak),
+                            actions = {
+                                Spacer(modifier = Modifier.weight(1f))
+                                OlvidTextButton(
+                                    text = stringResource(R.string.button_label_cancel),
+                                    onClick = { showKeycloakUnbindConfirmationDialog = false },
+                                )
+                                Spacer(Modifier.width(8.dp))
+                                OlvidActionButton(
+                                    text = stringResource(R.string.button_label_ok),
+                                    containerColor = colorResource(R.color.red),
+                                    onClick = {
+                                        showKeycloakUnbindConfirmationDialog = false
+                                        KeycloakManager.unregisterKeycloakManagedIdentity(ownedIdentity.bytesOwnedIdentity)
+                                        AppSingleton.getEngine()
+                                            .unbindOwnedIdentityFromKeycloak(ownedIdentity.bytesOwnedIdentity)
+                                    }
+                                )
+                            }
+                        )
+                    }
+                }
+            }
         }
     }
 
@@ -346,36 +507,6 @@ class OwnedIdentityDetailsActivity : LockableActivity() {
         muteNotificationDialog.show()
     }
 
-    private fun unmuteNotifications(ownedIdentity: OwnedIdentity?) {
-        if (ownedIdentity == null || !ownedIdentity.shouldMuteNotifications()) return
-        val builder = SecureAlertDialogBuilder(this, R.style.CustomAlertDialog)
-            .setTitle(R.string.dialog_title_unmute_notifications)
-            .setPositiveButton(R.string.button_label_unmute_notifications) { _, _ ->
-                App.runThread {
-                    // atomically claims the mute window, clears the DB row, and emits the recap.
-                    // any concurrent claim (e.g. an alarm firing simultaneously) loses the race
-                    // and emits nothing, so the user only ever sees one recap.
-                    MuteExpirationService.clearAndEmitForManualUnmute(ownedIdentity.bytesOwnedIdentity)
-                    MuteExpirationService.scheduleNextExpiration()
-                }
-            }
-            .setNegativeButton(R.string.button_label_cancel, null)
-
-        if (ownedIdentity.prefMuteNotificationsTimestamp == null) {
-            builder.setMessage(R.string.dialog_message_unmute_notifications)
-        } else {
-            builder.setMessage(
-                getString(
-                    R.string.dialog_message_unmute_notifications_muted_until,
-                    StringUtils.getLongNiceDateString(
-                        this,
-                        ownedIdentity.prefMuteNotificationsTimestamp!!
-                    )
-                )
-            )
-        }
-        builder.create().show()
-    }
 
     private fun toggleNeutralNotification(ownedIdentity: OwnedIdentity?) {
         if (ownedIdentity == null) return
@@ -387,26 +518,92 @@ class OwnedIdentityDetailsActivity : LockableActivity() {
                     )
             }
         } else {
-            SecureAlertDialogBuilder(this, R.style.CustomAlertDialog)
-                .setTitle(R.string.dialog_title_neutral_notification_when_hidden)
-                .setMessage(R.string.dialog_message_neutral_notification_when_hidden)
-                .setPositiveButton(R.string.button_label_activate) { _, _ ->
-                    App.runThread {
-                        AppDatabase.getInstance().ownedIdentityDao()
-                            .updateShowNeutralNotificationWhenHidden(
-                                ownedIdentity.bytesOwnedIdentity, true
-                            )
-                    }
-                }
-                .setNegativeButton(R.string.button_label_cancel, null)
-                .show()
+            showNeutralNotificationsDialog = true
         }
     }
 
     private fun renameIdentity() {
-        // TODO convert EditOwnedIdentityDetailsDialogFragment
-        val dialogFragment = EditOwnedIdentityDetailsDialogFragment()
-        dialogFragment.show(supportFragmentManager, "dialog")
+        App.runThread {
+            val disableHidden = !ownedDetailsViewModel.isProfileHidden && AppDatabase.getInstance().ownedIdentityDao().countNotHidden() <= 1
+            runOnUiThread {
+                editDialogDisableHidden = disableHidden
+                showEditDialog = true
+            }
+        }
+    }
+
+    private fun publishEditedDetails() {
+        App.runThread {
+            var publishedChanged = false
+            if (ownedDetailsViewModel.detailsChanged()) {
+                val newDetails = ownedDetailsViewModel.jsonIdentityDetails
+                runCatching {
+                    AppSingleton.getEngine()
+                        .updateLatestIdentityDetails(ownedDetailsViewModel.bytesOwnedIdentity, newDetails)
+                    publishedChanged = true
+                }.onFailure {
+                    it.printStackTrace()
+                    App.toast(R.string.toast_message_error_publishing_details, Toast.LENGTH_SHORT)
+                }
+            }
+            if (ownedDetailsViewModel.photoChanged()) {
+                val absolutePhotoUrl = ownedDetailsViewModel.absolutePhotoUrl
+                runCatching {
+                    AppSingleton.getEngine()
+                        .updateOwnedIdentityPhoto(ownedDetailsViewModel.bytesOwnedIdentity, absolutePhotoUrl)
+                    publishedChanged = true
+                }.onFailure {
+                    it.printStackTrace()
+                    App.toast(R.string.toast_message_error_publishing_details, Toast.LENGTH_SHORT)
+                }
+            }
+            if (publishedChanged) {
+                AppSingleton.getEngine()
+                    .publishLatestIdentityDetails(ownedDetailsViewModel.bytesOwnedIdentity)
+            }
+            if (ownedDetailsViewModel.nicknameChanged()) {
+                ownedDetailsViewModel.bytesOwnedIdentity?.let {
+                    AppDatabase.getInstance().ownedIdentityDao()
+                        .updateCustomDisplayName(it, ownedDetailsViewModel.nickname)
+                }
+                runCatching {
+                    AppSingleton.getEngine()
+                        .propagateAppSyncAtomToOtherDevicesIfNeeded(
+                            ownedDetailsViewModel.bytesOwnedIdentity,
+                            ObvSyncAtom.createOwnProfileNicknameChange(ownedDetailsViewModel.nickname)
+                        )
+                    AppSingleton.getEngine().deviceBackupNeeded()
+                    AppSingleton.getEngine().profileBackupNeeded(ownedDetailsViewModel.bytesOwnedIdentity)
+                }.onFailure {
+                    Logger.w("Failed to propagate own profile nickname change to other devices")
+                    it.printStackTrace()
+                }
+            }
+            if (ownedDetailsViewModel.profileHiddenChanged()) {
+                ownedDetailsViewModel.bytesOwnedIdentity?.let {
+                    AppDatabase.getInstance().ownedIdentityDao()
+                        .updateUnlockPasswordAndSalt(
+                            it,
+                            ownedDetailsViewModel.password,
+                            ownedDetailsViewModel.salt
+                        )
+                }
+
+                if (ownedDetailsViewModel.password != null) {
+                    // profile became hidden
+                    if (!SettingsActivity.isHiddenProfileClosePolicyDefined) {
+                        App.openAppDialogConfigureHiddenProfileClosePolicy()
+                    }
+                    ownedDetailsViewModel.bytesOwnedIdentity?.let {
+                        AppSingleton.getInstance().ownedIdentityBecameHidden(it)
+                    }
+                } else {
+                    // profile became un-hidden --> reselect it to memorize as latest identity
+                    AppSingleton.getInstance().selectIdentity(ownedDetailsViewModel.bytesOwnedIdentity, null)
+                }
+            }
+            runOnUiThread { reloadIdentity() }
+        }
     }
 
     private fun refreshSubscription(ownedIdentity: OwnedIdentity?) {
@@ -418,22 +615,9 @@ class OwnedIdentityDetailsActivity : LockableActivity() {
     private fun unbindFromKeycloak(ownedIdentity: OwnedIdentity?) {
         ownedIdentity?.bytesOwnedIdentity?.let {
             if (KeycloakManager.isOwnedIdentityTransferRestricted(it)) {
-                SecureAlertDialogBuilder(this, R.style.CustomAlertDialog)
-                    .setTitle(R.string.dialog_title_unbind_from_keycloak_restricted)
-                    .setMessage(R.string.dialog_message_unbind_from_keycloak_restricted)
-                    .setPositiveButton(R.string.button_label_ok, null)
-                    .show()
+                showKeycloakUnbindImpossibleDialog = true
             } else {
-                SecureAlertDialogBuilder(this, R.style.CustomAlertDialog)
-                    .setTitle(R.string.dialog_title_unbind_from_keycloak)
-                    .setMessage(R.string.dialog_message_unbind_from_keycloak)
-                    .setPositiveButton(R.string.button_label_ok) { _, _ ->
-                        KeycloakManager.unregisterKeycloakManagedIdentity(it)
-                        AppSingleton.getEngine()
-                            .unbindOwnedIdentityFromKeycloak(it)
-                    }
-                    .setNegativeButton(R.string.button_label_cancel, null)
-                    .show()
+                showKeycloakUnbindConfirmationDialog = true
             }
         }
     }
@@ -532,7 +716,7 @@ class OwnedIdentityDetailsActivity : LockableActivity() {
                         bytesOwnedIdentities.add(hiddenOwnedIdentity.bytesOwnedIdentity)
                     }
                 }
-                try {
+                runCatching {
                     for (bytesOwnedIdentity in bytesOwnedIdentities) {
                         AppSingleton.getEngine().deleteOwnedIdentityAndNotifyContacts(
                             bytesOwnedIdentity,
@@ -549,7 +733,7 @@ class OwnedIdentityDetailsActivity : LockableActivity() {
                     }
                     finish()
                     App.toast(R.string.toast_message_profile_deleted, Toast.LENGTH_SHORT)
-                } catch (_: Exception) {
+                }.onFailure {
                     App.toast(R.string.toast_message_something_went_wrong, Toast.LENGTH_SHORT)
                 }
             }
@@ -561,11 +745,9 @@ class OwnedIdentityDetailsActivity : LockableActivity() {
     private fun showDebugInformation(ownedIdentity: OwnedIdentity?) {
         if (ownedIdentity == null) return
         val sb = StringBuilder()
-        val identity = try {
+        val identity = runCatching {
             Identity.of(ownedIdentity.bytesOwnedIdentity)
-        } catch (_: Exception) {
-            null
-        }
+        }.getOrNull()
         identity?.let {
             sb.append(getString(R.string.debug_label_server)).append(" ").append(it.server)
                 .append("\n\n")
@@ -611,7 +793,7 @@ class OwnedIdentityDetailsActivity : LockableActivity() {
         val sixteenDp = (16 * density).toInt()
         textView.setPadding(sixteenDp, sixteenDp, sixteenDp, sixteenDp)
         textView.setTextIsSelectable(true)
-        textView.autoLinkMask = Linkify.ALL
+        textView.autoLinkMask = Linkify.WEB_URLS or Linkify.EMAIL_ADDRESSES or Linkify.PHONE_NUMBERS
         textView.movementMethod = LinkMovementMethod.getInstance()
         textView.text = sb
 
@@ -745,19 +927,23 @@ class OwnedIdentityDetailsActivity : LockableActivity() {
 
     private fun setUnexpiringDevice(device: OwnedDevice) {
         App.runThread {
-            try {
+            runCatching {
                 ownedDetailsViewModel.showRefreshSpinner()
                 AppSingleton.getEngine().processDeviceManagementRequest(
                     device.bytesOwnedIdentity,
                     ObvDeviceManagementRequest.createSetUnexpiringDeviceRequest(device.bytesDeviceUid)
                 )
-            } catch (_: Exception) {
             }
         }
     }
 
     private fun refreshDeviceList(device: OwnedDevice) {
-        App.runThread(OwnedDevicesSynchronisationWithEngineTask(device.bytesOwnedIdentity))
+        ownedDetailsViewModel.showRefreshSpinner()
+        App.runThread {
+            OwnedDevicesSynchronisationWithEngineTask(device.bytesOwnedIdentity).run()
+            // the spinner is hidden by DeviceDiscoveryListener once the discovery is done
+            AppSingleton.getEngine().refreshOwnedDeviceList(device.bytesOwnedIdentity)
+        }
     }
 
     private fun recreateDeviceChannel(device: OwnedDevice) {

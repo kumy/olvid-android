@@ -1,0 +1,1 @@
+- Inayos ang isyu sa OCR image analysis.

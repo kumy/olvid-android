@@ -283,4 +283,20 @@
         <item quantity="one">%1$d message copied to clipboard</item>
         <item quantity="other">%1$d messages copied to clipboard</item>
     </plurals>
+    <plurals name="label_share_destinations_count">
+        <item quantity="one">%1$d recipient</item>
+        <item quantity="other">%1$d recipients</item>
+    </plurals>
+    <plurals name="label_share_to_recipients">
+        <item quantity="one">Share with %1$d recipient</item>
+        <item quantity="other">Share with %1$d recipients</item>
+    </plurals>
+    <plurals name="toast_message_shared_to_recipients">
+        <item quantity="one">Shared with %1$d recipient</item>
+        <item quantity="other">Shared with %1$d recipients</item>
+    </plurals>
+    <plurals name="button_label_add_to_groups">
+        <item quantity="one">Add to %1$d group</item>
+        <item quantity="other">Add to %1$d groups</item>
+    </plurals>
 </resources>

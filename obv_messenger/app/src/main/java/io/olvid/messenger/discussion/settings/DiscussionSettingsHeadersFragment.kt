@@ -24,6 +24,7 @@ import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import io.olvid.messenger.App
 import io.olvid.messenger.AppSingleton
+import io.olvid.messenger.services.MuteExpirationService
 import io.olvid.messenger.R.string
 import io.olvid.messenger.R.xml
 import io.olvid.messenger.customClasses.MultilineSummaryPreferenceCategory
@@ -84,13 +85,17 @@ class DiscussionSettingsHeadersFragment : PreferenceFragmentCompat(), SettingsCh
                     val discussionCustomization =
                         discussionSettingsViewModel.discussionCustomization.value
                     if (discussionCustomization != null && discussionCustomization.shouldMuteNotifications()) {
-                        discussionSettingsDataStore?.putBoolean(
-                            DiscussionSettingsActivity.PREF_KEY_DISCUSSION_MUTE_NOTIFICATIONS,
-                            false
-                        )
-                        discussionSettingsViewModel.discussionLiveData.value?.let {
-                            it.propagateMuteSettings(discussionCustomization.apply { prefMuteNotifications = false })
-                            AppSingleton.getEngine().profileBackupNeeded(it.bytesOwnedIdentity)
+                        // manual unmute: atomically clear the mute (flag + timestamps), recap missed
+                        // notifications, propagate to other devices and reschedule the next expiry.
+                        // We persist through clearMuteNotifications() rather than putBoolean(false) so we
+                        // do not race a generic entity update that could re-write a stale start timestamp.
+                        val discussion = discussionSettingsViewModel.discussionLiveData.value
+                        App.runThread {
+                            MuteExpirationService.clearAndEmitForDiscussionManualUnmute(discussionCustomization.discussionId)
+                            discussion?.let {
+                                it.propagateMuteSettings(discussionCustomization.apply { prefMuteNotifications = false })
+                                AppSingleton.getEngine().profileBackupNeeded(it.bytesOwnedIdentity)
+                            }
                         }
                     } else {
                         val context = context
@@ -100,28 +105,11 @@ class DiscussionSettingsHeadersFragment : PreferenceFragmentCompat(), SettingsCh
                                 context,
                                 { muteExpirationTimestamp: Long?, _: Boolean, muteExceptMentioned: Boolean ->
                                     App.runThread {
-                                        var discussionCust = AppDatabase.getInstance()
-                                            .discussionCustomizationDao()[discussionId]
-                                        var insert = false
-                                        if (discussionCust == null) {
-                                            discussionCust = DiscussionCustomization(discussionId)
-                                            insert = true
-                                        }
-                                        discussionCust.prefMuteNotifications = true
-                                        discussionCust.prefMuteNotificationsTimestamp =
-                                            muteExpirationTimestamp
-                                        discussionCust.prefMuteNotificationsExceptMentioned =
-                                            muteExceptMentioned
-                                        if (insert) {
-                                            AppDatabase.getInstance().discussionCustomizationDao()
-                                                .insert(discussionCust)
-                                        } else {
-                                            AppDatabase.getInstance().discussionCustomizationDao()
-                                                .update(discussionCust)
-                                        }
-                                        discussionSettingsViewModel.discussionLiveData.value?.let {
-                                            it.propagateMuteSettings(discussionCust)
-                                            AppSingleton.getEngine().profileBackupNeeded(it.bytesOwnedIdentity)
+                                        MuteExpirationService.muteDiscussion(discussionId, muteExpirationTimestamp, muteExceptMentioned)?.let { discussionCust ->
+                                            discussionSettingsViewModel.discussionLiveData.value?.let {
+                                                it.propagateMuteSettings(discussionCust)
+                                                AppSingleton.getEngine().profileBackupNeeded(it.bytesOwnedIdentity)
+                                            }
                                         }
                                     }
                                 },
@@ -149,7 +137,7 @@ class DiscussionSettingsHeadersFragment : PreferenceFragmentCompat(), SettingsCh
             if (!shouldMute) {
                 summary =
                     getString(string.pref_discussion_mute_notifications_summary)
-            } else if (discussionCustomization?.prefMuteNotificationsTimestamp == null) {
+            } else if (discussionCustomization.prefMuteNotificationsTimestamp == null) {
                 summary =
                     getString(string.pref_discussion_mute_notifications_on_summary)
             } else {

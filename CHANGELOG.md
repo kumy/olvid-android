@@ -1,3 +1,34 @@
+# Build 311 (4.5.1)
+
+- Force OCR analysis to run in a single thread to avoid memory overload.
+- New setting to disable OCR altogether.
+
+# Build 310 (4.5)
+2026-09-09
+
+- Minor adjustments to the swipe-to-invite behavior.
+
+# ~~Build 309 (4.5)~~
+2026-09-07
+
+- New share activity allowing to post to multiple discussions at once.
+- Fix for the new swipe-to-invite experience not being shown to users.
+- Properly clear all notifications after deleting a profile.
+
+# ~~Build 308 (4.5)~~
+2026-08-30
+
+- New onboarding to explain Olvid to new users.
+- New swipe-to-invite experience to easily invite group members to a private discussion.
+- Improved image/video viewer, possibility to zoom on videos.
+- Show missed notifications when discussion mute expires.
+- Added the ability to export a single discussion to a zip.
+- Directly set a received image as profile picture or discussion background.
+- New option to add a contact to multiple groups at once.
+- Global search performance improvement.
+- Target Android API 37.
+- The engine was converted to Kotlin and split into a separate git repository.
+
 # Build 306 (4.4)
 2026-06-21
 

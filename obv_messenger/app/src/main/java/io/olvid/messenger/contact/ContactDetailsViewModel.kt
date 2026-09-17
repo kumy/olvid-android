@@ -19,6 +19,7 @@
 package io.olvid.messenger.contact
 
 import android.content.Context
+import android.view.Gravity
 import android.widget.Toast
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -37,17 +38,25 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import io.olvid.engine.Logger
+import io.olvid.engine.engine.types.JsonGroupType
 import io.olvid.engine.engine.types.JsonIdentityDetailsWithVersionAndPhoto
+import io.olvid.engine.engine.types.ObvBytesKey
 import io.olvid.engine.engine.types.identities.ObvContactActiveOrInactiveReason
+import io.olvid.engine.engine.types.identities.ObvGroupV2
 import io.olvid.engine.engine.types.identities.ObvTrustOrigin
 import io.olvid.messenger.App
 import io.olvid.messenger.AppSingleton
 import io.olvid.messenger.R
+import io.olvid.messenger.customClasses.BytesKey
 import io.olvid.messenger.customClasses.StringUtils
 import io.olvid.messenger.databases.AppDatabase
 import io.olvid.messenger.databases.dao.DiscussionDao.DiscussionAndGroupMembersNames
 import io.olvid.messenger.databases.entity.Contact
+import io.olvid.messenger.databases.entity.Group2
 import io.olvid.messenger.databases.entity.Invitation
+import io.olvid.messenger.group.CustomGroup
+import io.olvid.messenger.group.getDefaultPermissions
+import io.olvid.messenger.group.toGroupCreationModel
 import io.olvid.messenger.settings.SettingsActivity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -65,6 +74,10 @@ data class TrustOriginModel(val title: String, val details: AnnotatedString, val
 
 class ContactDetailsViewModel : ViewModel() {
     var groupDiscussions: LiveData<MutableList<DiscussionAndGroupMembersNames>?>? = null
+        private set
+    var adminGroups: LiveData<List<Group2>>? = null
+        private set
+    var selectedGroupsToAdd by mutableStateOf<Set<BytesKey>>(emptySet())
         private set
     var contactAndInvitation: LiveData<ContactAndInvitation?>? = null
         private set
@@ -87,6 +100,9 @@ class ContactDetailsViewModel : ViewModel() {
                 bytesContactIdentity,
                 bytesOwnedIdentity
             )
+        this.adminGroups = AppDatabase.getInstance().group2Dao()
+            .getAllAdminGroupsNotContainingContact(bytesOwnedIdentity, bytesContactIdentity)
+        this.selectedGroupsToAdd = emptySet()
         this.contactAndInvitation = ContactAndInvitationLiveData(
             AppDatabase.getInstance().contactDao()
                 .getAsync(bytesOwnedIdentity, bytesContactIdentity),
@@ -118,11 +134,13 @@ class ContactDetailsViewModel : ViewModel() {
                             bytesOwnedIdentity,
                             bytesContactIdentity
                         )
-                        .toList()
+                        ?.filterNotNull()
                 }.getOrNull()
                 val origins = runCatching {
                     val originsByType = AppSingleton.getEngine()
                         .getContactTrustOrigins(bytesOwnedIdentity, bytesContactIdentity)
+                        .orEmpty()
+                        .filterNotNull()
                         .groupBy { it.type }
                     TRUST_ORIGIN_ORDER.mapNotNull { type ->
                         originsByType[type]?.let {
@@ -163,7 +181,7 @@ class ContactDetailsViewModel : ViewModel() {
                             bytesOwnedIdentity,
                             bytesContactIdentity
                         )
-                        .toList()
+                        ?.filterNotNull()
                 }.getOrNull()
             } ?: return@launch
             publishedAndTrustedDetails = details
@@ -277,6 +295,67 @@ class ContactDetailsViewModel : ViewModel() {
         }
     }
 
+    fun toggleGroupToAdd(bytesGroupIdentifier: ByteArray) {
+        val key = BytesKey(bytesGroupIdentifier)
+        selectedGroupsToAdd = if (key in selectedGroupsToAdd) {
+            selectedGroupsToAdd - key
+        } else {
+            selectedGroupsToAdd + key
+        }
+    }
+
+    fun clearGroupsToAdd() {
+        selectedGroupsToAdd = emptySet()
+    }
+
+    fun addContactToSelectedGroups(onFinished: () -> Unit) {
+        val contact = contactAndInvitation?.value?.contact ?: return
+        val groups = adminGroups?.value
+            ?.filter { BytesKey(it.bytesGroupIdentifier) in selectedGroupsToAdd }
+            ?.takeIf { it.isNotEmpty() }
+            ?: return
+        viewModelScope.launch {
+            val failureCount = withContext(Dispatchers.IO) {
+                groups.count { group ->
+                    runCatching {
+                        val groupType = runCatching {
+                            AppSingleton.getJsonObjectMapper().readValue(
+                                AppSingleton.getEngine().getGroupV2JsonType(
+                                    group.bytesOwnedIdentity,
+                                    group.bytesGroupIdentifier
+                                ),
+                                JsonGroupType::class.java
+                            ).toGroupCreationModel()
+                        }.getOrNull() ?: CustomGroup()
+                        val changeSet = ObvGroupV2.ObvGroupV2ChangeSet().apply {
+                            addedMembersWithPermissions[ObvBytesKey(contact.bytesContactIdentity)] =
+                                groupType.getDefaultPermissions(isAdmin = false)
+                        }
+                        AppSingleton.getEngine().initiateGroupV2Update(
+                            group.bytesOwnedIdentity,
+                            group.bytesGroupIdentifier,
+                            changeSet
+                        )
+                    }.isFailure
+                }
+            }
+            if (failureCount > 0) {
+                App.toast(R.string.toast_message_error_retry, Toast.LENGTH_SHORT)
+            } else {
+                App.toast(
+                    App.getContext().getString(
+                        R.string.toast_message_adding_contact_to_groups,
+                        contact.getCustomDisplayName()
+                    ),
+                    Toast.LENGTH_SHORT,
+                    Gravity.BOTTOM
+                )
+            }
+            clearGroupsToAdd()
+            onFinished()
+        }
+    }
+
     fun openGallery(context: Context) {
         val contact = contactAndInvitation?.value?.contact ?: return
         App.runThread {
@@ -350,7 +429,8 @@ fun ObvTrustOrigin.toAnnotatedString(
         ObvTrustOrigin.TYPE.INTRODUCTION -> {
             return buildAnnotatedString {
                 append(context.getString(R.string.trust_origin_introduction_type))
-                val identityDetails = this@toAnnotatedString.mediatorOrGroupOwner.identityDetails
+                val mediatorOrGroupOwner = this@toAnnotatedString.mediatorOrGroupOwner
+                val identityDetails = mediatorOrGroupOwner?.identityDetails
                 if (identityDetails != null) {
                     val displayName = identityDetails.formatDisplayName(
                         SettingsActivity.contactDisplayNameFormat,
@@ -364,7 +444,7 @@ fun ObvTrustOrigin.toAnnotatedString(
                             App.openContactDetailsActivity(
                                 context,
                                 bytesOwnedIdentity,
-                                this@toAnnotatedString.mediatorOrGroupOwner.bytesIdentity
+                                mediatorOrGroupOwner.getBytesIdentity()
                             )
                         }
                     )) {
@@ -382,7 +462,8 @@ fun ObvTrustOrigin.toAnnotatedString(
         ObvTrustOrigin.TYPE.GROUP -> {
             return buildAnnotatedString {
                 append(context.getString(R.string.trust_origin_group_type))
-                val identityDetails = this@toAnnotatedString.mediatorOrGroupOwner.identityDetails
+                val mediatorOrGroupOwner = this@toAnnotatedString.mediatorOrGroupOwner
+                val identityDetails = mediatorOrGroupOwner?.identityDetails
                 if (identityDetails != null) {
                     val displayName = identityDetails.formatDisplayName(
                         SettingsActivity.contactDisplayNameFormat,
@@ -396,7 +477,7 @@ fun ObvTrustOrigin.toAnnotatedString(
                             App.openContactDetailsActivity(
                                 context,
                                 bytesOwnedIdentity,
-                                this@toAnnotatedString.mediatorOrGroupOwner.bytesIdentity
+                                mediatorOrGroupOwner.getBytesIdentity()
                             )
                         }
                     )) {
@@ -422,7 +503,7 @@ fun ObvTrustOrigin.toAnnotatedString(
 
         ObvTrustOrigin.TYPE.SERVER_GROUP_V2 -> {
             val group2 = AppDatabase.getInstance()
-                .group2Dao()[bytesOwnedIdentity, this.bytesGroupIdentifier]
+                .group2Dao()[bytesOwnedIdentity, this.bytesGroupIdentifier!!]
             return buildAnnotatedString {
                 append(context.getString(R.string.trust_origin_group_v2_type))
                 if (group2 == null) {
@@ -439,7 +520,7 @@ fun ObvTrustOrigin.toAnnotatedString(
                             App.openGroupV2DetailsActivity(
                                 context,
                                 bytesOwnedIdentity,
-                                this@toAnnotatedString.bytesGroupIdentifier
+                                this@toAnnotatedString.bytesGroupIdentifier!!
                             )
                         }
                     )) {

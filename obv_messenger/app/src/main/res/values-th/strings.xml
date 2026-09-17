@@ -26,8 +26,8 @@
 	<string name="button_label_create_group" state="needs_review" hash="1102939673">สร้างกลุ่ม</string>
 	<string name="button_label_discard" state="needs_review" hash="795591204">ละทิ้ง</string>
 	<string name="button_label_exchange_digits_with_user" state="needs_review" hash="339599327">แลกเปลี่ยนรหัสกับ %1$s</string>
-	<string name="button_label_generate_new_id" state="needs_review" hash="92014734">สร้าง ID ใหม่</string>
-	<string name="button_label_generate_my_id" state="needs_review" hash="-1007060207">สร้าง ID ของฉัน</string>
+	<string name="button_label_generate_new_id" state="needs_review" hash="-1130516787">สร้างโปรไฟล์ใหม่</string>
+	<string name="button_label_generate_my_id" state="needs_review" hash="239641058">สร้างโปรไฟล์ของฉัน</string>
 	<string name="button_label_ignore" state="needs_review" hash="-806373746">เพิกเฉย</string>
 	<string name="button_label_reject" state="needs_review" hash="-2094664161">ปฏิเสธ</string>
 	<string name="button_label_introduce" state="needs_review" hash="193852909">แนะนำ</string>
@@ -80,6 +80,12 @@
 	<string name="dialog_title_rename_group" state="needs_review" hash="1461324427">เปลี่ยนชื่อกลุ่ม</string>
 	<string name="dialog_title_restart_channel_establishment" state="needs_review" hash="-645769680">เริ่มการสร้างช่องทางอีกครั้งหรือไม่</string>
 	<string name="dialog_title_share_with" state="needs_review" hash="854107768">แชร์กับ…</string>
+	<string name="dialog_title_share_recipients" state="needs_review" hash="1157053138">เลือกผู้รับ</string>
+	<string name="share_label_from" state="needs_review" hash="2049052075">จาก:</string>
+	<string name="share_label_to" state="needs_review" hash="-1785690373">ถึง:</string>
+	<string name="share_label_choose_recipients" state="needs_review" hash="1157053138">เลือกผู้รับ</string>
+	<string name="hint_share_message" state="needs_review" hash="-763169957">เพิ่มข้อความ…</string>
+	<string name="content_description_delete_attachment" state="needs_review" hash="-220348329">ลบไฟล์ที่แนบมา</string>
 	<string name="dialog_title_shortcut_to" state="needs_review" hash="-1193591200">สร้างทางลัดไปยัง…</string>
 	<string name="explanation_choose_display_name" state="needs_review" hash="1162066686">โปรดป้อนชื่อที่จะแสดงให้ผู้ติดต่อของคุณเห็น ข้อมูลนี้จะไม่ถูกส่งไปยังเซิร์ฟเวอร์ของ Olvid</string>
 	<string name="explanation_empty_contact_list" state="needs_review" hash="1240778508">ขณะนี้ไม่มีรายชื่อติดต่อ</string>
@@ -104,7 +110,7 @@
 	<string name="explanation_no_message_found" state="needs_review" hash="-1329622990">ไม่พบข้อความ</string>
 	<string name="explanation_no_attachment_found" state="needs_review" hash="156593369">ไม่พบไฟล์แนบ</string>
 	<string name="explanation_no_link_found" state="needs_review" hash="-1419950450">ไม่พบลิงก์</string>
-	<string name="hint_company" state="needs_review" hash="379200324">บริษัท (ไม่บังคับ)</string>
+	<string name="hint_company" state="needs_review" hash="988571519">บริษัท</string>
 	<string name="hint_compose_your_message" state="needs_review" hash="-25761578">เขียนข้อความ</string>
 	<string name="hint_compose_your_message_ephemeral" state="needs_review" hash="-1527208333">ข้อความชั่วคราว</string>
 	<string name="label_edit_your_message" state="needs_review" hash="1091877412">แก้ไขข้อความของคุณ</string>
@@ -133,7 +139,7 @@
 	<string name="hint_last_name" state="needs_review" hash="1701170359">นามสกุล</string>
 	<string name="hint_new_name" state="needs_review" hash="709842168">ชื่อใหม่</string>
 	<string name="hint_notification_reply" state="needs_review" hash="1095144032">ตอบกลับ</string>
-	<string name="hint_position" state="needs_review" hash="-55145181">ตำแหน่งงาน (ไม่บังคับ)</string>
+	<string name="hint_position" state="needs_review" hash="1338817744">ตำแหน่งงาน</string>
 	<string name="invitation_label_their_code" state="needs_review" hash="1402501614">โค้ดของพวกเขา</string>
 	<string name="invitation_label_your_code" state="needs_review" hash="1944546233">รหัสของคุณ</string>
 	<string name="invitation_status_accept_invite" state="needs_review" hash="2100924901">ได้รับคำเชิญแล้ว</string>
@@ -170,6 +176,11 @@
 	<string name="label_group_members" state="needs_review" hash="1460220752">สมาชิกกลุ่ม</string>
 	<string name="label_other_group_members" state="needs_review" hash="-2121490032">สมาชิกกลุ่มคนอื่นๆ</string>
 	<string name="label_groups_common" state="needs_review" hash="1252823567">กลุ่มที่ใช้ร่วมกัน</string>
+	<string name="label_create_group_with_contact" state="needs_review" hash="1950649899">สร้างกลุ่มกับ %1$s</string>
+	<string name="label_add_contact_to_a_group" state="needs_review" hash="-682192937">เพิ่ม %1$s เข้าไปในกลุ่ม</string>
+	<string name="label_add_to_groups" state="needs_review" hash="-654216617">เพิ่มไปยังกลุ่ม</string>
+	<string name="explanation_no_admin_group_to_add_contact" state="needs_review" hash="402908162">คุณไม่ได้เป็นผู้ดูแลกลุ่มใดๆ ที่ %1$s สามารถถูกเพิ่มเข้าไปได้</string>
+	<string name="toast_message_adding_contact_to_groups" state="needs_review" hash="1201697547">กำลังเพิ่ม %1$s ลงในกลุ่มที่เลือก...</string>
 	<string name="label_invitation_declined" state="needs_review" hash="2038173833">ปฏิเสธคำเชิญ</string>
 	<string name="label_new_group_card" state="needs_review" hash="1006740909">รายละเอียดกลุ่มได้รับการอัปเดต</string>
 	<string name="label_not_part_of_a_group" state="needs_review" hash="1667979596">ยังไม่ได้เข้าร่วมกลุ่มใดๆ</string>
@@ -183,6 +194,7 @@
 	<string name="menu_action_create_shortcut" state="needs_review" hash="-1949455873">สร้างทางลัด</string>
 	<string name="menu_action_delete" state="needs_review" hash="-232100842">ลบ</string>
 	<string name="menu_action_delete_discussion" state="needs_review" hash="2059656471">ลบการสนทนา</string>
+	<string name="menu_action_export_discussion" state="needs_review" hash="1736692296">ส่งออกบทสนทนา</string>
 	<string name="label_swipe_details" state="needs_review" hash="171468732">รายละเอียด</string>
 	<string name="menu_action_disband_group" state="needs_review" hash="-1767089289">ยุบกลุ่ม</string>
 	<string name="menu_action_edit_group_details" state="needs_review" hash="310205135">แก้ไขรายละเอียดกลุ่ม</string>
@@ -482,7 +494,14 @@
 	<string name="dialog_title_backup_choices" state="needs_review" hash="281222223">เลือกวิธีการสำรองข้อมูล</string>
 	<string name="menu_action_choose_picture" state="needs_review" hash="-1655172909">เลือกรูปภาพ</string>
 	<string name="menu_action_take_photo" state="needs_review" hash="-1123080444">ถ่ายรูป</string>
+	<string name="menu_action_choose_image_from_olvid" state="needs_review" hash="1585248356">เลือกรูปภาพที่ได้รับ</string>
 	<string name="menu_action_remove_image" state="needs_review" hash="1094977672">ลบรูปภาพ</string>
+	<string name="menu_action_use_image_as" state="needs_review" hash="587310096">ใช้รูปภาพนี้เป็น...</string>
+	<string name="label_use_photo_for_my_profile" state="needs_review" hash="-1005809580">รูปโปรไฟล์ของฉัน</string>
+	<string name="label_use_photo_for_target" state="needs_review" hash="283541521">รูปภาพสำหรับ %s</string>
+	<string name="label_use_photo_for_discussion_background" state="needs_review" hash="1925733151">พื้นหลังสำหรับ %s</string>
+	<string name="toast_message_photo_set" state="needs_review" hash="-1641885203">รูปภาพได้รับการอัปเดตแล้ว</string>
+	<string name="toast_message_background_set" state="needs_review" hash="1642873459">มีการอัปเดตพื้นหลังแล้ว</string>
 	<string name="dialog_title_create_empty_group" state="needs_review" hash="-663434464">สร้างกลุ่มเปล่าๆ ไหม?</string>
 	<string name="dialog_message_create_empty_group" state="needs_review" hash="-297923005">คุณไม่ได้เลือกผู้ติดต่อใดๆ เพื่อเพิ่มลงในกลุ่มของคุณ คุณแน่ใจหรือไม่ว่าต้องการสร้างกลุ่มเปล่าๆ?</string>
 	<string name="pref_dark_mode_title" state="needs_review" hash="816474245">โหมดสีเข้ม</string>
@@ -862,7 +881,7 @@
 	<string name="button_label_check_options" state="needs_review" hash="-759177128">ตรวจสอบตัวเลือก</string>
 	<string name="hint_olvid_server" state="needs_review" hash="1097391633">เซิร์ฟเวอร์ Olvid</string>
 	<string name="hint_license_activation_code" state="needs_review" hash="102193320">รหัสเปิดใช้งานใบอนุญาต</string>
-	<string name="activity_title_identity_creation_options" state="needs_review" hash="1180456032">ตัวเลือกในการสร้าง ID</string>
+	<string name="activity_title_identity_creation_options" state="needs_review" hash="-774054913">ตัวเลือกสำหรับการสร้างโปรไฟล์</string>
 	<string name="activity_title_scan_configuration" state="needs_review" hash="-386259993">สแกนการตั้งค่า</string>
 	<string name="menu_action_import_activation_from_clipboard" state="needs_review" hash="-70842935">นำเข้าลิงก์จากคลิปบอร์ด</string>
 	<string name="troubleshooting_update_valid_title" state="needs_review" hash="741828768">Olvid เป็นเวอร์ชันล่าสุดแล้ว</string>
@@ -871,7 +890,6 @@
 	<string name="dialog_message_update_available" state="needs_review" hash="416187645">มี Olvid เวอร์ชันใหม่พร้อมใช้งานแล้ว\n\nโปรดอัปเดตเพื่อใช้ประโยชน์จากคุณสมบัติใหม่ล่าสุด</string>
 	<string name="dialog_title_call_initiation_not_supported" state="needs_review" hash="-2088021831">ไม่สามารถเริ่มต้นการโทรได้</string>
 	<string name="dialog_message_call_initiation_not_supported" state="needs_review" hash="1760333819">ดูเหมือนว่าเซิร์ฟเวอร์ Olvid ของคุณไม่รองรับการเริ่มต้นการโทรที่ปลอดภัย\n\nโปรดติดต่อผู้ดูแลระบบของคุณสำหรับรายละเอียดเพิ่มเติม</string>
-	<string name="label_identity_creation_options" state="needs_review" hash="1180456032">ตัวเลือกในการสร้าง ID</string>
 	<string name="text_option_server" state="needs_review" hash="-1130676431">เซิร์ฟเวอร์: %1$s</string>
 	<string name="dialog_title_non_default_server" state="needs_review" hash="2119192219">การใช้เซิร์ฟเวอร์ที่ไม่ใช่ค่าเริ่มต้น</string>
 	<string name="dialog_message_non_default_server" state="needs_review" hash="459308900">คุณกำลังจะสร้างโปรไฟล์บนเซิร์ฟเวอร์ต่อไปนี้:\n\n%1$s\n\nนี่ไม่ใช่เซิร์ฟเวอร์ Olvid เริ่มต้น โปรดดำเนินการต่อเฉพาะในกรณีที่คุณไว้วางใจเซิร์ฟเวอร์นี้</string>
@@ -900,7 +918,7 @@
 	<string name="toast_message_unable_to_keycloak_revoke" state="needs_review" hash="-1368037130">ไม่สามารถแทนที่ Olvid ID ก่อนหน้าได้ โปรดลองใหม่อีกครั้ง</string>
 	<string name="toast_message_keycloak_revoke_successful" state="needs_review" hash="-1216369809">เปลี่ยน Olvid ID ก่อนหน้าเรียบร้อยแล้ว</string>
 	<string name="dialog_title_keycloak_authentication_required_user_id_changed" state="needs_review" hash="-896407029">ตรวจพบการเปลี่ยนแปลงผู้ใช้</string>
-	<string name="dialog_message_keycloak_authentication_required_user_id_changed" state="needs_review" hash="876252686">โปรไฟล์ของคุณปัจจุบันได้รับการจัดการโดยองค์กรของคุณ ดูเหมือนว่าคุณได้ลงชื่อเข้าใช้ด้วยบัญชีอื่นที่ไม่ใช่บัญชีที่คุณใช้เป็นประจำ ซึ่งไม่รองรับ\n\nโปรดติดต่อผู้ดูแลระบบของคุณหรือลงชื่อเข้าใช้ใหม่อีกครั้งด้วยบัญชีที่ถูกต้อง</string>
+	<string name="dialog_message_keycloak_authentication_required_user_id_changed" state="needs_review" hash="2080839829">โปรไฟล์ของคุณปัจจุบันได้รับการจัดการโดยองค์กรของคุณ ดูเหมือนว่าคุณได้ลงชื่อเข้าใช้ด้วยบัญชีผู้ใช้ที่แตกต่างจากปกติ ซึ่งไม่รองรับ\n\nโปรดติดต่อผู้ดูแลระบบหรือลงชื่อเข้าใช้อีกครั้งในฐานะผู้ใช้ที่ถูกต้อง</string>
 	<string name="dialog_title_add_keycloak_user" state="needs_review" hash="-1050193239">เพิ่มผู้ติดต่อ</string>
 	<string name="dialog_message_add_keycloak_user" state="needs_review" hash="-1755937035">คุณเลือกที่จะเพิ่ม %1$s ลงในรายชื่อติดต่อของคุณ คุณต้องการดำเนินการต่อหรือไม่</string>
 	<string name="explanation_keycloak_update_new" state="needs_review" hash="1136733528">คุณกำลังจะกำหนดค่าผู้ให้บริการข้อมูลประจำตัวของบริษัทของคุณใน Olvid เมื่อกำหนดค่าแล้ว คุณจะสามารถรับรองความถูกต้องกับเซิร์ฟเวอร์นี้ได้ และ Olvid จะช่วยให้คุณสามารถเพิ่มพนักงานคนอื่นๆ ในรายชื่อติดต่อของคุณได้อย่างราบรื่น\nโปรดติดต่อผู้ดูแลระบบของคุณสำหรับรายละเอียดเพิ่มเติม</string>
@@ -1031,6 +1049,8 @@
 	<string name="label_storage_discussions" state="needs_review" hash="491497248">การสนทนา</string>
 	<string name="pref_use_internal_image_viewer_title" state="needs_review" hash="1319400578">ใช้โปรแกรมดูรูปภาพในตัว</string>
 	<string name="pref_use_internal_image_viewer_summary" state="needs_review" hash="1248137666">เมื่อเปิดใช้งาน การคลิกที่ไฟล์แนบรูปภาพจะเปิดในโปรแกรมดูภายใน หากไม่ได้เปิดใช้งาน แอปรูปภาพเริ่มต้นของอุปกรณ์ของคุณจะถูกใช้</string>
+	<string name="pref_image_text_recognition_title" state="needs_review" hash="1877261687">ตรวจจับและจัดทำดัชนีข้อความในรูปภาพ</string>
+	<string name="pref_image_text_recognition_summary" state="needs_review" hash="1217699919">ช่วยให้ค้นหาและคัดลอกข้อความที่อยู่ในไฟล์ภาพแนบได้ ฟีเจอร์นี้อาจใช้ทรัพยากรมากบนอุปกรณ์รุ่นเก่า หากไม่จำเป็นต้องใช้ ให้ปิดใช้งาน</string>
 	<string name="label_unable_to_display_image" state="needs_review" hash="-1495534207">ไม่สามารถแสดงรูปภาพได้</string>
 	<string name="dialog_title_backup_requires_sign_in" state="needs_review" hash="-720389674">จำเป็นต้องลงชื่อเข้าใช้กับผู้ให้บริการคลาวด์ของคุณ</string>
 	<string name="dialog_message_backup_requires_sign_in" state="needs_review" hash="119557495">คุณได้ตั้งค่า Olvid ให้ใช้การสำรองข้อมูลอัตโนมัติไปยังผู้ให้บริการคลาวด์ แต่เซสชันของคุณหมดอายุแล้ว คุณต้องลงชื่อเข้าใช้ผู้ให้บริการรายนี้อีกครั้ง\n\nหากคุณไม่ต้องการใช้การสำรองข้อมูลอัตโนมัติอีกต่อไป คุณสามารถปิดใช้งานได้ในการตั้งค่าแอป โปรดทราบว่าการสำรองข้อมูลอัตโนมัติเป็นวิธีเดียวที่จะป้องกันการสูญหายของรายชื่อติดต่อของคุณในกรณีที่อุปกรณ์ของคุณสูญหายหรือเสียหาย</string>
@@ -1149,7 +1169,7 @@
 	<string name="pref_hidden_profile_close_policy_dialog_entry_screen_lock" state="needs_review" hash="-1520400811">เมื่อหน้าจอล็อคของ Olvid ทำงาน</string>
 	<string name="pref_hidden_profile_close_policy_dialog_entry_background" state="needs_review" hash="-2099539114">เมื่อ Olvid ทำงานในเบื้องหลัง…</string>
 	<string name="activity_title_enter_backup_key" state="needs_review" hash="1035967309">ใส่คีย์สำรองข้อมูล</string>
-	<string name="activity_title_identity_creation" state="needs_review" hash="-1361520151">สร้าง ID</string>
+	<string name="activity_title_identity_creation" state="needs_review" hash="2027618284">สร้างโปรไฟล์</string>
 	<string name="menu_action_manual_configuration" state="needs_review" hash="-1495974502">การกำหนดค่าขั้นสูงด้วยตนเอง</string>
 	<string name="toast_message_invalid_configuration_link" state="needs_review" hash="1387412522">ลิงก์การกำหนดค่าไม่ถูกต้อง</string>
 	<string name="toast_message_invalid_link" state="needs_review" hash="1265454437">ลิงก์ไม่ถูกต้อง</string>
@@ -1171,6 +1191,7 @@
 	<string name="dialog_title_chose_profile_web_client" state="needs_review" hash="1860298414">เลือกโปรไฟล์ที่จะเชื่อมต่อกับไคลเอนต์เว็บ Olvid</string>
 	<string name="dialog_title_chose_profile_invitation" state="needs_review" hash="-2063034787">เลือกโปรไฟล์ที่จะใช้ในการเชิญผู้ติดต่อรายนี้</string>
 	<string name="toast_message_create_new_profile_then_reopen_this_link" state="needs_review" hash="1770827346">โปรดสร้างโปรไฟล์ใหม่ก่อน จากนั้นเปิดลิงก์นี้อีกครั้ง</string>
+	<string name="toast_message_invitation_link_deferred_to_end_of_onboarding" state="needs_review" hash="-189914806">คำเชิญของคุณจะเปิดขึ้นโดยอัตโนมัติเมื่อสร้างโปรไฟล์ของคุณเสร็จสิ้น</string>
 	<string name="button_label_switch_profile" state="needs_review" hash="-2007633024">เปลี่ยนโปรไฟล์</string>
 	<string name="text_no_other_profile_to_switch_to" state="needs_review" hash="-112306213">ไม่มีโปรไฟล์อื่น</string>
 	<string name="button_label_configure_lock_screen" state="needs_review" hash="870348426">ตั้งค่าหน้าจอล็อค</string>
@@ -1442,22 +1463,17 @@
 	<string name="button_label_send" state="needs_review" hash="-185402948">ส่ง</string>
 	<string name="button_label_start_sharing" state="needs_review" hash="682254052">เริ่มแชร์</string>
 	<string name="location_sharing_duration_one_hour_short_string" state="needs_review" hash="1004063951">1 ชั่วโมง</string>
-	<string name="location_sharing_duration_one_hour_full_string" state="needs_review" hash="-58118972">แชร์ตำแหน่งที่ตั้งของคุณเป็นเวลา <b>1 ชั่วโมง</b>
-	</string>
+	<string name="location_sharing_duration_one_hour_full_string" state="needs_review" hash="-58118972">แชร์ตำแหน่งที่ตั้งของคุณเป็นเวลา <b>1 ชั่วโมง</b></string>
 	<string name="location_sharing_duration_three_hours_short_string" state="needs_review" hash="228095183">3 ชั่วโมง</string>
-	<string name="location_sharing_duration_three_hours_full_string" state="needs_review" hash="754857804">แชร์ตำแหน่งที่ตั้งของคุณเป็นเวลา <b>3 ชั่วโมง</b>
-	</string>
+	<string name="location_sharing_duration_three_hours_full_string" state="needs_review" hash="754857804">แชร์ตำแหน่งที่ตั้งของคุณเป็นเวลา <b>3 ชั่วโมง</b></string>
 	<string name="location_sharing_duration_endless_short_string" state="needs_review" hash="55208442">ไม่มีที่สิ้นสุด</string>
 	<string name="location_sharing_duration_endless_full_string" state="needs_review" hash="1710814259">แชร์ตำแหน่งจนกว่าจะหยุด</string>
 	<string name="location_sharing_quality_precise_short_string" state="needs_review" hash="351442529">แม่นยำ</string>
 	<string name="location_sharing_quality_balanced_short_string" state="needs_review" hash="-1925315592">สมดุล</string>
 	<string name="location_sharing_quality_power_save_short_string" state="needs_review" hash="-14275273">ประหยัดพลังงาน</string>
-	<string name="location_sharing_quality_precise_full_string" state="needs_review" hash="-1255374893">โหมดการแชร์ตำแหน่งที่ตั้งแบบ<b>แม่นยำ</b>
-	</string>
-	<string name="location_sharing_quality_balanced_full_string" state="needs_review" hash="-421322514">โหมดการแชร์ตำแหน่งที่ตั้งแบบ<b>สมดุล</b>
-	</string>
-	<string name="location_sharing_quality_power_save_full_string" state="needs_review" hash="792896333">โหมดการแชร์ตำแหน่งที่ใช้<b>พลังงานอย่างประหยัด</b>
-	</string>
+	<string name="location_sharing_quality_precise_full_string" state="needs_review" hash="-1255374893">โหมดการแชร์ตำแหน่งที่ตั้งแบบ<b>แม่นยำ</b></string>
+	<string name="location_sharing_quality_balanced_full_string" state="needs_review" hash="-421322514">โหมดการแชร์ตำแหน่งที่ตั้งแบบ<b>สมดุล</b></string>
+	<string name="location_sharing_quality_power_save_full_string" state="needs_review" hash="792896333">โหมดการแชร์ตำแหน่งที่ใช้<b>พลังงานอย่างประหยัด</b></string>
 	<string name="label_sharing_location_until" state="needs_review" hash="187977459">แชร์ตำแหน่งจนถึง: %1$s</string>
 	<string name="label_location_sharing_ended" state="needs_review" hash="1028490137">การแชร์ตำแหน่งสิ้นสุดลงแล้ว</string>
 	<string name="label_gps_coordinates" state="needs_review" hash="-1537356414">พิกัด GPS</string>
@@ -2018,7 +2034,7 @@
 	<string name="button_label_restore_my_profile" state="needs_review" hash="418284480">กู้คืนโปรไฟล์ของฉัน</string>
 	<string name="button_label_keep_all_with_olvid_plus" state="needs_review" hash="622534541">เก็บรักษาทุกอย่างไว้ด้วย Olvid+</string>
 	<string name="explanation_backup_v2_choose_device_after_restore" state="needs_review" hash="292969815">เมื่อโปรไฟล์ของคุณได้รับการกู้คืนแล้ว คุณสามารถเลือกอุปกรณ์ที่จะใช้งานได้จากในการตั้งค่าโปรไฟล์ของคุณ</string>
-	<string name="explanation_backup_v2_device_expiration_start" state="needs_review" hash="-147053489">เมื่อคุณกู้คืนโปรไฟล์ของคุณ \\"</string>
+	<string name="explanation_backup_v2_device_expiration_start" state="needs_review" hash="-147053489">เมื่อคุณกู้คืนโปรไฟล์ของคุณ \"</string>
 	<string name="explanation_backup_v2_device_expiration_nickname" state="needs_review" hash="2093353377">(%1$s)</string>
 	<string name="toast_message_no_key_found" state="needs_review" hash="-1984410678">ไม่พบคีย์สำรอง</string>
 	<string name="label_backup_headers_title" state="needs_review" hash="-846183546">ข้อมูลสำรองของคุณ</string>
@@ -2040,11 +2056,14 @@
 	<string name="button_label_configure_backups" state="needs_review" hash="-990646398">เปิดใช้งานการสำรองข้อมูล</string>
 	<string name="tip_write_backup_key_title" state="needs_review" hash="-1652757003">อย่าลืมจดบันทึกคีย์สำรองข้อมูลของคุณ 😇</string>
 	<string name="tip_write_backup_key_message" state="needs_review" hash="931018791">คีย์สำรองข้อมูลของคุณมีความสำคัญอย่างยิ่งต่อการกู้คืนโปรไฟล์ของคุณ หากคุณไม่สามารถเข้าถึงอุปกรณ์นี้ได้</string>
+	<string name="tip_legacy_backup_end_of_life_title" state="needs_review" hash="810495149">ข้อมูลสำรองรุ่นเก่าที่คุณใช้อยู่ หมดอายุการใช้งานแล้ว</string>
+	<string name="tip_legacy_backup_end_of_life_message" state="needs_review" hash="-314257210">การอัปเดต Olvid ครั้งต่อไปจะไม่รองรับระบบสำรองข้อมูลแบบเก่าอีกต่อไป เพื่อความปลอดภัยของบัญชีของคุณ โปรดเปลี่ยนไปใช้ระบบสำรองข้อมูลใหม่ทันที</string>
 	<string name="tip_troubleshooting_title" state="needs_review" hash="-393739108">ปรับปรุงประสบการณ์การใช้งาน Olvid ของคุณให้ดียิ่งขึ้น 🚀</string>
 	<string name="tip_troubleshooting_message" state="needs_review" hash="-935493349">พารามิเตอร์บางตัวไม่ได้ตั้งค่าอย่างถูกต้องบนอุปกรณ์ของคุณ และอาจส่งผลกระทบต่อประสบการณ์การใช้งาน Olvid ของคุณ</string>
 	<string name="button_label_this_way" state="needs_review" hash="747183939">ทางนี้</string>
 	<string name="toast_code_copied" state="needs_review" hash="-1522785848">คัดลอกรหัสแล้ว</string>
 	<string name="explanation_choose_members" state="needs_review" hash="-1385158706">โปรดเลือกผู้ที่จะเพิ่มในกลุ่มนี้</string>
+	<string name="explanation_choose_share_recipients" state="needs_review" hash="-1406265940">โปรดเลือกผู้ที่คุณต้องการแชร์ด้วย</string>
 	<string name="explanation_choose_contact_introduction" state="needs_review" hash="1113777517">โปรดเลือกคนที่คุณต้องการแนะนำ %1$s ให้</string>
 	<string name="label_group_administration" state="needs_review" hash="871355986">การจัดการกลุ่ม</string>
 	<string name="dialog_title_call_blocked" state="needs_review" hash="1594606530">การโทรถูกบล็อก</string>
@@ -2057,8 +2076,7 @@
 	<string name="tip_new_translations_message" state="needs_review" hash="404124006">เราได้เพิ่มภาษาใหม่ๆ จำนวนมากใน Olvid โดยใช้การแปลแบบ AI ดังนั้นบางภาษาอาจไม่ถูกต้อง\nหากเป็นเช่นนั้น โปรดแจ้งให้เราทราบที่ **lang@olvid.io**</string>
 	<string name="mail_subject_olvid_translation" state="needs_review" hash="1302087510">การแปลแอป Android</string>
 	<string name="pref_app_language_category_title" state="needs_review" hash="1411591324">การแปลด้วยระบบ AI</string>
-	<string name="pref_app_language_category_summary" state="needs_review" hash="-1895843046">การแปลบางส่วนของแอปนี้สร้างขึ้นโดยใช้ AI และอาจไม่ถูกต้อง หากเป็นเช่นนั้น โปรดแจ้งให้เราทราบที่ <b>lang@olvid.io</b>
-	</string>
+	<string name="pref_app_language_category_summary" state="needs_review" hash="-1895843046">การแปลบางส่วนของแอปนี้สร้างขึ้นโดยใช้ AI และอาจไม่ถูกต้อง หากเป็นเช่นนั้น โปรดแจ้งให้เราทราบที่ <b>lang@olvid.io</b></string>
 	<string name="pdf_viewer_password_required" state="needs_review" hash="1826144635">จำเป็นต้องใช้รหัสผ่านเพื่อเปิดไฟล์ PDF นี้</string>
 	<string name="pdf_viewer_enter_password" state="needs_review" hash="872962494">รหัสผ่าน</string>
 	<string name="pdf_viewer_incorrect_password" state="needs_review" hash="582128542">รหัสผ่านไม่ถูกต้อง</string>
@@ -2171,7 +2189,7 @@
 	<string name="store_link_olvid_store" state="needs_review" hash="-1825630369">เยี่ยมชมร้าน Olvid</string>
 	<string name="toast_message_reminder_set" state="needs_review" hash="-961055414">ตั้งค่าการแจ้งเตือนแล้ว</string>
 	<string name="dialog_title_keycloak_authentication_impossible" state="needs_review" hash="325273853">การยืนยันตัวตนไม่สำเร็จ</string>
-	<string name="dialog_message_keycloak_authentication_impossible" state="needs_review" hash="390830785">ขณะนี้โปรไฟล์ของคุณอยู่ภายใต้การจัดการขององค์กรของคุณ และจำเป็นต้องทำการยืนยันตัวตนซ้ำ อย่างไรก็ตาม ดูเหมือนว่าจะไม่มีวิธีการยืนยันตัวตนที่รองรับ โปรดติดต่อผู้ดูแลระบบของคุณเพื่อขอรายละเอียดเพิ่มเติม</string>
+	<string name="dialog_message_keycloak_authentication_impossible" state="needs_review" hash="-2031322232">ขณะนี้โปรไฟล์ของคุณอยู่ภายใต้การจัดการขององค์กร และจำเป็นต้องทำการยืนยันตัวตนซ้ำ อย่างไรก็ตาม ดูเหมือนว่าจะไม่มีวิธีการยืนยันตัวตนที่รองรับได้\n\nโปรดติดต่อผู้ดูแลระบบของคุณเพื่อขอข้อมูลเพิ่มเติม</string>
 	<string name="onboarding_transfer_keycloak_error_message_authentication_impossible" state="needs_review" hash="-1891385979">ดูเหมือนว่าจะไม่มีวิธีการตรวจสอบสิทธิ์ที่รองรับ</string>
 	<string name="pref_use_alt_turn_servers_title" state="needs_review" hash="-1956132776">ใช้เซิร์ฟเวอร์ TURN อื่น</string>
 	<string name="pref_use_alt_turn_servers_summary" state="needs_review" hash="357427162">เปิดใช้งานตัวเลือกนี้เพื่อใช้เซิร์ฟเวอร์ TURN ที่มีที่อยู่ IP แบบหมุนเวียน หากไม่แน่ใจ ให้ปิดตัวเลือกนี้ไว้ 😁</string>
@@ -2282,5 +2300,45 @@
 	<string name="label_error_loading_openstreetmap_style_file" state="needs_review" hash="-2596045">เกิดข้อผิดพลาดขณะโหลดไฟล์รูปแบบ OpenStreetMap</string>
 	<string name="dialog_title_subscriptions_not_available" state="needs_review" hash="336174241">ไม่สามารถสมัครสมาชิกภายในแอปได้</string>
 	<string name="dialog_message_subscriptions_not_available" state="needs_review" hash="2093768678">แอป Olvid ที่คุณติดตั้งไม่มีไลบรารี Google Billing และไม่รองรับการซื้อภายในแอป\n\nหากต้องการข้อมูลเพิ่มเติม โปรดติดต่อเราที่ **feedback@olvid.io**</string>
+	<string name="ftux_next" state="needs_review" hash="1158639077">ถัดไป</string>
+	<string name="ftux_start" state="needs_review" hash="646298532">เริ่มต้นใช้งาน</string>
+	<string name="ftux_page_indicator" state="needs_review" hash="1987610035">หน้า %1$d จาก %2$d</string>
+	<string name="ftux_page_welcome_title" state="needs_review" hash="1173832630">ยินดีต้อนรับสู่ <b>Olvid</b></string>
+	<string name="ftux_page_welcome_body" state="needs_review" hash="-2085198139">ส่งข้อความส่วนตัวสำหรับทุกคน</string>
+	<string name="ftux_page_private_title" state="needs_review" hash="1815927819">การส่งข้อความแบบ<b>ส่วนตัว</b></string>
+	<string name="ftux_page_private_body" state="needs_review" hash="-590644231">บน %1$s คุณสามารถเลือกได้ว่าจะสนทนากับใคร ไม่มีการส่งข้อความสแปม คำแนะนำ หรือการแจ้งเตือนที่ไม่จำเป็น และไม่มีข้อความจากคนแปลกหน้า\n\nไม่มีใครสามารถติดต่อคุณได้หากไม่ได้รับอนุญาตจากคุณ\n\n%1$s คือพื้นที่ส่วนตัวของคุณ</string>
+	<string name="ftux_page_everyone_title" state="needs_review" hash="1506796386">ข้อความสำหรับทุกคน</string>
+	<string name="ftux_page_everyone_body" state="needs_review" hash="-586100377">ไม่ว่าคุณจะเป็นใคร %1$s มอบความปลอดภัยที่ดีที่สุดให้แก่คุณ ไม่จำเป็นต้องใช้ที่อยู่อีเมลหรือหมายเลขโทรศัพท์\n\n%1$s ไม่ต้องการข้อมูลใดๆ จากคุณ และนั่นคือสิ่งที่ทำให้ทุกอย่างเปลี่ยนไป</string>
+	<string name="ftux_page_protect_title" state="needs_review" hash="1969120191">Olvid <b>ปกป้อง</b>คุณ Olvid ปกป้องผู้ที่คุณห่วงใย</string>
+	<string name="ftux_page_protect_body" state="needs_review" hash="881847930">นี่ไม่ใช่แค่คำสัญญาเท่านั้น แต่ %1$s ยังให้หลักฐานยืนยันทางคริปโตอีกด้วย\n\nไม่ว่าคุณจะเพิ่มผู้ติดต่อจากระยะไกลหรือแบบพบหน้าต่อหน้า การสนทนาของคุณจะได้รับการตรวจสอบและเข้ารหัสแบบ end-to-end เสมอ</string>
+	<string name="ftux_page_pricing_title" state="needs_review" hash="-1948277889">รูปแบบธุรกิจที่<b>โปร่งใส</b></string>
+	<string name="ftux_page_pricing_body" state="needs_review" hash="-1064278870">%1$s ไม่ได้ใช้ข้อมูลส่วนตัวของคุณเพื่อหาเงินทุน เพราะไม่ได้ขอข้อมูลใดๆ จากคุณ!\n\nสิ่งที่ฟรีก็คือฟรี สิ่งที่ต้องจ่ายก็มีราคา</string>
+	<string name="ftux_page_media_title" state="needs_review" hash="558110518">โอลิวิดมีทุกอย่าง</string>
+	<string name="ftux_page_media_body" state="needs_review" hash="1807247240">ไม่มีข้อจำกัดด้านขนาดไฟล์แนบ แชร์รูปภาพความละเอียดสูง สร้างโพล โทรด้วยเสียงและวิดีโอ รองรับหลายอุปกรณ์ และมีฟังก์ชันระบุตำแหน่งทางภูมิศาสตร์ ทั้งหมดนี้รวมอยู่ในแอปแล้ว!</string>
 	<string name="menu_action_cancel_upload" state="needs_review" hash="1672681586">ยกเลิกการอัปโหลด</string>
+	<string name="label_suggested_contacts" state="needs_review" hash="816810770">รายชื่อที่แนะนำ</string>
+	<string name="label_suggested_contacts_subtitle" state="needs_review" hash="131522501">เชิญผู้ใช้ได้อย่างง่ายดาย</string>
+	<string name="label_suggested_contact_already_a_contact" state="needs_review" hash="-1177848651">เป็นผู้ติดต่ออยู่แล้ว</string>
+	<string name="label_suggested_contact_invitation_received" state="needs_review" hash="2100924901">ได้รับคำเชิญแล้ว</string>
+	<string name="label_suggested_contact_invitation_sent" state="needs_review" hash="310679275">ส่งคำเชิญแล้ว</string>
+	<string name="label_suggested_contacts_all_done" state="needs_review" hash="-127525104">คุณเป็นเวอร์ชันล่าสุดแล้ว!\nไม่มีผู้ติดต่ออื่น ๆ ที่จะแนะนำ</string>
+	<string name="button_label_suggested_contact_later" state="needs_review" hash="-1933816039">ภายหลัง</string>
+	<string name="button_label_close" state="needs_review" hash="1454843231">ปิด</string>
+	<string name="button_label_skip" state="needs_review" hash="2056258301">ข้าม</string>
+	<string name="button_label_understood" state="needs_review" hash="829780875">รับทราบแล้ว</string>
+	<string name="label_suggested_contacts_onboarding_title_1" state="needs_review" hash="491881039">เชิญชวนด้วยการปัดนิ้ว</string>
+	<string name="label_suggested_contacts_onboarding_message_1" state="needs_review" hash="331320806">ปัดการ์ดไปทางขวาเพื่อเชิญผู้ใช้ หรือปัดไปทางซ้ายเพื่อไปยังผู้ใช้รายถัดไป</string>
+	<string name="label_suggested_contacts_onboarding_title_2" state="needs_review" hash="-788798380">รายชื่อเหล่านี้มาจากที่ใด</string>
+	<string name="label_suggested_contacts_onboarding_message_2" state="needs_review" hash="1536681696">นี่คือผู้ใช้ Olvid ที่คุณยังไม่ได้เพิ่มลงในรายชื่อติดต่อของคุณ</string>
+	<string name="label_suggested_contacts_onboarding_caption" state="needs_review" hash="-1299179969">คุณมีความสัมพันธ์กับผู้ใช้รายนี้ในระดับหนึ่ง: คุณและผู้ใช้นี้อยู่ในกลุ่มเดียวกันอย่างน้อยหนึ่งกลุ่ม</string>
+	<string name="label_suggested_contacts_you" state="needs_review" hash="672009142">คุณ</string>
+	<string name="label_suggested_contacts_common_group" state="needs_review" hash="-1739793963">กลุ่มที่ใช้ร่วมกัน</string>
+	<string name="explanation_suggested_contacts_others_tab" state="needs_review" hash="852096678">ผู้ใช้ด้านล่างนี้ไม่ได้อยู่ในรายชื่อติดต่อของคุณ และคุณยังไม่สามารถสนทนาแบบส่วนตัวกับพวกเขาได้ แต่คุณสามารถเชิญพวกเขาเข้าร่วมได้อย่างง่ายดาย!</string>
+	<string name="label_suggested_contacts_invite_in_one_gesture" state="needs_review" hash="438220313">เชิญผู้ใช้เหล่านี้ด้วยการปัดนิ้ว</string>
+	<string name="menu_action_suggested_contacts_see_full_list" state="needs_review" hash="603082500">ดูรายการทั้งหมด</string>
+	<string name="menu_action_suggested_contacts_replay_onboarding" state="needs_review" hash="-1552704243">ดูวิดีโอแนะนำอีกครั้ง</string>
+	<string name="button_label_uninvite" state="needs_review" hash="771825501">ยกเลิกคำเชิญ</string>
+	<string name="button_label_accept_invitation" state="needs_review" hash="-1778405034">ยอมรับคำเชิญ</string>
+	<string name="label_suggested_contacts_already_swiped" state="needs_review" hash="427042318">เลื่อนดูไปแล้ว</string>
+	<string name="label_suggested_contacts_not_swiped_yet" state="needs_review" hash="310924358">ยังไม่ได้เลื่อนดู</string>
 </resources>

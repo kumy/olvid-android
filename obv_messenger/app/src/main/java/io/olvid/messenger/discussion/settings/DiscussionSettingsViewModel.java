@@ -325,7 +325,7 @@ public class DiscussionSettingsViewModel extends ViewModel {
             if (message != null) {
                 db.discussionCustomizationDao().update(discussionCustomization); // only update the discussion if we could successfully build the message
                 message.id = db.messageDao().insert(message);
-                message.postSettingsMessage(false, null);
+                message.postSettingsMessage(false, null, null);
 
                 AppSingleton.getEngine().profileBackupNeeded(discussion.bytesOwnedIdentity);
             }

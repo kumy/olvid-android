@@ -170,15 +170,7 @@ public class AndroidNotificationManager {
 
         NotificationChannel messageChannel = buildMessageNotificationChannel(getCurrentMessageChannelVersion());
 
-        NotificationChannel unifiedForegroundServiceChannel = new NotificationChannel(
-                UNIFIED_SERVICE_NOTIFICATION_CHANNEL_ID,
-                App.getContext().getString(R.string.notification_channel_unified_service_name),
-                NotificationManager.IMPORTANCE_LOW);
-        unifiedForegroundServiceChannel.setDescription(App.getContext().getString(R.string.notification_channel_unified_service_description));
-        unifiedForegroundServiceChannel.setShowBadge(false);
-        unifiedForegroundServiceChannel.enableVibration(false);
-        unifiedForegroundServiceChannel.enableLights(false);
-        unifiedForegroundServiceChannel.setLockscreenVisibility(Notification.VISIBILITY_SECRET);
+        NotificationChannel unifiedForegroundServiceChannel = buildUnifiedServiceChannel();
 
         NotificationChannel webrtcCallServiceChannel = new NotificationChannel(
                 WEBRTC_CALL_SERVICE_NOTIFICATION_CHANNEL_ID,
@@ -222,6 +214,34 @@ public class AndroidNotificationManager {
 
         if (Build.VERSION.SDK_INT == Build.VERSION_CODES.P) {
             validateSoundForAndroidPie(null);
+        }
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private static NotificationChannel buildUnifiedServiceChannel() {
+        NotificationChannel unifiedForegroundServiceChannel = new NotificationChannel(
+                UNIFIED_SERVICE_NOTIFICATION_CHANNEL_ID,
+                App.getContext().getString(R.string.notification_channel_unified_service_name),
+                NotificationManager.IMPORTANCE_LOW);
+        unifiedForegroundServiceChannel.setDescription(App.getContext().getString(R.string.notification_channel_unified_service_description));
+        unifiedForegroundServiceChannel.setShowBadge(false);
+        unifiedForegroundServiceChannel.enableVibration(false);
+        unifiedForegroundServiceChannel.enableLights(false);
+        unifiedForegroundServiceChannel.setLockscreenVisibility(Notification.VISIBILITY_SECRET);
+        return unifiedForegroundServiceChannel;
+    }
+
+    // UnifiedForegroundService can call startForeground() before AppSingleton's static initializer
+    // has run createChannels() — e.g. a deep-link cold start on a fresh install, where nothing on
+    // the ObvLinkActivity path touches AppSingleton. Posting on the missing channel would kill the
+    // process (CannotPostForegroundServiceNotificationException), so create it on demand.
+    public static void ensureUnifiedServiceChannelExists() {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
+            return;
+        }
+        NotificationManager notificationManager = App.getContext().getSystemService(NotificationManager.class);
+        if (notificationManager != null && notificationManager.getNotificationChannel(UNIFIED_SERVICE_NOTIFICATION_CHANNEL_ID) == null) {
+            notificationManager.createNotificationChannel(buildUnifiedServiceChannel());
         }
     }
 
@@ -658,7 +678,7 @@ public class AndroidNotificationManager {
             if ((currentShowingDiscussionId != null) && (discussion.id == currentShowingDiscussionId)) {
                 return;
             }
-            boolean isMentioned = message != null && ownedIdentity != null && message.isIdentityMentioned(ownedIdentity.bytesOwnedIdentity);
+            boolean isMentioned = message != null && message.mentioned;
             boolean unarchiveNeeded = discussion.archived && SettingsActivity.getUnarchiveDiscussionOnNotification();
             DiscussionCustomization discussionCustomization = AppDatabase.getInstance().discussionCustomizationDao().get(discussion.id);
             if (discussionCustomization != null && discussionCustomization.shouldMuteNotifications(isMentioned)) {
@@ -911,7 +931,7 @@ public class AndroidNotificationManager {
             Collections.sort(discussionNotification.messageNotifications);
             if (contact != null) {
                 String title = contact.getCustomDisplayName();
-                if (ownedIdentity != null && message.isIdentityMentioned(ownedIdentity.bytesOwnedIdentity)) {
+                if (ownedIdentity != null && message.mentioned) {
                     title = App.getContext().getString(R.string.notification_title_user_has_mentioned_you, title);
                 }
                 discussionNotification.messageNotifications.add(new JsonPojoDiscussionNotification.JsonPojoMessageNotification(message.id, (long) message.sortIndex, title, contact.getCustomPhotoUrl(), contact.bytesContactIdentity, message.getStringContent(App.getContext(), true)));
@@ -2148,6 +2168,28 @@ public class AndroidNotificationManager {
         });
     }
 
+
+    // endregion
+
+    // region Owned identity deletion
+
+    // Clears all notifications that may remain after an owned identity was deleted.
+    // The discussion ids, invitation dialog uuids, and device uids must be captured BEFORE the
+    // owned identity is deleted from the database (deletion cascades and makes them unrecoverable).
+    public static void clearNotificationsForDeletedOwnedIdentity(@NonNull byte[] bytesOwnedIdentity, @NonNull List<Long> discussionIds, @NonNull List<UUID> invitationDialogUuids, @NonNull List<byte[]> deviceUids) {
+        for (Long discussionId : discussionIds) {
+            clearReceivedMessageAndReactionsNotification(discussionId);
+            clearMissedCallNotification(discussionId);
+        }
+        for (UUID invitationDialogUuid : invitationDialogUuids) {
+            clearInvitationNotification(invitationDialogUuid);
+        }
+        for (byte[] deviceUid : deviceUids) {
+            clearDeviceTrustNotification(deviceUid);
+            clearDeviceExpirationNotification(deviceUid);
+        }
+        clearKeycloakAuthenticationRequiredNotification(bytesOwnedIdentity);
+    }
 
     // endregion
 

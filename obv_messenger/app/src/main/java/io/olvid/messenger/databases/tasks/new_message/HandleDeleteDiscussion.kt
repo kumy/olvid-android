@@ -38,7 +38,7 @@ fun handleDeleteDiscussion(
 ): HandleMessageOutput {
     if (putMessageOnHoldIfDiscussionIsMissing(
             db,
-            obvMessage.identifier,
+            obvMessage.identifier!!,
             obvMessage.serverTimestamp,
             messageSender,
             jsonDeleteDiscussion.oneToOneIdentifier,

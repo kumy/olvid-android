@@ -1,0 +1,4 @@
+- Nova funkcija za skupno rabo zaslona, ki omogoča objavljanje v več pogovorih hkrati.
+- Nov način povabljanja članov skupine v zasebni pogovor s preprostim gibom.
+- Novo uvajanje, ki novim uporabnikom razloži, kako deluje Olvid.
+- Izboljšan pregledovalnik slik/videoposnetkov, možnost povečave videoposnetkov.

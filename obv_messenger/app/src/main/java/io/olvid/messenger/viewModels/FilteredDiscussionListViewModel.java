@@ -26,6 +26,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -33,6 +34,7 @@ import java.util.regex.Pattern;
 
 import io.olvid.messenger.App;
 import io.olvid.messenger.customClasses.StringUtils;
+import io.olvid.messenger.customClasses.StringUtils2;
 import io.olvid.messenger.databases.dao.DiscussionDao;
 import io.olvid.messenger.databases.entity.Discussion;
 
@@ -66,7 +68,7 @@ public class FilteredDiscussionListViewModel extends ViewModel {
             }
         }
         if (unfilteredDiscussions != null) {
-            App.runThread(new FilterDiscussionListTask(filterPatterns, filteredDiscussions, unfilteredDiscussions, selectedDiscussionIdsHashSet));
+            App.runThread(new FilterDiscussionListTask(filter, filterPatterns, filteredDiscussions, unfilteredDiscussions, selectedDiscussionIdsHashSet));
         }
     }
 
@@ -109,12 +111,14 @@ public class FilteredDiscussionListViewModel extends ViewModel {
     }
 
     private static class FilterDiscussionListTask implements Runnable {
+        private final String filter;
         private final List<Pattern> filterPatterns;
         private final MutableLiveData<List<SearchableDiscussion>> liveFilteredDiscussions;
         private final List<SearchableDiscussion> unfilteredDiscussions;
         private final HashSet<Long> selectedDiscussionIds;
 
-        FilterDiscussionListTask(List<Pattern> filterPatterns, MutableLiveData<List<SearchableDiscussion>> liveFilteredDiscussions, List<SearchableDiscussion> unfilteredDiscussions, HashSet<Long> selectedDiscussionIds) {
+        FilterDiscussionListTask(String filter, List<Pattern> filterPatterns, MutableLiveData<List<SearchableDiscussion>> liveFilteredDiscussions, List<SearchableDiscussion> unfilteredDiscussions, HashSet<Long> selectedDiscussionIds) {
+            this.filter = filter;
             if (filterPatterns == null) {
                 this.filterPatterns = new ArrayList<>(0);
             } else {
@@ -147,6 +151,9 @@ public class FilteredDiscussionListViewModel extends ViewModel {
                     list.add(searchableDiscussion);
                 }
             }
+            // rank discussions whose title words start with the filter first (matches in the
+            // group member names only are ranked last)
+            list.sort(Comparator.comparingInt(searchableDiscussion -> StringUtils2.searchMatchRank(searchableDiscussion.title, filter)));
             liveFilteredDiscussions.postValue(list);
         }
     }
@@ -186,8 +193,15 @@ public class FilteredDiscussionListViewModel extends ViewModel {
                     break;
                 }
             }
-            this.title = discussionAndGroupMembersNames.discussion.title;
+            // Discussion.title is @Nullable in the DB (unnamed groups, locked, partially-created
+            // discussions); fall back to the group-member name list or an empty string so the
+            // @NonNull contract on this.title actually holds at runtime.
+            String resolvedTitle = discussionAndGroupMembersNames.discussion.title;
             this.groupMemberNameList = discussionAndGroupMembersNames.groupMemberNames == null ? "" : discussionAndGroupMembersNames.groupMemberNames;
+            if (resolvedTitle == null || resolvedTitle.isEmpty()) {
+                resolvedTitle = this.groupMemberNameList;
+            }
+            this.title = resolvedTitle;
             this.patternMatchingField = discussionAndGroupMembersNames.patterMatchingField == null ? StringUtils.unAccent(title + "\n" + groupMemberNameList) : discussionAndGroupMembersNames.patterMatchingField;
             this.photoUrl = discussionAndGroupMembersNames.discussion.photoUrl;
             this.keycloakManaged = discussionAndGroupMembersNames.discussion.keycloakManaged;

@@ -51,7 +51,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import io.olvid.messenger.App
 import io.olvid.messenger.R
 import io.olvid.messenger.designsystem.components.SearchBar
-import io.olvid.messenger.designsystem.plus
+import androidx.compose.foundation.layout.plus
 import io.olvid.messenger.main.contacts.ContactListItem
 import io.olvid.messenger.main.contacts.highlight
 import io.olvid.messenger.main.discussions.getAnnotatedTitle

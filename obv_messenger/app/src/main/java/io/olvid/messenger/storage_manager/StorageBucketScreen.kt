@@ -85,6 +85,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import io.olvid.messenger.App
@@ -110,15 +111,19 @@ import io.olvid.messenger.designsystem.components.OlvidTextButton
 import io.olvid.messenger.designsystem.components.OlvidTopAppBar
 import io.olvid.messenger.designsystem.components.SortMenuItem
 import io.olvid.messenger.designsystem.cutoutHorizontalPadding
-import io.olvid.messenger.designsystem.plus
+import androidx.compose.foundation.layout.plus
 import io.olvid.messenger.designsystem.systemBarsHorizontalPadding
 import io.olvid.messenger.designsystem.theme.OlvidTypography
 import io.olvid.messenger.discussion.gallery.AudioListItem
 import io.olvid.messenger.discussion.gallery.FyleListItem
+import io.olvid.messenger.discussion.linkpreview.LinkPreviewViewModel
+import io.olvid.messenger.discussion.linkpreview.OpenGraph
 import io.olvid.messenger.discussion.message.attachments.AttachmentDownloadProgress
 import io.olvid.messenger.discussion.message.attachments.getProgressLabel
 import io.olvid.messenger.main.contacts.CustomTab
 import io.olvid.messenger.onboarding.flow.animations.shimmer
+import io.olvid.messenger.owneddetails.UseImageAsProfilePictureActivity
+import io.olvid.messenger.owneddetails.canBeUsedAsProfilePicture
 import io.olvid.messenger.storage_manager.StorageManagerViewModel.BucketDestination
 import io.olvid.messenger.storage_manager.StorageManagerViewModel.SortKey
 import io.olvid.messenger.storage_manager.StorageManagerViewModel.SortOrder
@@ -295,6 +300,7 @@ fun StorageBucketScreen(
                     BucketTab.FILES -> DocumentListPage(
                         fyles = fileFyles,
                         viewModel = viewModel,
+                        destination = destination,
                         sortOrder = currentSortOrder,
                     )
 
@@ -308,6 +314,7 @@ fun StorageBucketScreen(
                     BucketTab.ALL -> DocumentListPage(
                         fyles = allFyles,
                         viewModel = viewModel,
+                        destination = destination,
                         sortOrder = currentSortOrder,
                     )
                 }
@@ -356,6 +363,27 @@ fun StorageBucketScreen(
                                 modifier = Modifier.size(32.dp),
                                 painter = painterResource(R.drawable.ic_page_view),
                                 contentDescription = stringResource(R.string.menu_action_go_to_message),
+                                tint = colorResource(R.color.almostBlack)
+                            )
+                        }
+                    }
+                    val singleSelectedImage by remember {
+                        derivedStateOf {
+                            viewModel.selectedFyles.singleOrNull()
+                                ?.takeIf { it.canBeUsedAsProfilePicture }
+                        }
+                    }
+                    AnimatedVisibility(
+                        visible = singleSelectedImage != null
+                    ) {
+                        IconButton(onClick = {
+                            singleSelectedImage?.let {
+                                UseImageAsProfilePictureActivity.launch(context, it)
+                            }
+                        }) {
+                            Icon(
+                                painter = painterResource(R.drawable.ic_attach_image),
+                                contentDescription = stringResource(R.string.menu_action_use_image_as),
                                 tint = colorResource(R.color.almostBlack)
                             )
                         }
@@ -474,6 +502,39 @@ fun StorageBucketScreen(
     }
 }
 
+// Open the given fyle in the in-app gallery (GalleryActivity), keyed by the current bucket
+// destination and sort order. Only image/video fyles are shown by the gallery.
+private fun openInInternalGallery(
+    context: android.content.Context,
+    destination: BucketDestination,
+    sortOrder: SortOrder,
+    fyleAndStatus: FyleAndStatus,
+) {
+    val bytesOwnedIdentity = AppSingleton.getCurrentIdentityLiveData().value?.bytesOwnedIdentity
+    val sortOrderString = when (sortOrder.sortKey) {
+        SortKey.SIZE -> "size"
+        SortKey.NAME -> "name"
+        else -> null
+    }
+    val messageId = fyleAndStatus.fyleMessageJoinWithStatus.messageId
+    val fyleId = fyleAndStatus.fyle.id
+    when (destination) {
+        is BucketDestination.AllFiles -> App.openOwnedIdentityGalleryActivity(context, bytesOwnedIdentity, sortOrderString, sortOrder.ascending, messageId, fyleId)
+        is BucketDestination.SentByMe -> App.openSentByMeGalleryActivity(context, bytesOwnedIdentity, sortOrderString, sortOrder.ascending, messageId, fyleId)
+        is BucketDestination.LargeFiles -> App.openLargeFilesGalleryActivity(context, bytesOwnedIdentity, destination.minSize, sortOrderString, sortOrder.ascending, messageId, fyleId)
+        is BucketDestination.ByDiscussion -> App.openDiscussionGalleryActivityFromStorageManager(context, destination.discussionId, messageId, fyleId, sortOrderString, sortOrder.ascending)
+    }
+}
+
+// Mirror FyleMessageJoinWithStatusDao.MEDIA_TYPE_CONDITION exactly so a fyle opened in the internal
+// gallery is guaranteed to be in the gallery's own list (otherwise the pager silently lands on the
+// wrong item). imageResolution is "" for attachments the decoder cannot display (unsupported image
+// formats, videos with no extractable thumbnail) and null while not yet computed; svg is special-cased.
+private fun FyleAndStatus.canOpenInInternalGallery(): Boolean {
+    val mimeType = fyleMessageJoinWithStatus.nonNullMimeType
+    return (fyleMessageJoinWithStatus.imageResolution != "" || mimeType == "image/svg+xml")
+            && !mimeType.startsWith("audio/")
+}
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -594,20 +655,7 @@ private fun MediaGridRow(
                                 viewModel.selectFyle(fyleAndStatus)
                             } else {
                                 downloadAwareClick(fyleAndStatus) {
-                                    val bytesOwnedIdentity = AppSingleton.getCurrentIdentityLiveData().value?.bytesOwnedIdentity
-                                    val sortOrderString = when (sortOrder.sortKey) {
-                                        SortKey.SIZE -> "size"
-                                        SortKey.NAME -> "name"
-                                        else -> null
-                                    }
-                                    val messageId = item.fyleAndStatus.fyleMessageJoinWithStatus.messageId
-                                    val fyleId = item.fyleAndStatus.fyle.id
-                                    when (destination) {
-                                        is BucketDestination.AllFiles -> App.openOwnedIdentityGalleryActivity(context, bytesOwnedIdentity, sortOrderString, sortOrder.ascending, messageId, fyleId)
-                                        is BucketDestination.SentByMe -> App.openSentByMeGalleryActivity(context, bytesOwnedIdentity, sortOrderString, sortOrder.ascending, messageId, fyleId)
-                                        is BucketDestination.LargeFiles -> App.openLargeFilesGalleryActivity(context, bytesOwnedIdentity, destination.minSize, sortOrderString, sortOrder.ascending, messageId, fyleId)
-                                        is BucketDestination.ByDiscussion -> App.openDiscussionGalleryActivityFromStorageManager(context, destination.discussionId, messageId, fyleId, sortOrderString, sortOrder.ascending)
-                                    }
+                                    openInInternalGallery(context, destination, sortOrder, fyleAndStatus)
                                 }
                             }
                         },
@@ -709,6 +757,7 @@ private fun MediaGridRow(
 private fun DocumentListPage(
     fyles: List<FyleAndOrigin>?,
     viewModel: StorageManagerViewModel,
+    destination: BucketDestination,
     sortOrder: SortOrder,
 ) {
     if (fyles == null) {
@@ -734,6 +783,28 @@ private fun DocumentListPage(
         return
     }
     val context = LocalContext.current
+    val linkPreviewViewModel = viewModel<LinkPreviewViewModel>()
+    val openFyleAndStatus: (FyleAndStatus) -> Unit = { fyleAndStatus ->
+        downloadAwareClick(fyleAndStatus) {
+            when {
+                fyleAndStatus.fyleMessageJoinWithStatus.nonNullMimeType == OpenGraph.MIME_TYPE ->
+                    linkPreviewViewModel.linkPreviewLoader(
+                        fyleAndStatus.fyle,
+                        fyleAndStatus.fyleMessageJoinWithStatus.fileName,
+                        fyleAndStatus.fyleMessageJoinWithStatus.messageId
+                    ) { openGraph ->
+                        openGraph?.getSafeUri()?.let { App.openLink(context, it) }
+                    }
+
+                fyleAndStatus.canOpenInInternalGallery() ->
+                    openInInternalGallery(context, destination, sortOrder, fyleAndStatus)
+
+                else -> App.openFyleViewer(context, fyleAndStatus) {
+                    fyleAndStatus.fyleMessageJoinWithStatus.markAsOpened()
+                }
+            }
+        }
+    }
     val groupedByDate = remember(fyles, sortOrder.sortKey) {
         if (sortOrder.sortKey == SortKey.DATE) {
             fyles.groupBy { dateGroupKey(it.message?.timestamp ?: 0L) }
@@ -747,72 +818,66 @@ private fun DocumentListPage(
         if (groupedByDate != null) {
             for ((date, groupFyles) in groupedByDate) {
                 stickyHeader(key = date) { BucketDateHeader(date) }
-                items(groupFyles) { item ->
-                    val fyleAndStatus = item.fyleAndStatus
-                    val isSelected = viewModel.isSelected(fyleAndStatus)
-                    Box {
-                        FyleListItem(
-                            modifier = Modifier.background(
-                                if (isSelected) colorResource(R.color.blueOverlay) else Color.Transparent
-                            ),
-                            fyleAndStatus = fyleAndStatus,
-                            fileName = AnnotatedString(fyleAndStatus.fyleMessageJoinWithStatus.fileName),
-                            onClick = {
-                                if (viewModel.isSelecting()) {
-                                    viewModel.selectFyle(fyleAndStatus)
-                                } else {
-                                    downloadAwareClick(fyleAndStatus) {
-                                        App.openFyleViewer(context, fyleAndStatus) {
-                                            fyleAndStatus.fyleMessageJoinWithStatus.markAsOpened()
-                                        }
-                                    }
-                                }
-                            },
-                            onLongClick = { viewModel.selectFyle(fyleAndStatus) }
-                        )
-                        AttachmentStatusBadge(fyleAndStatus = fyleAndStatus, alignment = Alignment.TopEnd)
-                        getProgressLabel(fyleAndStatus.fyleMessageJoinWithStatus.status)?.let { label ->
-                            TextChip(
-                                modifier = Modifier.align(Alignment.BottomEnd).padding(end = 4.dp, bottom = 2.dp),
-                                text = label,
-                            )
-                        }
-                    }
+                items(groupFyles, key = { documentListItemKey(it) }) { item ->
+                    DocumentListItem(item.fyleAndStatus, viewModel, linkPreviewViewModel, openFyleAndStatus)
                 }
             }
         } else {
-            items(fyles) { item ->
-                val fyleAndStatus = item.fyleAndStatus
-                val isSelected = viewModel.isSelected(fyleAndStatus)
-                Box {
-                    FyleListItem(
-                        modifier = Modifier.background(
-                            if (isSelected) colorResource(R.color.blueOverlay) else Color.Transparent
-                        ),
-                        fyleAndStatus = fyleAndStatus,
-                        fileName = AnnotatedString(fyleAndStatus.fyleMessageJoinWithStatus.fileName),
-                        onClick = {
-                            if (viewModel.isSelecting()) {
-                                viewModel.selectFyle(fyleAndStatus)
-                            } else {
-                                downloadAwareClick(fyleAndStatus) {
-                                    App.openFyleViewer(context, fyleAndStatus) {
-                                        fyleAndStatus.fyleMessageJoinWithStatus.markAsOpened()
-                                    }
-                                }
-                            }
-                        },
-                        onLongClick = { viewModel.selectFyle(fyleAndStatus) }
-                    )
-                    AttachmentStatusBadge(fyleAndStatus = fyleAndStatus, alignment = Alignment.TopEnd)
-                    getProgressLabel(fyleAndStatus.fyleMessageJoinWithStatus.status)?.let { label ->
-                        TextChip(
-                            modifier = Modifier.align(Alignment.BottomEnd).padding(end = 4.dp, bottom = 2.dp),
-                            text = label,
-                        )
-                    }
-                }
+            items(fyles, key = { documentListItemKey(it) }) { item ->
+                DocumentListItem(item.fyleAndStatus, viewModel, linkPreviewViewModel, openFyleAndStatus)
             }
+        }
+    }
+}
+
+// (messageId, fyleId) is the FyleMessageJoinWithStatus primary key, so this is unique within a bucket
+private fun documentListItemKey(item: FyleAndOrigin): String =
+    "${item.fyleAndStatus.fyleMessageJoinWithStatus.messageId}-${item.fyleAndStatus.fyleMessageJoinWithStatus.fyleId}"
+
+@Composable
+private fun DocumentListItem(
+    fyleAndStatus: FyleAndStatus,
+    viewModel: StorageManagerViewModel,
+    linkPreviewViewModel: LinkPreviewViewModel,
+    openFyleAndStatus: (FyleAndStatus) -> Unit,
+) {
+    val isSelected = viewModel.isSelected(fyleAndStatus)
+    // For link previews, decode the OpenGraph to show its image instead of the generic link icon
+    var openGraph by remember(fyleAndStatus.fyle.id) { mutableStateOf<OpenGraph?>(null) }
+    if (fyleAndStatus.fyleMessageJoinWithStatus.nonNullMimeType == OpenGraph.MIME_TYPE) {
+        LaunchedEffect(fyleAndStatus.fyle.id) {
+            linkPreviewViewModel.linkPreviewLoader(
+                fyleAndStatus.fyle,
+                fyleAndStatus.fyleMessageJoinWithStatus.fileName,
+                fyleAndStatus.fyleMessageJoinWithStatus.messageId
+            ) {
+                openGraph = it
+            }
+        }
+    }
+    Box {
+        FyleListItem(
+            modifier = Modifier.background(
+                if (isSelected) colorResource(R.color.blueOverlay) else Color.Transparent
+            ),
+            fyleAndStatus = fyleAndStatus,
+            fileName = AnnotatedString(fyleAndStatus.fyleMessageJoinWithStatus.fileName),
+            previewModel = openGraph?.bitmap,
+            onClick = {
+                if (viewModel.isSelecting()) {
+                    viewModel.selectFyle(fyleAndStatus)
+                } else {
+                    openFyleAndStatus(fyleAndStatus)
+                }
+            },
+            onLongClick = { viewModel.selectFyle(fyleAndStatus) }
+        )
+        AttachmentStatusBadge(fyleAndStatus = fyleAndStatus, alignment = Alignment.TopEnd)
+        getProgressLabel(fyleAndStatus.fyleMessageJoinWithStatus.status)?.let { label ->
+            TextChip(
+                modifier = Modifier.align(Alignment.BottomEnd).padding(end = 4.dp, bottom = 2.dp),
+                text = label,
+            )
         }
     }
 }

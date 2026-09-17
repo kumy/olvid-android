@@ -26,8 +26,8 @@
 	<string name="button_label_create_group" state="needs_review" hash="1102939673">Crea gruppo</string>
 	<string name="button_label_discard" state="needs_review" hash="795591204">Scarta</string>
 	<string name="button_label_exchange_digits_with_user" state="needs_review" hash="339599327">Scambia codici con %1$s</string>
-	<string name="button_label_generate_new_id" state="needs_review" hash="92014734">Genera un nuovo ID</string>
-	<string name="button_label_generate_my_id" state="needs_review" hash="-1007060207">Genera il mio ID</string>
+	<string name="button_label_generate_new_id" state="needs_review" hash="-1130516787">Crea un nuovo profilo</string>
+	<string name="button_label_generate_my_id" state="needs_review" hash="239641058">Crea il mio profilo</string>
 	<string name="button_label_ignore" state="needs_review" hash="-806373746">Ignora</string>
 	<string name="button_label_reject" state="needs_review" hash="-2094664161">Rifiuta</string>
 	<string name="button_label_introduce" state="needs_review" hash="193852909">Presentare</string>
@@ -80,6 +80,12 @@
 	<string name="dialog_title_rename_group" state="needs_review" hash="1461324427">Rinomina gruppo</string>
 	<string name="dialog_title_restart_channel_establishment" state="needs_review" hash="-645769680">Riavviare l\'impostazione del canale?</string>
 	<string name="dialog_title_share_with" state="needs_review" hash="854107768">Condividi con…</string>
+	<string name="dialog_title_share_recipients" state="needs_review" hash="1157053138">Scegli i destinatari</string>
+	<string name="share_label_from" state="needs_review" hash="2049052075">Da:</string>
+	<string name="share_label_to" state="needs_review" hash="-1785690373">A:</string>
+	<string name="share_label_choose_recipients" state="needs_review" hash="1157053138">Scegli i destinatari</string>
+	<string name="hint_share_message" state="needs_review" hash="-763169957">Aggiungi un messaggio…</string>
+	<string name="content_description_delete_attachment" state="needs_review" hash="-220348329">Rimuovi allegato</string>
 	<string name="dialog_title_shortcut_to" state="needs_review" hash="-1193591200">Crea collegamento a…</string>
 	<string name="explanation_choose_display_name" state="needs_review" hash="1162066686">Inserisci un nome che verrà visualizzato ai tuoi contatti. Questi dettagli non verranno mai inviati ai server di Olvid.</string>
 	<string name="explanation_empty_contact_list" state="needs_review" hash="1240778508">Nessun contatto per ora</string>
@@ -104,7 +110,7 @@
 	<string name="explanation_no_message_found" state="needs_review" hash="-1329622990">Nessun messaggio trovato</string>
 	<string name="explanation_no_attachment_found" state="needs_review" hash="156593369">Nessun allegato trovato</string>
 	<string name="explanation_no_link_found" state="needs_review" hash="-1419950450">Nessun link trovato</string>
-	<string name="hint_company" state="needs_review" hash="379200324">Azienda (facoltativo)</string>
+	<string name="hint_company" state="needs_review" hash="988571519">Azienda</string>
 	<string name="hint_compose_your_message" state="needs_review" hash="-25761578">Scrivi un messaggio</string>
 	<string name="hint_compose_your_message_ephemeral" state="needs_review" hash="-1527208333">Messaggio effimero</string>
 	<string name="label_edit_your_message" state="needs_review" hash="1091877412">Modifica il tuo messaggio</string>
@@ -133,7 +139,7 @@
 	<string name="hint_last_name" state="needs_review" hash="1701170359">Cognome</string>
 	<string name="hint_new_name" state="needs_review" hash="709842168">Nuovo nome</string>
 	<string name="hint_notification_reply" state="needs_review" hash="1095144032">Rispondi</string>
-	<string name="hint_position" state="needs_review" hash="-55145181">Titolo professionale (facoltativo)</string>
+	<string name="hint_position" state="needs_review" hash="1338817744">Posizione lavorativa</string>
 	<string name="invitation_label_their_code" state="needs_review" hash="1402501614">Il loro codice</string>
 	<string name="invitation_label_your_code" state="needs_review" hash="1944546233">Il tuo codice</string>
 	<string name="invitation_status_accept_invite" state="needs_review" hash="2100924901">Invito ricevuto</string>
@@ -170,6 +176,11 @@
 	<string name="label_group_members" state="needs_review" hash="1460220752">Membri del gruppo</string>
 	<string name="label_other_group_members" state="needs_review" hash="-2121490032">Altri membri del gruppo</string>
 	<string name="label_groups_common" state="needs_review" hash="1252823567">Gruppi in comune</string>
+	<string name="label_create_group_with_contact" state="needs_review" hash="1950649899">Crea un gruppo con %1$s</string>
+	<string name="label_add_contact_to_a_group" state="needs_review" hash="-682192937">Aggiungi %1$s a un gruppo</string>
+	<string name="label_add_to_groups" state="needs_review" hash="-654216617">Aggiungi ai gruppi</string>
+	<string name="explanation_no_admin_group_to_add_contact" state="needs_review" hash="402908162">Non sei un amministratore di nessun gruppo a cui %1$s potrebbe essere aggiunto.</string>
+	<string name="toast_message_adding_contact_to_groups" state="needs_review" hash="1201697547">Aggiunta di %1$s ai gruppi selezionati…</string>
 	<string name="label_invitation_declined" state="needs_review" hash="2038173833">Invito\nrifiutato</string>
 	<string name="label_new_group_card" state="needs_review" hash="1006740909">Dettagli del gruppo aggiornati</string>
 	<string name="label_not_part_of_a_group" state="needs_review" hash="1667979596">Non ancora membro di alcun gruppo</string>
@@ -183,6 +194,7 @@
 	<string name="menu_action_create_shortcut" state="needs_review" hash="-1949455873">Crea collegamento</string>
 	<string name="menu_action_delete" state="needs_review" hash="-232100842">Elimina</string>
 	<string name="menu_action_delete_discussion" state="needs_review" hash="2059656471">Elimina conversazione</string>
+	<string name="menu_action_export_discussion" state="needs_review" hash="1736692296">Esporta la conversazione</string>
 	<string name="label_swipe_details" state="needs_review" hash="171468732">Dettagli</string>
 	<string name="menu_action_disband_group" state="needs_review" hash="-1767089289">Sciogliere gruppo</string>
 	<string name="menu_action_edit_group_details" state="needs_review" hash="310205135">Modifica dettagli gruppo</string>
@@ -482,7 +494,14 @@
 	<string name="dialog_title_backup_choices" state="needs_review" hash="281222223">Scegli un metodo di backup</string>
 	<string name="menu_action_choose_picture" state="needs_review" hash="-1655172909">Scegli un\'immagine</string>
 	<string name="menu_action_take_photo" state="needs_review" hash="-1123080444">Scatta una foto</string>
+	<string name="menu_action_choose_image_from_olvid" state="needs_review" hash="1585248356">Scegli un\'immagine ricevuta</string>
 	<string name="menu_action_remove_image" state="needs_review" hash="1094977672">Rimuovi immagine</string>
+	<string name="menu_action_use_image_as" state="needs_review" hash="587310096">Usa questa immagine come…</string>
+	<string name="label_use_photo_for_my_profile" state="needs_review" hash="-1005809580">La mia foto del profilo</string>
+	<string name="label_use_photo_for_target" state="needs_review" hash="283541521">Foto per [PLACEHOLDER_1]</string>
+	<string name="label_use_photo_for_discussion_background" state="needs_review" hash="1925733151">Sfondo per %s</string>
+	<string name="toast_message_photo_set" state="needs_review" hash="-1641885203">Immagine aggiornata</string>
+	<string name="toast_message_background_set" state="needs_review" hash="1642873459">Sfondo aggiornato</string>
 	<string name="dialog_title_create_empty_group" state="needs_review" hash="-663434464">Creare un gruppo vuoto?</string>
 	<string name="dialog_message_create_empty_group" state="needs_review" hash="-297923005">Non hai selezionato alcun contatto da aggiungere al tuo gruppo. Sei sicuro di voler creare un gruppo vuoto?</string>
 	<string name="pref_dark_mode_title" state="needs_review" hash="816474245">Modalità scura</string>
@@ -862,7 +881,7 @@
 	<string name="button_label_check_options" state="needs_review" hash="-759177128">Controlla le opzioni</string>
 	<string name="hint_olvid_server" state="needs_review" hash="1097391633">Server Olvid</string>
 	<string name="hint_license_activation_code" state="needs_review" hash="102193320">Codice di attivazione licenza</string>
-	<string name="activity_title_identity_creation_options" state="needs_review" hash="1180456032">Opzioni di creazione ID</string>
+	<string name="activity_title_identity_creation_options" state="needs_review" hash="-774054913">Opzioni per la creazione del profilo</string>
 	<string name="activity_title_scan_configuration" state="needs_review" hash="-386259993">Scansiona configurazione</string>
 	<string name="menu_action_import_activation_from_clipboard" state="needs_review" hash="-70842935">Importa link dagli appunti</string>
 	<string name="troubleshooting_update_valid_title" state="needs_review" hash="741828768">Olvid è aggiornato</string>
@@ -871,7 +890,6 @@
 	<string name="dialog_message_update_available" state="needs_review" hash="416187645">È disponibile una versione più recente di Olvid.\n\nSi prega di aggiornare per usufruire delle ultime funzionalità.</string>
 	<string name="dialog_title_call_initiation_not_supported" state="needs_review" hash="-2088021831">Impossibile avviare la chiamata</string>
 	<string name="dialog_message_call_initiation_not_supported" state="needs_review" hash="1760333819">Sembra che il tuo server Olvid non supporti l\'avvio di chiamate sicure.\n\nContatta il tuo amministratore per maggiori dettagli.</string>
-	<string name="label_identity_creation_options" state="needs_review" hash="1180456032">Opzioni di creazione ID</string>
 	<string name="text_option_server" state="needs_review" hash="-1130676431">Server: %1$s</string>
 	<string name="dialog_title_non_default_server" state="needs_review" hash="2119192219">Utilizzo di un server personalizzato</string>
 	<string name="dialog_message_non_default_server" state="needs_review" hash="459308900">Stai per creare un profilo sul seguente server:\n\n%1$s\n\nQuesto non è il server Olvid predefinito. Procedi solo se ti fidi di questo server.</string>
@@ -900,7 +918,7 @@
 	<string name="toast_message_unable_to_keycloak_revoke" state="needs_review" hash="-1368037130">Impossibile sostituire il precedente ID Olvid, riprova</string>
 	<string name="toast_message_keycloak_revoke_successful" state="needs_review" hash="-1216369809">ID Olvid precedente sostituito con successo</string>
 	<string name="dialog_title_keycloak_authentication_required_user_id_changed" state="needs_review" hash="-896407029">Rilevato cambio utente</string>
-	<string name="dialog_message_keycloak_authentication_required_user_id_changed" state="needs_review" hash="876252686">Il tuo profilo è attualmente gestito dalla tua organizzazione. Sembra che tu ti sia autenticato con un utente diverso dal solito. Questa operazione non è supportata.\n\nContatta il tuo amministratore o riautenticati con l\'utente corretto.</string>
+	<string name="dialog_message_keycloak_authentication_required_user_id_changed" state="needs_review" hash="2080839829">Il tuo profilo è attualmente gestito dalla tua organizzazione. Sembra che tu ti sia autenticato con un utente diverso dal solito. Questa operazione non è supportata.\n\nContatta il tuo amministratore o esegui nuovamente l\'autenticazione con l\'utente corretto.</string>
 	<string name="dialog_title_add_keycloak_user" state="needs_review" hash="-1050193239">Aggiungi un contatto</string>
 	<string name="dialog_message_add_keycloak_user" state="needs_review" hash="-1755937035">Hai selezionato di aggiungere %1$s ai tuoi contatti. Vuoi procedere?</string>
 	<string name="explanation_keycloak_update_new" state="needs_review" hash="1136733528">Stai per configurare il provider di identità della tua azienda in Olvid. Una volta configurato, potrai autenticarti con questo server e Olvid ti permetterà di aggiungere facilmente altri dipendenti ai tuoi contatti.\nContatta il tuo amministratore per maggiori dettagli.</string>
@@ -1031,6 +1049,8 @@
 	<string name="label_storage_discussions" state="needs_review" hash="491497248">Discussioni</string>
 	<string name="pref_use_internal_image_viewer_title" state="needs_review" hash="1319400578">Usa visualizzatore immagini interno</string>
 	<string name="pref_use_internal_image_viewer_summary" state="needs_review" hash="1248137666">Quando attivata, cliccando su un allegato immagine si aprirà nel visualizzatore interno. Altrimenti, verrà utilizzata l\'app di immagini predefinita del tuo dispositivo.</string>
+	<string name="pref_image_text_recognition_title" state="needs_review" hash="1877261687">Riconosci e indicizza il testo nelle immagini</string>
+	<string name="pref_image_text_recognition_summary" state="needs_review" hash="1217699919">Permette di cercare e copiare il testo presente negli allegati di immagini. Questa funzione può richiedere molte risorse sui dispositivi meno potenti: disattivala se non ti serve.</string>
 	<string name="label_unable_to_display_image" state="needs_review" hash="-1495534207">Impossibile visualizzare l\'immagine</string>
 	<string name="dialog_title_backup_requires_sign_in" state="needs_review" hash="-720389674">È richiesto l\'accesso al provider cloud</string>
 	<string name="dialog_message_backup_requires_sign_in" state="needs_review" hash="119557495">Hai configurato Olvid per utilizzare backup automatici su un provider cloud, ma la tua sessione è scaduta. Devi accedere nuovamente a questo provider.\n\nSe non desideri più i backup automatici, puoi disattivarli nelle Impostazioni dell\'app. Tieni presente che i backup automatici sono l\'unico modo per evitare la perdita dei tuoi contatti in caso di smarrimento o danneggiamento del dispositivo.</string>
@@ -1149,7 +1169,7 @@
 	<string name="pref_hidden_profile_close_policy_dialog_entry_screen_lock" state="needs_review" hash="-1520400811">Quando si attiva la schermata di blocco di Olvid</string>
 	<string name="pref_hidden_profile_close_policy_dialog_entry_background" state="needs_review" hash="-2099539114">Quando Olvid va in background…</string>
 	<string name="activity_title_enter_backup_key" state="needs_review" hash="1035967309">Inserisci la chiave di backup</string>
-	<string name="activity_title_identity_creation" state="needs_review" hash="-1361520151">Creazione ID</string>
+	<string name="activity_title_identity_creation" state="needs_review" hash="2027618284">Creazione profilo</string>
 	<string name="menu_action_manual_configuration" state="needs_review" hash="-1495974502">Configurazione avanzata manuale</string>
 	<string name="toast_message_invalid_configuration_link" state="needs_review" hash="1387412522">Link di configurazione non valido</string>
 	<string name="toast_message_invalid_link" state="needs_review" hash="1265454437">Link non valido</string>
@@ -1171,6 +1191,7 @@
 	<string name="dialog_title_chose_profile_web_client" state="needs_review" hash="1860298414">Scegli il profilo da connettere al client web Olvid</string>
 	<string name="dialog_title_chose_profile_invitation" state="needs_review" hash="-2063034787">Scegli il profilo con cui invitare questo contatto</string>
 	<string name="toast_message_create_new_profile_then_reopen_this_link" state="needs_review" hash="1770827346">Crea prima un nuovo profilo, poi riapri questo link</string>
+	<string name="toast_message_invitation_link_deferred_to_end_of_onboarding" state="needs_review" hash="-189914806">Il tuo invito si aprirà automaticamente una volta creato il tuo profilo.</string>
 	<string name="button_label_switch_profile" state="needs_review" hash="-2007633024">Cambia profilo</string>
 	<string name="text_no_other_profile_to_switch_to" state="needs_review" hash="-112306213">Nessun altro profilo</string>
 	<string name="button_label_configure_lock_screen" state="needs_review" hash="870348426">Configura schermata di blocco</string>
@@ -1180,9 +1201,8 @@
 	<string name="dialog_message_delete_last_profile" state="needs_review" hash="-2123774331">Eliminare un profilo cancellerà tutte le informazioni relative a questo profilo sul tuo dispositivo. Ciò include i tuoi contatti, gruppi e il contenuto di tutte le tue discussioni (messaggi e allegati) per questo profilo.\n\n<b>Questo è il tuo unico profilo visibile e se hai profili nascosti, verranno eliminati contemporaneamente.</b>\n\nSe hai abilitato i backup in Olvid, i tuoi backup futuri non conterranno alcuna traccia di questo profilo e potresti non essere in grado di ripristinarlo.\n\nPremi \"avanti\" per scegliere come eliminare questo profilo.</string>
 	<string name="dialog_message_delete_profile_multi" state="needs_review" hash="-2003495595">Eliminare un profilo cancellerà tutte le informazioni relative a questo profilo sul tuo dispositivo. Ciò include i tuoi contatti, gruppi e il contenuto di tutte le tue conversazioni (messaggi e allegati) per questo profilo. Gli altri tuoi profili non saranno interessati da questa operazione.\n\nPremi \"Avanti\" per scegliere come eliminare questo profilo.</string>
 	<string name="dialog_message_delete_last_profile_multi" state="needs_review" hash="-103140781">Eliminare un profilo cancellerà tutte le informazioni relative a questo profilo sul tuo dispositivo. Ciò include i tuoi contatti, i tuoi gruppi e il contenuto di tutte le tue discussioni (messaggi e allegati) per questo profilo.\n\n<b>Questo è il tuo unico profilo visibile e se hai profili nascosti, verranno eliminati contemporaneamente.</b>\n\nPremi \"avanti\" per scegliere come eliminare questo profilo.</string>
-	<string name="switch_label_delete_profile_everywhere" state="needs_review" hash="-74965346">Elimina profilo <b>ovunque</b>
-	</string>
-	<string name="hint_type_delete_here_to_proceed" state="needs_review" hash="-1622625725">Inserisci \\"%1$s\\" qui per continuare</string>
+	<string name="switch_label_delete_profile_everywhere" state="needs_review" hash="-74965346">Elimina profilo <b>ovunque</b></string>
+	<string name="hint_type_delete_here_to_proceed" state="needs_review" hash="-1622625725">Inserisci \"%1$s\" qui per continuare</string>
 	<string name="explanation_delete_owned_identity" state="needs_review" hash="2036375772">Se scegli di eliminare il tuo profilo <b>ovunque</b>:\n -\nverrà eliminato localmente <b>e</b> sui dispositivi dei tuoi contatti\n -\nlascerai i gruppi a cui ti sei unito\n -\ni gruppi che gestisci verranno sciolti\n\nSe non elimini il tuo profilo <b>ovunque</b>, verrà eliminato solo localmente sul tuo dispositivo. A meno che tu non intenda ripristinare un backup su un altro dispositivo, i tuoi contatti potrebbero continuare a inviarti messaggi senza rendersi conto che questi non possono essere recapitati.</string>
 	<string name="explanation_delete_inactive_owned_identity" state="needs_review" hash="-575337242">Il tuo profilo attuale sembra essere inattivo, probabilmente perché lo hai trasferito su un altro dispositivo. Se intendi continuare a utilizzare questo profilo sul tuo altro dispositivo, puoi eliminarlo qui senza problemi.\n\nSe non intendi più utilizzare questo profilo, dovrai prima riattivarlo su questo dispositivo, attendere la ricreazione dei canali sicuri con i tuoi contatti e solo allora eliminare questo profilo scegliendo l\'opzione \"elimina ovunque\".</string>
 	<string name="explanation_delete_owned_identity_multi" state="needs_review" hash="-184045089">Il tuo profilo è attualmente abilitato su più dispositivi.\n\nSe scegli di eliminare il tuo profilo <b>ovunque</b>:\n - verrà eliminato da tutti i tuoi dispositivi <b>e</b> dai dispositivi dei tuoi contatti\n - lascerai i gruppi a cui ti sei unito\n - i gruppi che gestisci verranno sciolti\n\nSe <b>non</b> elimini il tuo profilo ovunque, verrà eliminato solo localmente e potrai continuare a usarlo normalmente sugli altri tuoi dispositivi.</string>
@@ -1443,23 +1463,17 @@
 	<string name="button_label_send" state="needs_review" hash="-185402948">Invia</string>
 	<string name="button_label_start_sharing" state="needs_review" hash="682254052">Inizia a condividere</string>
 	<string name="location_sharing_duration_one_hour_short_string" state="needs_review" hash="1004063951">1 ora</string>
-	<string name="location_sharing_duration_one_hour_full_string" state="needs_review" hash="-58118972">Condividi posizione per <b>1 ora</b>
-	</string>
+	<string name="location_sharing_duration_one_hour_full_string" state="needs_review" hash="-58118972">Condividi posizione per <b>1 ora</b></string>
 	<string name="location_sharing_duration_three_hours_short_string" state="needs_review" hash="228095183">3 ore</string>
-	<string name="location_sharing_duration_three_hours_full_string" state="needs_review" hash="754857804">Condividi posizione per <b>3 ore</b>
-	</string>
+	<string name="location_sharing_duration_three_hours_full_string" state="needs_review" hash="754857804">Condividi posizione per <b>3 ore</b></string>
 	<string name="location_sharing_duration_endless_short_string" state="needs_review" hash="55208442">All\'infinito</string>
-	<string name="location_sharing_duration_endless_full_string" state="needs_review" hash="1710814259">Condividi posizione <b>fino all\'arresto</b>
-	</string>
+	<string name="location_sharing_duration_endless_full_string" state="needs_review" hash="1710814259">Condividi posizione <b>fino all\'arresto</b></string>
 	<string name="location_sharing_quality_precise_short_string" state="needs_review" hash="351442529">Preciso</string>
 	<string name="location_sharing_quality_balanced_short_string" state="needs_review" hash="-1925315592">Equilibrato</string>
 	<string name="location_sharing_quality_power_save_short_string" state="needs_review" hash="-14275273">Risparmio energetico</string>
-	<string name="location_sharing_quality_precise_full_string" state="needs_review" hash="-1255374893">Modalità di condivisione posizione <b>precisa</b>
-	</string>
-	<string name="location_sharing_quality_balanced_full_string" state="needs_review" hash="-421322514">Modalità di condivisione posizione <b>bilanciata</b>
-	</string>
-	<string name="location_sharing_quality_power_save_full_string" state="needs_review" hash="792896333">Modalità di condivisione posizione <b>risparmio energetico</b>
-	</string>
+	<string name="location_sharing_quality_precise_full_string" state="needs_review" hash="-1255374893">Modalità di condivisione posizione <b>precisa</b></string>
+	<string name="location_sharing_quality_balanced_full_string" state="needs_review" hash="-421322514">Modalità di condivisione posizione <b>bilanciata</b></string>
+	<string name="location_sharing_quality_power_save_full_string" state="needs_review" hash="792896333">Modalità di condivisione posizione <b>risparmio energetico</b></string>
 	<string name="label_sharing_location_until" state="needs_review" hash="187977459">Condivisione posizione fino a: %1$s</string>
 	<string name="label_location_sharing_ended" state="needs_review" hash="1028490137">Condivisione posizione terminata</string>
 	<string name="label_gps_coordinates" state="needs_review" hash="-1537356414">Coordinate GPS</string>
@@ -2042,11 +2056,14 @@
 	<string name="button_label_configure_backups" state="needs_review" hash="-990646398">Abilita backup</string>
 	<string name="tip_write_backup_key_title" state="needs_review" hash="-1652757003">Non dimenticare di annotare la tua chiave di backup â</string>
 	<string name="tip_write_backup_key_message" state="needs_review" hash="931018791">La tua chiave di backup è essenziale per ripristinare i tuoi profili se perdi l\'accesso a questo dispositivo.</string>
+	<string name="tip_legacy_backup_end_of_life_title" state="needs_review" hash="810495149">I backup precedenti che stai utilizzando hanno raggiunto la fine del loro ciclo di vita.</string>
+	<string name="tip_legacy_backup_end_of_life_message" state="needs_review" hash="-314257210">Il prossimo aggiornamento di Olvid non supporterà più i vecchi tipi di backup. Per proteggere il tuo account, passa subito alla nuova versione del sistema di backup.</string>
 	<string name="tip_troubleshooting_title" state="needs_review" hash="-393739108">Migliora la tua esperienza Olvid 🚀</string>
 	<string name="tip_troubleshooting_message" state="needs_review" hash="-935493349">Alcuni parametri non sono configurati correttamente sul tuo dispositivo e potrebbero influire sulla tua esperienza con Olvid.</string>
 	<string name="button_label_this_way" state="needs_review" hash="747183939">Da questa parte</string>
 	<string name="toast_code_copied" state="needs_review" hash="-1522785848">Codice copiato</string>
 	<string name="explanation_choose_members" state="needs_review" hash="-1385158706">Si prega di scegliere chi aggiungere a questo gruppo.</string>
+	<string name="explanation_choose_share_recipients" state="needs_review" hash="-1406265940">Scegli con chi condividere.</string>
 	<string name="explanation_choose_contact_introduction" state="needs_review" hash="1113777517">Scegli a chi presentare %1$s.</string>
 	<string name="label_group_administration" state="needs_review" hash="871355986">Amministrazione gruppo</string>
 	<string name="dialog_title_call_blocked" state="needs_review" hash="1594606530">Chiamata bloccata</string>
@@ -2172,7 +2189,7 @@
 	<string name="store_link_olvid_store" state="needs_review" hash="-1825630369">Visita il negozio Olvid</string>
 	<string name="toast_message_reminder_set" state="needs_review" hash="-961055414">Promemoria impostato</string>
 	<string name="dialog_title_keycloak_authentication_impossible" state="needs_review" hash="325273853">Autenticazione impossibile</string>
-	<string name="dialog_message_keycloak_authentication_impossible" state="needs_review" hash="390830785">Il tuo profilo è attualmente gestito dalla tua organizzazione ed è necessaria una nuova autenticazione. Tuttavia, sembra che non sia disponibile alcun metodo di autenticazione supportato.\n\nContatta il tuo amministratore per maggiori dettagli.</string>
+	<string name="dialog_message_keycloak_authentication_impossible" state="needs_review" hash="-2031322232">Il tuo profilo è attualmente gestito dalla tua organizzazione ed è necessaria una nuova autenticazione. Tuttavia, sembra che non siano disponibili metodi di autenticazione supportati.\n\nContatta il tuo amministratore per maggiori dettagli.</string>
 	<string name="onboarding_transfer_keycloak_error_message_authentication_impossible" state="needs_review" hash="-1891385979">Sembra che nessuna delle metodologie di autenticazione supportate sia disponibile.</string>
 	<string name="pref_use_alt_turn_servers_title" state="needs_review" hash="-1956132776">Utilizza server TURN alternativi</string>
 	<string name="pref_use_alt_turn_servers_summary" state="needs_review" hash="357427162">Attiva questa opzione per utilizzare i server TURN con indirizzi IP variabili. Se non sei sicuro, lascia questa opzione disattivata 😁</string>
@@ -2283,5 +2300,45 @@
 	<string name="label_error_loading_openstreetmap_style_file" state="needs_review" hash="-2596045">Si è verificato un errore durante il caricamento del file di stile OpenStreetMap</string>
 	<string name="dialog_title_subscriptions_not_available" state="needs_review" hash="336174241">Gli abbonamenti in-app non sono disponibili</string>
 	<string name="dialog_message_subscriptions_not_available" state="needs_review" hash="2093768678">La versione di Olvid che hai installato non include la libreria di fatturazione di Google e non supporta gli acquisti in-app.\n\nPer maggiori informazioni, contattaci all\'indirizzo **feedback@olvid.io**.</string>
+	<string name="ftux_next" state="needs_review" hash="1158639077">Successivo</string>
+	<string name="ftux_start" state="needs_review" hash="646298532">Inizia</string>
+	<string name="ftux_page_indicator" state="needs_review" hash="1987610035">Pagina %1$d di %2$d</string>
+	<string name="ftux_page_welcome_title" state="needs_review" hash="1173832630">Benvenuto in <b>Olvid</b>.</string>
+	<string name="ftux_page_welcome_body" state="needs_review" hash="-2085198139">Messaggistica privata per tutti.</string>
+	<string name="ftux_page_private_title" state="needs_review" hash="1815927819">Messaggistica <b>privata</b></string>
+	<string name="ftux_page_private_body" state="needs_review" hash="-590644231">Su %1$s, scegli tu con chi vuoi chattare. Niente spam, raccomandazioni, notifiche inutili o messaggi da sconosciuti.\n\nNessuno può contattarti senza il tuo consenso.\n\n%1$s è la tua bolla digitale.</string>
+	<string name="ftux_page_everyone_title" state="needs_review" hash="1506796386">Messaggistica per <b>tutti</b></string>
+	<string name="ftux_page_everyone_body" state="needs_review" hash="-586100377">Chiunque tu sia, %1$s ti offre il massimo della sicurezza. Non è richiesta un\'e-mail o un numero di telefono.\n\n%1$s non richiede alcuna informazione su di te, e questo cambia tutto.</string>
+	<string name="ftux_page_protect_title" state="needs_review" hash="1969120191">Olvid <b>protegge</b> te. Olvid protegge le persone a cui tieni.</string>
+	<string name="ftux_page_protect_body" state="needs_review" hash="881847930">Non è solo una promessa, %1$s fornisce una prova crittografica.\n\nChe tu aggiunga i contatti da remoto o di persona, le tue conversazioni sono sempre autentiche e crittografate end-to-end.</string>
+	<string name="ftux_page_pricing_title" state="needs_review" hash="-1948277889">Un modello di business <b>trasparente</b></string>
+	<string name="ftux_page_pricing_body" state="needs_review" hash="-1064278870">%1$s non si finanzia con i tuoi dati personali, perché non ne richiede affatto!\n\nQuello che è gratuito è gratuito. Quello che è a pagamento ha un costo.</string>
+	<string name="ftux_page_media_title" state="needs_review" hash="558110518">Olvid ha <b>tutto</b></string>
+	<string name="ftux_page_media_body" state="needs_review" hash="1807247240">Nessun limite alle dimensioni degli allegati, condivisione di foto ad alta risoluzione, sondaggi, chiamate audio e video, supporto multi-dispositivo, geolocalizzazione: è tutto incluso!</string>
 	<string name="menu_action_cancel_upload" state="needs_review" hash="1672681586">Annulla il caricamento</string>
+	<string name="label_suggested_contacts" state="needs_review" hash="816810770">Contatti suggeriti</string>
+	<string name="label_suggested_contacts_subtitle" state="needs_review" hash="131522501">Invita facilmente gli utenti</string>
+	<string name="label_suggested_contact_already_a_contact" state="needs_review" hash="-1177848651">Già presente tra i contatti</string>
+	<string name="label_suggested_contact_invitation_received" state="needs_review" hash="2100924901">Invito ricevuto</string>
+	<string name="label_suggested_contact_invitation_sent" state="needs_review" hash="310679275">Invito inviato</string>
+	<string name="label_suggested_contacts_all_done" state="needs_review" hash="-127525104">Sei aggiornato!\nNon ci sono più contatti da suggerire.</string>
+	<string name="button_label_suggested_contact_later" state="needs_review" hash="-1933816039">Più tardi</string>
+	<string name="button_label_close" state="needs_review" hash="1454843231">Chiudi</string>
+	<string name="button_label_skip" state="needs_review" hash="2056258301">Salta</string>
+	<string name="button_label_understood" state="needs_review" hash="829780875">Ho capito</string>
+	<string name="label_suggested_contacts_onboarding_title_1" state="needs_review" hash="491881039">Invita con uno scorrimento</string>
+	<string name="label_suggested_contacts_onboarding_message_1" state="needs_review" hash="331320806">Scorri la scheda verso destra per invitare l\'utente o verso sinistra per passare all\'utente successivo.</string>
+	<string name="label_suggested_contacts_onboarding_title_2" state="needs_review" hash="-788798380">Da dove provengono questi contatti?</string>
+	<string name="label_suggested_contacts_onboarding_message_2" state="needs_review" hash="1536681696">Questi sono gli utenti di Olvid che non hai ancora tra i tuoi contatti.</string>
+	<string name="label_suggested_contacts_onboarding_caption" state="needs_review" hash="-1299179969">Siete collegati tramite una persona: avete almeno un gruppo in comune.</string>
+	<string name="label_suggested_contacts_you" state="needs_review" hash="672009142">Tu</string>
+	<string name="label_suggested_contacts_common_group" state="needs_review" hash="-1739793963">Gruppo in comune</string>
+	<string name="explanation_suggested_contacts_others_tab" state="needs_review" hash="852096678">Gli utenti elencati di seguito non sono presenti nella tua rubrica e al momento non puoi avviare una conversazione privata con loro. Tuttavia, puoi facilmente invitarli ad aggiungersi! 🚀</string>
+	<string name="label_suggested_contacts_invite_in_one_gesture" state="needs_review" hash="438220313">Invita questi utenti con uno scorrimento</string>
+	<string name="menu_action_suggested_contacts_see_full_list" state="needs_review" hash="603082500">Visualizza l\'elenco completo</string>
+	<string name="menu_action_suggested_contacts_replay_onboarding" state="needs_review" hash="-1552704243">Riguarda il tutorial</string>
+	<string name="button_label_uninvite" state="needs_review" hash="771825501">Rimuovi dall\'invito</string>
+	<string name="button_label_accept_invitation" state="needs_review" hash="-1778405034">Accetta l\'invito</string>
+	<string name="label_suggested_contacts_already_swiped" state="needs_review" hash="427042318">Già scorretto</string>
+	<string name="label_suggested_contacts_not_swiped_yet" state="needs_review" hash="310924358">Non ancora visualizzato</string>
 </resources>

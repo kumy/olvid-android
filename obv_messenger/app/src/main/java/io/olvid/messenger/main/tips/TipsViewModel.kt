@@ -104,6 +104,13 @@ class TipsViewModel : ViewModel() {
             return
         }
 
+        if (SettingsActivity.useAutomaticBackup()
+            && runCatching { AppSingleton.getEngine().getBackupKeyInformation() != null }.getOrDefault(false)
+        ) {
+            tipToShow = Tip.LEGACY_BACKUP_END_OF_LIFE
+            return
+        }
+
         AccessibilityManager.refreshUntrustedAccessibilityServices(activity)?.firstOrNull()?.let {
             tipToShow = Tip.UNTRUSTED_ACCESSIBILITY_SERVICE
             return
@@ -180,7 +187,7 @@ class TipsViewModel : ViewModel() {
             }
         }
         if (backupStatus == SettingsActivity.PREF_KEY_BACKUPS_V2_STATUS_KEY_REMINDER) {
-            if (AppSingleton.getEngine().deviceBackupSeed != null) {
+            if (AppSingleton.getEngine().getDeviceBackupSeed() != null) {
                 tipToShow = Tip.WRITE_BACKUP_KEY
                 return
             }
@@ -241,6 +248,7 @@ class TipsViewModel : ViewModel() {
     }
 
     enum class Tip {
+        LEGACY_BACKUP_END_OF_LIFE,
         CONFIGURE_BACKUPS,
         WRITE_BACKUP_KEY,
         TROUBLESHOOTING,

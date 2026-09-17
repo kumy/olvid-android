@@ -282,4 +282,20 @@
 		<item quantity="one" state="needs_review" hash="-1393207312">%1$d ההודעה הועתקה ללוח הגזירים</item>
 		<item quantity="other" state="needs_review" hash="-604999755">%1$d הודעות הועתקו ללוח הגזירים</item>
 	</plurals>
+	<plurals name="label_share_destinations_count" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="423387012">%1$d נמען</item>
+		<item quantity="other" state="needs_review" hash="-431979656">%1$d נמענים</item>
+	</plurals>
+	<plurals name="label_share_to_recipients" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="-1217959784">שתף עם %1$d נמען</item>
+		<item quantity="other" state="needs_review" hash="1864148690">שתף עם %1$d נמענים</item>
+	</plurals>
+	<plurals name="toast_message_shared_to_recipients" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="-373807760">שותף עם %1$d נמען</item>
+		<item quantity="other" state="needs_review" hash="-1412037000">שותף עם %1$d נמענים</item>
+	</plurals>
+	<plurals name="button_label_add_to_groups" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="1622654043">הוסף לקבוצה %1$d</item>
+		<item quantity="other" state="needs_review" hash="-1655824151">הוסף לקבוצות %1$d</item>
+	</plurals>
 </resources>

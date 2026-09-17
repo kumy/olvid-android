@@ -1,0 +1,4 @@
+- Fitur berbagi layar baru memungkinkan untuk memposting ke beberapa grup sekaligus.
+- Pengalaman mengundang baru dengan gerakan geser untuk dengan mudah mengundang anggota grup ke diskusi pribadi.
+- Proses orientasi baru untuk menjelaskan Olvid kepada pengguna baru.
+- Peningkatan penampil gambar/video, dengan opsi untuk memperbesar video.

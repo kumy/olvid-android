@@ -38,20 +38,9 @@ import io.olvid.messenger.databases.entity.OwnedIdentity
 
 
 class HistoryTransferViewModel: ViewModel() {
-    val ownedIdentityListLiveData = object : MediatorLiveData<List<OwnedIdentity>>() {
+    val ownedIdentityListLiveData: MediatorLiveData<List<OwnedIdentity>> = MediatorLiveData<List<OwnedIdentity>>().apply {
         var nonHidden: List<OwnedIdentity> = emptyList()
         var current: OwnedIdentity? = null
-
-        init {
-            addSource(AppDatabase.getInstance().ownedIdentityDao().allNotHiddenLiveData) { nonHidden ->
-                this.nonHidden = nonHidden.sortedBy { it.displayName }
-                update()
-            }
-            addSource(AppSingleton.getCurrentIdentityLiveData()) { current ->
-                this.current = current
-                update()
-            }
-        }
 
         fun update() {
             postValue(
@@ -62,6 +51,15 @@ class HistoryTransferViewModel: ViewModel() {
                     }
                 }
             )
+        }
+
+        addSource(AppDatabase.getInstance().ownedIdentityDao().allNotHiddenLiveData) { list ->
+            nonHidden = list.sortedBy { it.displayName }
+            update()
+        }
+        addSource(AppSingleton.getCurrentIdentityLiveData()) { identity ->
+            current = identity
+            update()
         }
     }
 

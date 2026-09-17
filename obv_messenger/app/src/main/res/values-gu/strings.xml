@@ -26,8 +26,8 @@
 	<string name="button_label_create_group" state="needs_review" hash="1102939673">ગ્રુપ બનાવો</string>
 	<string name="button_label_discard" state="needs_review" hash="795591204">રદ કરો</string>
 	<string name="button_label_exchange_digits_with_user" state="needs_review" hash="339599327">%1$s સાથે કોડની આપ-લે કરો</string>
-	<string name="button_label_generate_new_id" state="needs_review" hash="92014734">નવો આઈડી બનાવો</string>
-	<string name="button_label_generate_my_id" state="needs_review" hash="-1007060207">મારો આઈડી બનાવો</string>
+	<string name="button_label_generate_new_id" state="needs_review" hash="-1130516787">નવું પ્રોફાઇલ બનાવો</string>
+	<string name="button_label_generate_my_id" state="needs_review" hash="239641058">મારું પ્રોફાઇલ બનાવો</string>
 	<string name="button_label_ignore" state="needs_review" hash="-806373746">અવગણો</string>
 	<string name="button_label_reject" state="needs_review" hash="-2094664161">અસ્વીકાર કરો</string>
 	<string name="button_label_introduce" state="needs_review" hash="193852909">પરિચય કરો</string>
@@ -80,6 +80,12 @@
 	<string name="dialog_title_rename_group" state="needs_review" hash="1461324427">ગ્રુપનું નામ બદલો</string>
 	<string name="dialog_title_restart_channel_establishment" state="needs_review" hash="-645769680">શું ચેનલની સ્થાપના ફરીથી શરૂ કરવી?</string>
 	<string name="dialog_title_share_with" state="needs_review" hash="854107768">સાથે શેર કરો…</string>
+	<string name="dialog_title_share_recipients" state="needs_review" hash="1157053138">પ્રાપ્તકર્તાઓને પસંદ કરો</string>
+	<string name="share_label_from" state="needs_review" hash="2049052075">પ્રેરક:</string>
+	<string name="share_label_to" state="needs_review" hash="-1785690373">કોને:</string>
+	<string name="share_label_choose_recipients" state="needs_review" hash="1157053138">પ્રાપ્તકર્તાઓને પસંદ કરો</string>
+	<string name="hint_share_message" state="needs_review" hash="-763169957">એક સંદેશ ઉમેરો…</string>
+	<string name="content_description_delete_attachment" state="needs_review" hash="-220348329">જોડાયેલ ફાઇલ દૂર કરો</string>
 	<string name="dialog_title_shortcut_to" state="needs_review" hash="-1193591200">… માટે શોર્ટકટ બનાવો</string>
 	<string name="explanation_choose_display_name" state="needs_review" hash="1162066686">કૃપા કરીને એક નામ દાખલ કરો જે તમારા સંપર્કોને દેખાશે. આ માહિતી ક્યારેય ઓલ્વિડના સર્વર્સ પર મોકલવામાં આવશે નહીં.</string>
 	<string name="explanation_empty_contact_list" state="needs_review" hash="1240778508">હાલમાં કોઈ સંપર્કો નથી</string>
@@ -104,7 +110,7 @@
 	<string name="explanation_no_message_found" state="needs_review" hash="-1329622990">કોઈ સંદેશ મળ્યો નથી</string>
 	<string name="explanation_no_attachment_found" state="needs_review" hash="156593369">કોઈ પણ જોડાણ મળ્યું નથી</string>
 	<string name="explanation_no_link_found" state="needs_review" hash="-1419950450">કોઈ પણ લિંક મળી નથી</string>
-	<string name="hint_company" state="needs_review" hash="379200324">કંપની (વૈકલ્પિક)</string>
+	<string name="hint_company" state="needs_review" hash="988571519">કંપની</string>
 	<string name="hint_compose_your_message" state="needs_review" hash="-25761578">સંદેશ લખો</string>
 	<string name="hint_compose_your_message_ephemeral" state="needs_review" hash="-1527208333">અસ્થાયી સંદેશ</string>
 	<string name="label_edit_your_message" state="needs_review" hash="1091877412">તમારા સંદેશને સંપાદિત કરો</string>
@@ -133,7 +139,7 @@
 	<string name="hint_last_name" state="needs_review" hash="1701170359">છેલ્લું નામ</string>
 	<string name="hint_new_name" state="needs_review" hash="709842168">નવું નામ</string>
 	<string name="hint_notification_reply" state="needs_review" hash="1095144032">જવાબ આપો</string>
-	<string name="hint_position" state="needs_review" hash="-55145181">નોકરીનું નામ (વૈકલ્પિક)</string>
+	<string name="hint_position" state="needs_review" hash="1338817744">નોકરીનું શીર્ષક</string>
 	<string name="invitation_label_their_code" state="needs_review" hash="1402501614">તેમનો કોડ</string>
 	<string name="invitation_label_your_code" state="needs_review" hash="1944546233">તમારો કોડ</string>
 	<string name="invitation_status_accept_invite" state="needs_review" hash="2100924901">આમંત્રણ મળ્યું</string>
@@ -170,6 +176,11 @@
 	<string name="label_group_members" state="needs_review" hash="1460220752">ગ્રુપના સભ્યો</string>
 	<string name="label_other_group_members" state="needs_review" hash="-2121490032">અન્ય જૂથના સભ્યો</string>
 	<string name="label_groups_common" state="needs_review" hash="1252823567">સમાન જૂથો</string>
+	<string name="label_create_group_with_contact" state="needs_review" hash="1950649899">%1$s સાથે એક જૂથ બનાવો</string>
+	<string name="label_add_contact_to_a_group" state="needs_review" hash="-682192937">%1$s ને જૂથમાં ઉમેરો</string>
+	<string name="label_add_to_groups" state="needs_review" hash="-654216617">જૂથોમાં ઉમેરો</string>
+	<string name="explanation_no_admin_group_to_add_contact" state="needs_review" hash="402908162">તમે કોઈપણ એવા જૂથના સંચાલક નથી કે જેમાં %1$s ઉમેરી શકાય.</string>
+	<string name="toast_message_adding_contact_to_groups" state="needs_review" hash="1201697547">પસંદ કરેલા જૂથોમાં %1$s ઉમેરવામાં આવી રહ્યું છે...</string>
 	<string name="label_invitation_declined" state="needs_review" hash="2038173833">આમંત્રણ નકારી કાઢવામાં આવ્યું</string>
 	<string name="label_new_group_card" state="needs_review" hash="1006740909">ગ્રુપની વિગતો અપડેટ કરવામાં આવી</string>
 	<string name="label_not_part_of_a_group" state="needs_review" hash="1667979596">હજી સુધી કોઈ જૂથનો ભાગ નથી</string>
@@ -183,6 +194,7 @@
 	<string name="menu_action_create_shortcut" state="needs_review" hash="-1949455873">શોર્ટકટ બનાવો</string>
 	<string name="menu_action_delete" state="needs_review" hash="-232100842">કાઢી નાખો</string>
 	<string name="menu_action_delete_discussion" state="needs_review" hash="2059656471">ચર્ચા કાઢી નાખો</string>
+	<string name="menu_action_export_discussion" state="needs_review" hash="1736692296">ચર્ચા નિકાસ કરો</string>
 	<string name="label_swipe_details" state="needs_review" hash="171468732">વિગતો</string>
 	<string name="menu_action_disband_group" state="needs_review" hash="-1767089289">ગ્રુપને રદ કરો</string>
 	<string name="menu_action_edit_group_details" state="needs_review" hash="310205135">ગ્રુપની વિગતો સંપાદિત કરો</string>
@@ -372,7 +384,7 @@
 	<string name="pref_reset_pin_summary" state="needs_review" hash="-1029698367">ઓલ્વિડને અનલૉક કરવા માટે વપરાતો પિન કોડ બદલો.</string>
 	<string name="pref_category_lock_title" state="needs_review" hash="1766251086">લોક સ્ક્રીન</string>
 	<string name="pref_hide_notification_contents_title" state="needs_review" hash="1836074958">સૂચનાની સામગ્રી છુપાવો</string>
-	<string name="pref_hide_notification_contents_summary" state="needs_review" hash="2136859281">આ વિકલ્પ ચાલુ હોય ત્યારે, તમામ સૂચનાઓ \\"ઓલ્વિડને તમારા ધ્યાનની જરૂર છે\\" દ્વારા બદલવામાં આવશે.</string>
+	<string name="pref_hide_notification_contents_summary" state="needs_review" hash="2136859281">આ વિકલ્પ ચાલુ હોય ત્યારે, તમામ સૂચનાઓ \"ઓલ્વિડને તમારા ધ્યાનની જરૂર છે\" દ્વારા બદલવામાં આવશે.</string>
 	<string name="text_neutral_notification" state="needs_review" hash="486171268">ઓલ્વિડને તમારા ધ્યાન આપવાની જરૂર છે</string>
 	<string name="text_neutral_notification_click_to_open" state="needs_review" hash="1018853457">ઓલ્વિડ ખોલવા માટે ક્લિક કરો</string>
 	<string name="dialog_title_pin_creation" state="needs_review" hash="-835407834">તમારો પિન બનાવો</string>
@@ -482,7 +494,14 @@
 	<string name="dialog_title_backup_choices" state="needs_review" hash="281222223">બેકઅપ પદ્ધતિ પસંદ કરો</string>
 	<string name="menu_action_choose_picture" state="needs_review" hash="-1655172909">એક છબી પસંદ કરો</string>
 	<string name="menu_action_take_photo" state="needs_review" hash="-1123080444">ફોટો લો</string>
+	<string name="menu_action_choose_image_from_olvid" state="needs_review" hash="1585248356">સ્વીકૃત છબી પસંદ કરો</string>
 	<string name="menu_action_remove_image" state="needs_review" hash="1094977672">ચિત્ર દૂર કરો</string>
+	<string name="menu_action_use_image_as" state="needs_review" hash="587310096">આ છબીનો ઉપયોગ આ રીતે કરો...</string>
+	<string name="label_use_photo_for_my_profile" state="needs_review" hash="-1005809580">મારું પ્રોફાઇલ ચિત્ર</string>
+	<string name="label_use_photo_for_target" state="needs_review" hash="283541521">%s માટે ફોટો</string>
+	<string name="label_use_photo_for_discussion_background" state="needs_review" hash="1925733151">%s માટે પૃષ્ઠભૂમિ</string>
+	<string name="toast_message_photo_set" state="needs_review" hash="-1641885203">ચિત્ર અપડેટ થયું</string>
+	<string name="toast_message_background_set" state="needs_review" hash="1642873459">પૃષ્ઠભૂમિ અપડેટ કરવામાં આવી</string>
 	<string name="dialog_title_create_empty_group" state="needs_review" hash="-663434464">ખાલી જૂથ બનાવો?</string>
 	<string name="dialog_message_create_empty_group" state="needs_review" hash="-297923005">તમે તમારા જૂથમાં ઉમેરવા માટે કોઈ સંપર્ક પસંદ કર્યો નથી. શું તમે ખાતરી કરો છો કે તમે ખાલી જૂથ બનાવવા માંગો છો?</string>
 	<string name="pref_dark_mode_title" state="needs_review" hash="816474245">ડાર્ક મોડ</string>
@@ -862,7 +881,7 @@
 	<string name="button_label_check_options" state="needs_review" hash="-759177128">વિકલ્પો તપાસો</string>
 	<string name="hint_olvid_server" state="needs_review" hash="1097391633">ઓલ્વિડ સર્વર</string>
 	<string name="hint_license_activation_code" state="needs_review" hash="102193320">લાઇસન્સ સક્રિયકરણ કોડ</string>
-	<string name="activity_title_identity_creation_options" state="needs_review" hash="1180456032">આઈડી બનાવવાના વિકલ્પો</string>
+	<string name="activity_title_identity_creation_options" state="needs_review" hash="-774054913">પ્રોફાઇલ બનાવટ વિકલ્પો</string>
 	<string name="activity_title_scan_configuration" state="needs_review" hash="-386259993">રૂપરેખાંકન સ્કેન કરો</string>
 	<string name="menu_action_import_activation_from_clipboard" state="needs_review" hash="-70842935">ક્લિપબોર્ડમાંથી લિંક આયાત કરો</string>
 	<string name="troubleshooting_update_valid_title" state="needs_review" hash="741828768">ઓલ્વિડ અપડેટ થયેલ છે</string>
@@ -871,7 +890,6 @@
 	<string name="dialog_message_update_available" state="needs_review" hash="416187645">ઓલ્વિડનું નવું સંસ્કરણ ઉપલબ્ધ છે.\n\nનવીનતમ સુવિધાઓનો લાભ લેવા માટે કૃપા કરીને અપડેટ કરો.</string>
 	<string name="dialog_title_call_initiation_not_supported" state="needs_review" hash="-2088021831">કોલ શરૂ કરી શકાતો નથી</string>
 	<string name="dialog_message_call_initiation_not_supported" state="needs_review" hash="1760333819">એવું લાગે છે કે તમારા ઓલ્વિડ સર્વર સુરક્ષિત કૉલ શરૂ કરવાની સુવિધાને સપોર્ટ કરતું નથી.\n\nવધુ માહિતી માટે કૃપા કરીને તમારા એડમિનિસ્ટ્રેટરનો સંપર્ક કરો.</string>
-	<string name="label_identity_creation_options" state="needs_review" hash="1180456032">આઈડી બનાવવાના વિકલ્પો</string>
 	<string name="text_option_server" state="needs_review" hash="-1130676431">સર્વર: %1$s</string>
 	<string name="dialog_title_non_default_server" state="needs_review" hash="2119192219">ડિફૉલ્ટ ન હોય તેવા સર્વરનો ઉપયોગ કરવો</string>
 	<string name="dialog_message_non_default_server" state="needs_review" hash="459308900">તમે નીચેના સર્વર પર પ્રોફાઇલ બનાવવા જઈ રહ્યા છો: \n\n%1$s\n\nઆ ડિફૉલ્ટ ઓલ્વિડ સર્વર નથી. જો તમને આ સર્વર પર વિશ્વાસ હોય તો જ આગળ વધો.</string>
@@ -900,7 +918,7 @@
 	<string name="toast_message_unable_to_keycloak_revoke" state="needs_review" hash="-1368037130">અગાઉની ઓલ્વિડ આઈડી બદલવામાં નિષ્ફળતા મળી, કૃપા કરીને ફરી પ્રયાસ કરો</string>
 	<string name="toast_message_keycloak_revoke_successful" state="needs_review" hash="-1216369809">અગાઉના ઓલ્વિડ આઈડીને સફળતાપૂર્વક બદલવામાં આવ્યો</string>
 	<string name="dialog_title_keycloak_authentication_required_user_id_changed" state="needs_review" hash="-896407029">વપરાશકર્તામાં ફેરફાર નોંધાયો</string>
-	<string name="dialog_message_keycloak_authentication_required_user_id_changed" state="needs_review" hash="876252686">તમારી પ્રોફાઇલ હાલમાં તમારી સંસ્થા દ્વારા સંચાલિત છે. એવું લાગે છે કે તમે સામાન્ય કરતાં અલગ વપરાશકર્તા તરીકે પ્રમાણિત થયા છો. આ સમર્થિત નથી.\n\nકૃપા કરીને તમારા સંચાલકનો સંપર્ક કરો અથવા યોગ્ય વપરાશકર્તા તરીકે ફરીથી પ્રમાણિત કરો.</string>
+	<string name="dialog_message_keycloak_authentication_required_user_id_changed" state="needs_review" hash="2080839829">તમારી પ્રોફાઇલ હાલમાં તમારા સંગઠન દ્વારા સંચાલિત છે. એવું લાગે છે કે તમે સામાન્ય કરતાં અલગ વપરાશકર્તા તરીકે પ્રમાણિત થયા છો. આ સમર્થિત નથી.\n\nકૃપા કરીને તમારા સંચાલકનો સંપર્ક કરો અથવા યોગ્ય વપરાશકર્તા તરીકે ફરીથી પ્રમાણિત કરો.</string>
 	<string name="dialog_title_add_keycloak_user" state="needs_review" hash="-1050193239">સંપર્ક ઉમેરો</string>
 	<string name="dialog_message_add_keycloak_user" state="needs_review" hash="-1755937035">તમે %1$s ને તમારી સંપર્કોમાં ઉમેરવાનું પસંદ કર્યું છે. શું તમે આગળ વધવા માંગો છો?</string>
 	<string name="explanation_keycloak_update_new" state="needs_review" hash="1136733528">તમે ઓલ્વિડમાં તમારી કંપનીના ઓળખ પ્રદાતાને ગોઠવવા જઈ રહ્યા છો. એકવાર ગોઠવણી થઈ ગયા પછી, તમે આ સર્વર સાથે પ્રમાણિત કરી શકશો અને ઓલ્વિડ તમને તમારા સંપર્કોમાં અન્ય કર્મચારીઓને સરળતાથી ઉમેરવા દેશે.\nવધુ વિગતો માટે કૃપા કરીને તમારા સંચાલકનો સંપર્ક કરો.</string>
@@ -1031,6 +1049,8 @@
 	<string name="label_storage_discussions" state="needs_review" hash="491497248">વાતચીતો</string>
 	<string name="pref_use_internal_image_viewer_title" state="needs_review" hash="1319400578">આંતરિક છબી દર્શકનો ઉપયોગ કરો</string>
 	<string name="pref_use_internal_image_viewer_summary" state="needs_review" hash="1248137666">જ્યારે આ વિકલ્પ સક્રિય કરવામાં આવે, ત્યારે કોઈ છબી જોડાણ પર ક્લિક કરવાથી તે આંતરિક વ્યૂઅરમાં ખુલશે. નહિંતર, તમારા ઉપકરણનું ડિફૉલ્ટ ઇમેજ એપ્લિકેશન વપરાશે.</string>
+	<string name="pref_image_text_recognition_title" state="needs_review" hash="1877261687">ચિત્રોમાંના ટેક્સ્ટને ઓળખો અને ઇન્ડેક્સ કરો</string>
+	<string name="pref_image_text_recognition_summary" state="needs_review" hash="1217699919">ઇમેજ જોડાણોમાં મળેલા ટેક્સ્ટને શોધવા અને કૉપિ કરવાની મંજૂરી આપે છે. આ ઓછી ક્ષમતાવાળા ઉપકરણો પર વધુ સંસાધનો વાપરી શકે છે: જો તમને તેની જરૂર ન હોય તો તેને બંધ કરો.</string>
 	<string name="label_unable_to_display_image" state="needs_review" hash="-1495534207">ચિત્ર પ્રદર્શિત કરવામાં અસમર્થ</string>
 	<string name="dialog_title_backup_requires_sign_in" state="needs_review" hash="-720389674">ક્લાઉડ પ્રદાતા દ્વારા લૉગ ઇન કરવું જરૂરી છે</string>
 	<string name="dialog_message_backup_requires_sign_in" state="needs_review" hash="119557495">તમે ઓલ્વિડને ક્લાઉડ પ્રોવાઇડર પર આપોઆપ બેકઅપ લેવા માટે રૂપરેખાંકિત કર્યું છે, પરંતુ તમારી સત્ર સમયસીમા સમાપ્ત થઈ ગઈ છે. તમારે ફરીથી આ પ્રોવાઇડરમાં સાઇન ઇન કરવાની જરૂર છે.\n\nજો તમે હવે આપોઆપ બેકઅપ લેવાનું બંધ કરવા માંગતા હો, તો તમે એપ્લિકેશન સેટિંગ્સમાં તેને બંધ કરી શકો છો. ધ્યાનમાં રાખો કે આપોઆપ બેકઅપ એ તમારા સંપર્કોને ગુમાવવાથી બચાવવાનો એકમાત્ર રસ્તો છે, જો તમારું ઉપકરણ ખોવાઈ જાય અથવા ક્ષતિગ્રસ્ત થાય.</string>
@@ -1149,7 +1169,7 @@
 	<string name="pref_hidden_profile_close_policy_dialog_entry_screen_lock" state="needs_review" hash="-1520400811">જ્યારે ઓલ્વિડ લોક સ્ક્રીન સક્રિય થાય છે</string>
 	<string name="pref_hidden_profile_close_policy_dialog_entry_background" state="needs_review" hash="-2099539114">જ્યારે ઓલ્વિડ બેકગ્રાઉન્ડમાં જાય છે...</string>
 	<string name="activity_title_enter_backup_key" state="needs_review" hash="1035967309">બેકઅપ કી દાખલ કરો</string>
-	<string name="activity_title_identity_creation" state="needs_review" hash="-1361520151">આઈડી બનાવવું</string>
+	<string name="activity_title_identity_creation" state="needs_review" hash="2027618284">પ્રોફાઇલ બનાવવું</string>
 	<string name="menu_action_manual_configuration" state="needs_review" hash="-1495974502">મેન્યુઅલ એડવાન્સ્ડ રૂપરેખાંકન</string>
 	<string name="toast_message_invalid_configuration_link" state="needs_review" hash="1387412522">અમાન્ય રૂપરેખાંકન લિંક</string>
 	<string name="toast_message_invalid_link" state="needs_review" hash="1265454437">અમાન્ય લિંક</string>
@@ -1171,6 +1191,7 @@
 	<string name="dialog_title_chose_profile_web_client" state="needs_review" hash="1860298414">ઓલ્વિડ વેબ ક્લાયંટ સાથે કનેક્ટ કરવા માટે પ્રોફાઇલ પસંદ કરો.</string>
 	<string name="dialog_title_chose_profile_invitation" state="needs_review" hash="-2063034787">આ સંપર્કને આમંત્રિત કરવા માટે કયો પ્રોફાઇલ પસંદ કરવા માંગો છો?</string>
 	<string name="toast_message_create_new_profile_then_reopen_this_link" state="needs_review" hash="1770827346">કૃપા કરીને પહેલા એક નવું પ્રોફાઇલ બનાવો, પછી આ લિંક ફરીથી ખોલો.</string>
+	<string name="toast_message_invitation_link_deferred_to_end_of_onboarding" state="needs_review" hash="-189914806">તમારું પ્રોફાઇલ બનાવ્યા પછી તમારું આમંત્રણ આપોઆપ ખુલશે.</string>
 	<string name="button_label_switch_profile" state="needs_review" hash="-2007633024">પ્રોફાઇલ બદલો</string>
 	<string name="text_no_other_profile_to_switch_to" state="needs_review" hash="-112306213">બીજું કોઈ પ્રોફાઇલ નથી</string>
 	<string name="button_label_configure_lock_screen" state="needs_review" hash="870348426">લોક સ્ક્રીન સેટ કરો</string>
@@ -1181,7 +1202,7 @@
 	<string name="dialog_message_delete_profile_multi" state="needs_review" hash="-2003495595">આ પ્રોફાઇલને ડિલીટ કરવાથી તમારા ઉપકરણ પર આ પ્રોફાઇલ સંબંધિતની તમામ માહિતી ડિલીટ થઈ જશે. આમાં તમારા સંપર્કો, જૂથો અને આ પ્રોફાઇલ માટેની તમારી બધી ચર્ચાઓ (સંદેશો અને જોડાણો) ની સામગ્રી શામેલ છે. આ ક્રિયા તમારા અન્ય પ્રોફાઇલ્સને અસર કરશે નહીં.\n\nઆ પ્રોફાઇલને કેવી રીતે ડિલીટ કરવી તે પસંદ કરવા માટે \"આગલું\" દબાવો.</string>
 	<string name="dialog_message_delete_last_profile_multi" state="needs_review" hash="-103140781">આ પ્રોફાઇલને ડિલીટ કરવાથી તમારા ઉપકરણ પર આ પ્રોફાઇલ સંબંધિતની તમામ માહિતી કાઢી નાખવામાં આવશે. આમાં તમારા સંપર્કો, જૂથો અને આ પ્રોફાઇલ માટેની તમારી બધી ચર્ચાઓ (સંદેશો અને જોડાણો) ની સામગ્રી શામેલ છે.\n\n<b>આ તમારી એકમાત્ર દૃશ્યમાન પ્રોફાઇલ છે અને જો તમારી પાસે કોઈ છુપાયેલી પ્રોફાઇલ હોય, તો તે પણ એકસાથે ડિલીટ થઈ જશે.</b>\n\nઆ પ્રોફાઇલને કેવી રીતે ડિલીટ કરવી તે પસંદ કરવા માટે \"આગલું\" દબાવો.</string>
 	<string name="switch_label_delete_profile_everywhere" state="needs_review" hash="-74965346">આ પ્રોફાઇલને <b>સર્વત્ર</b> કાઢી નાખો</string>
-	<string name="hint_type_delete_here_to_proceed" state="needs_review" hash="-1622625725">આગળ વધવા માટે અહીં \\"%1$s\\" લખો</string>
+	<string name="hint_type_delete_here_to_proceed" state="needs_review" hash="-1622625725">આગળ વધવા માટે અહીં \"%1$s\" લખો</string>
 	<string name="explanation_delete_owned_identity" state="needs_review" hash="2036375772">જો તમે તમારી પ્રોફાઇલ <b>સર્વત્ર</b> કાઢી નાખવાનું પસંદ કરો છો:\u00a0-\u00a0તે સ્થાનિક રીતે અને તમારા સંપર્કોના ઉપકરણો પરથી કાઢી નાખવામાં આવશે.\u00a0-\u00a0તમે જે જૂથોમાં જોડાયા છો તેમાંથી તમે બહાર નીકળી જશો.\u00a0-\u00a0તમે જે જૂથોનું સંચાલન કરો છો તે જૂથોને રદ કરવામાં આવશે.\u00a0\u00a0જો તમે તમારી પ્રોફાઇલ <b>સર્વત્ર</b> કાઢી નાખવાનું પસંદ ન કરો, તો તે ફક્ત તમારા ઉપકરણ પર સ્થાનિક રીતે જ કાઢી નાખવામાં આવશે. જો તમે બીજા ઉપકરણ પર બેકઅપ પુનઃસ્થાપિત કરવાની યોજના ન ઘડો, તો તમારા સંપર્કો હજી પણ તમને સંદેશા મોકલવાનો પ્રયાસ કરી શકે છે અને તેઓને એવું લાગશે નહીં કે આ સંદેશા પહોંચાડવામાં આવશે.</string>
 	<string name="explanation_delete_inactive_owned_identity" state="needs_review" hash="-575337242">તમારું વર્તમાન પ્રોફાઇલ નિષ્ક્રિય દેખાય છે, જેનો અર્થ એ છે કે તમે તેને કદાચ બીજા ઉપકરણ પર ટ્રાન્સફર કર્યું છે. જો તમે આ પ્રોફાઇલને તમારા અન્ય ઉપકરણ પર વાપરવાનું ચાલુ રાખવાનું વિચારી રહ્યા હો, તો તમે તેને અહીંથી સુરક્ષિત રીતે ડિલીટ કરી શકો છો.\n\nજો તમે આ પ્રોફાઇલને ફરીથી ક્યારેય વાપરવા માંગતા ન હો, તો તમારે પહેલા આ ઉપકરણ પર તેને ફરીથી સક્રિય કરવાની જરૂર પડશે, તમારા સંપર્કો સાથે સુરક્ષિત ચેનલો ફરીથી બનાવવાની રાહ જોવી પડશે અને પછી જ આ પ્રોફાઇલને \"સર્વત્ર ડિલીટ કરો\" વિકલ્પ પસંદ કરીને ડિલીટ કરો.</string>
 	<string name="explanation_delete_owned_identity_multi" state="needs_review" hash="-184045089">તમારી પ્રોફાઇલ હાલમાં અનેક ઉપકરણો પર સક્રિય છે.\n\nજો તમે તમારી પ્રોફાઇલ <b>સર્વત્ર</b> કાઢી નાખવાનું પસંદ કરો છો:\n\u00a0-\u00a0તે તમારા બધા ઉપકરણો અને તમારા સંપર્કોના ઉપકરણોમાંથી કાઢી નાખવામાં આવશે.<b>અને</b>\n\u00a0-\u00a0તમે જે જૂથોમાં જોડાયા છો તેમાંથી તમે બહાર નીકળી જશો.\n\u00a0-\u00a0તમે જે જૂથોનું સંચાલન કરો છો તે જૂથોને રદ કરવામાં આવશે.\n\nજો તમે તમારી પ્રોફાઇલને <b>સર્વત્ર</b> કાઢી નાખવાનું પસંદ ન કરો છો, તો તે ફક્ત તમારા ઉપકરણ પરથી જ કાઢી નાખવામાં આવશે અને તમે તમારા અન્ય ઉપકરણો પર સામાન્ય રીતે તેનો ઉપયોગ કરવાનું ચાલુ રાખી શકો છો.</string>
@@ -1442,23 +1463,17 @@
 	<string name="button_label_send" state="needs_review" hash="-185402948">મોકલો</string>
 	<string name="button_label_start_sharing" state="needs_review" hash="682254052">શેર કરવાનું શરૂ કરો</string>
 	<string name="location_sharing_duration_one_hour_short_string" state="needs_review" hash="1004063951">1 કલાક</string>
-	<string name="location_sharing_duration_one_hour_full_string" state="needs_review" hash="-58118972">
-		<b>1 કલાક</b> માટે સ્થાન શેર કરો</string>
+	<string name="location_sharing_duration_one_hour_full_string" state="needs_review" hash="-58118972"><b>1 કલાક</b> માટે સ્થાન શેર કરો</string>
 	<string name="location_sharing_duration_three_hours_short_string" state="needs_review" hash="228095183">3 કલાક</string>
-	<string name="location_sharing_duration_three_hours_full_string" state="needs_review" hash="754857804">
-		<b>3 કલાક</b> માટે સ્થાન શેર કરો</string>
+	<string name="location_sharing_duration_three_hours_full_string" state="needs_review" hash="754857804"><b>3 કલાક</b> માટે સ્થાન શેર કરો</string>
 	<string name="location_sharing_duration_endless_short_string" state="needs_review" hash="55208442">અનંત</string>
-	<string name="location_sharing_duration_endless_full_string" state="needs_review" hash="1710814259">સ્થાન શેર કરો <b>જ્યાં સુધી બંધ ન કરો</b>
-	</string>
+	<string name="location_sharing_duration_endless_full_string" state="needs_review" hash="1710814259">સ્થાન શેર કરો <b>જ્યાં સુધી બંધ ન કરો</b></string>
 	<string name="location_sharing_quality_precise_short_string" state="needs_review" hash="351442529">ચોક્કસ</string>
 	<string name="location_sharing_quality_balanced_short_string" state="needs_review" hash="-1925315592">સંતુલિત</string>
 	<string name="location_sharing_quality_power_save_short_string" state="needs_review" hash="-14275273">પાવર બચાવો</string>
-	<string name="location_sharing_quality_precise_full_string" state="needs_review" hash="-1255374893">
-		<b>ચોક્કસ</b> સ્થાન શેરિંગ મોડ</string>
-	<string name="location_sharing_quality_balanced_full_string" state="needs_review" hash="-421322514">
-		<b>સંતુલિત</b> સ્થાન શેરિંગ મોડ</string>
-	<string name="location_sharing_quality_power_save_full_string" state="needs_review" hash="792896333">
-		<b>પાવર સેવ</b> લોકેશન શેરિંગ મોડ</string>
+	<string name="location_sharing_quality_precise_full_string" state="needs_review" hash="-1255374893"><b>ચોક્કસ</b> સ્થાન શેરિંગ મોડ</string>
+	<string name="location_sharing_quality_balanced_full_string" state="needs_review" hash="-421322514"><b>સંતુલિત</b> સ્થાન શેરિંગ મોડ</string>
+	<string name="location_sharing_quality_power_save_full_string" state="needs_review" hash="792896333"><b>પાવર સેવ</b> લોકેશન શેરિંગ મોડ</string>
 	<string name="label_sharing_location_until" state="needs_review" hash="187977459">%1$s સુધી સ્થાન શેર કરવામાં આવી રહ્યું છે</string>
 	<string name="label_location_sharing_ended" state="needs_review" hash="1028490137">સ્થાન શેરિંગ સમાપ્ત થયું</string>
 	<string name="label_gps_coordinates" state="needs_review" hash="-1537356414">જીપીએસ કોઓર્ડિનેટ્સ</string>
@@ -1535,7 +1550,7 @@
 	<string name="text_setting_disable_push_notifications" state="needs_review" hash="-1611970092">\"• પુશ સૂચનાઓ બંધ કરો: \"</string>
 	<string name="text_setting_permanent_websocket" state="needs_review" hash="540848406">\"• કાયમી વેબસોકેટ કનેક્શન: \"</string>
 	<string name="text_setting_internal_viewer" state="needs_review" hash="444959480">\"• આંતરિક છબી દર્શકનો ઉપયોગ કરો: \"</string>
-	<string name="text_setting_show_trust_level" state="needs_review" hash="-1964618064">\"• સંપર્કો માટે \\"વિશ્વાસ સ્ત્રોત\\" સૂચક બતાવો: \"</string>
+	<string name="text_setting_show_trust_level" state="needs_review" hash="-1964618064">\"• સંપર્કો માટે \"વિશ્વાસ સ્ત્રોત\" સૂચક બતાવો: \"</string>
 	<string name="text_setting_lock_biometry" state="needs_review" hash="-1698353580">\"• બાયોમેટ્રિક્સથી અનલોક કરો: \"</string>
 	<string name="text_setting_lock_notification" state="needs_review" hash="2022286622">\"• કાયમી લોક સ્ક્રીન સૂચના: \"</string>
 	<string name="text_setting_lock_wipe_on_fail" state="needs_review" hash="658363602">\"\u2023 3 ખોટા પિન દાખલ કર્યા પછી સંવેદનશીલ સંદેશાઓ કાઢી નાખો: \"</string>
@@ -1631,7 +1646,7 @@
 	<string name="text_last_online" state="needs_review" hash="-307031777">છેલ્લે ઓનલાઈન: %1$s</string>
 	<string name="text_deactivates_on" state="needs_review" hash="-948374904">%1$s તારીખે નિષ્ક્રિય થશે:</string>
 	<string name="text_device_is_inactive" state="needs_review" hash="-1269909292">ઉપકરણ નિષ્ક્રિય કરવામાં આવ્યું</string>
-	<string name="dialog_message_rename_current_device" state="needs_review" hash="1877085196">કૃપા કરીને તમે તમારા વર્તમાન ઉપકરણને ઓળખવા માટે જે નામ વાપરવા માંગો છો તે દાખલ કરો.\nતેના મૂળભૂત ઉપકરણ નામનો ઉપયોગ કરવા માટે \\"મૂળભૂત\\" દબાવો.</string>
+	<string name="dialog_message_rename_current_device" state="needs_review" hash="1877085196">કૃપા કરીને તમે તમારા વર્તમાન ઉપકરણને ઓળખવા માટે જે નામ વાપરવા માંગો છો તે દાખલ કરો.\nતેના મૂળભૂત ઉપકરણ નામનો ઉપયોગ કરવા માટે \"મૂળભૂત\" દબાવો.</string>
 	<string name="dialog_message_rename_other_device" state="needs_review" hash="1342525083">કૃપા કરીને એ નામ દાખલ કરો જેનો ઉપયોગ તમે તે ઉપકરણને ઓળખવા માટે કરવા માંગો છો.</string>
 	<string name="hint_device_name" state="needs_review" hash="1739868247">ઉપકરણનું નામ</string>
 	<string name="button_label_default" state="needs_review" hash="-1574133633">મૂળભૂત</string>
@@ -1641,7 +1656,7 @@
 	<string name="button_label_remove" state="needs_review" hash="1097276765">દૂર કરો</string>
 	<string name="menu_action_remove_expiration" state="needs_review" hash="-156931599">આ ઉપકરણને સક્રિય રાખો</string>
 	<string name="dialog_title_set_unexpiring_device" state="needs_review" hash="-1488033285">એક ઉપકરણને સક્રિય રાખો</string>
-	<string name="dialog_message_set_unexpiring_device" state="needs_review" hash="-1457083107">તમારી પાસે હાલમાં બહુવિધ સક્રિય ઉપકરણો રાખવા માટે લાઇસન્સ નથી. જો તમે આવા લાઇસન્સ ખરીદવા માંગતા હો, તો આ સંવાદ બંધ કરો અને નીચે આપેલ \\"સબ્સ્ક્રિપ્શન યોજનાઓ જુઓ\\" પર ક્લિક કરો.\n\nચાલુ રાખવા અને ઉપકરણ \\"%1$s\\" ને સક્રિય રાખવા માટે, તેના બદલે ઉપકરણ \\"%2$s\\" ને નિષ્ક્રિય કરવામાં આવશે. શું તમે આગળ વધવા માંગો છો?</string>
+	<string name="dialog_message_set_unexpiring_device" state="needs_review" hash="-1457083107">તમારી પાસે હાલમાં બહુવિધ સક્રિય ઉપકરણો રાખવા માટે લાઇસન્સ નથી. જો તમે આવા લાઇસન્સ ખરીદવા માંગતા હો, તો આ સંવાદ બંધ કરો અને નીચે આપેલ \"સબ્સ્ક્રિપ્શન યોજનાઓ જુઓ\" પર ક્લિક કરો.\n\nચાલુ રાખવા અને ઉપકરણ \"%1$s\" ને સક્રિય રાખવા માટે, તેના બદલે ઉપકરણ \"%2$s\" ને નિષ્ક્રિય કરવામાં આવશે. શું તમે આગળ વધવા માંગો છો?</string>
 	<string name="dialog_title_remove_background_image" state="needs_review" hash="488158841">શું વર્તમાન બેકગ્રાઉન્ડ ઇમેજ દૂર કરવી છે?</string>
 	<string name="dialog_title_introducing_markdown" state="needs_review" hash="175399162">મેસેજ ફોર્મેટિંગ રજૂ કરીએ છીએ!</string>
 	<string name="dialog_message_introducing_markdown" state="needs_review" hash="1738415115">ઓલ્વિડ હવે તમને માર્કડાઉન સિન્ટેક્સનો ઉપયોગ કરીને તમારા સંદેશાઓને ફોર્મેટ કરવાની મંજૂરી આપે છે 🎨!\n\n**<b>બોલ્ડ</b>** માં, *<i>ઇટાલિક</i>* માં લખો, # <big>હેડિંગ્સ</big> ઉમેરો, વગેરે.\n\nસપોર્ટેડ ટૅગ્સની સંપૂર્ણ સૂચિ અહીં શોધો 🦍:\nhttps://www.olvid.io/faq/format-your-messages/</string>
@@ -1672,7 +1687,7 @@
 	<string name="onboarding_transfer_source_session_show_explanation" state="needs_review" hash="-1092514758">તમારા નવા ઉપકરણ પર ઓલ્વિડ શરૂ કરો. જો આ ઉપકરણ પર હજી સુધી કોઈ પ્રોફાઇલ ન હોય, તો હાલની પ્રોફાઇલ આયાત કરવા માટેની સૂચનાઓનું પાલન કરો. નહિંતર, ઉપર ડાબી બાજુએ તમારા પ્રોફાઇલ ચિત્ર પર ટેપ કરો અને \"પ્રોફાઇલ ઉમેરો\" પસંદ કરો.</string>
 	<string name="onboarding_transfer_source_session_sas" state="needs_review" hash="571819365">તમારા નવા ઉપકરણ પર પ્રદર્શિત કોડ દાખલ કરો</string>
 	<string name="onboarding_transfer_target_session_title" state="needs_review" hash="615939188">તમારા બીજા ઉપકરણ પર દેખાતો કોડ દાખલ કરો</string>
-	<string name="onboarding_transfer_target_session_explanation" state="needs_review" hash="983671212">તમારા અન્ય ઉપકરણ પર ઓલ્વિડ શરૂ કરો.\nઉપર ડાબી બાજુએ તમારા પ્રોફાઇલ ચિત્ર પર ટેપ કરો.\nતમે જે પ્રોફાઇલ આયાત કરવા માંગો છો તે પસંદ કરો અને \\"મેનેજ\\" બટન પર ટેપ કરો.\nકોડ પ્રદર્શિત કરવા માટે \\"ઉપકરણ ઉમેરો\\" પર ટેપ કરો.</string>
+	<string name="onboarding_transfer_target_session_explanation" state="needs_review" hash="983671212">તમારા અન્ય ઉપકરણ પર ઓલ્વિડ શરૂ કરો.\nઉપર ડાબી બાજુએ તમારા પ્રોફાઇલ ચિત્ર પર ટેપ કરો.\nતમે જે પ્રોફાઇલ આયાત કરવા માંગો છો તે પસંદ કરો અને \"મેનેજ\" બટન પર ટેપ કરો.\nકોડ પ્રદર્શિત કરવા માટે \"ઉપકરણ ઉમેરો\" પર ટેપ કરો.</string>
 	<string name="onboarding_transfer_target_sas_title" state="needs_review" hash="-1838551486">તમારા બીજા ઉપકરણ પર આ કોડ દાખલ કરો</string>
 	<string name="onboarding_transfer_devices_multi_title" state="needs_review" hash="-1477616977">તમારી પાસે મલ્ટી-ડિવાઇસ સબ્સ્ક્રિપ્શન છે</string>
 	<string name="onboarding_transfer_devices_multi_subtitle" state="needs_review" hash="1486696572">આ તમારા વર્તમાન ઉપકરણોની યાદી છે</string>
@@ -2041,11 +2056,14 @@
 	<string name="button_label_configure_backups" state="needs_review" hash="-990646398">બેકઅપ સક્ષમ કરો</string>
 	<string name="tip_write_backup_key_title" state="needs_review" hash="-1652757003">તમારા બેકઅપ કી લખવાનું ભૂલશો નહીં 😇</string>
 	<string name="tip_write_backup_key_message" state="needs_review" hash="931018791">જો તમે આ ઉપકરણની ઍક્સેસ ગુમાવો છો, તો તમારા પ્રોફાઇલને પુનઃસ્થાપિત કરવા માટે તમારી બેકઅપ કી આવશ્યક છે.</string>
+	<string name="tip_legacy_backup_end_of_life_title" state="needs_review" hash="810495149">તમે જે જૂના બેકઅપનો ઉપયોગ કરી રહ્યા છો તે હવે સમાપ્ત થઈ ગયા છે.</string>
+	<string name="tip_legacy_backup_end_of_life_message" state="needs_review" hash="-314257210">આગામી ઓલ્વિડ અપડેટ જૂના બેકઅપ્સને સપોર્ટ કરવાનું બંધ કરશે. તમારા એકાઉન્ટને સુરક્ષિત રાખવા માટે, હવે નવી બેકઅપ સુવિધા પર સ્વિચ કરો.</string>
 	<string name="tip_troubleshooting_title" state="needs_review" hash="-393739108">તમારા ઓલ્વિડ અનુભવને વધુ સારો બનાવો 🚀</string>
 	<string name="tip_troubleshooting_message" state="needs_review" hash="-935493349">તમારા ઉપકરણ પર કેટલીક સેટિંગ્સ યોગ્ય રીતે ગોઠવેલી નથી અને તેનાથી ઓલ્વિડ સાથેના તમારા અનુભવ પર અસર પડી શકે છે.</string>
 	<string name="button_label_this_way" state="needs_review" hash="747183939">આ રીતે</string>
 	<string name="toast_code_copied" state="needs_review" hash="-1522785848">કોડ કૉપી થયો</string>
 	<string name="explanation_choose_members" state="needs_review" hash="-1385158706">કૃપા કરીને પસંદ કરો કે આ જૂથમાં કોને ઉમેરવું.</string>
+	<string name="explanation_choose_share_recipients" state="needs_review" hash="-1406265940">કૃપા કરીને પસંદ કરો કે કોની સાથે શેર કરવું છે.</string>
 	<string name="explanation_choose_contact_introduction" state="needs_review" hash="1113777517">કૃપા કરીને પસંદ કરો કે તમે %1$s ને કોની સાથે પરિચય કરાવવા માંગો છો.</string>
 	<string name="label_group_administration" state="needs_review" hash="871355986">ગ્રુપ સંચાલન</string>
 	<string name="dialog_title_call_blocked" state="needs_review" hash="1594606530">કોલ અવરોધિત</string>
@@ -2086,7 +2104,7 @@
 	<string name="label_poll_answers_sorted_by_poll_order" state="needs_review" hash="685632215">મતદાન ક્રમ</string>
 	<string name="label_poll_answers_sorted_by_answer_count" state="needs_review" hash="516869301">જવાબોની સંખ્યા</string>
 	<string name="notification_public_title_new_poll_vote" state="needs_review" hash="-1901040080">તમારા પોલમાં નવા જવાબ</string>
-	<string name="toast_message_remove_none_answer" state="needs_review" hash="277924655">સૌ પ્રથમ \\"%1$s\\" જવાબ દૂર કરો</string>
+	<string name="toast_message_remove_none_answer" state="needs_review" hash="277924655">સૌ પ્રથમ \"%1$s\" જવાબ દૂર કરો</string>
 	<string name="text_poll" state="needs_review" hash="-153643506">મતગણતરી</string>
 	<string name="poll_csv_headers" state="needs_review" hash="1869917931">મત પ્રશ્ન, મતદારનું નામ, મત, તારીખ</string>
 	<string name="label_poll_no_votes_yet" state="needs_review" hash="-981251817">હજી સુધી કોઈ જવાબ મળ્યો નથી</string>
@@ -2171,7 +2189,7 @@
 	<string name="store_link_olvid_store" state="needs_review" hash="-1825630369">ઓલ્વિડ સ્ટોરની મુલાકાત લો</string>
 	<string name="toast_message_reminder_set" state="needs_review" hash="-961055414">રીમાઇન્ડર સેટ કરવામાં આવ્યું</string>
 	<string name="dialog_title_keycloak_authentication_impossible" state="needs_review" hash="325273853">ઓથેન્ટિકેશન શક્ય નથી</string>
-	<string name="dialog_message_keycloak_authentication_impossible" state="needs_review" hash="390830785">તમારી પ્રોફાઇલ હાલમાં તમારા સંગઠન દ્વારા સંચાલિત છે અને ફરીથી પ્રમાણીકરણ જરૂરી છે. જો કે, કોઈ પણ સુસંગત પ્રમાણીકરણ પદ્ધતિ ઉપલબ્ધ હોય તેવું લાગતું નથી.\n\nવધુ માહિતી માટે કૃપા કરીને તમારા સંચાલકનો સંપર્ક કરો.</string>
+	<string name="dialog_message_keycloak_authentication_impossible" state="needs_review" hash="-2031322232">તમારી પ્રોફાઇલ હાલમાં તમારા સંગઠન દ્વારા સંચાલિત છે અને પુનઃ પ્રમાણીકરણ જરૂરી છે. જો કે, કોઈ પણ સમર્થિત પ્રમાણીકરણ પદ્ધતિ ઉપલબ્ધ હોતી નથી.\n\nવધુ વિગતો માટે કૃપા કરીને તમારા એડમિનિસ્ટ્રેટરનો સંપર્ક કરો.</string>
 	<string name="onboarding_transfer_keycloak_error_message_authentication_impossible" state="needs_review" hash="-1891385979">કોઈપણ સુસંગત પ્રમાણીકરણ પદ્ધતિ ઉપલબ્ધ હોય તેવું લાગતું નથી.</string>
 	<string name="pref_use_alt_turn_servers_title" state="needs_review" hash="-1956132776">વૈકલ્પિક ટર્ન સર્વર્સનો ઉપયોગ કરો</string>
 	<string name="pref_use_alt_turn_servers_summary" state="needs_review" hash="357427162">આ વિકલ્પને સક્રિય કરો જેથી ફેરતા IP સરનામાં સાથે TURN સર્વર્સનો ઉપયોગ કરી શકાય. જો તમને ખાતરી ન હોય, તો આ વિકલ્પને બંધ રાખો. 😁</string>
@@ -2282,5 +2300,45 @@
 	<string name="label_error_loading_openstreetmap_style_file" state="needs_review" hash="-2596045">ઓપનસ્ટ્રીટમેપ શૈલી ફાઇલ લોડ કરતી વખતે ભૂલ આવી.</string>
 	<string name="dialog_title_subscriptions_not_available" state="needs_review" hash="336174241">એપમાં સબ્સ્ક્રિપ્શન્સ ઉપલબ્ધ નથી</string>
 	<string name="dialog_message_subscriptions_not_available" state="needs_review" hash="2093768678">તમે ઇન્સ્ટોલ કરેલા ઓલ્વિડ સંસ્કરણમાં ગૂગલનું બિલિંગ લાઇબ્રેરી શામેલ નથી અને તે એપ્લિકેશનમાં ખરીદીને સપોર્ટ કરતું નથી.\n\nવધુ માહિતી માટે, કૃપા કરીને **feedback@olvid.io** પર અમારો સંપર્ક કરો.</string>
+	<string name="ftux_next" state="needs_review" hash="1158639077">આગલું</string>
+	<string name="ftux_start" state="needs_review" hash="646298532">શરૂ કરો</string>
+	<string name="ftux_page_indicator" state="needs_review" hash="1987610035">પૃષ્ઠ %1$d, કુલ %2$d પૃષ્ઠોમાંથી</string>
+	<string name="ftux_page_welcome_title" state="needs_review" hash="1173832630"><b>ઓલ્વિડ</b> માં આપનું સ્વાગત છે.</string>
+	<string name="ftux_page_welcome_body" state="needs_review" hash="-2085198139">દરેક માટે ખાનગી મેસેજિંગ.</string>
+	<string name="ftux_page_private_title" state="needs_review" hash="1815927819"><b>ખાનગી</b> મેસેજિંગ</string>
+	<string name="ftux_page_private_body" state="needs_review" hash="-590644231">%1$s પર, તમે નક્કી કરો છો કે તમે કોની સાથે વાત કરવા માંગો છો. કોઈ સ્પામ નહીં, કોઈ ભલામણો નહીં, કોઈ બિનજરૂરી સૂચનાઓ નહીં અને અજાણ્યા લોકો તરફથી કોઈ સંદેશાઓ નહીં.\n\nતમારી સંમતિ વિના કોઈ પણ તમારો સંપર્ક કરી શકે તેમ નથી.\n\n%1$s એ તમારું ડિજિટલ સુરક્ષિત ક્ષેત્ર છે.</string>
+	<string name="ftux_page_everyone_title" state="needs_review" hash="1506796386"><b>દરેક</b> માટે મેસેજિંગ</string>
+	<string name="ftux_page_everyone_body" state="needs_review" hash="-586100377">તમે કોણ હોવ, %1$s તમને શ્રેષ્ઠ સુરક્ષા પ્રદાન કરે છે. કોઈ ઇમેઇલ અથવા ફોન નંબરની જરૂર નથી.\n\n%1$s તમારી પાસેથી કંઈપણ માંગતું નથી, અને તે બધું બદલી નાખે છે.</string>
+	<string name="ftux_page_protect_title" state="needs_review" hash="1969120191">ઓલ્વિડ તમને <b>સુરક્ષિત</b> રાખે છે. ઓલ્વિડ તમારા માટે મહત્વપૂર્ણ લોકોનું રક્ષણ કરે છે.</string>
+	<string name="ftux_page_protect_body" state="needs_review" hash="881847930">આ માત્ર એક વચન નથી – %1$s ક્રિપ્ટોગ્રાફિક પુરાવા પ્રદાન કરે છે.\n\nતમે દૂરથી અથવા રૂબરૂમાં સંપર્કો ઉમેરો છો, પછી પણ તમારી વાતચીત હંમેશાં અધિકૃત અને એન્ડ-ટુ-એન્ડ એન્ક્રિપ્ટેડ હોય છે.</string>
+	<string name="ftux_page_pricing_title" state="needs_review" hash="-1948277889">એક <b>પારદર્શક</b> વ્યવસાય મોડેલ</string>
+	<string name="ftux_page_pricing_body" state="needs_review" hash="-1064278870">%1$s તમારા વ્યક્તિગત ડેટાનો ઉપયોગ કરીને પોતાને ભંડોળ પૂરું પાડતું નથી - કારણ કે તે કોઈ પણ માહિતી માંગતું નથી!\n\nજે મફત છે તે મફત જ રહેશે. જેની કિંમત હોય, તેની કિંમત દર્શાવવામાં આવશે.</string>
+	<string name="ftux_page_media_title" state="needs_review" hash="558110518">ઓલ્વિડ પાસે <b>બધું</b> છે</string>
+	<string name="ftux_page_media_body" state="needs_review" hash="1807247240">કોઈ જોડાણ કદ મર્યાદા નથી, ઉચ્ચ રીઝોલ્યુશન ફોટો શેરિંગ, મતદાન, ઑડિયો અને વિડિયો કૉલ્સ, મલ્ટી-ડિવાઇસ સપોર્ટ, જીઓલોકેશન - તે બધા અહીં છે!</string>
 	<string name="menu_action_cancel_upload" state="needs_review" hash="1672681586">અપલોડ રદ કરો</string>
+	<string name="label_suggested_contacts" state="needs_review" hash="816810770">સૂચવેલ સંપર્કો</string>
+	<string name="label_suggested_contacts_subtitle" state="needs_review" hash="131522501">વપરાશકર્તાઓને સરળતાથી આમંત્રિત કરો</string>
+	<string name="label_suggested_contact_already_a_contact" state="needs_review" hash="-1177848651">તમે પહેલાથી જ સંપર્કમાં છો</string>
+	<string name="label_suggested_contact_invitation_received" state="needs_review" hash="2100924901">આમંત્રણ મળ્યું</string>
+	<string name="label_suggested_contact_invitation_sent" state="needs_review" hash="310679275">આમંત્રણ મોકલવામાં આવ્યું</string>
+	<string name="label_suggested_contacts_all_done" state="needs_review" hash="-127525104">તમે અપ-ટૂ-ડેટ છો!\nહવે વધુ કોઈ સંપર્કો સૂચવવા માટે બાકી નથી.</string>
+	<string name="button_label_suggested_contact_later" state="needs_review" hash="-1933816039">પછીથી</string>
+	<string name="button_label_close" state="needs_review" hash="1454843231">બંધ કરો</string>
+	<string name="button_label_skip" state="needs_review" hash="2056258301">વટાવી દો</string>
+	<string name="button_label_understood" state="needs_review" hash="829780875">મને સમજાયું</string>
+	<string name="label_suggested_contacts_onboarding_title_1" state="needs_review" hash="491881039">સ્વાઇપ કરીને આમંત્રિત કરો</string>
+	<string name="label_suggested_contacts_onboarding_message_1" state="needs_review" hash="331320806">વપરાશકર્તાને આમંત્રિત કરવા માટે કાર્ડને જમણી બાજુ સ્વાઇપ કરો અથવા આગળ વધવા માટે ડાબી બાજુ સ્વાઇપ કરો.</string>
+	<string name="label_suggested_contacts_onboarding_title_2" state="needs_review" hash="-788798380">આ સંપર્કો ક્યાંથી આવ્યા છે?</string>
+	<string name="label_suggested_contacts_onboarding_message_2" state="needs_review" hash="1536681696">આ એવા ઓલ્વિડ વપરાશકર્તાઓ છે જે હજી સુધી તમારા સંપર્કોમાં નથી.</string>
+	<string name="label_suggested_contacts_onboarding_caption" state="needs_review" hash="-1299179969">તમે એકબીજાથી માત્ર એક સંબંધ દૂર છો: તમે ઓછામાં ઓછું એક સામાન્ય જૂથ શેર કરો છો.</string>
+	<string name="label_suggested_contacts_you" state="needs_review" hash="672009142">તમે</string>
+	<string name="label_suggested_contacts_common_group" state="needs_review" hash="-1739793963">સમાન જૂથ</string>
+	<string name="explanation_suggested_contacts_others_tab" state="needs_review" hash="852096678">નીચે આપેલા વપરાશકર્તાઓ તમારા સંપર્કોમાં નથી, અને તમે હજી તેમની સાથે ખાનગી ચેટ કરી શકતા નથી. પરંતુ તમે તેમને સરળતાથી આમંત્રિત કરી શકો છો! 🚀</string>
+	<string name="label_suggested_contacts_invite_in_one_gesture" state="needs_review" hash="438220313">આ વપરાશકર્તાઓને સ્વાઇપ કરીને આમંત્રિત કરો</string>
+	<string name="menu_action_suggested_contacts_see_full_list" state="needs_review" hash="603082500">સંપૂર્ણ સૂચિ જુઓ</string>
+	<string name="menu_action_suggested_contacts_replay_onboarding" state="needs_review" hash="-1552704243">ટ્યુટોરીયલ ફરીથી જુઓ</string>
+	<string name="button_label_uninvite" state="needs_review" hash="771825501">આમંત્રણ રદ કરો</string>
+	<string name="button_label_accept_invitation" state="needs_review" hash="-1778405034">આમંત્રણ સ્વીકારો</string>
+	<string name="label_suggested_contacts_already_swiped" state="needs_review" hash="427042318">પહેલેથી જ જોયું</string>
+	<string name="label_suggested_contacts_not_swiped_yet" state="needs_review" hash="310924358">હજી સુધી જોવામાં આવ્યું નથી</string>
 </resources>

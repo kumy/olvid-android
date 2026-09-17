@@ -282,4 +282,20 @@
 		<item quantity="one" state="needs_review" hash="-1393207312">%1$d bericht is naar het klembord gekopieerd.</item>
 		<item quantity="other" state="needs_review" hash="-604999755">%1$d berichten naar het klembord gekopieerd.</item>
 	</plurals>
+	<plurals name="label_share_destinations_count" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="423387012">%1$d ontvanger</item>
+		<item quantity="other" state="needs_review" hash="-431979656">%1$d ontvangers</item>
+	</plurals>
+	<plurals name="label_share_to_recipients" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="-1217959784">Delen met %1$d ontvanger</item>
+		<item quantity="other" state="needs_review" hash="1864148690">Delen met %1$d ontvangers</item>
+	</plurals>
+	<plurals name="toast_message_shared_to_recipients" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="-373807760">Gedeeld met %1$d ontvanger</item>
+		<item quantity="other" state="needs_review" hash="-1412037000">Gedeeld met %1$d ontvangers</item>
+	</plurals>
+	<plurals name="button_label_add_to_groups" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="1622654043">Toevoegen aan de %1$d-groep</item>
+		<item quantity="other" state="needs_review" hash="-1655824151">Toevoegen aan %1$d groepen</item>
+	</plurals>
 </resources>

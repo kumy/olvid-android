@@ -26,8 +26,8 @@
 	<string name="button_label_create_group" state="needs_review" hash="1102939673">Csoport létrehozása</string>
 	<string name="button_label_discard" state="needs_review" hash="795591204">Elvetés</string>
 	<string name="button_label_exchange_digits_with_user" state="needs_review" hash="339599327">Kódokat cserélj %1$s-sel</string>
-	<string name="button_label_generate_new_id" state="needs_review" hash="92014734">Új ID generálása</string>
-	<string name="button_label_generate_my_id" state="needs_review" hash="-1007060207">ID-m generálása</string>
+	<string name="button_label_generate_new_id" state="needs_review" hash="-1130516787">Új profilt hozzon létre</string>
+	<string name="button_label_generate_my_id" state="needs_review" hash="239641058">Profilom létrehozása</string>
 	<string name="button_label_ignore" state="needs_review" hash="-806373746">Figyelmen kívül hagyni</string>
 	<string name="button_label_reject" state="needs_review" hash="-2094664161">Elutasítás</string>
 	<string name="button_label_introduce" state="needs_review" hash="193852909">Bemutatni</string>
@@ -80,6 +80,12 @@
 	<string name="dialog_title_rename_group" state="needs_review" hash="1461324427">Csoport átnevezése</string>
 	<string name="dialog_title_restart_channel_establishment" state="needs_review" hash="-645769680">Újraindítani a csatorna létrehozását?</string>
 	<string name="dialog_title_share_with" state="needs_review" hash="854107768">Megosztás ezzel…</string>
+	<string name="dialog_title_share_recipients" state="needs_review" hash="1157053138">Válaszd ki a címzetteket</string>
+	<string name="share_label_from" state="needs_review" hash="2049052075">Feladó:</string>
+	<string name="share_label_to" state="needs_review" hash="-1785690373">Címzett:</string>
+	<string name="share_label_choose_recipients" state="needs_review" hash="1157053138">Válaszd ki a címzetteket</string>
+	<string name="hint_share_message" state="needs_review" hash="-763169957">Üzenet hozzáadása…</string>
+	<string name="content_description_delete_attachment" state="needs_review" hash="-220348329">Melléklet törlése</string>
 	<string name="dialog_title_shortcut_to" state="needs_review" hash="-1193591200">Hozzon létre parancsikont a… felé</string>
 	<string name="explanation_choose_display_name" state="needs_review" hash="1162066686">Kérjük, adjon meg egy nevet, amely megjelenik a kapcsolataiban. Ezek az adatok soha nem kerülnek elküldésre az Olvid szervereire.</string>
 	<string name="explanation_empty_contact_list" state="needs_review" hash="1240778508">Jelenleg nincsenek kontaktok</string>
@@ -104,7 +110,7 @@
 	<string name="explanation_no_message_found" state="needs_review" hash="-1329622990">Nincs üzenet</string>
 	<string name="explanation_no_attachment_found" state="needs_review" hash="156593369">Nincs melléklet található</string>
 	<string name="explanation_no_link_found" state="needs_review" hash="-1419950450">Nincs hivatkozás található</string>
-	<string name="hint_company" state="needs_review" hash="379200324">Cég (opcionális)</string>
+	<string name="hint_company" state="needs_review" hash="988571519">cég</string>
 	<string name="hint_compose_your_message" state="needs_review" hash="-25761578">Írj üzenetet</string>
 	<string name="hint_compose_your_message_ephemeral" state="needs_review" hash="-1527208333">Ideiglenes üzenet</string>
 	<string name="label_edit_your_message" state="needs_review" hash="1091877412">Szerkeszd az üzeneted</string>
@@ -133,7 +139,7 @@
 	<string name="hint_last_name" state="needs_review" hash="1701170359">Vezetéknév</string>
 	<string name="hint_new_name" state="needs_review" hash="709842168">Új név</string>
 	<string name="hint_notification_reply" state="needs_review" hash="1095144032">Válaszolj</string>
-	<string name="hint_position" state="needs_review" hash="-55145181">Munkahely (opcionális)</string>
+	<string name="hint_position" state="needs_review" hash="1338817744">Állás megnevezése</string>
 	<string name="invitation_label_their_code" state="needs_review" hash="1402501614">A kódjuk</string>
 	<string name="invitation_label_your_code" state="needs_review" hash="1944546233">A kódod</string>
 	<string name="invitation_status_accept_invite" state="needs_review" hash="2100924901">Meghívás fogadva</string>
@@ -170,6 +176,11 @@
 	<string name="label_group_members" state="needs_review" hash="1460220752">Csoporttagok</string>
 	<string name="label_other_group_members" state="needs_review" hash="-2121490032">Egyéb csoporttagok</string>
 	<string name="label_groups_common" state="needs_review" hash="1252823567">Közös csoportok</string>
+	<string name="label_create_group_with_contact" state="needs_review" hash="1950649899">Csoport létrehozása a(z) %1$s-el</string>
+	<string name="label_add_contact_to_a_group" state="needs_review" hash="-682192937">Adj hozzá egy tagot (%1$s) egy csoporthoz</string>
+	<string name="label_add_to_groups" state="needs_review" hash="-654216617">Csoportokhoz hozzáadás</string>
+	<string name="explanation_no_admin_group_to_add_contact" state="needs_review" hash="402908162">Ön nem adminisztrátora egyetlen olyan csoportnak sem, amelyhez hozzá lehetne adni a %1$s-et.</string>
+	<string name="toast_message_adding_contact_to_groups" state="needs_review" hash="1201697547">A(z) %1$s hozzáadása a kiválasztott csoportokhoz...</string>
 	<string name="label_invitation_declined" state="needs_review" hash="2038173833">Meghívás\nelutasítva</string>
 	<string name="label_new_group_card" state="needs_review" hash="1006740909">Csoport részletek frissítve</string>
 	<string name="label_not_part_of_a_group" state="needs_review" hash="1667979596">Még nem vagy tagja egyik csoportnak sem</string>
@@ -183,6 +194,7 @@
 	<string name="menu_action_create_shortcut" state="needs_review" hash="-1949455873">Parancsikon létrehozása</string>
 	<string name="menu_action_delete" state="needs_review" hash="-232100842">Törlés</string>
 	<string name="menu_action_delete_discussion" state="needs_review" hash="2059656471">Beszélgetés törlése</string>
+	<string name="menu_action_export_discussion" state="needs_review" hash="1736692296">A beszélgetés exportálása</string>
 	<string name="label_swipe_details" state="needs_review" hash="171468732">Részletek</string>
 	<string name="menu_action_disband_group" state="needs_review" hash="-1767089289">Csoport feloszlása</string>
 	<string name="menu_action_edit_group_details" state="needs_review" hash="310205135">Csoport részleteinek szerkesztése</string>
@@ -482,7 +494,14 @@
 	<string name="dialog_title_backup_choices" state="needs_review" hash="281222223">Válassz egy biztonsági mentési módszert</string>
 	<string name="menu_action_choose_picture" state="needs_review" hash="-1655172909">Válassz képet</string>
 	<string name="menu_action_take_photo" state="needs_review" hash="-1123080444">Készíts egy fényképet</string>
+	<string name="menu_action_choose_image_from_olvid" state="needs_review" hash="1585248356">Válassz ki egy fogadott képet</string>
 	<string name="menu_action_remove_image" state="needs_review" hash="1094977672">Kép törlése</string>
+	<string name="menu_action_use_image_as" state="needs_review" hash="587310096">Használd ezt a képet így...</string>
+	<string name="label_use_photo_for_my_profile" state="needs_review" hash="-1005809580">A profilképem</string>
+	<string name="label_use_photo_for_target" state="needs_review" hash="283541521">Fotó a(z) %s-hez</string>
+	<string name="label_use_photo_for_discussion_background" state="needs_review" hash="1925733151">Háttér a(z) %s-hez</string>
+	<string name="toast_message_photo_set" state="needs_review" hash="-1641885203">A kép frissítve</string>
+	<string name="toast_message_background_set" state="needs_review" hash="1642873459">Háttérkép frissítve</string>
 	<string name="dialog_title_create_empty_group" state="needs_review" hash="-663434464">Üres csoport létrehozása?</string>
 	<string name="dialog_message_create_empty_group" state="needs_review" hash="-297923005">Nem választott ki egyetlen kontaktot sem a csoportjába. Biztosan üres csoportot szeretne létrehozni?</string>
 	<string name="pref_dark_mode_title" state="needs_review" hash="816474245">Sötét mód</string>
@@ -862,7 +881,7 @@
 	<string name="button_label_check_options" state="needs_review" hash="-759177128">Opciók ellenőrzése</string>
 	<string name="hint_olvid_server" state="needs_review" hash="1097391633">Olvid szerver</string>
 	<string name="hint_license_activation_code" state="needs_review" hash="102193320">Licenc aktiválási kód</string>
-	<string name="activity_title_identity_creation_options" state="needs_review" hash="1180456032">ID létrehozási lehetőségek</string>
+	<string name="activity_title_identity_creation_options" state="needs_review" hash="-774054913">Profil létrehozási lehetőségek</string>
 	<string name="activity_title_scan_configuration" state="needs_review" hash="-386259993">Konfiguráció vizsgálata</string>
 	<string name="menu_action_import_activation_from_clipboard" state="needs_review" hash="-70842935">Hivatkozás importálása a vágólapról</string>
 	<string name="troubleshooting_update_valid_title" state="needs_review" hash="741828768">Az Olvid naprakész</string>
@@ -871,7 +890,6 @@
 	<string name="dialog_message_update_available" state="needs_review" hash="416187645">Az Olvid újabb verziója elérhető.\n\nKérjük, frissítsen, hogy kihasználhassa a legújabb funkciókat.</string>
 	<string name="dialog_title_call_initiation_not_supported" state="needs_review" hash="-2088021831">A hívás indítása nem sikerült</string>
 	<string name="dialog_message_call_initiation_not_supported" state="needs_review" hash="1760333819">Úgy tűnik, hogy az Olvid-szerver nem támogatja a biztonságos hívások kezdeményezését.\n\nTovábbi részletekért forduljon a rendszergazdához.</string>
-	<string name="label_identity_creation_options" state="needs_review" hash="1180456032">ID létrehozási lehetőségek</string>
 	<string name="text_option_server" state="needs_review" hash="-1130676431">Szerver: %1$s</string>
 	<string name="dialog_title_non_default_server" state="needs_review" hash="2119192219">Egyéni szerver használata</string>
 	<string name="dialog_message_non_default_server" state="needs_review" hash="459308900">Éppen egy profilt szeretne létrehozni a következő szerveren:\n\n%1$s\n\nEz nem az alapértelmezett Olvid szerver. Csak akkor folytassa, ha megbízik ebben a szerverben.</string>
@@ -900,7 +918,7 @@
 	<string name="toast_message_unable_to_keycloak_revoke" state="needs_review" hash="-1368037130">Sikertelen az előző Olvid ID lecserélése, próbálja meg újra</string>
 	<string name="toast_message_keycloak_revoke_successful" state="needs_review" hash="-1216369809">A korábbi Olvid ID sikeresen lecserélve</string>
 	<string name="dialog_title_keycloak_authentication_required_user_id_changed" state="needs_review" hash="-896407029">Felhasználóváltás észlelve</string>
-	<string name="dialog_message_keycloak_authentication_required_user_id_changed" state="needs_review" hash="876252686">A profilodat jelenleg a szervezeted kezeli. Úgy tűnik, hogy egy másik felhasználóként hitelesítetted magad, mint általában. Ezt nem támogatjuk.\n\nKérjük, vedd fel a kapcsolatot a rendszergazdával, vagy hitelesítsd magad újra a megfelelő felhasználóként.</string>
+	<string name="dialog_message_keycloak_authentication_required_user_id_changed" state="needs_review" hash="2080839829">A profilját jelenleg a szervezeténél kezelik. Úgy tűnik, hogy egy másik felhasználóként hitelesítette magát, mint általában. Ez nem támogatott.\nVessze fel a kapcsolatot az rendszergazdával, vagy hitelesítse újra magát a megfelelő felhasználóként.</string>
 	<string name="dialog_title_add_keycloak_user" state="needs_review" hash="-1050193239">Kapcsolat hozzáadása</string>
 	<string name="dialog_message_add_keycloak_user" state="needs_review" hash="-1755937035">Kiválasztottad, hogy hozzáadd %1$s a kapcsolataidhoz. Szeretnéd folytatni?</string>
 	<string name="explanation_keycloak_update_new" state="needs_review" hash="1136733528">Éppen a vállalatod identitásszolgáltatójának konfigurálásához láttasz Olvidban. A konfiguráció után hitelesítheted magad ezen a szerveren, és az Olvid lehetővé teszi, hogy zökkenőmentesen hozzáadd más munkatársakat a kapcsolataidhoz.\nVedd fel a kapcsolatot a rendszergazdával a részletekért.</string>
@@ -1031,6 +1049,8 @@
 	<string name="label_storage_discussions" state="needs_review" hash="491497248">Beszélgetések</string>
 	<string name="pref_use_internal_image_viewer_title" state="needs_review" hash="1319400578">Belső képnézegető használata</string>
 	<string name="pref_use_internal_image_viewer_summary" state="needs_review" hash="1248137666">Ha bekapcsolják, egy képfájl mellékletre kattintva az belső nézegetőben nyílik meg. Ellenkező esetben a készülék alapértelmezett képalkalmazása lesz használva.</string>
+	<string name="pref_image_text_recognition_title" state="needs_review" hash="1877261687">Ismerje fel és indexelje a képeken található szöveget</string>
+	<string name="pref_image_text_recognition_summary" state="needs_review" hash="1217699919">Lehetővé teszi, hogy a képmellékletekben található szöveget keresse és másolja. Ez erőforrás-igényes lehet az alacsonyabb kategóriájú eszközökön: ha nincs rá szüksége, kapcsolja ki.</string>
 	<string name="label_unable_to_display_image" state="needs_review" hash="-1495534207">A kép nem jeleníthető meg</string>
 	<string name="dialog_title_backup_requires_sign_in" state="needs_review" hash="-720389674">A felhőszolgáltató bejelentkezése szükséges</string>
 	<string name="dialog_message_backup_requires_sign_in" state="needs_review" hash="119557495">Konfigurálta az Olvidot, hogy automatikus biztonsági másolatokat használjon egy felhőszolgáltatóhoz, de a munkamenete lejárt. Újra kell jelentkeznie ehhez a szolgáltatóhoz.\n\nHa már nem szeretné az automatikus biztonsági másolatokat, letilthatja azokat az Alkalmazásbeállításokban. Ne feledje, hogy az automatikus biztonsági másolatok az egyetlen módja annak, hogy elkerülje a kontaktusok elvesztését, ha elveszíti vagy megrongolja a készülékét.</string>
@@ -1149,7 +1169,7 @@
 	<string name="pref_hidden_profile_close_policy_dialog_entry_screen_lock" state="needs_review" hash="-1520400811">Amikor az Olvid zárláccsom aktiválódik</string>
 	<string name="pref_hidden_profile_close_policy_dialog_entry_background" state="needs_review" hash="-2099539114">Amikor az Olvid háttérbe kerül…</string>
 	<string name="activity_title_enter_backup_key" state="needs_review" hash="1035967309">Adja meg a biztonsági másolat kulcsát</string>
-	<string name="activity_title_identity_creation" state="needs_review" hash="-1361520151">ID létrehozása</string>
+	<string name="activity_title_identity_creation" state="needs_review" hash="2027618284">Profil létrehozása</string>
 	<string name="menu_action_manual_configuration" state="needs_review" hash="-1495974502">Kézi, haladó beállítások</string>
 	<string name="toast_message_invalid_configuration_link" state="needs_review" hash="1387412522">Érvénytelen konfigurációs hivatkozás</string>
 	<string name="toast_message_invalid_link" state="needs_review" hash="1265454437">Érvénytelen hivatkozás</string>
@@ -1171,6 +1191,7 @@
 	<string name="dialog_title_chose_profile_web_client" state="needs_review" hash="1860298414">Válassza ki a profilt az Olvid webes klienshez való csatlakozáshoz</string>
 	<string name="dialog_title_chose_profile_invitation" state="needs_review" hash="-2063034787">Válassza ki a profilt, amellyel szeretné meghívni ezt a kontaktot</string>
 	<string name="toast_message_create_new_profile_then_reopen_this_link" state="needs_review" hash="1770827346">Kérjük, először hozzon létre egy új profilt, majd nyissa meg újra ezt a linket</string>
+	<string name="toast_message_invitation_link_deferred_to_end_of_onboarding" state="needs_review" hash="-189914806">Az ön meghívója automatikusan megnyílik, miután létrehozta a profilját.</string>
 	<string name="button_label_switch_profile" state="needs_review" hash="-2007633024">Profil váltása</string>
 	<string name="text_no_other_profile_to_switch_to" state="needs_review" hash="-112306213">Nincs más profil</string>
 	<string name="button_label_configure_lock_screen" state="needs_review" hash="870348426">Záróképernyő beállítása</string>
@@ -1181,7 +1202,7 @@
 	<string name="dialog_message_delete_profile_multi" state="needs_review" hash="-2003495595">A profil törlése törli az Ön eszközén ezen profilhoz kapcsolódó összes információt. Ez magában foglalja a kontaktjait, csoportjait és az összes beszélgetés (üzenetek és mellékletek) tartalmát ehhez a profilhoz. Más profiljai nem érintettek ezzel a művelettel.\n\nNyomja meg a „tovább” gombot, hogy kiválassza, hogyan törölje ezt a profilt.</string>
 	<string name="dialog_message_delete_last_profile_multi" state="needs_review" hash="-103140781">A profil törlése törli az Ön eszközén ezen profilhoz kapcsolódó összes információt. Ez magában foglalja a kontaktjait, csoportjait és az összes beszélgetés (üzenetek és mellékletek) tartalmát ehhez a profilhoz.\n\n<b>Ez az egyetlen látható profilja, és ha vannak rejtett profiljai, azokat is egyidejűleg törli.</b>\n\nNyomja meg a „tovább“ gombot, hogy kiválassza, hogyan törölje ezt a profilt.</string>
 	<string name="switch_label_delete_profile_everywhere" state="needs_review" hash="-74965346">Profil <b>mindenhol</b> törlése</string>
-	<string name="hint_type_delete_here_to_proceed" state="needs_review" hash="-1622625725">Írja be a \\"%1$s\\" kifejezést, hogy folytathassa</string>
+	<string name="hint_type_delete_here_to_proceed" state="needs_review" hash="-1622625725">Írja be a \"%1$s\" kifejezést, hogy folytathassa</string>
 	<string name="explanation_delete_owned_identity" state="needs_review" hash="2036375772">Ha úgy dönt, hogy mindenhol törli a profilját:\n - az helyileg <b>és</b> a kontaktjai eszközein törlődik\n - kilép az csatlakozott csoportokból\n - az általa kezelt csoportok feloszlanak\n\nHa nem törli a profilját mindenhol, az csak a készülékén törlődik helyileg. Ha nem tervezi egy biztonsági mentés visszaállítását egy másik készüléken, a kontaktjai továbbra is próbálhatnak üzeneteket küldeni Önnek, anélkül hogy tudnák, hogy ezek az üzenetek nem kézbesíthetők.</string>
 	<string name="explanation_delete_inactive_owned_identity" state="needs_review" hash="-575337242">A jelenlegi profilod inaktívnak tűnik, valószínűleg azért, mert egy másik eszközre helyezted át. Ha tervezed továbbra is használni ezt a profilt a másik eszközön, biztonságosan törölheted itt.\n\nHa soha többé nem szeretnéd használni ezt a profilt, először újra kell aktiválnod ezt a profilt ezen az eszközön, meg kell várnod, amíg a biztonságos csatornák újra létrejönnek a kapcsolataiddal, és csak ezután törölheted ezt a profilt a „mindenhol törlés” opció kiválasztásával.</string>
 	<string name="explanation_delete_owned_identity_multi" state="needs_review" hash="-184045089">A profilja jelenleg több eszközön is engedélyezve van.\n\nHa úgy dönt, hogy <b>mindenhol</b> törli a profilját:\n - az törlődik minden eszközéről <b>és</b> a kontaktjai eszközeiről is\n - kilép az általad csatlakozott csoportokból\n - a kezelésedben lévő csoportok feloszlottak\n\nHa <b>nem</b> törli a profilját mindenhol, az csak helyileg törlődik, és továbbra is normálisan használhatja más eszközein.</string>
@@ -1442,23 +1463,17 @@
 	<string name="button_label_send" state="needs_review" hash="-185402948">Küldés</string>
 	<string name="button_label_start_sharing" state="needs_review" hash="682254052">Kezd el megosztani</string>
 	<string name="location_sharing_duration_one_hour_short_string" state="needs_review" hash="1004063951">1 óra</string>
-	<string name="location_sharing_duration_one_hour_full_string" state="needs_review" hash="-58118972">
-		<b>1 órára</b> helymegosztás</string>
+	<string name="location_sharing_duration_one_hour_full_string" state="needs_review" hash="-58118972"><b>1 órára</b> helymegosztás</string>
 	<string name="location_sharing_duration_three_hours_short_string" state="needs_review" hash="228095183">3 óra</string>
-	<string name="location_sharing_duration_three_hours_full_string" state="needs_review" hash="754857804">
-		<b>3 órára</b> helymegosztás</string>
+	<string name="location_sharing_duration_three_hours_full_string" state="needs_review" hash="754857804"><b>3 órára</b> helymegosztás</string>
 	<string name="location_sharing_duration_endless_short_string" state="needs_review" hash="55208442">Végtelenül</string>
-	<string name="location_sharing_duration_endless_full_string" state="needs_review" hash="1710814259">Helyzet megosztása <b>amíg le nem állítják</b>
-	</string>
+	<string name="location_sharing_duration_endless_full_string" state="needs_review" hash="1710814259">Helyzet megosztása <b>amíg le nem állítják</b></string>
 	<string name="location_sharing_quality_precise_short_string" state="needs_review" hash="351442529">Precíz</string>
 	<string name="location_sharing_quality_balanced_short_string" state="needs_review" hash="-1925315592">Kiegyensúlyozott</string>
 	<string name="location_sharing_quality_power_save_short_string" state="needs_review" hash="-14275273">Energia takarékos mód</string>
-	<string name="location_sharing_quality_precise_full_string" state="needs_review" hash="-1255374893">
-		<b>Precíz</b> helymegosztási mód</string>
-	<string name="location_sharing_quality_balanced_full_string" state="needs_review" hash="-421322514">
-		<b>Kiegyensúlyozott</b> helymegosztási mód</string>
-	<string name="location_sharing_quality_power_save_full_string" state="needs_review" hash="792896333">
-		<b>Energia takarékos</b> helymegosztási mód</string>
+	<string name="location_sharing_quality_precise_full_string" state="needs_review" hash="-1255374893"><b>Precíz</b> helymegosztási mód</string>
+	<string name="location_sharing_quality_balanced_full_string" state="needs_review" hash="-421322514"><b>Kiegyensúlyozott</b> helymegosztási mód</string>
+	<string name="location_sharing_quality_power_save_full_string" state="needs_review" hash="792896333"><b>Energia takarékos</b> helymegosztási mód</string>
 	<string name="label_sharing_location_until" state="needs_review" hash="187977459">Helyzetmegosztás: %1$s-ig</string>
 	<string name="label_location_sharing_ended" state="needs_review" hash="1028490137">A helymegosztás befejeződött</string>
 	<string name="label_gps_coordinates" state="needs_review" hash="-1537356414">GPS koordináták</string>
@@ -2041,11 +2056,14 @@
 	<string name="button_label_configure_backups" state="needs_review" hash="-990646398">Biztonsági mentések engedélyezése</string>
 	<string name="tip_write_backup_key_title" state="needs_review" hash="-1652757003">Ne felejtsd el leírni a biztonsági másolat kulcsodat ‌😇</string>
 	<string name="tip_write_backup_key_message" state="needs_review" hash="931018791">A biztonsági kulcsod elengedhetetlen a profiljaid helyreállításához, ha elveszíted a hozzáférést ehhez az eszközhöz.</string>
+	<string name="tip_legacy_backup_end_of_life_title" state="needs_review" hash="810495149">Az Ön által használt régi biztonsági másolatok már nem támogatottak.</string>
+	<string name="tip_legacy_backup_end_of_life_message" state="needs_review" hash="-314257210">A következő Olvid-frissítés már nem támogatja a régebbi biztonsági másolatokat. A fiókod védelme érdekében válts át most az új biztonsági mentési rendszerre.</string>
 	<string name="tip_troubleshooting_title" state="needs_review" hash="-393739108">Javítsd az Olvid élményedet 🚀</string>
 	<string name="tip_troubleshooting_message" state="needs_review" hash="-935493349">Egyes paraméterek nem megfelelően vannak konfigurálva az eszközén, és ez befolyásolhatja az Olvid használatát.</string>
 	<string name="button_label_this_way" state="needs_review" hash="747183939">Ide</string>
 	<string name="toast_code_copied" state="needs_review" hash="-1522785848">Kód másolva</string>
 	<string name="explanation_choose_members" state="needs_review" hash="-1385158706">Kérjük, válassza ki, kit szeretne hozzáadni ehhez a csoporthoz.</string>
+	<string name="explanation_choose_share_recipients" state="needs_review" hash="-1406265940">Kérjük, válassza ki, kivel szeretné megosztani.</string>
 	<string name="explanation_choose_contact_introduction" state="needs_review" hash="1113777517">Kérjük, válassza ki, hogy %1$s-et kinek szeretné bemutatni.</string>
 	<string name="label_group_administration" state="needs_review" hash="871355986">Csoportadminisztráció</string>
 	<string name="dialog_title_call_blocked" state="needs_review" hash="1594606530">Blokkolt hívás</string>
@@ -2171,7 +2189,7 @@
 	<string name="store_link_olvid_store" state="needs_review" hash="-1825630369">Látogassa meg az Olvid boltot</string>
 	<string name="toast_message_reminder_set" state="needs_review" hash="-961055414">Emlékeztető beállítva</string>
 	<string name="dialog_title_keycloak_authentication_impossible" state="needs_review" hash="325273853">A hitelesítés sikertelen</string>
-	<string name="dialog_message_keycloak_authentication_impossible" state="needs_review" hash="390830785">A profilodat jelenleg a szervezeted kezeli, és újrahitelesítésre van szükség. Azonban úgy tűnik, hogy nincs elérhető támogatott hitelesítési módszer.\n\nTovábbi részletekért kérjük, vedd fel a kapcsolatot a rendszergazdával.</string>
+	<string name="dialog_message_keycloak_authentication_impossible" state="needs_review" hash="-2031322232">A profilját jelenleg a szervezeténél kezelik, és új hitelesítésre van szükség. Azonban úgy tűnik, hogy nincs elérhető támogatott hitelesítési módszer. Kérjük, vegye fel a kapcsolatot az rendszergazdával további információkért.</string>
 	<string name="onboarding_transfer_keycloak_error_message_authentication_impossible" state="needs_review" hash="-1891385979">Úgy tűnik, hogy nincs elérhető támogatott hitelesítési módszer.</string>
 	<string name="pref_use_alt_turn_servers_title" state="needs_review" hash="-1956132776">Használjon alternatív TURN-szervereket</string>
 	<string name="pref_use_alt_turn_servers_summary" state="needs_review" hash="357427162">Kapcsolja be ezt a lehetőséget, hogy forgó IP-címekkel rendelkező TURN-szervereket használjon. Ha nem biztos benne, hagyja ki ezt a lehetőséget 😁</string>
@@ -2282,5 +2300,45 @@
 	<string name="label_error_loading_openstreetmap_style_file" state="needs_review" hash="-2596045">Hiba történt az OpenStreetMap stílusfájl betöltése közben.</string>
 	<string name="dialog_title_subscriptions_not_available" state="needs_review" hash="336174241">Az alkalmazáson belüli előfizetések nem elérhetők</string>
 	<string name="dialog_message_subscriptions_not_available" state="needs_review" hash="2093768678">Az Ön által telepített Olvid verzió nem tartalmazza a Google Billing könyvtárat, és nem támogatja az alkalmazáson belüli vásárlásokat.\n\nTovábbi információkért kérjük, vegye fel velünk a kapcsolatot a **feedback@olvid.io** címen.</string>
+	<string name="ftux_next" state="needs_review" hash="1158639077">Következő</string>
+	<string name="ftux_start" state="needs_review" hash="646298532">Kezdje el</string>
+	<string name="ftux_page_indicator" state="needs_review" hash="1987610035">Oldal %1$d / %2$d</string>
+	<string name="ftux_page_welcome_title" state="needs_review" hash="1173832630">Üdvözöljük az <b>Olvid</b>-ben!</string>
+	<string name="ftux_page_welcome_body" state="needs_review" hash="-2085198139">Privát üzenetküldés mindenki számára.</string>
+	<string name="ftux_page_private_title" state="needs_review" hash="1815927819"><b>Privát</b> üzenetküldés</string>
+	<string name="ftux_page_private_body" state="needs_review" hash="-590644231">A %1$s-ben te döntöd el, kivel szeretnél csevegni. Nincs spamek, ajánlások, felesleges értesítések vagy üzenetek ismeretlenektől.\n\nSenki sem vehet fel veled a kapcsolatot a beleegyesésed nélkül.\n\nA %1$s a te digitális buborékaid.</string>
+	<string name="ftux_page_everyone_title" state="needs_review" hash="1506796386">Üzenetküldés <b>mindenki</b> számára</string>
+	<string name="ftux_page_everyone_body" state="needs_review" hash="-586100377">Bárki is vagy, a %1$s a legjobb biztonságot nyújtja. Nincs szükség e-mail címre vagy telefonszámra.\n\nA %1$s nem kér rólad semmilyen információt, és ez mindent megváltoztat.</string>
+	<string name="ftux_page_protect_title" state="needs_review" hash="1969120191">Az Olvid <b>véd</b> téged. Az Olvid védi azokat, akik fontosak számodra.</string>
+	<string name="ftux_page_protect_body" state="needs_review" hash="881847930">Ez nem csupán egy ígéret – a %1$s kriptográfiai bizonyítékot nyújt.\n\nAkár távolról, akár személyesen adsz hozzá névjegyeket, a kommunikációid rendszeresen hitelesek és végpontok közötti titkosítással vannak ellátva.</string>
+	<string name="ftux_page_pricing_title" state="needs_review" hash="-1948277889">Egy <b>átlátható</b> üzleti modell</string>
+	<string name="ftux_page_pricing_body" state="needs_review" hash="-1064278870">A %1$s nem finanszírozza magát a személyes adataidból – mert nem is kéri őket!\n\nAmi ingyenes, az ingyenes. Ami fizetős, annak ára van.</string>
+	<string name="ftux_page_media_title" state="needs_review" hash="558110518">Olvidnak <b>minden</b> van</string>
+	<string name="ftux_page_media_body" state="needs_review" hash="1807247240">Nincs korlátozás a mellékletek méretére, nagy felbontású fényképek megosztása, szavazások, hang- és videohívások, több eszköz támogatása, geolokáció – mindez elérhető!</string>
 	<string name="menu_action_cancel_upload" state="needs_review" hash="1672681586">Törölje az feltöltést</string>
+	<string name="label_suggested_contacts" state="needs_review" hash="816810770">Javasolt kapcsolatok</string>
+	<string name="label_suggested_contacts_subtitle" state="needs_review" hash="131522501">Könnyedén hívj meg felhasználókat</string>
+	<string name="label_suggested_contact_already_a_contact" state="needs_review" hash="-1177848651">Már szerepel a kontaktlistában</string>
+	<string name="label_suggested_contact_invitation_received" state="needs_review" hash="2100924901">Fogadott meghívás</string>
+	<string name="label_suggested_contact_invitation_sent" state="needs_review" hash="310679275">A meghívó elküldve</string>
+	<string name="label_suggested_contacts_all_done" state="needs_review" hash="-127525104">Ön már rendelkezik a legújabb verzióval!\nNincs több kontakt, akit javasolhatnánk.</string>
+	<string name="button_label_suggested_contact_later" state="needs_review" hash="-1933816039">Később</string>
+	<string name="button_label_close" state="needs_review" hash="1454843231">Bezárás</string>
+	<string name="button_label_skip" state="needs_review" hash="2056258301">Lépés kimarad</string>
+	<string name="button_label_understood" state="needs_review" hash="829780875">Értettem</string>
+	<string name="label_suggested_contacts_onboarding_title_1" state="needs_review" hash="491881039">Hívjon meg egy egyszerű mozdulattal</string>
+	<string name="label_suggested_contacts_onboarding_message_1" state="needs_review" hash="331320806">Húzza jobbra a kártyát, hogy meghívja a felhasználót, vagy húzza balra, hogy továbblépjen a következőre.</string>
+	<string name="label_suggested_contacts_onboarding_title_2" state="needs_review" hash="-788798380">Honnan származnak ezek a névjegyek?</string>
+	<string name="label_suggested_contacts_onboarding_message_2" state="needs_review" hash="1536681696">Ezek azok az Olvid-felhasználók, akik még nincsenek a kontaktjaid között.</string>
+	<string name="label_suggested_contacts_onboarding_caption" state="needs_review" hash="-1299179969">Ön egy kapcsolattal van távol: legalább egy közös csoportban vagytok.</string>
+	<string name="label_suggested_contacts_you" state="needs_review" hash="672009142">Te</string>
+	<string name="label_suggested_contacts_common_group" state="needs_review" hash="-1739793963">Közös csoport</string>
+	<string name="explanation_suggested_contacts_others_tab" state="needs_review" hash="852096678">Az alábbi felhasználók nem szerepelnek a kontaktjaid között, ezért egyelőre nem tudsz velük privát beszélgetést kezdeményezni. De könnyedén meghívhatod őket! 🚀</string>
+	<string name="label_suggested_contacts_invite_in_one_gesture" state="needs_review" hash="438220313">Hívja meg ezeket a felhasználókat egy egyszerű mozdulattal</string>
+	<string name="menu_action_suggested_contacts_see_full_list" state="needs_review" hash="603082500">A teljes lista megtekintése</string>
+	<string name="menu_action_suggested_contacts_replay_onboarding" state="needs_review" hash="-1552704243">Ismételd meg a bemutatót</string>
+	<string name="button_label_uninvite" state="needs_review" hash="771825501">A meghívás visszavonása</string>
+	<string name="button_label_accept_invitation" state="needs_review" hash="-1778405034">Fogadom el az meghívást</string>
+	<string name="label_suggested_contacts_already_swiped" state="needs_review" hash="427042318">Már átnéztem</string>
+	<string name="label_suggested_contacts_not_swiped_yet" state="needs_review" hash="310924358">Még nem néztem át</string>
 </resources>

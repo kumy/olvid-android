@@ -80,6 +80,12 @@ import androidx.compose.ui.unit.dp
 import io.olvid.messenger.R
 import io.olvid.messenger.designsystem.theme.OlvidTypography
 
+enum class AlwaysShowClearButton {
+    TRUE,
+    IF_NOT_EMPTY,
+    FALSE,
+}
+
 @Composable
 fun SearchBar(
     modifier: Modifier = Modifier,
@@ -88,7 +94,7 @@ fun SearchBar(
     placeholderText: String = "",
     onSearchTextChanged: (String) -> Unit = {},
     onClearClick: () -> Unit = {},
-    alwaysShowClearButton: Boolean = false,
+    alwaysShowClearButton: AlwaysShowClearButton = AlwaysShowClearButton.FALSE,
     focusState: MutableState<Boolean>? = null,
     requestFocus: Boolean = false,
     leadingIcon: @Composable (() -> Unit)? = null,
@@ -131,7 +137,7 @@ private fun SearchBarInput(
     placeholderText: String = "",
     onSearchTextChanged: (String) -> Unit = {},
     onClearClick: () -> Unit = {},
-    alwaysShowClearButton: Boolean,
+    alwaysShowClearButton: AlwaysShowClearButton,
     focusState: MutableState<Boolean>? = null,
     selectAllBeacon: Any? = null,
     leadingIcon: @Composable (() -> Unit)? = null,
@@ -139,7 +145,11 @@ private fun SearchBarInput(
     requestFocus: Boolean = false,
     colors: TextFieldColors
 ) {
-    var showClearButton by remember { mutableStateOf(alwaysShowClearButton) }
+    fun showClear(): Boolean {
+        return alwaysShowClearButton == AlwaysShowClearButton.TRUE || (alwaysShowClearButton == AlwaysShowClearButton.IF_NOT_EMPTY && searchText.isNotEmpty())
+    }
+
+    var showClearButton by remember { mutableStateOf(showClear()) }
     val keyboardController = LocalSoftwareKeyboardController.current
     val focusRequester = remember { FocusRequester() }
     val focusManager = LocalFocusManager.current
@@ -181,7 +191,7 @@ private fun SearchBarInput(
                 focusState?.let {
                     it.value = focus.isFocused
                 }
-                showClearButton = (focus.isFocused) || alwaysShowClearButton
+                showClearButton = (focus.isFocused) || showClear()
             }
             .focusRequester(focusRequester),
         value = textFieldValue,
@@ -233,6 +243,7 @@ private fun SearchBarInput(
                                 if (showClearButton) {
                                     onClearClick()
                                     focusManager.clearFocus()
+                                    showClearButton = alwaysShowClearButton == AlwaysShowClearButton.TRUE
                                 } else {
                                     focusRequester.requestFocus()
                                 }

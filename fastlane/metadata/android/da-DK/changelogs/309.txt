@@ -1,0 +1,4 @@
+- Ny funktion til at dele skærm, som giver mulighed for at poste i flere samtaler på én gang.
+- Ny måde at invitere kontakter til en privat samtale med et enkelt swipe.
+- Ny introduktion til at forklare Olvid til nye brugere.
+- Forbedret billed- og videovisning med mulighed for at zoome ind på videoer.

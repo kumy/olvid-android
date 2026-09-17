@@ -263,7 +263,7 @@ fun Message.postPollVote(voteUuid: UUID, voted: Boolean): Boolean {
         }
     }
 
-    val byteContactIdentities = ArrayList<ByteArray>(contacts.size)
+    val byteContactIdentities = ArrayList<ByteArray?>(contacts.size)
     for (contact in contacts) {
         byteContactIdentities.add(contact.bytesContactIdentity)
     }

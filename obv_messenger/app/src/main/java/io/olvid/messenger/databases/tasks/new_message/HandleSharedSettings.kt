@@ -37,7 +37,7 @@ fun handleSharedSettings(
 ): HandleMessageOutput {
     if (putMessageOnHoldIfDiscussionIsMissing(
             db,
-            obvMessage.identifier,
+            obvMessage.identifier!!,
             obvMessage.serverTimestamp,
             messageSender,
             jsonSharedSettings.oneToOneIdentifier,
@@ -104,7 +104,7 @@ fun handleSharedSettings(
             if (discussion.discussionType == Discussion.TYPE_CONTACT) {
                 discussionCustomization.sharedSettingsJson?.let { jsonSharedSettings ->
                     Message.createDiscussionSettingsUpdateMessage(db, discussion.id, jsonSharedSettings, messageSender.bytesOwnedIdentity, true, null)
-                        ?.postSettingsMessage(true, null)
+                        ?.postSettingsMessage(true, null, null)
                 }
             } else if (discussion.discussionType == Discussion.TYPE_GROUP_V2) {
                 db.group2Dao()
@@ -113,7 +113,7 @@ fun handleSharedSettings(
                     ?.let {
                         discussionCustomization.sharedSettingsJson?.let { jsonSharedSettings ->
                             Message.createDiscussionSettingsUpdateMessage(db, discussion.id, jsonSharedSettings, messageSender.bytesOwnedIdentity, true, null)
-                                ?.postSettingsMessage(true, if (gcdWasComputed) null else messageSender.senderIdentity)
+                                ?.postSettingsMessage(true, if (gcdWasComputed) null else messageSender.senderIdentity, null)
                         }
                     }
             }

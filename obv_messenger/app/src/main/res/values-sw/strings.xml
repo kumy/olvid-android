@@ -26,8 +26,8 @@
 	<string name="button_label_create_group" state="needs_review" hash="1102939673">Unda kikundi</string>
 	<string name="button_label_discard" state="needs_review" hash="795591204">Kata</string>
 	<string name="button_label_exchange_digits_with_user" state="needs_review" hash="339599327">Badilishana misimbo na %1$s</string>
-	<string name="button_label_generate_new_id" state="needs_review" hash="92014734">Tengeneza ID mpya</string>
-	<string name="button_label_generate_my_id" state="needs_review" hash="-1007060207">Tengeneza ID yangu</string>
+	<string name="button_label_generate_new_id" state="needs_review" hash="-1130516787">Unda wasifu mpya</string>
+	<string name="button_label_generate_my_id" state="needs_review" hash="239641058">Unda wasifu wangu</string>
 	<string name="button_label_ignore" state="needs_review" hash="-806373746">Puuza</string>
 	<string name="button_label_reject" state="needs_review" hash="-2094664161">Kataa</string>
 	<string name="button_label_introduce" state="needs_review" hash="193852909">Kutambulisha</string>
@@ -80,6 +80,12 @@
 	<string name="dialog_title_rename_group" state="needs_review" hash="1461324427">Badilisha jina la kikundi</string>
 	<string name="dialog_title_restart_channel_establishment" state="needs_review" hash="-645769680">Je, unataka kuanzisha upya uundaji wa chaneli?</string>
 	<string name="dialog_title_share_with" state="needs_review" hash="854107768">Shiriki na…</string>
+	<string name="dialog_title_share_recipients" state="needs_review" hash="1157053138">Chagua wapokeaji</string>
+	<string name="share_label_from" state="needs_review" hash="2049052075">Kutoka:</string>
+	<string name="share_label_to" state="needs_review" hash="-1785690373">Kwa:</string>
+	<string name="share_label_choose_recipients" state="needs_review" hash="1157053138">Chagua wapokeaji</string>
+	<string name="hint_share_message" state="needs_review" hash="-763169957">Ongeza ujumbe…</string>
+	<string name="content_description_delete_attachment" state="needs_review" hash="-220348329">Ondoa faili iliyojumuishwa</string>
 	<string name="dialog_title_shortcut_to" state="needs_review" hash="-1193591200">Unda mkato wa…</string>
 	<string name="explanation_choose_display_name" state="needs_review" hash="1162066686">Tafadhali ingiza jina ambalo litaonekana kwa mawasiliano yako. Maelezo haya hayatapelekwa kwenye seva za Olvid.</string>
 	<string name="explanation_empty_contact_list" state="needs_review" hash="1240778508">Hakuna anwani kwa sasa</string>
@@ -104,7 +110,7 @@
 	<string name="explanation_no_message_found" state="needs_review" hash="-1329622990">Hakuna ujumbe uliopatikana</string>
 	<string name="explanation_no_attachment_found" state="needs_review" hash="156593369">Hakuna faili iliyopatikana</string>
 	<string name="explanation_no_link_found" state="needs_review" hash="-1419950450">Hakuna kiungo kilichopatikana</string>
-	<string name="hint_company" state="needs_review" hash="379200324">Kampuni (si lazima)</string>
+	<string name="hint_company" state="needs_review" hash="988571519">Kampuni</string>
 	<string name="hint_compose_your_message" state="needs_review" hash="-25761578">Andika ujumbe</string>
 	<string name="hint_compose_your_message_ephemeral" state="needs_review" hash="-1527208333">Ujumbe wa muda</string>
 	<string name="label_edit_your_message" state="needs_review" hash="1091877412">Hariri ujumbe wako</string>
@@ -133,7 +139,7 @@
 	<string name="hint_last_name" state="needs_review" hash="1701170359">Jina la ukoo</string>
 	<string name="hint_new_name" state="needs_review" hash="709842168">Jina jipya</string>
 	<string name="hint_notification_reply" state="needs_review" hash="1095144032">Jibu</string>
-	<string name="hint_position" state="needs_review" hash="-55145181">Jukumu (si lazima)</string>
+	<string name="hint_position" state="needs_review" hash="1338817744">Cheo</string>
 	<string name="invitation_label_their_code" state="needs_review" hash="1402501614">Kanuni yao</string>
 	<string name="invitation_label_your_code" state="needs_review" hash="1944546233">Nambari yako</string>
 	<string name="invitation_status_accept_invite" state="needs_review" hash="2100924901">Alipokea ombi</string>
@@ -170,6 +176,11 @@
 	<string name="label_group_members" state="needs_review" hash="1460220752">Wajumbe wa kikundi</string>
 	<string name="label_other_group_members" state="needs_review" hash="-2121490032">Wajumbe wengine wa kikundi</string>
 	<string name="label_groups_common" state="needs_review" hash="1252823567">Makundi yanayofanana</string>
+	<string name="label_create_group_with_contact" state="needs_review" hash="1950649899">Unda kikundi na %1$s</string>
+	<string name="label_add_contact_to_a_group" state="needs_review" hash="-682192937">Ongeza %1$s kwenye kikundi</string>
+	<string name="label_add_to_groups" state="needs_review" hash="-654216617">Ongeza kwenye makundi</string>
+	<string name="explanation_no_admin_group_to_add_contact" state="needs_review" hash="402908162">Wewe si msimamizi wa kikundi chochote ambacho %1$s anaweza kuongezwa.</string>
+	<string name="toast_message_adding_contact_to_groups" state="needs_review" hash="1201697547">Inaongeza %1$s kwenye makundi yaliyochaguliwa...</string>
 	<string name="label_invitation_declined" state="needs_review" hash="2038173833">Ombi la kukutana\nlimekataa</string>
 	<string name="label_new_group_card" state="needs_review" hash="1006740909">Maelezo ya kikundi yamebadilishwa</string>
 	<string name="label_not_part_of_a_group" state="needs_review" hash="1667979596">Bado hauja jiunge na kikundi</string>
@@ -183,6 +194,7 @@
 	<string name="menu_action_create_shortcut" state="needs_review" hash="-1949455873">Unda mkato</string>
 	<string name="menu_action_delete" state="needs_review" hash="-232100842">Futa</string>
 	<string name="menu_action_delete_discussion" state="needs_review" hash="2059656471">Futa mazungumzo</string>
+	<string name="menu_action_export_discussion" state="needs_review" hash="1736692296">Hamisha mazungumzo</string>
 	<string name="label_swipe_details" state="needs_review" hash="171468732">Maelezo</string>
 	<string name="menu_action_disband_group" state="needs_review" hash="-1767089289">Vunja kikundi</string>
 	<string name="menu_action_edit_group_details" state="needs_review" hash="310205135">Hariri maelezo ya kikundi</string>
@@ -482,7 +494,14 @@
 	<string name="dialog_title_backup_choices" state="needs_review" hash="281222223">Chagua njia ya kuhifadhi</string>
 	<string name="menu_action_choose_picture" state="needs_review" hash="-1655172909">Chagua picha</string>
 	<string name="menu_action_take_photo" state="needs_review" hash="-1123080444">Piga picha</string>
+	<string name="menu_action_choose_image_from_olvid" state="needs_review" hash="1585248356">Chagua picha iliyopokelewa</string>
 	<string name="menu_action_remove_image" state="needs_review" hash="1094977672">Ondoa picha</string>
+	<string name="menu_action_use_image_as" state="needs_review" hash="587310096">Tumia picha hii kama…</string>
+	<string name="label_use_photo_for_my_profile" state="needs_review" hash="-1005809580">Picha yangu ya wasifu</string>
+	<string name="label_use_photo_for_target" state="needs_review" hash="283541521">Picha kwa ajili ya %s</string>
+	<string name="label_use_photo_for_discussion_background" state="needs_review" hash="1925733151">Mandhari ya %s</string>
+	<string name="toast_message_photo_set" state="needs_review" hash="-1641885203">Picha imesasishwa</string>
+	<string name="toast_message_background_set" state="needs_review" hash="1642873459">Mandhari imesasishwa</string>
 	<string name="dialog_title_create_empty_group" state="needs_review" hash="-663434464">Je, tuunde kikundi tupu?</string>
 	<string name="dialog_message_create_empty_group" state="needs_review" hash="-297923005">Hujachagua mawasiliano yoyote ya kuongeza kwenye kikundi chako. Je, una hakika unataka kuunda kikundi tupu?</string>
 	<string name="pref_dark_mode_title" state="needs_review" hash="816474245">Njia ya giza</string>
@@ -862,7 +881,7 @@
 	<string name="button_label_check_options" state="needs_review" hash="-759177128">Angalia chaguzi</string>
 	<string name="hint_olvid_server" state="needs_review" hash="1097391633">Seva ya Olvid</string>
 	<string name="hint_license_activation_code" state="needs_review" hash="102193320">Nambari ya uanzishaji wa leseni</string>
-	<string name="activity_title_identity_creation_options" state="needs_review" hash="1180456032">Chaguzi za kuunda ID</string>
+	<string name="activity_title_identity_creation_options" state="needs_review" hash="-774054913">Chaguo za kuunda wasifu</string>
 	<string name="activity_title_scan_configuration" state="needs_review" hash="-386259993">Changanua usanidi</string>
 	<string name="menu_action_import_activation_from_clipboard" state="needs_review" hash="-70842935">Ingiza kiungo kutoka kwa klipbodi</string>
 	<string name="troubleshooting_update_valid_title" state="needs_review" hash="741828768">Olvid imesasishwa</string>
@@ -871,7 +890,6 @@
 	<string name="dialog_message_update_available" state="needs_review" hash="416187645">Toleo jipya la Olvid linapatikana.\n\nTafadhali sasisha ili upate vipengele vya hivi karibuni.</string>
 	<string name="dialog_title_call_initiation_not_supported" state="needs_review" hash="-2088021831">Uanzishaji wa simu haukubaliwi</string>
 	<string name="dialog_message_call_initiation_not_supported" state="needs_review" hash="1760333819">Inaonekana seva yako ya Olvid haiungi mkono uanzishaji wa simu salama.\n\nTafadhali wasiliana na msimamizi wako kwa maelezo zaidi.</string>
-	<string name="label_identity_creation_options" state="needs_review" hash="1180456032">Chaguzi za kuunda ID</string>
 	<string name="text_option_server" state="needs_review" hash="-1130676431">Seva: %1$s</string>
 	<string name="dialog_title_non_default_server" state="needs_review" hash="2119192219">Kutumia seva ambayo haijasanidiwa kama chaguo-msingi</string>
 	<string name="dialog_message_non_default_server" state="needs_review" hash="459308900">Unaanza kuunda wasifu kwenye seva ifuatayo:\n\n%1$s\n\nHii si seva chaguomsingi ya Olvid. Endelea tu ikiwa unaamini seva hii.</string>
@@ -900,7 +918,7 @@
 	<string name="toast_message_unable_to_keycloak_revoke" state="needs_review" hash="-1368037130">Imeshindwa kubadilisha Olvid ID iliyotangulia, tafadhali jaribu tena.</string>
 	<string name="toast_message_keycloak_revoke_successful" state="needs_review" hash="-1216369809">Olvid ID iliyotumika awali imebadilishwa kwa mafanikio</string>
 	<string name="dialog_title_keycloak_authentication_required_user_id_changed" state="needs_review" hash="-896407029">Mabadiliko ya mtumiaji yametatuliwa</string>
-	<string name="dialog_message_keycloak_authentication_required_user_id_changed" state="needs_review" hash="876252686">Wasifu wako kwa sasa unadhibitiwa na shirika lako. Inaonekana umeingia kwa kutumia akaunti tofauti na ile unayotumia kawaida. Hii haikubaliki.\n\nTafadhali wasiliana na msimamizi wako au uingie tena kwa kutumia akaunti sahihi.</string>
+	<string name="dialog_message_keycloak_authentication_required_user_id_changed" state="needs_review" hash="2080839829">Wasifu wako kwa sasa unadhibitiwa na shirika lako. Inaonekana umeingia kwa kutumia akaunti tofauti na ile ambayo hutumia kawaida. Hii haikubaliki.\n\nTafadhali wasiliana na msimamizi wako au uingie tena kwa kutumia akaunti sahihi.</string>
 	<string name="dialog_title_add_keycloak_user" state="needs_review" hash="-1050193239">Ongeza mwasiliani</string>
 	<string name="dialog_message_add_keycloak_user" state="needs_review" hash="-1755937035">Umechagua kuongeza %1$s kwenye anwani zako. Je, unataka kuendelea?</string>
 	<string name="explanation_keycloak_update_new" state="needs_review" hash="1136733528">Unaanza kuweka muundo wa mtoa huduma wa utambulisho wa kampuni yako katika Olvid. Mara baada ya kuweka muundo, utaweza kuthibitisha utambulisho wako kwenye seva hii na Olvid itakuruhusu uongeze kwa urahisi wafanyakazi wengine kwenye orodha yako ya mawasiliano.\nTafadhali wasiliana na msimamizi wako kwa maelezo zaidi.</string>
@@ -1031,6 +1049,8 @@
 	<string name="label_storage_discussions" state="needs_review" hash="491497248">Mazungumzo</string>
 	<string name="pref_use_internal_image_viewer_title" state="needs_review" hash="1319400578">Tumia kitazamaji cha picha kilichojengwa</string>
 	<string name="pref_use_internal_image_viewer_summary" state="needs_review" hash="1248137666">Wakati imewashwa, kubofya picha itafungua picha kwenye kitazamaji cha ndani. Vinginevyo, programu chaguomsingi ya picha ya kifaa chako itatumika.</string>
+	<string name="pref_image_text_recognition_title" state="needs_review" hash="1877261687">Tambua na uweke alama maandishi katika picha</string>
+	<string name="pref_image_text_recognition_summary" state="needs_review" hash="1217699919">Inaruhusu kutafuta na kunakili maandishi yaliyomo kwenye viambatisho vya picha. Hii inaweza kutumia rasilimali nyingi kwenye vifaa vya chini: zima ikiwa huna uhitaji nayo.</string>
 	<string name="label_unable_to_display_image" state="needs_review" hash="-1495534207">Haiwezekani kuonyesha picha</string>
 	<string name="dialog_title_backup_requires_sign_in" state="needs_review" hash="-720389674">Ni lazima uingie kwenye mtoa huduma wako wa wingu</string>
 	<string name="dialog_message_backup_requires_sign_in" state="needs_review" hash="119557495">Umeweka Olvid iliweze kutumia nakala za kiotomatiki za kuhifadhi kwenye huduma ya wingu, lakini muda wa kikao chako umeisha. Unahitaji kuingia tena kwenye huduma hiyo.\n\nIkiwa hutaki tena kutumia nakala za kiotomatiki, unaweza kuzima katika mipangilio ya programu. Kumbuka kuwa nakala za kiotomatiki ndiyo njia pekee ya kuzuia kupoteza anwani zako ikiwa kifaa chako kitapotea au kuharibika.</string>
@@ -1071,7 +1091,7 @@
 	<string name="dialog_message_keycloak_identity_was_revoked" state="needs_review" hash="840026008">Inaonekana kwamba akaunti yako imeondolewa kutoka kwa mtoa huduma wa utambulisho wa kampuni yako. Ikiwa umeacha kampuni yako, hii ni kawaida na unaweza kuendelea kutumia Olvid kama mtumiaji wa bure.\n\nIkiwa unaamini kuwa hii ni kosa, tafadhali wasiliana na msimamizi wako ili kusajili tena mtoa huduma huu wa utambulisho katika Olvid.</string>
 	<string name="button_label_backup_settings" state="needs_review" hash="511511007">Sanidi nakala za usalama</string>
 	<string name="snackbar_message_setup_backup" state="needs_review" hash="1863970580">Ni wakati wa kusanidi nakala za usalama!</string>
-	<string name="dialog_message_setup_backup_explanation" state="needs_review" hash="-1004432643">Ikiwa utapoteza kifaa chako, au utafuta Olvid kwa bahati mbaya, utapoteza wasifu wako, mawasiliano yako yote, na vikundi vyote 😱. Kwa bahati nzuri, inawezekana kuweka nakala za usalama 😅.\n\nBonyeza \\"Weka nakala za usalama\\" ili uanze.</string>
+	<string name="dialog_message_setup_backup_explanation" state="needs_review" hash="-1004432643">Ikiwa utapoteza kifaa chako, au utafuta Olvid kwa bahati mbaya, utapoteza wasifu wako, mawasiliano yako yote, na vikundi vyote 😱. Kwa bahati nzuri, inawezekana kuweka nakala za usalama 😅.\n\nBonyeza \"Weka nakala za usalama\" ili uanze.</string>
 	<string name="dialog_title_open_external_app_warning" state="needs_review" hash="-1214423015">Fungua kwa kutumia programu ya nje</string>
 	<string name="dialog_message_open_external_app_warning" state="needs_review" hash="-1385087179">Una karibu kufungua faili kwa kutumia programu ya nje. Yaliyomo kwenye faili hii yataonekana nje ya Olvid.\nJe, unataka kuendelea?</string>
 	<string name="menu_action_unblock_discussion" state="needs_review" hash="519270640">Fungua mazungumzo</string>
@@ -1149,7 +1169,7 @@
 	<string name="pref_hidden_profile_close_policy_dialog_entry_screen_lock" state="needs_review" hash="-1520400811">Wakati skrini ya kufunga ya Olvid inapoamilishwa</string>
 	<string name="pref_hidden_profile_close_policy_dialog_entry_background" state="needs_review" hash="-2099539114">Wakati Olvid inapokuwa kwenye mandharinyuma…</string>
 	<string name="activity_title_enter_backup_key" state="needs_review" hash="1035967309">Ingiza ufunguo wa nakala</string>
-	<string name="activity_title_identity_creation" state="needs_review" hash="-1361520151">Uundaji wa ID</string>
+	<string name="activity_title_identity_creation" state="needs_review" hash="2027618284">Unda wasifu</string>
 	<string name="menu_action_manual_configuration" state="needs_review" hash="-1495974502">Usanidi wa hali ya juu kwa mikono</string>
 	<string name="toast_message_invalid_configuration_link" state="needs_review" hash="1387412522">Kiungo batili cha usanidi</string>
 	<string name="toast_message_invalid_link" state="needs_review" hash="1265454437">Kiungo batilivu</string>
@@ -1171,6 +1191,7 @@
 	<string name="dialog_title_chose_profile_web_client" state="needs_review" hash="1860298414">Chagua wasifu ili uunganishe na programu ya Olvid</string>
 	<string name="dialog_title_chose_profile_invitation" state="needs_review" hash="-2063034787">Chagua wasifu ambao ungependa kumtumia mwaliko kwa anwani hii</string>
 	<string name="toast_message_create_new_profile_then_reopen_this_link" state="needs_review" hash="1770827346">Tafadhali unda wasifu mpya kwanza, kisha ufungue kiungo hiki tena.</string>
+	<string name="toast_message_invitation_link_deferred_to_end_of_onboarding" state="needs_review" hash="-189914806">Ombi lako litaanza kufungua kiotomatiki mara tu wasifu wako utakapoundwa</string>
 	<string name="button_label_switch_profile" state="needs_review" hash="-2007633024">Badilisha wasifu</string>
 	<string name="text_no_other_profile_to_switch_to" state="needs_review" hash="-112306213">Hakuna wasifu mwingine</string>
 	<string name="button_label_configure_lock_screen" state="needs_review" hash="870348426">Sanidi skrini ya kufunga</string>
@@ -1180,8 +1201,7 @@
 	<string name="dialog_message_delete_last_profile" state="needs_review" hash="-2123774331">Kufuta wasifu kutafuta taarifa zote zinazohusiana na wasifu huu kwenye kifaa chako. Hii inajumuisha, anwani zako, vikundi na maudhui ya mazungumzo yako yote (ujumbe na viambatisho) kwa wasifu huu.\n\n<b>Huu ndio wasifu wako pekee unaoonekana na ikiwa una wasifu wowote uliofichwa, watafutwa pia.</b>\n\nIkiwa umeanzisha nakala za ziada katika Olvid, nakala zako zijazo hazitakuwa na alama yoyote ya wasifu huu na huenda usiweze kuirejesha.\n\nBonyeza \"next\" ili uchague jinsi wasifu huu unapaswa kufutwa.</string>
 	<string name="dialog_message_delete_profile_multi" state="needs_review" hash="-2003495595">Kufuta wasifu kutafuta taarifa zote zinazohusiana na wasifu huu kwenye kifaa chako. Hii ni pamoja na anwani zako, vikundi na maudhui ya mazungumzo yako yote (ujumbe na viambatisho) kwa wasifu huu. Wasifu wako wengine hautaathirika na operesheni hii.\n\nBonyeza \"next\" ili uchague jinsi wasifu huu unapaswa kufutwa.</string>
 	<string name="dialog_message_delete_last_profile_multi" state="needs_review" hash="-103140781">Kufuta wasifu kutafuta taarifa zote zinazohusiana na wasifu huu kwenye kifaa chako. Hii inajumuisha, anwani zako na vikundi, na maudhui ya mazungumzo yako yote (ujumbe na viambatisho) kwa wasifu huu.\n\n<b>Huu ndio wasifu wako pekee unaoonekana na ikiwa una wasifu wowote uliofichwa, watafutwa pia.</b>\n\nBonyeza \"next\" ili uchague jinsi wasifu huu unapaswa kufutwa.</string>
-	<string name="switch_label_delete_profile_everywhere" state="needs_review" hash="-74965346">Futa wasifu <b>popote</b>
-	</string>
+	<string name="switch_label_delete_profile_everywhere" state="needs_review" hash="-74965346">Futa wasifu <b>popote</b></string>
 	<string name="hint_type_delete_here_to_proceed" state="needs_review" hash="-1622625725">Ingiza \"%1$s\" hapa ili uendelee</string>
 	<string name="explanation_delete_owned_identity" state="needs_review" hash="2036375772">Ikiwa utachagua kufuta wasifu wako <b>popote</b>:\n\u00a0-\u00a0itafutwa kwenye kifaa chako <b>na</b> kwenye vifaa vya mawasiliano yako\n\u00a0-\u00a0utaondoka kwenye vikundi ulivyo jiunga\n\u00a0-\u00a0vikundi unavyosimamia vitaondolewa\n\nIkiwa <b>hutafuti</b> wasifu wako popote, itafutwa tu kwenye kifaa chako. Isipokuwa unapanga kurejesha nakala rudufu kwenye kifaa kingine, mawasiliano yako wanaweza kuendelea kukutumia ujumbe na wasielewe kwamba ujumbe huo hauwezi kuwasilishwa.</string>
 	<string name="explanation_delete_inactive_owned_identity" state="needs_review" hash="-575337242">Inaonekana kama wasifu wako wa sasa haufanyi kazi, labda kwa sababu umehamishwa kwenye kifaa kingine. Ikiwa unapanga kuendelea kutumia wasifu huu kwenye kifaa kingine, unaweza kuufuta hapa bila hatari.\n\nIkiwa hutaki kutumia wasifu huu tena, itabidi uanze kwa kuurejesha kwenye kifaa hiki, subiri hadi njia salama na mawasiliano yako ziundwe upya, na kisha ufute wasifu huu kwa kuchagua chaguo la \"futa kila mahali\".</string>
@@ -1210,7 +1230,7 @@
 	<string name="pref_text_font_scale_1_1" state="needs_review" hash="460876079">Kidogo kubwa zaidi (110\%)</string>
 	<string name="pref_text_font_scale_1_25" state="needs_review" hash="2016139388">Kubwa (125\%)</string>
 	<string name="pref_text_font_scale_1_5" state="needs_review" hash="2018099487">Kubwa sana (150\%)</string>
-	<string name="pref_send_with_hardware_enter" state="needs_review" hash="613314226">Tuma ujumbe unapotua kitufe cha \\"Enter\\"</string>
+	<string name="pref_send_with_hardware_enter" state="needs_review" hash="613314226">Tuma ujumbe unapotua kitufe cha \"Enter\"</string>
 	<string name="pref_send_with_hardware_enter_summary" state="needs_review" hash="1694640710">Wakati kipengele hiki kitaanzishwa, ikiwa unatumia kibodi ya vifaa, kubonyeza \"Enter\" itatuma ujumbe wako. \"Shift + Enter\" itaongeza mstari mpya.</string>
 	<string name="pref_ping_connectivity_indicator_title" state="needs_review" hash="1245192677">Kiashiria cha muunganisho wa mtandao</string>
 	<string name="pref_text_ping_connectivity_indicator_none" state="needs_review" hash="-1725558072">Hakuna kiashirio cha muunganisho</string>
@@ -1443,23 +1463,17 @@
 	<string name="button_label_send" state="needs_review" hash="-185402948">Tuma</string>
 	<string name="button_label_start_sharing" state="needs_review" hash="682254052">Anza kushiriki</string>
 	<string name="location_sharing_duration_one_hour_short_string" state="needs_review" hash="1004063951">saa 1</string>
-	<string name="location_sharing_duration_one_hour_full_string" state="needs_review" hash="-58118972">Shiriki eneo kwa muda wa <b>saa 1</b>
-	</string>
+	<string name="location_sharing_duration_one_hour_full_string" state="needs_review" hash="-58118972">Shiriki eneo kwa muda wa <b>saa 1</b></string>
 	<string name="location_sharing_duration_three_hours_short_string" state="needs_review" hash="228095183">saa 3</string>
-	<string name="location_sharing_duration_three_hours_full_string" state="needs_review" hash="754857804">Shiriki eneo kwa muda wa <b>saa 3</b>
-	</string>
+	<string name="location_sharing_duration_three_hours_full_string" state="needs_review" hash="754857804">Shiriki eneo kwa muda wa <b>saa 3</b></string>
 	<string name="location_sharing_duration_endless_short_string" state="needs_review" hash="55208442">Milele</string>
-	<string name="location_sharing_duration_endless_full_string" state="needs_review" hash="1710814259">Shiriki eneo <b>mpaka uache</b>
-	</string>
+	<string name="location_sharing_duration_endless_full_string" state="needs_review" hash="1710814259">Shiriki eneo <b>mpaka uache</b></string>
 	<string name="location_sharing_quality_precise_short_string" state="needs_review" hash="351442529">Sahihi</string>
 	<string name="location_sharing_quality_balanced_short_string" state="needs_review" hash="-1925315592">Sawa</string>
 	<string name="location_sharing_quality_power_save_short_string" state="needs_review" hash="-14275273">Kuokoa nishati</string>
-	<string name="location_sharing_quality_precise_full_string" state="needs_review" hash="-1255374893">Njia ya kushiriki eneo kwa <b>usahihi</b>
-	</string>
-	<string name="location_sharing_quality_balanced_full_string" state="needs_review" hash="-421322514">Hali ya ushiriki wa eneo <b>iliyosawazishwa</b>
-	</string>
-	<string name="location_sharing_quality_power_save_full_string" state="needs_review" hash="792896333">Njia ya kushiriki eneo kwa <b>kuokoa nishati</b>
-	</string>
+	<string name="location_sharing_quality_precise_full_string" state="needs_review" hash="-1255374893">Njia ya kushiriki eneo kwa <b>usahihi</b></string>
+	<string name="location_sharing_quality_balanced_full_string" state="needs_review" hash="-421322514">Hali ya ushiriki wa eneo <b>iliyosawazishwa</b></string>
+	<string name="location_sharing_quality_power_save_full_string" state="needs_review" hash="792896333">Njia ya kushiriki eneo kwa <b>kuokoa nishati</b></string>
 	<string name="label_sharing_location_until" state="needs_review" hash="187977459">Kushiriki eneo hadi: %1$s</string>
 	<string name="label_location_sharing_ended" state="needs_review" hash="1028490137">Ushiriki wa eneo umekamilika</string>
 	<string name="label_gps_coordinates" state="needs_review" hash="-1537356414">Kuratibu za GPS</string>
@@ -1632,7 +1646,7 @@
 	<string name="text_last_online" state="needs_review" hash="-307031777">Iliunganishwa mara ya mwisho: %1$s</string>
 	<string name="text_deactivates_on" state="needs_review" hash="-948374904">Itazimwa: %1$s</string>
 	<string name="text_device_is_inactive" state="needs_review" hash="-1269909292">Kifaa kimezimishwa</string>
-	<string name="dialog_message_rename_current_device" state="needs_review" hash="1877085196">Tafadhali ingiza jina unalotaka kutumia kutambua kifaa chako cha sasa.\nBonyeza \\"Chaguomwili\\" ili utumie jina chake chaguo msingi.</string>
+	<string name="dialog_message_rename_current_device" state="needs_review" hash="1877085196">Tafadhali ingiza jina unalotaka kutumia kutambua kifaa chako cha sasa.\nBonyeza \"Chaguomwili\" ili utumie jina chake chaguo msingi.</string>
 	<string name="dialog_message_rename_other_device" state="needs_review" hash="1342525083">Tafadhali ingiza jina unalotaka kutumia kutambua kifaa hiki.</string>
 	<string name="hint_device_name" state="needs_review" hash="1739868247">Jina la kifaa</string>
 	<string name="button_label_default" state="needs_review" hash="-1574133633">Chaguomwili</string>
@@ -2020,7 +2034,7 @@
 	<string name="button_label_restore_my_profile" state="needs_review" hash="418284480">Rejesha wasifu wangu</string>
 	<string name="button_label_keep_all_with_olvid_plus" state="needs_review" hash="622534541">Weka zote kwa Olvid+</string>
 	<string name="explanation_backup_v2_choose_device_after_restore" state="needs_review" hash="292969815">Baada ya kurejesha, unaweza kuchagua ni kifaa gani unataka kiendelee kufanya kazi kutoka kwa mipangilio ya wasifu wako.</string>
-	<string name="explanation_backup_v2_device_expiration_start" state="needs_review" hash="-147053489">Kwa kurejesha wasifu wako \\"</string>
+	<string name="explanation_backup_v2_device_expiration_start" state="needs_review" hash="-147053489">Kwa kurejesha wasifu wako \"</string>
 	<string name="explanation_backup_v2_device_expiration_nickname" state="needs_review" hash="2093353377">(%1$s)</string>
 	<string name="toast_message_no_key_found" state="needs_review" hash="-1984410678">Hakuna ufunguo wa nakala rudufu uliopatikana.</string>
 	<string name="label_backup_headers_title" state="needs_review" hash="-846183546">Nakala zako</string>
@@ -2042,11 +2056,14 @@
 	<string name="button_label_configure_backups" state="needs_review" hash="-990646398">Washa uwekaji nakala</string>
 	<string name="tip_write_backup_key_title" state="needs_review" hash="-1652757003">Usisahau kuandika kitufe chako cha nakala ya usalama 😇</string>
 	<string name="tip_write_backup_key_message" state="needs_review" hash="931018791">Ufunguo wako wa nakala rudufu ni muhimu kwa kurejesha wasifu wako ikiwa utapoteza ufikiaji wa kifaa hiki.</string>
+	<string name="tip_legacy_backup_end_of_life_title" state="needs_review" hash="810495149">Nakala za zamani unazotumia zimefika mwisho wa muda wao wa matumizi.</string>
+	<string name="tip_legacy_backup_end_of_life_message" state="needs_review" hash="-314257210">Sasisho linalofuata la Olvid haitaauni tena nakala za zamani. Ili kulinda akaunti yako, badilisha hadi toleo jipya la nakala sasa.</string>
 	<string name="tip_troubleshooting_title" state="needs_review" hash="-393739108">Boresha matumizi yako ya Olvid 🚀</string>
 	<string name="tip_troubleshooting_message" state="needs_review" hash="-935493349">Parameta kadhaa hazijawekwa vizuri kwenye kifaa chako na inaweza kuathiri matumizi yako ya Olvid.</string>
 	<string name="button_label_this_way" state="needs_review" hash="747183939">Hapa</string>
 	<string name="toast_code_copied" state="needs_review" hash="-1522785848">Nambari ime nakiliwa</string>
 	<string name="explanation_choose_members" state="needs_review" hash="-1385158706">Tafadhali chagua ni nani wa kuongeza kwenye kikundi hiki.</string>
+	<string name="explanation_choose_share_recipients" state="needs_review" hash="-1406265940">Tafadhali chagua na nani unataka kushiriki.</string>
 	<string name="explanation_choose_contact_introduction" state="needs_review" hash="1113777517">Tafadhali chagua ni nani unayemwonesha %1$s.</string>
 	<string name="label_group_administration" state="needs_review" hash="871355986">Usimamizi wa kikundi</string>
 	<string name="dialog_title_call_blocked" state="needs_review" hash="1594606530">Simu imezuiliwa</string>
@@ -2087,7 +2104,7 @@
 	<string name="label_poll_answers_sorted_by_poll_order" state="needs_review" hash="685632215">Mpangilio wa kura</string>
 	<string name="label_poll_answers_sorted_by_answer_count" state="needs_review" hash="516869301">Idadi ya majibu</string>
 	<string name="notification_public_title_new_poll_vote" state="needs_review" hash="-1901040080">Jibu mpya kwa kura yako</string>
-	<string name="toast_message_remove_none_answer" state="needs_review" hash="277924655">Ondoa jibu lako \\"%1$s\\" kwanza</string>
+	<string name="toast_message_remove_none_answer" state="needs_review" hash="277924655">Ondoa jibu lako \"%1$s\" kwanza</string>
 	<string name="text_poll" state="needs_review" hash="-153643506">kura</string>
 	<string name="poll_csv_headers" state="needs_review" hash="1869917931">Swali la kura, Jina la mpiga kura, Kura, Tarehe</string>
 	<string name="label_poll_no_votes_yet" state="needs_review" hash="-981251817">Hakuna jibu kwa sasa</string>
@@ -2172,7 +2189,7 @@
 	<string name="store_link_olvid_store" state="needs_review" hash="-1825630369">Tembelea Duka la Olvid</string>
 	<string name="toast_message_reminder_set" state="needs_review" hash="-961055414">Kikumbusho kimewekwa</string>
 	<string name="dialog_title_keycloak_authentication_impossible" state="needs_review" hash="325273853">Haiwezekani kufanya uthibitishaji</string>
-	<string name="dialog_message_keycloak_authentication_impossible" state="needs_review" hash="390830785">Wasifu wako kwa sasa unadhibitiwa na shirika lako na uthibitishaji mpya unahitajika. Hata hivyo, inaonekana hakuna njia yoyote inayotumika ya uthibitishaji inayopatikana.\n\nTafadhali wasiliana na msimamizi wako kwa maelezo zaidi.</string>
+	<string name="dialog_message_keycloak_authentication_impossible" state="needs_review" hash="-2031322232">Wasifu wako kwa sasa unadhibitiwa na shirika lako na uthibitishaji mpya unahitajika. Hata hivyo, inaonekana hakuna njia yoyote inayotumika ya uthibitishaji.\n\nTafadhali wasiliana na msimamizi wako kwa maelezo zaidi.</string>
 	<string name="onboarding_transfer_keycloak_error_message_authentication_impossible" state="needs_review" hash="-1891385979">Inaonekana kwamba hakuna njia yoyote inayotumika ya uthibitishaji inayopatikana.</string>
 	<string name="pref_use_alt_turn_servers_title" state="needs_review" hash="-1956132776">Tumia seva mbadala za TURN</string>
 	<string name="pref_use_alt_turn_servers_summary" state="needs_review" hash="357427162">Washa chaguo hili ili utumie seva za TURN na anwani za IP zinazobadilika. Ikiwa huna uhakika, acha chaguo hili likiwa limetozwa 😁</string>
@@ -2283,5 +2300,45 @@
 	<string name="label_error_loading_openstreetmap_style_file" state="needs_review" hash="-2596045">Tatizo lilitokea wakati wa kupakua faili ya mtindo wa OpenStreetMap</string>
 	<string name="dialog_title_subscriptions_not_available" state="needs_review" hash="336174241">Usajili wa ndani ya programu haupatikani</string>
 	<string name="dialog_message_subscriptions_not_available" state="needs_review" hash="2093768678">Toleo la Olvid ambalo umesakinisha halijumuishi maktaba ya Malipo ya Google na haitumii ununuzi wa ndani ya programu.\n\nKwa habari zaidi, tafadhali wasiliana nasi kwa **feedback@olvid.io**.</string>
+	<string name="ftux_next" state="needs_review" hash="1158639077">Inayofuata</string>
+	<string name="ftux_start" state="needs_review" hash="646298532">Anza</string>
+	<string name="ftux_page_indicator" state="needs_review" hash="1987610035">Ukurasa %1$d kati ya %2$d</string>
+	<string name="ftux_page_welcome_title" state="needs_review" hash="1173832630">Karibu kwenye <b>Olvid</b>.</string>
+	<string name="ftux_page_welcome_body" state="needs_review" hash="-2085198139">Ujumbe wa faragha kwa kila mtu.</string>
+	<string name="ftux_page_private_title" state="needs_review" hash="1815927819">Ujumbe wa <b>faragha</b></string>
+	<string name="ftux_page_private_body" state="needs_review" hash="-590644231">Katika %1$s, unaamua ni nani unataka kuzungumza naye. Hakuna ujumbe usiohitajika, hakuna mapendekezo, hakuna arifa zisizo na maana, na hakuna ujumbe kutoka kwa watu wasiojulikana.\n\nHakuna mtu anayeweza kuwasiliana nawe bila idhini yako.\n\n%1$s ni nafasi yako ya kidijitali.</string>
+	<string name="ftux_page_everyone_title" state="needs_review" hash="1506796386">Ujumbe kwa <b>wote</b></string>
+	<string name="ftux_page_everyone_body" state="needs_review" hash="-586100377">Haijalishi wewe ni nani, %1$s inakupa ulinzi bora. Hakuna haja ya anwani ya barua pepe au nambari ya simu.\n\n%1$s haitaki chochote kutoka kwako, na hilo linabadilisha kila kitu.</string>
+	<string name="ftux_page_protect_title" state="needs_review" hash="1969120191">Olvid anakulinda. Olvid analinda wale wanaokuhusu.</string>
+	<string name="ftux_page_protect_body" state="needs_review" hash="881847930">Hii si ahadi tu—%1$s inatoa uthibitisho wa kisayansi.\n\nIwe unaongeza mawasiliano kwa njia ya mtandao au ana kwa ana, mazungumzo yako huwekwa salama na kusimbishwa kabisa.</string>
+	<string name="ftux_page_pricing_title" state="needs_review" hash="-1948277889">Mfumo wa biashara <b>wenye uwazi</b></string>
+	<string name="ftux_page_pricing_body" state="needs_review" hash="-1064278870">%1$s haitumii data yako ya kibinafsi kwa ajili ya kujipatia fedha—kwa sababu haiomba hata kidogo!\n\nKile ambacho ni cha bure, ni cha bure. Kile ambacho hulipwa kina bei.</string>
+	<string name="ftux_page_media_title" state="needs_review" hash="558110518">Olvid ana kila kitu</string>
+	<string name="ftux_page_media_body" state="needs_review" hash="1807247240">Hakuna kikomo cha ukubwa wa faili unayoweza ambatisha, unaweza kushiriki picha zenye ubora wa juu, fanya kura, na pia unaweza kupiga simu za sauti na video. Unaweza kutumia programu hii kwenye vifaa vingi na pia ina kipengele cha kuonyesha eneo lako. Kila kitu unachohitaji kipo hapa!</string>
 	<string name="menu_action_cancel_upload" state="needs_review" hash="1672681586">Ghairi pakia</string>
+	<string name="label_suggested_contacts" state="needs_review" hash="816810770">Wasiliani unaopendekeza</string>
+	<string name="label_suggested_contacts_subtitle" state="needs_review" hash="131522501">Alika watumiaji kwa urahisi</string>
+	<string name="label_suggested_contact_already_a_contact" state="needs_review" hash="-1177848651">Tayari ni mmoja wa watu wanaowasiliana nao</string>
+	<string name="label_suggested_contact_invitation_received" state="needs_review" hash="2100924901">Alipokea ombizo</string>
+	<string name="label_suggested_contact_invitation_sent" state="needs_review" hash="310679275">Ombi limetumwa</string>
+	<string name="label_suggested_contacts_all_done" state="needs_review" hash="-127525104">Una toleo la hivi karibuni!\nHakuna zaidi ya anwani za kupendekeza.</string>
+	<string name="button_label_suggested_contact_later" state="needs_review" hash="-1933816039">Baadaye</string>
+	<string name="button_label_close" state="needs_review" hash="1454843231">Funga</string>
+	<string name="button_label_skip" state="needs_review" hash="2056258301">Ruka</string>
+	<string name="button_label_understood" state="needs_review" hash="829780875">Nimeelewa</string>
+	<string name="label_suggested_contacts_onboarding_title_1" state="needs_review" hash="491881039">Alika kwa kugusa</string>
+	<string name="label_suggested_contacts_onboarding_message_1" state="needs_review" hash="331320806">Teleza kadi kulia ili kumwalika mtumiaji, au kushoto ili uende kwenye inayofuata.</string>
+	<string name="label_suggested_contacts_onboarding_title_2" state="needs_review" hash="-788798380">Hizi ni kutoka wapi?</string>
+	<string name="label_suggested_contacts_onboarding_message_2" state="needs_review" hash="1536681696">Hizi ni akaunti za watumiaji wa Olvid ambao bado hawako kwenye orodha yako ya mawasiliano.</string>
+	<string name="label_suggested_contacts_onboarding_caption" state="needs_review" hash="-1299179969">Mna uhusiano wa moja: mmeunda kundi moja la pamoja angalau.</string>
+	<string name="label_suggested_contacts_you" state="needs_review" hash="672009142">Wewe</string>
+	<string name="label_suggested_contacts_common_group" state="needs_review" hash="-1739793963">Kikundi cha pamoja</string>
+	<string name="explanation_suggested_contacts_others_tab" state="needs_review" hash="852096678">Watumiaji waliopo hapa chini hawako kwenye orodha yako ya mawasiliano, na huwezi kuwa na mazungumzo ya faragha nao kwa sasa. Lakini unaweza kuwakaribisha kwa urahisi! 🚀</string>
+	<string name="label_suggested_contacts_invite_in_one_gesture" state="needs_review" hash="438220313">Alika watumiaji hawa kwa kugusa</string>
+	<string name="menu_action_suggested_contacts_see_full_list" state="needs_review" hash="603082500">Ona orodha kamili</string>
+	<string name="menu_action_suggested_contacts_replay_onboarding" state="needs_review" hash="-1552704243">Rudia mafunzo</string>
+	<string name="button_label_uninvite" state="needs_review" hash="771825501">Ondoa mwaliko</string>
+	<string name="button_label_accept_invitation" state="needs_review" hash="-1778405034">Kubali ombi</string>
+	<string name="label_suggested_contacts_already_swiped" state="needs_review" hash="427042318">Tayari imepitia</string>
+	<string name="label_suggested_contacts_not_swiped_yet" state="needs_review" hash="310924358">Bado haijapitia</string>
 </resources>

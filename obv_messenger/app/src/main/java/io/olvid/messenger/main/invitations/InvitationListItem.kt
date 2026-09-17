@@ -89,7 +89,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.google.accompanist.themeadapter.appcompat.AppCompatTheme
 import io.olvid.engine.datatypes.Constants
 import io.olvid.engine.engine.types.ObvDialog.Category
 import io.olvid.messenger.App
@@ -639,15 +638,13 @@ fun BoxedChar(
 @Preview
 @Composable
 private fun InvitationListItemPreview() {
-    AppCompatTheme {
-        InvitationListItem(
-            invitationListViewModel = viewModel(modelClass = InvitationListViewModel::class.java),
-            onClick = { _, _, _ -> },
-            invitation = null,
-            title = AnnotatedString("title"),
-            date = AnnotatedString("date"),
-            initialViewSetup = {}
-        )
-    }
+    InvitationListItem(
+        invitationListViewModel = viewModel(modelClass = InvitationListViewModel::class.java),
+        onClick = { _, _, _ -> },
+        invitation = null,
+        title = AnnotatedString("title"),
+        date = AnnotatedString("date"),
+        initialViewSetup = {}
+    )
 }
 

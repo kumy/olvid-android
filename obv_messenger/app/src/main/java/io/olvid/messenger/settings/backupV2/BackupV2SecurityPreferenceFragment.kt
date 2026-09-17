@@ -190,9 +190,9 @@ class BackupV2SecurityPreferenceFragment : Fragment() {
                     EraseBackupsDialog(
                         onReset = {
                             try {
-                                AppSingleton.getEngine().deviceBackupSeed?.let {
+                                AppSingleton.getEngine().getDeviceBackupSeed()?.let {
                                     AppSingleton.getEngine().deleteDeviceBackupSeed(it)
-                                    if (AppSingleton.getEngine().deviceBackupSeed == null) {
+                                    if (AppSingleton.getEngine().getDeviceBackupSeed() == null) {
                                         App.toast(R.string.toast_message_backups_reset, Toast.LENGTH_SHORT)
                                         SettingsActivity.Companion.backupsV2Status = SettingsActivity.Companion.PREF_KEY_BACKUPS_V2_STATUS_CONFIGURED
                                         activity?.supportFragmentManager?.apply {
@@ -216,7 +216,7 @@ class BackupV2SecurityPreferenceFragment : Fragment() {
                         onReset = {
                             coroutineScope.launch {
                                 // delete previous key
-                                AppSingleton.getEngine().deviceBackupSeed?.let { seed ->
+                                AppSingleton.getEngine().getDeviceBackupSeed()?.let { seed ->
                                     AppSingleton.getEngine().deleteDeviceBackupSeed(seed)
                                 }
                                 // generate a new one

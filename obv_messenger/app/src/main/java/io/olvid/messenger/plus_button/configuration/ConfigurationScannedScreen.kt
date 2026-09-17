@@ -104,7 +104,7 @@ fun ConfigurationScanContent(
         if (matcher.find()) {
             try {
                 plusButtonViewModel.configurationPojo = AppSingleton.getJsonObjectMapper().readValue(
-                    ObvBase64.decode(matcher.group(2)),
+                    ObvBase64.decode(matcher.group(2)!!),
                     ConfigurationPojo::class.java
                 )
             } catch (e: Exception) {

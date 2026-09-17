@@ -57,7 +57,7 @@ object SubscriptionRepository {
         val listener = object : EngineNotificationListener {
             var engineNumber: Long = -1L
 
-            override fun callback(notificationName: String, userInfo: HashMap<String, Any>) {
+            override fun callback(notificationName: String?, userInfo: HashMap<String, Any?>) {
                 val bytesOwnedIdentity = userInfo[
                     when (notificationName) {
                         EngineNotifications.FREE_TRIAL_QUERY_SUCCESS -> EngineNotifications.FREE_TRIAL_QUERY_SUCCESS_BYTES_OWNED_IDENTITY_KEY

@@ -47,6 +47,7 @@ import io.olvid.messenger.R
 import io.olvid.messenger.customClasses.StringUtils.isEmojiCodepoint
 import io.olvid.messenger.customClasses.StringUtils.unAccentPattern
 import io.olvid.messenger.customClasses.StringUtils2.Companion.normalize
+import io.olvid.messenger.settings.SettingsActivity
 import java.text.Normalizer
 import java.util.BitSet
 import java.util.Locale
@@ -102,6 +103,39 @@ fun String.linkify(context: Context): AnnotatedString {
 
 class StringUtils2 {
     companion object {
+        val whitespaceRegex = Regex("\\s+")
+
+        /**
+         * Rank of [source] against a search [filter], for sorting search results so that
+         * entries whose words start with the typed filter come first: the index of the first
+         * whitespace-separated word of [source] (unaccented) starting with one of the
+         * (unaccented) filter tokens, followed by [Int.MAX_VALUE]/2 + the index of the
+         * first whitespace-separated word of [source] (unaccented) containing one of the filter
+         * tokens, or [Int.MAX_VALUE] when no word starts/contains the filter. Sort ascending:
+         * sorts are stable, so equally ranked entries keep their original relative order.
+         */
+        @JvmStatic
+        fun searchMatchRank(source: String, filter: String?): Int {
+            val tokens = filter?.trim()?.split(whitespaceRegex)
+                ?.filter { it.isNotEmpty() }
+                ?.map { StringUtils.unAccent(it) }
+            if (tokens.isNullOrEmpty()) {
+                return Int.MAX_VALUE
+            }
+            return StringUtils.unAccent(source).trim().split(whitespaceRegex)
+                .let { words ->
+                    val startIndex = words.indexOfFirst { word -> tokens.any { word.startsWith(it) } }
+                    if (startIndex != -1) {
+                        return@let startIndex
+                    }
+                    val middleIndex = words.indexOfFirst { word -> tokens.any { word.contains(it) } }
+                    if (middleIndex != -1) {
+                        return@let Int.MAX_VALUE / 2 + middleIndex
+                    }
+                    return@let Int.MAX_VALUE
+                }
+        }
+
         fun getLink(s: String?): Pair<String, String?>? {
             s?.let { nonNullS ->
                 val source = SpannableString(nonNullS)
@@ -301,12 +335,43 @@ fun String.isStringOnlyEmojis(): Boolean {
         return false
     }
 
-    for (codePoint in getCodePoints()) {
+    val codePoints = getCodePoints()
+    for (i in codePoints.indices) {
+        val codePoint = codePoints[i]
         if (!isEmojiCodepoint(codePoint)) {
-            return false
+            // Some emojis start with a base character that is not an emoji codepoint on its own,
+            // and only become an emoji thanks to a following codepoint that is already recognized
+            // by isEmojiCodepoint:
+            //  - the emoji variation selector U+FE0F, which promotes a text-default symbol to an
+            //    emoji, e.g. "©️", "®️", "™️", "‼️", "⁉️", "ℹ️", "〰️", "㊗️" — and keycaps "1️⃣", "#️⃣";
+            //  - the combining enclosing keycap U+20E3 for keycaps typed without U+FE0F, e.g. "0⃣".
+            // Accept the base char in those cases. (issue #1277)
+            if (!codePoints.startsEmojiPresentationSequenceAt(i)) {
+                return false
+            }
         }
     }
     return true
+}
+
+// True when the codepoint at [index] begins an emoji presentation sequence whose base is not
+// itself an emoji codepoint:
+//  - a keycap base (0-9, # or *) followed by the combining enclosing keycap U+20E3, optionally
+//    preceded by U+FE0F, e.g. "1️⃣" or "0⃣" (a keycap base + U+FE0F alone, without U+20E3, is not
+//    an emoji, so U+20E3 is required here);
+//  - any other base followed by the emoji variation selector U+FE0F, which promotes a text-default
+//    symbol to an emoji, e.g. "©️", "™️", "‼️", "〰️", "㊗️".
+private fun IntArray.startsEmojiPresentationSequenceAt(index: Int): Boolean {
+    val base = this[index]
+    val isKeycapBase = base in '0'.code..'9'.code || base == '#'.code || base == '*'.code
+    if (isKeycapBase) {
+        var next = index + 1
+        if (getOrNull(next) == 0xfe0f) {
+            next++
+        }
+        return getOrNull(next) == 0x20e3
+    }
+    return getOrNull(index + 1) == 0xfe0f
 }
 
 
@@ -334,12 +399,24 @@ fun String.getShortEmojis(maxLength: Int): List<String> {
 }
 
 
-fun String.jsonIdentityDetails() : JsonIdentityDetails? {
+fun String?.jsonIdentityDetails() : JsonIdentityDetails? {
     return runCatching {
+        if (this == null) return null
         AppSingleton.getJsonObjectMapper()
             .readValue(this, JsonIdentityDetails::class.java)
     }.getOrNull()
 }
+
+/**
+ * The display name carried by serialized [JsonIdentityDetails], or null when unparsable — the
+ * canonical formatting wherever an identity is shown before a Contact row exists. Pass
+ * [SettingsActivity.contactDisplayNameFormat] as [format] at call sites that must honour the
+ * user's display-name format setting instead of the fixed invitation-style default.
+ */
+fun String?.formatSerializedIdentityDetails(
+    format: String = JsonIdentityDetails.FORMAT_STRING_FIRST_LAST_POSITION_COMPANY,
+): String? =
+    jsonIdentityDetails()?.formatDisplayName(format, SettingsActivity.uppercaseLastName)
 
 
 fun Float?.formatBytesSpeed(context: Context) : String? {

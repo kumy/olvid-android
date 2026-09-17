@@ -78,6 +78,27 @@ fun DialogSecure(
 fun BaseDialogContent(
     modifier: Modifier = Modifier,
     title: String,
+    message: String,
+    actions: @Composable RowScope.() -> Unit
+) {
+    BaseDialogContent(
+        modifier = modifier,
+        title = title,
+        content = {
+            Text(
+                text = message,
+                style = OlvidTypography.body1,
+                color = colorResource(R.color.greyTint)
+            )
+        },
+        actions = actions
+    )
+}
+
+@Composable
+fun BaseDialogContent(
+    modifier: Modifier = Modifier,
+    title: String,
     content: @Composable ColumnScope.() -> Unit,
     actions: @Composable RowScope.() -> Unit
 ) {

@@ -186,6 +186,7 @@ fun OlvidTopAppBar(
     title: (@Composable () -> Unit)? = null,
     actions: @Composable RowScope.() -> Unit = {},
     transparent: Boolean = false,
+    alwaysDark: Boolean = false,
     elevationShadow: Boolean = true,
     onBackPressed: (() -> Unit)? = null
 ) {
@@ -208,12 +209,17 @@ fun OlvidTopAppBar(
             } ?: title?.invoke()
         },
         colors = TopAppBarDefaults.topAppBarColors(
-            containerColor = colorResource(id = if (transparent) R.color.whiteOverlay else R.color.almostWhite),
-            titleContentColor = colorResource(id = R.color.almostBlack)
+            containerColor = colorResource(id = when {
+                transparent && alwaysDark -> R.color.blackOverlay
+                transparent && !alwaysDark -> R.color.whiteOverlay
+                !transparent && alwaysDark -> R.color.black
+                else -> R.color.almostWhite
+            }),
+            titleContentColor = colorResource(id = if (alwaysDark) R.color.alwaysWhite else R.color.almostBlack)
         ),
         navigationIcon = {
             onBackPressed?.let {
-                CompositionLocalProvider(LocalContentColor provides colorResource(id = R.color.almostBlack)) {
+                CompositionLocalProvider(LocalContentColor provides colorResource(id = if (alwaysDark) R.color.alwaysWhite else R.color.almostBlack)) {
                     IconButton(onClick = onBackPressed) {
                         Icon(
                             painter = painterResource(id = R.drawable.ic_arrow_back_white),
@@ -233,6 +239,7 @@ fun OlvidTopAppBar(
 private fun SelectionTopAppBarPreview() {
     Column(verticalArrangement = Arrangement.spacedBy(32.dp)) {
         SelectionTopAppBar<String>(title = "Title") {}
+        OlvidTopAppBar(titleText = "Title", alwaysDark = true) {}
         SelectionTopAppBar(
             selection = listOf(""),
             title = "Title",

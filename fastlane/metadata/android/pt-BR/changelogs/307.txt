@@ -1,0 +1,3 @@
+- Nova função de convite por deslizar, para convidar facilmente membros de um grupo para uma conversa direta.
+- Novo processo de integração para apresentar o Olvid a novos usuários.
+- Visualizador de imagens/vídeos aprimorado, com possibilidade de zoom em vídeos.

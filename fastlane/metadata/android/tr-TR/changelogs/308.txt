@@ -1,0 +1,3 @@
+- Yeni kaydırma ile davet özelliği sayesinde grup üyelerini doğrudan sohbete kolayca davet edin.
+- Yeni kullanıcılar için Olvid'i açıklayan yeni karşılama ekranı.
+- Geliştirilmiş resim/video görüntüleyici, videolarda yakınlaştırma imkanı.

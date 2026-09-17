@@ -25,6 +25,7 @@ import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.net.Uri;
 import android.os.ParcelFileDescriptor;
+import android.provider.DocumentsContract;
 import android.provider.OpenableColumns;
 
 import androidx.annotation.NonNull;
@@ -50,6 +51,7 @@ public class FyleContentProvider extends ContentProvider {
 
     public static final String DISPLAY_NAME = OpenableColumns.DISPLAY_NAME;
     public static final String SIZE = OpenableColumns.SIZE;
+    public static final String DATE = DocumentsContract.Document.COLUMN_LAST_MODIFIED;
 
     @Nullable
     @Override
@@ -94,6 +96,7 @@ public class FyleContentProvider extends ContentProvider {
             projection = new String[]{
                     DISPLAY_NAME,
                     SIZE,
+                    DATE,
             };
         }
         MatrixCursor cursor = new MatrixCursor(projection, 0);
@@ -105,6 +108,7 @@ public class FyleContentProvider extends ContentProvider {
             //noinspection ConstantConditions
             long messageId = Long.parseLong(matcher.group(2));
             Fyle fyle = AppDatabase.getInstance().fyleDao().getBySha256(sha256);
+            Message message = AppDatabase.getInstance().messageDao().get(messageId);
             if (fyle != null) {
                 FyleMessageJoinWithStatus fyleMessageJoinWithStatus = AppDatabase.getInstance().fyleMessageJoinWithStatusDao().get(fyle.id, messageId);
                 if (fyleMessageJoinWithStatus != null) {
@@ -116,6 +120,13 @@ public class FyleContentProvider extends ContentProvider {
                                 break;
                             case SIZE:
                                 objects[i] = fyleMessageJoinWithStatus.size;
+                                break;
+                            case DATE:
+                                if (message != null) {
+                                    objects[i] = message.timestamp;
+                                } else {
+                                    objects[i] = null;
+                                }
                                 break;
                             default:
                                 objects[i] = null;

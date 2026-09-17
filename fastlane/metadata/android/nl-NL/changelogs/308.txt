@@ -1,0 +1,3 @@
+- Nieuwe 'veeg om uit te nodigen'-functie om eenvoudig groepsleden uit te nodigen voor een direct gesprek.
+- Nieuwe uitleg voor nieuwe gebruikers over Olvid.
+- Verbeterde foto-/videoweergave, met de mogelijkheid om in te zoomen op video's.

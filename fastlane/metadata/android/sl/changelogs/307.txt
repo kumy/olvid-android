@@ -1,0 +1,3 @@
+- Nov način povabljanja članov skupine v neposredno pogovor s preprostim gibom.
+- Novo uvajanje, ki novim uporabnikom predstavi Olvid.
+- Izboljšan pregledovalnik slik/videoposnetkov, možnost povečave videoposnetkov.

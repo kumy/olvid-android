@@ -3611,7 +3611,7 @@ class WebrtcCallService : Service() {
 
     private inner class EngineTurnCredentialsReceiver : EngineNotificationListener {
         private var registrationNumber: Long? = null
-        override fun callback(notificationName: String, userInfo: HashMap<String, Any>) {
+        override fun callback(notificationName: String?, userInfo: HashMap<String, Any?>) {
             when (notificationName) {
                 EngineNotifications.TURN_CREDENTIALS_RECEIVED -> {
 

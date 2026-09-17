@@ -1,0 +1,3 @@
+- Nova funció per convidar fàcilment els membres del grup a una conversa directa amb un gest.
+- Nou procés d'introducció per explicar Olvid als nous usuaris.
+- Visualitzador de vídeos/imatges millorat, amb la possibilitat d'ampliar les imatges.

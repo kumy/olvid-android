@@ -107,7 +107,7 @@ import io.olvid.messenger.databases.entity.Contact
 import io.olvid.messenger.designsystem.components.OlvidTextButton
 import io.olvid.messenger.designsystem.constantSp
 import io.olvid.messenger.designsystem.cutoutHorizontalPadding
-import io.olvid.messenger.designsystem.plus
+import androidx.compose.foundation.layout.plus
 import io.olvid.messenger.designsystem.systemBarsHorizontalPadding
 import io.olvid.messenger.designsystem.theme.OlvidTypography
 import io.olvid.messenger.main.MainScreenEmptyList
@@ -116,6 +116,8 @@ import io.olvid.messenger.main.contacts.ContactListViewModel.ContactOrKeycloakDe
 import io.olvid.messenger.main.contacts.ContactListViewModel.ContactType.CONTACT
 import io.olvid.messenger.main.contacts.ContactListViewModel.ContactType.KEYCLOAK
 import io.olvid.messenger.main.contacts.ContactListViewModel.ContactType.KEYCLOAK_MORE_RESULTS
+import io.olvid.messenger.main.contacts.suggested.SuggestedContactsBanner
+import io.olvid.messenger.main.contacts.suggested.SuggestedContactsOthersBanner
 import io.olvid.messenger.openid.KeycloakManager
 import io.olvid.messenger.settings.SettingsActivity
 import kotlinx.coroutines.CoroutineScope
@@ -164,6 +166,9 @@ fun ContactListScreen(
     emptyContactTabContent: (@Composable () -> Unit)? = null,
     applyHorizontalSafePadding: Boolean = true,
     addPlusButtonBottomPadding: Boolean = false,
+    suggestedContactsCount: Int = 0,
+    newSuggestedContactsCount: Int = 0,
+    onOpenSuggestedContacts: ((showAllContacts: Boolean) -> Unit)? = null,
 ) {
 
     val contacts by contactListViewModel.filteredContacts.observeAsState()
@@ -326,6 +331,29 @@ fun ContactListScreen(
                                             .asPaddingValues(LocalDensity.current)
                                                 + if (addPlusButtonBottomPadding) PaddingValues(bottom = 80.dp + dimensionResource(R.dimen.tab_bar_size)) else PaddingValues(bottom = 16.dp),
                                     ) {
+                                        if (onOpenSuggestedContacts != null
+                                            && contactListViewModel.isFiltering().not()
+                                        ) {
+                                            if (page == ContactListPage.CONTACTS
+                                                && suggestedContactsCount > 0) {
+                                                item(key = "suggested_contacts_banner") {
+                                                    SuggestedContactsBanner(
+                                                        redBadgeContactCount = newSuggestedContactsCount.takeIf { it >= ContactListFragment.RED_DOT_THRESHOLD },
+                                                        onClick = {
+                                                            onOpenSuggestedContacts(false)
+                                                        },
+                                                    )
+                                                }
+                                            } else if (page == ContactListPage.OTHERS) {
+                                                item(key = "suggested_contacts_others_banner") {
+                                                    SuggestedContactsOthersBanner(
+                                                        onClick = {
+                                                            onOpenSuggestedContacts(true)
+                                                        },
+                                                    )
+                                                }
+                                            }
+                                        }
                                         sortedGrouped.forEach { (initial, list) ->
                                             if (initial.isNotEmpty()) {
                                                 stickyHeader {
@@ -463,7 +491,7 @@ fun ContactListScreen(
                                                                         contactOrKeycloakDetails.contactType == KEYCLOAK
                                                                                 && ContactCacheSingleton.getContactCacheInfo(
                                                                             contactOrKeycloakDetails.keycloakUserDetails?.identity
-                                                                        ) == null -> {
+                                                                        )?.oneToOne != true -> {
                                                                             {
                                                                                 OlvidTextButton(
                                                                                     text = stringResource(

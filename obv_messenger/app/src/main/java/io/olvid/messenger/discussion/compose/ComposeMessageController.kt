@@ -224,7 +224,7 @@ class ComposeMessageController(
                     .setMessage(R.string.label_stop_sharing_location)
                     .setPositiveButton(R.string.button_label_stop) { _, _ ->
                         LocationSharingSubService.stopSharingInDiscussion(
-                            discussionViewModel.discussionId!!,
+                            discussionId,
                             false
                         )
                     }
@@ -417,12 +417,13 @@ fun rememberComposeMessageController(
         rememberLauncherForActivityResult(
             contract = ActivityResultContracts.StartActivityForResult()
         ) { result ->
+            val discussionId = discussionViewModel.discussionId ?: return@rememberLauncherForActivityResult
+
             if (result.resultCode == Activity.RESULT_OK) {
                 result.data?.let { data ->
-                    if (data.clipData != null) {
-                        val clipData = data.clipData!!
+                    val clipData = data.clipData
+                    if (clipData != null) {
                         val uris = (0 until clipData.itemCount).map { clipData.getItemAt(it).uri }
-                        val discussionId = discussionViewModel.discussionId!!
                         App.runThread {
                             // Sort URIs alphabetically by display name before inserting to preserve order
                             val sortedUris = uris.sortedBy { uri ->
@@ -441,15 +442,17 @@ fun rememberComposeMessageController(
                                 AddFyleToDraftFromUriTask(uri, null, null, discussionId).run()
                             }
                         }
-                    } else if (data.data != null) {
-                        App.runThread(
-                            AddFyleToDraftFromUriTask(
-                                data.data!!,
-                                null as String?,
-                                null as String?,
-                                discussionViewModel.discussionId!!
+                    } else {
+                        data.data?.let {
+                            App.runThread(
+                                AddFyleToDraftFromUriTask(
+                                    it,
+                                    null as String?,
+                                    null as String?,
+                                    discussionId
+                                )
                             )
-                        )
+                        }
                     }
                 }
             }
@@ -459,6 +462,8 @@ fun rememberComposeMessageController(
         rememberLauncherForActivityResult(
             contract = ActivityResultContracts.StartActivityForResult()
         ) { result ->
+            val discussionId = discussionViewModel.discussionId ?: return@rememberLauncherForActivityResult
+
             if (result.resultCode == Activity.RESULT_OK) {
                 composeMessageViewModel.photoOrVideoUri?.let { uri ->
                     App.runThread(
@@ -466,7 +471,7 @@ fun rememberComposeMessageController(
                             uri,
                             composeMessageViewModel.photoOrVideoFile?.name,
                             "image/jpeg",
-                            discussionViewModel.discussionId!!
+                            discussionId
                         )
                     )
                 }
@@ -477,6 +482,8 @@ fun rememberComposeMessageController(
         rememberLauncherForActivityResult(
             contract = ActivityResultContracts.StartActivityForResult()
         ) { result ->
+            val discussionId = discussionViewModel.discussionId ?: return@rememberLauncherForActivityResult
+
             if (result.resultCode == Activity.RESULT_OK) {
                 composeMessageViewModel.photoOrVideoUri?.let { uri ->
                     App.runThread(
@@ -484,7 +491,7 @@ fun rememberComposeMessageController(
                             uri,
                             composeMessageViewModel.photoOrVideoFile?.name,
                             "video/mp4",
-                            discussionViewModel.discussionId!!
+                            discussionId
                         )
                     )
                 }

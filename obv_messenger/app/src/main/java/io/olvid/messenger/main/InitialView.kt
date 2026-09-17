@@ -64,8 +64,8 @@ fun InitialView(
     onCall: Boolean = false,
     editable: Boolean = false,
     selected: Boolean = false,
-    onClick: (() -> Unit)? = null,
     onLongClick: (() -> Unit)? = null,
+    onClick: (() -> Unit)? = null,
 ) {
     val alpha: Float by animateFloatAsState(
         targetValue = if (selected) 0f else 1f,

@@ -37,7 +37,7 @@ fun handleReaction(
     jsonReaction.messageReference?.let { messageReference ->
         if (putMessageOnHoldIfDiscussionIsMissing(
                 db,
-                obvMessage.identifier,
+                obvMessage.identifier!!,
                 obvMessage.serverTimestamp,
                 messageSender,
                 jsonReaction.oneToOneIdentifier,
@@ -104,7 +104,7 @@ fun handleReaction(
             } ?: run {
                 putMessageOnHoldBecauseOfMissingMessage(
                     db,
-                    obvMessage.identifier,
+                    obvMessage.identifier!!,
                     obvMessage.serverTimestamp,
                     discussion,
                     messageReference

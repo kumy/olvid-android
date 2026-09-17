@@ -32,10 +32,16 @@ import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.SearchView.OnQueryTextListener
 import androidx.compose.foundation.layout.consumeWindowInsets
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.ComposeView
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.switchMap
+import io.olvid.messenger.main.contacts.suggested.SuggestedContactsSheet
+import io.olvid.messenger.main.invitations.InvitationRepository
 import io.olvid.messenger.App
 import io.olvid.messenger.AppSingleton
 import io.olvid.messenger.R
@@ -57,14 +63,30 @@ import io.olvid.messenger.openid.KeycloakManager.KeycloakCallback
 
 class ContactListFragment : RefreshingFragment(), ContactMenu {
 
+    companion object {
+        const val RED_DOT_THRESHOLD = 3
+    }
+
     private val contactListViewModel: ContactListViewModel by activityViewModels()
     private var searchView: SearchView? = null
+    private var lastObservedBytesOwnedIdentity: ByteArray? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        // when the profile changes, clear any cached keycloak directory search so the plus-button
+        // "Directory" tab does not show the previous profile's results (see #1257)
+        AppSingleton.getCurrentIdentityLiveData()
+            .observe(viewLifecycleOwner) { ownedIdentity: OwnedIdentity? ->
+                val previous = lastObservedBytesOwnedIdentity
+                val current = ownedIdentity?.bytesOwnedIdentity
+                if (previous != null && !previous.contentEquals(current)) {
+                    contactListViewModel.clearKeycloakSearch()
+                }
+                lastObservedBytesOwnedIdentity = current
+            }
         val unfilteredContacts =
             AppSingleton.getCurrentIdentityLiveData().switchMap { ownedIdentity: OwnedIdentity? ->
                 if (ownedIdentity == null) {
@@ -92,10 +114,17 @@ class ContactListFragment : RefreshingFragment(), ContactMenu {
                 contacts
             )
         }
+        // reuse the shared invitations source (already scoped to the current identity)
+        InvitationRepository.invitations.observe(viewLifecycleOwner) { invitations ->
+            contactListViewModel.setReceivedInvitations(invitations)
+        }
         return ComposeView(requireContext()).apply {
             consumeWindowInsets = false
             setContent {
                 val refreshing by refreshingViewModel.isRefreshing.collectAsStateWithLifecycle()
+                val suggestedContacts by contactListViewModel.suggestedContacts.observeAsState(emptyList())
+                val newSuggestedContactsCount by contactListViewModel.newSuggestedContactsCount.observeAsState(0)
+                var showSuggestedContacts by rememberSaveable { mutableStateOf(false) }
                 ContactListScreen(
                     contactListViewModel = contactListViewModel,
                     refreshing = refreshing,
@@ -105,7 +134,20 @@ class ContactListFragment : RefreshingFragment(), ContactMenu {
                     onScrollStart = ::dismissKeyboard,
                     contactMenu = this@ContactListFragment,
                     addPlusButtonBottomPadding = true,
+                    suggestedContactsCount = suggestedContacts.size,
+                    newSuggestedContactsCount = newSuggestedContactsCount,
+                    onOpenSuggestedContacts = { showAllContacts ->
+                        contactListViewModel.snapshotSuggestedContacts(showAllContacts)
+                        contactListViewModel.markSuggestedContactsSeen(contactListViewModel.suggestedContactsSnapshot)
+                        showSuggestedContacts = true
+                    },
                 )
+                if (showSuggestedContacts) {
+                    SuggestedContactsSheet(
+                        items = contactListViewModel.suggestedContactsSnapshot,
+                        onDismiss = { showSuggestedContacts = false },
+                    )
+                }
             }
         }
     }
@@ -122,53 +164,67 @@ class ContactListFragment : RefreshingFragment(), ContactMenu {
                     )
                 }
 
-                KEYCLOAK -> if (contactOrKeycloakDetails.keycloakUserDetails != null
-                    && ContactCacheSingleton.getContactCacheInfo(contactOrKeycloakDetails.keycloakUserDetails.identity) == null) {
-                    try {
-                        val name = contactOrKeycloakDetails.getAnnotatedName()
-                        val builder: Builder = SecureAlertDialogBuilder(
-                            requireActivity(), R.style.CustomAlertDialog
-                        )
-                        builder.setTitle(R.string.dialog_title_add_keycloak_user)
-                            .setMessage(
-                                getString(
-                                    R.string.dialog_message_add_keycloak_user,
-                                    contactOrKeycloakDetails.getAnnotatedName()
-                                )
+                KEYCLOAK -> contactOrKeycloakDetails.keycloakUserDetails?.let { keycloakUserDetails ->
+                    val contactCacheInfo =
+                        ContactCacheSingleton.getContactCacheInfo(keycloakUserDetails.identity)
+                    when {
+                        contactCacheInfo == null -> runCatching {
+                            val name = contactOrKeycloakDetails.getAnnotatedName()
+                            val builder: Builder = SecureAlertDialogBuilder(
+                                requireActivity(), R.style.CustomAlertDialog
                             )
-                            .setNegativeButton(R.string.button_label_cancel, null)
-                            .setPositiveButton(R.string.button_label_add_contact) { _, _ ->
-                                KeycloakManager.addContact(
-                                    ownedIdentity.bytesOwnedIdentity,
-                                    contactOrKeycloakDetails.keycloakUserDetails.id,
-                                    contactOrKeycloakDetails.keycloakUserDetails.identity,
-                                    object : KeycloakCallback<Void?> {
-                                        override fun success(result: Void?) {
-                                            App.toast(
-                                                getString(
-                                                    R.string.toast_message_contact_added,
-                                                    name
-                                                ), Toast.LENGTH_SHORT, Gravity.BOTTOM
-                                            )
-                                        }
+                            builder.setTitle(R.string.dialog_title_add_keycloak_user)
+                                .setMessage(
+                                    getString(
+                                        R.string.dialog_message_add_keycloak_user,
+                                        contactOrKeycloakDetails.getAnnotatedName()
+                                    )
+                                )
+                                .setNegativeButton(R.string.button_label_cancel, null)
+                                .setPositiveButton(R.string.button_label_add_contact) { _, _ ->
+                                    KeycloakManager.addContact(
+                                        ownedIdentity.bytesOwnedIdentity,
+                                        keycloakUserDetails.id,
+                                        keycloakUserDetails.identity,
+                                        object : KeycloakCallback<Void?> {
+                                            override fun success(result: Void?) {
+                                                App.toast(
+                                                    getString(
+                                                        R.string.toast_message_contact_added,
+                                                        name
+                                                    ), Toast.LENGTH_SHORT, Gravity.BOTTOM
+                                                )
+                                            }
 
-                                        override fun failed(rfc: Int) {
-                                            App.toast(
-                                                R.string.toast_message_error_retry,
-                                                Toast.LENGTH_SHORT
-                                            )
-                                        }
-                                    })
+                                            override fun failed(rfc: Int) {
+                                                App.toast(
+                                                    R.string.toast_message_error_retry,
+                                                    Toast.LENGTH_SHORT
+                                                )
+                                            }
+                                        })
+                                }
+                            builder.create().show()
+                        }
+
+                        !contactCacheInfo.oneToOne -> keycloakUserDetails.identity?.let { contactBytes ->
+                            App.runThread {
+                                AppDatabase.getInstance().contactDao().get(
+                                    ownedIdentity.bytesOwnedIdentity,
+                                    contactBytes
+                                )?.let { contact ->
+                                    activity?.runOnUiThread { inviteClicked(contact) }
+                                }
                             }
-                        builder.create().show()
-                    } catch (_: Exception) { }
-                } else {
-                    contactOrKeycloakDetails.keycloakUserDetails?.identity?.let { contactBytes ->
-                        App.openContactDetailsActivity(
-                            requireContext(),
-                            ownedIdentity.bytesOwnedIdentity,
-                            contactBytes
-                        )
+                        }
+
+                        else -> keycloakUserDetails.identity?.let { contactBytes ->
+                            App.openContactDetailsActivity(
+                                requireContext(),
+                                ownedIdentity.bytesOwnedIdentity,
+                                contactBytes
+                            )
+                        }
                     }
                 }
 

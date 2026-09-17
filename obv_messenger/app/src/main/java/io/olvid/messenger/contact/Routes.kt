@@ -34,6 +34,7 @@ import io.olvid.messenger.databases.entity.Contact
 object Routes {
     const val CONTACT_DETAILS = "contact_details"
     const val FULL_GROUPS_LIST = "full_groups_list"
+    const val ADD_TO_GROUPS = "add_to_groups"
     const val TRUST_ORIGINS = "trust_origins"
     const val CONTACT_INTRODUCTION = "contact_introduction"
 }
@@ -43,6 +44,7 @@ fun NavGraphBuilder.contactDetails(
     contactDetailsViewModel: ContactDetailsViewModel,
     imageClick: (String?) -> Unit = {},
     onFullGroupsList: () -> Unit = {},
+    onAddToGroups: () -> Unit = {},
     onIntroduce: () -> Unit = {},
     onTrustOrigins: () -> Unit = {},
     sharedTransitionScope: SharedTransitionScope,
@@ -59,8 +61,27 @@ fun NavGraphBuilder.contactDetails(
             imageClick = imageClick,
             onIntroduce = onIntroduce,
             onFullGroupsList = onFullGroupsList,
+            onAddToGroups = onAddToGroups,
             onTrustOrigins = onTrustOrigins,
             sharedTransitionScope = sharedTransitionScope
+        )
+    }
+}
+
+fun NavGraphBuilder.addToGroups(
+    contactDetailsViewModel: ContactDetailsViewModel,
+    onDone: () -> Unit,
+) {
+    composable(
+        Routes.ADD_TO_GROUPS,
+        enterTransition = { slideIntoContainer(SlideDirection.Start) },
+        exitTransition = { slideOutOfContainer(SlideDirection.Start) },
+        popEnterTransition = { slideIntoContainer(SlideDirection.End) },
+        popExitTransition = { slideOutOfContainer(SlideDirection.End) },
+    ) {
+        AddContactToGroupsScreen(
+            contactDetailsViewModel = contactDetailsViewModel,
+            onDone = onDone
         )
     }
 }

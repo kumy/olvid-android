@@ -97,6 +97,7 @@ fun ContactDetailsScreen(
     imageClick: (String?) -> Unit = {},
     onIntroduce: () -> Unit = {},
     onFullGroupsList: () -> Unit = {},
+    onAddToGroups: () -> Unit = {},
     onTrustOrigins: () -> Unit = {},
     sharedTransitionScope: SharedTransitionScope,
 ) {
@@ -223,10 +224,10 @@ fun ContactDetailsScreen(
             }
         }
 
-        // not one to one
+        // not one to one (only show if an invite can actually be sent)
         val invitation = contactAndInvitation?.value?.invitation
         AnimatedVisibility(
-            visible = contact?.oneToOne == false && contact.active,
+            visible = contact?.oneToOne == false && contact.active && (contact.hasChannelOrPreKey() || contact.keycloakManaged),
             enter = if (disableEnterTransitionScope) EnterTransition.None else fadeIn() + expandVertically()
         ) {
             Column {
@@ -488,6 +489,53 @@ fun ContactDetailsScreen(
                             tint = colorResource(R.color.greyTint),
                             contentDescription = null
                         )
+                    }
+                }
+            }
+        }
+
+        // group actions
+        if (contact?.active == true && contact.capabilityGroupsV2 && contact.hasChannelOrPreKey()) {
+            val adminGroups = contactDetailsViewModel.adminGroups?.observeAsState()
+            Spacer(modifier = Modifier.height(16.dp))
+            Column(
+                modifier = Modifier
+                    .background(
+                        color = colorResource(R.color.lighterGrey),
+                        shape = RoundedCornerShape(10.dp)
+                    )
+                    .clip(RoundedCornerShape(10.dp))
+            ) {
+                OlvidActionRow(
+                    icon = R.drawable.ic_group_add,
+                    label = stringResource(
+                        R.string.label_create_group_with_contact,
+                        contact.firstNameOrCustom.orEmpty()
+                    )
+                ) {
+                    App.openGroupCreationActivityForCloning(
+                        context,
+                        null,
+                        null,
+                        null,
+                        listOf(contact),
+                        null
+                    )
+                }
+                if (adminGroups?.value.isNullOrEmpty().not()) {
+                    HorizontalDivider(
+                        modifier = Modifier.padding(horizontal = 16.dp),
+                        thickness = 1.dp,
+                        color = colorResource(R.color.lightGrey)
+                    )
+                    OlvidActionRow(
+                        icon = R.drawable.ic_group,
+                        label = stringResource(
+                            R.string.label_add_contact_to_a_group,
+                            contact.firstNameOrCustom.orEmpty()
+                        )
+                    ) {
+                        onAddToGroups()
                     }
                 }
             }

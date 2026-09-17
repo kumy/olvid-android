@@ -28,10 +28,12 @@ import io.olvid.engine.engine.types.JsonIdentityDetails
 import io.olvid.messenger.R
 import io.olvid.messenger.customClasses.BytesKey
 import io.olvid.messenger.customClasses.StringUtils
+import io.olvid.messenger.customClasses.StringUtils2
 import io.olvid.messenger.customClasses.jsonIdentityDetails
 import io.olvid.messenger.databases.dao.Group2MemberDao.Group2MemberOrPending
 import io.olvid.messenger.databases.entity.Contact
 import io.olvid.messenger.settings.SettingsActivity
+import io.olvid.messenger.viewModels.FilteredDiscussionListViewModel.SearchableDiscussion
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -44,22 +46,36 @@ data class GroupMember(
     val fullSearchDisplayName: String,
     val pending: Boolean,
     val isAdmin: Boolean,
+    val permissionSendMessage: Boolean = true,
     val isYou: Boolean = false,
     val removableFromRow: Boolean = true,
-    var selected: Boolean
+    var selected: Boolean,
+    /**
+     * When non-null, this entry represents a discussion (1-1, Group, or Group v2) — used by
+     * the share-extension picker to render both contacts and groups in a single list.
+     * Avatar, title and subtitle are taken from this SearchableDiscussion instead of [contact] /
+     * [jsonIdentityDetails], and [discussionId] feeds the send pipeline directly.
+     * Defaults to null, so existing callers are unaffected.
+     */
+    val searchableDiscussion: SearchableDiscussion? = null,
 ) {
+    /** Convenience accessor for the share-extension fan-out. */
+    val discussionId: Long? get() = searchableDiscussion?.discussionId
+
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (other !is GroupMember) return false
 
         if (pending != other.pending) return false
         if (isAdmin != other.isAdmin) return false
+        if (permissionSendMessage != other.permissionSendMessage) return false
         if (removableFromRow != other.removableFromRow) return false
         if (selected != other.selected) return false
         if (!bytesIdentity.contentEquals(other.bytesIdentity)) return false
         if (contact != other.contact) return false
         if (jsonIdentityDetails != other.jsonIdentityDetails) return false
         if (fullSearchDisplayName != other.fullSearchDisplayName) return false
+        if (searchableDiscussion?.discussionId != other.searchableDiscussion?.discussionId) return false
 
         return true
     }
@@ -67,12 +83,14 @@ data class GroupMember(
     override fun hashCode(): Int {
         var result = pending.hashCode()
         result = 31 * result + isAdmin.hashCode()
+        result = 31 * result + permissionSendMessage.hashCode()
         result = 31 * result + removableFromRow.hashCode()
         result = 31 * result + selected.hashCode()
         result = 31 * result + bytesIdentity.contentHashCode()
         result = 31 * result + (contact?.hashCode() ?: 0)
         result = 31 * result + (jsonIdentityDetails?.hashCode() ?: 0)
         result = 31 * result + fullSearchDisplayName.hashCode()
+        result = 31 * result + (searchableDiscussion?.discussionId?.hashCode() ?: 0)
         return result
     }
 }
@@ -109,6 +127,10 @@ class GroupMembersViewModel : ViewModel() {
         filterMembers()
     }
 
+    fun clearSelectedMembers() {
+        selectedMembers = emptySet()
+    }
+
     private fun filterMembers() {
         viewModelScope.launch(Dispatchers.IO) {
             val result = if (filterPatterns.isEmpty()) {
@@ -120,6 +142,8 @@ class GroupMembersViewModel : ViewModel() {
                             member.fullSearchDisplayName
                         ).find()
                     }
+                }.sortedBy {
+                    StringUtils2.searchMatchRank(it.fullSearchDisplayName, currentFilter)
                 }
             }
             withContext(Dispatchers.Main) {
@@ -187,6 +211,7 @@ fun Group2MemberOrPending.toGroupMember(
             ),
         pending = pending,
         isAdmin = permissionAdmin,
+        permissionSendMessage = permissionSendMessage,
         removableFromRow = removableFromRow,
         selected = selected
     )
@@ -204,9 +229,30 @@ fun Contact.toGroupMember(selected: Boolean = false): GroupMember {
     )
 }
 
+// whether the "read only" tag should be displayed for this member: either the group type makes
+// all non-admins read-only, or the member itself lacks the send message permission (keycloak groups)
+fun GroupMember.isReadOnly(nonAdminsReadOnly: Boolean): Boolean {
+    return if (isYou) !permissionSendMessage else nonAdminsReadOnly || !permissionSendMessage
+}
+
 fun GroupMember.getDisplayName(context: Context): String {
+    searchableDiscussion?.let { return it.title }
     return contact?.customDisplayName ?: jsonIdentityDetails?.formatFirstAndLastName(
         SettingsActivity.contactDisplayNameFormat,
         SettingsActivity.uppercaseLastName
     ) ?: context.getString(R.string.text_unable_to_display_contact_name)
+}
+
+fun SearchableDiscussion.toGroupMember(selected: Boolean = false): GroupMember {
+    return GroupMember(
+        bytesIdentity = byteIdentifier,
+        contact = null,
+        jsonIdentityDetails = null,
+        fullSearchDisplayName = patternMatchingField,
+        pending = false,
+        isAdmin = false,
+        removableFromRow = true,
+        selected = selected,
+        searchableDiscussion = this,
+    )
 }

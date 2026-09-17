@@ -23,12 +23,9 @@ import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
@@ -44,9 +41,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
-import io.olvid.messenger.App
 import io.olvid.messenger.AppSingleton
-import io.olvid.messenger.R
+import io.olvid.messenger.customClasses.StringUtils
+import io.olvid.messenger.customClasses.StringUtils2
 import io.olvid.messenger.designsystem.components.DialogSecure
 import io.olvid.messenger.history_transfer.HistoryTransferActivity
 import io.olvid.messenger.history_transfer.IncomingTransferConfirmationDialog
@@ -316,89 +313,53 @@ class HistoryTransferPreferenceFragment : Fragment() {
     }
 
     private fun startWebRtcExport(bytesCurrentIdentity: ByteArray, otherDeviceUid: ByteArray, exportScope: ExportScope) {
-        App.runThread {
-            TransferService.initiateHistoryTransferToOtherDevice(
+        context?.let { context ->
+            TransferService.initiateHistoryTransferAndShowProgress(
+                context = context,
                 transferTransportType = TransferTransportType.WebRtcWithOwnedDevice(
                     bytesOwnedIdentity = bytesCurrentIdentity,
                     bytesOtherDeviceUid = otherDeviceUid,
                 ),
                 transferScope = TransferScope.Profile(messagesOnly = exportScope == ExportScope.MESSAGES_ONLY)
-            )?.let { transferId ->
-                Handler(Looper.getMainLooper()).post {
-                    context?.startActivity(
-                        Intent(
-                            context,
-                            HistoryTransferActivity::class.java
-                        ).apply {
-                            putExtra(HistoryTransferActivity.TRANSFER_ID_INTENT_EXTRA, transferId)
-                            flags = Intent.FLAG_ACTIVITY_NEW_TASK
-                        })
-                }
-            } ?: run {
-                App.toast(R.string.toast_message_unable_to_start_transfer, Toast.LENGTH_SHORT)
-            }
+            )
         }
     }
 
     private fun onExportToZipFileSelected(writableZipUri: Uri, password: String?, exportScope: ExportScope) {
-        App.runThread {
-            AppSingleton.getBytesCurrentIdentity()?.let { bytesCurrentIdentity ->
-                TransferService.initiateHistoryTransferToOtherDevice(
+        AppSingleton.getBytesCurrentIdentity()?.let { bytesCurrentIdentity ->
+            context?.let { context ->
+                TransferService.initiateHistoryTransferAndShowProgress(
+                    context = context,
                     transferTransportType = TransferTransportType.ZipFileExport(
                         bytesOwnedIdentity = bytesCurrentIdentity,
                         zipWritableFileUri = writableZipUri,
                         password = password
                     ),
                     transferScope = TransferScope.Profile(messagesOnly = exportScope == ExportScope.MESSAGES_ONLY)
-                )?.let { transferId ->
-                    Handler(Looper.getMainLooper()).post {
-                        context?.startActivity(
-                            Intent(
-                                context,
-                                HistoryTransferActivity::class.java
-                            ).apply {
-                                putExtra(
-                                    HistoryTransferActivity.TRANSFER_ID_INTENT_EXTRA,
-                                    transferId
-                                )
-                                flags = Intent.FLAG_ACTIVITY_NEW_TASK
-                            })
-                    }
-                } ?: run {
-                    App.toast(R.string.toast_message_unable_to_start_transfer, Toast.LENGTH_SHORT)
-                }
+                )
             }
         }
     }
 
     private fun onImportFromZipFileSelected(bytesOwnedIdentity: ByteArray, readableZipUri: Uri, password: String?) {
-        App.runThread {
-            TransferService.initiateHistoryTransferToOtherDevice(
+        context?.let { context ->
+            TransferService.initiateHistoryTransferAndShowProgress(
+                context = context,
                 transferTransportType = TransferTransportType.ZipFileImport(
                     bytesOwnedIdentity = bytesOwnedIdentity,
                     zipReadableFileUri = readableZipUri,
                     password = password
                 ),
                 transferScope = TransferScope.Profile(messagesOnly = false)
-            )?.let { transferId ->
-                Handler(Looper.getMainLooper()).post {
-                    context?.startActivity(
-                        Intent(
-                            context,
-                            HistoryTransferActivity::class.java
-                        ).apply {
-                            putExtra(HistoryTransferActivity.TRANSFER_ID_INTENT_EXTRA, transferId)
-                            flags = Intent.FLAG_ACTIVITY_NEW_TASK
-                        })
-                }
-            } ?: run {
-                App.toast(R.string.toast_message_unable_to_start_transfer, Toast.LENGTH_SHORT)
-            }
+            )
         }
     }
 }
 
-fun Long.toExportFileName(): String {
+fun Long.toExportFileName(discussionName: String? = null): String {
     val formatter = DateTimeFormatter.ofPattern("yyyy_MM_dd").withZone(ZoneId.systemDefault())
-    return "olvid_export_${formatter.format(Instant.ofEpochMilli(this))}.zip"
+    val suffix = discussionName?.let {
+        "_" + StringUtils.unAccent(it).replace(StringUtils2.whitespaceRegex, "_")
+    } ?: ""
+    return "olvid_export_${formatter.format(Instant.ofEpochMilli(this))}$suffix.zip"
 }

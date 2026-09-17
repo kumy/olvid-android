@@ -282,4 +282,20 @@
 		<item quantity="one" state="needs_review" hash="-1393207312">%1$d meddelandet har kopierats till urklipp</item>
 		<item quantity="other" state="needs_review" hash="-604999755">%1$d meddelanden kopierade till urklipp</item>
 	</plurals>
+	<plurals name="label_share_destinations_count" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="423387012">%1$d mottagare</item>
+		<item quantity="other" state="needs_review" hash="-431979656">%1$d mottagare</item>
+	</plurals>
+	<plurals name="label_share_to_recipients" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="-1217959784">Dela med %1$d mottagare</item>
+		<item quantity="other" state="needs_review" hash="1864148690">Dela med %1$d mottagare</item>
+	</plurals>
+	<plurals name="toast_message_shared_to_recipients" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="-373807760">Delat med %1$d</item>
+		<item quantity="other" state="needs_review" hash="-1412037000">Delat med %1$d mottagare</item>
+	</plurals>
+	<plurals name="button_label_add_to_groups" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="1622654043">Lägg till i %1$d-gruppen</item>
+		<item quantity="other" state="needs_review" hash="-1655824151">Lägg till i %1$d-grupper</item>
+	</plurals>
 </resources>

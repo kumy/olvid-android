@@ -76,12 +76,13 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import io.olvid.messenger.R
 import io.olvid.messenger.designsystem.theme.OlvidTypography
-import io.olvid.messenger.onboarding.OnboardingActivity
+import io.olvid.messenger.onboarding.flow.OnboardingFlowActivity
 import io.olvid.messenger.onboarding.flow.BackupKeyCheckState
 import io.olvid.messenger.onboarding.flow.OnboardingAction
 import io.olvid.messenger.onboarding.flow.OnboardingRoutes
 import io.olvid.messenger.onboarding.flow.OnboardingScreen
 import io.olvid.messenger.onboarding.flow.OnboardingStep
+import io.olvid.messenger.onboarding.flow.screens.profile.ProfileManagedByOrganization
 
 
 fun NavGraphBuilder.backupV2LoadOrInput(
@@ -93,6 +94,7 @@ fun NavGraphBuilder.backupV2LoadOrInput(
     onLoadFailed: () -> Unit,
     onDeviceBackupLoaded: () -> Unit,
     onCreateNewProfile: () -> Unit,
+    onManagedProfile: () -> Unit,
     onBack: () -> Unit,
     onClose: () -> Unit,
 ) {
@@ -103,8 +105,6 @@ fun NavGraphBuilder.backupV2LoadOrInput(
         popEnterTransition = { slideIntoContainer(AnimatedContentTransitionScope.SlideDirection.End) },
         popExitTransition = { slideOutOfContainer(AnimatedContentTransitionScope.SlideDirection.End) }
     ) {
-        val context = LocalContext.current
-        val scanLauncher = rememberLauncherForActivityResult(ActivityResultContracts.StartActivityForResult()) {}
         var showNoKeyDialog by remember { mutableStateOf(false) }
 
         var keyLoaded by remember { mutableStateOf(false) }
@@ -214,32 +214,7 @@ fun NavGraphBuilder.backupV2LoadOrInput(
                 }
             ),
             footer = {
-                Text(
-                    modifier = Modifier.padding(16.dp),
-                    text = buildAnnotatedString {
-                        append(stringResource(id = R.string.onboarding_managed_profile_question))
-                        append(" ")
-                        withLink(
-                            LinkAnnotation.Clickable(
-                                tag = "",
-                                styles = TextLinkStyles(SpanStyle(color = colorResource(id = R.color.blueOrWhite))),
-                                linkInteractionListener = {
-                                    scanLauncher.launch(
-                                        Intent(
-                                            context,
-                                            OnboardingActivity::class.java
-                                        )
-                                    )
-                                }
-                            ),
-                        ) {
-                            append(stringResource(id = R.string.onboarding_managed_profile_hyperlink))
-                        }
-                    },
-                    textAlign = TextAlign.Center,
-                    color = colorResource(id = R.color.greyTint),
-                    style = OlvidTypography.body2,
-                )
+                ProfileManagedByOrganization(onClick = onManagedProfile)
             },
             onBack = onBack,
             onClose = onClose
@@ -343,6 +318,6 @@ fun ExistingProfilePreview() {
         navController = rememberNavController(),
         startDestination = OnboardingRoutes.BACKUP_V2_LOAD_OR_INPUT,
     ) {
-        backupV2LoadOrInput(mutableStateOf(true), mutableStateOf(BackupKeyCheckState.NONE), {}, {}, {}, {}, {}, {}, {}, {})
+        backupV2LoadOrInput(mutableStateOf(true), mutableStateOf(BackupKeyCheckState.NONE), {}, {}, {}, {}, {}, {}, {}, {}, {})
     }
 }

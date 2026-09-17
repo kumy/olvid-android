@@ -62,26 +62,36 @@ class OwnedIdentityDetailsViewModel : ViewModel() {
             _bytesOwnedIdentity = value
         }
 
-    var firstName: String? = null
+    // backed by Compose state so the edit form can bind directly (single source of truth) and reflect
+    // asynchronous prefills (e.g. keycloak-managed details) without snapshotting into local state
+    private val _firstName = mutableStateOf<String?>(null)
+    var firstName: String?
+        get() = _firstName.value
         set(value) {
-            field = value
+            _firstName.value = value
             refreshInitialView()
             checkValid()
         }
-    var lastName: String? = null
+    private val _lastName = mutableStateOf<String?>(null)
+    var lastName: String?
+        get() = _lastName.value
         set(value) {
-            field = value
+            _lastName.value = value
             refreshInitialView()
             checkValid()
         }
-    var company: String? = null
+    private val _company = mutableStateOf<String?>(null)
+    var company: String?
+        get() = _company.value
         set(value) {
-            field = value
+            _company.value = value
             checkValid()
         }
-    var position: String? = null
+    private val _position = mutableStateOf<String?>(null)
+    var position: String?
+        get() = _position.value
         set(value) {
-            field = value
+            _position.value = value
             checkValid()
         }
     var nickname: String? = null
@@ -138,8 +148,9 @@ class OwnedIdentityDetailsViewModel : ViewModel() {
     }
 
     var takePictureUri: Uri? = null
-    var pictureLocked: Boolean = false
-    var detailsLocked: Boolean = false
+    // Compose state so the form's enabled/editable state and photo affordance update reactively
+    var pictureLocked: Boolean by mutableStateOf(false)
+    var detailsLocked: Boolean by mutableStateOf(false)
     var isIdentityInactive: Boolean = false
 
     val valid = MutableLiveData(INVALID)
@@ -159,12 +170,14 @@ class OwnedIdentityDetailsViewModel : ViewModel() {
         oldDetails = identityDetails
         oldNickname = nickname
         oldProfileHidden = profileHidden
+        // also reset password in case we already edited the profile before
+        setPasswordAndSalt(null, null)
 
         absolutePhotoUrl = App.absolutePathFromRelative(identityDetails.photoUrl)
-        firstName = identityDetails.identityDetails.firstName
-        lastName = identityDetails.identityDetails.lastName
-        company = identityDetails.identityDetails.company
-        position = identityDetails.identityDetails.position
+        firstName = identityDetails.identityDetails?.firstName
+        lastName = identityDetails.identityDetails?.lastName
+        company = identityDetails.identityDetails?.company
+        position = identityDetails.identityDetails?.position
         this.nickname = nickname
         this.isProfileHidden = profileHidden
         checkValid()
@@ -290,7 +303,7 @@ class OwnedIdentityDetailsViewModel : ViewModel() {
                 AppSingleton.getEngine().getOwnedIdentityPublishedAndLatestDetails(bytesOwnedIdentity)
             }
             if (details != null && details.isNotEmpty()) {
-                val published = details[0]
+                val published = details[0]!!
                 publishedDetails = published
 
                 if (details.size == 2) {

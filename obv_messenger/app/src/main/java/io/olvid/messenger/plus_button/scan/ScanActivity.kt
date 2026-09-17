@@ -73,7 +73,7 @@ class ScanActivity : LockableActivity() {
         setContent {
             val mutualScanFinishedListener = remember {
                 object : SimpleEngineNotificationListener(EngineNotifications.MUTUAL_SCAN_CONTACT_ADDED) {
-                    override fun callback(userInfo: HashMap<String, Any>) {
+                    override fun callback(userInfo: HashMap<String, Any?>) {
                         plusButtonViewModel.mutualScanUrl?.let { mutualScanUrl ->
                             val signature =
                                 userInfo[EngineNotifications.MUTUAL_SCAN_CONTACT_ADDED_SIGNATURE_KEY] as ByteArray?
@@ -84,7 +84,7 @@ class ScanActivity : LockableActivity() {
 
                             if (bytesOwnedIdentity != null
                                 && bytesContactIdentity != null
-                                && mutualScanUrl.bytesIdentity.contentEquals(bytesOwnedIdentity)
+                                && mutualScanUrl.getBytesIdentity()!!.contentEquals(bytesOwnedIdentity)
                                 && plusButtonViewModel.mutualScanBytesContactIdentity.contentEquals(bytesContactIdentity)
                                 && mutualScanUrl.signature.contentEquals(signature)
                             ) {

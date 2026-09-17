@@ -511,6 +511,18 @@ public interface MessageDao {
             " ORDER BY mess." + Message.TIMESTAMP + " ASC")
     @NonNull List<Message> getInboundMessagesReceivedInWindow(@NonNull byte[] bytesOwnedIdentity, long startTimestamp, long endTimestamp);
 
+    // Same as above but restricted to a single discussion (used for discussion-only mute recap).
+    @Query("SELECT mess.* FROM " + Message.TABLE_NAME + " AS mess " +
+            " LEFT JOIN " + MessageMetadata.TABLE_NAME + " AS meta ON meta." + MessageMetadata.MESSAGE_ID + " = mess.id AND meta." + MessageMetadata.KIND + " = " + MessageMetadata.KIND_DELIVERED +
+            " WHERE mess." + Message.DISCUSSION_ID + " = :discussionId " +
+            " AND mess." + Message.MESSAGE_TYPE + " IN (" + Message.TYPE_INBOUND_MESSAGE + "," + Message.TYPE_INBOUND_EPHEMERAL_MESSAGE + ") " +
+            " AND mess." + Message.STATUS + " = " + Message.STATUS_UNREAD +
+            " AND mess." + Message.WIPE_STATUS + " = " + Message.WIPE_STATUS_NONE +
+            " AND COALESCE(meta." + MessageMetadata.TIMESTAMP + ", mess." + Message.TIMESTAMP + ") >= :startTimestamp " +
+            " AND COALESCE(meta." + MessageMetadata.TIMESTAMP + ", mess." + Message.TIMESTAMP + ") < :endTimestamp " +
+            " ORDER BY mess." + Message.TIMESTAMP + " ASC")
+    @NonNull List<Message> getInboundMessagesReceivedInWindowForDiscussion(long discussionId, long startTimestamp, long endTimestamp);
+
 
     @Query("SELECT COUNT(*) FROM " + Message.TABLE_NAME + " AS mess " +
             " INNER JOIN " + Discussion.TABLE_NAME + " AS disc ON mess." + Message.DISCUSSION_ID + " = disc.id " +

@@ -23,6 +23,7 @@ import android.content.Intent
 import android.content.res.Configuration
 import androidx.activity.compose.LocalActivity
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.EnterTransition
 import androidx.compose.animation.core.MutableTransitionState
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.expandVertically
@@ -98,7 +99,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import androidx.core.content.edit
 import androidx.preference.PreferenceManager
@@ -111,7 +111,7 @@ import io.olvid.messenger.databases.entity.Discussion
 import io.olvid.messenger.databases.tasks.PropagatePinnedDiscussionsChangeTask
 import io.olvid.messenger.designsystem.components.DialogSecure
 import io.olvid.messenger.designsystem.cutoutHorizontalPadding
-import io.olvid.messenger.designsystem.plus
+import androidx.compose.foundation.layout.plus
 import io.olvid.messenger.designsystem.scaledDp
 import io.olvid.messenger.designsystem.systemBarsHorizontalPadding
 import io.olvid.messenger.designsystem.theme.OlvidTypography
@@ -136,9 +136,11 @@ import io.olvid.messenger.main.search.GlobalSearchViewModel
 import io.olvid.messenger.main.tips.TipItem
 import io.olvid.messenger.main.tips.TipsViewModel
 import io.olvid.messenger.settings.SettingsActivity
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import sh.calvin.reorderable.ReorderableItem
 import sh.calvin.reorderable.rememberReorderableLazyListState
+import kotlin.time.Duration.Companion.milliseconds
 
 @OptIn(ExperimentalMaterialApi::class, ExperimentalFoundationApi::class)
 @Composable
@@ -170,6 +172,11 @@ fun DiscussionListScreen(
     val currentIdentity by AppSingleton.getCurrentIdentityLiveData().observeAsState()
     var resetScrollCounter by remember { mutableIntStateOf(9) }
     var scrollToTop by remember { mutableStateOf(false) }
+    var animateTip by remember { mutableStateOf(true) }
+
+    LaunchedEffect(tipsViewModel.tipToShow == null) {
+        animateTip = true
+    }
 
     if (globalSearchViewModel.filter.isNullOrEmpty().not()) {
         GlobalSearchScreen(
@@ -457,15 +464,20 @@ fun DiscussionListScreen(
                                                     targetState = true
                                                 }
                                             }
+
                                             AnimatedVisibility(
                                                 visibleState = visibleState,
-                                                enter = expandVertically(
+                                                enter = if (animateTip) expandVertically(
                                                     tween(
                                                         durationMillis = 500,
                                                         delayMillis = 500
                                                     )
-                                                ),
+                                                ) else EnterTransition.None,
                                             ) {
+                                                LaunchedEffect(Unit) {
+                                                    delay(1000.milliseconds)
+                                                    animateTip = false
+                                                }
                                                 Column {
                                                     TipItem(
                                                         refreshTipState = {

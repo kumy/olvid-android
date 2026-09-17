@@ -49,7 +49,7 @@ class EngineNotificationProcessorForGroupsV2 internal constructor(engine: Engine
         }
     }
 
-    override fun callback(notificationName: String, userInfo: HashMap<String, Any>) {
+    override fun callback(notificationName: String?, userInfo: HashMap<String, Any?>) {
         when (notificationName) {
             EngineNotifications.GROUP_V2_CREATED_OR_UPDATED -> {
                 val groupV2 = userInfo[EngineNotifications.GROUP_V2_CREATED_OR_UPDATED_GROUP_KEY] as? ObvGroupV2?

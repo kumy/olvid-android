@@ -22,6 +22,7 @@ package io.olvid.messenger.onboarding.flow.screens.backup
 import android.graphics.Typeface
 import androidx.compose.animation.AnimatedContentTransitionScope.SlideDirection
 import androidx.compose.foundation.layout.widthIn
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
@@ -80,6 +81,7 @@ fun NavGraphBuilder.backupKeyValidation(
                     .widthIn(max = 250.dp)
                     .focusRequester(focusRequester),
                 value = onboardingFlowViewModel.backupSeed ?: "",
+                shape = RoundedCornerShape(12.dp),
                 minLines = 2,
                 label = {
                     Text(text = stringResource(id = R.string.label_backup_key))

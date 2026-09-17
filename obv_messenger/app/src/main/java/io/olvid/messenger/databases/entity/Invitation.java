@@ -28,6 +28,8 @@ import androidx.room.Ignore;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
+import java.util.Arrays;
+import java.util.Objects;
 import java.util.UUID;
 
 import io.olvid.engine.engine.types.JsonIdentityDetails;
@@ -171,5 +173,22 @@ public class Invitation {
             default:
                 return false;
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Invitation that)) return false;
+        return invitationTimestamp == that.invitationTimestamp
+                && categoryId == that.categoryId
+                && Objects.equals(dialogUuid, that.dialogUuid)
+                && Arrays.equals(bytesOwnedIdentity, that.bytesOwnedIdentity)
+                && Arrays.equals(bytesContactIdentity, that.bytesContactIdentity)
+                && Objects.equals(associatedDialog, that.associatedDialog)
+                && Objects.equals(discussionId, that.discussionId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(dialogUuid, Arrays.hashCode(bytesOwnedIdentity), Arrays.hashCode(bytesContactIdentity), associatedDialog, invitationTimestamp, categoryId, discussionId);
     }
 }

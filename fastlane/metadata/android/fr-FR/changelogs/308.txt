@@ -1,0 +1,3 @@
+- Nouvelle façon d'inviter les contacts indirects à une discussion privée en un simple geste.
+- Nouveau parcours d'accueil pour présenter Olvid après une première installation.
+- Amélioration de la visionneuse d'images (et zoom dans les vidéos).

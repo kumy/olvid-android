@@ -1,0 +1,3 @@
+- Neue Wischfunktion, um Gruppenmitglieder einfach zu einer direkten Unterhaltung einzuladen.
+- Neue Einführung, um Olvid neuen Nutzern zu erklären.
+- Verbesserter Bild- und Video-Viewer mit Zoom-Funktion für Videos.

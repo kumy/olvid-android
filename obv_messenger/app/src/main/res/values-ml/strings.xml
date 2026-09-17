@@ -26,8 +26,8 @@
 	<string name="button_label_create_group" state="needs_review" hash="1102939673">ഗ്രൂപ്പ് ഉണ്ടാക്കുക</string>
 	<string name="button_label_discard" state="needs_review" hash="795591204">നിരസിക്കുക</string>
 	<string name="button_label_exchange_digits_with_user" state="needs_review" hash="339599327">%1$s-മായി കോഡുകൾ കൈമാറുക</string>
-	<string name="button_label_generate_new_id" state="needs_review" hash="92014734">പുതിയ ഐഡി ഉണ്ടാക്കുക</string>
-	<string name="button_label_generate_my_id" state="needs_review" hash="-1007060207">എന്റെ ഐഡി ഉണ്ടാക്കുക</string>
+	<string name="button_label_generate_new_id" state="needs_review" hash="-1130516787">ഒരു പുതിയ പ്രൊഫൈൽ സൃഷ്‌ടിക്കുക</string>
+	<string name="button_label_generate_my_id" state="needs_review" hash="239641058">എന്റെ പ്രൊഫൈൽ ഉണ്ടാക്കുക</string>
 	<string name="button_label_ignore" state="needs_review" hash="-806373746">അവഗണിക്കുക</string>
 	<string name="button_label_reject" state="needs_review" hash="-2094664161">നിരസിക്കുക</string>
 	<string name="button_label_introduce" state="needs_review" hash="193852909">അവതരിപ്പിക്കുക</string>
@@ -80,6 +80,12 @@
 	<string name="dialog_title_rename_group" state="needs_review" hash="1461324427">ഗ്രൂപ്പിന്റെ പേര് മാറ്റുക</string>
 	<string name="dialog_title_restart_channel_establishment" state="needs_review" hash="-645769680">ചാനൽ സ്ഥാപനം പുനരാരംഭിക്കണോ?</string>
 	<string name="dialog_title_share_with" state="needs_review" hash="854107768">ഇവരുമായി പങ്കിടുക…</string>
+	<string name="dialog_title_share_recipients" state="needs_review" hash="1157053138">സ്വീകർത്താക്കളെ തിരഞ്ഞെടുക്കുക</string>
+	<string name="share_label_from" state="needs_review" hash="2049052075">നിന്ന്:</string>
+	<string name="share_label_to" state="needs_review" hash="-1785690373">ഇവന്:</string>
+	<string name="share_label_choose_recipients" state="needs_review" hash="1157053138">സ്വീകർത്താക്കളെ തിരഞ്ഞെടുക്കുക</string>
+	<string name="hint_share_message" state="needs_review" hash="-763169957">ഒരു സന്ദേശം ചേർക്കുക…</string>
+	<string name="content_description_delete_attachment" state="needs_review" hash="-220348329">അറ്റാച്ച്‌മെന്റ് നീക്കം ചെയ്യുക</string>
 	<string name="dialog_title_shortcut_to" state="needs_review" hash="-1193591200">…ലേക്കുള്ള കുറുക്കുവഴി ഉണ്ടാക്കുക</string>
 	<string name="explanation_choose_display_name" state="needs_review" hash="1162066686">നിങ്ങളുടെ കോൺടാക്റ്റുകൾക്ക് കാണിക്കുന്നതിന് ഒരു പേര് നൽകുക. ഈ വിവരങ്ങൾ ഒരിക്കലും Olvid-ന്റെ സെർവറുകളിലേക്ക് അയക്കില്ല.</string>
 	<string name="explanation_empty_contact_list" state="needs_review" hash="1240778508">ഇപ്പോൾ കോൺടാക്റ്റുകളൊന്നും ഇല്ല</string>
@@ -88,7 +94,7 @@
 	<string name="explanation_empty_discussion_list_sub" state="needs_review" hash="-1892819595">നിങ്ങളുടെ കോൺടാക്റ്റുകളുമായുള്ളതും ഗ്രൂപ്പുകളുമായുള്ളതുമായ സംഭാഷണങ്ങൾ ഇവിടെ കാണാം.</string>
 	<string name="explanation_empty_group_list" state="needs_review" hash="1498843411">ഇപ്പോൾ ഗ്രൂപ്പുകളൊന്നും ഇല്ല</string>
 	<string name="explanation_empty_group_list_sub" state="needs_review" hash="2063769649">നിങ്ങളുടെ ആദ്യ ഗ്രൂപ്പ് ഉണ്ടാക്കാൻ താഴെയുള്ള നീല നിറത്തിലുള്ള + ബട്ടൺ അമർത്തുക.</string>
-	<string name="explanation_new_group_card" state="needs_review" hash="-1276814682">ഗ്രൂപ്പ് അഡ്മിനിസ്ട്രേറ്റർ ഗ്രൂപ്പ് കാർഡ് അപ്‌ഡേറ്റ് ചെയ്തു. പഴയതും പുതിയതുമായ പതിപ്പുകൾ താഴെ കാണിച്ചിരിക്കുന്നു.\n\nഗ്രൂപ്പിന്റെ വിവരങ്ങൾ അപ്‌ഡേറ്റ് ചെയ്യാൻ \\"അപ്‌ഡേറ്റ്\\" അമർത്തുക.</string>
+	<string name="explanation_new_group_card" state="needs_review" hash="-1276814682">ഗ്രൂപ്പ് അഡ്മിനിസ്ട്രേറ്റർ ഗ്രൂപ്പ് കാർഡ് അപ്‌ഡേറ്റ് ചെയ്തു. പഴയതും പുതിയതുമായ പതിപ്പുകൾ താഴെ കാണിച്ചിരിക്കുന്നു.\n\nഗ്രൂപ്പിന്റെ വിവരങ്ങൾ അപ്‌ഡേറ്റ് ചെയ്യാൻ \"അപ്‌ഡേറ്റ്\" അമർത്തുക.</string>
 	<string name="explanation_new_group_v2_card_name" state="needs_review" hash="1205812893">ഒരു അഡ്‌മിനിസ്‌ട്രേറ്റർ ഗ്രൂപ്പിന്റെ പേര് ഇപ്രകാരം മാറ്റിയെഴുതി:</string>
 	<string name="explanation_new_group_v2_card_description" state="needs_review" hash="-1635384068">ഒരു അഡ്‌മിനിസ്‌ട്രേറ്റർ ഗ്രൂപ്പ് വിവരണം ഇപ്രകാരം മാറ്റിയെഴുതി:</string>
 	<string name="explanation_new_group_v2_card_photo" state="needs_review" hash="-1543823397">ഒരു അഡ്‌മിനിസ്‌ട്രേറ്റർ ഗ്രൂപ്പ് ഫോട്ടോ മാറ്റിയിരിക്കുന്നു.</string>
@@ -104,7 +110,7 @@
 	<string name="explanation_no_message_found" state="needs_review" hash="-1329622990">ഒരു സന്ദേശവും കണ്ടെത്താനായില്ല</string>
 	<string name="explanation_no_attachment_found" state="needs_review" hash="156593369">അറ്റാച്ച്‌മെന്റുകൾ ഒന്നും കണ്ടെത്താനായില്ല</string>
 	<string name="explanation_no_link_found" state="needs_review" hash="-1419950450">ലിങ്ക് കണ്ടെത്താനായില്ല</string>
-	<string name="hint_company" state="needs_review" hash="379200324">കമ്പനി (ആവശ്യമില്ല)</string>
+	<string name="hint_company" state="needs_review" hash="988571519">കമ്പനി</string>
 	<string name="hint_compose_your_message" state="needs_review" hash="-25761578">മെസേജ് എഴുതുക</string>
 	<string name="hint_compose_your_message_ephemeral" state="needs_review" hash="-1527208333">ക്ഷണിക സന്ദേശം</string>
 	<string name="label_edit_your_message" state="needs_review" hash="1091877412">നിങ്ങളുടെ സന്ദേശം എഡിറ്റ് ചെയ്യുക</string>
@@ -133,7 +139,7 @@
 	<string name="hint_last_name" state="needs_review" hash="1701170359">കുടുംബപ്പേര്</string>
 	<string name="hint_new_name" state="needs_review" hash="709842168">പുതിയ പേര്</string>
 	<string name="hint_notification_reply" state="needs_review" hash="1095144032">ഉത്തരം നൽകുക</string>
-	<string name="hint_position" state="needs_review" hash="-55145181">ജോലിയുടെ പേര് (ആവശ്യമില്ല)</string>
+	<string name="hint_position" state="needs_review" hash="1338817744">ജോലിയുടെ പേര്</string>
 	<string name="invitation_label_their_code" state="needs_review" hash="1402501614">അവരുടെ കോഡ്</string>
 	<string name="invitation_label_your_code" state="needs_review" hash="1944546233">നിങ്ങളുടെ കോഡ്</string>
 	<string name="invitation_status_accept_invite" state="needs_review" hash="2100924901">ക്ഷണക്കത്ത് ലഭിച്ചു</string>
@@ -170,6 +176,11 @@
 	<string name="label_group_members" state="needs_review" hash="1460220752">ഗ്രൂപ്പ് അംഗങ്ങൾ</string>
 	<string name="label_other_group_members" state="needs_review" hash="-2121490032">മറ്റ് ഗ്രൂപ്പ് അംഗങ്ങൾ</string>
 	<string name="label_groups_common" state="needs_review" hash="1252823567">പൊதுവായ ഗ്രൂപ്പുകൾ</string>
+	<string name="label_create_group_with_contact" state="needs_review" hash="1950649899">%1$s-ഉമായി ഒരു ഗ്രൂപ്പ് ഉണ്ടാക്കുക</string>
+	<string name="label_add_contact_to_a_group" state="needs_review" hash="-682192937">%1$s-നെ ഒരു ഗ്രൂപ്പിലേക്ക് ചേർക്കുക</string>
+	<string name="label_add_to_groups" state="needs_review" hash="-654216617">ഗ്രൂപ്പുകളിൽ ചേർക്കുക</string>
+	<string name="explanation_no_admin_group_to_add_contact" state="needs_review" hash="402908162">നിങ്ങൾ எந்த ഗ്രൂപ്പിലേക്കും അഡ്മിനല്ല, അതിനാൽ %1$s-നെ അതിലേക്ക് ചേർക്കാൻ കഴിയില്ല.</string>
+	<string name="toast_message_adding_contact_to_groups" state="needs_review" hash="1201697547">%1$s-നെ തിരഞ്ഞെടുത്ത ഗ്രൂപ്പുകളിലേക്ക് ചേർക്കുന്നു...</string>
 	<string name="label_invitation_declined" state="needs_review" hash="2038173833">ക്ഷണത്തെ നിരസിച്ചു</string>
 	<string name="label_new_group_card" state="needs_review" hash="1006740909">ഗ്രൂപ്പ് വിവരങ്ങൾ പുതുക്കി</string>
 	<string name="label_not_part_of_a_group" state="needs_review" hash="1667979596">ഇനിയും ഒരു ഗ്രൂപ്പിൽ അംഗമല്ല</string>
@@ -183,6 +194,7 @@
 	<string name="menu_action_create_shortcut" state="needs_review" hash="-1949455873">ഷോർട്ട്‌കട്ട് ഉണ്ടാക്കുക</string>
 	<string name="menu_action_delete" state="needs_review" hash="-232100842">നീക്കം ചെയ്യുക</string>
 	<string name="menu_action_delete_discussion" state="needs_review" hash="2059656471">സംഭാഷണം നീക്കം ചെയ്യുക</string>
+	<string name="menu_action_export_discussion" state="needs_review" hash="1736692296">സംഭാഷണം കയറ്റുമതി ചെയ്യുക</string>
 	<string name="label_swipe_details" state="needs_review" hash="171468732">വിവരങ്ങൾ</string>
 	<string name="menu_action_disband_group" state="needs_review" hash="-1767089289">ഗ്രൂപ്പ് റദ്ദാക്കുക</string>
 	<string name="menu_action_edit_group_details" state="needs_review" hash="310205135">ഗ്രൂപ്പ് വിവരങ്ങൾ എഡിറ്റ് ചെയ്യുക</string>
@@ -306,7 +318,7 @@
 	<string name="hint_search_group_name" state="needs_review" hash="-265074656">ഗ്രൂപ്പ് പേര് തിരയുക…</string>
 	<string name="menu_action_search" state="needs_review" hash="-2085358317">തിരയുക</string>
 	<string name="toast_message_polling_failed" state="needs_review" hash="402242307">സന്ദേശങ്ങൾ ലഭിക്കുന്നതിൽ പരാജയം സംഭവിച്ചു</string>
-	<string name="dialog_message_battery_optimization" state="needs_review" hash="1191860407">Android-ൽ ബാറ്ററി ഒപ്റ്റിമൈസേഷൻ ചില പശ്ചാത്തല പ്രവർത്തനങ്ങൾ ഒരുമിച്ച് പ്രവർത്തിപ്പിക്കാൻ വൈകിച്ചുകൊണ്ടാണ് പ്രവർത്തിക്കുന്നത്. ഇത് ഇൻകമിംഗ് ഒൽവിഡ് സന്ദേശങ്ങൾ സ്വീകരിക്കുന്നതിൽ കാലതാമസമുണ്ടാക്കാം.\n\nനിങ്ങളുടെ സന്ദേശങ്ങൾ കൃത്യ സമയത്ത് ലഭിക്കുന്നെന്ന് ഉറപ്പാക്കാൻ, ഒൽവിഡ് എപ്പോഴും പശ്ചാത്തലത്തിൽ പ്രവർത്തിക്കാൻ അനുവദിക്കണം. താഴെയുള്ള \\"ക്രമീകരണങ്ങൾ\\" അമർത്തുക, തുടർന്ന് \\"അനുവദിക്കുക\\" അമർത്തുക.</string>
+	<string name="dialog_message_battery_optimization" state="needs_review" hash="1191860407">Android-ൽ ബാറ്ററി ഒപ്റ്റിമൈസേഷൻ ചില പശ്ചാത്തല പ്രവർത്തനങ്ങൾ ഒരുമിച്ച് പ്രവർത്തിപ്പിക്കാൻ വൈകിച്ചുകൊണ്ടാണ് പ്രവർത്തിക്കുന്നത്. ഇത് ഇൻകമിംഗ് ഒൽവിഡ് സന്ദേശങ്ങൾ സ്വീകരിക്കുന്നതിൽ കാലതാമസമുണ്ടാക്കാം.\n\nനിങ്ങളുടെ സന്ദേശങ്ങൾ കൃത്യ സമയത്ത് ലഭിക്കുന്നെന്ന് ഉറപ്പാക്കാൻ, ഒൽവിഡ് എപ്പോഴും പശ്ചാത്തലത്തിൽ പ്രവർത്തിക്കാൻ അനുവദിക്കണം. താഴെയുള്ള \"ക്രമീകരണങ്ങൾ\" അമർത്തുക, തുടർന്ന് \"അനുവദിക്കുക\" അമർത്തുക.</string>
 	<string name="dialog_text_do_not_show_again" state="needs_review" hash="-1081908276">ഈ സന്ദേശം വീണ്ടും കാണിക്കേണ്ടതില്ല</string>
 	<string name="text_user_removed_from_contacts" state="needs_review" hash="-2081817399">നിങ്ങളുടെ കോൺടാക്റ്റുകളിൽ നിന്ന് ഉപയോക്താവിനെ നീക്കം ചെയ്തു</string>
 	<string name="text_user_added_to_contacts" state="needs_review" hash="-792506872">നിങ്ങളുടെ കോൺടാക്റ്റുകളിൽ ഉപയോക്താവിനെ ചേർത്തു</string>
@@ -444,11 +456,11 @@
 	<string name="button_label_generate_new_backup_key" state="needs_review" hash="2125865513">പുതിയ കീ ഉണ്ടാക്കുക</string>
 	<string name="toast_message_backup_failed" state="needs_review" hash="-138183706">ബാക്കപ്പ് ഫയൽ സൃഷ്‌ടിക്കാൻ കഴിഞ്ഞില്ല. ദയവായി വീണ്ടും ശ്രമിക്കുക.</string>
 	<string name="dialog_title_identity_deactivated" state="needs_review" hash="1998160098">ഈ ഉപകരണത്തിൽ നിങ്ങളുടെ പ്രൊഫൈൽ നിർജ്ജീവമാക്കി</string>
-	<string name="dialog_message_identity_deactivated" state="needs_review" hash="2063920395">ഈ ഉപകരണത്തിൽ നിങ്ങളുടെ പ്രൊഫൈൽ നിർജ്ജീവമാക്കിയിരിക്കുന്നു.\n\nഒൽവിഡ്, നിലവിൽ സജീവമായിരിക്കുന്ന ഉപകരണങ്ങളുടെ പട്ടിക വീണ്ടെടുക്കാൻ കഴിഞ്ഞില്ല. ഈ ഉപകരണത്തിൽ നിങ്ങളുടെ പ്രൊഫൈൽ വീണ്ടും സജീവമാക്കുന്നത്, മറ്റേതെങ്കിലും ഉപകരണത്തിൽ അത് നിർജ്ജീവമാക്കിയേക്കാം.\n\nനിങ്ങൾ മുന്നോട്ട് പോകാൻ ആഗ്രഹിക്കുന്നുവെങ്കിൽ, താഴെ കാണുന്ന \\"ഈ ഉപകരണത്തിൽ എന്റെ പ്രൊഫൈൽ വീണ്ടും സജീവമാക്കുക\\" എന്നതിൽ അമർത്തുക. ഒരേസമയം രണ്ട് ഉപകരണങ്ങളിൽ നിന്ന് ഒൽവിഡ് ഉപയോഗിച്ച് സന്ദേശങ്ങൾ അയയ്ക്കുന്നതിനും സ്വീകരിക്കുന്നതിനും ഒരു ലൈസൻസ് ആവശ്യമാണെന്ന് ഓർക്കുക.\n\nഈ ഡയലോഗ് അടയ്ക്കുന്നതിനും ഈ ഉപകരണം നിർജ്ജീവമായി നിലനിർത്തുന്നതിനും \\"രദ്ദാക്കുക\\" എന്നതിൽ അമർത്തുക: ഈ ഉപകരണത്തിൽ നിങ്ങൾക്ക് സന്ദേശങ്ങൾ അയയ്ക്കുകയോ സ്വീകരിക്കുകയോ ചെയ്യാൻ കഴിയില്ല, എന്നാൽ പഴയ സംഭാഷണങ്ങൾ കാണാൻ സാധിക്കും.</string>
-	<string name="dialog_message_identity_deactivated_multi_device" state="needs_review" hash="713165097">ഈ ഉപകരണത്തിൽ നിങ്ങളുടെ പ്രൊഫൈൽ നിർജ്ജീവമാക്കിയിരിക്കുന്നു.\n\nഒന്നിലധികം ഉപകരണങ്ങളിൽ ഒരേസമയം Olvid ഉപയോഗിക്കാൻ നിങ്ങൾക്ക് അനുമതിയുണ്ടെന്ന് തോന്നുന്നു, അതിനാൽ നിങ്ങൾക്ക് എപ്പോൾ വേണമെങ്കിലും നിങ്ങളുടെ പ്രൊഫൈൽ വീണ്ടും സജീവമാക്കാം. നിങ്ങളുടെ നിലവിലെ സജീവ ഉപകരണങ്ങളുടെ പട്ടിക താഴെ നൽകുന്നു.\n\nനിങ്ങൾ മുന്നോട്ട് പോകാൻ ആഗ്രഹിക്കുന്നുവെങ്കിൽ, താഴെയുള്ള \\"ഈ ഉപകരണത്തിൽ എന്റെ പ്രൊഫൈൽ വീണ്ടും സജീവമാക്കുക\\" എന്നതിൽ അമർത്തുക. നിങ്ങളുടെ ഉപകരണം മറ്റ് സജീവ ഉപകരണങ്ങളുമായി സമకాలీకరించുകയും നിങ്ങളുടെ കോൺടാക്റ്റുകളും ഗ്രൂപ്പുകളും അപ്‌ഡേറ്റ് ചെയ്യുകയും ചെയ്യും.\n\nഈ ഡയലോഗ് റദ്ദാക്കി ഈ ഉപകരണം നിർജ്ജീവമായി നിലനിർത്താൻ \\"റദ്ദാക്കുക\\" അമർത്തുക: ഈ ഉപകരണത്തിൽ നിങ്ങൾക്ക് സന്ദേശങ്ങൾ അയയ്‌ക്കാനോ സ്വീകരിക്കാനോ കഴിയില്ല, പക്ഷേ പഴയ സംഭാഷണങ്ങൾ കാണാൻ കഴിയും.</string>
-	<string name="dialog_message_identity_deactivated_no_device" state="needs_review" hash="1487588318">ഈ ഉപകരണത്തിൽ നിങ്ങളുടെ പ്രൊഫൈൽ നിർജ്ജീവമാക്കിയിരിക്കുന്നു.\n\nനിങ്ങൾക്ക് ഇപ്പോൾ പ്രവർത്തനക്ഷമമായ ഒരു ഉപകരണവും ഇല്ലെന്ന് തോന്നുന്നു, അതിനാൽ നിങ്ങൾക്ക് എപ്പോൾ വേണമെങ്കിലും നിങ്ങളുടെ പ്രൊഫൈൽ വീണ്ടും സജീവമാക്കാം.\n\nനിങ്ങൾക്ക് മുന്നോട്ട് പോകാൻ താൽപ്പര്യമുണ്ടെങ്കിൽ, താഴെയുള്ള \\"ഈ ഉപകരണത്തിൽ എന്റെ പ്രൊഫൈൽ വീണ്ടും സജീവമാക്കുക\\" എന്നതിൽ അമർത്തുക.\n\nഈ ഡയലോഗ് റദ്ദാക്കാനും ഈ ഉപകരണം നിർജ്ജീവമായി നിലനിർത്താനും \\"റദ്ദാക്കുക\\" അമർത്തുക: ഈ ഉപകരണത്തിൽ നിങ്ങൾക്ക് സന്ദേശങ്ങൾ അയയ്ക്കുകയോ സ്വീകരിക്കുകയോ കഴിയില്ല, പക്ഷേ പഴയ സംഭാഷണങ്ങൾ കാണാൻ കഴിയും.</string>
+	<string name="dialog_message_identity_deactivated" state="needs_review" hash="2063920395">ഈ ഉപകരണത്തിൽ നിങ്ങളുടെ പ്രൊഫൈൽ നിർജ്ജീവമാക്കിയിരിക്കുന്നു.\n\nഒൽവിഡ്, നിലവിൽ സജീവമായിരിക്കുന്ന ഉപകരണങ്ങളുടെ പട്ടിക വീണ്ടെടുക്കാൻ കഴിഞ്ഞില്ല. ഈ ഉപകരണത്തിൽ നിങ്ങളുടെ പ്രൊഫൈൽ വീണ്ടും സജീവമാക്കുന്നത്, മറ്റേതെങ്കിലും ഉപകരണത്തിൽ അത് നിർജ്ജീവമാക്കിയേക്കാം.\n\nനിങ്ങൾ മുന്നോട്ട് പോകാൻ ആഗ്രഹിക്കുന്നുവെങ്കിൽ, താഴെ കാണുന്ന \"ഈ ഉപകരണത്തിൽ എന്റെ പ്രൊഫൈൽ വീണ്ടും സജീവമാക്കുക\" എന്നതിൽ അമർത്തുക. ഒരേസമയം രണ്ട് ഉപകരണങ്ങളിൽ നിന്ന് ഒൽവിഡ് ഉപയോഗിച്ച് സന്ദേശങ്ങൾ അയയ്ക്കുന്നതിനും സ്വീകരിക്കുന്നതിനും ഒരു ലൈസൻസ് ആവശ്യമാണെന്ന് ഓർക്കുക.\n\nഈ ഡയലോഗ് അടയ്ക്കുന്നതിനും ഈ ഉപകരണം നിർജ്ജീവമായി നിലനിർത്തുന്നതിനും \"രദ്ദാക്കുക\" എന്നതിൽ അമർത്തുക: ഈ ഉപകരണത്തിൽ നിങ്ങൾക്ക് സന്ദേശങ്ങൾ അയയ്ക്കുകയോ സ്വീകരിക്കുകയോ ചെയ്യാൻ കഴിയില്ല, എന്നാൽ പഴയ സംഭാഷണങ്ങൾ കാണാൻ സാധിക്കും.</string>
+	<string name="dialog_message_identity_deactivated_multi_device" state="needs_review" hash="713165097">ഈ ഉപകരണത്തിൽ നിങ്ങളുടെ പ്രൊഫൈൽ നിർജ്ജീവമാക്കിയിരിക്കുന്നു.\n\nഒന്നിലധികം ഉപകരണങ്ങളിൽ ഒരേസമയം Olvid ഉപയോഗിക്കാൻ നിങ്ങൾക്ക് അനുമതിയുണ്ടെന്ന് തോന്നുന്നു, അതിനാൽ നിങ്ങൾക്ക് എപ്പോൾ വേണമെങ്കിലും നിങ്ങളുടെ പ്രൊഫൈൽ വീണ്ടും സജീവമാക്കാം. നിങ്ങളുടെ നിലവിലെ സജീവ ഉപകരണങ്ങളുടെ പട്ടിക താഴെ നൽകുന്നു.\n\nനിങ്ങൾ മുന്നോട്ട് പോകാൻ ആഗ്രഹിക്കുന്നുവെങ്കിൽ, താഴെയുള്ള \"ഈ ഉപകരണത്തിൽ എന്റെ പ്രൊഫൈൽ വീണ്ടും സജീവമാക്കുക\" എന്നതിൽ അമർത്തുക. നിങ്ങളുടെ ഉപകരണം മറ്റ് സജീവ ഉപകരണങ്ങളുമായി സമకాలీకరించുകയും നിങ്ങളുടെ കോൺടാക്റ്റുകളും ഗ്രൂപ്പുകളും അപ്‌ഡേറ്റ് ചെയ്യുകയും ചെയ്യും.\n\nഈ ഡയലോഗ് റദ്ദാക്കി ഈ ഉപകരണം നിർജ്ജീവമായി നിലനിർത്താൻ \"റദ്ദാക്കുക\" അമർത്തുക: ഈ ഉപകരണത്തിൽ നിങ്ങൾക്ക് സന്ദേശങ്ങൾ അയയ്‌ക്കാനോ സ്വീകരിക്കാനോ കഴിയില്ല, പക്ഷേ പഴയ സംഭാഷണങ്ങൾ കാണാൻ കഴിയും.</string>
+	<string name="dialog_message_identity_deactivated_no_device" state="needs_review" hash="1487588318">ഈ ഉപകരണത്തിൽ നിങ്ങളുടെ പ്രൊഫൈൽ നിർജ്ജീവമാക്കിയിരിക്കുന്നു.\n\nനിങ്ങൾക്ക് ഇപ്പോൾ പ്രവർത്തനക്ഷമമായ ഒരു ഉപകരണവും ഇല്ലെന്ന് തോന്നുന്നു, അതിനാൽ നിങ്ങൾക്ക് എപ്പോൾ വേണമെങ്കിലും നിങ്ങളുടെ പ്രൊഫൈൽ വീണ്ടും സജീവമാക്കാം.\n\nനിങ്ങൾക്ക് മുന്നോട്ട് പോകാൻ താൽപ്പര്യമുണ്ടെങ്കിൽ, താഴെയുള്ള \"ഈ ഉപകരണത്തിൽ എന്റെ പ്രൊഫൈൽ വീണ്ടും സജീവമാക്കുക\" എന്നതിൽ അമർത്തുക.\n\nഈ ഡയലോഗ് റദ്ദാക്കാനും ഈ ഉപകരണം നിർജ്ജീവമായി നിലനിർത്താനും \"റദ്ദാക്കുക\" അമർത്തുക: ഈ ഉപകരണത്തിൽ നിങ്ങൾക്ക് സന്ദേശങ്ങൾ അയയ്ക്കുകയോ സ്വീകരിക്കുകയോ കഴിയില്ല, പക്ഷേ പഴയ സംഭാഷണങ്ങൾ കാണാൻ കഴിയും.</string>
 	<string name="dialog_message_identity_deactivated_choose_device" state="needs_review" hash="1063561957">ഈ ഉപകരണത്തിൽ നിങ്ങളുടെ പ്രൊഫൈൽ നിർജ്ജീവമാക്കിയിരിക്കുന്നു.\n\nഒരേസമയം ഒന്നിലധികം ഉപകരണങ്ങളിൽ ഒൽവിഡ് ഉപയോഗിക്കുന്നതിനുള്ള ലൈസൻസ് നിങ്ങൾക്ക് ഇല്ലെന്ന് തോന്നുന്നു. ഈ ഉപകരണം വീണ്ടും സജീവമാക്കുന്നതിന്, നിങ്ങളുടെ മറ്റ് ഒരു ഉപകരണം നിർജ്ജീവമാക്കേണ്ടതുണ്ട്.\n\nനിങ്ങൾ മുന്നോട്ട് പോകാൻ ആഗ്രഹിക്കുന്നുവെങ്കിൽ, താഴെയുള്ള ലിസ്റ്റിൽ നിന്ന് നിങ്ങൾ നിർജ്ജീവമാക്കാൻ ആഗ്രഹിക്കുന്ന ഉപകരണം തിരഞ്ഞെടുത്ത്, തുടർന്ന് \"ഈ ഉപകരണത്തിൽ എന്റെ പ്രൊഫൈൽ വീണ്ടും സജീവമാക്കുക\" എന്നതിൽ അമർത്തുക.\n\nഈ ഡയലോഗ് റദ്ദാക്കാനും ഈ ഉപകരണം നിർജ്ജീവമായി നിലനിർത്താനും \"റദ്ദാക്കുക\" അമർത്തുക: ഈ ഉപകരണത്തിൽ നിങ്ങൾക്ക് സന്ദേശങ്ങൾ അയയ്ക്കുകയോ സ്വീകരിക്കുകയോ ചെയ്യാൻ കഴിയില്ല, പക്ഷേ പഴയ സംഭാഷണങ്ങൾ കാണാൻ കഴിയും.</string>
-	<string name="dialog_message_identity_deactivated_only_expiring" state="needs_review" hash="1765337997">ഈ ഉപകരണത്തിൽ നിങ്ങളുടെ പ്രൊഫൈൽ നിർജ്ജീവമാക്കിയിരിക്കുന്നു.\n\nനിങ്ങളുടെ മറ്റ് എല്ലാ ഉപകരണങ്ങളും ഉടൻ തന്നെ നിർജ്ജീവമാക്കാൻ ക്രമീകരിച്ചിട്ടുള്ളതായി തോന്നുന്നു, അതിനാൽ നിങ്ങൾക്ക് എപ്പോൾ വേണമെങ്കിലും ഈ ഉപകരണത്തിൽ നിങ്ങളുടെ പ്രൊഫൈൽ വീണ്ടും സജീവമാക്കാം. നിങ്ങളുടെ നിലവിലെ സജീവ ഉപകരണങ്ങളുടെ പട്ടിക താഴെ നൽകുന്നു.\n\nനിങ്ങൾക്ക് മുന്നോട്ട് പോകാൻ താൽപ്പര്യമുണ്ടെങ്കിൽ, താഴെയുള്ള \\"ഈ ഉപകരണത്തിൽ എന്റെ പ്രൊഫൈൽ വീണ്ടും സജീവമാക്കുക\\" എന്നതിൽ അമർത്തുക.\n\nഈ ഡയലോഗ് റദ്ദാക്കി ഈ ഉപകരണം നിർജ്ജീവമായി നിലനിർത്താൻ \\"റദ്ദാക്കുക\\" അമർത്തുക: ഈ ഉപകരണത്തിൽ നിങ്ങൾക്ക് സന്ദേശങ്ങൾ അയയ്ക്കുകയോ സ്വീകരിക്കുകയോ ചെയ്യാൻ കഴിയില്ല, പക്ഷേ പഴയ സംഭാഷണങ്ങൾ കാണാൻ സാധിക്കും.</string>
+	<string name="dialog_message_identity_deactivated_only_expiring" state="needs_review" hash="1765337997">ഈ ഉപകരണത്തിൽ നിങ്ങളുടെ പ്രൊഫൈൽ നിർജ്ജീവമാക്കിയിരിക്കുന്നു.\n\nനിങ്ങളുടെ മറ്റ് എല്ലാ ഉപകരണങ്ങളും ഉടൻ തന്നെ നിർജ്ജീവമാക്കാൻ ക്രമീകരിച്ചിട്ടുള്ളതായി തോന്നുന്നു, അതിനാൽ നിങ്ങൾക്ക് എപ്പോൾ വേണമെങ്കിലും ഈ ഉപകരണത്തിൽ നിങ്ങളുടെ പ്രൊഫൈൽ വീണ്ടും സജീവമാക്കാം. നിങ്ങളുടെ നിലവിലെ സജീവ ഉപകരണങ്ങളുടെ പട്ടിക താഴെ നൽകുന്നു.\n\nനിങ്ങൾക്ക് മുന്നോട്ട് പോകാൻ താൽപ്പര്യമുണ്ടെങ്കിൽ, താഴെയുള്ള \"ഈ ഉപകരണത്തിൽ എന്റെ പ്രൊഫൈൽ വീണ്ടും സജീവമാക്കുക\" എന്നതിൽ അമർത്തുക.\n\nഈ ഡയലോഗ് റദ്ദാക്കി ഈ ഉപകരണം നിർജ്ജീവമായി നിലനിർത്താൻ \"റദ്ദാക്കുക\" അമർത്തുക: ഈ ഉപകരണത്തിൽ നിങ്ങൾക്ക് സന്ദേശങ്ങൾ അയയ്ക്കുകയോ സ്വീകരിക്കുകയോ ചെയ്യാൻ കഴിയില്ല, പക്ഷേ പഴയ സംഭാഷണങ്ങൾ കാണാൻ സാധിക്കും.</string>
 	<string name="tip_identity_deactivated_message" state="needs_review" hash="386122101">ഈ ഉപകരണത്തിൽ നിങ്ങളുടെ പ്രൊഫൈൽ നിർജ്ജീവമാക്കിയിരിക്കുന്നു.\n\nനിങ്ങൾ അത് വീണ്ടും സജീവമാക്കാതെ ഇവിടെ നിന്ന് സന്ദേശങ്ങൾ അയയ്ക്കുകയോ സ്വീകരിക്കുകയോ ചെയ്യാൻ കഴിയില്ല.</string>
 	<string name="button_label_reactivate_identity" state="needs_review" hash="357646769">ഈ ഉപകരണത്തിൽ എന്റെ പ്രൊഫൈൽ വീണ്ടും സജീവമാക്കുക</string>
 	<string name="toast_message_error_retry" state="needs_review" hash="-527001243">ഒരു പിഴവ് സംഭവിച്ചു. ദയവായി വീണ്ടും ശ്രമിക്കുക.</string>
@@ -482,7 +494,14 @@
 	<string name="dialog_title_backup_choices" state="needs_review" hash="281222223">ബാക്കപ്പ് രീതി തിരഞ്ഞെടുക്കുക</string>
 	<string name="menu_action_choose_picture" state="needs_review" hash="-1655172909">ഒരു ചിത്രം തിരഞ്ഞെടുക്കുക</string>
 	<string name="menu_action_take_photo" state="needs_review" hash="-1123080444">ഒരു ചിത്രം എടുക്കുക</string>
+	<string name="menu_action_choose_image_from_olvid" state="needs_review" hash="1585248356">ലഭിച്ച ചിത്രം തിരഞ്ഞെടുക്കുക</string>
 	<string name="menu_action_remove_image" state="needs_review" hash="1094977672">ചിത്രം നീക്കം ചെയ്യുക</string>
+	<string name="menu_action_use_image_as" state="needs_review" hash="587310096">ഈ ചിത്രം ഇതിനായി ഉപയോഗിക്കുക...</string>
+	<string name="label_use_photo_for_my_profile" state="needs_review" hash="-1005809580">എന്റെ പ്രൊഫൈൽ ചിത്രം</string>
+	<string name="label_use_photo_for_target" state="needs_review" hash="283541521">[PLACEHOLDER_1]-നുള്ള ഫോട്ടോ</string>
+	<string name="label_use_photo_for_discussion_background" state="needs_review" hash="1925733151">%s-നുള്ള പശ്ചാത്തലം</string>
+	<string name="toast_message_photo_set" state="needs_review" hash="-1641885203">ചിത്രം പുതുക്കി</string>
+	<string name="toast_message_background_set" state="needs_review" hash="1642873459">പശ്ചാത്തലം പുതുക്കി</string>
 	<string name="dialog_title_create_empty_group" state="needs_review" hash="-663434464">ഒഴിഞ്ഞ ഗ്രൂപ്പ് ഉണ്ടാക്കണോ?</string>
 	<string name="dialog_message_create_empty_group" state="needs_review" hash="-297923005">നിങ്ങൾ ഗ്രൂപ്പിൽ ചേർക്കാൻ ഒരു കോൺടാക്റ്റും തിരഞ്ഞെടുത്തിട്ടില്ല. ശൂന്യമായ ഒരു ഗ്രൂപ്പ് നിങ്ങൾ നിർമ്മിക്കാൻ ആഗ്രഹിക്കുന്നുണ്ടോ?</string>
 	<string name="pref_dark_mode_title" state="needs_review" hash="816474245">ചെറുപ്പൻ തീം</string>
@@ -768,7 +787,7 @@
 	<string name="pref_discussion_read_once_summary" state="needs_review" hash="-126623825">സജീവമാക്കുമ്പോൾ, സന്ദേശങ്ങളും അറ്റാച്ച്‌മെന്റുകളും ഒരു തവണ മാത്രം പ്രദർശിപ്പിക്കുകയും, സംഭാഷണം അവസാനിപ്പിക്കുമ്പോൾ അവ നീക്കം ചെയ്യുകയും ചെയ്യും.</string>
 	<string name="pref_discussion_visibility_duration_title" state="needs_review" hash="-640499771">സന്ദേശത്തിന്റെ ദൃശ്യപരതയുടെ കാലാവധി</string>
 	<string name="pref_discussion_existence_duration_title" state="needs_review" hash="530735129">സന്ദേശത്തിന്റെ കാലാവധി</string>
-	<string name="pref_discussion_remote_delete_title" state="needs_review" hash="1812520789">മറ്റ് ഉപയോക്താക്കളുടെ സന്ദേശങ്ങളിൽ നിന്ന് \\"എവിടെ നിന്നും നീക്കം ചെയ്യാനുള്ള\\" അനുമതി ആർക്കാണ് നൽകാൻ കഴിയുക?</string>
+	<string name="pref_discussion_remote_delete_title" state="needs_review" hash="1812520789">മറ്റ് ഉപയോക്താക്കളുടെ സന്ദേശങ്ങളിൽ നിന്ന് \"എവിടെ നിന്നും നീക്കം ചെയ്യാനുള്ള\" അനുമതി ആർക്കാണ് നൽകാൻ കഴിയുക?</string>
 	<string name="pref_text_duration_null" state="needs_review" hash="-1114780845">പരിമിതിയില്ലാത്തത്</string>
 	<string name="pref_text_duration_5s" state="needs_review" hash="-872963">5 സെക്കൻഡ്</string>
 	<string name="pref_text_duration_10s" state="needs_review" hash="-1236195903">10 സെക്കൻഡ്</string>
@@ -862,7 +881,7 @@
 	<string name="button_label_check_options" state="needs_review" hash="-759177128">ഓപ്ഷനുകൾ പരിശോധിക്കുക</string>
 	<string name="hint_olvid_server" state="needs_review" hash="1097391633">ഒൽവിഡ് സെർവർ</string>
 	<string name="hint_license_activation_code" state="needs_review" hash="102193320">ലൈസൻസ് ആക്റ്റിവേഷൻ കോഡ്</string>
-	<string name="activity_title_identity_creation_options" state="needs_review" hash="1180456032">ഐഡി സൃഷ്‌ടിക്കുന്നതിനുള്ള ഓപ്‌ഷനുകൾ</string>
+	<string name="activity_title_identity_creation_options" state="needs_review" hash="-774054913">പ്രൊഫൈൽ സൃഷ്‌ടിക്കാനുള്ള ഓപ്‌ഷനുകൾ</string>
 	<string name="activity_title_scan_configuration" state="needs_review" hash="-386259993">കോൺഫിഗറേഷൻ സ്കാൻ ചെയ്യുക</string>
 	<string name="menu_action_import_activation_from_clipboard" state="needs_review" hash="-70842935">ക്ലിപ്പ്ബോർഡിൽ നിന്ന് ലിങ്ക് ഇറക്കുമതി ചെയ്യുക</string>
 	<string name="troubleshooting_update_valid_title" state="needs_review" hash="741828768">ഒൽവിഡ് ഏറ്റവും പുതിയ പതിപ്പിലാണ്</string>
@@ -871,7 +890,6 @@
 	<string name="dialog_message_update_available" state="needs_review" hash="416187645">ഒൽവിഡിന്റെ പുതിയ പതിപ്പ് ലഭ്യമാണ്.\n\nപുതിയ ഫീച്ചറുകൾ ഉപയോഗിക്കുന്നതിന്, ദയവായി അപ്‌ഡേറ്റ് ചെയ്യുക.</string>
 	<string name="dialog_title_call_initiation_not_supported" state="needs_review" hash="-2088021831">കോൾ ആരംഭിക്കാൻ സാധ്യമല്ല</string>
 	<string name="dialog_message_call_initiation_not_supported" state="needs_review" hash="1760333819">നിങ്ങളുടെ ഒൽവിഡ് സെർവർ സുരക്ഷിതമായ കോൾ ആരംഭിക്കുന്നതിന് പിന്തുണ നൽകുന്നില്ല എന്ന് തോന്നുന്നു.\n\nകൂടുതൽ വിവരങ്ങൾക്കായി നിങ്ങളുടെ അഡ്‌മിനിസ്ട്രേറ്ററുമായി ബന്ധപ്പെടുക.</string>
-	<string name="label_identity_creation_options" state="needs_review" hash="1180456032">ഐഡി സൃഷ്‌ടിക്കുന്നതിനുള്ള ഓപ്‌ഷനുകൾ</string>
 	<string name="text_option_server" state="needs_review" hash="-1130676431">സെർവർ: %1$s</string>
 	<string name="dialog_title_non_default_server" state="needs_review" hash="2119192219">സ്ഥിരവ olmayan ഒരു സെർവർ ഉപയോഗിക്കുന്നു</string>
 	<string name="dialog_message_non_default_server" state="needs_review" hash="459308900">നിങ്ങൾ താഴെ പറയുന്ന സെർവറിൽ ഒരു പ്രൊഫൈൽ ഉണ്ടാക്കാൻ പോകുന്നു: \n\n%1$s\n\nഇത് ഡിഫോൾട്ട് ഒൽവിഡ് സെർവർ അല്ല. ഈ സെർവറിനെ നിങ്ങൾ വിശ്വസിക്കുന്നുണ്ടെങ്കിൽ മാത്രം മുന്നോട്ട് പോകുക.</string>
@@ -883,8 +901,8 @@
 	<string name="button_label_check_identity_provider" state="needs_review" hash="508428497">ഐഡന്റിറ്റി പ്രൊവൈഡർ പരിശോധിക്കുക</string>
 	<string name="menu_action_use_identity_provider" state="needs_review" hash="1305090894">ഒരു ഐഡന്റിറ്റി പ്രൊവൈഡർ ഉപയോഗിക്കുക</string>
 	<string name="toast_message_authentication_failed" state="needs_review" hash="-720021768">അംഗീകരണം സാധ്യമായില്ല. ദയവായി വീണ്ടും ശ്രമിക്കുക.</string>
-	<string name="hint_identity_provider_client_id" state="needs_review" hash="-675812838">സെർവറിലെ \\"ക്ലയന്റ് ഐഡി\\"</string>
-	<string name="hint_identity_provider_client_secret" state="needs_review" hash="1273038212">സെർവറിലെ \\"ക്ലയന്റ് സീക്രട്ട്\\"</string>
+	<string name="hint_identity_provider_client_id" state="needs_review" hash="-675812838">സെർവറിലെ \"ക്ലയന്റ് ഐഡി\"</string>
+	<string name="hint_identity_provider_client_secret" state="needs_review" hash="1273038212">സെർവറിലെ \"ക്ലയന്റ് സീക്രട്ട്\"</string>
 	<string name="label_authenticating" state="needs_review" hash="981847671">അംഗീകാരം ഉറപ്പാക്കുന്നു…</string>
 	<string name="label_retrieving_user_details" state="needs_review" hash="-946095777">ഉപയോക്താക്കളുടെ വിവരങ്ങൾ ശേഖരിക്കുന്നു…</string>
 	<string name="toast_message_unable_to_retrieve_details" state="needs_review" hash="-1316884811">പ്രൊവൈഡറിൽ നിന്ന് തിരിച്ചറിയൽ വിവരങ്ങൾ എടുക്കാൻ കഴിഞ്ഞില്ല. ദയവായി വീണ്ടും ശ്രമിക്കുക.</string>
@@ -900,7 +918,7 @@
 	<string name="toast_message_unable_to_keycloak_revoke" state="needs_review" hash="-1368037130">മുമ്പത്തെ ഒൽവിഡ് ഐഡി മാற்றுவதில் പരാജയപ്പെട്ടു, ദയവായി വീണ്ടും ശ്രമിക്കുക.</string>
 	<string name="toast_message_keycloak_revoke_successful" state="needs_review" hash="-1216369809">മുമ്പത്തെ ഒൽവിഡ് ഐഡി വിജയകരമായി മാറ്റി</string>
 	<string name="dialog_title_keycloak_authentication_required_user_id_changed" state="needs_review" hash="-896407029">ഉപയോക്താവിലെ മാറ്റം കണ്ടെത്തി</string>
-	<string name="dialog_message_keycloak_authentication_required_user_id_changed" state="needs_review" hash="876252686">നിങ്ങളുടെ പ്രൊഫൈൽ നിലവിൽ നിങ്ങളുടെ സ്ഥാപനത്തിന്റെ നിയന്ത്രണത്തിലാണ്. നിങ്ങൾ സാധാരണയായി ഉപയോഗിക്കുന്നതിൽ നിന്ന് വ്യത്യസ്തമായ ഒരു ഉപയോക്താവായി നിങ്ങൾ ലോഗിൻ ചെയ്തതായി തോന്നുന്നു. ഇത് പിന്തുണയ്‌ക്കുന്നില്ല.\n\nദയവായി നിങ്ങളുടെ അഡ്‌മിനിസ്‌ട്രേറ്ററുമായി ബന്ധപ്പെടുക അല്ലെങ്കിൽ ശരിയായ ഉപയോക്താവായി വീണ്ടും ലോഗിൻ ചെയ്യുക.</string>
+	<string name="dialog_message_keycloak_authentication_required_user_id_changed" state="needs_review" hash="2080839829">നിങ്ങളുടെ പ്രൊഫൈൽ നിലവിൽ നിങ്ങളുടെ ഓർഗനൈസേഷനാണ് കൈകാര്യം ചെയ്യുന്നത്. നിങ്ങൾ സാധാരണയായി ഉപയോഗിക്കുന്നതിൽ നിന്ന് വ്യത്യസ്തമായ ഒരു ഉപയോക്താവായി ലോഗിൻ ചെയ്തതായി തോന്നുന്നു. ഇത് പിന്തുണയ്‌ക്കുന്നില്ല.\n\nദയచేసి നിങ്ങളുടെ അഡ്‌മിനിസ്‌ട്രേറ്ററുമായി ബന്ധപ്പെടുക അല്ലെങ്കിൽ ശരിയായ ഉപയോക്താവായ നിലയിൽ വീണ്ടും ലോഗിൻ ചെയ്യുക.</string>
 	<string name="dialog_title_add_keycloak_user" state="needs_review" hash="-1050193239">ഒരു കോൺടാക്റ്റ് ചേർക്കുക</string>
 	<string name="dialog_message_add_keycloak_user" state="needs_review" hash="-1755937035">നിങ്ങൾ %1$s-നെ നിങ്ങളുടെ കോൺടാക്റ്റുകളിൽ ചേർക്കാൻ തിരഞ്ഞെടുത്തു. നിങ്ങൾ മുന്നോട്ട് പോകാൻ ആഗ്രഹിക്കുന്നുണ്ടോ?</string>
 	<string name="explanation_keycloak_update_new" state="needs_review" hash="1136733528">നിങ്ങളുടെ കമ്പനിയുടെ ഐഡന്റിറ്റി പ്രൊവൈഡർ Olvid-ൽ കോൺഫിഗർ ചെയ്യാൻ നിങ്ങൾ തയ്യാറെടുക്കുകയാണ്. കോൺഫിഗർ ചെയ്തുകഴിഞ്ഞാൽ, ഈ സെർവറുമായി നിങ്ങൾക്ക് പ്രാമാണീകരിക്കാൻ കഴിയും, കൂടാതെ മറ്റ് ജീവനക്കാരെ നിങ്ങളുടെ കോൺടാക്റ്റുകളിൽ തടസ്സമില്ലാതെ ചേർക്കാൻ Olvid നിങ്ങളെ അനുവദിക്കും.\nകൂടുതൽ വിവരങ്ങൾക്കായി നിങ്ങളുടെ അഡ്മിനിസ്ട്രേറ്ററുമായി ബന്ധപ്പെടുക.</string>
@@ -1031,6 +1049,8 @@
 	<string name="label_storage_discussions" state="needs_review" hash="491497248">സംഭാഷണങ്ങൾ</string>
 	<string name="pref_use_internal_image_viewer_title" state="needs_review" hash="1319400578">ആന്തരിക ചിത്ര കാഴ്ച ഉപയോഗിക്കുക</string>
 	<string name="pref_use_internal_image_viewer_summary" state="needs_review" hash="1248137666">സജീവമാക്കിയാൽ, ഒരു ചിത്രത്തിലുള്ള അറ്റാച്ച്‌മെന്റ് ക്ലിക്ക് ചെയ്താൽ അത് ആന്തരിക വ്യൂവറിൽ തുറക്കും. അല്ലാത്തപക്ഷം, നിങ്ങളുടെ ഉപകരണത്തിലെ ഡിഫോൾട്ട് ഇമേജ് ആപ്പ് ഉപയോഗിക്കും.</string>
+	<string name="pref_image_text_recognition_title" state="needs_review" hash="1877261687">ചിത്രങ്ങളിലെ ടെക്സ്റ്റ് തിരിച്ചറിഞ്ഞ് ഇൻഡെക്സ് ചെയ്യുക</string>
+	<string name="pref_image_text_recognition_summary" state="needs_review" hash="1217699919">ചിത്രത്തിലുള്ള ടെക്സ്റ്റ് കണ്ടെത്താനും പകർത്താനും ഇത് അനുവദിക്കുന്നു. ഇത് കുറഞ്ഞ ശേഷിയുള്ള ഉപകരണങ്ങളിൽ കൂടുതൽ റിസോഴ്സുകൾ ഉപയോഗിച്ചേക്കാം: നിങ്ങൾക്ക് ഇത് ആവശ്യമില്ലെങ്കിൽ, ഇത് പ്രവർത്തനരഹിതമാക്കുക.</string>
 	<string name="label_unable_to_display_image" state="needs_review" hash="-1495534207">ചിത്രം പ്രദർശിപ്പിക്കാൻ കഴിഞ്ഞില്ല</string>
 	<string name="dialog_title_backup_requires_sign_in" state="needs_review" hash="-720389674">ക്ലൗഡ് പ്രൊവൈഡറിൽ സൈൻ ഇൻ ചെയ്യേണ്ടതുണ്ട്</string>
 	<string name="dialog_message_backup_requires_sign_in" state="needs_review" hash="119557495">നിങ്ങൾ Olvid ആപ്ലിക്കേഷനിൽ ക്ലൗഡ് സേവനത്തിലേക്ക് സ്വയമേവ ബാക്കപ്പുകൾ ചെയ്യുന്ന രീതിയിൽ സജ്ജീകരിച്ചിട്ടുണ്ട്, എന്നാൽ നിങ്ങളുടെ സെഷൻ കാലഹേളിച്ചു. അതിനാൽ നിങ്ങൾ വീണ്ടും ഈ സേവനത്തിലേക്ക് സൈൻ ഇൻ ചെയ്യേണ്ടതുണ്ട്.\n\nനിങ്ങൾക്ക് ഇനി സ്വയമേവ ബാക്കപ്പുകൾ ആവശ്യമില്ലെങ്കിൽ, ആപ്ലിക്കേഷൻ ക്രമീകരണങ്ങളിൽ നിന്ന് നിങ്ങൾക്ക് അത് പ്രവർത്തനരഹിതമാക്കാം. നിങ്ങളുടെ ഉപകരണം നഷ്ടപ്പെട്ടாலോ കേടായാലോ നിങ്ങളുടെ കോൺടാക്റ്റുകൾ നഷ്ടപ്പെടാതിരിക്കാൻ സ്വയമേവയുള്ള ബാക്കപ്പുകൾ മാത്രമാണ് ഏക മാർഗ്ഗം എന്ന് ഓർക്കുക.</string>
@@ -1066,7 +1086,7 @@
 	<string name="button_label_update_key" state="needs_review" hash="-909264346">കീ അപ്‌ഡേറ്റ് ചെയ്യുക</string>
 	<string name="toast_message_unable_to_update_key" state="needs_review" hash="1515861343">നിങ്ങളുടെ ഐഡന്റിറ്റി പ്രൊവൈഡർ സിഗ്നേച്ചർ കീ അപ്‌ഡേറ്റ് ചെയ്യാൻ കഴിഞ്ഞില്ല. ദയവായി വീണ്ടും ശ്രമിക്കുക.</string>
 	<string name="dialog_title_keycloak_signature_key_changed" state="needs_review" hash="-414353927">ഐഡന്റിറ്റി പ്രൊവൈഡർ കീ മാറ്റം</string>
-	<string name="dialog_message_keycloak_signature_key_changed" state="needs_review" hash="411719040">നിങ്ങളുടെ ഐഡന്റിറ്റി പ്രൊവൈഡറുടെ ക്രിപ്റ്റോഗ്രാഫിക് സിഗ്നേച്ചർ കീയിൽ ഒരു മാറ്റം Olvid കണ്ടെത്തി. ഇത് സാധാരണയായി സംഭവിക്കാൻ പാടില്ല.\n\nനിങ്ങളുടെ അഡ്‌മിനിസ്ട്രേറ്ററുമായി ബന്ധപ്പെടുക, കൂടാതെ ഈ മാറ്റം ബോധപൂർവമാണെന്ന് അദ്ദേഹം സ്ഥിരീകരിച്ചാൽ മാത്രം \\"കീ അപ്‌ഡേറ്റ് ചെയ്യുക\\" അമർത്തുക. ഉറപ്പില്ലെങ്കിൽ, \\"രദ്ദാക്കുക\\" അമർത്തുക.</string>
+	<string name="dialog_message_keycloak_signature_key_changed" state="needs_review" hash="411719040">നിങ്ങളുടെ ഐഡന്റിറ്റി പ്രൊവൈഡറുടെ ക്രിപ്റ്റോഗ്രാഫിക് സിഗ്നേച്ചർ കീയിൽ ഒരു മാറ്റം Olvid കണ്ടെത്തി. ഇത് സാധാരണയായി സംഭവിക്കാൻ പാടില്ല.\n\nനിങ്ങളുടെ അഡ്‌മിനിസ്ട്രേറ്ററുമായി ബന്ധപ്പെടുക, കൂടാതെ ഈ മാറ്റം ബോധപൂർവമാണെന്ന് അദ്ദേഹം സ്ഥിരീകരിച്ചാൽ മാത്രം \"കീ അപ്‌ഡേറ്റ് ചെയ്യുക\" അമർത്തുക. ഉറപ്പില്ലെങ്കിൽ, \"രദ്ദാക്കുക\" അമർത്തുക.</string>
 	<string name="dialog_title_keycloak_identity_was_revoked" state="needs_review" hash="-1741242131">ഐഡന്റിറ്റി പ്രൊവൈഡർ നീക്കം ചെയ്തു</string>
 	<string name="dialog_message_keycloak_identity_was_revoked" state="needs_review" hash="840026008">നിങ്ങളുടെ കമ്പനിയുടെ ഐഡന്റിറ്റി പ്രൊവൈഡറിൽ നിന്ന് നിങ്ങളുടെ അക്കൗണ്ട് നീക്കം ചെയ്തതായി തോന്നുന്നു. നിങ്ങൾ നിങ്ങളുടെ കമ്പനിയിൽ നിന്ന് വിട്ടുപോയെങ്കിൽ, ഇത് സാധാരണമാണ്, കൂടാതെ നിങ്ങൾക്ക് Olvid ഒരു സൗജന്യ ഉപയോക്താവായി ഉപയോഗിക്കുന്നത് തുടരാം.\n\nഇത് ഒരു തെറ്റാണെന്ന് നിങ്ങൾ വിചാരിക്കുന്നുവെങ്കിൽ, ദയവായി നിങ്ങളുടെ അഡ്മിനിസ്ട്രേറ്ററുമായി ബന്ധപ്പെട്ട് ഈ ഐഡന്റിറ്റി പ്രൊവൈഡർ Olvid-ൽ വീണ്ടും രജിസ്റ്റർ ചെയ്യാൻ ആവശ്യപ്പെടുക.</string>
 	<string name="button_label_backup_settings" state="needs_review" hash="511511007">ബാക്കപ്പുകൾ സജ്ജമാക്കുക</string>
@@ -1149,7 +1169,7 @@
 	<string name="pref_hidden_profile_close_policy_dialog_entry_screen_lock" state="needs_review" hash="-1520400811">ഒൽവിഡ് ലോക്ക് സ്ക്രീൻ സജീവമാകുമ്പോൾ</string>
 	<string name="pref_hidden_profile_close_policy_dialog_entry_background" state="needs_review" hash="-2099539114">ഒൽവിഡ് ആപ്ലിക്കേഷൻ പശ്ചാത്തലത്തിലേക്ക് മാറുമ്പോൾ…</string>
 	<string name="activity_title_enter_backup_key" state="needs_review" hash="1035967309">ബാക്കപ്പ് കീ നൽകുക</string>
-	<string name="activity_title_identity_creation" state="needs_review" hash="-1361520151">ഐഡി സൃഷ്‌ടിക്കുക</string>
+	<string name="activity_title_identity_creation" state="needs_review" hash="2027618284">പ്രൊഫൈൽ സൃഷ്‌ടിക്കുക</string>
 	<string name="menu_action_manual_configuration" state="needs_review" hash="-1495974502">മാനുവൽ അഡ്വാൻസ്ഡ് കോൺഫിഗറേഷൻ</string>
 	<string name="toast_message_invalid_configuration_link" state="needs_review" hash="1387412522">അസാധുവായ കോൺഫിഗറേഷൻ ലിങ്ക്</string>
 	<string name="toast_message_invalid_link" state="needs_review" hash="1265454437">അസാധുവായ ലിങ്ക്</string>
@@ -1160,9 +1180,9 @@
 	<string name="content_description_remove_message_reply_to" state="needs_review" hash="-794585802">ഉത്തരം നൽകിയ സന്ദേശം നീക്കം ചെയ്യുക</string>
 	<string name="content_description_notification_muted_indicator" state="needs_review" hash="1618439334">ഈ പ്രൊഫൈലിനായി അറിയിപ്പുകൾ നിശബ്ദമാക്കിയിരിക്കുന്നു എന്ന സൂചന</string>
 	<string name="button_label_create_a_profile" state="needs_review" hash="-1568207484">ഒരു പ്രൊഫൈൽ ഉണ്ടാക്കുക</string>
-	<string name="text_explanation_onboarding_keycloak_parsed_configuration" state="needs_review" hash="1428471064">നിങ്ങളുടെ കമ്പനിയുടെ ഐഡന്റിറ്റി പ്രൊവൈഡർ വിജയകരമായി കോൺഫിഗർ ചെയ്തു. അതിൽ പ്രാമാണീകരിക്കുന്നതിനും നിങ്ങളുടെ വ്യക്തിഗത വിവരങ്ങൾ നേടുന്നതിനും താഴെയുള്ള \\"പ്രാമാണീകരിക്കുക\\" ബട്ടൺ അമർത്തുക.</string>
-	<string name="text_explanation_onboarding_keycloak_parsed_configuration_magic" state="needs_review" hash="1823898406">നിങ്ങളുടെ കമ്പനിയുടെ ഐഡന്റിറ്റി പ്രൊവൈഡർ വിജയകരമായി കോൺഫിഗർ ചെയ്തു. നിങ്ങളുടെ വ്യക്തിഗത വിവരങ്ങൾ വീണ്ടെടുക്കാൻ താഴെയുള്ള \\"മാജിക് ലിങ്ക് ഉപയോഗിക്കുക\\" ബട്ടൺ അമർത്തുക.</string>
-	<string name="text_explanation_onboarding_keycloak_mdm" state="needs_review" hash="1340457300">ഒൽവിഡിലേക്ക് സ്വാഗതം.\n\nഈ ഇൻസ്റ്റാളേഷൻ നിങ്ങളുടെ കമ്പനിയാണ് കൈകാര്യം ചെയ്യുന്നത്, കൂടാതെ ഒരു ഐഡന്റിറ്റി പ്രൊവൈഡർ ഉപയോഗിക്കുന്നതിന് ഇത് ക്രമീകരിച്ചു. അതിൽ പ്രാമാണീകരിക്കാനും നിങ്ങളുടെ വ്യക്തിഗത വിവരങ്ങൾ വീണ്ടെടുക്കാനും താഴെയുള്ള \\"പ്രാമാണീകരിക്കുക\\" ബട്ടൺ അമർത്തുക.\n\nനിങ്ങൾ ഇതിനകം ഒൽവിഡ് ഉപയോഗിക്കുകയും ബാക്കപ്പിൽ നിന്ന് നിങ്ങളുടെ കീകൾ, കോൺടാക്റ്റുകൾ പുനഃസ്ഥാപിക്കാൻ ആഗ്രഹിക്കുകയും ചെയ്യുന്നുവെങ്കിൽ, \\"ബാക്കപ്പ് പുനഃസ്ഥാപിക്കുക\\" അമർത്തുക.</string>
+	<string name="text_explanation_onboarding_keycloak_parsed_configuration" state="needs_review" hash="1428471064">നിങ്ങളുടെ കമ്പനിയുടെ ഐഡന്റിറ്റി പ്രൊവൈഡർ വിജയകരമായി കോൺഫിഗർ ചെയ്തു. അതിൽ പ്രാമാണീകരിക്കുന്നതിനും നിങ്ങളുടെ വ്യക്തിഗത വിവരങ്ങൾ നേടുന്നതിനും താഴെയുള്ള \"പ്രാമാണീകരിക്കുക\" ബട്ടൺ അമർത്തുക.</string>
+	<string name="text_explanation_onboarding_keycloak_parsed_configuration_magic" state="needs_review" hash="1823898406">നിങ്ങളുടെ കമ്പനിയുടെ ഐഡന്റിറ്റി പ്രൊവൈഡർ വിജയകരമായി കോൺഫിഗർ ചെയ്തു. നിങ്ങളുടെ വ്യക്തിഗത വിവരങ്ങൾ വീണ്ടെടുക്കാൻ താഴെയുള്ള \"മാജിക് ലിങ്ക് ഉപയോഗിക്കുക\" ബട്ടൺ അമർത്തുക.</string>
+	<string name="text_explanation_onboarding_keycloak_mdm" state="needs_review" hash="1340457300">ഒൽവിഡിലേക്ക് സ്വാഗതം.\n\nഈ ഇൻസ്റ്റാളേഷൻ നിങ്ങളുടെ കമ്പനിയാണ് കൈകാര്യം ചെയ്യുന്നത്, കൂടാതെ ഒരു ഐഡന്റിറ്റി പ്രൊവൈഡർ ഉപയോഗിക്കുന്നതിന് ഇത് ക്രമീകരിച്ചു. അതിൽ പ്രാമാണീകരിക്കാനും നിങ്ങളുടെ വ്യക്തിഗത വിവരങ്ങൾ വീണ്ടെടുക്കാനും താഴെയുള്ള \"പ്രാമാണീകരിക്കുക\" ബട്ടൺ അമർത്തുക.\n\nനിങ്ങൾ ഇതിനകം ഒൽവിഡ് ഉപയോഗിക്കുകയും ബാക്കപ്പിൽ നിന്ന് നിങ്ങളുടെ കീകൾ, കോൺടാക്റ്റുകൾ പുനഃസ്ഥാപിക്കാൻ ആഗ്രഹിക്കുകയും ചെയ്യുന്നുവെങ്കിൽ, \"ബാക്കപ്പ് പുനഃസ്ഥാപിക്കുക\" അമർത്തുക.</string>
 	<string name="button_label_see_details" state="needs_review" hash="238834473">കൂടുതൽ വിവരങ്ങൾ കാണുക</string>
 	<string name="link_label_invitation_url" state="needs_review" hash="744905192">ബന്ധം ചേർക്കുക</string>
 	<string name="link_label_configuration_url" state="needs_review" hash="-441435162">കോൺഫിഗറേഷനോ ലൈസൻസോ ഇറക്കുമതി ചെയ്യുക</string>
@@ -1171,6 +1191,7 @@
 	<string name="dialog_title_chose_profile_web_client" state="needs_review" hash="1860298414">ഒൽവിഡ് വെബ് ക്ലയന്റിലേക്ക് കണക്റ്റ് ചെയ്യാൻ പ്രൊഫൈൽ തിരഞ്ഞെടുക്കുക</string>
 	<string name="dialog_title_chose_profile_invitation" state="needs_review" hash="-2063034787">ഈ കോൺടാക്റ്റை ക്ഷണിക്കാൻ ഏത് പ്രൊഫൈൽ തിരഞ്ഞെടുക്കണം?</string>
 	<string name="toast_message_create_new_profile_then_reopen_this_link" state="needs_review" hash="1770827346">ദയവായി ആദ്യം ഒരു പുതിയ പ്രൊഫൈൽ ഉണ്ടാക്കുക, തുടർന്ന് ഈ ലിങ്ക് വീണ്ടും തുറക്കുക.</string>
+	<string name="toast_message_invitation_link_deferred_to_end_of_onboarding" state="needs_review" hash="-189914806">നിങ്ങളുടെ പ്രൊഫൈൽ സൃഷ്‌ടിച്ചുകഴിഞ്ഞാൽ നിങ്ങളുടെ ക്ഷണങ്ങൾ സ്വയമേവ തുറക്കും.</string>
 	<string name="button_label_switch_profile" state="needs_review" hash="-2007633024">പ്രൊഫൈൽ മാറ്റുക</string>
 	<string name="text_no_other_profile_to_switch_to" state="needs_review" hash="-112306213">മറ്റൊരു പ്രൊഫൈൽ ഇല്ല</string>
 	<string name="button_label_configure_lock_screen" state="needs_review" hash="870348426">ലോക്ക് സ്ക്രീൻ സജ്ജമാക്കുക</string>
@@ -1210,7 +1231,7 @@
 	<string name="pref_text_font_scale_1_25" state="needs_review" hash="2016139388">பெரியது (125%)</string>
 	<string name="pref_text_font_scale_1_5" state="needs_review" hash="2018099487">വളരെ വലുത് (150%)</string>
 	<string name="pref_send_with_hardware_enter" state="needs_review" hash="613314226">\"എന്റർ\" അമർത്തുമ്പോൾ സന്ദേശം അയയ്ക്കുക</string>
-	<string name="pref_send_with_hardware_enter_summary" state="needs_review" hash="1694640710">സജീവമാക്കുമ്പോൾ, ഒരു ഹാർഡ്‌വെയർ കീബോർഡ് ഉപയോഗിക്കുകയാണെങ്കിൽ, \\"എന്റർ\\" അമർത്തുന്നത് നിങ്ങളുടെ സന്ദേശം അയയ്ക്കും. \\"ഷിഫ്റ്റ് + എന്റർ\\" അമർത്തുന്നത് ഒരു പുതിയ വരി ചേർക്കും.</string>
+	<string name="pref_send_with_hardware_enter_summary" state="needs_review" hash="1694640710">സജീവമാക്കുമ്പോൾ, ഒരു ഹാർഡ്‌വെയർ കീബോർഡ് ഉപയോഗിക്കുകയാണെങ്കിൽ, \"എന്റർ\" അമർത്തുന്നത് നിങ്ങളുടെ സന്ദേശം അയയ്ക്കും. \"ഷിഫ്റ്റ് + എന്റർ\" അമർത്തുന്നത് ഒരു പുതിയ വരി ചേർക്കും.</string>
 	<string name="pref_ping_connectivity_indicator_title" state="needs_review" hash="1245192677">നെറ്റ്‌വർക്ക് കണക്ഷൻ സൂചകം</string>
 	<string name="pref_text_ping_connectivity_indicator_none" state="needs_review" hash="-1725558072">നെറ്റ്‌വർക്ക് കണക്ഷൻ സൂചകം ഇല്ല</string>
 	<string name="pref_text_ping_connectivity_indicator_dot" state="needs_review" hash="752487342">ടൈറ്റിൽ ബാറിൽ നിറമുള്ള ഒരു പോയിന്റ്</string>
@@ -1314,7 +1335,7 @@
 	<string name="label_forwarded" state="needs_review" hash="-1620953026">ഫോർവേർഡ് ചെയ്തു</string>
 	<string name="dialog_title_incomplete_attachments" state="needs_review" hash="-721577232">അടയാളം ഇല്ലാത്ത അറ്റാച്ച്‌മെന്റുകൾ കണ്ടെത്തി</string>
 	<string name="dialog_message_incomplete_attachments" state="needs_review" hash="1179188058">നിങ്ങൾ തിരഞ്ഞെടുത്ത സന്ദേശങ്ങളിൽ പൂർണ്ണമായി ഡൗൺലോഡ് ചെയ്യാത്ത അറ്റാച്ച്‌മെന്റുകൾ അടങ്ങിയിരിക്കുന്നു. ഡൗൺലോഡ് പൂർത്തിയാകുന്നതുവരെ ഈ സന്ദേശങ്ങൾ ഫോർവേഡ് ചെയ്യാൻ കഴിയില്ല.</string>
-	<string name="dialog_message_incomplete_attachments_partial" state="needs_review" hash="1274554335">നിങ്ങൾ തിരഞ്ഞെടുത്ത ചില സന്ദേശങ്ങളിൽ പൂർണ്ണമായി ഡൗൺലോഡ് ചെയ്യാത്ത അറ്റാച്ച്‌മെന്റുകൾ അടങ്ങിയിരിക്കുന്നു. ഡൗൺലോഡ് പൂർത്തിയാകുന്നതുവരെ ഈ സന്ദേശങ്ങൾ ഫോർവേഡ് ചെയ്യാൻ കഴിയില്ല.\n\nഫോർവേഡ് ചെയ്യാൻ കഴിയുന്ന സന്ദേശങ്ങൾ മാത്രം ഫോർവേഡ് ചെയ്യാൻ \\"തുടരുക\\" അമർത്തുക.</string>
+	<string name="dialog_message_incomplete_attachments_partial" state="needs_review" hash="1274554335">നിങ്ങൾ തിരഞ്ഞെടുത്ത ചില സന്ദേശങ്ങളിൽ പൂർണ്ണമായി ഡൗൺലോഡ് ചെയ്യാത്ത അറ്റാച്ച്‌മെന്റുകൾ അടങ്ങിയിരിക്കുന്നു. ഡൗൺലോഡ് പൂർത്തിയാകുന്നതുവരെ ഈ സന്ദേശങ്ങൾ ഫോർവേഡ് ചെയ്യാൻ കഴിയില്ല.\n\nഫോർവേഡ് ചെയ്യാൻ കഴിയുന്ന സന്ദേശങ്ങൾ മാത്രം ഫോർവേഡ് ചെയ്യാൻ \"തുടരുക\" അമർത്തുക.</string>
 	<string name="hint_search_message" state="needs_review" hash="1630003450">സന്ദേശം തിരയുക</string>
 	<string name="pref_manage_cloud_backups_title" state="needs_review" hash="824115345">ക്ലൗഡ് ബാക്കപ്പുകൾ നിയന്ത്രിക്കുക</string>
 	<string name="pref_manage_cloud_backups_summary" state="needs_review" hash="-161789549">ക്ലൗഡ് ബാക്കപ്പുകൾ ഡൗൺലോഡ് ചെയ്യാനോ അല്ലെങ്കിൽ നീക്കം ചെയ്യാനോ ക്ലിക്ക് ചെയ്യുക.</string>
@@ -1326,9 +1347,9 @@
 	<string name="label_no_backup_found" state="needs_review" hash="-823699919">ബാക്കപ്പ് കണ്ടെത്താനായില്ല</string>
 	<string name="label_no_account_selected" state="needs_review" hash="1896894632">ഒരു അക്കൗണ്ടും തിരഞ്ഞെടുത്തിട്ടില്ല</string>
 	<string name="label_tap_to_select_cloud_account" state="needs_review" hash="2044265832">\"അക്കൗണ്ട് മാറ്റുക\" എന്നതിൽ അമർത്തുക, തുടർന്ന് ഒരു ക്ലൗഡ് പ്രൊവൈഡർ അക്കൗണ്ട് തിരഞ്ഞെടുക്കുക.</string>
-	<string name="label_error_connecting_to_cloud" state="needs_review" hash="85877605">ക്ലൗഡ് പ്രൊവൈഡറുമായി കണക്റ്റ് ചെയ്യുന്നതിൽ പിഴവ്: വീണ്ടും ശ്രമിക്കാൻ \\"അക്കൗണ്ട് മാറ്റുക\\" അമർത്തുക</string>
+	<string name="label_error_connecting_to_cloud" state="needs_review" hash="85877605">ക്ലൗഡ് പ്രൊവൈഡറുമായി കണക്റ്റ് ചെയ്യുന്നതിൽ പിഴവ്: വീണ്ടും ശ്രമിക്കാൻ \"അക്കൗണ്ട് മാറ്റുക\" അമർത്തുക</string>
 	<string name="dialog_title_delete_cloud_backup" state="needs_review" hash="-1354092851">ക്ലൗഡ് ബാക്കപ്പ് ഇല്ലാതാക്കുക</string>
-	<string name="dialog_message_delete_cloud_backup" state="needs_review" hash="1870910875">നിങ്ങൾ തിരഞ്ഞെടുത്ത ക്ലൗഡ് ബാക്കപ്പ് ഇല്ലാതാക്കാൻ ഉറപ്പാണോ? ഈ പ്രവർത്തനം പഴയപടിയാക്കാൻ കഴിയില്ല.\n\nതുടരാൻ \\"ശരി\\" അമർത്തുക.</string>
+	<string name="dialog_message_delete_cloud_backup" state="needs_review" hash="1870910875">നിങ്ങൾ തിരഞ്ഞെടുത്ത ക്ലൗഡ് ബാക്കപ്പ് ഇല്ലാതാക്കാൻ ഉറപ്പാണോ? ഈ പ്രവർത്തനം പഴയപടിയാക്കാൻ കഴിയില്ല.\n\nതുടരാൻ \"ശരി\" അമർത്തുക.</string>
 	<string name="dialog_title_cloud_provider_sign_in" state="needs_review" hash="-1009058134">ക്ലൗഡ് പ്രൊവൈഡറിൽ സൈൻ ഇൻ ചെയ്യുക</string>
 	<string name="dialog_message_cloud_provider_sign_in" state="needs_review" hash="1084539059">നിങ്ങളുടെ കീകൾ, കോൺടാക്റ്റുകൾ എന്നിവയുടെ എൻക്രിപ്റ്റ് ചെയ്ത ബാക്കപ്പ് ഒരു ക്ലൗഡ് പ്രൊവൈഡറിലേക്ക് ആటోമാറ്റിക്കായി അപ്‌ലോഡ് ചെയ്യുന്നതാണ് ഓട്ടോമാറ്റിക് ബാക്കപ്പുകൾ. സ്ഥിരമായി, ഇതിനായി നിങ്ങളുടെ Google ഡ്രൈവ് അക്കൗണ്ട് ഉപയോഗിക്കാം, എന്നാൽ കൂടുതൽ പരിചയമുള്ള ഉപയോക്താക്കൾക്ക് ഇഷ്ടമുള്ള WebDAV സെർവർ കോൺഫിഗർ ചെയ്യാവുന്നതാണ്.</string>
 	<string name="dialog_message_cloud_provider_sign_in_no_google" state="needs_review" hash="354226370">ആటోമാറ്റിക് ബാക്കപ്പുകൾ നിങ്ങളുടെ കീകൾ, കോൺടാക്റ്റുകൾ എന്നിവയുടെ എൻക്രിപ്റ്റഡ് ബാക്കപ്പ് ഒരു ക്ലൗഡ് പ്രൊവൈഡറിലേക്ക് ക്രമമായി അപ്‌ലോഡ് ചെയ്യുന്നു. നിങ്ങളുടെ ഉപകരണത്തിൽ Google ഡ്രൈവ് ഉപയോഗിക്കുന്നതിന് ആവശ്യമായ Google സേവനങ്ങൾ ഇല്ലെന്ന് തോന്നുന്നു. നിങ്ങൾക്ക് ഇഷ്ടമുള്ള WebDAV സെർവർ നിങ്ങൾക്ക് ഇപ്പോഴും കോൺഫിഗർ ചെയ്യാവുന്നതാണ്.</string>
@@ -1342,7 +1363,7 @@
 	<string name="label_validating" state="needs_review" hash="-462091590">സ്ഥിരീകരിക്കുന്നു…</string>
 	<string name="dialog_title_select_cloud_backup_file" state="needs_review" hash="-1272751992">ക്ലൗഡ് ബാക്കപ്പ് ഫയൽ തിരഞ്ഞെടുക്കുക</string>
 	<string name="dialog_title_backup_choose_webdav" state="needs_review" hash="-904460405">വെബ്ഡാവ് ബാക്കപ്പുകൾ</string>
-	<string name="dialog_message_backup_choose_webdav" state="needs_review" hash="-701116082">സ്വയമേവയുള്ള ബാക്കപ്പുകൾക്കായി ഈ WebDAV സെർവർ ഉപയോഗിക്കുന്നതിന്, നിങ്ങൾ നൽകിയ വിവരങ്ങൾ നിങ്ങളുടെ ഉപകരണത്തിലെ Olvid-ന്റെ സംഭരണത്തിൽ സംഭരിക്കേണ്ടതുണ്ട്. ഈ വിവരങ്ങൾ മറ്റ് ആപ്ലിക്കേഷനുകൾക്ക് ലഭ്യമാകില്ല.\n\nതുടരാൻ \\"ശരി\\" അമർത്തുക.</string>
+	<string name="dialog_message_backup_choose_webdav" state="needs_review" hash="-701116082">സ്വയമേവയുള്ള ബാക്കപ്പുകൾക്കായി ഈ WebDAV സെർവർ ഉപയോഗിക്കുന്നതിന്, നിങ്ങൾ നൽകിയ വിവരങ്ങൾ നിങ്ങളുടെ ഉപകരണത്തിലെ Olvid-ന്റെ സംഭരണത്തിൽ സംഭരിക്കേണ്ടതുണ്ട്. ഈ വിവരങ്ങൾ മറ്റ് ആപ്ലിക്കേഷനുകൾക്ക് ലഭ്യമാകില്ല.\n\nതുടരാൻ \"ശരി\" അമർത്തുക.</string>
 	<string name="toast_message_webdav_read_only_access" state="needs_review" hash="-343952962">തിരഞ്ഞെടുത്ത ക്ലൗഡ് പ്രൊവൈഡറിൽ എഴുതാനുള്ള അനുമതിയില്ല. നിങ്ങളുടെ സെർവർ കോൺഫിഗറേഷൻ പരിശോധിക്കുക.</string>
 	<string name="label_pick_a_time" state="needs_review" hash="1296010605">ഒരു സമയം തിരഞ്ഞെടുക്കുക…</string>
 	<string name="label_pick_a_date" state="needs_review" hash="-1139163289">ഒരു തീയതി തിരഞ്ഞെടുക്കുക…</string>
@@ -1442,22 +1463,17 @@
 	<string name="button_label_send" state="needs_review" hash="-185402948">അയക്കുക</string>
 	<string name="button_label_start_sharing" state="needs_review" hash="682254052">ഇപ്പോൾ പങ്കിടാൻ ആരംഭിക്കുക</string>
 	<string name="location_sharing_duration_one_hour_short_string" state="needs_review" hash="1004063951">1 മണിക്കൂർ</string>
-	<string name="location_sharing_duration_one_hour_full_string" state="needs_review" hash="-58118972">
-		<b>1 മണിക്കൂർ</b>ത്തേക്ക് ലൊക്കേഷൻ പങ്കിടുക</string>
+	<string name="location_sharing_duration_one_hour_full_string" state="needs_review" hash="-58118972"><b>1 മണിക്കൂർ</b>ത്തേക്ക് ലൊക്കേഷൻ പങ്കിടുക</string>
 	<string name="location_sharing_duration_three_hours_short_string" state="needs_review" hash="228095183">3 മണിക്കൂർ</string>
-	<string name="location_sharing_duration_three_hours_full_string" state="needs_review" hash="754857804">
-		<b>3 മണിക്കൂറിന്</b> നിങ്ങളുടെ ലൊക്കേഷൻ പങ്കിടുക</string>
+	<string name="location_sharing_duration_three_hours_full_string" state="needs_review" hash="754857804"><b>3 മണിക്കൂറിന്</b> നിങ്ങളുടെ ലൊക്കേഷൻ പങ്കിടുക</string>
 	<string name="location_sharing_duration_endless_short_string" state="needs_review" hash="55208442">അനന്തമായി</string>
 	<string name="location_sharing_duration_endless_full_string" state="needs_review" hash="1710814259">തടയുന്നതുവരെ ലൊക്കേഷൻ പങ്കിടുക</string>
 	<string name="location_sharing_quality_precise_short_string" state="needs_review" hash="351442529">കൃത്യമായ</string>
 	<string name="location_sharing_quality_balanced_short_string" state="needs_review" hash="-1925315592">സന്തുലിതമായ</string>
 	<string name="location_sharing_quality_power_save_short_string" state="needs_review" hash="-14275273">ബാറ്ററി സംരക്ഷണം</string>
-	<string name="location_sharing_quality_precise_full_string" state="needs_review" hash="-1255374893">
-		<b>കൃത്യമായ</b> ലൊക്കേഷൻ പങ്കിടൽ മോഡ്</string>
-	<string name="location_sharing_quality_balanced_full_string" state="needs_review" hash="-421322514">
-		<b>സന്തുലിതമായ</b> ലൊക്കേഷൻ പങ്കിടൽ മോഡ്</string>
-	<string name="location_sharing_quality_power_save_full_string" state="needs_review" hash="792896333">
-		<b>ഊർജ്ജം ലാഭിക്കുന്ന</b> ലൊക്കേഷൻ പങ്കിടൽ മോഡ്</string>
+	<string name="location_sharing_quality_precise_full_string" state="needs_review" hash="-1255374893"><b>കൃത്യമായ</b> ലൊക്കേഷൻ പങ്കിടൽ മോഡ്</string>
+	<string name="location_sharing_quality_balanced_full_string" state="needs_review" hash="-421322514"><b>സന്തുലിതമായ</b> ലൊക്കേഷൻ പങ്കിടൽ മോഡ്</string>
+	<string name="location_sharing_quality_power_save_full_string" state="needs_review" hash="792896333"><b>ഊർജ്ജം ലാഭിക്കുന്ന</b> ലൊക്കേഷൻ പങ്കിടൽ മോഡ്</string>
 	<string name="label_sharing_location_until" state="needs_review" hash="187977459">%1$s വരെ ലൊക്കേഷൻ പങ്കിടുന്നു</string>
 	<string name="label_location_sharing_ended" state="needs_review" hash="1028490137">സ്ഥല വിവരങ്ങൾ പങ്കിടുന്നത് അവസാനിപ്പിച്ചു</string>
 	<string name="label_gps_coordinates" state="needs_review" hash="-1537356414">ജിപിഎസ് കോർഡിനേറ്റുകൾ</string>
@@ -1534,7 +1550,7 @@
 	<string name="text_setting_disable_push_notifications" state="needs_review" hash="-1611970092">\"• പുഷ് അറിയിപ്പുകൾ പ്രവർത്തനരഹിതമാക്കുക:\"</string>
 	<string name="text_setting_permanent_websocket" state="needs_review" hash="540848406">\"• സ്ഥിരമായ വെബ് സോക്കറ്റ് കണക്ഷൻ: \"</string>
 	<string name="text_setting_internal_viewer" state="needs_review" hash="444959480">• ആപ്ലിക്കേഷനിലെ ചിത്രങ്ങൾ കാണാൻ ഉപയോഗിക്കുക:</string>
-	<string name="text_setting_show_trust_level" state="needs_review" hash="-1964618064">\"• കോൺടാക്റ്റുകൾക്കായി ഒരു \\"വിശ്വാസത്തിന്റെ ഉറവിടം\\" സൂചകം കാണിക്കുക: \"</string>
+	<string name="text_setting_show_trust_level" state="needs_review" hash="-1964618064">\"• കോൺടാക്റ്റുകൾക്കായി ഒരു \"വിശ്വാസത്തിന്റെ ഉറവിടം\" സൂചകം കാണിക്കുക: \"</string>
 	<string name="text_setting_lock_biometry" state="needs_review" hash="-1698353580">\"• ബയോമെട്രിക്സ് ഉപയോഗിച്ച് തുറക്കുക:\"</string>
 	<string name="text_setting_lock_notification" state="needs_review" hash="2022286622">\"• സ്ഥിരമായ ലോക്ക് സ്‌ക്രീൻ അറിയിപ്പ്:\"</string>
 	<string name="text_setting_lock_wipe_on_fail" state="needs_review" hash="658363602">\"3 തവണ തെറ്റായ പിൻ കോഡ് നൽകിയാൽ, സുരക്ഷിതമല്ലാത്ത സന്ദേശങ്ങൾ ഇല്ലാതാക്കുക:\"</string>
@@ -1630,7 +1646,7 @@
 	<string name="text_last_online" state="needs_review" hash="-307031777">അവസാനം ഓൺലൈനിലിരുന്നത്: %1$s</string>
 	<string name="text_deactivates_on" state="needs_review" hash="-948374904">%1$s തീയതിയിൽ പ്രവർത്തനരഹിതമാക്കും</string>
 	<string name="text_device_is_inactive" state="needs_review" hash="-1269909292">ഉപകരണം നിർജ്ജീവമാക്കി</string>
-	<string name="dialog_message_rename_current_device" state="needs_review" hash="1877085196">നിങ്ങളുടെ നിലവിലെ ഉപകരണം തിരിച്ചറിയാൻ നിങ്ങൾ ഉപയോഗിക്കാൻ ആഗ്രഹിക്കുന്ന പേര് നൽകുക.\nസ്ഥിര ഉപകരണം പേര് ഉപയോഗിക്കാൻ \\"സ്ഥിരം\\" അമർത്തുക.</string>
+	<string name="dialog_message_rename_current_device" state="needs_review" hash="1877085196">നിങ്ങളുടെ നിലവിലെ ഉപകരണം തിരിച്ചറിയാൻ നിങ്ങൾ ഉപയോഗിക്കാൻ ആഗ്രഹിക്കുന്ന പേര് നൽകുക.\nസ്ഥിര ഉപകരണം പേര് ഉപയോഗിക്കാൻ \"സ്ഥിരം\" അമർത്തുക.</string>
 	<string name="dialog_message_rename_other_device" state="needs_review" hash="1342525083">ഈ ഉപകരണം തിരിച്ചറിയാൻ നിങ്ങൾ ഉപയോഗിക്കാൻ ആഗ്രഹിക്കുന്ന പേര് നൽകുക.</string>
 	<string name="hint_device_name" state="needs_review" hash="1739868247">ഉപകരണത്തിന്റെ പേര്</string>
 	<string name="button_label_default" state="needs_review" hash="-1574133633">സ്ഥിരസ്ഥിതി</string>
@@ -1671,7 +1687,7 @@
 	<string name="onboarding_transfer_source_session_show_explanation" state="needs_review" hash="-1092514758">നിങ്ങളുടെ പുതിയ ഉപകരണത്തിൽ Olvid ആരംഭിക്കുക.\nഈ ഉപകരണത്തിൽ നിങ്ങൾക്ക് ഇതുവരെ ഒരു പ്രൊഫൈൽ ഇല്ലെങ്കിൽ, നിലവിലുള്ള പ്രൊഫൈൽ ഇറക്കുമതി ചെയ്യുന്നതിനുള്ള നിർദ്ദേശങ്ങൾ പിന്തുടരുക.\nഅല്ലെങ്കിൽ, മുകളിൽ ഇടത് ഭാഗത്തുള്ള നിങ്ങളുടെ പ്രൊഫൈൽ ചിത്രത്തിൽ ടാപ്പ് ചെയ്ത് \"ഒരു പ്രൊഫൈൽ ചേർക്കുക\" എന്നതിലേക്ക് തിരഞ്ഞെടുക്കുക.</string>
 	<string name="onboarding_transfer_source_session_sas" state="needs_review" hash="571819365">നിങ്ങളുടെ പുതിയ ഉപകരണത്തിൽ കാണുന്ന കോഡ് ഇവിടെ നൽകുക</string>
 	<string name="onboarding_transfer_target_session_title" state="needs_review" hash="615939188">നിങ്ങളുടെ മറ്റ് ഉപകരണത്തിൽ കാണുന്ന കോഡ് ഇവിടെ നൽകുക</string>
-	<string name="onboarding_transfer_target_session_explanation" state="needs_review" hash="983671212">നിങ്ങളുടെ മറ്റ് ഉപകരണത്തിൽ Olvid ആരംഭിക്കുക.\nതുടക്കത്തിൽ ഇടത് ഭാഗത്തുള്ള നിങ്ങളുടെ പ്രൊഫൈൽ ചിത്രത്തിൽ ടാപ്പ് ചെയ്യുക.\nനിങ്ങൾ ഇറക്കുമതി ചെയ്യാൻ ആഗ്രഹിക്കുന്ന പ്രൊഫൈൽ തിരഞ്ഞെടുത്ത് \\"മാനേജ്\\" ബട്ടണിൽ ടാപ്പ് ചെയ്യുക.\nകോഡ് പ്രദർശിപ്പിക്കാൻ \\"ഒരു ഉപകരണം ചേർക്കുക\\" എന്നതിൽ ടാപ്പ് ചെയ്യുക.</string>
+	<string name="onboarding_transfer_target_session_explanation" state="needs_review" hash="983671212">നിങ്ങളുടെ മറ്റ് ഉപകരണത്തിൽ Olvid ആരംഭിക്കുക.\nതുടക്കത്തിൽ ഇടത് ഭാഗത്തുള്ള നിങ്ങളുടെ പ്രൊഫൈൽ ചിത്രത്തിൽ ടാപ്പ് ചെയ്യുക.\nനിങ്ങൾ ഇറക്കുമതി ചെയ്യാൻ ആഗ്രഹിക്കുന്ന പ്രൊഫൈൽ തിരഞ്ഞെടുത്ത് \"മാനേജ്\" ബട്ടണിൽ ടാപ്പ് ചെയ്യുക.\nകോഡ് പ്രദർശിപ്പിക്കാൻ \"ഒരു ഉപകരണം ചേർക്കുക\" എന്നതിൽ ടാപ്പ് ചെയ്യുക.</string>
 	<string name="onboarding_transfer_target_sas_title" state="needs_review" hash="-1838551486">നിങ്ങളുടെ മറ്റ് ഉപകരണത്തിൽ ഈ കോഡ് നൽകുക</string>
 	<string name="onboarding_transfer_devices_multi_title" state="needs_review" hash="-1477616977">നിങ്ങൾക്ക് ഒന്നിലധികം ഉപകരണങ്ങളിൽ ഉപയോഗിക്കാവുന്ന സബ്സ്ക്രിപ്ഷൻ ഉണ്ട്</string>
 	<string name="onboarding_transfer_devices_multi_subtitle" state="needs_review" hash="1486696572">നിങ്ങളുടെ നിലവിലെ ഉപകരണങ്ങളുടെ പട്ടിക ഇതാ</string>
@@ -1695,7 +1711,7 @@
 	<string name="notification_channel_device_name" state="needs_review" hash="1347557771">ഉപകരണ മാനേജ്‌മെന്റ്</string>
 	<string name="notification_channel_device_description" state="needs_review" hash="-36703170">നിങ്ങളുടെ ഉപകരണങ്ങളെക്കുറിച്ചുള്ള അറിയിപ്പുകൾ</string>
 	<string name="notification_title_device_expiration" state="needs_review" hash="202400638">\"%1$s\" നിർജ്ജീവമാക്കുക</string>
-	<string name="notification_message_device_expiration" state="needs_review" hash="-449434000">നിങ്ങളുടെ Olvid ഉപകരണം \\"%1$s\\" %2$s-നുള്ളിൽ പ്രവർത്തനരഹിതമാക്കും.</string>
+	<string name="notification_message_device_expiration" state="needs_review" hash="-449434000">നിങ്ങളുടെ Olvid ഉപകരണം \"%1$s\" %2$s-നുള്ളിൽ പ്രവർത്തനരഹിതമാക്കും.</string>
 	<string name="notification_title_unnamed_device_expiration" state="needs_review" hash="1863987850">ഉപകരണത്തെ പ്രവർത്തനരഹിതമാക്കുക</string>
 	<string name="notification_message_unnamed_device_expiration" state="needs_review" hash="-50322120">നിങ്ങളുടെ Olvid ഉപകരണം %1$s-നുള്ളിൽ നിർജ്ജീവമാക്കപ്പെടും.</string>
 	<string name="dialog_title_add_device_explanation" state="needs_review" hash="156848899">ഒരു ഉപകരണം ചേർക്കണോ?</string>
@@ -1731,10 +1747,10 @@
 	<string name="troubleshooting_audio_recording_valid_description" state="needs_review" hash="-1208051683">ഒൽവിഡ് ആപ്പിന് മൈക്രോഫോണിലേക്ക് പ്രവേശനം നൽകുന്നത്, നിങ്ങൾക്ക് വോയ്‌സ് മെസേജുകൾ റെക്കോർഡുചെയ്യാൻ അനുവദിക്കുകയും സുരക്ഷിതമായ കോളുകൾ ആരംഭിക്കുന്നതിനും സ്വീകരിക്കുന്നതിനും ആവശ്യമാണ്.</string>
 	<string name="troubleshooting_audio_recording_invalid_title" state="needs_review" hash="103308083">ഓഡിയോ റെക്കോർഡിംഗ് പ്രവർത്തനരഹിതമാക്കി</string>
 	<string name="troubleshooting_location_valid_title" state="needs_review" hash="1696123729">സ്ഥലനിർണയം പ്രവർത്തനക്ഷമമാക്കി</string>
-	<string name="troubleshooting_location_valid_description" state="needs_review" hash="298520401">നിങ്ങളുടെ ലൊക്കേഷൻ സജീവമാക്കുന്നത്, \\"നിങ്ങളുടെ ലൊക്കേഷൻ പങ്കിടുക\\" എന്ന ഫീച്ചർ ഉപയോഗിക്കാൻ നിങ്ങളെ അനുവദിക്കും.</string>
+	<string name="troubleshooting_location_valid_description" state="needs_review" hash="298520401">നിങ്ങളുടെ ലൊക്കേഷൻ സജീവമാക്കുന്നത്, \"നിങ്ങളുടെ ലൊക്കേഷൻ പങ്കിടുക\" എന്ന ഫീച്ചർ ഉപയോഗിക്കാൻ നിങ്ങളെ അനുവദിക്കും.</string>
 	<string name="troubleshooting_location_invalid_title" state="needs_review" hash="-1432853050">സ്ഥലനിർണയം പ്രവർത്തനരഹിതമാക്കി</string>
 	<string name="troubleshooting_location_permissions_valid_title" state="needs_review" hash="249213636">സ്ഥല വിവരങ്ങൾ നൽകാനുള്ള അനുമതി ലഭിച്ചു</string>
-	<string name="troubleshooting_location_permissions_valid_description" state="needs_review" hash="-527872954">നിങ്ങളുടെ ലൊക്കേഷനിലേക്ക് Olvid-ന് അനുമതി നൽകുന്നത്, \\"നിങ്ങളുടെ ലൊക്കേഷൻ പങ്കിടുക\\" എന്ന ഫീച്ചർ ഉപയോഗിക്കാൻ നിങ്ങളെ അനുവദിക്കുന്നു.</string>
+	<string name="troubleshooting_location_permissions_valid_description" state="needs_review" hash="-527872954">നിങ്ങളുടെ ലൊക്കേഷനിലേക്ക് Olvid-ന് അനുമതി നൽകുന്നത്, \"നിങ്ങളുടെ ലൊക്കേഷൻ പങ്കിടുക\" എന്ന ഫീച്ചർ ഉപയോഗിക്കാൻ നിങ്ങളെ അനുവദിക്കുന്നു.</string>
 	<string name="troubleshooting_location_permissions_invalid_title" state="needs_review" hash="-296757597">സ്ഥല വിവരങ്ങൾ നൽകാനുള്ള അനുമതി നിഷേധിച്ചു</string>
 	<string name="troubleshooting_battery_optimization_valid_title" state="needs_review" hash="489481166">ബാറ്ററി ഒപ്റ്റിമൈസേഷൻ</string>
 	<string name="troubleshooting_battery_optimization_valid_description" state="needs_review" hash="634228343">Android-ൽ ബാറ്ററി ഒപ്റ്റിമൈസേഷൻ പ്രവർത്തിക്കുന്നത് ചില പശ്ചാത്തല സംഭവങ്ങളെ വൈകിച്ചാണ്, തുടർന്ന് അവയെ ഒരുമിച്ച് പ്രവർത്തിപ്പിക്കുന്നു. ഇത് ഇൻകമിംഗ് ഒൽവിഡ് സന്ദേശങ്ങളും കോളുകളും സ്വീകരിക്കുന്നതിൽ കാലതാമസമുണ്ടാക്കാം.\n\nഒൽവിഡ് നിലവിൽ \"എപ്പോഴും പശ്ചാത്തലത്തിൽ പ്രവർത്തിക്കാൻ\" അനുവദിച്ചിരിക്കുന്നു.</string>
@@ -2018,7 +2034,7 @@
 	<string name="button_label_restore_my_profile" state="needs_review" hash="418284480">എന്റെ പ്രൊഫൈൽ പുനഃസ്ഥാപിക്കുക</string>
 	<string name="button_label_keep_all_with_olvid_plus" state="needs_review" hash="622534541">ഒലവിഡ്+ ഉപയോഗിച്ച് അവയെല്ലാം സംരക്ഷിക്കുക.</string>
 	<string name="explanation_backup_v2_choose_device_after_restore" state="needs_review" hash="292969815">നിങ്ങളുടെ പ്രൊഫൈൽ പുനഃസ്ഥാപിച്ച ശേഷം, നിങ്ങളുടെ പ്രൊഫൈൽ ക്രമീകരണങ്ങളിൽ നിന്ന് ഏത് ഉപകരണം സജീവമായി നിലനിർത്താമെന്ന് നിങ്ങൾക്ക് തിരഞ്ഞെടുക്കാം.</string>
-	<string name="explanation_backup_v2_device_expiration_start" state="needs_review" hash="-147053489">നിങ്ങളുടെ പ്രൊഫൈൽ പുനഃസ്ഥാപിക്കുന്നതിലൂടെ \\"</string>
+	<string name="explanation_backup_v2_device_expiration_start" state="needs_review" hash="-147053489">നിങ്ങളുടെ പ്രൊഫൈൽ പുനഃസ്ഥാപിക്കുന്നതിലൂടെ \"</string>
 	<string name="explanation_backup_v2_device_expiration_nickname" state="needs_review" hash="2093353377">(%1$s)</string>
 	<string name="toast_message_no_key_found" state="needs_review" hash="-1984410678">ബാക്കപ്പ് കീ കണ്ടെത്താനായില്ല</string>
 	<string name="label_backup_headers_title" state="needs_review" hash="-846183546">നിങ്ങളുടെ ബാക്കപ്പുകൾ</string>
@@ -2040,11 +2056,14 @@
 	<string name="button_label_configure_backups" state="needs_review" hash="-990646398">ബാക്കപ്പുകൾ പ്രവർത്തനക്ഷമമാക്കുക</string>
 	<string name="tip_write_backup_key_title" state="needs_review" hash="-1652757003">നിങ്ങളുടെ ബാക്കപ്പ് കീ എഴുതിവെക്കാൻ മറക്കരുത് 😇</string>
 	<string name="tip_write_backup_key_message" state="needs_review" hash="931018791">നിങ്ങളുടെ പ്രൊഫൈലുകൾ പുനഃസ്ഥാപിക്കുന്നതിന് നിങ്ങളുടെ ബാക്കപ്പ് കീ അത്യാവശ്യമാണ്, ഈ ഉപകരണത്തിലേക്കുള്ള നിങ്ങളുടെ പ്രവേശനം നഷ്ടപ്പെട്ടാൽ അത് ഉപയോഗപ്രദമാകും.</string>
+	<string name="tip_legacy_backup_end_of_life_title" state="needs_review" hash="810495149">നിങ്ങൾ ഉപയോഗിക്കുന്ന പഴയ ബാക്കപ്പുകൾക്ക് അതിന്റെ കാലാവധി കഴിഞ്ഞു.</string>
+	<string name="tip_legacy_backup_end_of_life_message" state="needs_review" hash="-314257210">വരാനിരിക്കുന്ന Olvid അപ്‌ഡേറ്റിൽ പഴയ ബാക്കപ്പുകൾക്ക് പിന്തുണ നൽകുന്നത് നിർത്തലാക്കും. നിങ്ങളുടെ അക്കൗണ്ട് സുരക്ഷിതമായി നിലനിർത്താൻ, ഇപ്പോൾ തന്നെ പുതിയ ബാക്കപ്പ് രീതിയിലേക്ക് മാറുക.</string>
 	<string name="tip_troubleshooting_title" state="needs_review" hash="-393739108">നിങ്ങളുടെ Olvid അനുഭവം മെച്ചപ്പെടുത്തുക 🚀</string>
 	<string name="tip_troubleshooting_message" state="needs_review" hash="-935493349">നിങ്ങളുടെ ഉപകരണത്തിൽ ചില ക്രമീകരണങ്ങൾ ശരിയായി കോൺഫിഗർ ചെയ്തിട്ടില്ല, ഇത് Olvid ഉപയോഗിക്കുന്ന നിങ്ങളുടെ അനുഭവത്തെ ബാധിച്ചേക്കാം.</string>
 	<string name="button_label_this_way" state="needs_review" hash="747183939">ഇവഴി</string>
 	<string name="toast_code_copied" state="needs_review" hash="-1522785848">കോഡ് പകർത്തു്</string>
 	<string name="explanation_choose_members" state="needs_review" hash="-1385158706">ഈ ഗ്രൂപ്പിൽ ആരെയെല്ലാം ചേർക്കണമെന്നു തിരഞ്ഞെടുക്കുക.</string>
+	<string name="explanation_choose_share_recipients" state="needs_review" hash="-1406265940">ആരുമായി പങ്കിടാൻ ആഗ്രഹിക്കുന്നുവോ അവരെ തിരഞ്ഞെടുക്കുക.</string>
 	<string name="explanation_choose_contact_introduction" state="needs_review" hash="1113777517">%1$s-നെ ആരിലേക്ക് പരിചയപ്പെടുത്തണമെന്ന് തിരഞ്ഞെടുക്കുക.</string>
 	<string name="label_group_administration" state="needs_review" hash="871355986">ഗ്രൂപ്പ് അഡ്മിനിസ്ട്രേഷൻ</string>
 	<string name="dialog_title_call_blocked" state="needs_review" hash="1594606530">വിളി തടഞ്ഞു</string>
@@ -2170,7 +2189,7 @@
 	<string name="store_link_olvid_store" state="needs_review" hash="-1825630369">ഒൽവിഡ് സ്റ്റോർ സന്ദർശിക്കുക</string>
 	<string name="toast_message_reminder_set" state="needs_review" hash="-961055414">റിമൈൻഡർ സജ്ജമാക്കിയത്</string>
 	<string name="dialog_title_keycloak_authentication_impossible" state="needs_review" hash="325273853">അംഗീകാരം സാധ്യമല്ല</string>
-	<string name="dialog_message_keycloak_authentication_impossible" state="needs_review" hash="390830785">നിങ്ങളുടെ പ്രൊഫൈൽ നിലവിൽ നിങ്ങളുടെ സ്ഥാപനത്തിന്റെ നിയന്ത്രണത്തിലാണ്, അതിനാൽ വീണ്ടും പ്രാമാണീകരണം ആവശ്യമാണ്. എന്നിരുന്നാലും, പിന്തുണയ്ക്കുന്ന പ്രാമാണീകരണ രീതികൾ ഒന്നും ലഭ്യമായിട്ടില്ല.\n\nകൂടുതൽ വിവരങ്ങൾക്കായി നിങ്ങളുടെ അഡ്മിനിസ്ട്രേറ്ററുമായി ബന്ധപ്പെടുക.</string>
+	<string name="dialog_message_keycloak_authentication_impossible" state="needs_review" hash="-2031322232">നിങ്ങളുടെ പ്രൊഫൈൽ നിലവിൽ നിങ്ങളുടെ ഓർഗനൈസേഷനാണ് കൈകാര്യം ചെയ്യുന്നത്, അതിനാൽ വീണ്ടും പ്രാമാണീകരണം ആവശ്യമാണ്. എന്നിരുന്നാലും, പിന്തുണയ്‌ക്കുന്ന ഒരു പ്രാമാണീകരണ രീതി പോലും ലഭ്യമായിട്ടില്ല.\n\nകൂടുതൽ വിവരങ്ങൾക്കായി നിങ്ങളുടെ അഡ്‌മിനിസ്‌ട്രേറ്ററുമായി ബന്ധപ്പെടുക.</string>
 	<string name="onboarding_transfer_keycloak_error_message_authentication_impossible" state="needs_review" hash="-1891385979">ഏത് അനുയോജ്യമായ പ്രാമാണീകരണ രീതിയും ലഭ്യമായിട്ടില്ല.</string>
 	<string name="pref_use_alt_turn_servers_title" state="needs_review" hash="-1956132776">മറ്റ് TURN സെർവറുകൾ ഉപയോഗിക്കുക</string>
 	<string name="pref_use_alt_turn_servers_summary" state="needs_review" hash="357427162">ക്രമീകരിക്കുന്ന IP വിലാസങ്ങളുള്ള TURN സെർവറുകൾ ഉപയോഗിക്കാൻ ഈ ഓപ്ഷൻ സജീവമാക്കുക. നിങ്ങൾക്ക് ഉറപ്പില്ലെങ്കിൽ, ഈ ഓപ്ഷൻ ഓഫാക്കി വെക്കുക 😁</string>
@@ -2281,5 +2300,45 @@
 	<string name="label_error_loading_openstreetmap_style_file" state="needs_review" hash="-2596045">ഓപ്പൺസ്ട്രീറ്റ്മാപ്പ് ശൈലി ഫയൽ ലോഡ് ചെയ്യുമ്പോൾ ഒരു പിഴവ് സംഭവിച്ചു.</string>
 	<string name="dialog_title_subscriptions_not_available" state="needs_review" hash="336174241">ആപ്പിലെ സബ്സ്ക്രിപ്ഷനുകൾ ലഭ്യമല്ല</string>
 	<string name="dialog_message_subscriptions_not_available" state="needs_review" hash="2093768678">നിങ്ങൾ ഇൻസ്റ്റാൾ ചെയ്ത Olvid പതിപ്പിൽ Google-ന്റെ ബില്ലിംഗ് ലൈബ്രറി ഉൾപ്പെടുത്തിയിട്ടില്ല, അതിനാൽ ആപ്ലിക്കേഷനിലെ വാങ്ങലുകൾക്ക് ഇത് പിന്തുണ നൽകുന്നില്ല.\n\nകൂടുതൽ വിവരങ്ങൾക്കായി, దయచేసి feedback@olvid.io എന്ന വിലാസത്തിൽ ഞങ്ങളെ ബന്ധപ്പെടുക.</string>
+	<string name="ftux_next" state="needs_review" hash="1158639077">അടുത്തത്</string>
+	<string name="ftux_start" state="needs_review" hash="646298532">തുടങ്ങി</string>
+	<string name="ftux_page_indicator" state="needs_review" hash="1987610035">%2$d-ൽ %1$d പേജ്</string>
+	<string name="ftux_page_welcome_title" state="needs_review" hash="1173832630"><b>ഒൽവിഡ്</b>-ലേക്ക് സ്വാഗതം.</string>
+	<string name="ftux_page_welcome_body" state="needs_review" hash="-2085198139">എല്ലാവർക്കും സുരക്ഷിതമായ സന്ദേശമയയ്‌ക്കാനുള്ള ആപ്ലിക്കേഷൻ.</string>
+	<string name="ftux_page_private_title" state="needs_review" hash="1815927819"><b>സ്വകാര്യ</b> സന്ദേശമയയ്‌ക്കൽ</string>
+	<string name="ftux_page_private_body" state="needs_review" hash="-590644231">%1$s-ൽ, നിങ്ങൾ ആരുമായി ചാറ്റ് ചെയ്യാൻ ആഗ്രഹിക്കുന്നുവോ അവരെ തിരഞ്ഞെടുക്കുക. സ്പാമുകളോ, ശുപാർശകളോ, ആവശ്യമില്ലാത്ത അറിയിപ്പുകളോ, പരിചയമില്ലാത്ത ആളുകളിൽ നിന്നുള്ള സന്ദേശങ്ങളോ ഉണ്ടാകില്ല.\n\nനിങ്ങളുടെ സമ്മതമില്ലാതെ ആരും നിങ്ങളെ ബന്ധപ്പെടാൻ കഴിയില്ല.\n\n%1$s നിങ്ങളുടെ ഡിജിറ്റൽ ലോകമാണ്.</string>
+	<string name="ftux_page_everyone_title" state="needs_review" hash="1506796386">എല്ലാവർക്കും ഉപയോഗിക്കാവുന്ന മെസേജിംഗ് ആപ്പ്</string>
+	<string name="ftux_page_everyone_body" state="needs_review" hash="-586100377">നിങ്ങൾ ആരായാലും, %1$s നിങ്ങൾക്ക് മികച്ച സുരക്ഷ നൽകുന്നു. ഇമെയിൽ വിലാസമോ ഫോൺ നമ്പറോ ആവശ്യമില്ല.\n\n%1$s നിങ്ങളോട് യാതൊന്നും ചോദിക്കുന്നില്ല, അത് എല്ലാം മാറ്റുന്നു.</string>
+	<string name="ftux_page_protect_title" state="needs_review" hash="1969120191">ഒൽവിഡ് നിങ്ങളെ <b>സംരക്ഷിക്കുന്നു</b>. ഒൽവിഡ് നിങ്ങൾക്ക് പ്രിയപ്പെട്ടവരെ സംരക്ഷിക്കുന്നു.</string>
+	<string name="ftux_page_protect_body" state="needs_review" hash="881847930">ഇതൊരു വാഗ്ദാനമല്ല - %1$s ക്രിപ്റ്റോഗ്രാഫിക് തെളിവ് നൽകുന്നു.\n\nനിങ്ങൾ കോൺടാക്റ്റുകൾ വിദൂരമായി അല്ലെങ്കിൽ നേരിട്ട് ചേർക്കുമ്പോളും, നിങ്ങളുടെ സംഭാഷണങ്ങൾ കൃത്യവും എൻഡ്-ടു-എൻഡ് എൻ‌ക്രിപ്റ്റ് ചെയ്തതുമാണ്.</string>
+	<string name="ftux_page_pricing_title" state="needs_review" hash="-1948277889">ഒരു <b>സുതാര്യമായ</b> ബിസിനസ്സ് മോഡൽ</string>
+	<string name="ftux_page_pricing_body" state="needs_review" hash="-1064278870">%1$s നിങ്ങളുടെ സ്വകാര്യ ഡാറ്റ ഉപയോഗിച്ച് തനിക്ക് ധനസഹായം നൽകുന്നില്ല - കാരണം അതിന് അതിനായി യാതൊന്നും ആവശ്യപ്പെടുന്നില്ല!\n\nഎന്താണ് സൗജന്യമായി ലഭിക്കുന്നത്, അത് തന്നെ സൗജന്യമാണ്. എന്താണ് പണം കൊടുത്ത് വാങ്ങുന്നത്, അതിന് ഒരു വിലയുണ്ട്.</string>
+	<string name="ftux_page_media_title" state="needs_review" hash="558110518">ഒല്‍വിഡ് എല്ലാം നേടിയിരിക്കുന്നു</string>
+	<string name="ftux_page_media_body" state="needs_review" hash="1807247240">അറ്റാച്ച്‌മെന്റ് സൈസിനുള്ള പരിധിയില്ല, ഉയർന്ന റെസല്യൂഷൻ ഫോട്ടോകൾ പങ്കിടാം, പോളുകൾ, ഓഡിയോ, വീഡിയോ കോളുകൾ, മൾട്ടി-ഡിവിസ് പിന്തുണ, ജിയോലോക്കേഷൻ എന്നിവയെല്ലാം ഇതിൽ ലഭ്യമാണ്!</string>
 	<string name="menu_action_cancel_upload" state="needs_review" hash="1672681586">അപ്‌ലോഡ് റദ്ദാക്കുക</string>
+	<string name="label_suggested_contacts" state="needs_review" hash="816810770">പரிചയപ്പെടുത്താവുന്ന ആളുകൾ</string>
+	<string name="label_suggested_contacts_subtitle" state="needs_review" hash="131522501">ഉപയോക്താക്കളെ എളുപ്പത്തിൽ ക്ഷണിക്കുക</string>
+	<string name="label_suggested_contact_already_a_contact" state="needs_review" hash="-1177848651">ഇതൊരു കോൺടാക്ട് ആണ്</string>
+	<string name="label_suggested_contact_invitation_received" state="needs_review" hash="2100924901">ക്ഷണക്കത്ത് ലഭിച്ചു</string>
+	<string name="label_suggested_contact_invitation_sent" state="needs_review" hash="310679275">ക്ഷണക്കത്ത് അയച്ചു</string>
+	<string name="label_suggested_contacts_all_done" state="needs_review" hash="-127525104">നിങ്ങൾ ഏറ്റവും പുതിയ പതിപ്പിലാണ്!\nകൂടുതൽ കോൺടാക്റ്റുകൾ നിർദ്ദേശിക്കാൻ ഇല്ല.</string>
+	<string name="button_label_suggested_contact_later" state="needs_review" hash="-1933816039">പിന്നീട്</string>
+	<string name="button_label_close" state="needs_review" hash="1454843231">അടക്കുക</string>
+	<string name="button_label_skip" state="needs_review" hash="2056258301">തിരുത്തുക</string>
+	<string name="button_label_understood" state="needs_review" hash="829780875">അതെനിക്ക് മനസ്സിലായി</string>
+	<string name="label_suggested_contacts_onboarding_title_1" state="needs_review" hash="491881039">ഒരു സ്വൈപ്പ് ഉപയോഗിച്ച് ക്ഷണിക്കുക</string>
+	<string name="label_suggested_contacts_onboarding_message_1" state="needs_review" hash="331320806">ഉപയോക്താവിനെ ക്ഷണിക്കാൻ കാർഡ് വലതുവശത്തേക്ക് സ്വൈപ്പ് ചെയ്യുക, അല്ലെങ്കിൽ അടുത്തവയിലേക്ക് പോകാൻ ഇടതുവശത്തേക്ക് സ്വൈപ്പ് ചെയ്യുക.</string>
+	<string name="label_suggested_contacts_onboarding_title_2" state="needs_review" hash="-788798380">ഈ കോൺടാക്റ്റുകൾ എവിടെ നിന്നാണ് വന്നത്?</string>
+	<string name="label_suggested_contacts_onboarding_message_2" state="needs_review" hash="1536681696">ഇവ നിങ്ങൾ ഇതുവരെ നിങ്ങളുടെ കോൺടാക്റ്റുകളിൽ ചേർക്കാത്ത ഒൽവിഡ് ഉപയോക്താക്കളാണ്.</string>
+	<string name="label_suggested_contacts_onboarding_caption" state="needs_review" hash="-1299179969">നിങ്ങൾക്ക് ഒരു പൊതു ഗ്രൂപ്പിലെങ്കിലും അംഗത്വമുണ്ട്.</string>
+	<string name="label_suggested_contacts_you" state="needs_review" hash="672009142">നിങ്ങൾ</string>
+	<string name="label_suggested_contacts_common_group" state="needs_review" hash="-1739793963">പൊதுവായ ഗ്രൂപ്പ്</string>
+	<string name="explanation_suggested_contacts_others_tab" state="needs_review" hash="852096678">താഴെ കാണിച്ചിരിക്കുന്ന ഉപയോക്താക്കൾ നിങ്ങളുടെ കോൺടാക്‌റ്റുകളിൽ ഉൾപ്പെടുന്നില്ല, അതിനാൽ അവരുമായി നിങ്ങൾക്ക് ഇതുവരെ സ്വകാര്യ സംഭാഷണം നടത്താൻ കഴിയില്ല. എന്നാൽ നിങ്ങൾക്ക് അവരെ എളുപ്പത്തിൽ ക്ഷണിക്കാവുന്നതാണ്! 🚀</string>
+	<string name="label_suggested_contacts_invite_in_one_gesture" state="needs_review" hash="438220313">ഈ ഉപയോക്താക്കളെ ഒരു സ്വൈപ്പ് ഉപയോഗിച്ച് ക്ഷണിക്കുക</string>
+	<string name="menu_action_suggested_contacts_see_full_list" state="needs_review" hash="603082500">പൂർണ്ണമായ ലിസ്റ്റ് കാണുക</string>
+	<string name="menu_action_suggested_contacts_replay_onboarding" state="needs_review" hash="-1552704243">ട്യൂട്ടോറിയൽ വീണ്ടും കാണുക</string>
+	<string name="button_label_uninvite" state="needs_review" hash="771825501">ക്ഷണాన్ని റദ്ദാക്കുക</string>
+	<string name="button_label_accept_invitation" state="needs_review" hash="-1778405034">ക്ഷണ സ്വീകരിക്കുക</string>
+	<string name="label_suggested_contacts_already_swiped" state="needs_review" hash="427042318">ഇതിനകം ഒഴിവാക്കി</string>
+	<string name="label_suggested_contacts_not_swiped_yet" state="needs_review" hash="310924358">ഇതുവരെ സ്കീൻ ചെയ്തിട്ടില്ല</string>
 </resources>

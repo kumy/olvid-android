@@ -26,8 +26,8 @@
 	<string name="button_label_create_group" state="needs_review" hash="1102939673">Создать группу</string>
 	<string name="button_label_discard" state="needs_review" hash="795591204">Отменить</string>
 	<string name="button_label_exchange_digits_with_user" state="needs_review" hash="339599327">Обменяйтесь кодами с %1$s</string>
-	<string name="button_label_generate_new_id" state="needs_review" hash="92014734">Сгенерировать новый ID</string>
-	<string name="button_label_generate_my_id" state="needs_review" hash="-1007060207">Сгенерировать мой ID</string>
+	<string name="button_label_generate_new_id" state="needs_review" hash="-1130516787">Создать новый профиль</string>
+	<string name="button_label_generate_my_id" state="needs_review" hash="239641058">Создать мой профиль</string>
 	<string name="button_label_ignore" state="needs_review" hash="-806373746">Игнорировать</string>
 	<string name="button_label_reject" state="needs_review" hash="-2094664161">Отклонить</string>
 	<string name="button_label_introduce" state="needs_review" hash="193852909">Представить</string>
@@ -80,6 +80,12 @@
 	<string name="dialog_title_rename_group" state="needs_review" hash="1461324427">Переименовать группу</string>
 	<string name="dialog_title_restart_channel_establishment" state="needs_review" hash="-645769680">Перезапустить установку канала?</string>
 	<string name="dialog_title_share_with" state="needs_review" hash="854107768">Поделиться с…</string>
+	<string name="dialog_title_share_recipients" state="needs_review" hash="1157053138">Выберите получателей</string>
+	<string name="share_label_from" state="needs_review" hash="2049052075">От:</string>
+	<string name="share_label_to" state="needs_review" hash="-1785690373">Кому:</string>
+	<string name="share_label_choose_recipients" state="needs_review" hash="1157053138">Выберите получателей</string>
+	<string name="hint_share_message" state="needs_review" hash="-763169957">Добавить сообщение…</string>
+	<string name="content_description_delete_attachment" state="needs_review" hash="-220348329">Удалить вложение</string>
 	<string name="dialog_title_shortcut_to" state="needs_review" hash="-1193591200">Создать ярлык для…</string>
 	<string name="explanation_choose_display_name" state="needs_review" hash="1162066686">Пожалуйста, введите имя, которое будет отображаться вашим контактам. Эти данные никогда не будут отправлены на серверы Olvid.</string>
 	<string name="explanation_empty_contact_list" state="needs_review" hash="1240778508">Пока нет контактов</string>
@@ -104,7 +110,7 @@
 	<string name="explanation_no_message_found" state="needs_review" hash="-1329622990">Сообщений не найдено</string>
 	<string name="explanation_no_attachment_found" state="needs_review" hash="156593369">Вложение не найдено</string>
 	<string name="explanation_no_link_found" state="needs_review" hash="-1419950450">Ссылка не найдена</string>
-	<string name="hint_company" state="needs_review" hash="379200324">Компания (необязательно)</string>
+	<string name="hint_company" state="needs_review" hash="988571519">Компания</string>
 	<string name="hint_compose_your_message" state="needs_review" hash="-25761578">Написать сообщение</string>
 	<string name="hint_compose_your_message_ephemeral" state="needs_review" hash="-1527208333">Временное сообщение</string>
 	<string name="label_edit_your_message" state="needs_review" hash="1091877412">Отредактируйте сообщение</string>
@@ -133,7 +139,7 @@
 	<string name="hint_last_name" state="needs_review" hash="1701170359">Фамилия</string>
 	<string name="hint_new_name" state="needs_review" hash="709842168">Новое имя</string>
 	<string name="hint_notification_reply" state="needs_review" hash="1095144032">Ответить</string>
-	<string name="hint_position" state="needs_review" hash="-55145181">Должность (необязательно)</string>
+	<string name="hint_position" state="needs_review" hash="1338817744">Должность</string>
 	<string name="invitation_label_their_code" state="needs_review" hash="1402501614">Их код</string>
 	<string name="invitation_label_your_code" state="needs_review" hash="1944546233">Твой код</string>
 	<string name="invitation_status_accept_invite" state="needs_review" hash="2100924901">Приглашение получено</string>
@@ -170,6 +176,11 @@
 	<string name="label_group_members" state="needs_review" hash="1460220752">Участники группы</string>
 	<string name="label_other_group_members" state="needs_review" hash="-2121490032">Другие участники группы</string>
 	<string name="label_groups_common" state="needs_review" hash="1252823567">Общие группы</string>
+	<string name="label_create_group_with_contact" state="needs_review" hash="1950649899">Создать группу с %1$s</string>
+	<string name="label_add_contact_to_a_group" state="needs_review" hash="-682192937">Добавить %1$s в группу</string>
+	<string name="label_add_to_groups" state="needs_review" hash="-654216617">Добавить в группы</string>
+	<string name="explanation_no_admin_group_to_add_contact" state="needs_review" hash="402908162">Вы не являетесь администратором ни одной группы, в которую можно было бы добавить %1$s.</string>
+	<string name="toast_message_adding_contact_to_groups" state="needs_review" hash="1201697547">Добавление %1$s в выбранные группы...</string>
 	<string name="label_invitation_declined" state="needs_review" hash="2038173833">Приглашение\nотклонено</string>
 	<string name="label_new_group_card" state="needs_review" hash="1006740909">Информация о группе обновлена</string>
 	<string name="label_not_part_of_a_group" state="needs_review" hash="1667979596">Ещё не состоит в группах</string>
@@ -183,6 +194,7 @@
 	<string name="menu_action_create_shortcut" state="needs_review" hash="-1949455873">Создать ярлык</string>
 	<string name="menu_action_delete" state="needs_review" hash="-232100842">Удалить</string>
 	<string name="menu_action_delete_discussion" state="needs_review" hash="2059656471">Удалить переписку</string>
+	<string name="menu_action_export_discussion" state="needs_review" hash="1736692296">Экспортировать переписку</string>
 	<string name="label_swipe_details" state="needs_review" hash="171468732">Подробности</string>
 	<string name="menu_action_disband_group" state="needs_review" hash="-1767089289">Распустить группу</string>
 	<string name="menu_action_edit_group_details" state="needs_review" hash="310205135">Редактировать сведения о группе</string>
@@ -482,7 +494,14 @@
 	<string name="dialog_title_backup_choices" state="needs_review" hash="281222223">Выберите метод резервного копирования</string>
 	<string name="menu_action_choose_picture" state="needs_review" hash="-1655172909">Выберите изображение</string>
 	<string name="menu_action_take_photo" state="needs_review" hash="-1123080444">Сделать снимок</string>
+	<string name="menu_action_choose_image_from_olvid" state="needs_review" hash="1585248356">Выберите полученное изображение</string>
 	<string name="menu_action_remove_image" state="needs_review" hash="1094977672">Удалить изображение</string>
+	<string name="menu_action_use_image_as" state="needs_review" hash="587310096">Использовать это изображение как…</string>
+	<string name="label_use_photo_for_my_profile" state="needs_review" hash="-1005809580">Моя фотография профиля</string>
+	<string name="label_use_photo_for_target" state="needs_review" hash="283541521">Фото для %s</string>
+	<string name="label_use_photo_for_discussion_background" state="needs_review" hash="1925733151">Фон для %s</string>
+	<string name="toast_message_photo_set" state="needs_review" hash="-1641885203">Изображение обновлено</string>
+	<string name="toast_message_background_set" state="needs_review" hash="1642873459">Фон обновлен</string>
 	<string name="dialog_title_create_empty_group" state="needs_review" hash="-663434464">Создать пустую группу?</string>
 	<string name="dialog_message_create_empty_group" state="needs_review" hash="-297923005">Вы не выбрали ни одного контакта для добавления в группу. Вы уверены, что хотите создать пустую группу?</string>
 	<string name="pref_dark_mode_title" state="needs_review" hash="816474245">Тёмная тема</string>
@@ -862,7 +881,7 @@
 	<string name="button_label_check_options" state="needs_review" hash="-759177128">Проверить параметры</string>
 	<string name="hint_olvid_server" state="needs_review" hash="1097391633">Сервер Olvid</string>
 	<string name="hint_license_activation_code" state="needs_review" hash="102193320">Код активации лицензии</string>
-	<string name="activity_title_identity_creation_options" state="needs_review" hash="1180456032">Параметры создания ID</string>
+	<string name="activity_title_identity_creation_options" state="needs_review" hash="-774054913">Параметры создания профиля</string>
 	<string name="activity_title_scan_configuration" state="needs_review" hash="-386259993">Сканирование конфигурации</string>
 	<string name="menu_action_import_activation_from_clipboard" state="needs_review" hash="-70842935">Импортировать ссылку из буфера обмена</string>
 	<string name="troubleshooting_update_valid_title" state="needs_review" hash="741828768">Olvid обновлен</string>
@@ -871,7 +890,6 @@
 	<string name="dialog_message_update_available" state="needs_review" hash="416187645">Доступна новая версия Olvid.\n\nПожалуйста, обновите приложение, чтобы воспользоваться новейшими функциями.</string>
 	<string name="dialog_title_call_initiation_not_supported" state="needs_review" hash="-2088021831">Не удалось начать вызов</string>
 	<string name="dialog_message_call_initiation_not_supported" state="needs_review" hash="1760333819">Похоже, что ваш сервер Olvid не поддерживает безопасный запуск вызовов.\n\nПожалуйста, свяжитесь со своим администратором для получения дополнительной информации.</string>
-	<string name="label_identity_creation_options" state="needs_review" hash="1180456032">Параметры создания ID</string>
 	<string name="text_option_server" state="needs_review" hash="-1130676431">Сервер: %1$s</string>
 	<string name="dialog_title_non_default_server" state="needs_review" hash="2119192219">Использование нестандартного сервера</string>
 	<string name="dialog_message_non_default_server" state="needs_review" hash="459308900">Вы собираетесь создать профиль на следующем сервере:\n\n%1$s\n\nЭто не сервер Olvid по умолчанию. Продолжайте, только если вы доверяете этому серверу.</string>
@@ -900,7 +918,7 @@
 	<string name="toast_message_unable_to_keycloak_revoke" state="needs_review" hash="-1368037130">Не удалось заменить предыдущий Olvid ID, попробуйте еще раз</string>
 	<string name="toast_message_keycloak_revoke_successful" state="needs_review" hash="-1216369809">Предыдущий Olvid ID успешно заменен</string>
 	<string name="dialog_title_keycloak_authentication_required_user_id_changed" state="needs_review" hash="-896407029">Обнаружено изменение пользователя</string>
-	<string name="dialog_message_keycloak_authentication_required_user_id_changed" state="needs_review" hash="876252686">В настоящее время ваш профиль управляется вашей организацией. Похоже, вы вошли в систему под другим именем пользователя, чем обычно. Это не поддерживается.\n\nОбратитесь к вашему администратору или повторно войдите в систему под правильным именем пользователя.</string>
+	<string name="dialog_message_keycloak_authentication_required_user_id_changed" state="needs_review" hash="2080839829">В настоящее время ваш профиль управляется вашей организацией. Похоже, вы вошли в систему под другим именем пользователя, чем обычно. Это не поддерживается.\n\nПожалуйста, свяжитесь со своим администратором или повторно войдите в систему под правильным именем пользователя.</string>
 	<string name="dialog_title_add_keycloak_user" state="needs_review" hash="-1050193239">Добавить контакт</string>
 	<string name="dialog_message_add_keycloak_user" state="needs_review" hash="-1755937035">Вы выбрали добавить %1$s в свои контакты. Хотите продолжить?</string>
 	<string name="explanation_keycloak_update_new" state="needs_review" hash="1136733528">Вы собираетесь настроить поставщика удостоверений вашей компании в Olvid. После настройки вы сможете аутентифицироваться на этом сервере, и Olvid позволит вам легко добавлять других сотрудников в свои контакты.\nПожалуйста, свяжитесь с вашим администратором для получения более подробной информации.</string>
@@ -1031,6 +1049,8 @@
 	<string name="label_storage_discussions" state="needs_review" hash="491497248">Обсуждения</string>
 	<string name="pref_use_internal_image_viewer_title" state="needs_review" hash="1319400578">Использовать встроенный просмотрщик изображений</string>
 	<string name="pref_use_internal_image_viewer_summary" state="needs_review" hash="1248137666">При активации нажатие на вложение-изображение откроет его во встроенном просмотрщике. В противном случае будет использоваться приложение для изображений по умолчанию на вашем устройстве.</string>
+	<string name="pref_image_text_recognition_title" state="needs_review" hash="1877261687">Распознавание и индексация текста на изображениях</string>
+	<string name="pref_image_text_recognition_summary" state="needs_review" hash="1217699919">Позволяет искать и копировать текст, найденный в изображениях, прикрепленных к сообщениям. Эта функция может потреблять много ресурсов на устройствах с низкой производительностью: отключите ее, если она вам не нужна.</string>
 	<string name="label_unable_to_display_image" state="needs_review" hash="-1495534207">Не удалось отобразить изображение</string>
 	<string name="dialog_title_backup_requires_sign_in" state="needs_review" hash="-720389674">Требуется вход в облачного провайдера</string>
 	<string name="dialog_message_backup_requires_sign_in" state="needs_review" hash="119557495">Вы настроили Olvid для использования автоматических резервных копий в облачном хранилище, но ваша сессия истекла. Вам необходимо повторно войти в этот сервис.\n\nЕсли вы больше не хотите использовать автоматические резервные копии, вы можете отключить их в настройках приложения. Помните, что автоматические резервные копии — это единственный способ предотвратить потерю ваших контактов в случае потери или повреждения устройства.</string>
@@ -1149,7 +1169,7 @@
 	<string name="pref_hidden_profile_close_policy_dialog_entry_screen_lock" state="needs_review" hash="-1520400811">Когда активируется экран блокировки Olvid</string>
 	<string name="pref_hidden_profile_close_policy_dialog_entry_background" state="needs_review" hash="-2099539114">Когда Olvid переходит в фоновый режим…</string>
 	<string name="activity_title_enter_backup_key" state="needs_review" hash="1035967309">Введите ключ резервного копирования</string>
-	<string name="activity_title_identity_creation" state="needs_review" hash="-1361520151">Создание ID</string>
+	<string name="activity_title_identity_creation" state="needs_review" hash="2027618284">Создание профиля</string>
 	<string name="menu_action_manual_configuration" state="needs_review" hash="-1495974502">Ручная расширенная настройка</string>
 	<string name="toast_message_invalid_configuration_link" state="needs_review" hash="1387412522">Неверная ссылка для настройки</string>
 	<string name="toast_message_invalid_link" state="needs_review" hash="1265454437">Недействительная ссылка</string>
@@ -1171,6 +1191,7 @@
 	<string name="dialog_title_chose_profile_web_client" state="needs_review" hash="1860298414">Выберите профиль для подключения к веб-клиенту Olvid</string>
 	<string name="dialog_title_chose_profile_invitation" state="needs_review" hash="-2063034787">Выберите профиль, с помощью которого пригласить этот контакт</string>
 	<string name="toast_message_create_new_profile_then_reopen_this_link" state="needs_review" hash="1770827346">Пожалуйста, сначала создайте новый профиль, а затем откройте эту ссылку ещё раз</string>
+	<string name="toast_message_invitation_link_deferred_to_end_of_onboarding" state="needs_review" hash="-189914806">Ваше приглашение откроется автоматически после создания профиля.</string>
 	<string name="button_label_switch_profile" state="needs_review" hash="-2007633024">Сменить профиль</string>
 	<string name="text_no_other_profile_to_switch_to" state="needs_review" hash="-112306213">Другой профиль отсутствует</string>
 	<string name="button_label_configure_lock_screen" state="needs_review" hash="870348426">Настроить экран блокировки</string>
@@ -1180,8 +1201,7 @@
 	<string name="dialog_message_delete_last_profile" state="needs_review" hash="-2123774331">Удаление профиля удалит всю информацию, связанную с этим профилем на вашем устройстве. Это включает ваши контакты, группы и содержимое всех ваших обсуждений (сообщения и вложения) для этого профиля.\n\n<b>Это ваш единственный видимый профиль, и если у вас есть скрытые профили, они будут удалены одновременно.</b>\n\nЕсли вы включили резервные копии в Olvid, ваши будущие резервные копии не будут содержать никаких следов этого профиля, и вы не сможете его восстановить.\n\nНажмите «далее», чтобы выбрать способ удаления этого профиля.</string>
 	<string name="dialog_message_delete_profile_multi" state="needs_review" hash="-2003495595">Удаление профиля удалит всю информацию, связанную с этим профилем на вашем устройстве. Это включает ваши контакты, группы и содержимое всех ваших обсуждений (сообщения и вложения) для этого профиля. Ваши другие профили не будут затронуты этой операцией.\n\nНажмите «далее», чтобы выбрать способ удаления этого профиля.</string>
 	<string name="dialog_message_delete_last_profile_multi" state="needs_review" hash="-103140781">Удаление профиля удалит всю информацию, связанную с этим профилем на вашем устройстве. Это включает ваши контакты, группы и содержимое всех ваших обсуждений (сообщения и вложения) для этого профиля.\n\n<b>Это ваш единственный видимый профиль, и если у вас есть скрытые профили, они будут удалены одновременно.</b>\n\nНажмите «далее», чтобы выбрать способ удаления этого профиля.</string>
-	<string name="switch_label_delete_profile_everywhere" state="needs_review" hash="-74965346">Удалить профиль <b>везде</b>
-	</string>
+	<string name="switch_label_delete_profile_everywhere" state="needs_review" hash="-74965346">Удалить профиль <b>везде</b></string>
 	<string name="hint_type_delete_here_to_proceed" state="needs_review" hash="-1622625725">Введите \"%1$s\" здесь, чтобы продолжить</string>
 	<string name="explanation_delete_owned_identity" state="needs_review" hash="2036375772">Если вы выберете удалить свой профиль <b>везде</b>:\n - он будет удален локально <b>и</b> на устройствах ваших контактов\n - вы покинете группы, к которым присоединились\n - управляемые вами группы будут распущены\n\nЕсли вы <b>не</b> удалите свой профиль везде, он будет удален только локально на вашем устройстве. Если вы не планируете восстанавливать резервную копию на другом устройстве, ваши контакты могут продолжать пытаться отправлять вам сообщения и могут не понять, что эти сообщения не могут быть доставлены.</string>
 	<string name="explanation_delete_inactive_owned_identity" state="needs_review" hash="-575337242">Ваш текущий профиль, похоже, неактивен, вероятно, потому что вы перенесли его на другое устройство. Если вы планируете продолжать использовать этот профиль на другом устройстве, вы можете безопасно удалить его здесь.\n\nЕсли вы больше никогда не планируете использовать этот профиль, вам сначала нужно будет реактивировать его на этом устройстве, дождаться восстановления защищенных каналов связи с вашими контактами, и только потом удалить этот профиль, выбрав опцию «удалить везде».</string>
@@ -1443,22 +1463,17 @@
 	<string name="button_label_send" state="needs_review" hash="-185402948">Отправить</string>
 	<string name="button_label_start_sharing" state="needs_review" hash="682254052">Начать делиться</string>
 	<string name="location_sharing_duration_one_hour_short_string" state="needs_review" hash="1004063951">1 час</string>
-	<string name="location_sharing_duration_one_hour_full_string" state="needs_review" hash="-58118972">Поделиться местоположением на <b>1 час</b>
-	</string>
+	<string name="location_sharing_duration_one_hour_full_string" state="needs_review" hash="-58118972">Поделиться местоположением на <b>1 час</b></string>
 	<string name="location_sharing_duration_three_hours_short_string" state="needs_review" hash="228095183">3 часа</string>
-	<string name="location_sharing_duration_three_hours_full_string" state="needs_review" hash="754857804">Поделиться местоположением на <b>3 часа</b>
-	</string>
+	<string name="location_sharing_duration_three_hours_full_string" state="needs_review" hash="754857804">Поделиться местоположением на <b>3 часа</b></string>
 	<string name="location_sharing_duration_endless_short_string" state="needs_review" hash="55208442">Бесконечно</string>
-	<string name="location_sharing_duration_endless_full_string" state="needs_review" hash="1710814259">Поделиться местоположением <b>до остановки</b>
-	</string>
+	<string name="location_sharing_duration_endless_full_string" state="needs_review" hash="1710814259">Поделиться местоположением <b>до остановки</b></string>
 	<string name="location_sharing_quality_precise_short_string" state="needs_review" hash="351442529">Точный</string>
 	<string name="location_sharing_quality_balanced_short_string" state="needs_review" hash="-1925315592">Сбалансированный</string>
 	<string name="location_sharing_quality_power_save_short_string" state="needs_review" hash="-14275273">Режим экономии заряда</string>
 	<string name="location_sharing_quality_precise_full_string" state="needs_review" hash="-1255374893">Режим обмена <b>точным</b> местоположением</string>
-	<string name="location_sharing_quality_balanced_full_string" state="needs_review" hash="-421322514">Режим обмена местоположением <b>сбалансированный</b>
-	</string>
-	<string name="location_sharing_quality_power_save_full_string" state="needs_review" hash="792896333">Режим обмена местоположением <b>экономия заряда</b>
-	</string>
+	<string name="location_sharing_quality_balanced_full_string" state="needs_review" hash="-421322514">Режим обмена местоположением <b>сбалансированный</b></string>
+	<string name="location_sharing_quality_power_save_full_string" state="needs_review" hash="792896333">Режим обмена местоположением <b>экономия заряда</b></string>
 	<string name="label_sharing_location_until" state="needs_review" hash="187977459">Совместное использование местоположения до: %1$s</string>
 	<string name="label_location_sharing_ended" state="needs_review" hash="1028490137">Обмен местоположением завершен</string>
 	<string name="label_gps_coordinates" state="needs_review" hash="-1537356414">Координаты GPS</string>
@@ -2041,11 +2056,14 @@
 	<string name="button_label_configure_backups" state="needs_review" hash="-990646398">Включить резервные копии</string>
 	<string name="tip_write_backup_key_title" state="needs_review" hash="-1652757003">Не забудьте записать ключ резервного копирования 😇</string>
 	<string name="tip_write_backup_key_message" state="needs_review" hash="931018791">Ваш ключ резервного копирования необходим для восстановления ваших профилей в случае потери доступа к этому устройству.</string>
+	<string name="tip_legacy_backup_end_of_life_title" state="needs_review" hash="810495149">Срок действия старых резервных копий, которые вы используете, истек.</string>
+	<string name="tip_legacy_backup_end_of_life_message" state="needs_review" hash="-314257210">В следующей версии Olvid поддержка старых резервных копий будет прекращена. Чтобы обеспечить безопасность вашей учетной записи, переключитесь на новую систему резервного копирования прямо сейчас.</string>
 	<string name="tip_troubleshooting_title" state="needs_review" hash="-393739108">Улучшите свой опыт использования Olvid 🚀</string>
 	<string name="tip_troubleshooting_message" state="needs_review" hash="-935493349">Некоторые параметры некорректно настроены на вашем устройстве и могут повлиять на работу с Olvid.</string>
 	<string name="button_label_this_way" state="needs_review" hash="747183939">Сюда</string>
 	<string name="toast_code_copied" state="needs_review" hash="-1522785848">Код скопирован</string>
 	<string name="explanation_choose_members" state="needs_review" hash="-1385158706">Пожалуйста, выберите, кого добавить в эту группу.</string>
+	<string name="explanation_choose_share_recipients" state="needs_review" hash="-1406265940">Пожалуйста, выберите, с кем вы хотите поделиться.</string>
 	<string name="explanation_choose_contact_introduction" state="needs_review" hash="1113777517">Пожалуйста, выберите, кому представить %1$s.</string>
 	<string name="label_group_administration" state="needs_review" hash="871355986">Управление группой</string>
 	<string name="dialog_title_call_blocked" state="needs_review" hash="1594606530">Вызов заблокирован</string>
@@ -2171,7 +2189,7 @@
 	<string name="store_link_olvid_store" state="needs_review" hash="-1825630369">Посетите магазин Olvid</string>
 	<string name="toast_message_reminder_set" state="needs_review" hash="-961055414">Напоминание установлено</string>
 	<string name="dialog_title_keycloak_authentication_impossible" state="needs_review" hash="325273853">Аутентификация невозможна</string>
-	<string name="dialog_message_keycloak_authentication_impossible" state="needs_review" hash="390830785">В настоящее время ваш профиль управляется вашей организацией, и требуется повторная аутентификация. Однако, похоже, что ни один из поддерживаемых методов аутентификации не доступен.\n\nПожалуйста, свяжитесь со своим администратором для получения дополнительной информации.</string>
+	<string name="dialog_message_keycloak_authentication_impossible" state="needs_review" hash="-2031322232">В настоящее время ваш профиль управляется вашей организацией, и требуется повторная аутентификация. Однако, похоже, что ни один из поддерживаемых методов аутентификации недоступен.\n\nПожалуйста, свяжитесь со своим администратором для получения дополнительной информации.</string>
 	<string name="onboarding_transfer_keycloak_error_message_authentication_impossible" state="needs_review" hash="-1891385979">Кажется, ни один из поддерживаемых методов аутентификации не доступен.</string>
 	<string name="pref_use_alt_turn_servers_title" state="needs_review" hash="-1956132776">Использовать альтернативные TURN-серверы</string>
 	<string name="pref_use_alt_turn_servers_summary" state="needs_review" hash="357427162">Активируйте эту опцию, чтобы использовать серверы TURN с динамическими IP-адресами. Если вы не уверены, оставьте эту опцию отключенной 😁</string>
@@ -2282,5 +2300,45 @@
 	<string name="label_error_loading_openstreetmap_style_file" state="needs_review" hash="-2596045">Произошла ошибка при загрузке файла стилей OpenStreetMap</string>
 	<string name="dialog_title_subscriptions_not_available" state="needs_review" hash="336174241">Подписки в приложении недоступны</string>
 	<string name="dialog_message_subscriptions_not_available" state="needs_review" hash="2093768678">Установленная вами версия Olvid не включает библиотеку Google Billing и не поддерживает покупки внутри приложения.\n\nДля получения дополнительной информации, пожалуйста, свяжитесь с нами по адресу **feedback@olvid.io**.</string>
+	<string name="ftux_next" state="needs_review" hash="1158639077">Далее</string>
+	<string name="ftux_start" state="needs_review" hash="646298532">Начать</string>
+	<string name="ftux_page_indicator" state="needs_review" hash="1987610035">Страница %1$d из %2$d</string>
+	<string name="ftux_page_welcome_title" state="needs_review" hash="1173832630">Добро пожаловать в <b>Olvid</b>.</string>
+	<string name="ftux_page_welcome_body" state="needs_review" hash="-2085198139">Приватные сообщения для всех.</string>
+	<string name="ftux_page_private_title" state="needs_review" hash="1815927819"><b>Приватные</b> сообщения</string>
+	<string name="ftux_page_private_body" state="needs_review" hash="-590644231">В %1$s вы сами выбираете, с кем хотите общаться. Никакого спама, никаких рекомендаций, никаких ненужных уведомлений, никаких сообщений от незнакомцев.\n\nНикто не может связаться с вами без вашего согласия.\n\n%1$s — это ваше цифровое пространство.</string>
+	<string name="ftux_page_everyone_title" state="needs_review" hash="1506796386">Сообщения для <b>всех</b></string>
+	<string name="ftux_page_everyone_body" state="needs_review" hash="-586100377">Кем бы вы ни были, %1$s предлагает вам лучшее в плане безопасности. Не требуется адрес электронной почты или номер телефона.\n\n%1$s не запрашивает никакой информации о вас, и это меняет все.</string>
+	<string name="ftux_page_protect_title" state="needs_review" hash="1969120191">Olvid <b>защищает</b> вас. Olvid защищает тех, кто важен для вас.</string>
+	<string name="ftux_page_protect_body" state="needs_review" hash="881847930">Это не просто обещание — %1$s предоставляет криптографическое подтверждение.\n\nНезависимо от того, добавляете ли вы контакты удаленно или лично, ваши сообщения всегда будут подлинными и зашифрованными сквозным шифрованием.</string>
+	<string name="ftux_page_pricing_title" state="needs_review" hash="-1948277889"><b>Прозрачная</b> бизнес-модель</string>
+	<string name="ftux_page_pricing_body" state="needs_review" hash="-1064278870">%1$s не финансируется за счет ваших личных данных, потому что не запрашивает их!\n\nЧто бесплатно, то бесплатно. За что платят, за то и цена.</string>
+	<string name="ftux_page_media_title" state="needs_review" hash="558110518">У Olvid есть <b>все</b>, чтобы понравиться</string>
+	<string name="ftux_page_media_body" state="needs_review" hash="1807247240">Нет ограничений на размер вложений, возможность обмена фотографиями в высоком разрешении, опросы, аудио- и видеозвонки, поддержка нескольких устройств, геолокация — все это есть!</string>
 	<string name="menu_action_cancel_upload" state="needs_review" hash="1672681586">Отменить загрузку</string>
+	<string name="label_suggested_contacts" state="needs_review" hash="816810770">Предлагаемые контакты</string>
+	<string name="label_suggested_contacts_subtitle" state="needs_review" hash="131522501">Легко приглашайте пользователей</string>
+	<string name="label_suggested_contact_already_a_contact" state="needs_review" hash="-1177848651">Уже есть в контактах</string>
+	<string name="label_suggested_contact_invitation_received" state="needs_review" hash="2100924901">Получено приглашение</string>
+	<string name="label_suggested_contact_invitation_sent" state="needs_review" hash="310679275">Приглашение отправлено</string>
+	<string name="label_suggested_contacts_all_done" state="needs_review" hash="-127525104">Вы используете последнюю версию!\nБольше нет контактов для предложений.</string>
+	<string name="button_label_suggested_contact_later" state="needs_review" hash="-1933816039">Позже</string>
+	<string name="button_label_close" state="needs_review" hash="1454843231">Закрыть</string>
+	<string name="button_label_skip" state="needs_review" hash="2056258301">Пропустить</string>
+	<string name="button_label_understood" state="needs_review" hash="829780875">Понял</string>
+	<string name="label_suggested_contacts_onboarding_title_1" state="needs_review" hash="491881039">Пригласите одним движением пальца</string>
+	<string name="label_suggested_contacts_onboarding_message_1" state="needs_review" hash="331320806">Проведите пальцем по карточке вправо, чтобы пригласить пользователя, или влево, чтобы перейти к следующему.</string>
+	<string name="label_suggested_contacts_onboarding_title_2" state="needs_review" hash="-788798380">Откуда берутся эти контакты?</string>
+	<string name="label_suggested_contacts_onboarding_message_2" state="needs_review" hash="1536681696">Это пользователи Olvid, которых у вас пока нет в контактах.</string>
+	<string name="label_suggested_contacts_onboarding_caption" state="needs_review" hash="-1299179969">У вас есть общая связь: вы состоите как минимум в одной общей группе.</string>
+	<string name="label_suggested_contacts_you" state="needs_review" hash="672009142">Вы</string>
+	<string name="label_suggested_contacts_common_group" state="needs_review" hash="-1739793963">Общая группа</string>
+	<string name="explanation_suggested_contacts_others_tab" state="needs_review" hash="852096678">Пользователи в списке ниже не входят в ваш список контактов, и пока вы не можете вести с ними личные переписки. Но вы можете легко пригласить их! 🚀</string>
+	<string name="label_suggested_contacts_invite_in_one_gesture" state="needs_review" hash="438220313">Пригласите этих пользователей простым свайпом</string>
+	<string name="menu_action_suggested_contacts_see_full_list" state="needs_review" hash="603082500">Посмотреть полный список</string>
+	<string name="menu_action_suggested_contacts_replay_onboarding" state="needs_review" hash="-1552704243">Повторить учебное пособие</string>
+	<string name="button_label_uninvite" state="needs_review" hash="771825501">Отменить приглашение</string>
+	<string name="button_label_accept_invitation" state="needs_review" hash="-1778405034">Принять приглашение</string>
+	<string name="label_suggested_contacts_already_swiped" state="needs_review" hash="427042318">Уже просмотрено</string>
+	<string name="label_suggested_contacts_not_swiped_yet" state="needs_review" hash="310924358">Ещё не просмотрено</string>
 </resources>

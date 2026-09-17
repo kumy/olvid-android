@@ -1,0 +1,4 @@
+- Bagong feature na "share screen" para makapag-post sa maraming discussion nang sabay-sabay.
+- Bagong paraan para mag-invite ng mga miyembro ng grupo sa isang pribadong discussion gamit ang pag-swipe.
+- Bagong onboarding para ipaliwanag ang Olvid sa mga bagong user.
+- Pinahusay na image/video viewer, may kakayahang mag-zoom sa mga video.

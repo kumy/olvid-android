@@ -135,11 +135,11 @@ class BackupV2PreferenceFragment : Fragment() {
 
         credentialManager.checkIfAvailable(executor, viewModel.credentialManagerAvailable)
 
-        if (!viewModel.disableSeedGeneration.value && AppSingleton.getEngine().deviceBackupSeed == null) {
+        if (!viewModel.disableSeedGeneration.value && AppSingleton.getEngine().getDeviceBackupSeed() == null) {
             activity?.supportFragmentManager?.let {
                 BackupV2KeyGenerationDialogFragment().apply {
                     onDismissListener = {
-                        if (AppSingleton.getEngine().deviceBackupSeed == null) {
+                        if (AppSingleton.getEngine().getDeviceBackupSeed() == null) {
                             try {
                                 activity?.supportFragmentManager?.popBackStack()
                             } catch (_: Exception) {}
@@ -187,7 +187,7 @@ class BackupV2PreferenceFragment : Fragment() {
                             onToggleUseCredentialManager = { useCredentialsManager ->
                                 if (useCredentialsManager) {
                                     val backupSeed: String? =
-                                        AppSingleton.getEngine().deviceBackupSeed
+                                        AppSingleton.getEngine().getDeviceBackupSeed()
                                     val activity = activity
                                     if (backupSeed == null || activity == null) {
                                         useCredentialManager.value = false
@@ -266,7 +266,7 @@ class BackupV2PreferenceFragment : Fragment() {
                             onClick = {
                                 viewModel.resetYourBackups()
                                 App.runThread {
-                                    viewModel.deviceBackupSeed.value = AppSingleton.getEngine().deviceBackupSeed
+                                    viewModel.deviceBackupSeed.value = AppSingleton.getEngine().getDeviceBackupSeed()
                                     viewModel.fetchDeviceBackup(false)
                                 }
                                 viewModel.showManageBackupsDialog.value = true
@@ -479,7 +479,7 @@ class BackupV2PreferenceFragment : Fragment() {
                                     // wait for the purchase acknowledged notification
                                     purchaseEngineListener = object :
                                         SimpleEngineNotificationListener(EngineNotifications.VERIFY_RECEIPT_SUCCESS) {
-                                        override fun callback(userInfo: HashMap<String, Any>?) {
+                                        override fun callback(userInfo: HashMap<String, Any?>) {
                                             AppSingleton.getEngine().removeNotificationListener(
                                                 EngineNotifications.VERIFY_RECEIPT_SUCCESS,
                                                 purchaseEngineListener

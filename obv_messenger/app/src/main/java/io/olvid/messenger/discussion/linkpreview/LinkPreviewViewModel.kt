@@ -79,11 +79,21 @@ class LinkPreviewViewModel : ViewModel() {
     }
 
     fun clearLinkPreview() {
-        openGraph.postValue(OpenGraph(url = openGraph.value?.url))
+        // Cancel any in-flight findLinkJob first — without this, a fetch that completes after
+        // the user dismisses the preview will assign openGraph.value back to the resolved card
+        // (synchronous setValue from the continuation), undoing the dismissal. Also use
+        // synchronous setValue so observers don't see the dismissed value re-emerge in a frame
+        // between postValue's Main-thread dispatch and the next compose recompose.
+        findLinkJob?.safeCancel()
+        openGraph.value = OpenGraph(url = openGraph.value?.url)
     }
 
     fun reset() {
-        openGraph.postValue(null)
+        // Same race as clearLinkPreview — must cancel the job to prevent late assignment, and
+        // setValue is preferable to postValue because reset() is always called from Main
+        // (Compose / EditText callbacks).
+        findLinkJob?.safeCancel()
+        openGraph.value = null
     }
 
     fun waitForPreview(block: () -> Unit) {

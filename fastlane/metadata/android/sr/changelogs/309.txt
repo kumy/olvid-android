@@ -1,0 +1,4 @@
+- Nova funkcija za deljenje ekrana, koja omogućava objavljivanje u više grupa odjednom.
+- Novi način pozivanja članova grupe u privatnu konverzaciju pomoću jednostavnog pokreta.
+- Novi uvodni tutorijal koji objašnjava kako Olvid funkcioniše za nove korisnike.
+- Poboljšan pregledač slika/video zapisa, mogućnost zumiranja video zapisa.

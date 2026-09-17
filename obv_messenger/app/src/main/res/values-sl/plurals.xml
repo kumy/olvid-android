@@ -282,4 +282,20 @@
 		<item quantity="one" state="needs_review" hash="-1393207312">%1$d sporočilo je bilo kopirano v odložišče</item>
 		<item quantity="other" state="needs_review" hash="-604999755">%1$d sporočil kopirano v odložišče</item>
 	</plurals>
+	<plurals name="label_share_destinations_count" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="423387012">%1$d prejemnik</item>
+		<item quantity="other" state="needs_review" hash="-431979656">%1$d prejemnikov</item>
+	</plurals>
+	<plurals name="label_share_to_recipients" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="-1217959784">Delite z uporabnikom %1$d</item>
+		<item quantity="other" state="needs_review" hash="1864148690">Delite z %1$d prejemniki</item>
+	</plurals>
+	<plurals name="toast_message_shared_to_recipients" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="-373807760">Deljeno z uporabnikom %1$d</item>
+		<item quantity="other" state="needs_review" hash="-1412037000">Deljeno z %1$d prejemniki</item>
+	</plurals>
+	<plurals name="button_label_add_to_groups" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="1622654043">Dodaj v skupino %1$d</item>
+		<item quantity="other" state="needs_review" hash="-1655824151">Dodaj v %1$d skupine</item>
+	</plurals>
 </resources>

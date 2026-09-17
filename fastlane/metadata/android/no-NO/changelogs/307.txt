@@ -1,0 +1,3 @@
+- Ny funksjon for å invitere gruppemedlemmer til en direkte samtale ved hjelp av en enkel sveipebevegelse.
+- Ny introduksjon for å forklare Olvid for nye brukere.
+- Forbedret bilde-/videovisning, med mulighet for å zoome inn på videoer.

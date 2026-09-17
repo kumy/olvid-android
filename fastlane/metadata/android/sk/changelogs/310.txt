@@ -1,0 +1,4 @@
+- Nová funkcia zdieľania obrazovky, ktorá umožňuje odosielať príspevky do viacerých konverzácií naraz.
+- Nový spôsob pozvania členov skupiny do súkromnej konverzácie pomocou jednoduchého gesta.
+- Nový úvodný tutoriál, ktorý vysvetľuje fungovanie Olvid novým používateľom.
+- Vylepšený prehliadač obrázkov a videí, teraz s možnosťou priblíženia videí.

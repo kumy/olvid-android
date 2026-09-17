@@ -39,6 +39,8 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.material3.ripple
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -61,6 +63,8 @@ import io.olvid.messenger.databases.entity.FyleMessageJoinWithStatus
 import io.olvid.messenger.designsystem.constantSp
 import io.olvid.messenger.designsystem.theme.OlvidTypography
 import io.olvid.messenger.discussion.linkpreview.OpenGraph
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -73,10 +77,46 @@ fun FyleListItem(
     onLongClick: (() -> Unit)? = null,
     extraHorizontalPadding: Dp = 0.dp,
     previewBorder: Boolean = true,
+    previewModel: Any? = null,
 ) {
     val context = LocalContext.current
     val size = with(LocalDensity.current) {
         (if (previewBorder) 56 else 64).dp.roundToPx()
+    }
+    // Computing preview off the main thread with cache hitting
+    val preview by produceState(
+        initialValue = previewModel
+            ?: PreviewUtils.getCachedBitmapPreview(
+                fyleAndStatus.fyle,
+                fyleAndStatus.fyleMessageJoinWithStatus,
+                size
+            ),
+        previewModel,
+        fyleAndStatus.fyle.id,
+        fyleAndStatus.fyle.filePath,
+        fyleAndStatus.fyleMessageJoinWithStatus.miniPreview != null,
+    ) {
+        if (previewModel != null) {
+            value = previewModel
+        } else {
+            // reset first so a reused list slot never keeps the previous item's thumbnail
+            value = PreviewUtils.getCachedBitmapPreview(
+                fyleAndStatus.fyle,
+                fyleAndStatus.fyleMessageJoinWithStatus,
+                size
+            )
+            withContext(Dispatchers.IO) {
+                runCatching {
+                    PreviewUtils.getBitmapPreview(
+                        fyleAndStatus.fyle,
+                        fyleAndStatus.fyleMessageJoinWithStatus,
+                        size
+                    )
+                }.getOrNull()
+            }?.let {
+                value = it
+            }
+        }
     }
     Row(
         modifier = modifier
@@ -110,13 +150,8 @@ fun FyleListItem(
                 ),
             contentScale = if (fyleAndStatus.fyleMessageJoinWithStatus.mimeType == "application/pdf") ContentScale.Fit else ContentScale.Crop,
             painter = rememberAsyncImagePainter(
-                model = PreviewUtils.getBitmapPreview(
-                    fyleAndStatus.fyle,
-                    fyleAndStatus.fyleMessageJoinWithStatus,
-                    size
-                )
+                model = preview
                     ?: fyleAndStatus.fyleMessageJoinWithStatus.nonNullMimeType.getDrawableResourceForMimeType()
-
             ),
             contentDescription = fyleAndStatus.fyleMessageJoinWithStatus.fileName
         )

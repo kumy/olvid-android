@@ -1,0 +1,4 @@
+- Nieuwe functie om scherm te delen, waarmee je berichten naar meerdere gesprekken tegelijk kunt sturen.
+- Nieuwe manier om groepsleden uit te nodigen voor een privégesprek.
+- Nieuwe uitleg voor nieuwe gebruikers over Olvid.
+- Verbeterde foto-/videoweergave, met de mogelijkheid om in te zoomen op video's.

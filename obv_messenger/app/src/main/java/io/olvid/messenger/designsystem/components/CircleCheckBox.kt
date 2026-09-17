@@ -123,8 +123,6 @@ fun CircleCheckBox(
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 private fun CircleCheckBoxPreview() {
-    AppCompatTheme {
-        var checked by remember { mutableStateOf(false) }
-        CircleCheckBox(checked = checked, onCheckedChange = { checked = it })
-    }
+    var checked by remember { mutableStateOf(false) }
+    CircleCheckBox(checked = checked, onCheckedChange = { checked = it })
 }

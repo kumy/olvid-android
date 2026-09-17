@@ -61,7 +61,8 @@ import io.olvid.messenger.AppSingleton
 import io.olvid.messenger.R
 import io.olvid.messenger.databases.entity.Group2
 import io.olvid.messenger.designsystem.components.OlvidActionButton
-import io.olvid.messenger.designsystem.plus
+import androidx.compose.foundation.layout.plus
+import io.olvid.messenger.App
 import io.olvid.messenger.designsystem.theme.OlvidTypography
 import io.olvid.messenger.group.CustomGroup
 import io.olvid.messenger.group.GroupCreationViewModel
@@ -188,7 +189,7 @@ fun NavGraphBuilder.inviteGroupMembers(
                             member = member.toGroupMember(),
                             keycloakManaged = group?.keycloakManaged == true,
                             nonAdminsReadOnly = nonAdminsReadOnly,
-                            onInvite = { groupV2DetailsViewModel.invite(it) }
+                            onInvite = { App.runThread { groupV2DetailsViewModel.invite(it) } }
                         )
                     }
                 }
@@ -257,6 +258,7 @@ fun NavGraphBuilder.fullGroupMembers(
                                 jsonIdentityDetails = ownIdentity.getIdentityDetails(),
                                 fullSearchDisplayName = "",
                                 isAdmin = group?.ownPermissionAdmin == true,
+                                permissionSendMessage = group?.ownPermissionSendMessage != false,
                                 isYou = true,
                                 pending = false,
                                 selected = false

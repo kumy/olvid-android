@@ -218,6 +218,9 @@ fun VideoCallContent(
                                     .fillMaxWidth()
                                     .height(boxWithConstraintsScope.maxHeight / 2 - 6.dp)
                         ),
+                    colors = CardDefaults.cardColors(
+                        containerColor = colorResource(R.color.newDialogBackground),
+                    ),
                     border = BorderStroke(
                         width = 2.dp,
                         color = borderColorFirst,
@@ -249,6 +252,9 @@ fun VideoCallContent(
                                     .fillMaxWidth()
                                     .height(boxWithConstraintsScope.maxHeight / 2 - 6.dp)
                         ),
+                    colors = CardDefaults.cardColors(
+                        containerColor = colorResource(R.color.newDialogBackground),
+                    ),
                     border = BorderStroke(
                         width = 2.dp,
                         color = borderColorSecond,
@@ -275,6 +281,9 @@ fun VideoCallContent(
                 modifier = Modifier
                     .windowInsetsPadding(WindowInsets.systemBars.only(WindowInsetsSides.Start))
                     .padding(start = 10.dp, top = 10.dp),
+                colors = CardDefaults.cardColors(
+                    containerColor = colorResource(R.color.newDialogBackground),
+                ),
                 border = BorderStroke(
                     width = 2.dp,
                     color = borderColorOwned,

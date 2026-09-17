@@ -62,7 +62,7 @@ class LicenseActivationViewModel : ViewModel() {
 
     private val listener = object : EngineNotificationListener {
         var engineNumber: Long = -1
-        override fun callback(notificationName: String, userInfo: HashMap<String, Any>) {
+        override fun callback(notificationName: String?, userInfo: HashMap<String, Any?>) {
             val bytesOwnedIdentity =
                 userInfo[EngineNotifications.API_KEY_STATUS_QUERY_SUCCESS_BYTES_OWNED_IDENTITY_KEY] as ByteArray?
             val apiKey =
@@ -86,8 +86,8 @@ class LicenseActivationViewModel : ViewModel() {
             }
         }
 
-        override fun setEngineNotificationListenerRegistrationNumber(number: Long) {
-            engineNumber = number
+        override fun setEngineNotificationListenerRegistrationNumber(registrationNumber: Long) {
+            engineNumber = registrationNumber
         }
         override fun getEngineNotificationListenerRegistrationNumber(): Long {
             return engineNumber

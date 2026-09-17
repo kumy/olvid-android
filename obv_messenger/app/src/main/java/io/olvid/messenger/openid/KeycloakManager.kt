@@ -357,10 +357,11 @@ object KeycloakManager {
                                             .performKeycloakIdBasedAuth(kms.bytesOwnedIdentity)
                                         when (authResult.status) {
                                             ObvKeycloakIdBasedAuthResult.Status.SUCCESS -> {
-                                                authResult.accessToken?.let {
+                                                val accessToken = authResult.accessToken
+                                                if (accessToken != null) {
                                                     // if successful, update the authState
                                                     kms.authState?.apply {
-                                                        initializeFromMagicLinkOrIdBasedAuthResponse(authResult.accessToken, authResult.refreshToken, authResult.clientId, authResult.clientSecret)
+                                                        initializeFromMagicLinkOrIdBasedAuthResponse(accessToken, authResult.refreshToken, authResult.clientId, authResult.clientSecret)
                                                         reAuthenticationSuccessful(kms.bytesOwnedIdentity, null, this)
                                                     } ?: run {
                                                         // if authState is null (this is the case after a transfer or backup restore), we need to rediscover
@@ -371,7 +372,7 @@ object KeycloakManager {
                                                                 jwks: JsonWebKeySet,
                                                                 olvidWellKnown: OlvidWellKnownJson?
                                                             ) {
-                                                                authState.initializeFromMagicLinkOrIdBasedAuthResponse(authResult.accessToken, authResult.refreshToken, authResult.clientId, authResult.clientSecret)
+                                                                authState.initializeFromMagicLinkOrIdBasedAuthResponse(accessToken, authResult.refreshToken, authResult.clientId, authResult.clientSecret)
                                                                 reAuthenticationSuccessful(kms.bytesOwnedIdentity, jwks, authState)
                                                             }
 
@@ -397,6 +398,7 @@ object KeycloakManager {
                                                 // no need to retry using id-based auth and prompt for authentication if such an option is available
                                                 break
                                             }
+                                            null -> break
                                         }
                                     }
                                 }
@@ -408,7 +410,7 @@ object KeycloakManager {
                                     )
                                     App.openAppDialogKeycloakAuthenticationRequired(
                                         kms.bytesOwnedIdentity,
-                                        oidc.clientId,
+                                        oidc.clientId ?: "",
                                         oidc.clientSecret,
                                         kms.serverUrl
                                     )
@@ -607,7 +609,7 @@ object KeycloakManager {
                                             (kms.supportedAuthenticationMethods.find { it is ObvKeycloakAuthType.OpenIdConnect } as? ObvKeycloakAuthType.OpenIdConnect)?.also { oidc ->
                                                 App.openAppDialogKeycloakUserIdChanged(
                                                     kms.bytesOwnedIdentity,
-                                                    oidc.clientId,
+                                                    oidc.clientId ?: "",
                                                     oidc.clientSecret,
                                                     kms.serverUrl
                                                 )
@@ -624,7 +626,8 @@ object KeycloakManager {
                                 }
 
                                 // check if ownedIdentity was never uploaded
-                                if (userDetails.getIdentity() == null || userDetails.getIdentity().size == 0 || (kms.autoRevokeOnNextSync && keycloakServerRevocationsAndStuff.revocationAllowed && !userDetails.getIdentity()
+                                val uploadedIdentity = userDetails.getIdentity()
+                                if (uploadedIdentity == null || uploadedIdentity.size == 0 || (kms.autoRevokeOnNextSync && keycloakServerRevocationsAndStuff.revocationAllowed && !uploadedIdentity
                                         .contentEquals(identityBytesKey.bytes))
                                 ) {
                                     currentlySyncingOwnedIdentities.add(identityBytesKey)
@@ -697,7 +700,7 @@ object KeycloakManager {
                                 val serverJsonIdentityDetails =
                                     userDetails.getIdentityDetails(keycloakUserDetailsAndStuff.signedUserDetails)
                                 if ((kms.identityDetails != serverJsonIdentityDetails) || (kms.ownDetailsSignatureTimestamp == null && userDetails.getTimestamp() != null)
-                                    || (kms.ownDetailsSignatureTimestamp != null && userDetails.getTimestamp() != null && kms.ownDetailsSignatureTimestamp!! + OWN_SIGNED_DETAILS_RENEWAL_INTERVAL_MILLIS < userDetails.getTimestamp())
+                                    || (kms.ownDetailsSignatureTimestamp != null && userDetails.getTimestamp() != null && kms.ownDetailsSignatureTimestamp!! + OWN_SIGNED_DETAILS_RENEWAL_INTERVAL_MILLIS < userDetails.getTimestamp()!!)
                                 ) {
                                     try {
                                         Logger.i("Refreshing keycloak owned details in engine")
@@ -760,7 +763,7 @@ object KeycloakManager {
                                 AppSingleton.getEngine().updateKeycloakPushTopicsIfNeeded(
                                     kms.bytesOwnedIdentity,
                                     kms.serverUrl,
-                                    keycloakUserDetailsAndStuff.pushTopics
+                                    @Suppress("UNCHECKED_CAST") (keycloakUserDetailsAndStuff.pushTopics as MutableList<String?>?)
                                 )
                                 AppSingleton.getEngine()
                                     .setOwnedIdentityKeycloakSelfRevocationTestNonce(
@@ -774,7 +777,7 @@ object KeycloakManager {
                                     AppSingleton.getEngine().updateKeycloakRevocationList(
                                         identityBytesKey.bytes,
                                         keycloakServerRevocationsAndStuff.currentServerTimestamp,
-                                        keycloakServerRevocationsAndStuff.signedRevocations
+                                        @Suppress("UNCHECKED_CAST") (keycloakServerRevocationsAndStuff.signedRevocations as MutableList<String?>?)
                                     )
                                     kms.latestRevocationListTimestamp =
                                         keycloakServerRevocationsAndStuff.currentServerTimestamp
@@ -858,8 +861,8 @@ object KeycloakManager {
         latestRevocationListTimestamp: Long,
         latestGroupUpdateTimestamp: Long
     ) {
-        val bytesOwnedIdentity: ByteArray = obvIdentity.bytesIdentity
-        var identityDetails: JsonIdentityDetails = obvIdentity.getIdentityDetails()
+        val bytesOwnedIdentity: ByteArray = obvIdentity.getBytesIdentity()
+        var identityDetails: JsonIdentityDetails? = obvIdentity.getIdentityDetails()
         var ownDetailsSignatureTimestamp: Long? = null
         val serverUrl: String
         var supportedAuthenticationMethods: List<ObvKeycloakAuthType>
@@ -875,13 +878,13 @@ object KeycloakManager {
 
         init {
 
-            if (identityDetails.getSignedUserDetails() != null) {
+            if (identityDetails?.getSignedUserDetails() != null) {
                 try {
                     val jwtConsumer = JwtConsumerBuilder()
                         .setSkipSignatureVerification()
                         .setSkipAllValidators()
                         .build()
-                    val context = jwtConsumer.process(identityDetails.getSignedUserDetails())
+                    val context = jwtConsumer.process(identityDetails?.getSignedUserDetails())
                     val jsonKeycloakUserDetails = AppSingleton.getJsonObjectMapper()
                         .readValue(
                             context.jwtClaims.rawJson,
@@ -1024,7 +1027,7 @@ object KeycloakManager {
             val obvIdentities =
                 AppSingleton.getEngine().getOwnedIdentitiesWithKeycloakPushTopic(pushTopic)
             for (obvIdentity in obvIdentities) {
-                forceSyncManagedIdentity(obvIdentity.bytesIdentity)
+                forceSyncManagedIdentity(obvIdentity.getBytesIdentity())
             }
         } catch (e: Exception) {
             Logger.d("Failed to retrieve identities with a push topic...")

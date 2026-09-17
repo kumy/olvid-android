@@ -20,13 +20,13 @@ package io.olvid.messenger.owneddetails
 
 import android.content.ContentResolver
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.graphics.ColorMatrix
 import android.graphics.ColorMatrixColorFilter
 import android.graphics.RectF
 import android.net.Uri
-import android.provider.MediaStore.Images.Media
+import androidx.core.graphics.scale
 import androidx.exifinterface.media.ExifInterface
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import io.olvid.messenger.customClasses.PreviewUtils
@@ -50,10 +50,6 @@ class SelectDetailsPhotoViewModel : ViewModel() {
     private var temperature = 0 // between -57 and 57
     private var rotation = 0 // between 0 and 3 (90° CW rotation steps)
 
-    fun getPhotoBitmap(): LiveData<Bitmap?> {
-        return photoBitmap
-    }
-
     @Throws(IOException::class)
     fun setPhotoUri(contentResolver: ContentResolver, photoUri: Uri) {
         if (photoUri != this.photoUri) {
@@ -74,22 +70,17 @@ class SelectDetailsPhotoViewModel : ViewModel() {
                 e.printStackTrace()
             }
 
-            var bitmap: Bitmap =
-                Media.getBitmap(contentResolver, photoUri) ?: return
+            var bitmap: Bitmap = contentResolver.openInputStream(photoUri)?.use {
+                BitmapFactory.decodeStream(it)
+            } ?: return
             bitmap = PreviewUtils.rotateBitmap(bitmap, orientation)
             fullBitmap = bitmap
 
             if (bitmap.byteCount > MAX_BITMAP_SIZE) {
                 scaled = sqrt(bitmap.byteCount.toDouble() / MAX_BITMAP_SIZE).roundToInt() + 1
-                bitmap = Bitmap.createScaledBitmap(
-                    bitmap,
-                    bitmap.width / scaled,
-                    bitmap.height / scaled,
-                    false
-                )
+                bitmap = bitmap.scale(bitmap.width / scaled, bitmap.height / scaled, false)
             }
 
-            photoBitmap.postValue(bitmap)
             val w = bitmap.width
             val h = bitmap.height
             bitmapZone = if (w > h) {
@@ -97,6 +88,7 @@ class SelectDetailsPhotoViewModel : ViewModel() {
             } else {
                 RectF(0f, (h - w) / 2f, w.toFloat(), (h + w) / 2f)
             }
+            photoBitmap.postValue(bitmap)
         }
     }
 

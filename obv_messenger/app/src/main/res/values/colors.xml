@@ -73,4 +73,9 @@
     <color name="poll9">#6C3C00</color>
     <color name="poll10">#A85151</color>
     <color name="poll11">#85785C</color>
+
+    <!-- FTUX onboarding device-mockup placeholders (single drawable, theme-aware) -->
+    <color name="ftux_mockup_screen">#F3F4F5</color>
+    <color name="ftux_mockup_placeholder">#DFE2E5</color>
+    <color name="ftux_mockup_bezel">#EBEBEB</color>
 </resources>

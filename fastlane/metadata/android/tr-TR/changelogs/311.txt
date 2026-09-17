@@ -1,0 +1,1 @@
+- OCR görüntü analizindeki bir sorun düzeltildi.

@@ -113,6 +113,7 @@ import io.olvid.messenger.App
 import io.olvid.messenger.R
 import io.olvid.messenger.customClasses.AudioAttachmentServiceBinding
 import io.olvid.messenger.customClasses.AudioAttachmentServiceBinding.AudioServiceBindableViewHolder
+import io.olvid.messenger.customClasses.attachShareUri
 import io.olvid.messenger.lock_screen.LockableActivity
 import io.olvid.messenger.databases.dao.FyleMessageJoinWithStatusDao.FyleAndStatus
 import io.olvid.messenger.databases.dao.FyleMessageJoinWithStatusDao.FyleAndStatusTimestamped
@@ -124,6 +125,8 @@ import io.olvid.messenger.discussion.linkpreview.LinkPreviewViewModel
 import io.olvid.messenger.discussion.linkpreview.OpenGraph
 import io.olvid.messenger.gallery.GalleryActivity
 import io.olvid.messenger.main.contacts.CustomTab
+import io.olvid.messenger.owneddetails.UseImageAsProfilePictureActivity
+import io.olvid.messenger.owneddetails.canBeUsedAsProfilePicture
 import io.olvid.messenger.services.AudioOutput
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
@@ -291,12 +294,9 @@ class DiscussionMediaGalleryActivity : LockableActivity() {
                                         )
                                     },
                                     onShare = {
-                                        val intent = Intent(Intent.ACTION_SEND)
-                                        intent.putExtra(
-                                            Intent.EXTRA_STREAM,
-                                            it.fyleAndStatus.contentUriForExternalSharing
-                                        )
-                                        intent.setType(it.fyleAndStatus.fyleMessageJoinWithStatus.nonNullMimeType)
+                                        val uri = it.fyleAndStatus.contentUriForExternalSharing
+                                        val mime = it.fyleAndStatus.fyleMessageJoinWithStatus.nonNullMimeType
+                                        val intent = Intent(Intent.ACTION_SEND).attachShareUri(uri, mime)
                                         activity?.let {
                                             ContextCompat.startActivity(
                                                 activity,
@@ -495,12 +495,9 @@ class DiscussionMediaGalleryActivity : LockableActivity() {
                                         )
                                     },
                                     onShare = {
-                                        val intent = Intent(Intent.ACTION_SEND)
-                                        intent.putExtra(
-                                            Intent.EXTRA_STREAM,
-                                            it.fyleAndStatus.contentUriForExternalSharing
-                                        )
-                                        intent.setType(it.fyleAndStatus.fyleMessageJoinWithStatus.nonNullMimeType)
+                                        val uri = it.fyleAndStatus.contentUriForExternalSharing
+                                        val mime = it.fyleAndStatus.fyleMessageJoinWithStatus.nonNullMimeType
+                                        val intent = Intent(Intent.ACTION_SEND).attachShareUri(uri, mime)
                                         startActivity(
                                             Intent.createChooser(
                                                 intent,
@@ -581,19 +578,24 @@ class DiscussionMediaGalleryActivity : LockableActivity() {
                                                         )
                                                     },
                                                     onShare = {
-                                                        val intent = Intent(Intent.ACTION_SEND)
-                                                        intent.putExtra(
-                                                            Intent.EXTRA_STREAM,
-                                                            item.fyleAndStatus.contentUriForExternalSharing
-                                                        )
-                                                        intent.setType(item.fyleAndStatus.fyleMessageJoinWithStatus.nonNullMimeType)
+                                                        val uri = item.fyleAndStatus.contentUriForExternalSharing
+                                                        val mime = item.fyleAndStatus.fyleMessageJoinWithStatus.nonNullMimeType
+                                                        val intent = Intent(Intent.ACTION_SEND).attachShareUri(uri, mime)
                                                         startActivity(
                                                             Intent.createChooser(
                                                                 intent,
                                                                 getString(R.string.title_sharing_chooser)
                                                             )
                                                         )
-                                                    })
+                                                    },
+                                                    onUseAsProfilePicture = if (item.fyleAndStatus.canBeUsedAsProfilePicture) {
+                                                        {
+                                                            UseImageAsProfilePictureActivity.launch(
+                                                                context,
+                                                                item.fyleAndStatus
+                                                            )
+                                                        }
+                                                    } else null)
 
                                                 var imageUri: ImageRequest? by remember {
                                                     mutableStateOf(null)
@@ -795,6 +797,7 @@ class DiscussionMediaGalleryActivity : LockableActivity() {
         onDismissRequest: () -> Unit,
         onGoToMessage: () -> Unit,
         onShare: () -> Unit,
+        onUseAsProfilePicture: (() -> Unit)? = null,
     ) {
         OlvidDropdownMenu(expanded = menuOpened, onDismissRequest = onDismissRequest) {
             // go to message
@@ -811,6 +814,15 @@ class DiscussionMediaGalleryActivity : LockableActivity() {
                     onShare()
                     onDismissRequest()
                 })
+            // use as profile picture
+            onUseAsProfilePicture?.let {
+                OlvidDropdownMenuItem(
+                    text = stringResource(id = R.string.menu_action_use_image_as),
+                    onClick = {
+                        it()
+                        onDismissRequest()
+                    })
+            }
         }
     }
 

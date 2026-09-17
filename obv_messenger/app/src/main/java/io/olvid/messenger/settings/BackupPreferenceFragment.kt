@@ -73,19 +73,19 @@ class BackupPreferenceFragment : PreferenceFragmentCompat(), EngineNotificationL
         val screen = preferenceScreen
 
         reloadBackupConfigurationPreference =
-            screen.findPreference<Preference?>(SettingsActivity.PREF_KEY_RELOAD_BACKUP_CONFIGURATION)
+            screen.findPreference(SettingsActivity.PREF_KEY_RELOAD_BACKUP_CONFIGURATION)
         generateBackupKeyPreference =
-            screen.findPreference<ComposeViewPreference?>(SettingsActivity.PREF_KEY_GENERATE_NEW_BACKUP_KEY)
+            screen.findPreference(SettingsActivity.PREF_KEY_GENERATE_NEW_BACKUP_KEY)
         manualBackupPreference =
-            screen.findPreference<Preference?>(SettingsActivity.PREF_KEY_MANUAL_BACKUP)
+            screen.findPreference(SettingsActivity.PREF_KEY_MANUAL_BACKUP)
         enableAutomaticBackupPreference =
-            screen.findPreference<NoClickSwitchPreference?>(SettingsActivity.PREF_KEY_ENABLE_AUTOMATIC_BACKUP)
+            screen.findPreference(SettingsActivity.PREF_KEY_ENABLE_AUTOMATIC_BACKUP)
 
         if (generateBackupKeyPreference != null && manualBackupPreference != null && enableAutomaticBackupPreference != null && reloadBackupConfigurationPreference != null) {
             refreshBackupPreferences()
 
             reloadBackupConfigurationPreference!!.onPreferenceClickListener =
-                Preference.OnPreferenceClickListener { preference: Preference? ->
+                Preference.OnPreferenceClickListener { _: Preference? ->
                     refreshBackupPreferences()
                     true
                 }
@@ -97,7 +97,7 @@ class BackupPreferenceFragment : PreferenceFragmentCompat(), EngineNotificationL
                         activity?.supportFragmentManager?.let {
                             BackupV2KeyGenerationDialogFragment().apply {
                                 onDismissListener = {
-                                    if (AppSingleton.getEngine().deviceBackupSeed != null) {
+                                    if (AppSingleton.getEngine().getDeviceBackupSeed() != null) {
                                         // delete the legacy backup keys
                                         AppSingleton.getEngine().stopLegacyBackups()
 
@@ -117,13 +117,13 @@ class BackupPreferenceFragment : PreferenceFragmentCompat(), EngineNotificationL
 
 
             manualBackupPreference!!.onPreferenceClickListener =
-                Preference.OnPreferenceClickListener { preference: Preference? ->
-                    App.runThread(Runnable { AppSingleton.getEngine().initiateBackup(true) })
+                Preference.OnPreferenceClickListener { _: Preference? ->
+                    App.runThread { AppSingleton.getEngine().initiateBackup(true) }
                     true
                 }
 
             enableAutomaticBackupPreference!!.onPreferenceClickListener =
-                Preference.OnPreferenceClickListener { pref: Preference? ->
+                Preference.OnPreferenceClickListener { _: Preference? ->
                     automaticBackupClicked()
                     true
                 }
@@ -131,7 +131,7 @@ class BackupPreferenceFragment : PreferenceFragmentCompat(), EngineNotificationL
 
         val manageCloudBackupsPreference = screen.findPreference<Preference?>(SettingsActivity.PREF_KEY_MANAGE_CLOUD_BACKUPS)
         manageCloudBackupsPreference?.onPreferenceClickListener =
-            Preference.OnPreferenceClickListener { preference: Preference? ->
+            Preference.OnPreferenceClickListener { _: Preference? ->
                 val manageCloudBackupsDialogFragment = ManageCloudBackupsDialogFragment.newInstance()
                 manageCloudBackupsDialogFragment.show(
                     getChildFragmentManager(),
@@ -174,8 +174,8 @@ class BackupPreferenceFragment : PreferenceFragmentCompat(), EngineNotificationL
             var backupKeyInformation: ObvBackupKeyInformation?
             var deviceBackupSeed: String?
             try {
-                backupKeyInformation = AppSingleton.getEngine().backupKeyInformation
-                deviceBackupSeed = AppSingleton.getEngine().deviceBackupSeed
+                backupKeyInformation = AppSingleton.getEngine().getBackupKeyInformation()
+                deviceBackupSeed = AppSingleton.getEngine().getDeviceBackupSeed()
             } catch (e: Exception) {
                 e.printStackTrace()
                 reloadBackupConfigurationPreference!!.isVisible = true
@@ -194,14 +194,14 @@ class BackupPreferenceFragment : PreferenceFragmentCompat(), EngineNotificationL
                         .setTitle(R.string.dialog_title_unable_to_load_backup_configuration)
                         .setMessage(R.string.dialog_message_unable_to_load_backup_configuration)
                         .setPositiveButton(
-                            R.string.button_label_generate_new_backup_key,
-                            DialogInterface.OnClickListener { dialog: DialogInterface?, which: Int ->
-                                failedLoads = 0
-                                AppSingleton.getEngine()
-                                    .generateDeviceBackupSeed(BuildConfig.SERVER_NAME)
-                            })
+                            R.string.button_label_generate_new_backup_key
+                        ) { _: DialogInterface?, _: Int ->
+                            failedLoads = 0
+                            AppSingleton.getEngine()
+                                .generateDeviceBackupSeed(BuildConfig.SERVER_NAME)
+                        }
                         .setNegativeButton(R.string.button_label_cancel, null)
-                    requireActivity().runOnUiThread(Runnable { builder.create().show() })
+                    requireActivity().runOnUiThread { builder.create().show() }
                 }
                 return
             }
@@ -304,21 +304,21 @@ class BackupPreferenceFragment : PreferenceFragmentCompat(), EngineNotificationL
                 val builder = SecureAlertDialogBuilder(requireActivity(), R.style.CustomAlertDialog)
                     .setTitle(R.string.dialog_title_backup_choose_deactivate_or_change_account)
                     .setNegativeButton(
-                        R.string.button_label_deactivate_auto_backup,
-                        DialogInterface.OnClickListener { dialog: DialogInterface?, which: Int ->
-                            // clear any stored webdav configuration
-                            try {
-                                automaticBackupConfiguration = null
-                            } catch (_: Exception) {
-                            }
-                            GoogleServicesUtils.requestGoogleSignOut(activity)
-                            deactivateAutomaticBackups()
-                        })
+                        R.string.button_label_deactivate_auto_backup
+                    ) { _: DialogInterface?, _: Int ->
+                        // clear any stored webdav configuration
+                        try {
+                            automaticBackupConfiguration = null
+                        } catch (_: Exception) {
+                        }
+                        GoogleServicesUtils.requestGoogleSignOut(activity)
+                        deactivateAutomaticBackups()
+                    }
                     .setPositiveButton(
-                        R.string.button_label_switch_account,
-                        DialogInterface.OnClickListener { dialog: DialogInterface?, which: Int ->
-                            openSignInDialog(true)
-                        })
+                        R.string.button_label_switch_account
+                    ) { _: DialogInterface?, _: Int ->
+                        openSignInDialog(true)
+                    }
                 builder.create().show()
             } else {
                 openSignInDialog(false)
@@ -334,7 +334,7 @@ class BackupPreferenceFragment : PreferenceFragmentCompat(), EngineNotificationL
             override fun onCloudProviderConfigurationSuccess(configuration: CloudProviderConfiguration?) {
                 try {
                     automaticBackupConfiguration = configuration
-                    activity!!.runOnUiThread(Runnable { activateAutomaticBackups() })
+                    activity!!.runOnUiThread { activateAutomaticBackups() }
                 } catch (e: Exception) {
                     e.printStackTrace()
                     onCloudProviderConfigurationFailed()
@@ -347,7 +347,7 @@ class BackupPreferenceFragment : PreferenceFragmentCompat(), EngineNotificationL
                         R.string.toast_message_error_selecting_automatic_backup_account,
                         Toast.LENGTH_SHORT
                     )
-                    activity!!.runOnUiThread(Runnable { deactivateAutomaticBackups() })
+                    activity!!.runOnUiThread { deactivateAutomaticBackups() }
                 }
             }
         })
@@ -361,7 +361,7 @@ class BackupPreferenceFragment : PreferenceFragmentCompat(), EngineNotificationL
         if (enableAutomaticBackupPreference != null) {
             if (enableAutomaticBackupPreference!!.callChangeListener(true)) {
                 enableAutomaticBackupPreference!!.setChecked(true)
-                AppSingleton.getEngine().setAutoBackupEnabled(true, true)
+                AppSingleton.getEngine().setAutoBackupEnabled(enabled = true, initiateBackupNowIfNeeded = true)
             }
             refreshBackupPreferences()
         }
@@ -371,14 +371,14 @@ class BackupPreferenceFragment : PreferenceFragmentCompat(), EngineNotificationL
         if (enableAutomaticBackupPreference != null) {
             if (enableAutomaticBackupPreference!!.callChangeListener(false)) {
                 enableAutomaticBackupPreference!!.setChecked(false)
-                AppSingleton.getEngine().setAutoBackupEnabled(false, true)
+                AppSingleton.getEngine().setAutoBackupEnabled(enabled = false, initiateBackupNowIfNeeded = true)
             }
             refreshBackupPreferences()
         }
     }
 
 
-    @Suppress("deprecation")
+    @Suppress("deprecation", "OVERRIDE_DEPRECATION")
     override fun onActivityResult(
         requestCode: Int,
         resultCode: Int,
@@ -407,7 +407,7 @@ class BackupPreferenceFragment : PreferenceFragmentCompat(), EngineNotificationL
                                             viewModel.exportBackupKeyUid,
                                             viewModel.exportBackupVersion
                                         )
-                                        requireActivity().runOnUiThread(Runnable { this.refreshBackupPreferences() })
+                                        requireActivity().runOnUiThread { this.refreshBackupPreferences() }
                                         return@runThread
                                     }
                             } catch (_: Exception) {
@@ -432,12 +432,12 @@ class BackupPreferenceFragment : PreferenceFragmentCompat(), EngineNotificationL
         }
     }
 
-    override fun callback(notificationName: String, userInfo: HashMap<String?, Any?>) {
+    override fun callback(notificationName: String?, userInfo: HashMap<String, Any?>) {
         when (notificationName) {
             EngineNotifications.NEW_BACKUP_SEED_GENERATED -> {
-                requireActivity().runOnUiThread(Runnable {
+                requireActivity().runOnUiThread {
                     val backupSeed =
-                        userInfo.get(EngineNotifications.NEW_BACKUP_SEED_GENERATED_SEED_KEY) as String?
+                        userInfo[EngineNotifications.NEW_BACKUP_SEED_GENERATED_SEED_KEY] as String?
                     if (backupSeed != null) {
                         val dialogView =
                             getLayoutInflater().inflate(R.layout.dialog_view_new_backup_key, null)
@@ -450,43 +450,43 @@ class BackupPreferenceFragment : PreferenceFragmentCompat(), EngineNotificationL
                                 .setTitle(R.string.dialog_title_new_backup_key)
                                 .setView(dialogView)
                                 .setPositiveButton(
-                                    R.string.button_label_key_copied_close_window,
-                                    DialogInterface.OnClickListener { dialog: DialogInterface?, which: Int ->
-                                        if (!useAutomaticBackup()) {
-                                            val secondDialogView = getLayoutInflater().inflate(
-                                                R.layout.dialog_view_backup_choices,
+                                    R.string.button_label_key_copied_close_window
+                                ) { _: DialogInterface?, _: Int ->
+                                    if (!useAutomaticBackup()) {
+                                        val secondDialogView = getLayoutInflater().inflate(
+                                            R.layout.dialog_view_backup_choices,
+                                            null
+                                        )
+                                        val fileButton =
+                                            secondDialogView.findViewById<Button>(R.id.button_file)
+                                        val cloudButton =
+                                            secondDialogView.findViewById<Button>(R.id.button_cloud)
+
+                                        val secondDialog = SecureAlertDialogBuilder(
+                                            requireActivity(),
+                                            R.style.CustomAlertDialog
+                                        )
+                                            .setTitle(R.string.dialog_title_backup_choices)
+                                            .setView(secondDialogView)
+                                            .setNegativeButton(
+                                                R.string.button_label_cancel,
                                                 null
                                             )
-                                            val fileButton =
-                                                secondDialogView.findViewById<Button>(R.id.button_file)
-                                            val cloudButton =
-                                                secondDialogView.findViewById<Button>(R.id.button_cloud)
+                                            .create()
 
-                                            val secondDialog = SecureAlertDialogBuilder(
-                                                requireActivity(),
-                                                R.style.CustomAlertDialog
-                                            )
-                                                .setTitle(R.string.dialog_title_backup_choices)
-                                                .setView(secondDialogView)
-                                                .setNegativeButton(
-                                                    R.string.button_label_cancel,
-                                                    null
-                                                )
-                                                .create()
-
-                                            fileButton.setOnClickListener(View.OnClickListener { v: View? ->
-                                                App.runThread(Runnable {
-                                                    AppSingleton.getEngine().initiateBackup(true)
-                                                })
-                                                secondDialog.dismiss()
-                                            })
-                                            cloudButton.setOnClickListener(View.OnClickListener { v: View? ->
-                                                automaticBackupClicked()
-                                                secondDialog.dismiss()
-                                            })
-                                            secondDialog.show()
+                                        fileButton.setOnClickListener { _: View? ->
+                                            App.runThread {
+                                                AppSingleton.getEngine().initiateBackup(true)
+                                            }
+                                            secondDialog.dismiss()
                                         }
-                                    })
+                                        cloudButton.setOnClickListener { _: View? ->
+                                            automaticBackupClicked()
+                                            secondDialog.dismiss()
+                                        }
+                                        secondDialog.show()
+                                    }
+                                }
 
                         val dialog: Dialog = builder.create()
                         dialog.window?.setFlags(
@@ -496,11 +496,11 @@ class BackupPreferenceFragment : PreferenceFragmentCompat(), EngineNotificationL
                         dialog.show()
                     }
                     refreshBackupPreferences()
-                })
+                }
             }
 
             EngineNotifications.BACKUP_KEY_VERIFICATION_SUCCESSFUL -> {
-                requireActivity().runOnUiThread(Runnable { this.refreshBackupPreferences() })
+                requireActivity().runOnUiThread { this.refreshBackupPreferences() }
             }
 
             EngineNotifications.BACKUP_SEED_GENERATION_FAILED -> {
@@ -509,11 +509,11 @@ class BackupPreferenceFragment : PreferenceFragmentCompat(), EngineNotificationL
 
             EngineNotifications.BACKUP_FOR_EXPORT_FINISHED -> {
                 val bytesBackupKeyUid =
-                    userInfo.get(EngineNotifications.BACKUP_FOR_EXPORT_FINISHED_BYTES_BACKUP_KEY_UID_KEY) as ByteArray?
+                    userInfo[EngineNotifications.BACKUP_FOR_EXPORT_FINISHED_BYTES_BACKUP_KEY_UID_KEY] as ByteArray?
                 val version =
-                    userInfo.get(EngineNotifications.BACKUP_FOR_EXPORT_FINISHED_VERSION_KEY) as Int?
+                    userInfo[EngineNotifications.BACKUP_FOR_EXPORT_FINISHED_VERSION_KEY] as Int?
                 val encryptedContent =
-                    userInfo.get(EngineNotifications.BACKUP_FOR_EXPORT_FINISHED_ENCRYPTED_CONTENT_KEY) as ByteArray?
+                    userInfo[EngineNotifications.BACKUP_FOR_EXPORT_FINISHED_ENCRYPTED_CONTENT_KEY] as ByteArray?
 
                 if (encryptedContent == null || version == null || bytesBackupKeyUid == null) {
                     return

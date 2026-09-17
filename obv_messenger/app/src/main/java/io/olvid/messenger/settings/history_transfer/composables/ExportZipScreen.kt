@@ -19,16 +19,11 @@
 
 package io.olvid.messenger.settings.history_transfer.composables
 
-import android.content.ClipData
-import android.content.ClipboardManager
-import android.content.Context
 import android.content.res.Configuration
 import android.text.format.Formatter
-import android.widget.Toast
 import androidx.compose.animation.AnimatedContentTransitionScope
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement.spacedBy
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -43,8 +38,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State
@@ -57,7 +50,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.res.colorResource
@@ -74,18 +66,12 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import io.olvid.engine.engine.types.JsonIdentityDetails
-import io.olvid.messenger.App
 import io.olvid.messenger.R
 import io.olvid.messenger.customClasses.BytesKey
 import io.olvid.messenger.customClasses.formatMarkdownToAnnotatedString
 import io.olvid.messenger.databases.entity.OwnedIdentity
-import io.olvid.messenger.designsystem.components.CustomDialogContent
-import io.olvid.messenger.designsystem.components.DialogSecure
 import io.olvid.messenger.designsystem.components.OlvidActionButton
 import io.olvid.messenger.designsystem.components.OlvidCircularProgress
-import io.olvid.messenger.designsystem.components.OlvidOutlinedActionButton
-import io.olvid.messenger.designsystem.components.OlvidOutlinedSecondaryButton
-import io.olvid.messenger.designsystem.components.OlvidPasswordInput
 import io.olvid.messenger.designsystem.theme.OlvidTypography
 import io.olvid.messenger.settings.history_transfer.ExportScope
 import io.olvid.messenger.settings.history_transfer.HistoryTransferRoutes
@@ -124,10 +110,7 @@ fun NavGraphBuilder.exportZipScreen(
         val messageCount by messageCountLiveData.observeAsState()
         val sha256sMap by sha256sMapLiveData.observeAsState()
 
-        var zipPassword: String? by rememberSaveable { mutableStateOf(null) }
-        var showPasswordChoiceDialog by rememberSaveable { mutableStateOf(false) }
-        var isRandomZipPassword by rememberSaveable { mutableStateOf(false) }
-        var showZipPasswordInputDialog by rememberSaveable { mutableStateOf(false) }
+        var showPasswordDialogs by rememberSaveable { mutableStateOf(false) }
 
         Column(
             modifier = Modifier
@@ -279,235 +262,25 @@ fun NavGraphBuilder.exportZipScreen(
                     large = true,
                     allowTwoLines = true,
                     onClick = {
-                        showPasswordChoiceDialog = true
+                        showPasswordDialogs = true
                     },
                 )
             }
 
 
-            if (showPasswordChoiceDialog) {
-                DialogSecure(
-                    onDismissRequest = { showPasswordChoiceDialog = false },
-                ) {
-                    CustomDialogContent {
-                        Box {
-                            Column(
-                                modifier = Modifier
-                                    .verticalScroll(state = rememberScrollState())
-                                    .padding(start = 16.dp, end = 16.dp, bottom = 12.dp, top = 24.dp),
-                                horizontalAlignment = Alignment.CenterHorizontally,
-                                verticalArrangement = spacedBy(8.dp)
-                            ) {
-                                Icon(
-                                    modifier = Modifier
-                                        .size(64.dp)
-                                        .background(colorResource(R.color.green), RoundedCornerShape(12.dp))
-                                        .padding(12.dp),
-                                    painter = painterResource(R.drawable.ic_backup_key),
-                                    contentDescription = null,
-                                    tint = colorResource(R.color.almostWhite),
-                                )
-
-                                Text(
-                                    modifier = Modifier.padding(vertical = 8.dp),
-                                    text = stringResource(R.string.dialog_title_protect_export),
-                                    style = OlvidTypography.h6,
-                                    color = colorResource(R.color.almostBlack),
-                                )
-                                Text(
-                                    modifier = Modifier.padding(bottom = 8.dp),
-                                    text = stringResource(R.string.dialog_message_protect_export),
-                                    style = OlvidTypography.body1,
-                                    color = colorResource(R.color.greyTint),
-                                    textAlign = TextAlign.Center
-                                )
-
-                                OlvidActionButton(
-                                    modifier = Modifier.fillMaxWidth(),
-                                    icon = R.drawable.ic_shield,
-                                    text = stringResource(R.string.button_label_generate_password),
-                                    allowTwoLines = true,
-                                ) {
-                                    showPasswordChoiceDialog = false
-                                    isRandomZipPassword = true
-                                    zipPassword = generateRandomPassword()
-                                    showZipPasswordInputDialog = true
-                                }
-                                OlvidOutlinedSecondaryButton(
-                                    modifier = Modifier.fillMaxWidth(),
-                                    icon = R.drawable.ic_question_shield,
-                                    text = stringResource(R.string.button_label_choose_password),
-                                    allowTwoLines = true,
-                                ) {
-                                    showPasswordChoiceDialog = false
-                                    isRandomZipPassword = false
-                                    zipPassword = null
-                                    showZipPasswordInputDialog = true
-                                }
-                                OlvidOutlinedActionButton(
-                                    modifier = Modifier.fillMaxWidth(),
-                                    icon = R.drawable.ic_no_shield,
-                                    outlinedColor = colorResource(R.color.red),
-                                    contentColor = colorResource(R.color.red),
-                                    text = stringResource(R.string.button_label_continue_without_password),
-                                    allowTwoLines = true,
-                                ) {
-                                    showPasswordChoiceDialog = false
-                                    onChooseZipFile.invoke(null)
-                                }
-                            }
-
-                            IconButton(
-                                modifier = Modifier
-                                    .align(Alignment.TopEnd)
-                                    .size(48.dp),
-                                onClick = {
-                                    showPasswordChoiceDialog = false
-                                },
-                                colors = IconButtonDefaults.iconButtonColors(
-                                    containerColor = Color.Transparent,
-                                    contentColor = colorResource(R.color.almostBlack)
-                                ),
-                            ) {
-                                Icon(
-                                    modifier = Modifier.size(24.dp),
-                                    painter = painterResource(id = R.drawable.ic_close),
-                                    contentDescription = stringResource(id = R.string.button_label_cancel),
-                                )
-                            }
-                        }
-                    }
-                }
-            }
-
-            if (showZipPasswordInputDialog) {
-                DialogSecure(
-                    onDismissRequest = {
-                        showZipPasswordInputDialog = false
+            if (showPasswordDialogs) {
+                ZipExportPasswordDialogs(
+                    onPasswordChosen = { password ->
+                        showPasswordDialogs = false
+                        onChooseZipFile(password)
                     },
-                ) {
-                    CustomDialogContent {
-                        val password = rememberSaveable { mutableStateOf(zipPassword ?: "") }
-                        Box {
-                            Column(
-                                modifier = Modifier
-                                    .verticalScroll(state = rememberScrollState())
-                                    .padding(start = 16.dp, end = 16.dp, bottom = 12.dp, top = 24.dp),
-                                horizontalAlignment = Alignment.CenterHorizontally,
-                                verticalArrangement = spacedBy(8.dp)
-                            ) {
-                                Icon(
-                                    modifier = Modifier
-                                        .size(64.dp)
-                                        .background(colorResource(R.color.green), RoundedCornerShape(12.dp))
-                                        .padding(12.dp),
-                                    painter = painterResource(R.drawable.ic_backup_key),
-                                    contentDescription = null,
-                                    tint = colorResource(R.color.almostWhite),
-                                )
-
-                                Text(
-                                    modifier = Modifier.padding(vertical = 8.dp),
-                                    text = stringResource(
-                                        if (isRandomZipPassword)
-                                            R.string.dialog_title_generated_password
-                                        else
-                                            R.string.dialog_title_choose_password
-                                    ),
-                                    style = OlvidTypography.h6,
-                                    color = colorResource(R.color.almostBlack),
-                                )
-
-                                if (isRandomZipPassword) {
-                                    Text(
-                                        modifier = Modifier.padding(bottom = 8.dp),
-                                        text =  stringResource(R.string.dialog_message_generated_password).formatMarkdownToAnnotatedString(),
-                                        style = OlvidTypography.body2,
-                                        color = colorResource(R.color.greyTint),
-                                        textAlign = TextAlign.Center
-                                    )
-                                }
-
-                                OlvidPasswordInput(
-                                    modifier = Modifier.padding(bottom = 8.dp),
-                                    password = password,
-                                    initiallyShowPassword = isRandomZipPassword,
-                                    readOnly = isRandomZipPassword,
-                                )
-
-                                if (isRandomZipPassword) {
-                                    OlvidOutlinedSecondaryButton(
-                                        modifier = Modifier.fillMaxWidth(),
-                                        icon = R.drawable.ic_swipe_copy,
-                                        text = stringResource(R.string.button_label_copy_to_clipboard),
-                                        allowTwoLines = true,
-                                    ) {
-                                        runCatching {
-                                            val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager?
-                                            val clip = ClipData.newPlainText("", password.value)
-                                            if (clipboard != null) {
-                                                clipboard.setPrimaryClip(clip)
-                                                App.toast(
-                                                    R.string.toast_message_clipboard_copied,
-                                                    Toast.LENGTH_SHORT
-                                                )
-                                            }
-                                        }
-                                    }
-                                }
-
-                                OlvidActionButton(
-                                    modifier = Modifier.fillMaxWidth(),
-                                    icon = R.drawable.ic_folder,
-                                    text = stringResource(R.string.button_label_create_zip_file),
-                                    allowTwoLines = true,
-                                    enabled = password.value.isNotEmpty()
-                                ) {
-                                    showZipPasswordInputDialog = false
-                                    zipPassword = password.value.ifEmpty { null }
-                                    onChooseZipFile(zipPassword)
-                                }
-                            }
-
-                            IconButton(
-                                modifier = Modifier
-                                    .align(Alignment.TopEnd)
-                                    .size(48.dp),
-                                onClick = {
-                                    showZipPasswordInputDialog = false
-                                },
-                                colors = IconButtonDefaults.iconButtonColors(
-                                    containerColor = Color.Transparent,
-                                    contentColor = colorResource(R.color.almostBlack)
-                                ),
-                            ) {
-                                Icon(
-                                    modifier = Modifier.size(24.dp),
-                                    painter = painterResource(id = R.drawable.ic_close),
-                                    contentDescription = stringResource(id = R.string.button_label_cancel),
-                                )
-                            }
-
-                        }
-                    }
-                }
+                    onDismiss = {
+                        showPasswordDialogs = false
+                    },
+                )
             }
         }
     }
-}
-
-
-private fun generateRandomPassword(): String {
-    @Suppress("SpellCheckingInspection")
-    val characters = "ABCDEFGHJKLMNPQRTUVWXYZabcdefghijkmnopqrstuvwxyz2346789".toCharArray()
-
-    return String(
-        CharArray(6) { characters.random() } +
-                '-' +
-                CharArray(6) { characters.random() } +
-                '-' +
-                CharArray(6) { characters.random() }
-    )
 }
 
 

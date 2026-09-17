@@ -1177,7 +1177,7 @@ public class App extends Application implements DefaultLifecycleObserver {
             getContext().sendBroadcast(expirationIntent);
 
             //////////////////////////
-            // catch up on profile-wide mutes that expired while the app wasn't running, and schedule the next one
+            // catch up on profile-wide and per-discussion mutes that expired while the app wasn't running, and schedule the next one
             //////////////////////////
             Intent muteExpirationIntent = new Intent(getContext(), MuteExpirationService.class);
             muteExpirationIntent.setAction(MuteExpirationService.MUTE_EXPIRED_ACTION);

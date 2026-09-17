@@ -26,8 +26,8 @@
 	<string name="button_label_create_group" state="needs_review" hash="1102939673">Grup Oluştur</string>
 	<string name="button_label_discard" state="needs_review" hash="795591204">İptal Et</string>
 	<string name="button_label_exchange_digits_with_user" state="needs_review" hash="339599327">Kodlarınızı %1$s ile değiştirin</string>
-	<string name="button_label_generate_new_id" state="needs_review" hash="92014734">Yeni bir ID oluştur</string>
-	<string name="button_label_generate_my_id" state="needs_review" hash="-1007060207">Kimliğimi Oluştur</string>
+	<string name="button_label_generate_new_id" state="needs_review" hash="-1130516787">Yeni bir profil oluştur</string>
+	<string name="button_label_generate_my_id" state="needs_review" hash="239641058">Profilimi oluştur</string>
 	<string name="button_label_ignore" state="needs_review" hash="-806373746">Yoksay</string>
 	<string name="button_label_reject" state="needs_review" hash="-2094664161">Reddet</string>
 	<string name="button_label_introduce" state="needs_review" hash="193852909">Tanıtmak</string>
@@ -80,6 +80,12 @@
 	<string name="dialog_title_rename_group" state="needs_review" hash="1461324427">Grup adını değiştir</string>
 	<string name="dialog_title_restart_channel_establishment" state="needs_review" hash="-645769680">Kanal kurulumunu yeniden başlatılsın mı?</string>
 	<string name="dialog_title_share_with" state="needs_review" hash="854107768">… ile paylaş</string>
+	<string name="dialog_title_share_recipients" state="needs_review" hash="1157053138">Alıcıları seçin</string>
+	<string name="share_label_from" state="needs_review" hash="2049052075">Kimden:</string>
+	<string name="share_label_to" state="needs_review" hash="-1785690373">Kime:</string>
+	<string name="share_label_choose_recipients" state="needs_review" hash="1157053138">Alıcıları seçin</string>
+	<string name="hint_share_message" state="needs_review" hash="-763169957">Bir mesaj ekle…</string>
+	<string name="content_description_delete_attachment" state="needs_review" hash="-220348329">Ekleri kaldır</string>
 	<string name="dialog_title_shortcut_to" state="needs_review" hash="-1193591200">…kısayolu oluştur</string>
 	<string name="explanation_choose_display_name" state="needs_review" hash="1162066686">Lütfen kişilerinize görüntülenecek bir ad girin. Bu bilgiler asla Olvid sunucularına gönderilmeyecektir.</string>
 	<string name="explanation_empty_contact_list" state="needs_review" hash="1240778508">Şu anda hiç kişi yok</string>
@@ -104,7 +110,7 @@
 	<string name="explanation_no_message_found" state="needs_review" hash="-1329622990">Mesaj bulunamadı</string>
 	<string name="explanation_no_attachment_found" state="needs_review" hash="156593369">Ek bulunamadı</string>
 	<string name="explanation_no_link_found" state="needs_review" hash="-1419950450">Bağlantı bulunamadı</string>
-	<string name="hint_company" state="needs_review" hash="379200324">Şirket (isteğe bağlı)</string>
+	<string name="hint_company" state="needs_review" hash="988571519">Şirket</string>
 	<string name="hint_compose_your_message" state="needs_review" hash="-25761578">Mesaj yaz</string>
 	<string name="hint_compose_your_message_ephemeral" state="needs_review" hash="-1527208333">Geçici mesaj</string>
 	<string name="label_edit_your_message" state="needs_review" hash="1091877412">Mesajını düzenle</string>
@@ -133,7 +139,7 @@
 	<string name="hint_last_name" state="needs_review" hash="1701170359">Soyadı</string>
 	<string name="hint_new_name" state="needs_review" hash="709842168">Yeni ad</string>
 	<string name="hint_notification_reply" state="needs_review" hash="1095144032">Yanıtla</string>
-	<string name="hint_position" state="needs_review" hash="-55145181">İş Unvanı (isteğe bağlı)</string>
+	<string name="hint_position" state="needs_review" hash="1338817744">İş Unvanı</string>
 	<string name="invitation_label_their_code" state="needs_review" hash="1402501614">Onların kodu</string>
 	<string name="invitation_label_your_code" state="needs_review" hash="1944546233">Kodunuz</string>
 	<string name="invitation_status_accept_invite" state="needs_review" hash="2100924901">Davet alındı</string>
@@ -170,6 +176,11 @@
 	<string name="label_group_members" state="needs_review" hash="1460220752">Grup Üyeleri</string>
 	<string name="label_other_group_members" state="needs_review" hash="-2121490032">Diğer Grup Üyeleri</string>
 	<string name="label_groups_common" state="needs_review" hash="1252823567">Ortak gruplar</string>
+	<string name="label_create_group_with_contact" state="needs_review" hash="1950649899">%1$s ile bir grup oluşturun</string>
+	<string name="label_add_contact_to_a_group" state="needs_review" hash="-682192937">%1$s\'i bir gruba ekle</string>
+	<string name="label_add_to_groups" state="needs_review" hash="-654216617">Gruplara ekle</string>
+	<string name="explanation_no_admin_group_to_add_contact" state="needs_review" hash="402908162">%1$s\'in eklenebileceği hiçbir grubun yöneticisi değilsiniz.</string>
+	<string name="toast_message_adding_contact_to_groups" state="needs_review" hash="1201697547">%1$s, seçilen gruplara ekleniyor…</string>
 	<string name="label_invitation_declined" state="needs_review" hash="2038173833">Davet Reddedildi</string>
 	<string name="label_new_group_card" state="needs_review" hash="1006740909">Grup detayları güncellendi</string>
 	<string name="label_not_part_of_a_group" state="needs_review" hash="1667979596">Henüz bir gruba katılmadınız</string>
@@ -183,6 +194,7 @@
 	<string name="menu_action_create_shortcut" state="needs_review" hash="-1949455873">Kısayol Oluştur</string>
 	<string name="menu_action_delete" state="needs_review" hash="-232100842">Sil</string>
 	<string name="menu_action_delete_discussion" state="needs_review" hash="2059656471">Konuşmayı sil</string>
+	<string name="menu_action_export_discussion" state="needs_review" hash="1736692296">Konuşmayı dışa aktar</string>
 	<string name="label_swipe_details" state="needs_review" hash="171468732">Ayrıntılar</string>
 	<string name="menu_action_disband_group" state="needs_review" hash="-1767089289">Grubu dağıt</string>
 	<string name="menu_action_edit_group_details" state="needs_review" hash="310205135">Grup detaylarını düzenle</string>
@@ -482,7 +494,14 @@
 	<string name="dialog_title_backup_choices" state="needs_review" hash="281222223">Bir yedekleme yöntemi seçin</string>
 	<string name="menu_action_choose_picture" state="needs_review" hash="-1655172909">Bir resim seçin</string>
 	<string name="menu_action_take_photo" state="needs_review" hash="-1123080444">Fotoğraf çek</string>
+	<string name="menu_action_choose_image_from_olvid" state="needs_review" hash="1585248356">Alınan bir resim seçin</string>
 	<string name="menu_action_remove_image" state="needs_review" hash="1094977672">Resmi kaldır</string>
+	<string name="menu_action_use_image_as" state="needs_review" hash="587310096">Bu görüntüyü şu şekilde kullanın…</string>
+	<string name="label_use_photo_for_my_profile" state="needs_review" hash="-1005809580">Profil resmim</string>
+	<string name="label_use_photo_for_target" state="needs_review" hash="283541521">%s için fotoğraf</string>
+	<string name="label_use_photo_for_discussion_background" state="needs_review" hash="1925733151">%s için arka plan</string>
+	<string name="toast_message_photo_set" state="needs_review" hash="-1641885203">Resim güncellendi</string>
+	<string name="toast_message_background_set" state="needs_review" hash="1642873459">Arka plan güncellendi</string>
 	<string name="dialog_title_create_empty_group" state="needs_review" hash="-663434464">Boş grup oluştur?</string>
 	<string name="dialog_message_create_empty_group" state="needs_review" hash="-297923005">Grubunuza eklemek için hiçbir kişi seçmediniz. Boş bir grup oluşturmak istediğinizden emin misiniz?</string>
 	<string name="pref_dark_mode_title" state="needs_review" hash="816474245">Koyu Mod</string>
@@ -862,7 +881,7 @@
 	<string name="button_label_check_options" state="needs_review" hash="-759177128">Seçenekleri kontrol et</string>
 	<string name="hint_olvid_server" state="needs_review" hash="1097391633">Olvid sunucusu</string>
 	<string name="hint_license_activation_code" state="needs_review" hash="102193320">Lisans aktivasyon kodu</string>
-	<string name="activity_title_identity_creation_options" state="needs_review" hash="1180456032">Kimlik Oluşturma Seçenekleri</string>
+	<string name="activity_title_identity_creation_options" state="needs_review" hash="-774054913">Profil oluşturma seçenekleri</string>
 	<string name="activity_title_scan_configuration" state="needs_review" hash="-386259993">Yapılandırma Taraması</string>
 	<string name="menu_action_import_activation_from_clipboard" state="needs_review" hash="-70842935">Panodan bağlantı içe aktar</string>
 	<string name="troubleshooting_update_valid_title" state="needs_review" hash="741828768">Olvid güncel</string>
@@ -871,7 +890,6 @@
 	<string name="dialog_message_update_available" state="needs_review" hash="416187645">Olvid\'in daha yeni bir sürümü mevcut.\n\nEn son özelliklerden yararlanmak için lütfen güncelleyin.</string>
 	<string name="dialog_title_call_initiation_not_supported" state="needs_review" hash="-2088021831">Çağrı başlatma desteklenmiyor</string>
 	<string name="dialog_message_call_initiation_not_supported" state="needs_review" hash="1760333819">Olvid sunucunuzun güvenli çağrı başlatmayı desteklemediği görülüyor.\n\nLütfen daha fazla bilgi için yöneticinizle iletişime geçin.</string>
-	<string name="label_identity_creation_options" state="needs_review" hash="1180456032">Kimlik Oluşturma Seçenekleri</string>
 	<string name="text_option_server" state="needs_review" hash="-1130676431">Sunucu: %1$s</string>
 	<string name="dialog_title_non_default_server" state="needs_review" hash="2119192219">Varsayılan olmayan bir sunucu kullanma</string>
 	<string name="dialog_message_non_default_server" state="needs_review" hash="459308900">Aşağıdaki sunucuda bir profil oluşturmak üzeresiniz:\n\n%1$s\n\nBu, varsayılan Olvid sunucusu değil. Yalnızca bu sunucuya güveniyorsanız devam edin.</string>
@@ -900,7 +918,7 @@
 	<string name="toast_message_unable_to_keycloak_revoke" state="needs_review" hash="-1368037130">Önceki Olvid ID\'si değiştirilemedi, lütfen tekrar deneyin</string>
 	<string name="toast_message_keycloak_revoke_successful" state="needs_review" hash="-1216369809">Eski Olvid ID\'si başarıyla değiştirildi</string>
 	<string name="dialog_title_keycloak_authentication_required_user_id_changed" state="needs_review" hash="-896407029">Kullanıcı değişikliği algılandı</string>
-	<string name="dialog_message_keycloak_authentication_required_user_id_changed" state="needs_review" hash="876252686">Profiliniz şu anda kuruluşunuz tarafından yönetiliyor. Normalde kullandığınızdan farklı bir kullanıcı olarak kimlik doğrulaması yaptığınız anlaşılıyor. Bu desteklenmiyor.\n\nLütfen yöneticinizle iletişime geçin veya doğru kullanıcı olarak yeniden kimlik doğrulayın.</string>
+	<string name="dialog_message_keycloak_authentication_required_user_id_changed" state="needs_review" hash="2080839829">Profiliniz şu anda kuruluşunuz tarafından yönetiliyor. Normalde kullandığınızdan farklı bir kullanıcı olarak kimlik doğrulaması yaptığınız anlaşılıyor. Bu desteklenmiyor.\n\nLütfen yöneticinizle iletişime geçin veya doğru kullanıcı olarak yeniden kimlik doğrulama yapın.</string>
 	<string name="dialog_title_add_keycloak_user" state="needs_review" hash="-1050193239">Kişi ekle</string>
 	<string name="dialog_message_add_keycloak_user" state="needs_review" hash="-1755937035">%1$s\'i kişilerinize eklemeyi seçtiniz. Devam etmek istiyor musunuz?</string>
 	<string name="explanation_keycloak_update_new" state="needs_review" hash="1136733528">Olvid\'de şirketinizin kimlik sağlayıcısını yapılandırmak üzeresiniz. Yapılandırıldıktan sonra, bu sunucuyla kimlik doğrulaması yapabilir ve Olvid\'in diğer çalışanları kişilerinize sorunsuz bir şekilde eklemesine izin verebilirsiniz.\nLütfen daha fazla ayrıntı için yöneticinizle iletişime geçin.</string>
@@ -1031,6 +1049,8 @@
 	<string name="label_storage_discussions" state="needs_review" hash="491497248">Tartışmalar</string>
 	<string name="pref_use_internal_image_viewer_title" state="needs_review" hash="1319400578">Dahili resim görüntüleyiciyi kullanın</string>
 	<string name="pref_use_internal_image_viewer_summary" state="needs_review" hash="1248137666">Bu özellik etkinleştirildiğinde, bir resim ekine tıklandığında resim dahili görüntüleyicide açılır. Aksi takdirde, cihazınızın varsayılan resim uygulaması kullanılacaktır.</string>
+	<string name="pref_image_text_recognition_title" state="needs_review" hash="1877261687">Görüntülerdeki metni tanıyın ve indeksleyin</string>
+	<string name="pref_image_text_recognition_summary" state="needs_review" hash="1217699919">Görüntü eklerindeki metni aramanıza ve kopyalamanıza olanak tanır. Bu özellik, düşük özellikli cihazlarda yoğun kaynak tüketebilir: ihtiyacınız yoksa devre dışı bırakın.</string>
 	<string name="label_unable_to_display_image" state="needs_review" hash="-1495534207">Görüntü yüklenemedi</string>
 	<string name="dialog_title_backup_requires_sign_in" state="needs_review" hash="-720389674">Bulut sağlayıcısına giriş yapılması gerekiyor</string>
 	<string name="dialog_message_backup_requires_sign_in" state="needs_review" hash="119557495">Olvid\'i bir bulut sağlayıcısına otomatik yedekleme kullanacak şekilde yapılandırdınız, ancak oturumunuz sona erdi. Bu sağlayıcıya tekrar giriş yapmanız gerekiyor.\n\nArtık otomatik yedekleme istemiyorsanız, bunu Uygulama Ayarlarından devre dışı bırakabilirsiniz. Cihazınızın kaybolması veya hasar görmesi durumunda kişilerinizi kaybetmemenin tek yolunun otomatik yedeklemeler olduğunu unutmayın.</string>
@@ -1149,7 +1169,7 @@
 	<string name="pref_hidden_profile_close_policy_dialog_entry_screen_lock" state="needs_review" hash="-1520400811">Olvid kilit ekranı etkinleştirildiğinde</string>
 	<string name="pref_hidden_profile_close_policy_dialog_entry_background" state="needs_review" hash="-2099539114">Olvid arka plana geçtiğinde…</string>
 	<string name="activity_title_enter_backup_key" state="needs_review" hash="1035967309">Yedekleme anahtarını girin</string>
-	<string name="activity_title_identity_creation" state="needs_review" hash="-1361520151">Kimlik Oluşturma</string>
+	<string name="activity_title_identity_creation" state="needs_review" hash="2027618284">Profil oluşturma</string>
 	<string name="menu_action_manual_configuration" state="needs_review" hash="-1495974502">Manuel gelişmiş yapılandırma</string>
 	<string name="toast_message_invalid_configuration_link" state="needs_review" hash="1387412522">Geçersiz yapılandırma bağlantısı</string>
 	<string name="toast_message_invalid_link" state="needs_review" hash="1265454437">Geçersiz bağlantı</string>
@@ -1171,6 +1191,7 @@
 	<string name="dialog_title_chose_profile_web_client" state="needs_review" hash="1860298414">Olvid web istemine bağlanacak profili seçin</string>
 	<string name="dialog_title_chose_profile_invitation" state="needs_review" hash="-2063034787">Bu kişiyi hangi profilinizle davet etmek istediğinizi seçin</string>
 	<string name="toast_message_create_new_profile_then_reopen_this_link" state="needs_review" hash="1770827346">Lütfen önce bir profil oluşturun, ardından bu bağlantıyı tekrar açın</string>
+	<string name="toast_message_invitation_link_deferred_to_end_of_onboarding" state="needs_review" hash="-189914806">Profiliniz oluşturulduktan sonra davetiyeniz otomatik olarak açılacaktır.</string>
 	<string name="button_label_switch_profile" state="needs_review" hash="-2007633024">Profili değiştir</string>
 	<string name="text_no_other_profile_to_switch_to" state="needs_review" hash="-112306213">Başka profil yok</string>
 	<string name="button_label_configure_lock_screen" state="needs_review" hash="870348426">Kilit ekranını ayarla</string>
@@ -1181,7 +1202,7 @@
 	<string name="dialog_message_delete_profile_multi" state="needs_review" hash="-2003495595">Bir profili silmek, bu profile ilişkin tüm bilgileri cihazınızdan silecektir. Bu, kişileriniz, gruplarınız ve bu profile ait tüm görüşmelerinizin (mesajlar ve ekler) içeriğini içerir. Diğer profilleriniz bu işlemden etkilenmeyecektir.\n\nBu profili nasıl sileceğinizi seçmek için \"ileri\"ye basın.</string>
 	<string name="dialog_message_delete_last_profile_multi" state="needs_review" hash="-103140781">Bir profili silmek, bu profile ilişkin tüm bilgileri cihazınızdan silecektir. Bu, kişileriniz, gruplarınız ve bu profil için tüm görüşmelerinizin (mesajlar ve ekler) içeriğini içerir.\n\n<b>Bu tek görünür profilinizdir ve gizli bir profiliniz varsa, bunlar da aynı anda silinecektir.</b>\n\nBu profili nasıl silmek istediğinizi seçmek için \"ileri\"ye basın.</string>
 	<string name="switch_label_delete_profile_everywhere" state="needs_review" hash="-74965346">Profili <b>her yerde</b> sil</string>
-	<string name="hint_type_delete_here_to_proceed" state="needs_review" hash="-1622625725">Devam etmek için buraya \\"%1$s\\" yazın</string>
+	<string name="hint_type_delete_here_to_proceed" state="needs_review" hash="-1622625725">Devam etmek için buraya \"%1$s\" yazın</string>
 	<string name="explanation_delete_owned_identity" state="needs_review" hash="2036375772">Profilinizi <b>her yerde</b> silmeyi seçerseniz:\n - hem yerel olarak silinecek <b>ve</b> kişilerin cihazlarından da silinecektir\n - katıldığınız gruplardan ayrılacaksınız\n - yönettiğiniz gruplar dağıtılacaktır\n\nProfilinizi <b>her yerde</b> silmezseniz, yalnızca cihazınızda yerel olarak silinecektir. Başka bir cihazda bir yedeklemeyi geri yüklemeyi planlamadığınız sürece, kişileriniz size mesaj göndermeye devam edebilir ve bu mesajların teslim edilemeyeceğini fark etmeyebilir.</string>
 	<string name="explanation_delete_inactive_owned_identity" state="needs_review" hash="-575337242">Mevcut profilinizin görünüşe göre etkin değil, yani muhtemelen başka bir cihaza aktarmışsınız. Bu profili diğer cihazınızda kullanmaya devam etmeyi planlıyorsanız, buradan güvenle silebilirsiniz.\n\nBu profili bir daha asla kullanmak istemiyorsanız, önce bu cihazda yeniden etkinleştirmeniz, kişilerinize yönelik güvenli kanalların yeniden oluşturulmasını beklemeniz ve ardından bu profili \"her yerde sil\" seçeneğini seçerek silmeniz gerekir.</string>
 	<string name="explanation_delete_owned_identity_multi" state="needs_review" hash="-184045089">Profiliniz şu anda birden fazla cihazda etkin.\n\nEğer profilinizi <b>her yerde</b> silmeyi seçerseniz: - tüm cihazlarınızdan <b>ve</b> kişilerinizin cihazlarından silinecektir\n - katıldığınız gruplardan ayrılacaksınız\n - yönettiğiniz gruplar dağıtılacaktır\n\nEğer profilinizi <b>her yerde</b> silmezseniz, yalnızca yerel olarak silinecek ve diğer cihazlarınızda normal şekilde kullanmaya devam edebilirsiniz.</string>
@@ -1446,17 +1467,13 @@
 	<string name="location_sharing_duration_three_hours_short_string" state="needs_review" hash="228095183">3 saat</string>
 	<string name="location_sharing_duration_three_hours_full_string" state="needs_review" hash="754857804">Konumu <b>3 saat</b> boyunca paylaş</string>
 	<string name="location_sharing_duration_endless_short_string" state="needs_review" hash="55208442">Sonsuz</string>
-	<string name="location_sharing_duration_endless_full_string" state="needs_review" hash="1710814259">Konumu paylaş <b>durdurulana kadar</b>
-	</string>
+	<string name="location_sharing_duration_endless_full_string" state="needs_review" hash="1710814259">Konumu paylaş <b>durdurulana kadar</b></string>
 	<string name="location_sharing_quality_precise_short_string" state="needs_review" hash="351442529">Kesin</string>
 	<string name="location_sharing_quality_balanced_short_string" state="needs_review" hash="-1925315592">dengeli</string>
 	<string name="location_sharing_quality_power_save_short_string" state="needs_review" hash="-14275273">Güç tasarrufu</string>
-	<string name="location_sharing_quality_precise_full_string" state="needs_review" hash="-1255374893">
-		<b>Hassas</b> konum paylaşım modu</string>
-	<string name="location_sharing_quality_balanced_full_string" state="needs_review" hash="-421322514">
-		<b>Dengeli</b> konum paylaşım modu</string>
-	<string name="location_sharing_quality_power_save_full_string" state="needs_review" hash="792896333">
-		<b>Güç tasarrufu</b> konum paylaşım modu</string>
+	<string name="location_sharing_quality_precise_full_string" state="needs_review" hash="-1255374893"><b>Hassas</b> konum paylaşım modu</string>
+	<string name="location_sharing_quality_balanced_full_string" state="needs_review" hash="-421322514"><b>Dengeli</b> konum paylaşım modu</string>
+	<string name="location_sharing_quality_power_save_full_string" state="needs_review" hash="792896333"><b>Güç tasarrufu</b> konum paylaşım modu</string>
 	<string name="label_sharing_location_until" state="needs_review" hash="187977459">Konum paylaşımı şu zamana kadar: %1$s</string>
 	<string name="label_location_sharing_ended" state="needs_review" hash="1028490137">Konum paylaşımı sona erdi</string>
 	<string name="label_gps_coordinates" state="needs_review" hash="-1537356414">GPS koordinatları</string>
@@ -2039,11 +2056,14 @@
 	<string name="button_label_configure_backups" state="needs_review" hash="-990646398">Yedeklemeyi etkinleştir</string>
 	<string name="tip_write_backup_key_title" state="needs_review" hash="-1652757003">Yedek anahtarınızı yazmayı unutmayın 😇</string>
 	<string name="tip_write_backup_key_message" state="needs_review" hash="931018791">Profilinizi geri yüklemek için yedek anahtarınız bu cihaza erişiminizi kaybetmeniz durumunda çok önemlidir.</string>
+	<string name="tip_legacy_backup_end_of_life_title" state="needs_review" hash="810495149">Kullandığınız eski yedeklemelerin kullanım süresi doldu.</string>
+	<string name="tip_legacy_backup_end_of_life_message" state="needs_review" hash="-314257210">Yaklaşan Olvid güncellemesi eski yedeklemeleri desteklemeyi durduracak. Hesabınızın güvenliğini sağlamak için şimdi yeni yedekleme özelliğine geçin.</string>
 	<string name="tip_troubleshooting_title" state="needs_review" hash="-393739108">Olvid deneyiminizi geliştirin 🚀</string>
 	<string name="tip_troubleshooting_message" state="needs_review" hash="-935493349">Cihazınızdaki bazı parametreler doğru şekilde yapılandırılmamış ve Olvid ile deneyiminizi etkileyebilir.</string>
 	<string name="button_label_this_way" state="needs_review" hash="747183939">Buraya</string>
 	<string name="toast_code_copied" state="needs_review" hash="-1522785848">Kod kopyalandı</string>
 	<string name="explanation_choose_members" state="needs_review" hash="-1385158706">Lütfen bu gruba kimleri eklemek istediğinizi seçin.</string>
+	<string name="explanation_choose_share_recipients" state="needs_review" hash="-1406265940">Lütfen kiminle paylaşacağınızı seçin.</string>
 	<string name="explanation_choose_contact_introduction" state="needs_review" hash="1113777517">%1$s\'i kime tanıtmak istediğinizi seçin.</string>
 	<string name="label_group_administration" state="needs_review" hash="871355986">Grup yönetimi</string>
 	<string name="dialog_title_call_blocked" state="needs_review" hash="1594606530">Çağrı engellendi</string>
@@ -2169,7 +2189,7 @@
 	<string name="store_link_olvid_store" state="needs_review" hash="-1825630369">Olvid Mağazasını Ziyaret Edin</string>
 	<string name="toast_message_reminder_set" state="needs_review" hash="-961055414">Hatırlatıcı ayarlandı</string>
 	<string name="dialog_title_keycloak_authentication_impossible" state="needs_review" hash="325273853">Kimlik doğrulama başarısız</string>
-	<string name="dialog_message_keycloak_authentication_impossible" state="needs_review" hash="390830785">Profiliniz şu anda kuruluşunuz tarafından yönetiliyor ve yeniden kimlik doğrulaması gerekiyor. Ancak, görünüşe göre hiçbir desteklenen kimlik doğrulama yöntemi mevcut değil.\n\nLütfen daha fazla bilgi için yöneticinizle iletişime geçin.</string>
+	<string name="dialog_message_keycloak_authentication_impossible" state="needs_review" hash="-2031322232">Profiliniz şu anda kuruluşunuz tarafından yönetiliyor ve yeniden kimlik doğrulaması gerekiyor. Ancak, kullanılabilecek herhangi bir desteklenen kimlik doğrulama yöntemi bulunmuyor.\n\nLütfen daha fazla bilgi için yöneticinizle iletişime geçin.</string>
 	<string name="onboarding_transfer_keycloak_error_message_authentication_impossible" state="needs_review" hash="-1891385979">Desteklenen hiçbir kimlik doğrulama yönteminin mevcut görünmüyor.</string>
 	<string name="pref_use_alt_turn_servers_title" state="needs_review" hash="-1956132776">Alternatif TURN sunucularını kullanın</string>
 	<string name="pref_use_alt_turn_servers_summary" state="needs_review" hash="357427162">Dönen IP adreslerine sahip TURN sunucularını kullanmak için bu seçeneği etkinleştirin. Emin değilseniz, bu seçeneği devre dışı bırakın 😁</string>
@@ -2280,5 +2300,45 @@
 	<string name="label_error_loading_openstreetmap_style_file" state="needs_review" hash="-2596045">OpenStreetMap stil dosyası yüklenirken bir hata oluştu.</string>
 	<string name="dialog_title_subscriptions_not_available" state="needs_review" hash="336174241">Uygulama içi abonelikler kullanılamıyor</string>
 	<string name="dialog_message_subscriptions_not_available" state="needs_review" hash="2093768678">Yüklediğiniz Olvid sürümü, Google\'ın faturalandırma kitaplığını içermez ve uygulama içi satın almaları desteklemez.\n\nDaha fazla bilgi için lütfen **feedback@olvid.io** adresinden bizimle iletişime geçin.</string>
+	<string name="ftux_next" state="needs_review" hash="1158639077">Sonraki</string>
+	<string name="ftux_start" state="needs_review" hash="646298532">Başlayın</string>
+	<string name="ftux_page_indicator" state="needs_review" hash="1987610035">Sayfa %1$d, toplam %2$d sayfa</string>
+	<string name="ftux_page_welcome_title" state="needs_review" hash="1173832630"><b>Olvid</b>\'e hoş geldiniz.</string>
+	<string name="ftux_page_welcome_body" state="needs_review" hash="-2085198139">Herkes için özel mesajlaşma.</string>
+	<string name="ftux_page_private_title" state="needs_review" hash="1815927819"><b>Özel</b> mesajlaşma</string>
+	<string name="ftux_page_private_body" state="needs_review" hash="-590644231">%1$s üzerinde kiminle sohbet etmek istediğinizi siz seçersiniz. Spam, öneri, gereksiz bildirim veya tanımadığınız kişilerden gelen mesajlar yok.\n\nKimse sizin izniniz olmadan size ulaşamaz.\n\n%1$s sizin dijital alanınızdır.</string>
+	<string name="ftux_page_everyone_title" state="needs_review" hash="1506796386"><b>Herkes</b> için mesajlaşma</string>
+	<string name="ftux_page_everyone_body" state="needs_review" hash="-586100377">Kim olursanız olun, %1$s size en iyi güvenliği sunar. E-posta veya telefon numarası gerekmez.\n\n%1$s sizden hiçbir şey istemez ve bu her şeyi değiştirir.</string>
+	<string name="ftux_page_protect_title" state="needs_review" hash="1969120191">Olvid sizi <b>korur</b>. Olvid, sizin için önemli olanları korur.</string>
+	<string name="ftux_page_protect_body" state="needs_review" hash="881847930">Bu sadece bir söz değil; %1$s kriptografik bir kanıt sunar.\n\nİster kişilerinizi uzaktan, ister yüz yüze ekleyin, iletişimleriniz sistematik olarak doğrulanır ve uçtan uca şifrelenir.</string>
+	<string name="ftux_page_pricing_title" state="needs_review" hash="-1948277889"><b>Şeffaf</b> bir iş modeli</string>
+	<string name="ftux_page_pricing_body" state="needs_review" hash="-1064278870">%1$s, kişisel verilerinizle finanse edilmiyor – çünkü herhangi bir veri istemiyor!\n\nÜcretsiz olan ücretsizdir. Ücretli olanın bir fiyatı vardır.</string>
+	<string name="ftux_page_media_title" state="needs_review" hash="558110518">Olvid\'in <b>her şeyi</b> var</string>
+	<string name="ftux_page_media_body" state="needs_review" hash="1807247240">Ek yok, yüksek çözünürlüklü fotoğraf paylaşımı, anketler, sesli ve görüntülü aramalar, çoklu cihaz desteği, konum paylaşımı – hepsi burada!</string>
 	<string name="menu_action_cancel_upload" state="needs_review" hash="1672681586">Yüklemeyi iptal et</string>
+	<string name="label_suggested_contacts" state="needs_review" hash="816810770">Önerilen kişiler</string>
+	<string name="label_suggested_contacts_subtitle" state="needs_review" hash="131522501">Kullanıcıları kolayca davet edin</string>
+	<string name="label_suggested_contact_already_a_contact" state="needs_review" hash="-1177848651">Zaten kişilerinizde var</string>
+	<string name="label_suggested_contact_invitation_received" state="needs_review" hash="2100924901">Davet alındı</string>
+	<string name="label_suggested_contact_invitation_sent" state="needs_review" hash="310679275">Davet gönderildi</string>
+	<string name="label_suggested_contacts_all_done" state="needs_review" hash="-127525104">Güncel sürümdesiniz!\nÖnerilecek başka kişi yok.</string>
+	<string name="button_label_suggested_contact_later" state="needs_review" hash="-1933816039">Daha sonra</string>
+	<string name="button_label_close" state="needs_review" hash="1454843231">Kapat</string>
+	<string name="button_label_skip" state="needs_review" hash="2056258301">Atla</string>
+	<string name="button_label_understood" state="needs_review" hash="829780875">Anladım</string>
+	<string name="label_suggested_contacts_onboarding_title_1" state="needs_review" hash="491881039">Kaydırarak davet edin</string>
+	<string name="label_suggested_contacts_onboarding_message_1" state="needs_review" hash="331320806">Kullanıcıyı davet etmek için kartı sağa kaydırın veya bir sonraki kullanıcıya geçmek için sola kaydırın.</string>
+	<string name="label_suggested_contacts_onboarding_title_2" state="needs_review" hash="-788798380">Bu kişiler nereden geliyor?</string>
+	<string name="label_suggested_contacts_onboarding_message_2" state="needs_review" hash="1536681696">Bunlar, henüz kişilerinizde kayıtlı olmayan Olvid kullanıcılarıdır.</string>
+	<string name="label_suggested_contacts_onboarding_caption" state="needs_review" hash="-1299179969">Siz birbirinize 1 derece yakınsınız: en az bir ortak grubunuz var.</string>
+	<string name="label_suggested_contacts_you" state="needs_review" hash="672009142">Sen</string>
+	<string name="label_suggested_contacts_common_group" state="needs_review" hash="-1739793963">Ortak grup</string>
+	<string name="explanation_suggested_contacts_others_tab" state="needs_review" hash="852096678">Aşağıdaki kullanıcılar kişileriniz arasında değil ve henüz onlarla özel bir sohbet başlatamazsınız. Ancak onları kolayca davet edebilirsiniz! 🚀</string>
+	<string name="label_suggested_contacts_invite_in_one_gesture" state="needs_review" hash="438220313">Bu kullanıcıları tek bir kaydırma hareketiyle davet edin</string>
+	<string name="menu_action_suggested_contacts_see_full_list" state="needs_review" hash="603082500">Tüm listeyi gör</string>
+	<string name="menu_action_suggested_contacts_replay_onboarding" state="needs_review" hash="-1552704243">Eğitimi tekrar izle</string>
+	<string name="button_label_uninvite" state="needs_review" hash="771825501">Daveti geri al</string>
+	<string name="button_label_accept_invitation" state="needs_review" hash="-1778405034">Daveti kabul et</string>
+	<string name="label_suggested_contacts_already_swiped" state="needs_review" hash="427042318">Zaten kaydırıldı</string>
+	<string name="label_suggested_contacts_not_swiped_yet" state="needs_review" hash="310924358">Henüz kaydırılmadı</string>
 </resources>

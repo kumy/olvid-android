@@ -26,8 +26,8 @@
 	<string name="button_label_create_group" state="needs_review" hash="1102939673">Kreiraj grupu</string>
 	<string name="button_label_discard" state="needs_review" hash="795591204">Odbaci</string>
 	<string name="button_label_exchange_digits_with_user" state="needs_review" hash="339599327">Razmijenite kodove s %1$s</string>
-	<string name="button_label_generate_new_id" state="needs_review" hash="92014734">Generiraj novi ID</string>
-	<string name="button_label_generate_my_id" state="needs_review" hash="-1007060207">Generiraj moj ID</string>
+	<string name="button_label_generate_new_id" state="needs_review" hash="-1130516787">Kreirajte novi profil</string>
+	<string name="button_label_generate_my_id" state="needs_review" hash="239641058">Kreiraj svoj profil</string>
 	<string name="button_label_ignore" state="needs_review" hash="-806373746">Ignoriraj</string>
 	<string name="button_label_reject" state="needs_review" hash="-2094664161">Odbijanje</string>
 	<string name="button_label_introduce" state="needs_review" hash="193852909">Predstaviti</string>
@@ -80,6 +80,12 @@
 	<string name="dialog_title_rename_group" state="needs_review" hash="1461324427">Preimenuj grupu</string>
 	<string name="dialog_title_restart_channel_establishment" state="needs_review" hash="-645769680">Ponovno uspostaviti izradu kanala?</string>
 	<string name="dialog_title_share_with" state="needs_review" hash="854107768">Podijeli s…</string>
+	<string name="dialog_title_share_recipients" state="needs_review" hash="1157053138">Odaberite primatelje</string>
+	<string name="share_label_from" state="needs_review" hash="2049052075">Od:</string>
+	<string name="share_label_to" state="needs_review" hash="-1785690373">Primatelju:</string>
+	<string name="share_label_choose_recipients" state="needs_review" hash="1157053138">Odaberite primatelje</string>
+	<string name="hint_share_message" state="needs_review" hash="-763169957">Dodajte poruku…</string>
+	<string name="content_description_delete_attachment" state="needs_review" hash="-220348329">Ukloni prilog</string>
 	<string name="dialog_title_shortcut_to" state="needs_review" hash="-1193591200">Kreiraj prečac do…</string>
 	<string name="explanation_choose_display_name" state="needs_review" hash="1162066686">Molimo unesite ime koje će biti prikazano vašim kontaktima. Ti podaci se nikada neće slati poslužiteljima Olvid.</string>
 	<string name="explanation_empty_contact_list" state="needs_review" hash="1240778508">Nema kontakata za sada</string>
@@ -104,7 +110,7 @@
 	<string name="explanation_no_message_found" state="needs_review" hash="-1329622990">Nema pronađenih poruka</string>
 	<string name="explanation_no_attachment_found" state="needs_review" hash="156593369">Nema pronađenih priloga</string>
 	<string name="explanation_no_link_found" state="needs_review" hash="-1419950450">Nema pronađenih poveznica</string>
-	<string name="hint_company" state="needs_review" hash="379200324">Tvrtka (opcionalno)</string>
+	<string name="hint_company" state="needs_review" hash="988571519">Tvrtka</string>
 	<string name="hint_compose_your_message" state="needs_review" hash="-25761578">Napiši poruku</string>
 	<string name="hint_compose_your_message_ephemeral" state="needs_review" hash="-1527208333">Privatna poruka</string>
 	<string name="label_edit_your_message" state="needs_review" hash="1091877412">Uredi svoju poruku</string>
@@ -133,7 +139,7 @@
 	<string name="hint_last_name" state="needs_review" hash="1701170359">Prezime</string>
 	<string name="hint_new_name" state="needs_review" hash="709842168">Novo ime</string>
 	<string name="hint_notification_reply" state="needs_review" hash="1095144032">Odgovor</string>
-	<string name="hint_position" state="needs_review" hash="-55145181">Naziv radnog mjesta (opcionalno)</string>
+	<string name="hint_position" state="needs_review" hash="1338817744">Naziv radnog mjesta</string>
 	<string name="invitation_label_their_code" state="needs_review" hash="1402501614">Njihov kod</string>
 	<string name="invitation_label_your_code" state="needs_review" hash="1944546233">Vaš kod</string>
 	<string name="invitation_status_accept_invite" state="needs_review" hash="2100924901">Primljen poziv</string>
@@ -170,6 +176,11 @@
 	<string name="label_group_members" state="needs_review" hash="1460220752">Članovi grupe</string>
 	<string name="label_other_group_members" state="needs_review" hash="-2121490032">Ostali članovi grupe</string>
 	<string name="label_groups_common" state="needs_review" hash="1252823567">Zajedničke grupe</string>
+	<string name="label_create_group_with_contact" state="needs_review" hash="1950649899">Kreirajte grupu s %1$s</string>
+	<string name="label_add_contact_to_a_group" state="needs_review" hash="-682192937">Dodaj %1$s u grupu</string>
+	<string name="label_add_to_groups" state="needs_review" hash="-654216617">Dodaj u grupe</string>
+	<string name="explanation_no_admin_group_to_add_contact" state="needs_review" hash="402908162">Niste administrator niti jedne grupe kojoj bi se %1$s mogao dodati.</string>
+	<string name="toast_message_adding_contact_to_groups" state="needs_review" hash="1201697547">Dodajem %1$s u odabrane grupe…</string>
 	<string name="label_invitation_declined" state="needs_review" hash="2038173833">Poziv odbijen</string>
 	<string name="label_new_group_card" state="needs_review" hash="1006740909">Detalji grupe ažurirani</string>
 	<string name="label_not_part_of_a_group" state="needs_review" hash="1667979596">Još niste dio grupe</string>
@@ -183,6 +194,7 @@
 	<string name="menu_action_create_shortcut" state="needs_review" hash="-1949455873">Kreiraj prečac</string>
 	<string name="menu_action_delete" state="needs_review" hash="-232100842">Izbriši</string>
 	<string name="menu_action_delete_discussion" state="needs_review" hash="2059656471">Izbriši razgovor</string>
+	<string name="menu_action_export_discussion" state="needs_review" hash="1736692296">Izvezi razgovor</string>
 	<string name="label_swipe_details" state="needs_review" hash="171468732">Pojedinosti</string>
 	<string name="menu_action_disband_group" state="needs_review" hash="-1767089289">Raskini grupu</string>
 	<string name="menu_action_edit_group_details" state="needs_review" hash="310205135">Uredi detalje grupe</string>
@@ -482,7 +494,14 @@
 	<string name="dialog_title_backup_choices" state="needs_review" hash="281222223">Odaberite metodu sigurnosnog kopiranja</string>
 	<string name="menu_action_choose_picture" state="needs_review" hash="-1655172909">Odaberite sliku</string>
 	<string name="menu_action_take_photo" state="needs_review" hash="-1123080444">Slikaj sliku</string>
+	<string name="menu_action_choose_image_from_olvid" state="needs_review" hash="1585248356">Odaberite primljenu sliku</string>
 	<string name="menu_action_remove_image" state="needs_review" hash="1094977672">Ukloni sliku</string>
+	<string name="menu_action_use_image_as" state="needs_review" hash="587310096">Koristite ovu sliku kao…</string>
+	<string name="label_use_photo_for_my_profile" state="needs_review" hash="-1005809580">Moja slika profila</string>
+	<string name="label_use_photo_for_target" state="needs_review" hash="283541521">Fotografija za %s</string>
+	<string name="label_use_photo_for_discussion_background" state="needs_review" hash="1925733151">Pozadina za %s</string>
+	<string name="toast_message_photo_set" state="needs_review" hash="-1641885203">Slika je ažurirana</string>
+	<string name="toast_message_background_set" state="needs_review" hash="1642873459">Pozadina je ažurirana</string>
 	<string name="dialog_title_create_empty_group" state="needs_review" hash="-663434464">Želite stvoriti praznu grupu?</string>
 	<string name="dialog_message_create_empty_group" state="needs_review" hash="-297923005">Niste odabrali nijedan kontakt za dodavanje u grupu. Jeste li sigurni da želite stvoriti praznu grupu?</string>
 	<string name="pref_dark_mode_title" state="needs_review" hash="816474245">Tamni način</string>
@@ -862,7 +881,7 @@
 	<string name="button_label_check_options" state="needs_review" hash="-759177128">Provjeri opcije</string>
 	<string name="hint_olvid_server" state="needs_review" hash="1097391633">Olvid poslužitelj</string>
 	<string name="hint_license_activation_code" state="needs_review" hash="102193320">Kod aktivacije licence</string>
-	<string name="activity_title_identity_creation_options" state="needs_review" hash="1180456032">Opcije za stvaranje ID-a</string>
+	<string name="activity_title_identity_creation_options" state="needs_review" hash="-774054913">Opcije za izradu profila</string>
 	<string name="activity_title_scan_configuration" state="needs_review" hash="-386259993">Skeniranje konfiguracije</string>
 	<string name="menu_action_import_activation_from_clipboard" state="needs_review" hash="-70842935">Uvezi vezu iz međuspremnika</string>
 	<string name="troubleshooting_update_valid_title" state="needs_review" hash="741828768">Olvid je ažuriran</string>
@@ -871,7 +890,6 @@
 	<string name="dialog_message_update_available" state="needs_review" hash="416187645">Dostupna je novija verzija aplikacije Olvid.\n\nMolimo vas da je ažurirate kako biste mogli koristiti najnovije značajke.</string>
 	<string name="dialog_title_call_initiation_not_supported" state="needs_review" hash="-2088021831">Poziv nije podržan</string>
 	<string name="dialog_message_call_initiation_not_supported" state="needs_review" hash="1760333819">Čini se da vaš Olvid poslužitelj ne podržava pokretanje sigurnih poziva.\n\nMolimo, kontaktirajte svog administratora za više informacija.</string>
-	<string name="label_identity_creation_options" state="needs_review" hash="1180456032">Opcije za stvaranje ID-a</string>
 	<string name="text_option_server" state="needs_review" hash="-1130676431">Poslužitelj: %1$s</string>
 	<string name="dialog_title_non_default_server" state="needs_review" hash="2119192219">Korištenje prilagođenog poslužitelja</string>
 	<string name="dialog_message_non_default_server" state="needs_review" hash="459308900">Uskoro ćete kreirati profil na sljedećem poslužitelju:\n\n%1$s\n\nOvo nije zadani Olvid poslužitelj. Nastavite samo ako vjerujete ovom poslužitelju.</string>
@@ -900,7 +918,7 @@
 	<string name="toast_message_unable_to_keycloak_revoke" state="needs_review" hash="-1368037130">Nije uspjelo zamijeniti prethodni Olvid ID, pokušajte ponovno</string>
 	<string name="toast_message_keycloak_revoke_successful" state="needs_review" hash="-1216369809">Stari Olvid ID je uspješno zamijenjen</string>
 	<string name="dialog_title_keycloak_authentication_required_user_id_changed" state="needs_review" hash="-896407029">Promijena korisnika je otkrivena</string>
-	<string name="dialog_message_keycloak_authentication_required_user_id_changed" state="needs_review" hash="876252686">Vaš profil trenutno upravlja vaša organizacija. Čini se da ste se prijavili s drugim korisničkim računom nego inače. To nije podržano.\n\nMolimo kontaktirajte svog administratora ili se ponovno prijavite s ispravnim korisničkim računom.</string>
+	<string name="dialog_message_keycloak_authentication_required_user_id_changed" state="needs_review" hash="2080839829">Vaš profil trenutno upravlja vaša organizacija. Čini se da ste se prijavili s drugim korisničkim računom nego inače. To nije podržano.\n\nMolimo, kontaktirajte svog administratora ili se ponovno prijavite s ispravnim korisničkim računom.</string>
 	<string name="dialog_title_add_keycloak_user" state="needs_review" hash="-1050193239">Dodaj kontakt</string>
 	<string name="dialog_message_add_keycloak_user" state="needs_review" hash="-1755937035">Odabrali ste dodati %1$s u svoje kontakte. Želite li nastaviti?</string>
 	<string name="explanation_keycloak_update_new" state="needs_review" hash="1136733528">U procesu ste konfiguriranja davatelja identiteta svoje tvrtke u Olvidu. Nakon konfiguracije, moći ćete se autentificirati putem ovog poslužitelja, a Olvid će vam omogućiti besprijekorno dodavanje drugih zaposlenika u svoje kontakte.\nMolimo kontaktirajte svog administratora za više detalja.</string>
@@ -1031,6 +1049,8 @@
 	<string name="label_storage_discussions" state="needs_review" hash="491497248">Razgovori</string>
 	<string name="pref_use_internal_image_viewer_title" state="needs_review" hash="1319400578">Koristite ugrađeni preglednik slika</string>
 	<string name="pref_use_internal_image_viewer_summary" state="needs_review" hash="1248137666">Kada je ova opcija uključena, klikom na prilog slike otvorit će se u ugrađenom pregledniku. U suprotnom, koristit će se zadana aplikacija za slike na vašem uređaju.</string>
+	<string name="pref_image_text_recognition_title" state="needs_review" hash="1877261687">Prepoznajte i indeksirajte tekst u slikama</string>
+	<string name="pref_image_text_recognition_summary" state="needs_review" hash="1217699919">Omogućuje pretraživanje i kopiranje teksta pronađenog u prilozima slika. Ovo može biti zahtjevno za uređaje s nižim performansama: isključite ovu opciju ako vam nije potrebna.</string>
 	<string name="label_unable_to_display_image" state="needs_review" hash="-1495534207">Nije moguće prikazati sliku</string>
 	<string name="dialog_title_backup_requires_sign_in" state="needs_review" hash="-720389674">Prijava kod davatelja oblaka je potrebna</string>
 	<string name="dialog_message_backup_requires_sign_in" state="needs_review" hash="119557495">Konfigurirali ste Olvid za automatsko spremanje podataka u oblaku, ali je vaša sesija istekla. Potrebno je da se ponovno prijavite na tog pružatelja usluga.\n\nAko više ne želite automatsko spremanje podataka, možete ga isključiti u postavkama aplikacije. Imajte na umu da je automatsko spremanje podataka jedini način da spriječite gubitak kontakata ako izgubite ili oštetite svoj uređaj.</string>
@@ -1149,7 +1169,7 @@
 	<string name="pref_hidden_profile_close_policy_dialog_entry_screen_lock" state="needs_review" hash="-1520400811">Kada se aktivira Olvidov zaslon za zaključavanje</string>
 	<string name="pref_hidden_profile_close_policy_dialog_entry_background" state="needs_review" hash="-2099539114">Kada Olvid ode u pozadinu…</string>
 	<string name="activity_title_enter_backup_key" state="needs_review" hash="1035967309">Unesite ključ za sigurnosnu kopiju</string>
-	<string name="activity_title_identity_creation" state="needs_review" hash="-1361520151">Kreiranje ID-a</string>
+	<string name="activity_title_identity_creation" state="needs_review" hash="2027618284">Kreiranje profila</string>
 	<string name="menu_action_manual_configuration" state="needs_review" hash="-1495974502">Ručna napredna konfiguracija</string>
 	<string name="toast_message_invalid_configuration_link" state="needs_review" hash="1387412522">Neispravna poveznica za konfiguraciju</string>
 	<string name="toast_message_invalid_link" state="needs_review" hash="1265454437">Neispravna poveznica</string>
@@ -1171,6 +1191,7 @@
 	<string name="dialog_title_chose_profile_web_client" state="needs_review" hash="1860298414">Odaberite profil za povezivanje s Olvid web klijentom</string>
 	<string name="dialog_title_chose_profile_invitation" state="needs_review" hash="-2063034787">Odaberite profil s kojim želite pozvati ovaj kontakt</string>
 	<string name="toast_message_create_new_profile_then_reopen_this_link" state="needs_review" hash="1770827346">Molimo prvo kreirajte profil, a zatim ponovno otvorite ovu poveznicu</string>
+	<string name="toast_message_invitation_link_deferred_to_end_of_onboarding" state="needs_review" hash="-189914806">Vaša pozivnica će se automatski otvoriti nakon što kreirate svoj profil.</string>
 	<string name="button_label_switch_profile" state="needs_review" hash="-2007633024">Promijeni profil</string>
 	<string name="text_no_other_profile_to_switch_to" state="needs_review" hash="-112306213">Nema drugih profila</string>
 	<string name="button_label_configure_lock_screen" state="needs_review" hash="870348426">Postavke zaključanog zaslona</string>
@@ -1180,9 +1201,8 @@
 	<string name="dialog_message_delete_last_profile" state="needs_review" hash="-2123774331">Brisanje profila uklonit će sve informacije povezane s ovim profilom s vašeg uređaja. To uključuje vaše kontakte, grupe i sadržaj svih vaših rasprava (poruka i priloga) za ovaj profil.\n\n<b>Ovo je vaš jedini vidljivi profil i ako imate skrivene profile, oni će biti izbrisani istovremeno.</b>\n\nAko ste omogućili sigurnosne kopije u Olvidu, vaše buduće sigurnosne kopije neće sadržavati nikakav trag ovog profila i možda ga nećete moći vratiti.\n\nPritisnite \"dalje\" da biste odabrali kako želite izbrisati ovaj profil.</string>
 	<string name="dialog_message_delete_profile_multi" state="needs_review" hash="-2003495595">Brisanje profila uklonit će sve informacije povezane s ovim profilom s vašeg uređaja. To uključuje vaše kontakte, grupe i sadržaj svih vaših razgovora (poruke i priloge) za ovaj profil. Ostali profili neće biti pogođeni ovom operacijom.\n\nPritisnite \"dalje\" da odaberete kako želite izbrisati ovaj profil.</string>
 	<string name="dialog_message_delete_last_profile_multi" state="needs_review" hash="-103140781">Brisanje profila uklonit će sve informacije povezane s ovim profilom s vašeg uređaja. To uključuje vaše kontakte, grupe i sadržaj svih vaših razgovora (poruke i priloge) za ovaj profil.\n\n<b>Ovo je vaš jedini vidljivi profil i ako imate bilo koji skriveni profil, oni će biti izbrisani istovremeno.</b>\n\nPritisnite \"dalje\" da biste odabrali kako želite izbrisati ovaj profil.</string>
-	<string name="switch_label_delete_profile_everywhere" state="needs_review" hash="-74965346">Izbriši profil <b>svugdje</b>
-	</string>
-	<string name="hint_type_delete_here_to_proceed" state="needs_review" hash="-1622625725">Upišite \\"%1$s\\" ovdje da biste nastavili</string>
+	<string name="switch_label_delete_profile_everywhere" state="needs_review" hash="-74965346">Izbriši profil <b>svugdje</b></string>
+	<string name="hint_type_delete_here_to_proceed" state="needs_review" hash="-1622625725">Upišite \"%1$s\" ovdje da biste nastavili</string>
 	<string name="explanation_delete_owned_identity" state="needs_review" hash="2036375772">Ako odaberete izbrisati svoj profil <b>svugdje</b>:\n - bit će izbrisan lokalno <b>i</b> na uređajima vaših kontakata\n - napustit ćete grupe kojima ste se pridružili\n - grupe kojima upravljate bit će raspuštene\n\nAko ne izbrišete svoj profil <b>svugdje</b>, on će biti izbrisan samo lokalno na vašem uređaju. Ako ne planirate vratiti sigurnosnu kopiju na drugi uređaj, vaši kontakti i dalje mogu pokušavati slati vam poruke i možda neće shvatiti da te poruke ne mogu biti dostavljene.</string>
 	<string name="explanation_delete_inactive_owned_identity" state="needs_review" hash="-575337242">Čini se da je vaš trenutni profil neaktivan, što vjerojatno znači da ste ga prenijeli na drugi uređaj. Ako planirate nastaviti koristiti ovaj profil na drugom uređaju, možete ga sigurno izbrisati ovdje.\n\nAko više nikada ne želite koristiti ovaj profil, prvo ga morate ponovno aktivirati na ovom uređaju, pričekati da se ponovno uspostave sigurni kanali s vašim kontaktima, a zatim izbrisati ovaj profil odabirom opcije \"izbriši svugdje\"</string>
 	<string name="explanation_delete_owned_identity_multi" state="needs_review" hash="-184045089">Vaš profil je trenutno omogućen na više uređaja.\n\nAko odaberete izbrisati svoj profil <b>svugdje</b>: - bit će izbrisan sa svih vaših uređaja <b>i</b> s uređaja vaših kontakata\n - napustit ćete grupe kojima ste se pridružili\n - grupe kojima upravljate bit će raspuštene\n\nAko ne izbrišete svoj profil <b>svugdje</b>, on će biti izbrisan samo lokalno i moći ćete ga normalno koristiti na svojim drugim uređajima.</string>
@@ -1443,23 +1463,17 @@
 	<string name="button_label_send" state="needs_review" hash="-185402948">Pošalji</string>
 	<string name="button_label_start_sharing" state="needs_review" hash="682254052">Počni dijeliti</string>
 	<string name="location_sharing_duration_one_hour_short_string" state="needs_review" hash="1004063951">1 sat</string>
-	<string name="location_sharing_duration_one_hour_full_string" state="needs_review" hash="-58118972">Dijeli lokaciju na <b>1 sat</b>
-	</string>
+	<string name="location_sharing_duration_one_hour_full_string" state="needs_review" hash="-58118972">Dijeli lokaciju na <b>1 sat</b></string>
 	<string name="location_sharing_duration_three_hours_short_string" state="needs_review" hash="228095183">3 sata</string>
-	<string name="location_sharing_duration_three_hours_full_string" state="needs_review" hash="754857804">Dijeli lokaciju na <b>3 sata</b>
-	</string>
+	<string name="location_sharing_duration_three_hours_full_string" state="needs_review" hash="754857804">Dijeli lokaciju na <b>3 sata</b></string>
 	<string name="location_sharing_duration_endless_short_string" state="needs_review" hash="55208442">Beskonačno</string>
-	<string name="location_sharing_duration_endless_full_string" state="needs_review" hash="1710814259">Dijeli lokaciju <b>dok se ne zaustavi</b>
-	</string>
+	<string name="location_sharing_duration_endless_full_string" state="needs_review" hash="1710814259">Dijeli lokaciju <b>dok se ne zaustavi</b></string>
 	<string name="location_sharing_quality_precise_short_string" state="needs_review" hash="351442529">Precizan</string>
 	<string name="location_sharing_quality_balanced_short_string" state="needs_review" hash="-1925315592">uravnotežen</string>
 	<string name="location_sharing_quality_power_save_short_string" state="needs_review" hash="-14275273">Štednja energije</string>
-	<string name="location_sharing_quality_precise_full_string" state="needs_review" hash="-1255374893">Način dijeljenja lokacije <b>visoke preciznosti</b>
-	</string>
-	<string name="location_sharing_quality_balanced_full_string" state="needs_review" hash="-421322514">Način dijeljenja lokacije <b>uravnotežen</b>
-	</string>
-	<string name="location_sharing_quality_power_save_full_string" state="needs_review" hash="792896333">Način dijeljenja lokacije <b>uštede energije</b>
-	</string>
+	<string name="location_sharing_quality_precise_full_string" state="needs_review" hash="-1255374893">Način dijeljenja lokacije <b>visoke preciznosti</b></string>
+	<string name="location_sharing_quality_balanced_full_string" state="needs_review" hash="-421322514">Način dijeljenja lokacije <b>uravnotežen</b></string>
+	<string name="location_sharing_quality_power_save_full_string" state="needs_review" hash="792896333">Način dijeljenja lokacije <b>uštede energije</b></string>
 	<string name="label_sharing_location_until" state="needs_review" hash="187977459">Dijeljenje lokacije do: %1$s</string>
 	<string name="label_location_sharing_ended" state="needs_review" hash="1028490137">Dijeljenje lokacije završeno</string>
 	<string name="label_gps_coordinates" state="needs_review" hash="-1537356414">GPS koordinate</string>
@@ -2042,11 +2056,14 @@
 	<string name="button_label_configure_backups" state="needs_review" hash="-990646398">Omogući sigurnosne kopije</string>
 	<string name="tip_write_backup_key_title" state="needs_review" hash="-1652757003">Ne zaboravite zapisati svoju ključ za sigurnosnu kopiju â</string>
 	<string name="tip_write_backup_key_message" state="needs_review" hash="931018791">Vaš ključ za sigurnosnu kopiju je ključan za vraćanje vaših profila ako izgubite pristup ovom uređaju.</string>
+	<string name="tip_legacy_backup_end_of_life_title" state="needs_review" hash="810495149">Stare sigurnosne kopije koje koristite više nisu podržane.</string>
+	<string name="tip_legacy_backup_end_of_life_message" state="needs_review" hash="-314257210">Sljedeća će nadogradnja Olvida prestati podržavati stare sigurnosne kopije. Kako biste zaštitili svoj račun, odmah prijeđite na novo iskustvo izrade sigurnosnih kopija.</string>
 	<string name="tip_troubleshooting_title" state="needs_review" hash="-393739108">Poboljšajte svoje Olvid iskustvo 🚀</string>
 	<string name="tip_troubleshooting_message" state="needs_review" hash="-935493349">Neke postavke na vašem uređaju nisu pravilno konfigurirane i mogu utjecati na vaše iskustvo s Olvidom.</string>
 	<string name="button_label_this_way" state="needs_review" hash="747183939">Ovdje</string>
 	<string name="toast_code_copied" state="needs_review" hash="-1522785848">Kod kopiran</string>
 	<string name="explanation_choose_members" state="needs_review" hash="-1385158706">Molimo odaberite koga želite dodati u ovu grupu.</string>
+	<string name="explanation_choose_share_recipients" state="needs_review" hash="-1406265940">Odaberite s kime želite podijeliti.</string>
 	<string name="explanation_choose_contact_introduction" state="needs_review" hash="1113777517">Odaberite kome želite predstaviti %1$s.</string>
 	<string name="label_group_administration" state="needs_review" hash="871355986">Upravljanje grupom</string>
 	<string name="dialog_title_call_blocked" state="needs_review" hash="1594606530">Poziv je blokiran</string>
@@ -2172,7 +2189,7 @@
 	<string name="store_link_olvid_store" state="needs_review" hash="-1825630369">Posjetite Olvid trgovinu</string>
 	<string name="toast_message_reminder_set" state="needs_review" hash="-961055414">Podsjetnik postavljen</string>
 	<string name="dialog_title_keycloak_authentication_impossible" state="needs_review" hash="325273853">Autentifikacija nije uspjela</string>
-	<string name="dialog_message_keycloak_authentication_impossible" state="needs_review" hash="390830785">Vaš je profil trenutno pod upravljanjem vaše organizacije i potrebna je ponovna autentifikacija. Međutim, čini se da nije dostupna nijedna podržana metoda autentifikacije.\n\nMolimo, kontaktirajte svog administratora za više informacija.</string>
+	<string name="dialog_message_keycloak_authentication_impossible" state="needs_review" hash="-2031322232">Vaš je profil trenutno pod upravljanjem vaše organizacije i potrebna je ponovna autentifikacija. Međutim, čini se da nije dostupna nijedna podržana metoda autentifikacije.\n\nMolimo kontaktirajte svog administratora za više informacija.</string>
 	<string name="onboarding_transfer_keycloak_error_message_authentication_impossible" state="needs_review" hash="-1891385979">Čini se da nijedna podržana metoda autentifikacije nije dostupna.</string>
 	<string name="pref_use_alt_turn_servers_title" state="needs_review" hash="-1956132776">Koristite alternativne TURN poslužitelje</string>
 	<string name="pref_use_alt_turn_servers_summary" state="needs_review" hash="357427162">Uključite ovu opciju kako biste koristili TURN poslužitelje s rotirajućim IP adresama. Ako niste sigurni, ostavite ovu opciju isključenom 😁</string>
@@ -2283,5 +2300,45 @@
 	<string name="label_error_loading_openstreetmap_style_file" state="needs_review" hash="-2596045">Došlo je do pogreške prilikom učitavanja datoteke sa stilom OpenStreetMap-a</string>
 	<string name="dialog_title_subscriptions_not_available" state="needs_review" hash="336174241">Pretplate unutar aplikacije nisu dostupne</string>
 	<string name="dialog_message_subscriptions_not_available" state="needs_review" hash="2093768678">Verzija aplikacije Olvid koju ste instalirali ne uključuje Googleovu biblioteku za naplatu i ne podržava kupnje unutar aplikacije.\n\nZa više informacija, obratite nam se na **feedback@olvid.io**.</string>
+	<string name="ftux_next" state="needs_review" hash="1158639077">Sljedeće</string>
+	<string name="ftux_start" state="needs_review" hash="646298532">Započnite</string>
+	<string name="ftux_page_indicator" state="needs_review" hash="1987610035">Stranica %1$d od %2$d</string>
+	<string name="ftux_page_welcome_title" state="needs_review" hash="1173832630">Dobrodošli u <b>Olvid</b>.</string>
+	<string name="ftux_page_welcome_body" state="needs_review" hash="-2085198139">Privatne poruke za sve.</string>
+	<string name="ftux_page_private_title" state="needs_review" hash="1815927819"><b>Privatne</b> poruke</string>
+	<string name="ftux_page_private_body" state="needs_review" hash="-590644231">Na %1$s, sami birate s kime želite razgovarati. Bez spama, preporuka, nepotrebnih obavijesti ili poruka od nepoznatih osoba.\n\nNitko vas ne može kontaktirati bez vaše suglasnosti.\n\n%1$s je vaš digitalni svijet.</string>
+	<string name="ftux_page_everyone_title" state="needs_review" hash="1506796386">Poruke za <b>sve</b></string>
+	<string name="ftux_page_everyone_body" state="needs_review" hash="-586100377">Bez obzira tko ste, %1$s vam nudi najbolju sigurnost. Nije potrebna adresa e-pošte ili broj telefona.\n\n%1$s ne traži nikakve informacije o vama, i to sve mijenja.</string>
+	<string name="ftux_page_protect_title" state="needs_review" hash="1969120191">Olvid <b>štiti</b> vas. Olvid štiti one koji su vam važni.</string>
+	<string name="ftux_page_protect_body" state="needs_review" hash="881847930">Ovo nije samo obećanje – %1$s pruža kriptografski dokaz.\n\nBilo da dodajete kontakte na daljinu ili osobno, vaša komunikacija je uvijek provjerena i šifrirana od kraja do kraja.</string>
+	<string name="ftux_page_pricing_title" state="needs_review" hash="-1948277889"><b>Transparentan</b> poslovni model</string>
+	<string name="ftux_page_pricing_body" state="needs_review" hash="-1064278870">%1$s se ne financira vašim osobnim podacima – jer ih uopće ne traži!\n\nOno što je besplatno, besplatno je. Ono što se plaća, ima svoju cijenu.</string>
+	<string name="ftux_page_media_title" state="needs_review" hash="558110518">Olvid ima <b>sve</b></string>
+	<string name="ftux_page_media_body" state="needs_review" hash="1807247240">Nema ograničenja veličine privitaka, dijeljenje fotografija visoke rezolucije, ankete, audio i video pozivi, podrška za više uređaja, geolokacija – sve je tu!</string>
 	<string name="menu_action_cancel_upload" state="needs_review" hash="1672681586">Otkaži prijenos</string>
+	<string name="label_suggested_contacts" state="needs_review" hash="816810770">Predloženi kontakti</string>
+	<string name="label_suggested_contacts_subtitle" state="needs_review" hash="131522501">Jednostavno pozovite korisnike</string>
+	<string name="label_suggested_contact_already_a_contact" state="needs_review" hash="-1177848651">Već je u kontaktima</string>
+	<string name="label_suggested_contact_invitation_received" state="needs_review" hash="2100924901">Primljen poziv</string>
+	<string name="label_suggested_contact_invitation_sent" state="needs_review" hash="310679275">Poziv poslan</string>
+	<string name="label_suggested_contacts_all_done" state="needs_review" hash="-127525104">Ažurirani ste!\nNema više kontakata za predlaganje.</string>
+	<string name="button_label_suggested_contact_later" state="needs_review" hash="-1933816039">Kasnije</string>
+	<string name="button_label_close" state="needs_review" hash="1454843231">Zatvori</string>
+	<string name="button_label_skip" state="needs_review" hash="2056258301">Preskoči</string>
+	<string name="button_label_understood" state="needs_review" hash="829780875">Razumijem</string>
+	<string name="label_suggested_contacts_onboarding_title_1" state="needs_review" hash="491881039">Pozovite prijatelje jednostavnim pokretom prsta</string>
+	<string name="label_suggested_contacts_onboarding_message_1" state="needs_review" hash="331320806">Prebrišite karticu udesno kako biste pozvali korisnika ili ulijevo da prijeđete na sljedećeg.</string>
+	<string name="label_suggested_contacts_onboarding_title_2" state="needs_review" hash="-788798380">Otkud dolaze ti kontakti?</string>
+	<string name="label_suggested_contacts_onboarding_message_2" state="needs_review" hash="1536681696">Ovo su korisnici Olvida koje još nemate u svojim kontaktima.</string>
+	<string name="label_suggested_contacts_onboarding_caption" state="needs_review" hash="-1299179969">Udaljeni ste jedan stupanj u relaciji: imate barem jednu zajedničku grupu.</string>
+	<string name="label_suggested_contacts_you" state="needs_review" hash="672009142">Ti</string>
+	<string name="label_suggested_contacts_common_group" state="needs_review" hash="-1739793963">Zajednička grupa</string>
+	<string name="explanation_suggested_contacts_others_tab" state="needs_review" hash="852096678">Korisnici u nastavku nisu u vašim kontaktima i još uvijek ne možete voditi privatni razgovor s njima. Ali možete ih jednostavno pozvati! 🚀</string>
+	<string name="label_suggested_contacts_invite_in_one_gesture" state="needs_review" hash="438220313">Pozovite ove korisnike jednim pokretom prsta</string>
+	<string name="menu_action_suggested_contacts_see_full_list" state="needs_review" hash="603082500">Prikaži cijeli popis</string>
+	<string name="menu_action_suggested_contacts_replay_onboarding" state="needs_review" hash="-1552704243">Ponovo pogledajte tutorijal</string>
+	<string name="button_label_uninvite" state="needs_review" hash="771825501">Poništi poziv</string>
+	<string name="button_label_accept_invitation" state="needs_review" hash="-1778405034">Prihvati pozivnicu</string>
+	<string name="label_suggested_contacts_already_swiped" state="needs_review" hash="427042318">Već pregledano</string>
+	<string name="label_suggested_contacts_not_swiped_yet" state="needs_review" hash="310924358">Još nije pregledano</string>
 </resources>

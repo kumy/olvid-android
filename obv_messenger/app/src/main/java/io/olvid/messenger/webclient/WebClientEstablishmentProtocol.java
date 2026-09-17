@@ -75,7 +75,7 @@ public class WebClientEstablishmentProtocol {
         ConnectionColissimo connectionColissimo;
 
         try {
-            this.webPublicKey = (EncryptionEciesCurve25519PublicKey)EncryptionPublicKey.of(compactWebPublicKey);
+            this.webPublicKey = (EncryptionEciesCurve25519PublicKey)EncryptionPublicKey.ofCompactBytes(compactWebPublicKey);
         } catch (DecodingException e) {
             Logger.e("Unable to decode web raw public key");
             e.printStackTrace();

@@ -282,4 +282,20 @@
 		<item quantity="one" state="needs_review" hash="-1393207312">%1$d sõnum kopeeriti lõikelauale</item>
 		<item quantity="other" state="needs_review" hash="-604999755">%1$d sõnum kopeeriti lõikelauale</item>
 	</plurals>
+	<plurals name="label_share_destinations_count" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="423387012">%1$d saaja</item>
+		<item quantity="other" state="needs_review" hash="-431979656">%1$d saajad</item>
+	</plurals>
+	<plurals name="label_share_to_recipients" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="-1217959784">Jaga %1$d saajaga</item>
+		<item quantity="other" state="needs_review" hash="1864148690">Jaga %1$d saajaga</item>
+	</plurals>
+	<plurals name="toast_message_shared_to_recipients" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="-373807760">Jagatud %1$d saajaga</item>
+		<item quantity="other" state="needs_review" hash="-1412037000">Jagatud %1$d saajaga</item>
+	</plurals>
+	<plurals name="button_label_add_to_groups" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="1622654043">Lisa rühma %1$d-sse</item>
+		<item quantity="other" state="needs_review" hash="-1655824151">Lisa %1$d gruppi</item>
+	</plurals>
 </resources>

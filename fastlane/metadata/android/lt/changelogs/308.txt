@@ -1,0 +1,3 @@
+- Naujas būdas greitai pakviesti grupės narius į tiesioginę diskusiją.
+- Patobulinta naujų vartotojų apmokymo sistema, paaiškinanti, kas yra Olvid.
+- Patobulintas nuotraukų ir vaizdo įrašų peržiūros įrankis, dabar galima priartinti vaizdo įrašus.

@@ -282,4 +282,20 @@
 		<item quantity="one" state="needs_review" hash="-1393207312">%1$d 메시지가 클립보드에 복사되었습니다.</item>
 		<item quantity="other" state="needs_review" hash="-604999755">%1$d개의 메시지가 클립보드에 복사되었습니다.</item>
 	</plurals>
+	<plurals name="label_share_destinations_count" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="423387012">%1$d 수신자</item>
+		<item quantity="other" state="needs_review" hash="-431979656">%1$d 수신자</item>
+	</plurals>
+	<plurals name="label_share_to_recipients" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="-1217959784">%1$d 수신자와 공유</item>
+		<item quantity="other" state="needs_review" hash="1864148690">%1$d명의 사용자와 공유</item>
+	</plurals>
+	<plurals name="toast_message_shared_to_recipients" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="-373807760">%1$d 수신자에게 공유됨</item>
+		<item quantity="other" state="needs_review" hash="-1412037000">%1$d명의 사용자와 공유됨</item>
+	</plurals>
+	<plurals name="button_label_add_to_groups" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="1622654043">%1$d 그룹에 추가</item>
+		<item quantity="other" state="needs_review" hash="-1655824151">%1$d 그룹에 추가</item>
+	</plurals>
 </resources>

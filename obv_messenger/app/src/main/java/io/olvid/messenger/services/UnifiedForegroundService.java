@@ -347,6 +347,7 @@ public class UnifiedForegroundService extends Service {
         }
 
 
+        AndroidNotificationManager.ensureUnifiedServiceChannelExists();
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, AndroidNotificationManager.UNIFIED_SERVICE_NOTIFICATION_CHANNEL_ID);
         builder.setWhen(0)
                 .setPriority(NotificationCompat.PRIORITY_MIN);

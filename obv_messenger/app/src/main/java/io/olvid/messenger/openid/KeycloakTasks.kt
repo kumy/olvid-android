@@ -1050,7 +1050,7 @@ fun AuthState.performActionWithFreshTokens(bytesOwnedIdentity: ByteArray?, autho
                     val idBasedAuthResult = AppSingleton.getEngine().performKeycloakIdBasedAuth(bytesOwnedIdentity)
                     if (idBasedAuthResult.status == ObvKeycloakIdBasedAuthResult.Status.SUCCESS) {
                         // if id-based reauthentication worked, update the current AuthState
-                        initializeFromMagicLinkOrIdBasedAuthResponse(idBasedAuthResult.accessToken, idBasedAuthResult.refreshToken, idBasedAuthResult.clientId, idBasedAuthResult.clientSecret)
+                        initializeFromMagicLinkOrIdBasedAuthResponse(idBasedAuthResult.accessToken!!, idBasedAuthResult.refreshToken, idBasedAuthResult.clientId, idBasedAuthResult.clientSecret)
                         // then perform the action with the fresh token
                         action.execute(idBasedAuthResult.accessToken, idToken, null)
                     } else {
@@ -1064,14 +1064,24 @@ fun AuthState.performActionWithFreshTokens(bytesOwnedIdentity: ByteArray?, autho
         action
     }
 
-    val clientSecret = (supportedAuthenticationMethods.find { it is ObvKeycloakAuthType.OpenIdConnect } as? ObvKeycloakAuthType.OpenIdConnect)?.clientSecret
-    if (clientSecret == null) {
-        performActionWithFreshTokens(authorizationService, wrappedAction)
-    } else {
-        performActionWithFreshTokens(
-            authorizationService,
-            ClientSecretPost(clientSecret),
-            wrappedAction
-        )
+    runCatching {
+        val clientSecret = (supportedAuthenticationMethods.find { it is ObvKeycloakAuthType.OpenIdConnect } as? ObvKeycloakAuthType.OpenIdConnect)?.clientSecret
+        if (clientSecret == null) {
+            performActionWithFreshTokens(authorizationService, wrappedAction)
+        } else {
+            performActionWithFreshTokens(
+                authorizationService,
+                ClientSecretPost(clientSecret),
+                wrappedAction
+            )
+        }
+    }.onFailure { t: Throwable ->
+        Logger.e("Exception during `performActionWithFreshTokens()")
+        Logger.x(t)
+
+        // if there is an exception in the call to performActionWithFreshTokens, this is typically because
+        // the access token expired and a token refresh is not possible
+        // --> in that case, just run call the wrapped action with an ACCESS_DENIED error to trigger an ID-based auth if it is supported
+        wrappedAction.execute(accessToken, idToken, AuthorizationException.AuthorizationRequestErrors.ACCESS_DENIED)
     }
 }

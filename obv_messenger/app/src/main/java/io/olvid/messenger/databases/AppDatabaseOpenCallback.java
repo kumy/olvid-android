@@ -747,7 +747,7 @@ public class AppDatabaseOpenCallback implements Runnable {
                                                 if (jsonSharedSettings != null) {
                                                     Message message = Message.createDiscussionSettingsUpdateMessage(db, discussion.id, jsonSharedSettings, finalGroup.bytesOwnedIdentity, true, null);
                                                     if (message != null) {
-                                                        message.postSettingsMessage(true, null);
+                                                        message.postSettingsMessage(true, null, null);
                                                     }
                                                 }
                                             }

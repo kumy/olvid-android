@@ -89,7 +89,7 @@ import io.olvid.messenger.databases.entity.Message
 import io.olvid.messenger.designsystem.components.OlvidDropdownMenu
 import io.olvid.messenger.designsystem.components.OlvidDropdownMenuItem
 import io.olvid.messenger.designsystem.cutoutHorizontalPadding
-import io.olvid.messenger.designsystem.plus
+import androidx.compose.foundation.layout.plus
 import io.olvid.messenger.designsystem.systemBarsHorizontalPadding
 import io.olvid.messenger.designsystem.theme.OlvidTypography
 import io.olvid.messenger.discussion.DiscussionActivity

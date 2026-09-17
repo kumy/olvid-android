@@ -29,7 +29,6 @@ import io.olvid.messenger.App
 import io.olvid.messenger.R.string
 import io.olvid.messenger.databases.AppDatabase
 import io.olvid.messenger.main.MainActivity
-import io.olvid.messenger.onboarding.OnboardingActivity
 import io.olvid.messenger.onboarding.flow.OnboardingFlowActivity
 import java.util.regex.Pattern
 
@@ -48,8 +47,8 @@ class ObvLinkActivity : AppCompatActivity() {
     }
 
     private fun handleIntent(intent: Intent) {
+        var parsed = false
         if (Intent.ACTION_VIEW == intent.action) {
-            var parsed = false
             intent.data?.let { uri ->
                 val m = ANY_PATTERN.matcher(uri.toString())
                 if (m.find()) {
@@ -64,19 +63,25 @@ class ObvLinkActivity : AppCompatActivity() {
                             val configurationLink = CONFIGURATION_PATTERN.matcher(uri.toString())
                             if (configurationLink.find()) {
                                 // only forward to the old onboarding if it is a configuration link
-                                linkIntent = Intent(App.getContext(), OnboardingActivity::class.java)
-                                    .putExtra(OnboardingActivity.FIRST_ID_INTENT_EXTRA, true)
-                                    .putExtra(OnboardingActivity.LINK_URI_INTENT_EXTRA, uri.toString())
-                            } else {
-                                // otherwise simply start an onboarding
                                 linkIntent = Intent(App.getContext(), OnboardingFlowActivity::class.java)
+                                    .putExtra(OnboardingFlowActivity.FIRST_ID_INTENT_EXTRA, true)
+                                    .putExtra(OnboardingFlowActivity.LINK_URI_INTENT_EXTRA, uri.toString())
+                            } else {
+                                // otherwise start an onboarding, forwarding the link so an
+                                // invitation can be processed once the profile is created
+                                linkIntent = Intent(App.getContext(), OnboardingFlowActivity::class.java)
+                                    .putExtra(OnboardingFlowActivity.LINK_URI_INTENT_EXTRA, uri.toString())
                             }
                         } else {
                             linkIntent = Intent(App.getContext(), MainActivity::class.java)
                             linkIntent.action = MainActivity.LINK_ACTION
                             linkIntent.putExtra(MainActivity.LINK_URI_INTENT_EXTRA, uri.toString())
                         }
+                        // only finish once the target activity is actually started: finishing
+                        // before the (possibly slow, on first launch) DB query completes makes
+                        // the deferred startActivity abort on recent Android versions
                         startActivity(linkIntent)
+                        runOnUiThread { finish() }
                     }
                     parsed = true
                 }
@@ -85,7 +90,9 @@ class ObvLinkActivity : AppCompatActivity() {
                 App.toast(string.toast_message_unparsable_url, Toast.LENGTH_SHORT)
             }
         }
-        finish()
+        if (!parsed) {
+            finish()
+        }
     }
 
     companion object {

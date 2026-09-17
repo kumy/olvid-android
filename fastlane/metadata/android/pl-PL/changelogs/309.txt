@@ -1,0 +1,4 @@
+- Nowa funkcja udostępniania ekranu, umożliwiająca publikowanie w wielu konwersacjach jednocześnie.
+- Nowy sposób zapraszania członków grupy do prywatnej konwersacji.
+- Nowy proces wprowadzający, wyjaśniający działanie Olvid dla nowych użytkowników.
+- Ulepszony podgląd zdjęć/filmów, możliwość powiększania filmów.

@@ -6,4 +6,7 @@
     <item
         android:id="@+id/popup_action_take_picture"
         android:title="@string/menu_action_take_photo"/>
+    <item
+        android:id="@+id/popup_action_choose_image_from_olvid"
+        android:title="@string/menu_action_choose_image_from_olvid"/>
 </menu>

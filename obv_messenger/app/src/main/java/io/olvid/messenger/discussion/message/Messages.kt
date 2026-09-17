@@ -353,36 +353,36 @@ fun Message(
                     if (lastFromSender) {
                         InitialView(
                             modifier = Modifier.size(32.dp),
-                            initialViewSetup = { it.setFromCache(message.senderIdentifier) }
-                        ) {
-                            if (blockClicks) {
-                                return@InitialView
-                            }
-                            val discussion = discussionViewModel?.discussion?.value
-                            if (discussion != null) {
-                                App.runThread {
-                                    val senderBytes = message.senderIdentifier
-                                    val contact = AppDatabase.getInstance()
-                                        .contactDao()[discussion.bytesOwnedIdentity, senderBytes]
-                                    if (contact != null) {
-                                        if (contact.oneToOne) {
-                                            App.openOneToOneDiscussionActivity(
-                                                context,
-                                                discussion.bytesOwnedIdentity,
-                                                message.senderIdentifier,
-                                                false
-                                            )
-                                        } else {
-                                            App.openContactDetailsActivity(
-                                                context,
-                                                discussion.bytesOwnedIdentity,
-                                                message.senderIdentifier
-                                            )
+                            initialViewSetup = { it.setFromCache(message.senderIdentifier) },
+                            onClick = {
+                                if (blockClicks) {
+                                    return@InitialView
+                                }
+                                discussionViewModel?.discussion?.value?.let { discussion ->
+                                    App.runThread {
+                                        val senderBytes = message.senderIdentifier
+                                        val contact = AppDatabase.getInstance()
+                                            .contactDao()[discussion.bytesOwnedIdentity, senderBytes]
+                                        if (contact != null) {
+                                            if (contact.oneToOne) {
+                                                App.openOneToOneDiscussionActivity(
+                                                    context,
+                                                    discussion.bytesOwnedIdentity,
+                                                    message.senderIdentifier,
+                                                    false
+                                                )
+                                            } else {
+                                                App.openContactDetailsActivity(
+                                                    context,
+                                                    discussion.bytesOwnedIdentity,
+                                                    message.senderIdentifier
+                                                )
+                                            }
                                         }
                                     }
                                 }
                             }
-                        }
+                        )
                     } else {
                         Spacer(modifier = Modifier.width(32.dp))
                     }
@@ -479,7 +479,39 @@ fun Message(
                                         id = R.string.text_deleted_contact
                                     )
                             Text(
-                                modifier = Modifier.padding(bottom = 2.dp),
+                                modifier = Modifier
+                                    .combinedClickable(
+                                        enabled = !blockClicks,
+                                        indication = null,
+                                        interactionSource = null,
+                                        onClick = {
+                                            discussionViewModel?.discussion?.value?.let { discussion ->
+                                                App.runThread {
+                                                    val senderBytes = message.senderIdentifier
+                                                    val contact = AppDatabase.getInstance()
+                                                        .contactDao()[discussion.bytesOwnedIdentity, senderBytes]
+                                                    if (contact != null) {
+                                                        if (contact.oneToOne) {
+                                                            App.openOneToOneDiscussionActivity(
+                                                                context,
+                                                                discussion.bytesOwnedIdentity,
+                                                                message.senderIdentifier,
+                                                                false
+                                                            )
+                                                        } else {
+                                                            App.openContactDetailsActivity(
+                                                                context,
+                                                                discussion.bytesOwnedIdentity,
+                                                                message.senderIdentifier
+                                                            )
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        onLongClick = onLongClick
+                                    )
+                                    .padding(bottom = 2.dp),
                                 text = displayName,
                                 style = OlvidTypography.h3,
                                 color = Color(

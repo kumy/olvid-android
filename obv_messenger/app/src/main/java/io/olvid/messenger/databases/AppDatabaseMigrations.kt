@@ -38,6 +38,27 @@ import java.util.regex.Pattern
 
 internal object AppDatabaseMigrations {
     val MIGRATIONS: Array<Migration> = arrayOf(
+        object : Migration(86, 87) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                Logger.w("ROOM MIGRATING FROM VERSION 86 TO 87")
+                db.execSQL("ALTER TABLE `contact_table` ADD COLUMN `suggestion_seen` INTEGER NOT NULL DEFAULT 0")
+            }
+        },
+
+        object : Migration(85, 86) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                Logger.w("ROOM MIGRATING FROM VERSION 85 TO 86")
+                db.execSQL("ALTER TABLE `discussion_customization_table` ADD COLUMN `pref_mute_notifications_start_timestamp` INTEGER DEFAULT NULL")
+            }
+        },
+
+        object : Migration(84, 85) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                Logger.w("ROOM MIGRATING FROM VERSION 84 TO 85")
+                db.execSQL("ALTER TABLE `contact_table` ADD COLUMN `stop_suggesting` INTEGER NOT NULL DEFAULT 0")
+            }
+        },
+
         object : Migration(83, 84) {
             override fun migrate(db: SupportSQLiteDatabase) {
                 Logger.w("ROOM MIGRATING FROM VERSION 83 TO 84")
@@ -1039,8 +1060,8 @@ internal object AppDatabaseMigrations {
                                                 ?.replace("https:/", "https://"))?.toByteArray(
                                                     StandardCharsets.UTF_8
                                                 ) ?: ByteArray(0)
-                                        val compactAuthKey = Logger.fromHexString(m.group(2))
-                                        val compactEncKey = Logger.fromHexString(m.group(3))
+                                        val compactAuthKey = Logger.fromHexString(m.group(2)!!)
+                                        val compactEncKey = Logger.fromHexString(m.group(3)!!)
                                         val suffix = m.group(4)
 
                                         val identityBytes =

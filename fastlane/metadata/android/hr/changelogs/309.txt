@@ -1,0 +1,4 @@
+- Nova funkcija dijeljenja zaslona omogućuje objavljivanje u više grupa odjednom.
+- Novi način pozivanja članova grupe u privatnu raspravu pomoću prijenosa prstom.
+- Novi uvodni postupak za objašnjavanje Olvida novim korisnicima.
+- Poboljšan pregled slika/videozapisa, mogućnost zumiranja videozapisa.

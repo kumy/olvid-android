@@ -23,7 +23,6 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Bitmap.CompressFormat.JPEG
-import android.graphics.Bitmap.Config.ARGB_8888
 import android.graphics.Canvas
 import android.graphics.Matrix
 import android.graphics.Matrix.ScaleToFit.CENTER
@@ -43,14 +42,15 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.graphics.createBitmap
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsCompat.Type
 import io.olvid.messenger.App
 import io.olvid.messenger.R
-import io.olvid.messenger.lock_screen.LockableActivity
 import io.olvid.messenger.customClasses.onBackPressed
+import io.olvid.messenger.lock_screen.LockableActivity
 import java.io.File
 import java.io.FileOutputStream
 import java.text.SimpleDateFormat
@@ -171,15 +171,20 @@ class SelectDetailsPhotoActivity : LockableActivity(), OnTouchListener, OnClickL
     }
 
     private fun handleIntent(intent: Intent) {
-        if (intent.data == null) {
+        val photoUri = intent.data
+        if (photoUri == null) {
             onBackPressedDispatcher.onBackPressed()
             return
         }
 
-        try {
-            viewModel.setPhotoUri(this.contentResolver, intent.data!!)
-        } catch (_: Exception) {
-            onBackPressedDispatcher.onBackPressed()
+        // decode off the main thread: opening the Uri may query our own ContentProvider (Room
+        // forbids main-thread queries), and decoding large images would block the UI anyway
+        App.runThread {
+            runCatching {
+                viewModel.setPhotoUri(contentResolver, photoUri)
+            }.onFailure {
+                runOnUiThread { onBackPressedDispatcher.onBackPressed() }
+            }
         }
     }
 
@@ -426,10 +431,10 @@ class SelectDetailsPhotoActivity : LockableActivity(), OnTouchListener, OnClickL
                 if (size > 1080) {
                     size = 1080
                 }
-                val cropped = Bitmap.createBitmap(size, size, ARGB_8888)
+                val cropped = createBitmap(size, size)
                 val canvas = Canvas(cropped)
                 val paint = Paint()
-                paint.setColorFilter(viewModel.colorMatrix)
+                paint.colorFilter = viewModel.colorMatrix
                 canvas.drawBitmap(bitmap, bitmapZone, Rect(0, 0, size, size), paint)
 
                 val photoDir = File(cacheDir, App.CAMERA_PICTURE_FOLDER)

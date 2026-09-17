@@ -98,22 +98,11 @@ public class MuteDiscussionDialogActivity extends AppCompatActivity {
                                 MuteExpirationService.scheduleNextExpiration();
                             }
                         } else {
-                            DiscussionCustomization discussionCustomization = AppDatabase.getInstance().discussionCustomizationDao().get(discussionId);
-                            boolean insert = false;
-                            if (discussionCustomization == null) {
-                                discussionCustomization = new DiscussionCustomization(discussionId);
-                                insert = true;
+                            DiscussionCustomization discussionCustomization = MuteExpirationService.muteDiscussion(discussionId, muteExpirationTimestamp, muteExceptMentioned);
+                            if (discussionCustomization != null) {
+                                ApplySyncAtomTaskKt.propagateMuteSettings(discussion, discussionCustomization);
+                                AppSingleton.getEngine().profileBackupNeeded(discussion.bytesOwnedIdentity);
                             }
-                            discussionCustomization.prefMuteNotifications = true;
-                            discussionCustomization.prefMuteNotificationsTimestamp = muteExpirationTimestamp;
-                            discussionCustomization.prefMuteNotificationsExceptMentioned = muteExceptMentioned;
-                            if (insert) {
-                                AppDatabase.getInstance().discussionCustomizationDao().insert(discussionCustomization);
-                            } else {
-                                AppDatabase.getInstance().discussionCustomizationDao().update(discussionCustomization);
-                            }
-                            ApplySyncAtomTaskKt.propagateMuteSettings(discussion, discussionCustomization);
-                            AppSingleton.getEngine().profileBackupNeeded(discussion.bytesOwnedIdentity);
                         }
                     }), MuteNotificationDialog.MuteType.DISCUSSION_OR_PROFILE, discussionCust == null || discussionCust.prefMuteNotificationsExceptMentioned);
                     muteNotificationDialog.setOnDismissListener(dialog -> finish());

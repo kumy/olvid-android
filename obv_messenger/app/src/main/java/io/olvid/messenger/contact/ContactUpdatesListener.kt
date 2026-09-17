@@ -42,8 +42,8 @@ fun ContactUpdatesListener(
         val contactListener =
             object : EngineNotificationListener {
                 override fun callback(
-                    notificationName: String,
-                    userInfo: HashMap<String, Any>
+                    notificationName: String?,
+                    userInfo: HashMap<String, Any?>
                 ) {
                     when (notificationName) {
                         EngineNotifications.NEW_CONTACT_PUBLISHED_DETAILS -> {

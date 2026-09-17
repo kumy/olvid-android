@@ -1,0 +1,4 @@
+- Neue Funktion zum Teilen des Bildschirms, mit der Sie gleichzeitig in mehreren Chats posten können.
+- Neue Möglichkeit, Kontakte mit einer einfachen Geste zu einer privaten Konversation einzuladen.
+- Neue Einführung, um Olvid neuen Nutzern vorzustellen.
+- Verbesserter Bild- und Video-Viewer mit Zoom-Funktion für Videos.

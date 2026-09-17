@@ -81,7 +81,7 @@ class ResendReactionsAndPollVotesForGroupV2MemberTask(
                         AppSingleton.getJsonObjectMapper().writeValueAsBytes(jsonPayload),
                         null,
                         arrayOfNulls<ObvOutboundAttachment>(0),
-                        listOf(group2Member.bytesContactIdentity),
+                        mutableListOf(group2Member.bytesContactIdentity),
                         group2Member.bytesOwnedIdentity,
                         true,
                         false
@@ -118,7 +118,7 @@ class ResendReactionsAndPollVotesForGroupV2MemberTask(
                         AppSingleton.getJsonObjectMapper().writeValueAsBytes(jsonPayload),
                         null,
                         arrayOfNulls<ObvOutboundAttachment>(0),
-                        listOf(group2Member.bytesContactIdentity),
+                        mutableListOf(group2Member.bytesContactIdentity),
                         group2Member.bytesOwnedIdentity,
                         true,
                         false

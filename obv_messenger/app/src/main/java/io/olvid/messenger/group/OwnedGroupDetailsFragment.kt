@@ -54,6 +54,7 @@ import io.olvid.messenger.group.GroupV2DetailsActivity.Companion.REQUEST_CODE_PE
 import io.olvid.messenger.group.GroupV2DetailsActivity.Companion.REQUEST_CODE_SELECT_ZONE
 import io.olvid.messenger.group.GroupV2DetailsActivity.Companion.REQUEST_CODE_TAKE_PICTURE
 import io.olvid.messenger.group.OwnedGroupDetailsViewModel.InitialViewContent
+import io.olvid.messenger.owneddetails.ImagePickerActivity
 import io.olvid.messenger.owneddetails.SelectDetailsPhotoActivity
 import io.olvid.messenger.settings.SettingsActivity
 import java.io.File
@@ -158,6 +159,14 @@ class OwnedGroupDetailsFragment : Fragment() {
                             .setType("image/*")
                             .addCategory(Intent.CATEGORY_OPENABLE)
                         App.startActivityForResult(this, intent, REQUEST_CODE_CHOOSE_IMAGE)
+                    }
+
+                    R.id.popup_action_choose_image_from_olvid -> {
+                        // internal activity, no need for App.startActivityForResult
+                        startActivityForResult(
+                            Intent(v.context, ImagePickerActivity::class.java),
+                            REQUEST_CODE_CHOOSE_IMAGE
+                        )
                     }
 
                     R.id.popup_action_take_picture -> {

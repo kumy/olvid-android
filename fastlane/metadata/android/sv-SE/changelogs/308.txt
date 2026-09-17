@@ -1,0 +1,3 @@
+- Nytt sätt att bjuda in gruppmedlemmar till en direkt diskussion med en enkel gest.
+- Ny introduktion för att förklara Olvid för nya användare.
+- Förbättrad bild-/videovisare, möjlighet att zooma på videor.

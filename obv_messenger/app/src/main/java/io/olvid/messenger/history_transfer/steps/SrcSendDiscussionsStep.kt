@@ -85,7 +85,7 @@ class SrcSendDiscussionsStep(
         fyles.forEach { fyle ->
             try {
                 fyle.filePath?.let { App.absolutePathFromRelative(it) }?.let { File(it) }?.takeIf { it.isFile && it.canRead() }?.length()?.let { length ->
-                    sha256Map[ObvBytesKey(fyle.sha256)] = length
+                    sha256Map[ObvBytesKey(fyle.sha256!!)] = length
                 }
             } catch (_: Exception) { }
         }

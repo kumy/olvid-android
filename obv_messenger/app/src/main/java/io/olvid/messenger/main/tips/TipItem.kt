@@ -116,6 +116,24 @@ fun TipItem(
     }
 
     when (tipToShow) {
+        Tip.LEGACY_BACKUP_END_OF_LIFE -> {
+            TipBubble(
+                icon = R.drawable.ic_backup,
+                title = R.string.tip_legacy_backup_end_of_life_title,
+                message = R.string.tip_legacy_backup_end_of_life_message,
+                action = R.string.button_label_switch_to_new_backups,
+                tint = R.color.red,
+                onAction = {
+                    val intent = Intent(context, SettingsActivity::class.java)
+                    intent.putExtra(
+                        SettingsActivity.SUB_SETTING_PREF_KEY_TO_OPEN_INTENT_EXTRA,
+                        SettingsActivity.PREF_HEADER_KEY_BACKUP
+                    )
+                    context.startActivity(intent)
+                },
+            )
+        }
+
         Tip.CONFIGURE_BACKUPS -> {
             TipBubble(
                 icon = R.drawable.ic_backup,
@@ -146,7 +164,7 @@ fun TipItem(
                     showSeed = true
                 },
             ) {
-                AppSingleton.getEngine().deviceBackupSeed?.let { backupSeed ->
+                AppSingleton.getEngine().getDeviceBackupSeed()?.let { backupSeed ->
                     if (showSeed) {
                         Dialog(
                             onDismissRequest = {

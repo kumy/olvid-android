@@ -60,6 +60,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -94,6 +95,7 @@ import io.olvid.messenger.databases.AppDatabase
 import io.olvid.messenger.databases.entity.Discussion
 import io.olvid.messenger.databases.tasks.DeleteMessagesTask
 import io.olvid.messenger.databases.tasks.propagateMuteSettings
+import io.olvid.messenger.designsystem.components.AlwaysShowClearButton
 import io.olvid.messenger.designsystem.components.OlvidCircularProgress
 import io.olvid.messenger.designsystem.components.SearchBar
 import io.olvid.messenger.designsystem.components.SelectionTopAppBar
@@ -200,6 +202,18 @@ fun DiscussionTopAppBar(
 
     val topBarRippleInteractionSource = remember { MutableInteractionSource() }
 
+    var showExportDiscussionDialogs by rememberSaveable { mutableStateOf(false) }
+    if (showExportDiscussionDialogs) {
+        discussion?.let {
+            ExportDiscussionAsZip(
+                discussion = it,
+                onFinished = {
+                    showExportDiscussionDialogs = false
+                }
+            )
+        }
+    }
+
     SelectionTopAppBar(
         modifier = Modifier.indication(
             interactionSource = topBarRippleInteractionSource,
@@ -256,7 +270,7 @@ fun DiscussionTopAppBar(
                     onClearClick = {
                         discussionSearchViewModel.reset()
                     },
-                    alwaysShowClearButton = true
+                    alwaysShowClearButton = AlwaysShowClearButton.TRUE
                 )
             } else {
                 with(sharedTransitionScope) {
@@ -681,6 +695,12 @@ fun DiscussionTopAppBar(
                                     Toast.LENGTH_SHORT
                                 )
                             }
+                        })
+                    }
+                    if (!isPreDiscussion) {
+                        add(R.string.menu_action_export_discussion to {
+                            discussionViewModel.markAsReadOnPause = false
+                            showExportDiscussionDialogs = true
                         })
                     }
                     add(R.string.menu_action_delete_discussion to {

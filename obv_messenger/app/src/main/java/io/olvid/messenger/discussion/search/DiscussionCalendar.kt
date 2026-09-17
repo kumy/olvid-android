@@ -330,7 +330,7 @@ fun DiscussionCalendarDialog(
                                     state = pagerState,
                                     modifier = Modifier
                                         .fillMaxWidth()
-                                        .height(240.dp)
+                                        .height(248.dp)
                                 ) { page ->
                                     val month = baseMonth.plusMonths((page - initialPage).toLong())
                                     CalendarGrid(

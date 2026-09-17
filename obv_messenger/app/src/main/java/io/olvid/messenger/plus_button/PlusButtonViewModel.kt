@@ -132,11 +132,11 @@ class PlusButtonViewModel : ViewModel() {
         this.mutualScanUrl = url
         updateScanState(ScanUiState.MutualScanProcessing(url, contactName))
         this.mutualScanContactName = contactName
-        this.mutualScanBytesContactIdentity = url.bytesIdentity
+        this.mutualScanBytesContactIdentity = url.getBytesIdentity()!!
         viewModelScope.launch {
             val start = System.currentTimeMillis()
             val bytesOwnedIdentity = currentIdentity?.bytesOwnedIdentity ?: return@launch
-            val bytesContactIdentity = url.bytesIdentity
+            val bytesContactIdentity = url.getBytesIdentity()!!
 
             if (bytesOwnedIdentity.contentEquals(bytesContactIdentity)) {
                 updateScanState(
@@ -290,19 +290,19 @@ class PlusButtonViewModel : ViewModel() {
 
         if (mutualScanMatcher.find()) {
             val url = ObvMutualScanUrl.fromUrlRepresentation(
-                mutualScanMatcher.group(0)
-            )
+                mutualScanMatcher.group(0)!!
+            ) ?: return
             processMutualScan(activity, url, StringUtils.removeCompanyFromDisplayName(url.displayName))
         } else if (invitationMatcher.find()) {
             scannedUri = invitationMatcher.group(0)
             val bytesOwnedIdentity = currentIdentity?.bytesOwnedIdentity ?: return
-            val contactUrlIdentity = ObvUrlIdentity.fromUrlRepresentation(scannedUri) ?: return
+            val contactUrlIdentity = ObvUrlIdentity.fromUrlRepresentation(scannedUri ?: return) ?: return
             var remoteInvitation = false
             try {
                 remoteInvitation = invitationMatcher.group(2) != "1"
             } catch (_: Exception) { }
 
-            if (bytesOwnedIdentity.contentEquals(contactUrlIdentity.bytesIdentity)) {
+            if (bytesOwnedIdentity.contentEquals(contactUrlIdentity.getBytesIdentity()!!)) {
                 updateScanState(
                     ScanUiState.MutualScanError(
                         App.getContext()
@@ -311,16 +311,16 @@ class PlusButtonViewModel : ViewModel() {
                 )
             } else {
                 mutualScanUrl = AppSingleton.getEngine().computeMutualScanSignedNonceUrl(
-                    contactUrlIdentity.bytesIdentity,
+                    contactUrlIdentity.getBytesIdentity()!!,
                     currentIdentity?.bytesOwnedIdentity,
                     currentIdentity?.getIdentityDetails()?.formatDisplayName(
                         JsonIdentityDetails.FORMAT_STRING_FIRST_LAST_POSITION_COMPANY,
                         false
                     ) ?: currentIdentity?.displayName
-                )?.apply {
-                    getQrImage(this.urlRepresentation)
+                ).apply {
+                    getQrImage(this.getUrlRepresentation())
                 }
-                mutualScanBytesContactIdentity = contactUrlIdentity.bytesIdentity
+                mutualScanBytesContactIdentity = contactUrlIdentity.getBytesIdentity()!!
                 updateScanState(ScanUiState.InvitationScanned(remoteInvitation, contactUrlIdentity))
             }
         } else if (configurationMatcher.find()) {

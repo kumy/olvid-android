@@ -82,7 +82,7 @@ open class RefreshingFragment : Fragment(), OnRefreshListener, EngineNotificatio
         }
     }
 
-    override fun callback(notificationName: String, userInfo: HashMap<String, Any>) {
+    override fun callback(notificationName: String?, userInfo: HashMap<String, Any?>) {
         if (EngineNotifications.SERVER_POLLED == notificationName) {
             val bytesOwnedIdentity =
                 userInfo[EngineNotifications.SERVER_POLLED_BYTES_OWNED_IDENTITY_KEY] as ByteArray?

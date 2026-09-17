@@ -47,7 +47,7 @@ import androidx.compose.ui.unit.dp
 import io.olvid.messenger.R
 import io.olvid.messenger.databases.dao.CallLogItemDao.CallLogItemAndContacts
 import io.olvid.messenger.designsystem.cutoutHorizontalPadding
-import io.olvid.messenger.designsystem.plus
+import androidx.compose.foundation.layout.plus
 import io.olvid.messenger.designsystem.systemBarsHorizontalPadding
 import io.olvid.messenger.main.MainScreenEmptyList
 

@@ -211,6 +211,7 @@ fun NavGraphBuilder.backupV2ExpiringDevicesExplanation(
 
                 val separator = stringResource(R.string.text_date_time_separator)
                 devices.value?.deviceUidsAndServerInfo?.values?.forEach { device ->
+                    device ?: return@forEach
                     Row(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -238,7 +239,7 @@ fun NavGraphBuilder.backupV2ExpiringDevicesExplanation(
                             verticalArrangement = Arrangement.SpaceAround,
                         ) {
                             Text(
-                                text = device.displayName,
+                                text = device.displayName ?: "",
                                 style = OlvidTypography.body1,
                                 color = colorResource(R.color.almostBlack),
                                 overflow = TextOverflow.Ellipsis,
@@ -294,7 +295,7 @@ fun NavGraphBuilder.backupV2ExpiringDevicesExplanation(
 @Preview
 @Composable
 fun ExpiringDevicesExplanationPreview() {
-    val map = HashMap<ObvBytesKey, ObvOwnedDevice.ServerDeviceInfo>()
+    val map = HashMap<ObvBytesKey?, ObvOwnedDevice.ServerDeviceInfo?>()
     map.put(ObvBytesKey(ByteArray(2)), ObvOwnedDevice.ServerDeviceInfo("iPhone", 1747927594000, 1742570794000))
     map.put(ObvBytesKey(ByteArray(3)), ObvOwnedDevice.ServerDeviceInfo("mac", null, null))
 

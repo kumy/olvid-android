@@ -58,6 +58,7 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.LayoutDirection
+import androidx.compose.ui.unit.coerceAtLeast
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Popup
 import androidx.compose.ui.window.PopupProperties
@@ -113,12 +114,12 @@ fun AttachMenu(
             popupBounds?.let { bounds ->
                 val menuStartPadding = with(density) {
                     if (layoutDirection == LayoutDirection.Rtl)
-                        (bounds.right - buttonBounds.right).toDp() + 8.dp
+                        ((bounds.right - buttonBounds.right).toDp() + 8.dp).coerceAtLeast(0.dp)
                     else
-                        (buttonBounds.left - bounds.left).toDp() + 8.dp
+                        ((buttonBounds.left - bounds.left).toDp() + 8.dp).coerceAtLeast(0.dp)
                 }
                 val menuBottomPadding = with(density) {
-                    (bounds.bottom - buttonBounds.top).toDp() + 4.dp
+                    ((bounds.bottom - buttonBounds.top).toDp() + 4.dp).coerceAtLeast(0.dp)
                 }
                 Surface(
                     modifier = Modifier

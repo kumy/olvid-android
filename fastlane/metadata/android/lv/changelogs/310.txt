@@ -1,0 +1,4 @@
+- Jauna ekrāna koplietošanas funkcija, kas ļauj vienlaikus publicēt vairākās diskusijās.
+- Jauna funkcija, kas atvieglo grupas dalībnieku uzaicināšanu uz privātu diskusiju.
+- Jauna ievadprogramma, kas pirmo reizi lietotājiem izskaidro, kas ir Olvid.
+- Uzlabots attēlu/video skatītājs, iespēja palielināt video.

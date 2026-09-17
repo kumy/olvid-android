@@ -112,7 +112,7 @@ fun NavGraphBuilder.activeDeviceSelection(
             deviceList = AppSingleton.getEngine()
                 .queryRegisteredOwnedDevicesFromServer(AppSingleton.getBytesCurrentIdentity())
             deviceList?.let {
-                onboardingFlowViewModel.updateTransferMultiDevice(it.multiDevice)
+                onboardingFlowViewModel.updateTransferMultiDevice(it.multiDevice ?: false)
             }
             loading = false
         }
@@ -171,12 +171,14 @@ fun NavGraphBuilder.activeDeviceSelection(
             } else {
                 val devices = arrayListOf<Device>()
                 deviceList?.deviceUidsAndServerInfo?.let { deviceUidsAndServerInfo ->
-                    devices.addAll(deviceUidsAndServerInfo.map {
+                    devices.addAll(deviceUidsAndServerInfo.mapNotNull {
+                        val key = it.key ?: return@mapNotNull null
+                        val value = it.value ?: return@mapNotNull null
                         Device(
-                            name = it.value.displayName,
-                            uid = it.key.bytes,
-                            lastRegistrationTimestamp = it.value.lastRegistrationTimestamp,
-                            expirationTimestamp = it.value.expirationTimestamp
+                            name = value.displayName ?: "",
+                            uid = key.bytes,
+                            lastRegistrationTimestamp = value.lastRegistrationTimestamp,
+                            expirationTimestamp = value.expirationTimestamp
                         )
                     })
 
@@ -284,7 +286,7 @@ fun NavGraphBuilder.activeDeviceSelection(
 
                         // wait for the purchase acknowledged notification
                         purchaseEngineListener = object: SimpleEngineNotificationListener(EngineNotifications.VERIFY_RECEIPT_SUCCESS) {
-                            override fun callback(userInfo: HashMap<String, Any>?) {
+                            override fun callback(userInfo: HashMap<String, Any?>) {
                                 AppSingleton.getEngine().removeNotificationListener(EngineNotifications.VERIFY_RECEIPT_SUCCESS, purchaseEngineListener)
                                 purchaseEngineListener = null
                                 refreshDeviceList()

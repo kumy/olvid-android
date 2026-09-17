@@ -145,6 +145,18 @@ public interface ContactDao {
             " AND " + Contact.BYTES_CONTACT_IDENTITY + " = :bytesContactIdentity")
     void updateCapabilityOneToOneContacts(@NonNull byte[] bytesOwnedIdentity, @NonNull byte[] bytesContactIdentity, boolean capable);
 
+    @Query("UPDATE " + Contact.TABLE_NAME +
+            " SET " + Contact.STOP_SUGGESTING + " = :stopSuggesting " +
+            " WHERE " + Contact.BYTES_OWNED_IDENTITY + " = :bytesOwnedIdentity " +
+            " AND " + Contact.BYTES_CONTACT_IDENTITY + " = :bytesContactIdentity")
+    void updateStopSuggesting(@NonNull byte[] bytesOwnedIdentity, @NonNull byte[] bytesContactIdentity, boolean stopSuggesting);
+
+    @Query("UPDATE " + Contact.TABLE_NAME +
+            " SET " + Contact.SUGGESTION_SEEN + " = 1 " +
+            " WHERE " + Contact.BYTES_OWNED_IDENTITY + " = :bytesOwnedIdentity " +
+            " AND " + Contact.BYTES_CONTACT_IDENTITY + " = :bytesContactIdentity")
+    void markSuggestionSeen(@NonNull byte[] bytesOwnedIdentity, @NonNull byte[] bytesContactIdentity);
+
 
 
 

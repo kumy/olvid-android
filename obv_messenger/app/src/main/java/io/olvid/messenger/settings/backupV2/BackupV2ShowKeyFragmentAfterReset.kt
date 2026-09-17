@@ -49,7 +49,7 @@ import io.olvid.messenger.settings.SettingsActivity
 
 class BackupV2ShowKeyFragmentAfterReset : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val backupSeed : String? = AppSingleton.getEngine().deviceBackupSeed
+        val backupSeed : String? = AppSingleton.getEngine().getDeviceBackupSeed()
 
         if (backupSeed == null) {
             activity?.supportFragmentManager?.popBackStack()

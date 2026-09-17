@@ -1,0 +1,3 @@
+- Nuwe "veeg-om-te-nooi"-funksie om maklik groeplede na 'n direkte gesprek te nooi.
+- Nuwe aanbordproses om Olvid aan nuwe gebruikers te verduidelik.
+- Verbeterde beeld/videokyk, met die moontlikheid om in te zoom op video's.

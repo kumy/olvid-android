@@ -26,8 +26,8 @@
 	<string name="button_label_create_group" state="needs_review" hash="1102939673">Buat Grup</string>
 	<string name="button_label_discard" state="needs_review" hash="795591204">Buang</string>
 	<string name="button_label_exchange_digits_with_user" state="needs_review" hash="339599327">Tukar kode dengan %1$s</string>
-	<string name="button_label_generate_new_id" state="needs_review" hash="92014734">Hasilkan ID baru</string>
-	<string name="button_label_generate_my_id" state="needs_review" hash="-1007060207">Hasilkan ID saya</string>
+	<string name="button_label_generate_new_id" state="needs_review" hash="-1130516787">Buat profil baru</string>
+	<string name="button_label_generate_my_id" state="needs_review" hash="239641058">Buat profil saya</string>
 	<string name="button_label_ignore" state="needs_review" hash="-806373746">Abaikan</string>
 	<string name="button_label_reject" state="needs_review" hash="-2094664161">Tolak</string>
 	<string name="button_label_introduce" state="needs_review" hash="193852909">Perkenalkan</string>
@@ -80,6 +80,12 @@
 	<string name="dialog_title_rename_group" state="needs_review" hash="1461324427">Ganti nama grup</string>
 	<string name="dialog_title_restart_channel_establishment" state="needs_review" hash="-645769680">Apakah akan memulai ulang pembuatan saluran?</string>
 	<string name="dialog_title_share_with" state="needs_review" hash="854107768">Bagikan dengan…</string>
+	<string name="dialog_title_share_recipients" state="needs_review" hash="1157053138">Pilih penerima</string>
+	<string name="share_label_from" state="needs_review" hash="2049052075">Dari:</string>
+	<string name="share_label_to" state="needs_review" hash="-1785690373">Kepada:</string>
+	<string name="share_label_choose_recipients" state="needs_review" hash="1157053138">Pilih penerima</string>
+	<string name="hint_share_message" state="needs_review" hash="-763169957">Tambahkan pesan…</string>
+	<string name="content_description_delete_attachment" state="needs_review" hash="-220348329">Hapus lampiran</string>
 	<string name="dialog_title_shortcut_to" state="needs_review" hash="-1193591200">Buat pintasan ke...</string>
 	<string name="explanation_choose_display_name" state="needs_review" hash="1162066686">Silakan masukkan nama yang akan ditampilkan kepada kontak Anda. Detail ini tidak akan pernah dikirim ke server Olvid.</string>
 	<string name="explanation_empty_contact_list" state="needs_review" hash="1240778508">Tidak ada kontak untuk saat ini</string>
@@ -104,7 +110,7 @@
 	<string name="explanation_no_message_found" state="needs_review" hash="-1329622990">Tidak ada pesan yang ditemukan</string>
 	<string name="explanation_no_attachment_found" state="needs_review" hash="156593369">Tidak ada lampiran yang ditemukan</string>
 	<string name="explanation_no_link_found" state="needs_review" hash="-1419950450">Tidak ada tautan yang ditemukan</string>
-	<string name="hint_company" state="needs_review" hash="379200324">Perusahaan (opsional)</string>
+	<string name="hint_company" state="needs_review" hash="988571519">Perusahaan</string>
 	<string name="hint_compose_your_message" state="needs_review" hash="-25761578">Tulis pesan</string>
 	<string name="hint_compose_your_message_ephemeral" state="needs_review" hash="-1527208333">Pesan sementara</string>
 	<string name="label_edit_your_message" state="needs_review" hash="1091877412">Edit pesan Anda</string>
@@ -133,7 +139,7 @@
 	<string name="hint_last_name" state="needs_review" hash="1701170359">Nama Belakang</string>
 	<string name="hint_new_name" state="needs_review" hash="709842168">Nama baru</string>
 	<string name="hint_notification_reply" state="needs_review" hash="1095144032">Balas</string>
-	<string name="hint_position" state="needs_review" hash="-55145181">Jabatan (opsional)</string>
+	<string name="hint_position" state="needs_review" hash="1338817744">Jabatan</string>
 	<string name="invitation_label_their_code" state="needs_review" hash="1402501614">Kode mereka</string>
 	<string name="invitation_label_your_code" state="needs_review" hash="1944546233">Kode Anda</string>
 	<string name="invitation_status_accept_invite" state="needs_review" hash="2100924901">Undangan diterima</string>
@@ -170,6 +176,11 @@
 	<string name="label_group_members" state="needs_review" hash="1460220752">Anggota Grup</string>
 	<string name="label_other_group_members" state="needs_review" hash="-2121490032">Anggota Grup Lainnya</string>
 	<string name="label_groups_common" state="needs_review" hash="1252823567">Grup yang sama</string>
+	<string name="label_create_group_with_contact" state="needs_review" hash="1950649899">Buat grup dengan %1$s</string>
+	<string name="label_add_contact_to_a_group" state="needs_review" hash="-682192937">Tambahkan %1$s ke grup</string>
+	<string name="label_add_to_groups" state="needs_review" hash="-654216617">Tambahkan ke grup</string>
+	<string name="explanation_no_admin_group_to_add_contact" state="needs_review" hash="402908162">Anda bukan administrator dari grup mana pun yang dapat ditambahkan %1$s.</string>
+	<string name="toast_message_adding_contact_to_groups" state="needs_review" hash="1201697547">Menambahkan %1$s ke grup yang dipilih…</string>
 	<string name="label_invitation_declined" state="needs_review" hash="2038173833">Undangan ditolak</string>
 	<string name="label_new_group_card" state="needs_review" hash="1006740909">Detail grup telah diperbarui</string>
 	<string name="label_not_part_of_a_group" state="needs_review" hash="1667979596">Belum menjadi bagian dari grup mana pun</string>
@@ -183,6 +194,7 @@
 	<string name="menu_action_create_shortcut" state="needs_review" hash="-1949455873">Buat Pintasan</string>
 	<string name="menu_action_delete" state="needs_review" hash="-232100842">Hapus</string>
 	<string name="menu_action_delete_discussion" state="needs_review" hash="2059656471">Hapus percakapan</string>
+	<string name="menu_action_export_discussion" state="needs_review" hash="1736692296">Ekspor percakapan</string>
 	<string name="label_swipe_details" state="needs_review" hash="171468732">Detail</string>
 	<string name="menu_action_disband_group" state="needs_review" hash="-1767089289">Bubarkan grup</string>
 	<string name="menu_action_edit_group_details" state="needs_review" hash="310205135">Edit detail grup</string>
@@ -482,7 +494,14 @@
 	<string name="dialog_title_backup_choices" state="needs_review" hash="281222223">Pilih metode pencadangan</string>
 	<string name="menu_action_choose_picture" state="needs_review" hash="-1655172909">Pilih gambar</string>
 	<string name="menu_action_take_photo" state="needs_review" hash="-1123080444">Ambil foto</string>
+	<string name="menu_action_choose_image_from_olvid" state="needs_review" hash="1585248356">Pilih gambar yang diterima</string>
 	<string name="menu_action_remove_image" state="needs_review" hash="1094977672">Hapus gambar</string>
+	<string name="menu_action_use_image_as" state="needs_review" hash="587310096">Gunakan gambar ini sebagai...</string>
+	<string name="label_use_photo_for_my_profile" state="needs_review" hash="-1005809580">Foto profil saya</string>
+	<string name="label_use_photo_for_target" state="needs_review" hash="283541521">Foto untuk %s</string>
+	<string name="label_use_photo_for_discussion_background" state="needs_review" hash="1925733151">Latar belakang untuk %s</string>
+	<string name="toast_message_photo_set" state="needs_review" hash="-1641885203">Gambar telah diperbarui</string>
+	<string name="toast_message_background_set" state="needs_review" hash="1642873459">Latar belakang diperbarui</string>
 	<string name="dialog_title_create_empty_group" state="needs_review" hash="-663434464">Buat grup kosong?</string>
 	<string name="dialog_message_create_empty_group" state="needs_review" hash="-297923005">Anda belum memilih kontak apa pun untuk ditambahkan ke grup Anda. Apakah Anda yakin ingin membuat grup kosong?</string>
 	<string name="pref_dark_mode_title" state="needs_review" hash="816474245">Mode gelap</string>
@@ -862,7 +881,7 @@
 	<string name="button_label_check_options" state="needs_review" hash="-759177128">Periksa opsi</string>
 	<string name="hint_olvid_server" state="needs_review" hash="1097391633">Server Olvid</string>
 	<string name="hint_license_activation_code" state="needs_review" hash="102193320">Kode aktivasi lisensi</string>
-	<string name="activity_title_identity_creation_options" state="needs_review" hash="1180456032">Opsi pembuatan ID</string>
+	<string name="activity_title_identity_creation_options" state="needs_review" hash="-774054913">Opsi pembuatan profil</string>
 	<string name="activity_title_scan_configuration" state="needs_review" hash="-386259993">Pindai konfigurasi</string>
 	<string name="menu_action_import_activation_from_clipboard" state="needs_review" hash="-70842935">Impor tautan dari clipboard</string>
 	<string name="troubleshooting_update_valid_title" state="needs_review" hash="741828768">Olvid sudah diperbarui</string>
@@ -871,7 +890,6 @@
 	<string name="dialog_message_update_available" state="needs_review" hash="416187645">Versi Olvid yang lebih baru tersedia.\n\nSilakan perbarui untuk menikmati fitur terbaru.</string>
 	<string name="dialog_title_call_initiation_not_supported" state="needs_review" hash="-2088021831">Panggilan tidak dapat dimulai</string>
 	<string name="dialog_message_call_initiation_not_supported" state="needs_review" hash="1760333819">Sepertinya server Olvid Anda tidak mendukung inisiasi panggilan aman.\n\nSilakan hubungi administrator Anda untuk informasi lebih lanjut.</string>
-	<string name="label_identity_creation_options" state="needs_review" hash="1180456032">Opsi pembuatan ID</string>
 	<string name="text_option_server" state="needs_review" hash="-1130676431">Server: %1$s</string>
 	<string name="dialog_title_non_default_server" state="needs_review" hash="2119192219">Menggunakan server khusus</string>
 	<string name="dialog_message_non_default_server" state="needs_review" hash="459308900">Anda akan membuat profil di server berikut:\n\n%1$s\n\nIni bukan server Olvid bawaan. Lanjutkan hanya jika Anda mempercayai server ini.</string>
@@ -900,7 +918,7 @@
 	<string name="toast_message_unable_to_keycloak_revoke" state="needs_review" hash="-1368037130">Gagal mengganti Olvid ID sebelumnya, silakan coba lagi.</string>
 	<string name="toast_message_keycloak_revoke_successful" state="needs_review" hash="-1216369809">ID Olvid sebelumnya berhasil diganti</string>
 	<string name="dialog_title_keycloak_authentication_required_user_id_changed" state="needs_review" hash="-896407029">Perubahan pengguna terdeteksi</string>
-	<string name="dialog_message_keycloak_authentication_required_user_id_changed" state="needs_review" hash="876252686">Profil Anda saat ini dikelola oleh organisasi Anda. Sepertinya Anda telah melakukan autentikasi sebagai pengguna yang berbeda dari biasanya. Ini tidak didukung.\n\nSilakan hubungi administrator Anda atau lakukan autentikasi ulang sebagai pengguna yang benar.</string>
+	<string name="dialog_message_keycloak_authentication_required_user_id_changed" state="needs_review" hash="2080839829">Profil Anda saat ini dikelola oleh organisasi Anda. Sepertinya Anda telah melakukan autentikasi sebagai pengguna yang berbeda dari biasanya. Ini tidak didukung.\n\nSilakan hubungi administrator Anda atau lakukan autentikasi ulang sebagai pengguna yang benar.</string>
 	<string name="dialog_title_add_keycloak_user" state="needs_review" hash="-1050193239">Tambahkan kontak</string>
 	<string name="dialog_message_add_keycloak_user" state="needs_review" hash="-1755937035">Anda telah memilih untuk menambahkan %1$s ke daftar kontak Anda. Apakah Anda ingin melanjutkan?</string>
 	<string name="explanation_keycloak_update_new" state="needs_review" hash="1136733528">Anda akan mengonfigurasi penyedia identitas perusahaan Anda di Olvid. Setelah dikonfigurasi, Anda dapat melakukan autentikasi dengan server ini dan Olvid akan memungkinkan Anda untuk menambahkan karyawan lain ke kontak Anda dengan mudah.\nSilakan hubungi administrator Anda untuk informasi lebih lanjut.</string>
@@ -1031,6 +1049,8 @@
 	<string name="label_storage_discussions" state="needs_review" hash="491497248">Diskusi</string>
 	<string name="pref_use_internal_image_viewer_title" state="needs_review" hash="1319400578">Gunakan penampil gambar bawaan</string>
 	<string name="pref_use_internal_image_viewer_summary" state="needs_review" hash="1248137666">Saat diaktifkan, mengklik lampiran gambar akan membukanya di penampil internal. Jika tidak, aplikasi gambar bawaan perangkat Anda akan digunakan.</string>
+	<string name="pref_image_text_recognition_title" state="needs_review" hash="1877261687">Kenali dan indeks teks dalam gambar</string>
+	<string name="pref_image_text_recognition_summary" state="needs_review" hash="1217699919">Memungkinkan untuk mencari dan menyalin teks yang ditemukan dalam lampiran gambar. Fitur ini dapat memakan banyak sumber daya pada perangkat kelas bawah: nonaktifkan jika Anda tidak membutuhkannya.</string>
 	<string name="label_unable_to_display_image" state="needs_review" hash="-1495534207">Tidak dapat menampilkan gambar</string>
 	<string name="dialog_title_backup_requires_sign_in" state="needs_review" hash="-720389674">Masuk ke penyedia layanan cloud diperlukan</string>
 	<string name="dialog_message_backup_requires_sign_in" state="needs_review" hash="119557495">Anda telah mengonfigurasi Olvid untuk menggunakan pencadangan otomatis ke penyedia cloud, tetapi sesi Anda telah kedaluwarsa. Anda perlu masuk kembali ke penyedia ini.\n\nJika Anda tidak lagi menginginkan pencadangan otomatis, Anda dapat menonaktifkannya di Pengaturan Aplikasi. Perlu diingat bahwa pencadangan otomatis adalah satu-satunya cara untuk mencegah hilangnya kontak Anda jika perangkat Anda hilang atau rusak.</string>
@@ -1149,7 +1169,7 @@
 	<string name="pref_hidden_profile_close_policy_dialog_entry_screen_lock" state="needs_review" hash="-1520400811">Saat layar kunci Olvid aktif</string>
 	<string name="pref_hidden_profile_close_policy_dialog_entry_background" state="needs_review" hash="-2099539114">Saat Olvid berada di latar belakang…</string>
 	<string name="activity_title_enter_backup_key" state="needs_review" hash="1035967309">Masukkan kunci cadangan</string>
-	<string name="activity_title_identity_creation" state="needs_review" hash="-1361520151">Pembuatan ID</string>
+	<string name="activity_title_identity_creation" state="needs_review" hash="2027618284">Pembuatan profil</string>
 	<string name="menu_action_manual_configuration" state="needs_review" hash="-1495974502">Konfigurasi lanjutan manual</string>
 	<string name="toast_message_invalid_configuration_link" state="needs_review" hash="1387412522">Tautan konfigurasi tidak valid</string>
 	<string name="toast_message_invalid_link" state="needs_review" hash="1265454437">Tautan tidak valid</string>
@@ -1171,6 +1191,7 @@
 	<string name="dialog_title_chose_profile_web_client" state="needs_review" hash="1860298414">Pilih profil untuk terhubung ke klien web Olvid.</string>
 	<string name="dialog_title_chose_profile_invitation" state="needs_review" hash="-2063034787">Pilih profil yang akan digunakan untuk mengundang kontak ini</string>
 	<string name="toast_message_create_new_profile_then_reopen_this_link" state="needs_review" hash="1770827346">Silakan buat profil baru terlebih dahulu, lalu buka tautan ini lagi.</string>
+	<string name="toast_message_invitation_link_deferred_to_end_of_onboarding" state="needs_review" hash="-189914806">Undangan Anda akan terbuka secara otomatis setelah profil Anda dibuat.</string>
 	<string name="button_label_switch_profile" state="needs_review" hash="-2007633024">Ganti profil</string>
 	<string name="text_no_other_profile_to_switch_to" state="needs_review" hash="-112306213">Tidak ada profil lain</string>
 	<string name="button_label_configure_lock_screen" state="needs_review" hash="870348426">Konfigurasikan layar kunci</string>
@@ -1181,7 +1202,7 @@
 	<string name="dialog_message_delete_profile_multi" state="needs_review" hash="-2003495595">Menghapus profil akan menghapus semua informasi yang terkait dengan profil tersebut di perangkat Anda. Ini termasuk kontak, grup, dan konten semua percakapan Anda (pesan dan lampiran) untuk profil ini. Profil Anda yang lain tidak akan terpengaruh oleh operasi ini.\n\nTekan \"berikutnya\" untuk memilih cara menghapus profil ini.</string>
 	<string name="dialog_message_delete_last_profile_multi" state="needs_review" hash="-103140781">Menghapus profil akan menghapus semua informasi yang terkait dengan profil ini di perangkat Anda. Ini termasuk kontak, grup, dan konten semua percakapan Anda (pesan dan lampiran) untuk profil ini.\n\n<b>Ini adalah satu-satunya profil yang terlihat dan jika Anda memiliki profil tersembunyi, profil tersebut juga akan dihapus.</b>\n\nTekan \"berikutnya\" untuk memilih cara menghapus profil ini.</string>
 	<string name="switch_label_delete_profile_everywhere" state="needs_review" hash="-74965346">Hapus profil <b>di semua</b> tempat</string>
-	<string name="hint_type_delete_here_to_proceed" state="needs_review" hash="-1622625725">Masukkan \\"%1$s\\" di sini untuk melanjutkan</string>
+	<string name="hint_type_delete_here_to_proceed" state="needs_review" hash="-1622625725">Masukkan \"%1$s\" di sini untuk melanjutkan</string>
 	<string name="explanation_delete_owned_identity" state="needs_review" hash="2036375772">Jika Anda memilih untuk menghapus profil Anda <b>di semua tempat</b>:\n\u00a0-\u00a0profil tersebut akan dihapus secara lokal <b>dan</b> di perangkat kontak Anda\n\u00a0-\u00a0Anda akan keluar dari grup yang Anda ikuti\n\u00a0-\u00a0grup yang Anda kelola akan dibubarkan\n\nJika Anda <b>tidak</b> menghapus profil Anda di semua tempat, profil tersebut hanya akan dihapus secara lokal di perangkat Anda. Kecuali Anda berencana untuk memulihkan cadangan di perangkat lain, kontak Anda mungkin masih mencoba mengirim pesan kepada Anda dan mungkin tidak menyadari bahwa pesan-pesan ini tidak dapat dikirimkan.</string>
 	<string name="explanation_delete_inactive_owned_identity" state="needs_review" hash="-575337242">Profil Anda saat ini tampaknya tidak aktif, yang berarti Anda mungkin telah memindahkannya ke perangkat lain. Jika Anda berencana untuk terus menggunakan profil ini di perangkat lain Anda, Anda dapat menghapusnya dengan aman dari sini.\n\nJika Anda tidak ingin menggunakan profil ini lagi, Anda perlu mengaktifkannya kembali di perangkat ini terlebih dahulu, tunggu hingga saluran aman dengan kontak Anda dibuat ulang, dan kemudian hapus profil ini dengan memilih opsi \"hapus di semua perangkat\".</string>
 	<string name="explanation_delete_owned_identity_multi" state="needs_review" hash="-184045089">Profil Anda saat ini aktif di beberapa perangkat.\n\nJika Anda memilih untuk menghapus profil Anda <b>di semua</b> perangkat:\u00a0-\u00a0profil tersebut akan dihapus dari semua perangkat Anda <b>dan</b> perangkat kontak Anda\u00a0-\u00a0Anda akan keluar dari semua grup yang Anda ikuti\u00a0-\u00a0grup yang Anda kelola akan dibubarkan.\n\nJika Anda <b>tidak</b> menghapus profil Anda di semua perangkat, profil tersebut hanya akan dihapus secara lokal dan Anda dapat terus menggunakannya secara normal di perangkat lain Anda.</string>
@@ -1209,7 +1230,7 @@
 	<string name="pref_text_font_scale_1_1" state="needs_review" hash="460876079">Sedikit lebih besar (110\%)</string>
 	<string name="pref_text_font_scale_1_25" state="needs_review" hash="2016139388">Besar (125%)</string>
 	<string name="pref_text_font_scale_1_5" state="needs_review" hash="2018099487">Sangat besar (150\%)</string>
-	<string name="pref_send_with_hardware_enter" state="needs_review" hash="613314226">Kirim pesan saat menekan tombol \\"Enter\\"</string>
+	<string name="pref_send_with_hardware_enter" state="needs_review" hash="613314226">Kirim pesan saat menekan tombol \"Enter\"</string>
 	<string name="pref_send_with_hardware_enter_summary" state="needs_review" hash="1694640710">Saat diaktifkan, jika Anda menggunakan keyboard fisik, menekan tombol \"Enter\" akan mengirim pesan Anda. \"Shift + Enter\" akan menambahkan baris baru.</string>
 	<string name="pref_ping_connectivity_indicator_title" state="needs_review" hash="1245192677">Indikator konektivitas jaringan</string>
 	<string name="pref_text_ping_connectivity_indicator_none" state="needs_review" hash="-1725558072">Tidak ada indikator koneksi</string>
@@ -1326,7 +1347,7 @@
 	<string name="label_no_backup_found" state="needs_review" hash="-823699919">Tidak ada cadangan yang ditemukan</string>
 	<string name="label_no_account_selected" state="needs_review" hash="1896894632">Tidak ada akun yang dipilih</string>
 	<string name="label_tap_to_select_cloud_account" state="needs_review" hash="2044265832">Tekan tombol \"Ganti akun\" untuk memilih akun penyedia layanan cloud</string>
-	<string name="label_error_connecting_to_cloud" state="needs_review" hash="85877605">Gagal terhubung ke penyedia layanan cloud: tekan \\"Ganti akun\\" untuk mencoba lagi</string>
+	<string name="label_error_connecting_to_cloud" state="needs_review" hash="85877605">Gagal terhubung ke penyedia layanan cloud: tekan \"Ganti akun\" untuk mencoba lagi</string>
 	<string name="dialog_title_delete_cloud_backup" state="needs_review" hash="-1354092851">Hapus cadangan cloud</string>
 	<string name="dialog_message_delete_cloud_backup" state="needs_review" hash="1870910875">Apakah Anda yakin ingin menghapus cadangan cloud yang dipilih? Tindakan ini tidak dapat dibatalkan.\n\nTekan \"OK\" untuk melanjutkan.</string>
 	<string name="dialog_title_cloud_provider_sign_in" state="needs_review" hash="-1009058134">Masuk ke penyedia layanan cloud</string>
@@ -1442,23 +1463,17 @@
 	<string name="button_label_send" state="needs_review" hash="-185402948">Kirim</string>
 	<string name="button_label_start_sharing" state="needs_review" hash="682254052">Mulai berbagi</string>
 	<string name="location_sharing_duration_one_hour_short_string" state="needs_review" hash="1004063951">1 jam</string>
-	<string name="location_sharing_duration_one_hour_full_string" state="needs_review" hash="-58118972">Bagikan lokasi selama <b>1 jam</b>
-	</string>
+	<string name="location_sharing_duration_one_hour_full_string" state="needs_review" hash="-58118972">Bagikan lokasi selama <b>1 jam</b></string>
 	<string name="location_sharing_duration_three_hours_short_string" state="needs_review" hash="228095183">3 jam</string>
-	<string name="location_sharing_duration_three_hours_full_string" state="needs_review" hash="754857804">Bagikan lokasi selama <b>3 jam</b>
-	</string>
+	<string name="location_sharing_duration_three_hours_full_string" state="needs_review" hash="754857804">Bagikan lokasi selama <b>3 jam</b></string>
 	<string name="location_sharing_duration_endless_short_string" state="needs_review" hash="55208442">Tanpa batas</string>
-	<string name="location_sharing_duration_endless_full_string" state="needs_review" hash="1710814259">Bagikan lokasi <b>sampai dihentikan</b>
-	</string>
+	<string name="location_sharing_duration_endless_full_string" state="needs_review" hash="1710814259">Bagikan lokasi <b>sampai dihentikan</b></string>
 	<string name="location_sharing_quality_precise_short_string" state="needs_review" hash="351442529">Tepat</string>
 	<string name="location_sharing_quality_balanced_short_string" state="needs_review" hash="-1925315592">Seimbang</string>
 	<string name="location_sharing_quality_power_save_short_string" state="needs_review" hash="-14275273">Mode hemat daya</string>
-	<string name="location_sharing_quality_precise_full_string" state="needs_review" hash="-1255374893">Mode berbagi lokasi yang <b>tepat</b>
-	</string>
-	<string name="location_sharing_quality_balanced_full_string" state="needs_review" hash="-421322514">Mode berbagi lokasi <b>seimbang</b>
-	</string>
-	<string name="location_sharing_quality_power_save_full_string" state="needs_review" hash="792896333">Mode berbagi lokasi <b>hemat daya</b>
-	</string>
+	<string name="location_sharing_quality_precise_full_string" state="needs_review" hash="-1255374893">Mode berbagi lokasi yang <b>tepat</b></string>
+	<string name="location_sharing_quality_balanced_full_string" state="needs_review" hash="-421322514">Mode berbagi lokasi <b>seimbang</b></string>
+	<string name="location_sharing_quality_power_save_full_string" state="needs_review" hash="792896333">Mode berbagi lokasi <b>hemat daya</b></string>
 	<string name="label_sharing_location_until" state="needs_review" hash="187977459">Berbagi lokasi hingga: %1$s</string>
 	<string name="label_location_sharing_ended" state="needs_review" hash="1028490137">Berbagi lokasi telah dihentikan</string>
 	<string name="label_gps_coordinates" state="needs_review" hash="-1537356414">Koordinat GPS</string>
@@ -1559,7 +1574,7 @@
 	<string name="text_setting_address_lookup_server" state="needs_review" hash="-1680866462">• Server alamat khusus:</string>
 	<string name="text_setting_disable_address_lookup" state="needs_review" hash="-1481615256">\"• Nonaktifkan pencarian alamat: \"</string>
 	<string name="text_setting_notify_certificate_change" state="needs_review" hash="-1831192863">\"• Beri tahu saat sertifikat server berubah: \"</string>
-	<string name="text_setting_sending_foreground_service" state="needs_review" hash="-406116991">\"\u2023 Aktifkan notifikasi \\"Pesan sedang dikirim\\": \"</string>
+	<string name="text_setting_sending_foreground_service" state="needs_review" hash="-406116991">\"\u2023 Aktifkan notifikasi \"Pesan sedang dikirim\": \"</string>
 	<string name="text_setting_auto_join_groups" state="needs_review" hash="522515555">•	Terima otomatis undangan grup dari:</string>
 	<string name="text_setting_lock_delay" state="needs_review" hash="820821201">\"• Penundaan kunci layar: \"</string>
 	<string name="text_setting_auto_download_size" state="needs_review" hash="585840560">\"• Unduh lampiran secara otomatis: \"</string>
@@ -1593,7 +1608,7 @@
 	<string name="text_clone_v1_to_v2_explanation" state="needs_review" hash="121764398">Grup ini tidak mendukung lebih dari satu administrator. Namun, Anda dapat mengkloningnya ke grup baru yang akan mendukungnya! 🚀</string>
 	<string name="button_label_clone_this_group" state="needs_review" hash="578525433">Gandakan grup ini</string>
 	<string name="dialog_title_introducing_groups_v2" state="needs_review" hash="-1619270351">Memperkenalkan grup baru!</string>
-	<string name="dialog_message_introducing_groups_v2" state="needs_review" hash="-176932921">Olvid sekarang mendukung grup baru dengan banyak administrator 👑! Ini tidak mengubah apa pun pada \\"grup lama\\" Anda, tetapi berlaku untuk semua grup yang Anda buat mulai sekarang. Agar dapat menggunakan fitur ini, kontak Anda harus menggunakan versi Olvid terbaru.\n\nIngin mencobanya? Ketuk tab grup dan buat grup baru. Setelah dibuat, Anda dapat mengeditnya untuk memberikan hak administrator kepada sebanyak mungkin anggota yang Anda inginkan!</string>
+	<string name="dialog_message_introducing_groups_v2" state="needs_review" hash="-176932921">Olvid sekarang mendukung grup baru dengan banyak administrator 👑! Ini tidak mengubah apa pun pada \"grup lama\" Anda, tetapi berlaku untuk semua grup yang Anda buat mulai sekarang. Agar dapat menggunakan fitur ini, kontak Anda harus menggunakan versi Olvid terbaru.\n\nIngin mencobanya? Ketuk tab grup dan buat grup baru. Setelah dibuat, Anda dapat mengeditnya untuk memberikan hak administrator kepada sebanyak mungkin anggota yang Anda inginkan!</string>
 	<string name="dialog_message_about_last_push_notification" state="needs_review" hash="-598113792">Notifikasi terbaru: %1$s</string>
 	<string name="dialog_message_about_deprioritized_push_notification" state="needs_review" hash="-1325409642">Notifikasi push dengan prioritas lebih rendah: %1$d/%2$d</string>
 	<string name="text_message_too_large_for_webclient" state="needs_review" hash="581194084">[Pesan terlalu besar untuk ditampilkan di klien web]</string>
@@ -1631,7 +1646,7 @@
 	<string name="text_last_online" state="needs_review" hash="-307031777">Terakhir online: %1$s</string>
 	<string name="text_deactivates_on" state="needs_review" hash="-948374904">Akan dinonaktifkan pada: %1$s</string>
 	<string name="text_device_is_inactive" state="needs_review" hash="-1269909292">Perangkat dinonaktifkan</string>
-	<string name="dialog_message_rename_current_device" state="needs_review" hash="1877085196">Masukkan nama yang ingin Anda gunakan untuk mengidentifikasi perangkat Anda saat ini.\nTekan \\"Default\\" untuk menggunakan nama perangkat bawaannya.</string>
+	<string name="dialog_message_rename_current_device" state="needs_review" hash="1877085196">Masukkan nama yang ingin Anda gunakan untuk mengidentifikasi perangkat Anda saat ini.\nTekan \"Default\" untuk menggunakan nama perangkat bawaannya.</string>
 	<string name="dialog_message_rename_other_device" state="needs_review" hash="1342525083">Silakan masukkan nama yang ingin Anda gunakan untuk mengidentifikasi perangkat ini.</string>
 	<string name="hint_device_name" state="needs_review" hash="1739868247">Nama Perangkat</string>
 	<string name="button_label_default" state="needs_review" hash="-1574133633">Standar</string>
@@ -1688,7 +1703,7 @@
 	<string name="button_label_create_new_profile" state="needs_review" hash="-1130516787">Buat profil baru</string>
 	<string name="label_device_name" state="needs_review" hash="-1693256515">Nama perangkat</string>
 	<string name="toast_message_profile_activation_failed" state="needs_review" hash="593290647">Impor profil gagal</string>
-	<string name="button_label_add_device_xxx" state="needs_review" hash="-1479212354">Tambahkan perangkat \\"%1$s\\"</string>
+	<string name="button_label_add_device_xxx" state="needs_review" hash="-1479212354">Tambahkan perangkat \"%1$s\"</string>
 	<string name="notification_title_device_trust" state="needs_review" hash="-1568042777">Perangkat baru: \"%1$s\"</string>
 	<string name="notification_title_unnamed_device_trust" state="needs_review" hash="1704207127">Perangkat baru</string>
 	<string name="notification_message_device_trust" state="needs_review" hash="753501294">Sebuah perangkat baru telah ditambahkan ke salah satu profil Olvid Anda</string>
@@ -1696,7 +1711,7 @@
 	<string name="notification_channel_device_name" state="needs_review" hash="1347557771">Manajemen perangkat</string>
 	<string name="notification_channel_device_description" state="needs_review" hash="-36703170">Notifikasi terkait perangkat Anda</string>
 	<string name="notification_title_device_expiration" state="needs_review" hash="202400638">Penonaktifan „%1$s”</string>
-	<string name="notification_message_device_expiration" state="needs_review" hash="-449434000">Perangkat Olvid Anda \\"%1$s\\" akan dinonaktifkan dalam %2$s</string>
+	<string name="notification_message_device_expiration" state="needs_review" hash="-449434000">Perangkat Olvid Anda \"%1$s\" akan dinonaktifkan dalam %2$s</string>
 	<string name="notification_title_unnamed_device_expiration" state="needs_review" hash="1863987850">Penonaktifan perangkat</string>
 	<string name="notification_message_unnamed_device_expiration" state="needs_review" hash="-50322120">Perangkat Olvid Anda akan dinonaktifkan dalam %1$s.</string>
 	<string name="dialog_title_add_device_explanation" state="needs_review" hash="156848899">Tambahkan perangkat?</string>
@@ -1706,7 +1721,7 @@
 	<string name="button_label_activate_another_profile" state="needs_review" hash="-164415629">Impor profil lain</string>
 	<string name="text_new_device" state="needs_review" hash="1704207127">Perangkat baru</string>
 	<string name="onboarding_transfer_source_confirmation_title" state="needs_review" hash="821556628">Apakah Anda siap menambahkan profil Anda di perangkat baru?</string>
-	<string name="button_label_activate_profile_on_xxx" state="needs_review" hash="-275831566">Tambahkan profil Anda di \\"%1$s\\"</string>
+	<string name="button_label_activate_profile_on_xxx" state="needs_review" hash="-275831566">Tambahkan profil Anda di \"%1$s\"</string>
 	<string name="onboarding_transfer_source_confirmation_activating_profile" state="needs_review" hash="1396160794">Menambahkan profil:</string>
 	<string name="onboarding_transfer_source_confirmation_on_device" state="needs_review" hash="1757946868">Di perangkat:</string>
 	<string name="onboarding_transfer_source_confirmation_new_device_remain_active" state="needs_review" hash="-1939698670">Perangkat baru ini akan tetap aktif.</string>
@@ -1738,11 +1753,11 @@
 	<string name="troubleshooting_location_permissions_valid_description" state="needs_review" hash="-527872954">Memberikan akses lokasi Anda ke Olvid memungkinkan Anda untuk menggunakan fitur \"bagikan lokasi Anda\".</string>
 	<string name="troubleshooting_location_permissions_invalid_title" state="needs_review" hash="-296757597">Izin lokasi ditolak</string>
 	<string name="troubleshooting_battery_optimization_valid_title" state="needs_review" hash="489481166">Optimasi baterai</string>
-	<string name="troubleshooting_battery_optimization_valid_description" state="needs_review" hash="634228343">Optimasi baterai di Android bekerja dengan menunda beberapa peristiwa latar belakang agar dapat dijalankan dalam satu waktu. Hal ini dapat menunda penerimaan pesan dan panggilan Olvid.\n\nSaat ini, Olvid diizinkan untuk \\"selalu berjalan di latar belakang\\".</string>
-	<string name="troubleshooting_battery_optimization_invalid_description" state="needs_review" hash="688616134">Optimasi baterai pada Android bekerja dengan menunda beberapa peristiwa latar belakang agar dapat dijalankan secara berkelompok. Hal ini dapat menunda penerimaan pesan dan panggilan Olvid.\n\nUntuk memastikan pesan Anda diterima dengan cepat, Anda harus mengizinkan Olvid untuk \\"selalu berjalan di latar belakang\\".</string>
+	<string name="troubleshooting_battery_optimization_valid_description" state="needs_review" hash="634228343">Optimasi baterai di Android bekerja dengan menunda beberapa peristiwa latar belakang agar dapat dijalankan dalam satu waktu. Hal ini dapat menunda penerimaan pesan dan panggilan Olvid.\n\nSaat ini, Olvid diizinkan untuk \"selalu berjalan di latar belakang\".</string>
+	<string name="troubleshooting_battery_optimization_invalid_description" state="needs_review" hash="688616134">Optimasi baterai pada Android bekerja dengan menunda beberapa peristiwa latar belakang agar dapat dijalankan secara berkelompok. Hal ini dapat menunda penerimaan pesan dan panggilan Olvid.\n\nUntuk memastikan pesan Anda diterima dengan cepat, Anda harus mengizinkan Olvid untuk \"selalu berjalan di latar belakang\".</string>
 	<string name="troubleshooting_background_restriction_valid_title" state="needs_review" hash="-1653431113">Pembatasan latar belakang</string>
 	<string name="troubleshooting_background_restriction_valid_description" state="needs_review" hash="-562490603">Olvid perlu diizinkan untuk berjalan di latar belakang agar berfungsi dengan baik. Mengaktifkan pembatasan latar belakang akan mencegah Olvid menerima pesan di latar belakang, misalnya.</string>
-	<string name="troubleshooting_background_restriction_invalid_description" state="needs_review" hash="-1942040454">Olvid memiliki \\"pembatasan latar belakang\\" yang aktif. Olvid tidak akan dapat berfungsi dengan baik sampai Anda menghapusnya dari daftar \\"aplikasi yang dibatasi\\".\n\nAnda dapat memperbaikinya dengan menekan \\"Pengaturan Aplikasi\\" dan membuka bagian penggunaan baterai.</string>
+	<string name="troubleshooting_background_restriction_invalid_description" state="needs_review" hash="-1942040454">Olvid memiliki \"pembatasan latar belakang\" yang aktif. Olvid tidak akan dapat berfungsi dengan baik sampai Anda menghapusnya dari daftar \"aplikasi yang dibatasi\".\n\nAnda dapat memperbaikinya dengan menekan \"Pengaturan Aplikasi\" dan membuka bagian penggunaan baterai.</string>
 	<string name="troubleshooting_alarm_valid_title" state="needs_review" hash="-2113413915">Izin untuk mengatur alarm</string>
 	<string name="troubleshooting_alarm_valid_description" state="needs_review" hash="184003925">Olvid menggunakan alarm untuk menjadwalkan secara tepat penguncian layar dan penghapusan pesan sementara. Izin ini telah diatur dengan benar.</string>
 	<string name="troubleshooting_alarm_invalid_description" state="needs_review" hash="-1221338357">Olvid menggunakan alarm untuk menjadwalkan penguncian layar dan penghapusan pesan sementara secara tepat.\nIzin untuk mengatur alarm semacam itu telah dicabut, yang dapat menyebabkan fitur keamanan ini tidak berfungsi dengan baik.\n\nKami sangat menyarankan Anda untuk mengizinkan pengaturan alarm dan pengingat dengan menekan \"Pengaturan Aplikasi\".</string>
@@ -2019,7 +2034,7 @@
 	<string name="button_label_restore_my_profile" state="needs_review" hash="418284480">Pulihkan profil saya</string>
 	<string name="button_label_keep_all_with_olvid_plus" state="needs_review" hash="622534541">Simpan semuanya dengan Olvid+</string>
 	<string name="explanation_backup_v2_choose_device_after_restore" state="needs_review" hash="292969815">Setelah profil Anda dipulihkan, Anda dapat memilih perangkat mana yang ingin tetap aktif dari pengaturan profil Anda.</string>
-	<string name="explanation_backup_v2_device_expiration_start" state="needs_review" hash="-147053489">Dengan memulihkan profil Anda \\"</string>
+	<string name="explanation_backup_v2_device_expiration_start" state="needs_review" hash="-147053489">Dengan memulihkan profil Anda \"</string>
 	<string name="explanation_backup_v2_device_expiration_nickname" state="needs_review" hash="2093353377">(%1$s)</string>
 	<string name="toast_message_no_key_found" state="needs_review" hash="-1984410678">Tidak ada kunci cadangan yang ditemukan.</string>
 	<string name="label_backup_headers_title" state="needs_review" hash="-846183546">Cadangan Anda</string>
@@ -2041,11 +2056,14 @@
 	<string name="button_label_configure_backups" state="needs_review" hash="-990646398">Aktifkan cadangan</string>
 	<string name="tip_write_backup_key_title" state="needs_review" hash="-1652757003">Jangan lupa catat kunci cadangan Anda 😇</string>
 	<string name="tip_write_backup_key_message" state="needs_review" hash="931018791">Kunci cadangan Anda sangat penting untuk memulihkan profil Anda jika Anda kehilangan akses ke perangkat ini.</string>
+	<string name="tip_legacy_backup_end_of_life_title" state="needs_review" hash="810495149">Cadangan lama yang Anda gunakan telah mencapai akhir masa pakainya.</string>
+	<string name="tip_legacy_backup_end_of_life_message" state="needs_review" hash="-314257210">Pembaruan Olvid berikutnya tidak akan lagi mendukung cadangan lama. Untuk menjaga keamanan akun Anda, beralihlah ke pengalaman pencadangan baru sekarang.</string>
 	<string name="tip_troubleshooting_title" state="needs_review" hash="-393739108">Tingkatkan pengalaman Olvid Anda 🚀</string>
 	<string name="tip_troubleshooting_message" state="needs_review" hash="-935493349">Beberapa parameter tidak dikonfigurasi dengan benar di perangkat Anda dan dapat memengaruhi pengalaman Anda dengan Olvid.</string>
 	<string name="button_label_this_way" state="needs_review" hash="747183939">Lewat sini</string>
 	<string name="toast_code_copied" state="needs_review" hash="-1522785848">Kode telah disalin</string>
 	<string name="explanation_choose_members" state="needs_review" hash="-1385158706">Silakan pilih siapa yang ingin Anda tambahkan ke grup ini.</string>
+	<string name="explanation_choose_share_recipients" state="needs_review" hash="-1406265940">Silakan pilih dengan siapa Anda ingin berbagi.</string>
 	<string name="explanation_choose_contact_introduction" state="needs_review" hash="1113777517">Silakan pilih siapa yang ingin Anda perkenalkan dengan %1$s.</string>
 	<string name="label_group_administration" state="needs_review" hash="871355986">Administrasi grup</string>
 	<string name="dialog_title_call_blocked" state="needs_review" hash="1594606530">Panggilan diblokir</string>
@@ -2086,7 +2104,7 @@
 	<string name="label_poll_answers_sorted_by_poll_order" state="needs_review" hash="685632215">Urutan polling</string>
 	<string name="label_poll_answers_sorted_by_answer_count" state="needs_review" hash="516869301">Jumlah jawaban</string>
 	<string name="notification_public_title_new_poll_vote" state="needs_review" hash="-1901040080">Jawaban baru untuk jajak pendapat Anda</string>
-	<string name="toast_message_remove_none_answer" state="needs_review" hash="277924655">Hapus jawaban \\"%1$s\\" terlebih dahulu</string>
+	<string name="toast_message_remove_none_answer" state="needs_review" hash="277924655">Hapus jawaban \"%1$s\" terlebih dahulu</string>
 	<string name="text_poll" state="needs_review" hash="-153643506">polling</string>
 	<string name="poll_csv_headers" state="needs_review" hash="1869917931">Pertanyaan jajak pendapat,Nama pemilih,Suara,Tanggal</string>
 	<string name="label_poll_no_votes_yet" state="needs_review" hash="-981251817">Belum ada jawaban</string>
@@ -2171,7 +2189,7 @@
 	<string name="store_link_olvid_store" state="needs_review" hash="-1825630369">Kunjungi Toko Olvid</string>
 	<string name="toast_message_reminder_set" state="needs_review" hash="-961055414">Pengingat telah diatur</string>
 	<string name="dialog_title_keycloak_authentication_impossible" state="needs_review" hash="325273853">Autentikasi tidak dapat dilakukan</string>
-	<string name="dialog_message_keycloak_authentication_impossible" state="needs_review" hash="390830785">Profil Anda saat ini dikelola oleh organisasi Anda dan diperlukan autentikasi ulang. Namun, tampaknya tidak ada metode autentikasi yang didukung yang tersedia.\n\nSilakan hubungi administrator Anda untuk informasi lebih lanjut.</string>
+	<string name="dialog_message_keycloak_authentication_impossible" state="needs_review" hash="-2031322232">Profil Anda saat ini dikelola oleh organisasi Anda dan diperlukan otentikasi ulang. Namun, tampaknya tidak ada metode otentikasi yang didukung yang tersedia.\n\nSilakan hubungi administrator Anda untuk informasi lebih lanjut.</string>
 	<string name="onboarding_transfer_keycloak_error_message_authentication_impossible" state="needs_review" hash="-1891385979">Tidak ada metode autentikasi yang didukung yang tersedia.</string>
 	<string name="pref_use_alt_turn_servers_title" state="needs_review" hash="-1956132776">Gunakan server TURN alternatif</string>
 	<string name="pref_use_alt_turn_servers_summary" state="needs_review" hash="357427162">Aktifkan opsi ini untuk menggunakan server TURN dengan alamat IP yang berubah-ubah. Jika Anda tidak yakin, biarkan opsi ini dalam keadaan mati 😁</string>
@@ -2282,5 +2300,45 @@
 	<string name="label_error_loading_openstreetmap_style_file" state="needs_review" hash="-2596045">Terjadi kesalahan saat memuat berkas gaya OpenStreetMap.</string>
 	<string name="dialog_title_subscriptions_not_available" state="needs_review" hash="336174241">Langganan dalam aplikasi tidak tersedia</string>
 	<string name="dialog_message_subscriptions_not_available" state="needs_review" hash="2093768678">Versi Olvid yang Anda instal tidak menyertakan pustaka Penagihan Google dan tidak mendukung pembelian dalam aplikasi.\n\nUntuk informasi lebih lanjut, silakan hubungi kami di **feedback@olvid.io**.</string>
+	<string name="ftux_next" state="needs_review" hash="1158639077">Berikutnya</string>
+	<string name="ftux_start" state="needs_review" hash="646298532">Mulai</string>
+	<string name="ftux_page_indicator" state="needs_review" hash="1987610035">Halaman %1$d dari %2$d</string>
+	<string name="ftux_page_welcome_title" state="needs_review" hash="1173832630">Selamat datang di <b>Olvid</b>.</string>
+	<string name="ftux_page_welcome_body" state="needs_review" hash="-2085198139">Pesan pribadi untuk semua orang.</string>
+	<string name="ftux_page_private_title" state="needs_review" hash="1815927819">Pesan <b>pribadi</b></string>
+	<string name="ftux_page_private_body" state="needs_review" hash="-590644231">Di %1$s, Anda memilih dengan siapa Anda ingin mengobrol. Tidak ada spam, rekomendasi yang tidak diinginkan, notifikasi yang mengganggu, atau pesan dari orang asing.\n\nTidak seorang pun dapat menghubungi Anda tanpa persetujuan Anda.\n\n%1$s adalah ruang digital pribadi Anda.</string>
+	<string name="ftux_page_everyone_title" state="needs_review" hash="1506796386">Pesan untuk <b>semua orang</b></string>
+	<string name="ftux_page_everyone_body" state="needs_review" hash="-586100377">Siapa pun Anda, %1$s menawarkan keamanan terbaik untuk Anda. Tidak diperlukan email atau nomor telepon.\n\n%1$s tidak meminta informasi pribadi apa pun dari Anda, dan itu mengubah segalanya.</string>
+	<string name="ftux_page_protect_title" state="needs_review" hash="1969120191">Olvid <b>melindungi</b> Anda. Olvid melindungi orang-orang yang penting bagi Anda.</string>
+	<string name="ftux_page_protect_body" state="needs_review" hash="881847930">Ini bukan hanya sebuah janji — %1$s memberikan bukti kriptografi.\n\nBaik Anda menambahkan kontak secara jarak jauh atau tatap muka, semua percakapan Anda akan selalu terautentikasi dan dienkripsi ujung ke ujung.</string>
+	<string name="ftux_page_pricing_title" state="needs_review" hash="-1948277889">Model bisnis yang <b>transparan</b></string>
+	<string name="ftux_page_pricing_body" state="needs_review" hash="-1064278870">%1$s tidak menggunakan data pribadi Anda untuk pendanaan—karena aplikasi ini tidak memintanya!\n\nSesuatu yang gratis memang gratis. Sesuatu yang berbayar memiliki harga.</string>
+	<string name="ftux_page_media_title" state="needs_review" hash="558110518">Olvid memiliki <b>semuanya</b></string>
+	<string name="ftux_page_media_body" state="needs_review" hash="1807247240">Tidak ada batasan ukuran lampiran, berbagi foto resolusi tinggi, jajak pendapat, panggilan audio dan video, dukungan banyak perangkat, geolokasi — semuanya tersedia!</string>
 	<string name="menu_action_cancel_upload" state="needs_review" hash="1672681586">Batalkan unggah</string>
+	<string name="label_suggested_contacts" state="needs_review" hash="816810770">Kontak yang disarankan</string>
+	<string name="label_suggested_contacts_subtitle" state="needs_review" hash="131522501">Undang pengguna dengan mudah</string>
+	<string name="label_suggested_contact_already_a_contact" state="needs_review" hash="-1177848651">Sudah menjadi kontak</string>
+	<string name="label_suggested_contact_invitation_received" state="needs_review" hash="2100924901">Undangan diterima</string>
+	<string name="label_suggested_contact_invitation_sent" state="needs_review" hash="310679275">Undangan telah dikirim</string>
+	<string name="label_suggested_contacts_all_done" state="needs_review" hash="-127525104">Anda sudah dalam versi terbaru!\nTidak ada lagi kontak yang bisa disarankan.</string>
+	<string name="button_label_suggested_contact_later" state="needs_review" hash="-1933816039">Nanti</string>
+	<string name="button_label_close" state="needs_review" hash="1454843231">Tutup</string>
+	<string name="button_label_skip" state="needs_review" hash="2056258301">Lewati</string>
+	<string name="button_label_understood" state="needs_review" hash="829780875">Baiklah</string>
+	<string name="label_suggested_contacts_onboarding_title_1" state="needs_review" hash="491881039">Undang teman dengan gerakan sederhana</string>
+	<string name="label_suggested_contacts_onboarding_message_1" state="needs_review" hash="331320806">Geser kartu ke kanan untuk mengundang pengguna, atau ke kiri untuk melanjutkan ke pengguna berikutnya.</string>
+	<string name="label_suggested_contacts_onboarding_title_2" state="needs_review" hash="-788798380">Dari mana kontak-kontak ini berasal?</string>
+	<string name="label_suggested_contacts_onboarding_message_2" state="needs_review" hash="1536681696">Ini adalah pengguna Olvid yang belum ada di daftar kontak Anda.</string>
+	<string name="label_suggested_contacts_onboarding_caption" state="needs_review" hash="-1299179969">Anda hanya berjarak satu tingkat hubungan: Anda memiliki setidaknya satu grup yang sama.</string>
+	<string name="label_suggested_contacts_you" state="needs_review" hash="672009142">Kamu</string>
+	<string name="label_suggested_contacts_common_group" state="needs_review" hash="-1739793963">Grup bersama</string>
+	<string name="explanation_suggested_contacts_others_tab" state="needs_review" hash="852096678">Pengguna di bawah ini bukan bagian dari kontak Anda, dan Anda belum dapat melakukan percakapan pribadi dengan mereka. Tetapi Anda dapat dengan mudah mengundang mereka! 🚀</string>
+	<string name="label_suggested_contacts_invite_in_one_gesture" state="needs_review" hash="438220313">Undang pengguna ini dengan gerakan menggesek</string>
+	<string name="menu_action_suggested_contacts_see_full_list" state="needs_review" hash="603082500">Lihat daftar lengkap</string>
+	<string name="menu_action_suggested_contacts_replay_onboarding" state="needs_review" hash="-1552704243">Ulangi tutorial</string>
+	<string name="button_label_uninvite" state="needs_review" hash="771825501">Batalkan undangan</string>
+	<string name="button_label_accept_invitation" state="needs_review" hash="-1778405034">Terima undangan</string>
+	<string name="label_suggested_contacts_already_swiped" state="needs_review" hash="427042318">Sudah dilihat</string>
+	<string name="label_suggested_contacts_not_swiped_yet" state="needs_review" hash="310924358">Belum ditinjau</string>
 </resources>

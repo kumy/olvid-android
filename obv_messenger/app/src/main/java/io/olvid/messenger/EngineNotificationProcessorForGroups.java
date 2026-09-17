@@ -81,6 +81,9 @@ public class EngineNotificationProcessorForGroups implements EngineNotificationL
 
     @Override
     public void callback(String notificationName, final HashMap<String, Object> userInfo) {
+        if (notificationName == null) {
+            return;
+        }
         switch (notificationName) {
             case EngineNotifications.GROUP_CREATED: {
                 final ObvGroup obvGroup = (ObvGroup) userInfo.get(EngineNotifications.GROUP_CREATED_GROUP_KEY);
@@ -252,7 +255,7 @@ public class EngineNotificationProcessorForGroups implements EngineNotificationL
                                         if (jsonSharedSettings != null) {
                                             Message message = Message.createDiscussionSettingsUpdateMessage(db, discussion.id, jsonSharedSettings, bytesOwnedIdentity, true, null);
                                             if (message != null) {
-                                                message.postSettingsMessage(true, bytesContactIdentity);
+                                                message.postSettingsMessage(true, bytesContactIdentity, null);
                                             }
                                         }
                                     }

@@ -53,6 +53,7 @@ import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.requiredHeight
 import androidx.compose.foundation.layout.requiredSize
+import androidx.compose.foundation.layout.requiredSizeIn
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
@@ -65,6 +66,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.ripple
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.State
 import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
@@ -110,6 +112,7 @@ import io.olvid.messenger.customClasses.PreviewUtilsWithDrawables
 import io.olvid.messenger.customClasses.SecureAlertDialogBuilder
 import io.olvid.messenger.customClasses.SecureDeleteEverywhereDialogBuilder
 import io.olvid.messenger.customClasses.StringUtils
+import io.olvid.messenger.customClasses.attachShareUri
 import io.olvid.messenger.customClasses.formatBytesSpeed
 import io.olvid.messenger.customClasses.formatEtaSeconds
 import io.olvid.messenger.databases.AppDatabase
@@ -133,6 +136,8 @@ import io.olvid.messenger.discussion.message.EphemeralVisibilityExplanation
 import io.olvid.messenger.discussion.message.attachments.Visibility.HIDDEN
 import io.olvid.messenger.discussion.message.attachments.Visibility.VISIBLE
 import io.olvid.messenger.discussion.search.DiscussionSearchViewModel
+import io.olvid.messenger.owneddetails.UseImageAsProfilePictureActivity
+import io.olvid.messenger.owneddetails.canBeUsedAsProfilePicture
 import io.olvid.messenger.settings.SettingsActivity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -229,44 +234,7 @@ fun Attachments(
     ) {
         attachments?.forEachIndexed { index, attachment ->
             var textBlocks by remember { mutableStateOf(emptyList<TextBlock>()) }
-            val progressStatus: ProgressStatus? by remember(
-                attachment.fyleMessageJoinWithStatus.fyleId,
-                attachment.fyleMessageJoinWithStatus.messageId
-            ) {
-                FyleProgressSingleton.getProgress(
-                    attachment.fyleMessageJoinWithStatus.fyleId,
-                    attachment.fyleMessageJoinWithStatus.messageId
-                )
-            }.observeAsState()
-
-            val speed: String? by remember {
-                derivedStateOf {
-                    (progressStatus as? ProgressStatus.InProgress)
-                        ?.speedAndEta
-                        ?.speedBps
-                        ?.formatBytesSpeed(context)
-                }
-            }
-
-            val eta: String? by remember {
-                derivedStateOf {
-                    (progressStatus as? ProgressStatus.InProgress)
-                        ?.speedAndEta
-                        ?.etaSeconds
-                        ?.formatEtaSeconds(context)
-                }
-            }
-
-            val progress: Float by remember {
-                derivedStateOf {
-                    when (progressStatus) {
-                        ProgressStatus.Finished -> 1f
-                        is ProgressStatus.InProgress -> (progressStatus as ProgressStatus.InProgress).progress
-                        ProgressStatus.Unknown -> 0f
-                        null -> 0f
-                    }
-                }
-            }
+            val attachmentProgress by rememberAttachmentProgress(attachment.fyleMessageJoinWithStatus)
 
 
             val downloadAwareClick = { completeClick: () -> Unit ->
@@ -355,6 +323,10 @@ fun Attachments(
                         EphemeralVisibilityExplanation(
                             modifier = Modifier
                                 .align(Alignment.TopCenter)
+                                .requiredSizeIn(
+                                    maxWidth = if (wide || imageCount == 1) maxWidth else (maxWidth / 2 - 2.dp),
+                                    maxHeight = if (message.imageAndVideoCount == 1) maxWidth else (maxWidth / 2 - 2.dp)
+                                )
                                 .padding(top = 8.dp),
                             duration = expiration?.visibilityDuration,
                             readOnce = readOnce
@@ -579,9 +551,9 @@ fun Attachments(
                                 modifier = Modifier
                                     .align(Alignment.BottomEnd)
                                     .padding(8.dp),
-                                speed = speed,
-                                eta = eta,
-                                progress = progress,
+                                speed = attachmentProgress.speed,
+                                eta = attachmentProgress.eta,
+                                progress = attachmentProgress.progress,
                                 large = imageCount == 1
                             )
                         }
@@ -801,9 +773,9 @@ fun Attachments(
                                 modifier = Modifier
                                     .align(Alignment.BottomEnd)
                                     .padding(8.dp),
-                                speed = speed,
-                                eta = eta,
-                                progress = progress,
+                                speed = attachmentProgress.speed,
+                                eta = attachmentProgress.eta,
+                                progress = attachmentProgress.progress,
                                 large = false
                             )
                         }
@@ -1152,12 +1124,9 @@ fun AttachmentContextMenu(
             // share
             OlvidDropdownMenuItem(
                 onClick = {
-                    val intent = Intent(Intent.ACTION_SEND)
-                    intent.putExtra(
-                        Intent.EXTRA_STREAM,
-                        attachment.contentUriForExternalSharing
-                    )
-                    intent.type = attachment.fyleMessageJoinWithStatus.nonNullMimeType
+                    val uri = attachment.contentUriForExternalSharing
+                    val mime = attachment.fyleMessageJoinWithStatus.nonNullMimeType
+                    val intent = Intent(Intent.ACTION_SEND).attachShareUri(uri, mime)
                     context.startActivity(
                         Intent.createChooser(
                             intent,
@@ -1168,6 +1137,16 @@ fun AttachmentContextMenu(
                 },
                 text = stringResource(id = R.string.menu_action_share),
             )
+            if (attachment.fyleAndStatus.canBeUsedAsProfilePicture) {
+                // use as profile picture
+                OlvidDropdownMenuItem(
+                    onClick = {
+                        UseImageAsProfilePictureActivity.launch(context, attachment.fyleAndStatus)
+                        onDismiss()
+                    },
+                    text = stringResource(id = R.string.menu_action_use_image_as),
+                )
+            }
             if (attachment.fyleMessageJoinWithStatus.status == FyleMessageJoinWithStatus.STATUS_UPLOADING) {
                 // cancel attachment upload
                 OlvidDropdownMenuItem(
@@ -1189,6 +1168,34 @@ fun AttachmentContextMenu(
             } else {
                 open()
                 delete()
+            }
+        }
+    }
+}
+
+data class AttachmentProgress(
+    val progress: Float = 0f,
+    val speed: String? = null,
+    val eta: String? = null,
+)
+
+@Composable
+fun rememberAttachmentProgress(join: FyleMessageJoinWithStatus): State<AttachmentProgress> {
+    val context = LocalContext.current
+    val progressStatus: ProgressStatus? by remember(join.fyleId, join.messageId) {
+        FyleProgressSingleton.getProgress(join.fyleId, join.messageId)
+    }.observeAsState()
+    return remember(context) {
+        derivedStateOf {
+            when (val status = progressStatus) {
+                is ProgressStatus.InProgress -> AttachmentProgress(
+                    progress = status.progress,
+                    speed = status.speedAndEta?.speedBps?.formatBytesSpeed(context),
+                    eta = status.speedAndEta?.etaSeconds?.formatEtaSeconds(context)
+                )
+
+                ProgressStatus.Finished -> AttachmentProgress(progress = 1f)
+                else -> AttachmentProgress()
             }
         }
     }

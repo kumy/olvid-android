@@ -58,6 +58,7 @@ import io.olvid.messenger.databases.entity.Discussion
 import io.olvid.messenger.databases.entity.Group
 import io.olvid.messenger.databases.entity.Group2
 import io.olvid.messenger.databases.entity.OwnedIdentity
+import io.olvid.messenger.main.contacts.DisplayableContact
 import io.olvid.messenger.settings.SettingsActivity
 import io.olvid.messenger.viewModels.FilteredDiscussionListViewModel.SearchableDiscussion
 import java.io.IOException
@@ -88,6 +89,29 @@ class InitialView : View {
     private var insideY = 0f
     private var showBadges = true
 
+    /**
+     * Corner radius in pixels for the avatar's main shape; `< 0f` means circular (the default —
+     * `size / 2f`). Set to a positive value to render a rounded-square avatar instead. Trust-level
+     * indicator dots in the corner stay circular regardless.
+     */
+    private var cornerRadius: Float = -1f
+
+    /** Pick up the configured corner radius, or the default `size/2f` (circular). */
+    private fun resolvedCornerRadius(): Float =
+        if (cornerRadius < 0f) size / 2f else cornerRadius
+
+    /**
+     * Switch the avatar's main shape between circular (default) and rounded-square.
+     *
+     * @param radius corner radius in pixels. Pass `< 0f` to restore the default circular look.
+     */
+    fun setCornerRadius(radius: Float) {
+        if (cornerRadius == radius) return
+        cornerRadius = radius
+        bitmap = null
+        init()
+    }
+
     constructor(context: Context?) : super(context)
     constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs) {
         if (isInEditMode) {
@@ -112,6 +136,7 @@ class InitialView : View {
     fun setShowBadges(showBadges: Boolean) {
         this.showBadges = showBadges
     }
+
     fun setContact(contact: Contact) {
         var changed = false
         if (!contact.bytesContactIdentity.contentEquals(bytes)) {
@@ -157,6 +182,52 @@ class InitialView : View {
             init()
         }
     }
+    fun setContact(contact: DisplayableContact) {
+        var changed = false
+        if (!contact.bytesContactIdentity.contentEquals(bytes)) {
+            bytes = contact.bytesContactIdentity
+            changed = true
+        }
+        val contactInitial = StringUtils.getInitial(contact.name)
+        if (initial != contactInitial) {
+            initial = contactInitial
+            changed = true
+        }
+        val contactPhotoUrl = App.absolutePathFromRelative(contact.photoUrl)
+        if (photoUrl != contactPhotoUrl) {
+            photoUrl = contactPhotoUrl
+            changed = true
+        }
+        if (keycloakCertified != contact.keycloakManaged) {
+            keycloakCertified = contact.keycloakManaged
+            changed = true
+        }
+        if (inactive == contact.active) { // We are indeed checking that the value changed ;)
+            inactive = !contact.active
+            changed = true
+        }
+        if (locked) {
+            locked = false
+            changed = true
+        }
+        if (notOneToOne == contact.oneToOne) { // We are indeed checking that the value changed ;)
+            notOneToOne = !contact.oneToOne
+            changed = true
+        }
+        if (recentlyOnline != contact.recentlyOnline) {
+            recentlyOnline = contact.recentlyOnline
+            changed = true
+        }
+        if (contactTrustLevel == null || contactTrustLevel != contact.trustLevel) {
+            contactTrustLevel = contact.trustLevel
+            changed = true
+        }
+        if (changed) {
+            bitmap = null
+            init()
+        }
+    }
+
 
     fun setOwnedIdentity(ownedIdentity: OwnedIdentity) {
         var changed = false
@@ -315,6 +386,7 @@ class InitialView : View {
                     changed = true
                 }
             }
+
             else -> {
                 if (locked) {
                     locked = false
@@ -327,12 +399,15 @@ class InitialView : View {
                             initial = discussionInitial
                             changed = true
                         }
-                        val contactRecentlyOnline = ContactCacheSingleton.getContactCacheInfo(discussion.bytesDiscussionIdentifier)?.recentlyOnline ?: true
+                        val contactRecentlyOnline =
+                            ContactCacheSingleton.getContactCacheInfo(discussion.bytesDiscussionIdentifier)?.recentlyOnline
+                                ?: true
                         if (recentlyOnline != contactRecentlyOnline) {
                             recentlyOnline = contactRecentlyOnline
                             changed = true
                         }
                     }
+
                     Discussion.TYPE_GROUP, Discussion.TYPE_GROUP_V2 -> {
                         if (initial != null) {
                             initial = null
@@ -343,6 +418,7 @@ class InitialView : View {
                             changed = true
                         }
                     }
+
                     else -> {
                         Logger.e("Unknown discussion type")
                         return
@@ -480,7 +556,11 @@ class InitialView : View {
                 changed = true
             }
             val contactPhotoUrl =
-                App.absolutePathFromRelative(ContactCacheSingleton.getContactPhotoUrl(bytesIdentifier))
+                App.absolutePathFromRelative(
+                    ContactCacheSingleton.getContactPhotoUrl(
+                        bytesIdentifier
+                    )
+                )
             if (photoUrl != contactPhotoUrl) {
                 photoUrl = contactPhotoUrl
                 changed = true
@@ -688,7 +768,7 @@ class InitialView : View {
                         val canvas = Canvas(it)
                         val roundedDrawable =
                             RoundedBitmapDrawableFactory.create(resources, squareBitmap)
-                        roundedDrawable.cornerRadius = size / 2f
+                        roundedDrawable.cornerRadius = resolvedCornerRadius()
                         roundedDrawable.setBounds(0, 0, size, size)
                         if (locked || inactive) {
                             val colorMatrix = ColorMatrix()
@@ -697,9 +777,16 @@ class InitialView : View {
                         }
                         roundedDrawable.draw(canvas)
                         if (showBadges) {
-                            if (contactTrustLevel != null
+                            // The trust-dot CLEAR-mask is geometry-locked to a circular avatar
+                            // (the cutout sits at the bottom-right with its outer ring clipped by
+                            // the oval edge). On a rounded-square avatar the cutout would be fully
+                            // interior and produce a visible transparent ring; suppress the badge
+                            // until the dot positioning is re-derived from the rounded-rect contour.
+                            if (cornerRadius < 0f
+                                && contactTrustLevel != null
                                 && contactTrustLevel != -1
-                                && SettingsActivity.showTrustLevels()) {
+                                && SettingsActivity.showTrustLevels()
+                            ) {
                                 val dotSize = (.3f * size).toInt()
                                 val clearPaint = Paint(Paint.ANTI_ALIAS_FLAG)
                                 clearPaint.color = Color.TRANSPARENT
@@ -854,7 +941,8 @@ class InitialView : View {
                 overlayBitmap = Bitmap.createBitmap(bitmapSize, bitmapSize, ARGB_8888)
                 overlayBitmap?.let {
                     val bitmapCanvas = Canvas(it)
-                    val groupDrawable = ResourcesCompat.getDrawable(resources, drawable.ic_group, null)
+                    val groupDrawable =
+                        ResourcesCompat.getDrawable(resources, drawable.ic_group, null)
                     if (groupDrawable != null) {
                         groupDrawable.colorFilter = PorterDuffColorFilter(darkColor, SRC_IN)
                         groupDrawable.setBounds(0, 0, bitmapSize, bitmapSize)
@@ -898,11 +986,16 @@ class InitialView : View {
                 }
                 val localBitmap = Bitmap.createBitmap(size, size, ARGB_8888)
                 val bitmapCanvas = Canvas(localBitmap)
-                bitmapCanvas.drawOval(
-                    RectF(0f, 0f, size.toFloat(), size.toFloat()),
-                    backgroundPaint!!
-                )
-                if (contactTrustLevel != null && contactTrustLevel != -1 && SettingsActivity.showTrustLevels()) {
+                val radius = resolvedCornerRadius()
+                val bgRect = RectF(0f, 0f, size.toFloat(), size.toFloat())
+                if (cornerRadius < 0f) {
+                    bitmapCanvas.drawOval(bgRect, backgroundPaint!!)
+                } else {
+                    bitmapCanvas.drawRoundRect(bgRect, radius, radius, backgroundPaint!!)
+                }
+                // See the photo-path comment above — trust-dot CLEAR-mask is geometry-locked to a
+                // circular avatar; skip the badge when the avatar is a rounded square.
+                if (cornerRadius < 0f && contactTrustLevel != null && contactTrustLevel != -1 && SettingsActivity.showTrustLevels()) {
                     val dotSize = (.3f * size).toInt()
                     val clearPaint = Paint(Paint.ANTI_ALIAS_FLAG)
                     clearPaint.color = Color.TRANSPARENT

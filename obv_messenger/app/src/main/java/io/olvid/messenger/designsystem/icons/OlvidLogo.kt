@@ -39,7 +39,8 @@ data class OlvidLogoDefaults(val iconSize: Dp, val rounding: Dp)
 enum class OlvidLogoSize(val defaults: OlvidLogoDefaults) {
     SMALL(OlvidLogoDefaults(iconSize = 16.dp, rounding = 4.dp)),
     MEDIUM(OlvidLogoDefaults(iconSize = 48.dp, rounding = 12.dp)),
-    LARGE(OlvidLogoDefaults(iconSize = 64.dp, rounding = 16.dp))
+    LARGE(OlvidLogoDefaults(iconSize = 64.dp, rounding = 16.dp)),
+    EXTRA_LARGE(OlvidLogoDefaults(iconSize = 80.dp, rounding = 20.dp))
 }
 
 @Composable

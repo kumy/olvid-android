@@ -95,8 +95,8 @@ class BackupV2ViewModel: ViewModel() {
             try {
                 fetchingDeviceBackup.value = true
                 deviceBackupSeed.value?.let {
-                    val obvDeviceBackupForRestore: ObvDeviceBackupForRestore = AppSingleton.getEngine().fetchDeviceBackup(BuildConfig.SERVER_NAME, it)
-                    when(obvDeviceBackupForRestore.status) {
+                    val obvDeviceBackupForRestore: ObvDeviceBackupForRestore? = AppSingleton.getEngine().fetchDeviceBackup(BuildConfig.SERVER_NAME, it)
+                    when(obvDeviceBackupForRestore?.status) {
                         ObvDeviceBackupForRestore.Status.SUCCESS -> Unit
                         ObvDeviceBackupForRestore.Status.NETWORK_ERROR -> {
                             fetchError.value = FetchError.NETWORK
@@ -122,23 +122,28 @@ class BackupV2ViewModel: ViewModel() {
 
                     if (fetchId == fetchCount.get()) {
                         fetchError.value = FetchError.NONE
-                        deviceBackup.value = obvDeviceBackupForRestore.profiles.mapNotNull { obvDeviceBackupProfile ->
+                        deviceBackup.value = obvDeviceBackupForRestore.profiles?.mapNotNull { obvDeviceBackupProfile ->
+                            val profile = obvDeviceBackupProfile ?: return@mapNotNull null
+                            val bytesProfileIdentity = profile.bytesProfileIdentity ?: return@mapNotNull null
+                            val profileBackupSeed = profile.profileBackupSeed ?: return@mapNotNull null
+                            val identityDetailsWithPhoto = profile.identityDetails ?: return@mapNotNull null
+                            val identityDetails = identityDetailsWithPhoto.identityDetails ?: return@mapNotNull null
                             if (otherKey
-                                || notHiddenOwnedIdentities.any { notHiddenBytesIdentity -> notHiddenBytesIdentity.contentEquals(obvDeviceBackupProfile.bytesProfileIdentity) }) {
+                                || notHiddenOwnedIdentities.any { notHiddenBytesIdentity -> notHiddenBytesIdentity.contentEquals(bytesProfileIdentity) }) {
                                 DeviceBackupProfile(
-                                    bytesProfileIdentity = obvDeviceBackupProfile.bytesProfileIdentity,
-                                    nickName = nickNames?.get(ObvBytesKey(obvDeviceBackupProfile.bytesProfileIdentity))?.custom_name,
-                                    identityDetails = obvDeviceBackupProfile.identityDetails.identityDetails,
-                                    keycloakManaged = obvDeviceBackupProfile.keycloakManaged,
-                                    photo = obvDeviceBackupProfile.identityDetails.photoUrl?.let {
+                                    bytesProfileIdentity = bytesProfileIdentity,
+                                    nickName = nickNames?.get(ObvBytesKey(bytesProfileIdentity))?.custom_name,
+                                    identityDetails = identityDetails,
+                                    keycloakManaged = profile.keycloakManaged,
+                                    photo = identityDetailsWithPhoto.photoUrl?.let {
                                         App.absolutePathFromRelative(it)
-                                    } ?: obvDeviceBackupProfile.identityDetails.photoServerLabel?.let { label ->
-                                        obvDeviceBackupProfile.identityDetails.photoServerKey?.let { key ->
-                                            ProfilePictureLabelAndKey(identity = obvDeviceBackupProfile.bytesProfileIdentity, photoLabel = label, photoKey = key)
+                                    } ?: identityDetailsWithPhoto.photoServerLabel?.let { label ->
+                                        identityDetailsWithPhoto.photoServerKey?.let { key ->
+                                            ProfilePictureLabelAndKey(identity = bytesProfileIdentity, photoLabel = label, photoKey = key)
                                         }
                                     },
-                                    profileAlreadyPresent = notHiddenOwnedIdentities.any { notHiddenBytesIdentity -> notHiddenBytesIdentity.contentEquals(obvDeviceBackupProfile.bytesProfileIdentity) },
-                                    profileBackupSeed = obvDeviceBackupProfile.profileBackupSeed
+                                    profileAlreadyPresent = notHiddenOwnedIdentities.any { notHiddenBytesIdentity -> notHiddenBytesIdentity.contentEquals(bytesProfileIdentity) },
+                                    profileBackupSeed = profileBackupSeed
                                 )
                             } else {
                                 null
@@ -167,9 +172,9 @@ class BackupV2ViewModel: ViewModel() {
             try {
                 fetchingProfileBackups.value = true
                 selectedProfileBackup.value?.let { selectedProfileBackup ->
-                    val obvProfileBackupsForRestore: ObvProfileBackupsForRestore =
+                    val obvProfileBackupsForRestore: ObvProfileBackupsForRestore? =
                         AppSingleton.getEngine().fetchProfileBackups(selectedProfileBackup.bytesProfileIdentity, selectedProfileBackup.profileBackupSeed)
-                    when (obvProfileBackupsForRestore.status) {
+                    when (obvProfileBackupsForRestore?.status) {
                         ObvProfileBackupsForRestore.Status.SUCCESS,
                         ObvProfileBackupsForRestore.Status.TRUNCATED -> Unit
 
@@ -194,23 +199,29 @@ class BackupV2ViewModel: ViewModel() {
                     if (fetchId == fetchCount.get()) {
                         fetchError.value = FetchError.NONE
                         profileBackups.value =
-                            obvProfileBackupsForRestore.snapshots.mapNotNull { obvProfileBackupForRestore ->
+                            obvProfileBackupsForRestore.snapshots?.mapNotNull { obvProfileBackupForRestore ->
+                                val backup = obvProfileBackupForRestore ?: return@mapNotNull null
+                                val threadId = backup.bytesBackupThreadId ?: return@mapNotNull null
+                                val snapshot = backup.snapshot ?: return@mapNotNull null
+                                val keycloakStatus = backup.keycloakStatus ?: return@mapNotNull null
+                                val serverUrl = backup.keycloakServerUrl
+                                val authMethods = backup.supportedAuthenticationMethods
                                 ProfileBackupSnapshot(
-                                    threadId = obvProfileBackupForRestore.bytesBackupThreadId,
-                                    version = obvProfileBackupForRestore.version,
-                                    timestamp = obvProfileBackupForRestore.timestamp,
-                                    thisDevice =  obvProfileBackupForRestore.fromThisDevice,
-                                    deviceName = obvProfileBackupForRestore.additionalInfo[ObvProfileBackupSnapshot.INFO_DEVICE_NAME],
-                                    platform = obvProfileBackupForRestore.additionalInfo[ObvProfileBackupSnapshot.INFO_PLATFORM],
-                                    contactCount = obvProfileBackupForRestore.contactCount,
-                                    groupCount = obvProfileBackupForRestore.groupCount,
-                                    keycloakStatus = obvProfileBackupForRestore.keycloakStatus,
-                                    keycloakInfo = if (obvProfileBackupForRestore.keycloakServerUrl != null && obvProfileBackupForRestore.supportedAuthenticationMethods != null) {
-                                        KeycloakInfo(obvProfileBackupForRestore.keycloakServerUrl, obvProfileBackupForRestore.supportedAuthenticationMethods)
+                                    threadId = threadId,
+                                    version = backup.version,
+                                    timestamp = backup.timestamp,
+                                    thisDevice = backup.fromThisDevice,
+                                    deviceName = backup.additionalInfo?.get(ObvProfileBackupSnapshot.INFO_DEVICE_NAME),
+                                    platform = backup.additionalInfo?.get(ObvProfileBackupSnapshot.INFO_PLATFORM),
+                                    contactCount = backup.contactCount,
+                                    groupCount = backup.groupCount,
+                                    keycloakStatus = keycloakStatus,
+                                    keycloakInfo = if (serverUrl != null && authMethods != null) {
+                                        KeycloakInfo(serverUrl, authMethods.filterNotNull())
                                     } else {
                                         null
                                     },
-                                    snapshot = obvProfileBackupForRestore.snapshot,
+                                    snapshot = snapshot,
                                 )
                             }
 

@@ -39,7 +39,7 @@ class PropagateBookmarkedMessageChangeTask(private val bytesOwnedIdentity : Byte
                     bytesDiscussionIdentifier
                 )
             }
-            val messageIdentifier =  MessageIdentifier(discussionIdentifier, message.senderIdentifier, message.senderThreadIdentifier, message.senderSequenceNumber)
+            val messageIdentifier =  MessageIdentifier(discussionIdentifier ?: return, message.senderIdentifier, message.senderThreadIdentifier, message.senderSequenceNumber)
             AppSingleton.getEngine().propagateAppSyncAtomToOtherDevicesIfNeeded(bytesOwnedIdentity, ObvSyncAtom.createBookmarkedMessageChange(messageIdentifier, bookmarked))
         } catch (e : Exception) {
             e.printStackTrace()

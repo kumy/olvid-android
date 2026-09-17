@@ -99,7 +99,7 @@ import io.olvid.messenger.R
 import io.olvid.messenger.databases.dao.FyleMessageJoinWithStatusDao.FyleAndStatus
 import io.olvid.messenger.designsystem.components.ExpandableSearchBar
 import io.olvid.messenger.designsystem.components.OlvidTextButton
-import io.olvid.messenger.designsystem.plus
+import androidx.compose.foundation.layout.plus
 import io.olvid.messenger.designsystem.theme.olvidDefaultTextFieldColors
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

@@ -89,7 +89,7 @@ object SubscriptionRepository {
                     .build()
 
                 val engineNotificationListener = object : SimpleEngineNotificationListener(EngineNotifications.VERIFY_RECEIPT_SUCCESS) {
-                    override fun callback(userInfo: HashMap<String, Any>) {
+                    override fun callback(userInfo: HashMap<String, Any?>) {
                         Logger.d("💲 received verify receipt success notification!")
                         val storeToken = userInfo[EngineNotifications.VERIFY_RECEIPT_SUCCESS_STORE_TOKEN_KEY] as? String
                         if (storeToken != null) {
@@ -299,7 +299,7 @@ object SubscriptionRepository {
         val listener = object : EngineNotificationListener {
             var engineNumber: Long = -1L
 
-            override fun callback(notificationName: String, userInfo: HashMap<String, Any>) {
+            override fun callback(notificationName: String?, userInfo: HashMap<String, Any?>) {
                 val bytesOwnedIdentity = userInfo[
                     when (notificationName) {
                         EngineNotifications.FREE_TRIAL_QUERY_SUCCESS -> EngineNotifications.FREE_TRIAL_QUERY_SUCCESS_BYTES_OWNED_IDENTITY_KEY
@@ -329,8 +329,8 @@ object SubscriptionRepository {
                 }
             }
 
-            override fun setEngineNotificationListenerRegistrationNumber(number: Long) {
-                engineNumber = number
+            override fun setEngineNotificationListenerRegistrationNumber(registrationNumber: Long) {
+                engineNumber = registrationNumber
             }
 
             override fun getEngineNotificationListenerRegistrationNumber(): Long {

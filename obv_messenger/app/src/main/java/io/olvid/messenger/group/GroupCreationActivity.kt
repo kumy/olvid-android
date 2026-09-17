@@ -307,13 +307,13 @@ class GroupCreationActivity : LockableActivity() {
 
             val jsonGroupDetails = JsonGroupDetails(groupName.value?.trim(), groupDescription)
             val groupType = groupV2DetailsViewModel.groupType
-            val otherGroupMembers = HashMap<ObvBytesKey, HashSet<Permission>>()
+            val otherGroupMembers = HashMap<ObvBytesKey?, HashSet<Permission?>?>()
             for (contact in groupCreationViewModel.selectedContacts.value) {
                 val permissions = groupV2DetailsViewModel.getPermissions(
                     groupType,
                     groupCreationViewModel.admins.value?.contains(contact) == true
                 )
-                otherGroupMembers[ObvBytesKey(contact.bytesContactIdentity)] = permissions
+                otherGroupMembers[ObvBytesKey(contact.bytesContactIdentity)] = HashSet<Permission?>(permissions)
             }
             try {
                 val serializedGroupDetails =
@@ -354,8 +354,8 @@ class GroupCreationActivity : LockableActivity() {
                         }
 
                         override fun callback(
-                            notificationName: String,
-                            userInfo: HashMap<String, Any>
+                            notificationName: String?,
+                            userInfo: HashMap<String, Any?>
                         ) {
                             AppSingleton.getEngine().removeNotificationListener(
                                 EngineNotifications.GROUP_V2_CREATED_OR_UPDATED,
@@ -444,8 +444,8 @@ class GroupCreationActivity : LockableActivity() {
                         }
 
                         override fun callback(
-                            notificationName: String,
-                            userInfo: HashMap<String, Any>
+                            notificationName: String?,
+                            userInfo: HashMap<String, Any?>
                         ) {
                             AppSingleton.getEngine()
                                 .removeNotificationListener(

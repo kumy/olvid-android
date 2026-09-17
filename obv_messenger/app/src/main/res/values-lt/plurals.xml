@@ -282,4 +282,20 @@
 		<item quantity="one" state="needs_review" hash="-1393207312">%1$d pranešimas nukopijuotas į iškarpinę</item>
 		<item quantity="other" state="needs_review" hash="-604999755">%1$d pranešimai nukopijuoti į iškarpinę</item>
 	</plurals>
+	<plurals name="label_share_destinations_count" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="423387012">%1$d gavėjas</item>
+		<item quantity="other" state="needs_review" hash="-431979656">%1$d gavėjai</item>
+	</plurals>
+	<plurals name="label_share_to_recipients" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="-1217959784">Pasidalinkite su %1$d gavėju</item>
+		<item quantity="other" state="needs_review" hash="1864148690">Pasidalinkite su %1$d gavėjais</item>
+	</plurals>
+	<plurals name="toast_message_shared_to_recipients" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="-373807760">Pasidalinta su %1$d gavėju</item>
+		<item quantity="other" state="needs_review" hash="-1412037000">Pasidalinta su %1$d gavėjais</item>
+	</plurals>
+	<plurals name="button_label_add_to_groups" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="1622654043">Pridėti prie %1$d grupės</item>
+		<item quantity="other" state="needs_review" hash="-1655824151">Pridėti prie %1$d grupių</item>
+	</plurals>
 </resources>

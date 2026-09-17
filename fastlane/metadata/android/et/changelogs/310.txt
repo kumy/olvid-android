@@ -1,0 +1,4 @@
+- Uus funktsioon, mis võimaldab jagada ekraani ja postitada korraga mitmesse vestlusse.
+- Uus žestipõhine viis kutsuda grupi liikmeid hõlpsalt privaatsesse vestlusse.
+- Uus juhend, mis tutvustab Olvidi uutele kasutajatele.
+- Parem pildi- ja videovaatur, võimalus videotele suurendust rakendada.

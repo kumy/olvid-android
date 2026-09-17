@@ -20,6 +20,8 @@
 package io.olvid.messenger.onboarding.flow
 
 object OnboardingRoutes {
+    const val FTUX_CAROUSEL = "ftux_carousel"
+
     const val WELCOME_SCREEN = "welcome_screen"
 
     const val NEW_PROFILE_SCREEN = "new_profile_screen"
@@ -27,6 +29,12 @@ object OnboardingRoutes {
     const val EXISTING_PROFILE = "existing_profile"
     const val IDENTITY_CREATION = "identity_creation"
     const val PROFILE_PICTURE = "profile_picture"
+
+    // managed/configured profile creation (migrated from the legacy OnboardingActivity flow)
+    const val ONBOARDING_SCAN = "onboarding_scan"
+    const val IDENTITY_CREATION_OPTIONS = "identity_creation_options"
+    const val KEYCLOAK_SELECTION = "keycloak_selection"
+    const val MANAGED_IDENTITY_CREATION = "managed_identity_creation"
 
     const val TRANSFER_RESTRICTED_WARNING = "transfer_restricted_warning"
     const val TRANSFER_SOURCE_SESSION = "transfer_source_session"
@@ -36,8 +44,10 @@ object OnboardingRoutes {
     const val TRANSFER_ACTIVE_DEVICES = "transfer_active_devices"
     const val TRANSFER_SOURCE_CONFIRMATION = "transfer_source_confirmation"
     const val TRANSFER_TARGET_RESTORE_SUCCESSFUL = "transfer_target_restore_successful"
-    const val TRANSFER_TARGET_KEYCLOAK_AUTHENTICATION_PROOF_REQUIRED = "transfer_target_keycloak_authentication_proof_required"
-    const val TRANSFER_TARGET_AUTHENTICATION_SUCCESSFUL = "transfer_target_authentication_successful"
+    const val TRANSFER_TARGET_KEYCLOAK_AUTHENTICATION_PROOF_REQUIRED =
+        "transfer_target_keycloak_authentication_proof_required"
+    const val TRANSFER_TARGET_AUTHENTICATION_SUCCESSFUL =
+        "transfer_target_authentication_successful"
 
     const val BACKUP_CHOOSE_FILE = "backup_choose_file"
     const val BACKUP_FILE_SELECTED = "backup_file_selected"
@@ -47,7 +57,8 @@ object OnboardingRoutes {
     const val BACKUP_V2_ENTER_KEY = "backup_v2_enter_key"
     const val BACKUP_V2_SELECT_PROFILE = "backup_v2_select_profile"
     const val BACKUP_V2_SELECT_SNAPSHOT = "backup_v2_select_snapshot"
-    const val BACKUP_V2_KEYCLOAK_AUTHENTICATION_REQUIRED = "backup_v2_keycloak_authentication_required"
+    const val BACKUP_V2_KEYCLOAK_AUTHENTICATION_REQUIRED =
+        "backup_v2_keycloak_authentication_required"
     const val BACKUP_V2_EXPIRING_DEVICES_EXPLANATION = "backup_v2_expiring_devices_explanation"
     const val BACKUP_V2_RESTORE_RESULT = "backup_v2_restore_result"
 }

@@ -1,0 +1,3 @@
+- Uus funktsioon, mis võimaldab hõlpsalt kutsuda grupiliikmeid otse vestlusse.
+- Uus juhend, mis tutvustab Olvidit uutele kasutajatele.
+- Parem pildi-/videovaatur, võimalus videotele suurendust rakendada.

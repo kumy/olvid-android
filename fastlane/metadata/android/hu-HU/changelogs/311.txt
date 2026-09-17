@@ -1,0 +1,1 @@
+- Javítva egy hibát az OCR-alapú képanalízisben.

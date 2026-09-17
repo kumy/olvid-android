@@ -76,10 +76,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
@@ -123,6 +123,7 @@ import io.olvid.messenger.plus_button.configuration.ConfigurationScannedScreen
 import io.olvid.messenger.plus_button.configuration.WebClientScannedScreen
 import io.olvid.messenger.plus_button.share.ShareDialog
 import kotlinx.coroutines.delay
+import kotlin.time.Duration.Companion.milliseconds
 
 enum class DragValue {
     Collapsed,
@@ -363,7 +364,7 @@ fun BottomSheetContent(
     var showScanAlternative by rememberSaveable { mutableStateOf(false) }
     var showDirectInviteButton by rememberSaveable { mutableStateOf(false) }
     LaunchedEffect(Unit) {
-        delay(scanAlternativeDelay)
+        delay(scanAlternativeDelay.milliseconds)
         showScanAlternative = true
     }
     LaunchedEffect(plusButtonViewModel.scanUiState.collectAsState().value) {
@@ -577,7 +578,7 @@ fun BottomSheetContent(
                                                     InitialView(
                                                         modifier = Modifier.size(40.dp),
                                                         initialViewSetup = { initialView ->
-                                                            initialView.setInitial(invitationScanned.contactUrlIdentity.bytesIdentity, StringUtils.getInitial(invitationScanned.contactUrlIdentity.displayName))
+                                                            initialView.setInitial(invitationScanned.contactUrlIdentity.getBytesIdentity()!!, StringUtils.getInitial(invitationScanned.contactUrlIdentity.displayName))
                                                         }
                                                     )
                                                     Text(
@@ -602,21 +603,39 @@ fun BottomSheetContent(
                                             OlvidTextButton(
                                                 text = stringResource(R.string.button_label_get_in_contact_remotely),
                                                 onClick = {
+                                                    val bytesOwnedIdentity = plusButtonViewModel.currentIdentity?.bytesOwnedIdentity ?: return@OlvidTextButton
+                                                    val bytesContactIdentity = invitationScanned.contactUrlIdentity.getBytesIdentity() ?: return@OlvidTextButton
                                                     runCatching {
                                                         AppSingleton.getEngine()
                                                             .startTrustEstablishmentProtocol(
-                                                                invitationScanned.contactUrlIdentity.bytesIdentity,
+                                                                bytesContactIdentity,
                                                                 invitationScanned.contactUrlIdentity.displayName,
-                                                                plusButtonViewModel.currentIdentity!!.bytesOwnedIdentity
+                                                                bytesOwnedIdentity
                                                             )
-                                                        App.openOneToOneDiscussionActivity(
-                                                            context,
-                                                            plusButtonViewModel.currentIdentity!!.bytesOwnedIdentity,
-                                                            invitationScanned.contactUrlIdentity.bytesIdentity,
-                                                            true
-                                                        )
+                                                    }.onSuccess {
                                                         showInvitationDialog = false
                                                         onCancel()
+                                                        // wait discussion creation and open
+                                                        App.runThread {
+                                                            var attempts = 0
+                                                            while (AppDatabase.getInstance().discussionDao()
+                                                                    .getByContactWithAnyStatus(bytesOwnedIdentity, bytesContactIdentity) == null
+                                                                && attempts < 30
+                                                            ) {
+                                                                attempts++
+                                                                try {
+                                                                    Thread.sleep(100)
+                                                                } catch (_: InterruptedException) {
+                                                                    break
+                                                                }
+                                                            }
+                                                            App.openOneToOneDiscussionActivity(
+                                                                context,
+                                                                bytesOwnedIdentity,
+                                                                bytesContactIdentity,
+                                                                true
+                                                            )
+                                                        }
                                                     }.onFailure {
                                                         App.toast(
                                                             R.string.toast_message_failed_to_invite_contact,

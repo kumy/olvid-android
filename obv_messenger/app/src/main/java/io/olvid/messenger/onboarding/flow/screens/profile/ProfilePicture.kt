@@ -79,7 +79,10 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
-fun NavGraphBuilder.profilePicture(context : Context, onboardingFlowViewModel: OnboardingFlowViewModel) {
+fun NavGraphBuilder.profilePicture(
+    context: Context,
+    onboardingFlowViewModel: OnboardingFlowViewModel
+) {
     composable(
         OnboardingRoutes.PROFILE_PICTURE,
         enterTransition = { slideIntoContainer(SlideDirection.Start) },
@@ -166,14 +169,16 @@ fun NavGraphBuilder.profilePicture(context : Context, onboardingFlowViewModel: O
                 title = stringResource(
                     id = R.string.onboarding_picture_title,
                     ownedIdentity?.getCustomDisplayName()
-                        ?: ""),
+                        ?: ""
+                ),
                 subtitle = stringResource(id = R.string.onboarding_picture_subtitle),
             ),
             onClose = { finishAndOpenDiscussionsTab() }
         ) {
-            Box(modifier = Modifier
-                .padding(16.dp)
-                .requiredSize(160.dp),
+            Box(
+                modifier = Modifier
+                    .padding(16.dp)
+                    .requiredSize(160.dp),
             ) {
                 InitialView(
                     modifier = Modifier.fillMaxSize(),
@@ -206,11 +211,15 @@ fun NavGraphBuilder.profilePicture(context : Context, onboardingFlowViewModel: O
 
             Spacer(modifier = Modifier.height(24.dp))
 
-            Row (
-                modifier = Modifier.fillMaxWidth().height(IntrinsicSize.Min),
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(IntrinsicSize.Min),
             ) {
                 OlvidOutlinedActionButton(
-                    modifier = Modifier.weight(1f, true).fillMaxHeight(),
+                    modifier = Modifier
+                        .weight(1f, true)
+                        .fillMaxHeight(),
                     text = stringResource(id = R.string.menu_action_take_photo),
                     icon = R.drawable.ic_attach_camera,
                     allowTwoLines = true,
@@ -230,7 +239,9 @@ fun NavGraphBuilder.profilePicture(context : Context, onboardingFlowViewModel: O
                 Spacer(modifier = Modifier.width(16.dp))
 
                 OlvidOutlinedActionButton(
-                    modifier = Modifier.weight(1f, true).fillMaxHeight(),
+                    modifier = Modifier
+                        .weight(1f, true)
+                        .fillMaxHeight(),
                     text = stringResource(id = R.string.menu_action_choose_picture),
                     icon = R.drawable.ic_attach_image,
                     allowTwoLines = true,
@@ -241,7 +252,7 @@ fun NavGraphBuilder.profilePicture(context : Context, onboardingFlowViewModel: O
 
             Spacer(modifier = Modifier.height(24.dp))
 
-            Row (
+            Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween,
             ) {

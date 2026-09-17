@@ -1,0 +1,4 @@
+- Nuova funzione di condivisione dello schermo che consente di pubblicare in più chat contemporaneamente.
+- Nuovo sistema di invito tramite gesto per invitare facilmente i membri del gruppo in una chat privata.
+- Nuovo processo di onboarding per presentare Olvid ai nuovi utenti.
+- Visualizzatore di immagini/video migliorato, con possibilità di zoom sui video.

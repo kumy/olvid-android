@@ -155,13 +155,17 @@ public class MuteNotificationDialog {
 
     private void openCustomDateExpirationPicker() {
         final Calendar calendar = Calendar.getInstance();
-        new DatePickerDialog(context, (DatePicker datePicker, int year, int month, int dayOfMonth) -> {
-            calendar.set(year, month, dayOfMonth, 0, 0, 0);
+        DatePickerDialog datePickerDialog = new DatePickerDialog(context, (DatePicker datePicker, int year, int month, int dayOfMonth) -> {
+            // mute until the end of the selected day, so picking today keeps the expiration in the future
+            calendar.set(year, month, dayOfMonth, 23, 59, 59);
+            calendar.set(Calendar.MILLISECOND, 0);
             onMuteExpirationSelectedListener.onMuteExpirationSelected(calendar.getTimeInMillis(), muteWholeProfile, muteExceptMentioned);
             if (this.dialog != null) {
                 this.dialog.dismiss();
             }
-        }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)).show();
+        }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
+        datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis());
+        datePickerDialog.show();
     }
 
     public interface OnMuteExpirationSelectedListener {

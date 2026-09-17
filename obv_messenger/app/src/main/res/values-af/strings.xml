@@ -26,8 +26,8 @@
 	<string name="button_label_create_group" state="needs_review" hash="1102939673">Groep skep</string>
 	<string name="button_label_discard" state="needs_review" hash="795591204">Vee weg</string>
 	<string name="button_label_exchange_digits_with_user" state="needs_review" hash="339599327">Ruil kodes met %1$s</string>
-	<string name="button_label_generate_new_id" state="needs_review" hash="92014734">Genereer \'n nuwe ID</string>
-	<string name="button_label_generate_my_id" state="needs_review" hash="-1007060207">Genereer my ID</string>
+	<string name="button_label_generate_new_id" state="needs_review" hash="-1130516787">Skep \'n nuwe profiel</string>
+	<string name="button_label_generate_my_id" state="needs_review" hash="239641058">Skep my profiel</string>
 	<string name="button_label_ignore" state="needs_review" hash="-806373746">Ignoreer</string>
 	<string name="button_label_reject" state="needs_review" hash="-2094664161">Weier</string>
 	<string name="button_label_introduce" state="needs_review" hash="193852909">Voorstel</string>
@@ -80,6 +80,12 @@
 	<string name="dialog_title_rename_group" state="needs_review" hash="1461324427">Hernoem groep</string>
 	<string name="dialog_title_restart_channel_establishment" state="needs_review" hash="-645769680">Herstel kanaalopstelling?</string>
 	<string name="dialog_title_share_with" state="needs_review" hash="854107768">Deel met…</string>
+	<string name="dialog_title_share_recipients" state="needs_review" hash="1157053138">Kies ontvangers</string>
+	<string name="share_label_from" state="needs_review" hash="2049052075">Van:</string>
+	<string name="share_label_to" state="needs_review" hash="-1785690373">Na:</string>
+	<string name="share_label_choose_recipients" state="needs_review" hash="1157053138">Kies ontvangers</string>
+	<string name="hint_share_message" state="needs_review" hash="-763169957">Voeg \'n boodskap by…</string>
+	<string name="content_description_delete_attachment" state="needs_review" hash="-220348329">Verwyder die aangehegte lêer</string>
 	<string name="dialog_title_shortcut_to" state="needs_review" hash="-1193591200">Skep \'n kortpad na…</string>
 	<string name="explanation_choose_display_name" state="needs_review" hash="1162066686">Voer \'n naam in wat aan jou kontakte vertoon sal word. Hierdie besonderhede sal nooit na Olvid se bedieners gestuur word nie.</string>
 	<string name="explanation_empty_contact_list" state="needs_review" hash="1240778508">Geen kontakte op die oomblik</string>
@@ -104,7 +110,7 @@
 	<string name="explanation_no_message_found" state="needs_review" hash="-1329622990">Geen boodskap gevind</string>
 	<string name="explanation_no_attachment_found" state="needs_review" hash="156593369">Geen aanhangsel gevind</string>
 	<string name="explanation_no_link_found" state="needs_review" hash="-1419950450">Geen skakel gevind</string>
-	<string name="hint_company" state="needs_review" hash="379200324">Maatskappy (opsioneel)</string>
+	<string name="hint_company" state="needs_review" hash="988571519">Maatskappy</string>
 	<string name="hint_compose_your_message" state="needs_review" hash="-25761578">Skryf boodskap</string>
 	<string name="hint_compose_your_message_ephemeral" state="needs_review" hash="-1527208333">Verdwynende boodskap</string>
 	<string name="label_edit_your_message" state="needs_review" hash="1091877412">Wysig jou boodskap</string>
@@ -133,7 +139,7 @@
 	<string name="hint_last_name" state="needs_review" hash="1701170359">Van</string>
 	<string name="hint_new_name" state="needs_review" hash="709842168">Nuwe naam</string>
 	<string name="hint_notification_reply" state="needs_review" hash="1095144032">Antwoord</string>
-	<string name="hint_position" state="needs_review" hash="-55145181">Werkstitel (opsioneel)</string>
+	<string name="hint_position" state="needs_review" hash="1338817744">Beroepstitel</string>
 	<string name="invitation_label_their_code" state="needs_review" hash="1402501614">Hul kode</string>
 	<string name="invitation_label_your_code" state="needs_review" hash="1944546233">Jou kode</string>
 	<string name="invitation_status_accept_invite" state="needs_review" hash="2100924901">Uitnodiging ontvang</string>
@@ -170,6 +176,11 @@
 	<string name="label_group_members" state="needs_review" hash="1460220752">Groeplede</string>
 	<string name="label_other_group_members" state="needs_review" hash="-2121490032">Ander groeplede</string>
 	<string name="label_groups_common" state="needs_review" hash="1252823567">Groepe in gemeen</string>
+	<string name="label_create_group_with_contact" state="needs_review" hash="1950649899">Skep \'n groep met %1$s</string>
+	<string name="label_add_contact_to_a_group" state="needs_review" hash="-682192937">Voeg %1$s by \'n groep</string>
+	<string name="label_add_to_groups" state="needs_review" hash="-654216617">Voeg by tot groepe</string>
+	<string name="explanation_no_admin_group_to_add_contact" state="needs_review" hash="402908162">Jy is nie die administrateur van enige groep waaraan %1$s bygevoeg kan word nie.</string>
+	<string name="toast_message_adding_contact_to_groups" state="needs_review" hash="1201697547">%1$s word bygevoeg tot die gekose groepe...</string>
 	<string name="label_invitation_declined" state="needs_review" hash="2038173833">Uitnodiging\nafgegee</string>
 	<string name="label_new_group_card" state="needs_review" hash="1006740909">Groepbesonderhede opgedateer</string>
 	<string name="label_not_part_of_a_group" state="needs_review" hash="1667979596">Nog nie deel van \'n groep nie</string>
@@ -183,6 +194,7 @@
 	<string name="menu_action_create_shortcut" state="needs_review" hash="-1949455873">Skep Kortpad</string>
 	<string name="menu_action_delete" state="needs_review" hash="-232100842">Vee uit</string>
 	<string name="menu_action_delete_discussion" state="needs_review" hash="2059656471">Gesprek uitvee</string>
+	<string name="menu_action_export_discussion" state="needs_review" hash="1736692296">Voer die gesprek uit</string>
 	<string name="label_swipe_details" state="needs_review" hash="171468732">Besonderhede</string>
 	<string name="menu_action_disband_group" state="needs_review" hash="-1767089289">Groep ontbind</string>
 	<string name="menu_action_edit_group_details" state="needs_review" hash="310205135">Wysig groepdetails</string>
@@ -482,7 +494,14 @@
 	<string name="dialog_title_backup_choices" state="needs_review" hash="281222223">Kies \'n rugsteunmetode</string>
 	<string name="menu_action_choose_picture" state="needs_review" hash="-1655172909">Kies \'n prent</string>
 	<string name="menu_action_take_photo" state="needs_review" hash="-1123080444">Neem \'n foto</string>
+	<string name="menu_action_choose_image_from_olvid" state="needs_review" hash="1585248356">Kies \'n ontvangde prent</string>
 	<string name="menu_action_remove_image" state="needs_review" hash="1094977672">Verwyder prent</string>
+	<string name="menu_action_use_image_as" state="needs_review" hash="587310096">Gebruik hierdie prent as…</string>
+	<string name="label_use_photo_for_my_profile" state="needs_review" hash="-1005809580">My profielfoto</string>
+	<string name="label_use_photo_for_target" state="needs_review" hash="283541521">Foto vir %s</string>
+	<string name="label_use_photo_for_discussion_background" state="needs_review" hash="1925733151">Agtergrond vir %s</string>
+	<string name="toast_message_photo_set" state="needs_review" hash="-1641885203">Foto opgedateer</string>
+	<string name="toast_message_background_set" state="needs_review" hash="1642873459">Agtergrond opgedateer</string>
 	<string name="dialog_title_create_empty_group" state="needs_review" hash="-663434464">Leë groep skep?</string>
 	<string name="dialog_message_create_empty_group" state="needs_review" hash="-297923005">Jy het geen kontakte gekies om by jou groep by te voeg nie. Is jy seker jy wil \'n leë groep skep?</string>
 	<string name="pref_dark_mode_title" state="needs_review" hash="816474245">Donker modus</string>
@@ -862,7 +881,7 @@
 	<string name="button_label_check_options" state="needs_review" hash="-759177128">Opsies nagaan</string>
 	<string name="hint_olvid_server" state="needs_review" hash="1097391633">Olvid-bediener</string>
 	<string name="hint_license_activation_code" state="needs_review" hash="102193320">Lisensie-aktiveringskode</string>
-	<string name="activity_title_identity_creation_options" state="needs_review" hash="1180456032">ID-skeppingsopsies</string>
+	<string name="activity_title_identity_creation_options" state="needs_review" hash="-774054913">Profielopstellingsopsies</string>
 	<string name="activity_title_scan_configuration" state="needs_review" hash="-386259993">Konfigurasie skandering</string>
 	<string name="menu_action_import_activation_from_clipboard" state="needs_review" hash="-70842935">Skakel vanaf knipbord invoer</string>
 	<string name="troubleshooting_update_valid_title" state="needs_review" hash="741828768">Olvid is opdatering</string>
@@ -871,7 +890,6 @@
 	<string name="dialog_message_update_available" state="needs_review" hash="416187645">\'n Nuwer weergawe van Olvid is beskikbaar.\n\nWees asseblief so vriendelik om op te dateer om voordeel te trek uit die nuutste kenmerke.</string>
 	<string name="dialog_title_call_initiation_not_supported" state="needs_review" hash="-2088021831">oproep kan nie begin nie</string>
 	<string name="dialog_message_call_initiation_not_supported" state="needs_review" hash="1760333819">Dit lyk asof jou Olvid-bediener nie veilige oproepinisiering ondersteun nie.\n\nKontak asseblief jou administrateur vir meer besonderhede.</string>
-	<string name="label_identity_creation_options" state="needs_review" hash="1180456032">ID-skeppingsopsies</string>
 	<string name="text_option_server" state="needs_review" hash="-1130676431">Bediening: %1$s</string>
 	<string name="dialog_title_non_default_server" state="needs_review" hash="2119192219">Gebruik van \'n nie-standaard bediener</string>
 	<string name="dialog_message_non_default_server" state="needs_review" hash="459308900">Jy gaan \'n profiel op die volgende bediener skep:\n\n%1$s\n\nDit is nie die verstek Olvid-bediener nie. Gaan voort slegs as jy hierdie bediener vertrou.</string>
@@ -900,7 +918,7 @@
 	<string name="toast_message_unable_to_keycloak_revoke" state="needs_review" hash="-1368037130">Kon nie die vorige Olvid ID vervang nie, probeer asseblief weer.</string>
 	<string name="toast_message_keycloak_revoke_successful" state="needs_review" hash="-1216369809">Vorige Olvid ID suksesvol vervang</string>
 	<string name="dialog_title_keycloak_authentication_required_user_id_changed" state="needs_review" hash="-896407029">Gebruikerverandering waargeneem</string>
-	<string name="dialog_message_keycloak_authentication_required_user_id_changed" state="needs_review" hash="876252686">Jou profiel word tans gebruik deur jou organisasie bestuur. Dit lyk asof jy met \'n ander gebruiker as gewoonlik aangemeld het. Dit word nie ondersteun nie.\n\nKontak asseblief jou administrateur of meld weer aan as die korrekte gebruiker.</string>
+	<string name="dialog_message_keycloak_authentication_required_user_id_changed" state="needs_review" hash="2080839829">Jou profiel word tans gebruik deur jou organisasie bestuur. Dit lyk asof jy met \'n ander gebruiker as gewoonlik aangemeld het. Dit word nie ondersteun nie.\n\nKontak asseblief jou administrateur of meld weer aan as die korrekte gebruiker.</string>
 	<string name="dialog_title_add_keycloak_user" state="needs_review" hash="-1050193239">Voeg \'n kontak by</string>
 	<string name="dialog_message_add_keycloak_user" state="needs_review" hash="-1755937035">Jy het gekies om %1$s by jou kontakte te voeg. Wil jy voortgaan?</string>
 	<string name="explanation_keycloak_update_new" state="needs_review" hash="1136733528">Jy is op die punt om jou maatskappy se identiteitsverskaffer in Olvid te konfigureer. Sodra dit gekonfigureer is, kan jy by hierdie bediener verifieer en Olvid sal jou toelaat om moeiteloos ander werknemers by jou kontakte te voeg.\nKontak asseblief jou administrateur vir meer besonderhede.</string>
@@ -1033,6 +1051,8 @@ Kontak asseblief jou administrateur vir meer besonderhede.</string>
 	<string name="label_storage_discussions" state="needs_review" hash="491497248">Gesprekke</string>
 	<string name="pref_use_internal_image_viewer_title" state="needs_review" hash="1319400578">Gebruik die ingeboude beeldbeskouer</string>
 	<string name="pref_use_internal_image_viewer_summary" state="needs_review" hash="1248137666">Wanneer geaktiveer, sal klik op \'n prentaanhang dit in die interne kyker oopmaak. Andersins sal jou toestel se verstekprenttoepassing gebruik word.</string>
+	<string name="pref_image_text_recognition_title" state="needs_review" hash="1877261687">Herken en indekseer teks in beelde</string>
+	<string name="pref_image_text_recognition_summary" state="needs_review" hash="1217699919">Laat jou toe om teks in beeldboodskappe te soek en te kopieer. Dit kan baie rekenaarkrag op goedkoper toestelle verbruik: skakel dit af as jy dit nie nodig het nie.</string>
 	<string name="label_unable_to_display_image" state="needs_review" hash="-1495534207">Kon nie die beeld wys nie</string>
 	<string name="dialog_title_backup_requires_sign_in" state="needs_review" hash="-720389674">Wolkdiensaanmelding vereis</string>
 	<string name="dialog_message_backup_requires_sign_in" state="needs_review" hash="119557495">Jy het Olvid gekonfigureer om outomatiese rugsteun na \'n wolkdiens te gebruik, maar jou sessie het verstryk. Jy moet weer by hierdie diens aanmeld.\n\nAs jy nie meer outomatiese rugsteun wil hê nie, kan jy dit in die Instellings van die program deaktiveer. Onthou dat outomatiese rugsteun die enigste manier is om te verhoed dat jy jou kontakte verloor as jou toestel verlore raak of beskadig word.</string>
@@ -1151,7 +1171,7 @@ Kontak asseblief jou administrateur vir meer besonderhede.</string>
 	<string name="pref_hidden_profile_close_policy_dialog_entry_screen_lock" state="needs_review" hash="-1520400811">Wanneer die Olvid-skermsluiting aktiveer</string>
 	<string name="pref_hidden_profile_close_policy_dialog_entry_background" state="needs_review" hash="-2099539114">Wanneer Olvid op die agtergrond oorgeskakel…</string>
 	<string name="activity_title_enter_backup_key" state="needs_review" hash="1035967309">Voer rugsteunsleutel in</string>
-	<string name="activity_title_identity_creation" state="needs_review" hash="-1361520151">ID-skepping</string>
+	<string name="activity_title_identity_creation" state="needs_review" hash="2027618284">Profielopstelling</string>
 	<string name="menu_action_manual_configuration" state="needs_review" hash="-1495974502">Handgeskrewe gevorderde konfigurasie</string>
 	<string name="toast_message_invalid_configuration_link" state="needs_review" hash="1387412522">Ongeldige konfigurasieskakel</string>
 	<string name="toast_message_invalid_link" state="needs_review" hash="1265454437">Ongeldige skakel</string>
@@ -1173,6 +1193,7 @@ Kontak asseblief jou administrateur vir meer besonderhede.</string>
 	<string name="dialog_title_chose_profile_web_client" state="needs_review" hash="1860298414">Kies die profiel om aan die Olvid-webkliënt te koppel</string>
 	<string name="dialog_title_chose_profile_invitation" state="needs_review" hash="-2063034787">Kies die profiel waarmee jy hierdie kontak wil nooi</string>
 	<string name="toast_message_create_new_profile_then_reopen_this_link" state="needs_review" hash="1770827346">Skep asseblief eers \'n nuwe profiel, en maak dan hierdie skakel weer oop</string>
+	<string name="toast_message_invitation_link_deferred_to_end_of_onboarding" state="needs_review" hash="-189914806">Jou uitnodiging sal outomaties oopmaak sodra jou profiel geskep is.</string>
 	<string name="button_label_switch_profile" state="needs_review" hash="-2007633024">Skakel profiel</string>
 	<string name="text_no_other_profile_to_switch_to" state="needs_review" hash="-112306213">Geen ander profiel</string>
 	<string name="button_label_configure_lock_screen" state="needs_review" hash="870348426">Sluitingskerm instel</string>
@@ -1182,8 +1203,7 @@ Kontak asseblief jou administrateur vir meer besonderhede.</string>
 	<string name="dialog_message_delete_last_profile" state="needs_review" hash="-2123774331">\'n Profiel uitvee sal enige inligting wat met hierdie profiel verband hou op jou toestel uitvee. Dit sluit jou kontakte, groepe en die inhoud van al jou gesprekke (boodskappe en aangehegte lêers) vir hierdie profiel in.\n\n<b>Dit is jou enigste sigbare profiel en as jy enige weggesteekte profiele het, sal hulle gelyktydig uitgevee word.</b>\n\nAs jy rugsteun in Olvid geaktiveer het, sal jou toekomstige rugsteun geen spore van hierdie profiel bevat nie en kan jy dit moontlik nie herstel nie.\n\nDruk op \"volgende\" om te kies hoe hierdie profiel uitgevee moet word.</string>
 	<string name="dialog_message_delete_profile_multi" state="needs_review" hash="-2003495595">Die uitvee van \'n profiel sal enige inligting wat met hierdie profiel verband hou op jou toestel uitvee. Dit sluit jou kontakte, groepe en die inhoud van al jou gesprekke (boodskappe en aangehegte lêers) vir hierdie profiel in. Jou ander profiele sal nie deur hierdie operasie geraak word nie.\n\nDruk op \"volgende\" om te kies hoe hierdie profiel verwyder moet word.</string>
 	<string name="dialog_message_delete_last_profile_multi" state="needs_review" hash="-103140781">\'n Profiel uitvee sal enige inligting wat met hierdie profiel verband hou op jou toestel uitvee. Dit sluit jou kontakte, groepe en die inhoud van al jou gesprekke (boodskappe en aangehegte lêers) vir hierdie profiel in.\n\n<b>Dit is jou enigste sigbare profiel en as jy enige weggesteekte profiele het, sal hulle gelyktydig uitgevee word.</b>\n\nDruk op \"volgende\" om te kies hoe hierdie profiel uitgevee moet word.</string>
-	<string name="switch_label_delete_profile_everywhere" state="needs_review" hash="-74965346">Verwyder profiel <b>ooral</b>
-	</string>
+	<string name="switch_label_delete_profile_everywhere" state="needs_review" hash="-74965346">Verwyder profiel <b>ooral</b></string>
 	<string name="hint_type_delete_here_to_proceed" state="needs_review" hash="-1622625725">Voer \"%1$s\" hier in om voort te gaan</string>
 	<string name="explanation_delete_owned_identity" state="needs_review" hash="2036375772">As jy kies om jou profiel <b>ooral</b> te verwyder:\n - dit sal plaaslik verwyder word <b>en</b> op die toestelle van jou kontakte\n - jy sal groepe verlaat wat jy aangesluit het\n - groepe wat jy bestuur sal ontbind word\n\nAs jy nie jou profiel <b>ooral</b> verwyder nie, sal dit slegs plaaslik op jou toestel verwyder word. Tensy jy beplan om \'n rugsteun op \'n ander toestel te herstel, kan jou kontakte steeds probeer om boodskappe aan jou te stuur en besef dalk nie dat hierdie boodskappe nie afgelewer kan word nie.</string>
 	<string name="explanation_delete_inactive_owned_identity" state="needs_review" hash="-575337242">Jou huidige profiel lyk asof dit onaktief is, wat waarskynlik beteken dat jy dit na \'n ander toestel oorgedra het. As jy van plan is om hierdie profiel op jou ander toestel te bly gebruik, kan jy dit gerus hier uitvee.\n\nAs jy hierdie profiel nooit weer wil gebruik nie, moet jy dit eers op hierdie toestel weer aktiveer, wag vir die veilige kanale met jou kontakte om weer geskep te word, en dan eers hierdie profiel uitvee deur die \"oral uitvee\" opsie te kies.</string>
@@ -1449,23 +1469,17 @@ Olvid sal nie toegang hê tot enige van u lêers op Google Drive nie.</string>
 	<string name="button_label_send" state="needs_review" hash="-185402948">Stuur</string>
 	<string name="button_label_start_sharing" state="needs_review" hash="682254052">Begin om te deel</string>
 	<string name="location_sharing_duration_one_hour_short_string" state="needs_review" hash="1004063951">1 uur</string>
-	<string name="location_sharing_duration_one_hour_full_string" state="needs_review" hash="-58118972">Deel ligging vir <b>1 uur</b>
-	</string>
+	<string name="location_sharing_duration_one_hour_full_string" state="needs_review" hash="-58118972">Deel ligging vir <b>1 uur</b></string>
 	<string name="location_sharing_duration_three_hours_short_string" state="needs_review" hash="228095183">3 uur</string>
-	<string name="location_sharing_duration_three_hours_full_string" state="needs_review" hash="754857804">Deel ligging vir <b>3 uur</b>
-	</string>
+	<string name="location_sharing_duration_three_hours_full_string" state="needs_review" hash="754857804">Deel ligging vir <b>3 uur</b></string>
 	<string name="location_sharing_duration_endless_short_string" state="needs_review" hash="55208442">Onbeperk</string>
-	<string name="location_sharing_duration_endless_full_string" state="needs_review" hash="1710814259">Deel ligging <b>totdat gestop</b>
-	</string>
+	<string name="location_sharing_duration_endless_full_string" state="needs_review" hash="1710814259">Deel ligging <b>totdat gestop</b></string>
 	<string name="location_sharing_quality_precise_short_string" state="needs_review" hash="351442529">Presies</string>
 	<string name="location_sharing_quality_balanced_short_string" state="needs_review" hash="-1925315592">Gebalanseerd</string>
 	<string name="location_sharing_quality_power_save_short_string" state="needs_review" hash="-14275273">Kragbesparing</string>
-	<string name="location_sharing_quality_precise_full_string" state="needs_review" hash="-1255374893">
-		<b>Presiese</b> liggingdeelmodus</string>
-	<string name="location_sharing_quality_balanced_full_string" state="needs_review" hash="-421322514">
-		<b>Gebalanseerde</b> liggingsdeelmodus</string>
-	<string name="location_sharing_quality_power_save_full_string" state="needs_review" hash="792896333">
-		<b>Kragbesparende</b> liggingsdeelmodus</string>
+	<string name="location_sharing_quality_precise_full_string" state="needs_review" hash="-1255374893"><b>Presiese</b> liggingdeelmodus</string>
+	<string name="location_sharing_quality_balanced_full_string" state="needs_review" hash="-421322514"><b>Gebalanseerde</b> liggingsdeelmodus</string>
+	<string name="location_sharing_quality_power_save_full_string" state="needs_review" hash="792896333"><b>Kragbesparende</b> liggingsdeelmodus</string>
 	<string name="label_sharing_location_until" state="needs_review" hash="187977459">Ligging deel tot: %1$s</string>
 	<string name="label_location_sharing_ended" state="needs_review" hash="1028490137">Liggingdeling beëindig</string>
 	<string name="label_gps_coordinates" state="needs_review" hash="-1537356414">GPS-koördinate</string>
@@ -2048,11 +2062,14 @@ Olvid sal nie toegang hê tot enige van u lêers op Google Drive nie.</string>
 	<string name="button_label_configure_backups" state="needs_review" hash="-990646398">Rugsteun aanskakel</string>
 	<string name="tip_write_backup_key_title" state="needs_review" hash="-1652757003">Moenie vergeet om jou rugsteun sleutel neer te skryf nie‍☺</string>
 	<string name="tip_write_backup_key_message" state="needs_review" hash="931018791">Jou rugsteun sleutel is noodsaaklik om jou profiele te herstel as jy toegang tot hierdie toestel verloor.</string>
+	<string name="tip_legacy_backup_end_of_life_title" state="needs_review" hash="810495149">Die ouwe rugsteunkopies wat jy gebruik, het die einde van hul lewensduur bereik.</string>
+	<string name="tip_legacy_backup_end_of_life_message" state="needs_review" hash="-314257210">Die volgende Olvid-opdatering sal nie meer ouer rugsteunmetodes ondersteun nie. Om jou rekening veilig te hou, skakel nou oor na die nuwe rugsteunstelsel.</string>
 	<string name="tip_troubleshooting_title" state="needs_review" hash="-393739108">Verbeter jou Olvid-ervaring⃢₍⚛</string>
 	<string name="tip_troubleshooting_message" state="needs_review" hash="-935493349">Sommige instellings is nie korrek op jou toestel gekonfigureer nie en kan jou ervaring met Olvid beïnvloed.</string>
 	<string name="button_label_this_way" state="needs_review" hash="747183939">Hiernato</string>
 	<string name="toast_code_copied" state="needs_review" hash="-1522785848">Kode gekopieër</string>
 	<string name="explanation_choose_members" state="needs_review" hash="-1385158706">Kies asseblief wie om by hierdie groep by te voeg.</string>
+	<string name="explanation_choose_share_recipients" state="needs_review" hash="-1406265940">Kies asseblief met wie om dit te deel.</string>
 	<string name="explanation_choose_contact_introduction" state="needs_review" hash="1113777517">Kies asseblief wie om %1$s aan voor te stel.</string>
 	<string name="label_group_administration" state="needs_review" hash="871355986">Groepadministrasie</string>
 	<string name="dialog_title_call_blocked" state="needs_review" hash="1594606530">Oproep geblokkeer</string>
@@ -2178,7 +2195,7 @@ Olvid sal nie toegang hê tot enige van u lêers op Google Drive nie.</string>
 	<string name="store_link_olvid_store" state="needs_review" hash="-1825630369">Besoek die Olvid Winkel</string>
 	<string name="toast_message_reminder_set" state="needs_review" hash="-961055414">Herinnering gestel</string>
 	<string name="dialog_title_keycloak_authentication_impossible" state="needs_review" hash="325273853">Verifikasie is nie moontlik nie</string>
-	<string name="dialog_message_keycloak_authentication_impossible" state="needs_review" hash="390830785">Jou profiel word tans by jou organisasie bestuur en her-verifikasie is vereis. Geen van die ondersteunde verifikasiemetodes is egter beskikbaar nie.\n\nKontak asseblief jou administrateur vir meer besonderhede.</string>
+	<string name="dialog_message_keycloak_authentication_impossible" state="needs_review" hash="-2031322232">Jou profiel word tans by jou organisasie bestuur en herverifikasie is vereis. Geen van die ondersteunde verifikasiemetodes lyk egter beskikbaar nie.\n\nKontak asseblief jou administrateur vir meer besonderhede.</string>
 	<string name="onboarding_transfer_keycloak_error_message_authentication_impossible" state="needs_review" hash="-1891385979">Geen van die ondersteunde verifikasiemetodes lyk beskikbaar nie.</string>
 	<string name="pref_use_alt_turn_servers_title" state="needs_review" hash="-1956132776">Gebruik alternatiewe TURN-bedieners</string>
 	<string name="pref_use_alt_turn_servers_summary" state="needs_review" hash="357427162">Aktiveer hierdie opsie om TURN-bedieners met roterende IP-adresse te gebruik. Indien u nie seker is nie, laat hierdie opsie asb. af 😁</string>
@@ -2289,5 +2306,45 @@ Olvid sal nie toegang hê tot enige van u lêers op Google Drive nie.</string>
 	<string name="label_error_loading_openstreetmap_style_file" state="needs_review" hash="-2596045">\'n Fout het voorgekom tydens die laai van die OpenStreetMap-styl lêer.</string>
 	<string name="dialog_title_subscriptions_not_available" state="needs_review" hash="336174241">In-app-intekeninge nie beskikbaar nie</string>
 	<string name="dialog_message_subscriptions_not_available" state="needs_review" hash="2093768678">Die weergawe van Olvid wat jy geïnstalleer het, bevat nie Google se faktuurbiblioteek nie en ondersteun nie aankope in die toepassing nie.\n\nVir meer inligting, kontak ons asseblief by **feedback@olvid.io**.</string>
+	<string name="ftux_next" state="needs_review" hash="1158639077">Volgende</string>
+	<string name="ftux_start" state="needs_review" hash="646298532">Begin</string>
+	<string name="ftux_page_indicator" state="needs_review" hash="1987610035">Bladsy %1$d van %2$d</string>
+	<string name="ftux_page_welcome_title" state="needs_review" hash="1173832630">Welkom by <b>Olvid</b>.</string>
+	<string name="ftux_page_welcome_body" state="needs_review" hash="-2085198139">Privaatboodskappe vir almal.</string>
+	<string name="ftux_page_private_title" state="needs_review" hash="1815927819"><b>Privaat</b> boodskappe</string>
+	<string name="ftux_page_private_body" state="needs_review" hash="-590644231">Op %1$s kan jy kies met wie jy wil gesels. Geen strooipos, geen aanbevelings, geen nuttelose kennisgewings en geen boodskappe van onbekendes nie.\n\nNiemand kan jou kontak sonder jou toestemming nie.\n\n%1$s is jou digitale borrel.</string>
+	<string name="ftux_page_everyone_title" state="needs_review" hash="1506796386">Boodskappe vir <b>almal</b></string>
+	<string name="ftux_page_everyone_body" state="needs_review" hash="-586100377">Wie jy ook al is, %1$s bied jou die beste sekuriteit. Geen e-pos of telefoonnommer vereis.\n\n%1$s vra niks van jou nie, en dit verander alles.</string>
+	<string name="ftux_page_protect_title" state="needs_review" hash="1969120191">Olvid <b>beskerm</b> jou. Olvid beskerm die mense wat vir jou belangrik is.</string>
+	<string name="ftux_page_protect_body" state="needs_review" hash="881847930">Dit is nie net ’n belofte nie — %1$s lewer kriptografiese bewys.\n\nOf jy nou kontakte op afstand of persoonlik byvoeg, jou gesprekke is sistematies eg en van punt tot punt geënkripteer.</string>
+	<string name="ftux_page_pricing_title" state="needs_review" hash="-1948277889">\'n <b>deursigtige</b> besigheidsmodel</string>
+	<string name="ftux_page_pricing_body" state="needs_review" hash="-1064278870">%1$s finansier nie deur jou persoonlike data nie – want dit vra nie vir enige nie!\n\nWat gratis is, is gratis. Wat betaal word, het ’n prys.</string>
+	<string name="ftux_page_media_title" state="needs_review" hash="558110518">Olvid het <b>alles</b> wat nodig is.</string>
+	<string name="ftux_page_media_body" state="needs_review" hash="1807247240">Geen beperking op die grootte van aangehegte lêers, hoë-resolusie foto\'s kan gedeel word, daar is ook peilings, klank- en video-oproepe, dit werk op verskeie toestelle en het \'n geolokasiemoglikheid – alles wat jy nodig het, is hier!</string>
 	<string name="menu_action_cancel_upload" state="needs_review" hash="1672681586">Kanselleer die oplaai</string>
+	<string name="label_suggested_contacts" state="needs_review" hash="816810770">Voorgestelde kontakte</string>
+	<string name="label_suggested_contacts_subtitle" state="needs_review" hash="131522501">Nooi gebruikers maklik uit</string>
+	<string name="label_suggested_contact_already_a_contact" state="needs_review" hash="-1177848651">Reeds \'n kontak</string>
+	<string name="label_suggested_contact_invitation_received" state="needs_review" hash="2100924901">Uitnodiging ontvang</string>
+	<string name="label_suggested_contact_invitation_sent" state="needs_review" hash="310679275">Uitnodiging gestuur</string>
+	<string name="label_suggested_contacts_all_done" state="needs_review" hash="-127525104">Jy het die nuutste weergawe!\nGeen meer kontakte om voor te stel nie.</string>
+	<string name="button_label_suggested_contact_later" state="needs_review" hash="-1933816039">Later</string>
+	<string name="button_label_close" state="needs_review" hash="1454843231">Sluit</string>
+	<string name="button_label_skip" state="needs_review" hash="2056258301">Slaan oor</string>
+	<string name="button_label_understood" state="needs_review" hash="829780875">Ek verstaan</string>
+	<string name="label_suggested_contacts_onboarding_title_1" state="needs_review" hash="491881039">Nooi met \'n swiepgebaar</string>
+	<string name="label_suggested_contacts_onboarding_message_1" state="needs_review" hash="331320806">Veeg die kaart na regs om die gebruiker te nooi, of na links om na die volgende een oor te gaan.</string>
+	<string name="label_suggested_contacts_onboarding_title_2" state="needs_review" hash="-788798380">Waar kom hierdie kontakte vandaan?</string>
+	<string name="label_suggested_contacts_onboarding_message_2" state="needs_review" hash="1536681696">Dit is Olvid-gebruikers wat jy nog nie in jou kontakte het nie.</string>
+	<string name="label_suggested_contacts_onboarding_caption" state="needs_review" hash="-1299179969">Jy is net een verhouding van mekaar af: julle deel ten minste een gemeenskaplike groep.</string>
+	<string name="label_suggested_contacts_you" state="needs_review" hash="672009142">Jy</string>
+	<string name="label_suggested_contacts_common_group" state="needs_review" hash="-1739793963">Gemeenskaplike groep</string>
+	<string name="explanation_suggested_contacts_others_tab" state="needs_review" hash="852096678">Die gebruikers hieronder is nie deel van jou kontakte nie, en jy kan nog nie ’n privaat gesprek met hulle voer nie. Maar jy kan hulle maklik uitnooi! 🚀</string>
+	<string name="label_suggested_contacts_invite_in_one_gesture" state="needs_review" hash="438220313">Nooi hierdie gebruikers met \'n swiep uit</string>
+	<string name="menu_action_suggested_contacts_see_full_list" state="needs_review" hash="603082500">Sien die volledige lys</string>
+	<string name="menu_action_suggested_contacts_replay_onboarding" state="needs_review" hash="-1552704243">Speel die tutoriaal weer af</string>
+	<string name="button_label_uninvite" state="needs_review" hash="771825501">Deel uitnooi</string>
+	<string name="button_label_accept_invitation" state="needs_review" hash="-1778405034">Aanvaar die uitnodiging</string>
+	<string name="label_suggested_contacts_already_swiped" state="needs_review" hash="427042318">Reeds afgegaan</string>
+	<string name="label_suggested_contacts_not_swiped_yet" state="needs_review" hash="310924358">Nog nie besoek nie</string>
 </resources>

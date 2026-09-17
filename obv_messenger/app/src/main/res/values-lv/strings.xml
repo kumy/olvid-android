@@ -26,8 +26,8 @@
 	<string name="button_label_create_group" state="needs_review" hash="1102939673">Izveidot grupu</string>
 	<string name="button_label_discard" state="needs_review" hash="795591204">Atcelt</string>
 	<string name="button_label_exchange_digits_with_user" state="needs_review" hash="339599327">Apmainieties ar kodiem ar %1$s</string>
-	<string name="button_label_generate_new_id" state="needs_review" hash="92014734">Ģenerēt jaunu ID</string>
-	<string name="button_label_generate_my_id" state="needs_review" hash="-1007060207">Ģenerēt manu ID</string>
+	<string name="button_label_generate_new_id" state="needs_review" hash="-1130516787">Izveidot jaunu profilu</string>
+	<string name="button_label_generate_my_id" state="needs_review" hash="239641058">Izveidot manu profilu</string>
 	<string name="button_label_ignore" state="needs_review" hash="-806373746">Ignorēt</string>
 	<string name="button_label_reject" state="needs_review" hash="-2094664161">Noraidīt</string>
 	<string name="button_label_introduce" state="needs_review" hash="193852909">Iepazīstināt</string>
@@ -80,6 +80,12 @@
 	<string name="dialog_title_rename_group" state="needs_review" hash="1461324427">Pārdēvējiet grupu</string>
 	<string name="dialog_title_restart_channel_establishment" state="needs_review" hash="-645769680">Vai vēlaties restartēt kanāla izveides procesu?</string>
 	<string name="dialog_title_share_with" state="needs_review" hash="854107768">Dalīties ar…</string>
+	<string name="dialog_title_share_recipients" state="needs_review" hash="1157053138">Izvēlieties saņēmējus</string>
+	<string name="share_label_from" state="needs_review" hash="2049052075">No:</string>
+	<string name="share_label_to" state="needs_review" hash="-1785690373">Uz:</string>
+	<string name="share_label_choose_recipients" state="needs_review" hash="1157053138">Izvēlieties saņēmējus</string>
+	<string name="hint_share_message" state="needs_review" hash="-763169957">Pievienot ziņojumu…</string>
+	<string name="content_description_delete_attachment" state="needs_review" hash="-220348329">Dzēst pielikumu</string>
 	<string name="dialog_title_shortcut_to" state="needs_review" hash="-1193591200">Izveidot saīsni uz…</string>
 	<string name="explanation_choose_display_name" state="needs_review" hash="1162066686">Lūdzu, ievadiet vārdu, kas tiks rādīts jūsu kontaktiem. Šī informācija nekad netiks nosūtīta uz \"Olvid\" serveriem.</string>
 	<string name="explanation_empty_contact_list" state="needs_review" hash="1240778508">Šobrīd nav kontaktu</string>
@@ -104,7 +110,7 @@
 	<string name="explanation_no_message_found" state="needs_review" hash="-1329622990">Nav atrasts neviens ziņojums</string>
 	<string name="explanation_no_attachment_found" state="needs_review" hash="156593369">Nav atrasts neviens pielikums</string>
 	<string name="explanation_no_link_found" state="needs_review" hash="-1419950450">Nav atrasta saite</string>
-	<string name="hint_company" state="needs_review" hash="379200324">Uzņēmums (pēc izvēles)</string>
+	<string name="hint_company" state="needs_review" hash="988571519">Uzņēmums</string>
 	<string name="hint_compose_your_message" state="needs_review" hash="-25761578">Rakstiet ziņojumu</string>
 	<string name="hint_compose_your_message_ephemeral" state="needs_review" hash="-1527208333">Īslaicīgs ziņojums</string>
 	<string name="label_edit_your_message" state="needs_review" hash="1091877412">Rediģējiet savu ziņojumu</string>
@@ -133,7 +139,7 @@
 	<string name="hint_last_name" state="needs_review" hash="1701170359">Uzvārds</string>
 	<string name="hint_new_name" state="needs_review" hash="709842168">Jauns vārds</string>
 	<string name="hint_notification_reply" state="needs_review" hash="1095144032">Atbildēt</string>
-	<string name="hint_position" state="needs_review" hash="-55145181">Amats (nav obligāti)</string>
+	<string name="hint_position" state="needs_review" hash="1338817744">Amata nosaukums</string>
 	<string name="invitation_label_their_code" state="needs_review" hash="1402501614">Viņu kods</string>
 	<string name="invitation_label_your_code" state="needs_review" hash="1944546233">Jūsu kods</string>
 	<string name="invitation_status_accept_invite" state="needs_review" hash="2100924901">Uzaicinājums saņemts</string>
@@ -170,6 +176,11 @@
 	<string name="label_group_members" state="needs_review" hash="1460220752">Grupas dalībnieki</string>
 	<string name="label_other_group_members" state="needs_review" hash="-2121490032">Citi grupas dalībnieki</string>
 	<string name="label_groups_common" state="needs_review" hash="1252823567">Kopīgas grupas</string>
+	<string name="label_create_group_with_contact" state="needs_review" hash="1950649899">Izveidojiet grupu ar %1$s</string>
+	<string name="label_add_contact_to_a_group" state="needs_review" hash="-682192937">Pievienojiet %1$s grupai</string>
+	<string name="label_add_to_groups" state="needs_review" hash="-654216617">Pievienot grupām</string>
+	<string name="explanation_no_admin_group_to_add_contact" state="needs_review" hash="402908162">Jūs neesat nevienas grupas administrators, kurā varētu pievienot %1$s.</string>
+	<string name="toast_message_adding_contact_to_groups" state="needs_review" hash="1201697547">Pievienojot %1$s atlasītajām grupām…</string>
 	<string name="label_invitation_declined" state="needs_review" hash="2038173833">Uzaicinājums\nnoraidīts</string>
 	<string name="label_new_group_card" state="needs_review" hash="1006740909">Grupas informācija atjaunināta</string>
 	<string name="label_not_part_of_a_group" state="needs_review" hash="1667979596">Vēl neesat nevienas grupas dalībnieks</string>
@@ -183,6 +194,7 @@
 	<string name="menu_action_create_shortcut" state="needs_review" hash="-1949455873">Izveidot saīsni</string>
 	<string name="menu_action_delete" state="needs_review" hash="-232100842">Dzēst</string>
 	<string name="menu_action_delete_discussion" state="needs_review" hash="2059656471">Dzēst sarunu</string>
+	<string name="menu_action_export_discussion" state="needs_review" hash="1736692296">Eksportēt sarunu</string>
 	<string name="label_swipe_details" state="needs_review" hash="171468732">Sīkāka informācija</string>
 	<string name="menu_action_disband_group" state="needs_review" hash="-1767089289">Izlauzt grupu</string>
 	<string name="menu_action_edit_group_details" state="needs_review" hash="310205135">Rediģēt grupas informāciju</string>
@@ -482,7 +494,14 @@
 	<string name="dialog_title_backup_choices" state="needs_review" hash="281222223">Izvēlieties rezerves kopijas metodi</string>
 	<string name="menu_action_choose_picture" state="needs_review" hash="-1655172909">Izvēlieties attēlu</string>
 	<string name="menu_action_take_photo" state="needs_review" hash="-1123080444">Uzņemiet fotoattēlu</string>
+	<string name="menu_action_choose_image_from_olvid" state="needs_review" hash="1585248356">Izvēlieties saņemtu attēlu</string>
 	<string name="menu_action_remove_image" state="needs_review" hash="1094977672">Dzēst attēlu</string>
+	<string name="menu_action_use_image_as" state="needs_review" hash="587310096">Izmantojiet šo attēlu kā…</string>
+	<string name="label_use_photo_for_my_profile" state="needs_review" hash="-1005809580">Mana profila bilde</string>
+	<string name="label_use_photo_for_target" state="needs_review" hash="283541521">Fotoattēls [PLACEHOLDER_1]</string>
+	<string name="label_use_photo_for_discussion_background" state="needs_review" hash="1925733151">Fons elementam %s</string>
+	<string name="toast_message_photo_set" state="needs_review" hash="-1641885203">Attēls atjaunināts</string>
+	<string name="toast_message_background_set" state="needs_review" hash="1642873459">Fona attēls atjaunināts</string>
 	<string name="dialog_title_create_empty_group" state="needs_review" hash="-663434464">Izveidot tukšu grupu?</string>
 	<string name="dialog_message_create_empty_group" state="needs_review" hash="-297923005">Jūs neesat izvēlējies nevienu kontaktu, ko pievienot jūsu grupai. Vai tiešām vēlaties izveidot tukšu grupu?</string>
 	<string name="pref_dark_mode_title" state="needs_review" hash="816474245">Tumšais režīms</string>
@@ -862,7 +881,7 @@
 	<string name="button_label_check_options" state="needs_review" hash="-759177128">Pārbaudiet opcijas</string>
 	<string name="hint_olvid_server" state="needs_review" hash="1097391633">Olvid serveris</string>
 	<string name="hint_license_activation_code" state="needs_review" hash="102193320">Licences aktivizācijas kods</string>
-	<string name="activity_title_identity_creation_options" state="needs_review" hash="1180456032">ID izveides opcijas</string>
+	<string name="activity_title_identity_creation_options" state="needs_review" hash="-774054913">Profila izveides opcijas</string>
 	<string name="activity_title_scan_configuration" state="needs_review" hash="-386259993">Konfigurācijas skenēšana</string>
 	<string name="menu_action_import_activation_from_clipboard" state="needs_review" hash="-70842935">Importēt saiti no starpspraudes</string>
 	<string name="troubleshooting_update_valid_title" state="needs_review" hash="741828768">Olvid ir atjaunināts</string>
@@ -871,7 +890,6 @@
 	<string name="dialog_message_update_available" state="needs_review" hash="416187645">Ir pieejama jaunāka \"Olvid\" versija.\n\nLūdzu, atjauniniet, lai izmantotu jaunākās funkcijas.</string>
 	<string name="dialog_title_call_initiation_not_supported" state="needs_review" hash="-2088021831">Zvanu sākšana nav atbalstīta</string>
 	<string name="dialog_message_call_initiation_not_supported" state="needs_review" hash="1760333819">Izskatās, ka jūsu „Olvid“ serveris neatbalsta drošu zvanu iniciēšanu.\n\nLūdzu, sazinieties ar savu administratoru, lai iegūtu sīkāku informāciju.</string>
-	<string name="label_identity_creation_options" state="needs_review" hash="1180456032">ID izveides opcijas</string>
 	<string name="text_option_server" state="needs_review" hash="-1130676431">Serveris: %1$s</string>
 	<string name="dialog_title_non_default_server" state="needs_review" hash="2119192219">Izmantojot citu serveri</string>
 	<string name="dialog_message_non_default_server" state="needs_review" hash="459308900">Jūs gatavojaties izveidot profilu šajā serverī:\n\n%1$s\n\nŠis nav noklusētais „Olvid” serveris. Turpiniet tikai tad, ja uzticaties šim serverim.</string>
@@ -900,7 +918,7 @@
 	<string name="toast_message_unable_to_keycloak_revoke" state="needs_review" hash="-1368037130">Neizdevās aizvietot iepriekšējo Olvid ID, lūdzu, mēģiniet vēlreiz.</string>
 	<string name="toast_message_keycloak_revoke_successful" state="needs_review" hash="-1216369809">Iepriekšējais \"Olvid\" ID veiksmīgi aizstāts</string>
 	<string name="dialog_title_keycloak_authentication_required_user_id_changed" state="needs_review" hash="-896407029">Konstatētas lietotāja izmaiņas</string>
-	<string name="dialog_message_keycloak_authentication_required_user_id_changed" state="needs_review" hash="876252686">Šobrīd jūsu profilu pārvalda jūsu organizācija. Šķiet, ka esat pieteicies, izmantojot citu lietotājvārdu, nekā parasti. Tas nav atbalstīts.\n\nLūdzu, sazinieties ar savu administratoru vai vēlreiz piesakieties, izmantojot pareizo lietotājvārdu.</string>
+	<string name="dialog_message_keycloak_authentication_required_user_id_changed" state="needs_review" hash="2080839829">Jūsu profilu pašlaik pārvalda jūsu organizācija. Šķiet, ka jūs esat autentificējies ar citu lietotājkontu nekā parasti. Tas nav atbalstīts.\n\nLūdzu, sazinieties ar savu administratoru vai atkārtoti autentificieties kā pareizais lietotājs.</string>
 	<string name="dialog_title_add_keycloak_user" state="needs_review" hash="-1050193239">Pievienot kontaktu</string>
 	<string name="dialog_message_add_keycloak_user" state="needs_review" hash="-1755937035">Jūs izvēlējāties pievienot %1$s saviem kontaktiem. Vai vēlaties turpināt?</string>
 	<string name="explanation_keycloak_update_new" state="needs_review" hash="1136733528">Jūs gatavojaties konfigurēt savas uzņēmuma identitātes pārvaldības pakalpojumu Olvid sistēmā. Pēc konfigurēšanas jūs varēsiet autentificēties šajā serverī, un Olvid ļaus jums ērti pievienot citus darbiniekus saviem kontaktiem.\nLūdzu, sazinieties ar savu administratoru, lai iegūtu sīkāku informāciju.</string>
@@ -1031,6 +1049,8 @@
 	<string name="label_storage_discussions" state="needs_review" hash="491497248">Sarunas</string>
 	<string name="pref_use_internal_image_viewer_title" state="needs_review" hash="1319400578">Izmantojiet iekšējo attēlu skatītāju</string>
 	<string name="pref_use_internal_image_viewer_summary" state="needs_review" hash="1248137666">Kad šī funkcija būtu aktivizēta, noklikšķinot uz pievienotā attēla, tas tiks atvērts iekšējā skatītājā. Pretējā gadījumā tiks izmantota jūsu ierīces noklusējuma attēlu lietotne.</string>
+	<string name="pref_image_text_recognition_title" state="needs_review" hash="1877261687">Atpazīst un indeksē tekstu attēlos</string>
+	<string name="pref_image_text_recognition_summary" state="needs_review" hash="1217699919">Ļauj meklēt un kopēt tekstu, kas atrodas attēlu pielikumos. Šī funkcija var patērēt daudz resursu vājākas ierīcēs: atspējiet to, ja jums tā nav nepieciešama.</string>
 	<string name="label_unable_to_display_image" state="needs_review" hash="-1495534207">Attēla atveidošana neizdevās</string>
 	<string name="dialog_title_backup_requires_sign_in" state="needs_review" hash="-720389674">Nepieciešama pieslēgšanās jūsu mākoņpakalpojumu sniedzējam</string>
 	<string name="dialog_message_backup_requires_sign_in" state="needs_review" hash="119557495">Jūs esat konfigurējis Olvid, lai automātiski veidotu rezerves kopijas uz mākoņpakalpojumu, bet jūsu sesija ir beigusies. Jums ir jāpiesakās vēlreiz šajā pakalpojumā.\n\nJa vairs nevēlaties, lai tiktu veidotas automātiskās rezerves kopijas, varat tās atspējot lietotnes iestatījumos. Atcerieties, ka automātiskās rezerves kopijas ir vienīgais veids, kā novērst kontaktu zudumu, ja jūsu ierīce tiek pazaudēta vai sabojāta.</string>
@@ -1149,7 +1169,7 @@
 	<string name="pref_hidden_profile_close_policy_dialog_entry_screen_lock" state="needs_review" hash="-1520400811">Kad tiek aktivizēts „Olvid“ bloķēšanas ekrāns</string>
 	<string name="pref_hidden_profile_close_policy_dialog_entry_background" state="needs_review" hash="-2099539114">Kad „Olvid“ pāriet fonrežīmā…</string>
 	<string name="activity_title_enter_backup_key" state="needs_review" hash="1035967309">Ievadiet rezerves atslēgu</string>
-	<string name="activity_title_identity_creation" state="needs_review" hash="-1361520151">ID izveide</string>
+	<string name="activity_title_identity_creation" state="needs_review" hash="2027618284">Profila izveide</string>
 	<string name="menu_action_manual_configuration" state="needs_review" hash="-1495974502">Manuāla papildu konfigurācija</string>
 	<string name="toast_message_invalid_configuration_link" state="needs_review" hash="1387412522">Nederīga konfigurācijas saite</string>
 	<string name="toast_message_invalid_link" state="needs_review" hash="1265454437">Nederīga saite</string>
@@ -1171,6 +1191,7 @@
 	<string name="dialog_title_chose_profile_web_client" state="needs_review" hash="1860298414">Izvēlieties profilu, ar kuru vēlaties izveidot savienojumu ar Olvid tīmekļa klientu.</string>
 	<string name="dialog_title_chose_profile_invitation" state="needs_review" hash="-2063034787">Izvēlieties profilu, ar kuru vēlaties uzaicināt šo kontaktu.</string>
 	<string name="toast_message_create_new_profile_then_reopen_this_link" state="needs_review" hash="1770827346">Lūdzu, vispirms izveidojiet jaunu profilu un pēc tam vēlreiz atveriet šo saiti.</string>
+	<string name="toast_message_invitation_link_deferred_to_end_of_onboarding" state="needs_review" hash="-189914806">Kad jūsu profils būs izveidots, uzaicinājums tiks atvērts automātiski.</string>
 	<string name="button_label_switch_profile" state="needs_review" hash="-2007633024">Mainīt profilu</string>
 	<string name="text_no_other_profile_to_switch_to" state="needs_review" hash="-112306213">Nav citu profilu</string>
 	<string name="button_label_configure_lock_screen" state="needs_review" hash="870348426">Konfigurējiet bloķēšanas ekrānu</string>
@@ -1180,8 +1201,7 @@
 	<string name="dialog_message_delete_last_profile" state="needs_review" hash="-2123774331">Dzēšot profilu, tiks izdzēsta visa ar šo profilu saistītā informācija jūsu ierīcē. Tas ietver jūsu kontaktpersonas, grupas un visu jūsu sarunu (ziņojumu un pielikumu) saturu, kas saistīts ar šo profilu.\n\n<b>Šis ir jūsu vienīgais redzamais profils, un, ja jums ir slēpti profili, arī tie tiks izdzēsti.</b>\n\nJa esat ieslēdzis Olvid dublējumus, jūsu nākamajos dublējumos nebūs nekādas informācijas par šo profilu, un jūs, iespējams, nevarēsiet to atjaunot.\n\nNospiediet \"tālāk\", lai izvēlētos, kā dzēst šo profilu.</string>
 	<string name="dialog_message_delete_profile_multi" state="needs_review" hash="-2003495595">Dzēšot profilu, tiks izdzēsta visa ar šo profilu saistītā informācija jūsu ierīcē. Tas ietver jūsu kontaktpersonas, grupas un visu jūsu sarunu (ziņojumu un pielikumu) saturu, kas saistīts ar šo profilu. Pārējie jūsu profili netiks ietekmēti ar šo darbību.\n\nNospiediet \"Tālāk\", lai izvēlētos, kā dzēst šo profilu.</string>
 	<string name="dialog_message_delete_last_profile_multi" state="needs_review" hash="-103140781">Dzēšot profilu, tiks izdzēsta visa ar šo profilu saistītā informācija jūsu ierīcē. Tas ietver jūsu kontaktpersonas, grupas un visu jūsu sarunu (ziņojumu un pielikumu) saturu, kas saistīts ar šo profilu.\n\n<b>Šis ir jūsu vienīgais redzamais profils, un, ja jums ir slēpti profili, tie tiks izdzēsti vienlaikus.</b>\n\nNospiediet \"Tālāk\", lai izvēlētos, kā dzēst šo profilu.</string>
-	<string name="switch_label_delete_profile_everywhere" state="needs_review" hash="-74965346">Dzēst profilu <b>visur</b>
-	</string>
+	<string name="switch_label_delete_profile_everywhere" state="needs_review" hash="-74965346">Dzēst profilu <b>visur</b></string>
 	<string name="hint_type_delete_here_to_proceed" state="needs_review" hash="-1622625725">Ievadiet \"%1$s\" šeit, lai turpinātu</string>
 	<string name="explanation_delete_owned_identity" state="needs_review" hash="2036375772">Ja izvēlēsieties dzēst savu profilu <b>visur</b>:\n\u00a0-\u00a0tas tiks dzēsts lokāli <b>un</b> jūsu kontaktu ierīcēs\n\u00a0-\u00a0jūs izstāsieties no visām pievienotajām grupām\n\u00a0-\u00a0jūsu pārvaldītās grupas tiks izformētas\n\nJa <b>nedzēsīsiet</b> savu profilu visur, tas tiks dzēsts tikai lokāli jūsu ierīcē. Ja neplānojat atjaunot rezerves kopiju citā ierīcē, jūsu kontakti joprojām var mēģināt sūtīt jums ziņojumus un, iespējams, neapzināsies, ka šīs ziņas nevar tikt piegādātas.</string>
 	<string name="explanation_delete_inactive_owned_identity" state="needs_review" hash="-575337242">Šķiet, ka jūsu pašreizējais profils ir neaktīvs, iespējams, tāpēc, ka esat to pārvietojis uz citu ierīci. Ja plānojat turpināt izmantot šo profilu citā ierīcē, varat to droši izdzēst šeit.\n\nJa jūs vairs nevēlaties izmantot šo profilu, vispirms jums būs jāaktivizē tas atkal šajā ierīcē, jāgaida, līdz tiks atjaunoti drošie kanāli ar jūsu kontaktiem, un tikai tad jāizdzēš šis profils, izvēloties opciju „dzēst visur“.</string>
@@ -1443,23 +1463,17 @@
 	<string name="button_label_send" state="needs_review" hash="-185402948">Sūtīt</string>
 	<string name="button_label_start_sharing" state="needs_review" hash="682254052">Sāciet dalīties</string>
 	<string name="location_sharing_duration_one_hour_short_string" state="needs_review" hash="1004063951">1 stunda</string>
-	<string name="location_sharing_duration_one_hour_full_string" state="needs_review" hash="-58118972">Dalieties ar atrašanās vietu <b>1 stundai</b>
-	</string>
+	<string name="location_sharing_duration_one_hour_full_string" state="needs_review" hash="-58118972">Dalieties ar atrašanās vietu <b>1 stundai</b></string>
 	<string name="location_sharing_duration_three_hours_short_string" state="needs_review" hash="228095183">3 stundas</string>
-	<string name="location_sharing_duration_three_hours_full_string" state="needs_review" hash="754857804">Dalieties ar savu atrašanās vietu <b>3 stundas</b>
-	</string>
+	<string name="location_sharing_duration_three_hours_full_string" state="needs_review" hash="754857804">Dalieties ar savu atrašanās vietu <b>3 stundas</b></string>
 	<string name="location_sharing_duration_endless_short_string" state="needs_review" hash="55208442">bezgalīgi</string>
-	<string name="location_sharing_duration_endless_full_string" state="needs_review" hash="1710814259">Dalīties ar atrašanās vietu <b>līdz apturēšanai</b>
-	</string>
+	<string name="location_sharing_duration_endless_full_string" state="needs_review" hash="1710814259">Dalīties ar atrašanās vietu <b>līdz apturēšanai</b></string>
 	<string name="location_sharing_quality_precise_short_string" state="needs_review" hash="351442529">Precīzs</string>
 	<string name="location_sharing_quality_balanced_short_string" state="needs_review" hash="-1925315592">Līdzsvarots</string>
 	<string name="location_sharing_quality_power_save_short_string" state="needs_review" hash="-14275273">Enerģijas taupīšana</string>
-	<string name="location_sharing_quality_precise_full_string" state="needs_review" hash="-1255374893">
-		<b>Precīzs</b> atrašanās vietas koplietošanas režīms</string>
-	<string name="location_sharing_quality_balanced_full_string" state="needs_review" hash="-421322514">
-		<b>Līdzsvarots</b> atrašanās vietas koplietošanas režīms</string>
-	<string name="location_sharing_quality_power_save_full_string" state="needs_review" hash="792896333">
-		<b>Enerģijas taupīšanas</b> režīms, ar ko tiek koplietota atrašanās vieta</string>
+	<string name="location_sharing_quality_precise_full_string" state="needs_review" hash="-1255374893"><b>Precīzs</b> atrašanās vietas koplietošanas režīms</string>
+	<string name="location_sharing_quality_balanced_full_string" state="needs_review" hash="-421322514"><b>Līdzsvarots</b> atrašanās vietas koplietošanas režīms</string>
+	<string name="location_sharing_quality_power_save_full_string" state="needs_review" hash="792896333"><b>Enerģijas taupīšanas</b> režīms, ar ko tiek koplietota atrašanās vieta</string>
 	<string name="label_sharing_location_until" state="needs_review" hash="187977459">Vietas koplietošana līdz: %1$s</string>
 	<string name="label_location_sharing_ended" state="needs_review" hash="1028490137">Vietas koplietošana beidzās</string>
 	<string name="label_gps_coordinates" state="needs_review" hash="-1537356414">GPS koordinātas</string>
@@ -1564,7 +1578,7 @@
 	<string name="text_setting_auto_join_groups" state="needs_review" hash="522515555">• Automātiski pieņemt grupu uzaicinājumus no:</string>
 	<string name="text_setting_lock_delay" state="needs_review" hash="820821201">\"• Ekrāna bloķēšanas aizkavējums: \"</string>
 	<string name="text_setting_auto_download_size" state="needs_review" hash="585840560">\"• Automātiski lejupielādēt pielikumus: \"</string>
-	<string name="text_setting_block_unknown_certificate" state="needs_review" hash="-597135254">\\"\u2023 Bloķē savienojumus, izmantojot neuzticamu sertifikātu: \\"</string>
+	<string name="text_setting_block_unknown_certificate" state="needs_review" hash="-597135254">\"\u2023 Bloķē savienojumus, izmantojot neuzticamu sertifikātu: \"</string>
 	<string name="text_setting_no_notify_certificate_change_for_previews" state="needs_review" hash="270071065">„\u2023 Atspējiet sertifikāta izmaiņu paziņojumus saīsināto saitu priekšskatījumos: \"</string>
 	<string name="text_setting_connectivity_indicator" state="needs_review" hash="-329711417">„\u2023 Tīkla savienojuma indikators: \"</string>
 	<string name="text_setting_yes" state="needs_review" hash="-734028036">jā</string>
@@ -1743,7 +1757,7 @@
 	<string name="troubleshooting_battery_optimization_invalid_description" state="needs_review" hash="688616134">Android ierīču akumulatora optimizācijas funkcija darbojas, atliekot noteiktus fonrežīma notikumus, lai tos izpildītu vienlaicīgi. Tādējādi var kavēties ienākošo Olvid ziņu un zvanu saņemšana.\n\nLai nodrošinātu, ka jūsu ziņas tiek saņemtas ātri, jums jāļauj Olvid \"vienmēr darboties fonā\".</string>
 	<string name="troubleshooting_background_restriction_valid_title" state="needs_review" hash="-1653431113">Fona darbības ierobežojums</string>
 	<string name="troubleshooting_background_restriction_valid_description" state="needs_review" hash="-562490603">Lai „Olvid“ darbotos pareizki, tam jābūt atļautam darboties fonā. Iespējojot fona darbības ierobežojumus, piemēram, „Olvid“ nespēs saņemt ziņojumus, kad darbojas fonā.</string>
-	<string name="troubleshooting_background_restriction_invalid_description" state="needs_review" hash="-1942040454">Olvid lietotnei ir ieslēgta \\"fona darbības ierobežošana\\". Līdz kamēr tā netiks noņemta no \\"ierobežoto lietotņu\\" saraksta, lietotne nedarbosies pareizi.\n\nTo varat labot, nospiežot \\"Lietotnes iestatījumi\\" un pārejot uz akumulatora izmantošanas sadaļu.</string>
+	<string name="troubleshooting_background_restriction_invalid_description" state="needs_review" hash="-1942040454">Olvid lietotnei ir ieslēgta \"fona darbības ierobežošana\". Līdz kamēr tā netiks noņemta no \"ierobežoto lietotņu\" saraksta, lietotne nedarbosies pareizi.\n\nTo varat labot, nospiežot \"Lietotnes iestatījumi\" un pārejot uz akumulatora izmantošanas sadaļu.</string>
 	<string name="troubleshooting_alarm_valid_title" state="needs_review" hash="-2113413915">Atļauja iestatīt atgādinājumus</string>
 	<string name="troubleshooting_alarm_valid_description" state="needs_review" hash="184003925">„Olvid“ izmanto trauksmes signālus, lai precīzi ieplānotu ekrāna bloķēšanu un pagaidu ziņojumu dzēšanu. Šī atļauja ir iestatīta pareizi.</string>
 	<string name="troubleshooting_alarm_invalid_description" state="needs_review" hash="-1221338357">Olvid izmanto signālus, lai precīzi ieplānotu ekrāna bloķēšanu un pagaidu ziņojumu dzēšanu.\nAtļauja iestatīt šādus signālus ir atsaukta, kas var izraisīt šo drošības funkciju darbības traucējumus.\nMēs stingri iesakām atļaut iestatīt signālus un atgādinājumus, nospiežot \"Lietotnes iestatījumi\".</string>
@@ -2020,7 +2034,7 @@
 	<string name="button_label_restore_my_profile" state="needs_review" hash="418284480">Atjaunot manu profilu</string>
 	<string name="button_label_keep_all_with_olvid_plus" state="needs_review" hash="622534541">Saglabājiet visu ar Olvid+</string>
 	<string name="explanation_backup_v2_choose_device_after_restore" state="needs_review" hash="292969815">Pēc profila atjaunošanas jūs varēsiet izvēlēties, kuru ierīci vēlaties turēt aktīvu, izmantojot profila iestatījumus.</string>
-	<string name="explanation_backup_v2_device_expiration_start" state="needs_review" hash="-147053489">Atjaunojot savu profilu \\"</string>
+	<string name="explanation_backup_v2_device_expiration_start" state="needs_review" hash="-147053489">Atjaunojot savu profilu \"</string>
 	<string name="explanation_backup_v2_device_expiration_nickname" state="needs_review" hash="2093353377">(%1$s)</string>
 	<string name="toast_message_no_key_found" state="needs_review" hash="-1984410678">Nav atrasts atjaunojuma atslēga</string>
 	<string name="label_backup_headers_title" state="needs_review" hash="-846183546">Jūsu dublējumi</string>
@@ -2042,11 +2056,14 @@
 	<string name="button_label_configure_backups" state="needs_review" hash="-990646398">Ieslēdziet dublējumus</string>
 	<string name="tip_write_backup_key_title" state="needs_review" hash="-1652757003">Neaizmirstiet pierakstīt savu rezerves atslēgu 😇</string>
 	<string name="tip_write_backup_key_message" state="needs_review" hash="931018791">Jūsu rezerves atslēga ir būtiska, lai atjaunotu jūsu profilus, ja jūs zaudējat piekļuvi šai ierīcei.</string>
+	<string name="tip_legacy_backup_end_of_life_title" state="needs_review" hash="810495149">Vecās rezerves kopijas, ko izmantojat, vairs nav atbalstītas.</string>
+	<string name="tip_legacy_backup_end_of_life_message" state="needs_review" hash="-314257210">Nākamajā Olvid atjauninājumā tiks pārtraukta atbalsta sniegšana vecajiem datu dublējumiem. Lai nodrošinātu jūsu konta drošību, pārslēdzieties uz jauno datu dublējumu sistēmu jau tagad.</string>
 	<string name="tip_troubleshooting_title" state="needs_review" hash="-393739108">Uzlabojiet savu \"Olvid\" pieredzi 🚀</string>
 	<string name="tip_troubleshooting_message" state="needs_review" hash="-935493349">Daži iestatījumi jūsu ierīcē nav pareizi konfigurēti, un tas var ietekmēt jūsu pieredzi, izmantojot \"Olvid\".</string>
 	<string name="button_label_this_way" state="needs_review" hash="747183939">Šajā virzienā</string>
 	<string name="toast_code_copied" state="needs_review" hash="-1522785848">Kods kopēts</string>
 	<string name="explanation_choose_members" state="needs_review" hash="-1385158706">Lūdzu, izvēlieties, ko vēlaties pievienot šai grupai.</string>
+	<string name="explanation_choose_share_recipients" state="needs_review" hash="-1406265940">Lūdzu, izvēlieties, ar ko vēlaties dalīties.</string>
 	<string name="explanation_choose_contact_introduction" state="needs_review" hash="1113777517">Lūdzu, izvēlieties, kam iepazīstināt ar %1$s.</string>
 	<string name="label_group_administration" state="needs_review" hash="871355986">Grupas administrēšana</string>
 	<string name="dialog_title_call_blocked" state="needs_review" hash="1594606530">Zvans bloķēts</string>
@@ -2172,7 +2189,7 @@
 	<string name="store_link_olvid_store" state="needs_review" hash="-1825630369">Apmeklējiet „Olvid“ veikalu</string>
 	<string name="toast_message_reminder_set" state="needs_review" hash="-961055414">Atgādinājums iestatīts</string>
 	<string name="dialog_title_keycloak_authentication_impossible" state="needs_review" hash="325273853">Autentifikācija neizdevās</string>
-	<string name="dialog_message_keycloak_authentication_impossible" state="needs_review" hash="390830785">Šobrīd jūsu profilu pārvalda jūsu organizācija, un nepieciešama atkārtota autentifikācija. Tomēr šķiet, ka nav pieejamas nevienas atbalstītas autentifikācijas metodes.\nLūdzu, sazinieties ar savu administratoru, lai iegūtu sīkāku informāciju.</string>
+	<string name="dialog_message_keycloak_authentication_impossible" state="needs_review" hash="-2031322232">Jūsu profilu pašlaik pārvalda jūsu organizācija, un ir nepieciešama atkārtota autentifikācija. Tomēr šķiet, ka nav pieejama neviena atbalstīta autentifikācijas metode.\n\nLūdzu, sazinieties ar savu administratoru, lai iegūtu sīkāku informāciju.</string>
 	<string name="onboarding_transfer_keycloak_error_message_authentication_impossible" state="needs_review" hash="-1891385979">Šķiet, ka nav pieejamas nevienas no atbalstītajām autentifikācijas metodēm.</string>
 	<string name="pref_use_alt_turn_servers_title" state="needs_review" hash="-1956132776">Izmantojiet citus TURN serverus</string>
 	<string name="pref_use_alt_turn_servers_summary" state="needs_review" hash="357427162">Ieslēdziet šo opciju, lai izmantotu TURN serverus ar rotējošām IP adresēm. Ja neesat pārliecināts, atstājiet šo opciju izslēgtu 😁</string>
@@ -2283,5 +2300,45 @@
 	<string name="label_error_loading_openstreetmap_style_file" state="needs_review" hash="-2596045">Radās kļūda, ielādējot OpenStreetMap stila failu</string>
 	<string name="dialog_title_subscriptions_not_available" state="needs_review" hash="336174241">Lietotnē nav pieejamas abonementi</string>
 	<string name="dialog_message_subscriptions_not_available" state="needs_review" hash="2093768678">Instalētajā „Olvid“ versijā nav iekļauta „Google“ norēķinu bibliotēka, un tā neatbalsta pirkumus lietotnē.\n\nLai iegūtu vairāk informācijas, lūdzu, sazinieties ar mums pa e-pastu **feedback@olvid.io**.</string>
+	<string name="ftux_next" state="needs_review" hash="1158639077">Nākamais</string>
+	<string name="ftux_start" state="needs_review" hash="646298532">Sākt</string>
+	<string name="ftux_page_indicator" state="needs_review" hash="1987610035">Lapa %1$d no %2$d</string>
+	<string name="ftux_page_welcome_title" state="needs_review" hash="1173832630">Laipni lūdzam <b>Olvid</b>!</string>
+	<string name="ftux_page_welcome_body" state="needs_review" hash="-2085198139">Privātas ziņas ikvienam.</string>
+	<string name="ftux_page_private_title" state="needs_review" hash="1815927819"><b>Privātas</b> ziņas</string>
+	<string name="ftux_page_private_body" state="needs_review" hash="-590644231">Lietotnē „%1$s” jūs pats izvēlaties, ar ko vēlaties sazināties. Nav nevajadzīgas reklāmas, ieteikumu, paziņojumu vai ziņu no svešiniekiem.\n\nNeviens nevar sazināties ar jums bez jūsu piekrišanas.\n\n„%1$s” ir jūsu digitālā pasaule.</string>
+	<string name="ftux_page_everyone_title" state="needs_review" hash="1506796386">Ziņojumapkalpošana visiem</string>
+	<string name="ftux_page_everyone_body" state="needs_review" hash="-586100377">Lai kas tu būtu, %1$s piedāvā labāko drošību. Nav nepieciešams e-pasta adreses vai tālruņa numurs.\n\n%1$s nejautā neko par jums, un tas maina visu.</string>
+	<string name="ftux_page_protect_title" state="needs_review" hash="1969120191">Olvid <b>aizsargā</b> jūs. Olvid aizsargā tos, kas jums ir svarīgi.</string>
+	<string name="ftux_page_protect_body" state="needs_review" hash="881847930">Tas nav tikai solījums — %1$s sniedz kriptogrāfisku pierādījumu.\n\nNeatkarīgi no tā, vai kontaktpersonas pievienojat attāli vai klātienē, jūsu ziņas vienmēr būs autentiskas un galu-galā šifrētas.</string>
+	<string name="ftux_page_pricing_title" state="needs_review" hash="-1948277889"><b>Pārredzams</b> biznesa modelis</string>
+	<string name="ftux_page_pricing_body" state="needs_review" hash="-1064278870">%1$s nefinansē sevi, izmantojot jūsu personīgos datus, jo tā tos arī nepieprasa!\n\nKas ir bezmaksas, tas ir bez maksas. Par to, kas maksā, jāsamaksā.</string>
+	<string name="ftux_page_media_title" state="needs_review" hash="558110518">Olvidam ir <b>viss</b></string>
+	<string name="ftux_page_media_body" state="needs_review" hash="1807247240">Nav ierobežojumu pievienoto faila izmēram, varat koplietot augstas izšķirtspējas fotoattēlus, veidot aptaujas, veikt audio un video zvanus, izmantot vairākas ierīces un dalīties ar ģeografisko atrašanās vietu — tas viss ir pieejams!</string>
 	<string name="menu_action_cancel_upload" state="needs_review" hash="1672681586">Atcelt augšupielādi</string>
+	<string name="label_suggested_contacts" state="needs_review" hash="816810770">Ieteicamie kontakti</string>
+	<string name="label_suggested_contacts_subtitle" state="needs_review" hash="131522501">Viegli uzaiciniet lietotājus</string>
+	<string name="label_suggested_contact_already_a_contact" state="needs_review" hash="-1177848651">Jau ir kontakti</string>
+	<string name="label_suggested_contact_invitation_received" state="needs_review" hash="2100924901">Uzaicinājums saņemts</string>
+	<string name="label_suggested_contact_invitation_sent" state="needs_review" hash="310679275">Uzaicinājums nosūtīts</string>
+	<string name="label_suggested_contacts_all_done" state="needs_review" hash="-127525104">Jūs izmantojat jaunāko versiju!\nNav vairāk kontaktu, ko ieteikt.</string>
+	<string name="button_label_suggested_contact_later" state="needs_review" hash="-1933816039">Vēlāk</string>
+	<string name="button_label_close" state="needs_review" hash="1454843231">Aizvērt</string>
+	<string name="button_label_skip" state="needs_review" hash="2056258301">Izlaist</string>
+	<string name="button_label_understood" state="needs_review" hash="829780875">Sapratu</string>
+	<string name="label_suggested_contacts_onboarding_title_1" state="needs_review" hash="491881039">Uzaiciet ar vienu žestu</string>
+	<string name="label_suggested_contacts_onboarding_message_1" state="needs_review" hash="331320806">Pavelciet karti pa labi, lai uzaicinātu lietotāju, vai pa kreisi, lai pārietu pie nākamā.</string>
+	<string name="label_suggested_contacts_onboarding_title_2" state="needs_review" hash="-788798380">No kurienes nāk šie kontakti?</string>
+	<string name="label_suggested_contacts_onboarding_message_2" state="needs_review" hash="1536681696">Šie ir lietotāji, kas izmanto \"Olvid\", un jūs vēl neesat pievienojis viņus savos kontaktiem.</string>
+	<string name="label_suggested_contacts_onboarding_caption" state="needs_review" hash="-1299179969">Jums ir kopīgs vismaz viens grupas biedrs.</string>
+	<string name="label_suggested_contacts_you" state="needs_review" hash="672009142">Jūs</string>
+	<string name="label_suggested_contacts_common_group" state="needs_review" hash="-1739793963">Kopīga grupa</string>
+	<string name="explanation_suggested_contacts_others_tab" state="needs_review" hash="852096678">Lielākā daļa lietotāju zemāk nav jūsu kontaktpersonu sarakstā, un jūs vēl nevarat ar viņiem privāti sazināties. Bet jūs varat viegli uzaicināt viņus! 🚀</string>
+	<string name="label_suggested_contacts_invite_in_one_gesture" state="needs_review" hash="438220313">Uzaiciniet šos lietotājus ar vienu žestu</string>
+	<string name="menu_action_suggested_contacts_see_full_list" state="needs_review" hash="603082500">Skatīt pilnu sarakstu</string>
+	<string name="menu_action_suggested_contacts_replay_onboarding" state="needs_review" hash="-1552704243">Atskaņot apmācību</string>
+	<string name="button_label_uninvite" state="needs_review" hash="771825501">Atcelt uzaicinājumu</string>
+	<string name="button_label_accept_invitation" state="needs_review" hash="-1778405034">Pieņemt uzaicinājumu</string>
+	<string name="label_suggested_contacts_already_swiped" state="needs_review" hash="427042318">Jau pārslīdēts</string>
+	<string name="label_suggested_contacts_not_swiped_yet" state="needs_review" hash="310924358">Vēl nav pārskatīts</string>
 </resources>

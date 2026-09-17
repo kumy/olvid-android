@@ -26,8 +26,8 @@
 	<string name="button_label_create_group" state="needs_review" hash="1102939673">குழுவை உருவாக்கு</string>
 	<string name="button_label_discard" state="needs_review" hash="795591204">கைவிடு</string>
 	<string name="button_label_exchange_digits_with_user" state="needs_review" hash="339599327">%1$s உடன் குறியீடுகளைப் பரிமாறிக் கொள்ளுங்கள்</string>
-	<string name="button_label_generate_new_id" state="needs_review" hash="92014734">புதிய அடையாள எண்ணை உருவாக்கு</string>
-	<string name="button_label_generate_my_id" state="needs_review" hash="-1007060207">எனது அடையாள எண்ணை உருவாக்கு</string>
+	<string name="button_label_generate_new_id" state="needs_review" hash="-1130516787">புதிய சுயவிவரத்தை உருவாக்கு</string>
+	<string name="button_label_generate_my_id" state="needs_review" hash="239641058">எனது சுயவிவரத்தை உருவாக்கு</string>
 	<string name="button_label_ignore" state="needs_review" hash="-806373746">கவனிக்க வேண்டாம்</string>
 	<string name="button_label_reject" state="needs_review" hash="-2094664161">நிராகரிக்கவும்</string>
 	<string name="button_label_introduce" state="needs_review" hash="193852909">அறிமுகம் செய்</string>
@@ -80,6 +80,12 @@
 	<string name="dialog_title_rename_group" state="needs_review" hash="1461324427">குழுவின் பெயரை மாற்றுக</string>
 	<string name="dialog_title_restart_channel_establishment" state="needs_review" hash="-645769680">சேனல் அமைப்பை மீண்டும் தொடங்கவா?</string>
 	<string name="dialog_title_share_with" state="needs_review" hash="854107768">இதனுடன் பகிரவும்…</string>
+	<string name="dialog_title_share_recipients" state="needs_review" hash="1157053138">பெறுநர்களைத் தேர்ந்தெடுக்கவும்</string>
+	<string name="share_label_from" state="needs_review" hash="2049052075">இருந்து:</string>
+	<string name="share_label_to" state="needs_review" hash="-1785690373">க்கு:</string>
+	<string name="share_label_choose_recipients" state="needs_review" hash="1157053138">பெறுநர்களைத் தேர்ந்தெடுக்கவும்</string>
+	<string name="hint_share_message" state="needs_review" hash="-763169957">ஒரு செய்தியைச் சேர்...</string>
+	<string name="content_description_delete_attachment" state="needs_review" hash="-220348329">இணைப்பைப் பிரிக்கவும்</string>
 	<string name="dialog_title_shortcut_to" state="needs_review" hash="-1193591200">…க்கு குறுக்குவழியை உருவாக்கு</string>
 	<string name="explanation_choose_display_name" state="needs_review" hash="1162066686">உங்கள் தொடர்புகளுக்குக் காட்டப்படும் ஒரு பெயரை உள்ளிடவும். இந்த விவரங்கள் ஒருபோதும் Olvid சேவையகங்களுக்கு அனுப்பப்படாது.</string>
 	<string name="explanation_empty_contact_list" state="needs_review" hash="1240778508">தற்போது தொடர்புகள் எதுவும் இல்லை</string>
@@ -104,7 +110,7 @@
 	<string name="explanation_no_message_found" state="needs_review" hash="-1329622990">எந்த செய்தியும் கிடைக்கவில்லை</string>
 	<string name="explanation_no_attachment_found" state="needs_review" hash="156593369">இணைப்பு எதுவும் கிடைக்கவில்லை</string>
 	<string name="explanation_no_link_found" state="needs_review" hash="-1419950450">இணைப்பு எதுவும் கிடைக்கவில்லை</string>
-	<string name="hint_company" state="needs_review" hash="379200324">நிறுவனம் (விரும்பினால்)</string>
+	<string name="hint_company" state="needs_review" hash="988571519">நிறுவனம்</string>
 	<string name="hint_compose_your_message" state="needs_review" hash="-25761578">செய்தியை எழுதுங்கள்</string>
 	<string name="hint_compose_your_message_ephemeral" state="needs_review" hash="-1527208333">தற்காலிக செய்தி</string>
 	<string name="label_edit_your_message" state="needs_review" hash="1091877412">உங்கள் செய்தியைத் திருத்துங்கள்</string>
@@ -133,7 +139,7 @@
 	<string name="hint_last_name" state="needs_review" hash="1701170359">கடைசி பெயர்</string>
 	<string name="hint_new_name" state="needs_review" hash="709842168">புதிய பெயர்</string>
 	<string name="hint_notification_reply" state="needs_review" hash="1095144032">பதில்</string>
-	<string name="hint_position" state="needs_review" hash="-55145181">வேலை தலைப்பு (விரும்பினால்)</string>
+	<string name="hint_position" state="needs_review" hash="1338817744">வேலை தலைப்பு</string>
 	<string name="invitation_label_their_code" state="needs_review" hash="1402501614">அவர்களுடைய குறியீடு</string>
 	<string name="invitation_label_your_code" state="needs_review" hash="1944546233">உங்கள் குறியீடு</string>
 	<string name="invitation_status_accept_invite" state="needs_review" hash="2100924901">அழைப்பு பெறப்பட்டது</string>
@@ -170,6 +176,11 @@
 	<string name="label_group_members" state="needs_review" hash="1460220752">குழு உறுப்பினர்கள்</string>
 	<string name="label_other_group_members" state="needs_review" hash="-2121490032">மற்ற குழு உறுப்பினர்கள்</string>
 	<string name="label_groups_common" state="needs_review" hash="1252823567">பொதுவான குழுக்கள்</string>
+	<string name="label_create_group_with_contact" state="needs_review" hash="1950649899">%1$s உடன் ஒரு குழுவை உருவாக்குங்கள்</string>
+	<string name="label_add_contact_to_a_group" state="needs_review" hash="-682192937">%1$s-ஐ ஒரு குழுவில் சேர்க்கவும்</string>
+	<string name="label_add_to_groups" state="needs_review" hash="-654216617">குழுக்களில் சேர்</string>
+	<string name="explanation_no_admin_group_to_add_contact" state="needs_review" hash="402908162">நீங்கள் எந்த குழுவின் நிர்வாகியும் அல்ல, %1$s அதில் சேர்க்கப்படலாம்.</string>
+	<string name="toast_message_adding_contact_to_groups" state="needs_review" hash="1201697547">தேர்ந்தெடுக்கப்பட்ட குழுக்களில் %1$s சேர்க்கப்படுகிறது…</string>
 	<string name="label_invitation_declined" state="needs_review" hash="2038173833">அழைப்பு நிராகரிக்கப்பட்டது</string>
 	<string name="label_new_group_card" state="needs_review" hash="1006740909">குழு விவரங்கள் புதுப்பிக்கப்பட்டது</string>
 	<string name="label_not_part_of_a_group" state="needs_review" hash="1667979596">எந்த குழுவிலும் இல்லை</string>
@@ -183,6 +194,7 @@
 	<string name="menu_action_create_shortcut" state="needs_review" hash="-1949455873">குறுக்குவழியை உருவாக்கு</string>
 	<string name="menu_action_delete" state="needs_review" hash="-232100842">நீக்கு</string>
 	<string name="menu_action_delete_discussion" state="needs_review" hash="2059656471">உரையாடலை நீக்கு</string>
+	<string name="menu_action_export_discussion" state="needs_review" hash="1736692296">உரையாடலை ஏற்றுமதி செய்</string>
 	<string name="label_swipe_details" state="needs_review" hash="171468732">விவரங்கள்</string>
 	<string name="menu_action_disband_group" state="needs_review" hash="-1767089289">குழுவை கலை</string>
 	<string name="menu_action_edit_group_details" state="needs_review" hash="310205135">குழு விவரங்களைத் திருத்து</string>
@@ -482,7 +494,14 @@
 	<string name="dialog_title_backup_choices" state="needs_review" hash="281222223">காப்புப் பிரதி முறையைத் தேர்ந்தெடுக்கவும்</string>
 	<string name="menu_action_choose_picture" state="needs_review" hash="-1655172909">ஒரு படத்தை தேர்ந்தெடுக்கவும்</string>
 	<string name="menu_action_take_photo" state="needs_review" hash="-1123080444">ஒரு படத்தை எடு</string>
+	<string name="menu_action_choose_image_from_olvid" state="needs_review" hash="1585248356">பெறப்பட்ட ஒரு படத்தை தேர்ந்தெடுக்கவும்</string>
 	<string name="menu_action_remove_image" state="needs_review" hash="1094977672">படத்தை நீக்கு</string>
+	<string name="menu_action_use_image_as" state="needs_review" hash="587310096">இந்த படத்தை [PLACEHOLDER_1] பயன்படுத்துங்கள்...</string>
+	<string name="label_use_photo_for_my_profile" state="needs_review" hash="-1005809580">எனது சுயவிவரப் படம்</string>
+	<string name="label_use_photo_for_target" state="needs_review" hash="283541521">%s க்கான புகைப்படம்</string>
+	<string name="label_use_photo_for_discussion_background" state="needs_review" hash="1925733151">%s க்கான பின்னணி</string>
+	<string name="toast_message_photo_set" state="needs_review" hash="-1641885203">படம் புதுப்பிக்கப்பட்டது</string>
+	<string name="toast_message_background_set" state="needs_review" hash="1642873459">பின்புலம் புதுப்பிக்கப்பட்டது</string>
 	<string name="dialog_title_create_empty_group" state="needs_review" hash="-663434464">வெற்று குழுவை உருவாக்கவா?</string>
 	<string name="dialog_message_create_empty_group" state="needs_review" hash="-297923005">நீங்கள் குழுவில் சேர்க்க எந்த தொடர்பையும் தேர்ந்தெடுக்கவில்லை. நீங்கள் ஒரு வெற்று குழுவை உருவாக்க விரும்புகிறீர்களா?</string>
 	<string name="pref_dark_mode_title" state="needs_review" hash="816474245">இருண்ட முறை</string>
@@ -862,7 +881,7 @@
 	<string name="button_label_check_options" state="needs_review" hash="-759177128">விருப்பங்களை சரிபார்க்கவும்</string>
 	<string name="hint_olvid_server" state="needs_review" hash="1097391633">ஒல்விட் சேவையகம்</string>
 	<string name="hint_license_activation_code" state="needs_review" hash="102193320">உரிமச் சாவி செயல்படுத்தும் குறியீடு</string>
-	<string name="activity_title_identity_creation_options" state="needs_review" hash="1180456032">ஐடி உருவாக்கும் விருப்பங்கள்</string>
+	<string name="activity_title_identity_creation_options" state="needs_review" hash="-774054913">சுயவிவரத்தை உருவாக்கும் விருப்பங்கள்</string>
 	<string name="activity_title_scan_configuration" state="needs_review" hash="-386259993">அமைவு ஸ்கேன்</string>
 	<string name="menu_action_import_activation_from_clipboard" state="needs_review" hash="-70842935">கிளிப்போர்டிலிருந்து இணைப்பை இறக்குமதி செய்க</string>
 	<string name="troubleshooting_update_valid_title" state="needs_review" hash="741828768">ஒல்விட் சமீபத்திய பதிப்பிற்கு மேம்படுத்தப்பட்டுள்ளது</string>
@@ -871,7 +890,6 @@
 	<string name="dialog_message_update_available" state="needs_review" hash="416187645">ஒலிவிட் பயன்பாட்டின் புதிய பதிப்பு இப்போது கிடைக்கிறது.\n\nபுதிய அம்சங்களைப் பயன்படுத்த, தயவுசெய்து புதுப்பிக்கவும்.</string>
 	<string name="dialog_title_call_initiation_not_supported" state="needs_review" hash="-2088021831">அழைப்பைத் தொடங்க முடியவில்லை</string>
 	<string name="dialog_message_call_initiation_not_supported" state="needs_review" hash="1760333819">உங்கள் ஓல்விட் சேவையகம் பாதுகாப்பான அழைப்புகளைத் தொடங்க அனுமதிக்கவில்லை போல் தெரிகிறது.\n\nமேலும் விவரங்களுக்கு உங்கள் நிர்வாகியைத் தொடர்பு கொள்ளவும்.</string>
-	<string name="label_identity_creation_options" state="needs_review" hash="1180456032">ஐடி உருவாக்கும் விருப்பங்கள்</string>
 	<string name="text_option_server" state="needs_review" hash="-1130676431">சேவையகம்: %1$s</string>
 	<string name="dialog_title_non_default_server" state="needs_review" hash="2119192219">இயல்புநிலை அல்லாத சேவையகத்தைப் பயன்படுத்துதல்</string>
 	<string name="dialog_message_non_default_server" state="needs_review" hash="459308900">நீங்கள் பின்வரும் சேவையகத்தில் ஒரு சுயவிவரத்தை உருவாக்கப் போகிறீர்கள்:\n\n%1$s\n\nஇது இயல்புநிலை Olvid சேவையகம் அல்ல. இந்த சேவையகத்தை நீங்கள் நம்பினால் மட்டுமே தொடரவும்.</string>
@@ -900,7 +918,7 @@
 	<string name="toast_message_unable_to_keycloak_revoke" state="needs_review" hash="-1368037130">முந்தைய Olvid ஐடியை மாற்ற முடியவில்லை, தயவுசெய்து மீண்டும் முயற்சிக்கவும்</string>
 	<string name="toast_message_keycloak_revoke_successful" state="needs_review" hash="-1216369809">முந்தைய Olvid ID வெற்றிகரமாக மாற்றப்பட்டது</string>
 	<string name="dialog_title_keycloak_authentication_required_user_id_changed" state="needs_review" hash="-896407029">பயனர் மாற்றம் கண்டறியப்பட்டது</string>
-	<string name="dialog_message_keycloak_authentication_required_user_id_changed" state="needs_review" hash="876252686">உங்கள் சுயவிவரம் தற்போது உங்கள் நிறுவனத்தால் நிர்வகிக்கப்படுகிறது. நீங்கள் வழக்கத்தை விட வேறு பயனராக அங்கீகாரம் செய்ததாகத் தெரிகிறது. இது ஆதரிக்கப்படவில்லை.\n\nதயவுசெய்து உங்கள் நிர்வாகியைத் தொடர்பு கொள்ளவும் அல்லது சரியான பயனராக மீண்டும் அங்கீகரிக்கவும்.</string>
+	<string name="dialog_message_keycloak_authentication_required_user_id_changed" state="needs_review" hash="2080839829">உங்கள் சுயவிவரம் தற்போது உங்கள் நிறுவனத்தால் நிர்வகிக்கப்படுகிறது. நீங்கள் வழக்கத்தை விட வேறு பயனராக உள்நுழைந்ததாகத் தெரிகிறது. இது ஆதரிக்கப்படவில்லை.\n\nதயவுசெய்து உங்கள் நிர்வாகியைத் தொடர்பு கொள்ளவும் அல்லது சரியான பயனராக மீண்டும் உள்நுழையவும்.</string>
 	<string name="dialog_title_add_keycloak_user" state="needs_review" hash="-1050193239">ஒரு தொடர்பை சேர்</string>
 	<string name="dialog_message_add_keycloak_user" state="needs_review" hash="-1755937035">நீங்கள் %1$s ஐ உங்கள் தொடர்புகளுக்குச் சேர்க்கத் தேர்ந்தெடுத்தீர்கள். நீங்கள் தொடர விரும்புகிறீர்களா?</string>
 	<string name="explanation_keycloak_update_new" state="needs_review" hash="1136733528">நீங்கள் இப்போது ஓல்விட்-இல் உங்கள் நிறுவனத்தின் அடையாள வழங்குநரை கட்டமைக்கப் போகிறீர்கள். கட்டமைத்த பிறகு, நீங்கள் இந்த சேவையகத்துடன் அங்கீகரிக்க முடியும், மேலும் ஓல்விட் மற்ற ஊழியர்களை உங்கள் தொடர்புகளுக்கு எளிதாக சேர்க்க அனுமதிக்கும்.\nமேலும் விவரங்களுக்கு உங்கள் நிர்வாகியைத் தொடர்பு கொள்ளவும்.</string>
@@ -1031,6 +1049,8 @@
 	<string name="label_storage_discussions" state="needs_review" hash="491497248">உரையாடல்கள்</string>
 	<string name="pref_use_internal_image_viewer_title" state="needs_review" hash="1319400578">உள்ளமைக்கப்பட்ட பட பார்வையாளரைப் பயன்படுத்தவும்</string>
 	<string name="pref_use_internal_image_viewer_summary" state="needs_review" hash="1248137666">செயல்படுத்தப்பட்டதும், ஒரு பட இணைப்பை கிளிக் செய்தால், அது உள் கட்டத்தில் உள்ள பார்வையாளரில் திறக்கப்படும். இல்லையெனில், உங்கள் சாதனத்தின் இயல்புநிலை பட பயன்பாடு பயன்படுத்தப்படும்.</string>
+	<string name="pref_image_text_recognition_title" state="needs_review" hash="1877261687">படங்களில் உள்ள உரையை அடையாளம் கண்டு அட்டவணைப்படுத்து</string>
+	<string name="pref_image_text_recognition_summary" state="needs_review" hash="1217699919">பட இணைப்புகளில் உள்ள உரையைத் தேடவும், நகலெடுக்கவும் இது அனுமதிக்கிறது. குறைந்த திறன் கொண்ட சாதனங்களில் இது அதிக வளங்களைப் பயன்படுத்தக்கூடும்: உங்களுக்குத் தேவை இல்லையென்றால், அதை முடக்கவும்.</string>
 	<string name="label_unable_to_display_image" state="needs_review" hash="-1495534207">படத்தைக் காட்ட முடியவில்லை</string>
 	<string name="dialog_title_backup_requires_sign_in" state="needs_review" hash="-720389674">கிளவுட் வழங்குநருடன் உள்நுழைவது அவசியம்</string>
 	<string name="dialog_message_backup_requires_sign_in" state="needs_review" hash="119557495">நீங்கள் Olvid-ஐ கிளவுட் வழங்குநருக்கு தானியங்கி காப்புப்பிரதிகளைப் பயன்படுத்தும்படி அமைத்துள்ளீர்கள், ஆனால் உங்கள் அமர்வு காலாவதியானது. நீங்கள் மீண்டும் அந்த வழங்குநரிடம் உள்நுழைய வேண்டும்.\n\nநீங்கள் இனி தானியங்கி காப்புப்பிரதிகளைப் பயன்படுத்த விரும்பவில்லை என்றால், பயன்பாட்டு அமைப்புகளில் அவற்றை முடக்கலாம். உங்கள் சாதனம் தொலைந்துவிட்டாலோ அல்லது சேதமடைந்தாலோ, உங்கள் தொடர்புகளை இழக்காமல் இருக்க தானியங்கி காப்புப்பிரதிகள் மட்டுமே ஒரே வழி என்பதை நினைவில் கொள்ளுங்கள்.</string>
@@ -1149,7 +1169,7 @@
 	<string name="pref_hidden_profile_close_policy_dialog_entry_screen_lock" state="needs_review" hash="-1520400811">ஒலிவிட் பூட்டுத் திரை செயல்படுத்தப்படும்போது</string>
 	<string name="pref_hidden_profile_close_policy_dialog_entry_background" state="needs_review" hash="-2099539114">ஒலிவிட் பயன்பாடு பின்னணியில் இயங்கும்போது…</string>
 	<string name="activity_title_enter_backup_key" state="needs_review" hash="1035967309">காப்புப் பிரதி விசையை உள்ளிடவும்</string>
-	<string name="activity_title_identity_creation" state="needs_review" hash="-1361520151">ஐடி உருவாக்கம்</string>
+	<string name="activity_title_identity_creation" state="needs_review" hash="2027618284">சுயவிவரம் உருவாக்குதல்</string>
 	<string name="menu_action_manual_configuration" state="needs_review" hash="-1495974502">மேம்பட்ட கைமுறை கட்டமைப்பு</string>
 	<string name="toast_message_invalid_configuration_link" state="needs_review" hash="1387412522">தவறான கட்டமைப்பு இணைப்பு</string>
 	<string name="toast_message_invalid_link" state="needs_review" hash="1265454437">தவறான இணைப்பு</string>
@@ -1171,6 +1191,7 @@
 	<string name="dialog_title_chose_profile_web_client" state="needs_review" hash="1860298414">ஒலிவிட் இணைய கிளையண்டுடன் இணைக்க வேண்டிய சுயவிவரத்தைத் தேர்ந்தெடுக்கவும்</string>
 	<string name="dialog_title_chose_profile_invitation" state="needs_review" hash="-2063034787">இந்தத் தொடர்பை அழைக்க எந்த சுயவிவரத்தைத் தேர்வு செய்ய வேண்டும்?</string>
 	<string name="toast_message_create_new_profile_then_reopen_this_link" state="needs_review" hash="1770827346">முதலில் ஒரு புதிய சுயவிவரத்தை உருவாக்கி, பின்னர் இந்த இணைப்பை மீண்டும் திறக்கவும்</string>
+	<string name="toast_message_invitation_link_deferred_to_end_of_onboarding" state="needs_review" hash="-189914806">உங்கள் சுயவிவரம் உருவாக்கப்பட்டவுடன், உங்கள் அழைப்பிதழ் தானாகவே திறக்கப்படும்.</string>
 	<string name="button_label_switch_profile" state="needs_review" hash="-2007633024">சுயவிவரத்தை மாற்றுக</string>
 	<string name="text_no_other_profile_to_switch_to" state="needs_review" hash="-112306213">வேறு சுயவிவரம் இல்லை</string>
 	<string name="button_label_configure_lock_screen" state="needs_review" hash="870348426">பூட்டுத் திரையை அமை</string>
@@ -1181,7 +1202,7 @@
 	<string name="dialog_message_delete_profile_multi" state="needs_review" hash="-2003495595">ஒரு சுயவிவரத்தை நீக்குவது, உங்கள் சாதனத்தில் இந்த சுயவிவரத்துடன் தொடர்புடைய அனைத்து தகவல்களையும் நீக்கும். இதில், உங்கள் தொடர்புகள் மற்றும் குழுக்கள் மற்றும் இந்த சுயவிவரத்திற்கான உங்கள் அனைத்து உரையாடல்களின் உள்ளடக்கம் (செய்திகள் மற்றும் இணைப்புகள்) ஆகியவை அடங்கும். இந்தச் செயலியால் உங்கள் மற்ற சுயவிவரங்கள் பாதிக்கப்படாது.\n\nஇந்த சுயவிவரத்தை எவ்வாறு நீக்க வேண்டும் என்பதைத் தேர்ந்தெடுக்க, \"அடுத்து\" என்பதைக் கிளிக் செய்யவும்.</string>
 	<string name="dialog_message_delete_last_profile_multi" state="needs_review" hash="-103140781">ஒரு சுயவிவரத்தை நீக்குவது, உங்கள் சாதனத்தில் இந்த சுயவிவரத்துடன் தொடர்புடைய அனைத்து தகவல்களையும் நீக்கும். இதில், உங்கள் தொடர்புகள் மற்றும் குழுக்கள் மற்றும் இந்த சுயவிவரத்திற்கான உங்கள் அனைத்து உரையாடல்களின் உள்ளடக்கம் (செய்திகள் மற்றும் இணைப்புகள்) ஆகியவை அடங்கும்.\n\n<b>இது உங்கள் ஒரே தெரியும் சுயவிவரம், மேலும் உங்களிடம் மறைக்கப்பட்ட சுயவிவரங்கள் இருந்தால், அவை ஒரே நேரத்தில் நீக்கப்படும்.</b>\n\nஇந்த சுயவிவரத்தை எவ்வாறு நீக்க வேண்டும் என்பதைத் தேர்ந்தெடுக்க \"அடுத்து\" என்பதைக் கிளிக் செய்யவும்.</string>
 	<string name="switch_label_delete_profile_everywhere" state="needs_review" hash="-74965346">எல்லா இடங்களிலும் சுயவிவரத்தை நீக்கு</string>
-	<string name="hint_type_delete_here_to_proceed" state="needs_review" hash="-1622625725">தொடர, இங்கே \\"%1$s\\" என உள்ளிடவும்</string>
+	<string name="hint_type_delete_here_to_proceed" state="needs_review" hash="-1622625725">தொடர, இங்கே \"%1$s\" என உள்ளிடவும்</string>
 	<string name="explanation_delete_owned_identity" state="needs_review" hash="2036375772">நீங்கள் உங்கள் சுயவிவரத்தை <b>எல்லா இடங்களிலும்</b> நீக்கத் தேர்வு செய்தால்:\n\u00a0-\u00a0அது உள்ளூரில் நீக்கப்படும் <b>மற்றும்</b> உங்கள் தொடர்புகளின் சாதனங்களிலும் நீக்கப்படும்\n\u00a0-\u00a0நீங்கள் சேர்ந்த குழுக்களிலிருந்து வெளியேறுவீர்கள்\n\u00a0-\u00a0நீங்கள் நிர்வகிக்கும் குழுக்கள் கலைக்கப்படும்\n\nநீங்கள் உங்கள் சுயவிவரத்தை <b>எல்லா இடங்களிலும்</b> நீக்கவில்லை என்றால், அது உங்கள் சாதனத்தில் மட்டுமே நீக்கப்படும். நீங்கள் வேறொரு சாதனத்தில் காப்புப் பிரதியை மீட்டெடுக்கத் திட்டமிடவில்லை என்றால், உங்கள் தொடர்புகள் தொடர்ந்து உங்களுக்கு செய்திகளை அனுப்ப முயற்சி செய்யலாம், மேலும் அந்தச் செய்திகள் உங்களுக்கு அனுப்பப்படாது என்பதை அவர்கள் உணர முடியாமல் போகலாம்.</string>
 	<string name="explanation_delete_inactive_owned_identity" state="needs_review" hash="-575337242">உங்கள் தற்போதைய சுயவிவரம் செயலற்ற நிலையில் இருப்பதாகத் தெரிகிறது, அதாவது நீங்கள் அதை வேறொரு சாதனத்திற்கு மாற்றியிருக்கலாம். இந்த சுயவிவரத்தை உங்கள் மற்ற சாதனத்தில் தொடர்ந்து பயன்படுத்த விரும்பினால், அதை இங்கே பாதுகாப்பாக நீக்கலாம்.\n\nநீங்கள் இந்த சுயவிவரத்தை இனி பயன்படுத்த விரும்பவில்லை என்றால், முதலில் இந்த சாதனத்தில் அதை மீண்டும் செயல்படுத்த வேண்டும், உங்கள் தொடர்புகளுடன் பாதுகாப்பான இணைப்புகள் மீண்டும் உருவாக்கப்படும் வரை காத்திருக்க வேண்டும், பின்னர் இந்த சுயவிவரத்தை நீக்கும்போது \"எல்லாவற்றையும் நீக்கு\" விருப்பத்தைத் தேர்ந்தெடுக்கவும்.</string>
 	<string name="explanation_delete_owned_identity_multi" state="needs_review" hash="-184045089">உங்கள் சுயவிவரம் தற்போது பல சாதனங்களில் இயக்கப்பட்டிருக்கிறது.\n\nநீங்கள் உங்கள் சுயவிவரத்தை <b>எல்லா இடங்களிலும்</b> நீக்கத் தேர்வு செய்தால்:\n\u00a0-\u00a0அது உங்கள் எல்லா சாதனங்களிலிருந்தும் <b>மற்றும்</b> உங்கள் தொடர்புகளின் சாதனங்களிலிருந்தும் நீக்கப்படும்\n\u00a0-\u00a0நீங்கள் இணைந்த குழுக்களிலிருந்து வெளியேறுவீர்கள்\n\u00a0-\u00a0நீங்கள் நிர்வகிக்கும் குழுக்கள் கலைக்கப்படும்\n\nநீங்கள் உங்கள் சுயவிவரத்தை <b>எல்லா இடங்களிலும்</b> நீக்கவில்லை என்றால், அது உங்கள் சாதனத்தில் மட்டுமே நீக்கப்படும், மேலும் நீங்கள் மற்ற சாதனங்களில் அதைத் தொடர்ந்து பயன்படுத்தலாம்.</string>
@@ -1442,22 +1463,17 @@
 	<string name="button_label_send" state="needs_review" hash="-185402948">அனுப்பு</string>
 	<string name="button_label_start_sharing" state="needs_review" hash="682254052">பகிர்வதை தொடங்கவும்</string>
 	<string name="location_sharing_duration_one_hour_short_string" state="needs_review" hash="1004063951">1 மணி நேரம்</string>
-	<string name="location_sharing_duration_one_hour_full_string" state="needs_review" hash="-58118972">
-		<b>1 மணிநேரம்</b> உங்கள் இருப்பிடத்தைப் பகிரவும்</string>
+	<string name="location_sharing_duration_one_hour_full_string" state="needs_review" hash="-58118972"><b>1 மணிநேரம்</b> உங்கள் இருப்பிடத்தைப் பகிரவும்</string>
 	<string name="location_sharing_duration_three_hours_short_string" state="needs_review" hash="228095183">3 மணி நேரம்</string>
-	<string name="location_sharing_duration_three_hours_full_string" state="needs_review" hash="754857804">
-		<b>3 மணி நேரம்</b> உங்கள் இருப்பிடத்தைப் பகிரவும்</string>
+	<string name="location_sharing_duration_three_hours_full_string" state="needs_review" hash="754857804"><b>3 மணி நேரம்</b> உங்கள் இருப்பிடத்தைப் பகிரவும்</string>
 	<string name="location_sharing_duration_endless_short_string" state="needs_review" hash="55208442">முடிவில்லாமல்</string>
 	<string name="location_sharing_duration_endless_full_string" state="needs_review" hash="1710814259">நிறுத்தப்படும் வரை இருப்பிடத்தைப் பகிரவும்</string>
 	<string name="location_sharing_quality_precise_short_string" state="needs_review" hash="351442529">துல்லியமானது</string>
 	<string name="location_sharing_quality_balanced_short_string" state="needs_review" hash="-1925315592">சமநிலை</string>
 	<string name="location_sharing_quality_power_save_short_string" state="needs_review" hash="-14275273">சக்தி சேமிப்பு</string>
-	<string name="location_sharing_quality_precise_full_string" state="needs_review" hash="-1255374893">
-		<b>துல்லியமான</b> இருப்பிடப் பகிர்வு முறை</string>
-	<string name="location_sharing_quality_balanced_full_string" state="needs_review" hash="-421322514">
-		<b>சமநிலையான</b> இருப்பிடப் பகிர்வு முறை</string>
-	<string name="location_sharing_quality_power_save_full_string" state="needs_review" hash="792896333">
-		<b>சக்தி சேமிப்பு</b> இருப்பிடப் பகிர்வு முறை</string>
+	<string name="location_sharing_quality_precise_full_string" state="needs_review" hash="-1255374893"><b>துல்லியமான</b> இருப்பிடப் பகிர்வு முறை</string>
+	<string name="location_sharing_quality_balanced_full_string" state="needs_review" hash="-421322514"><b>சமநிலையான</b> இருப்பிடப் பகிர்வு முறை</string>
+	<string name="location_sharing_quality_power_save_full_string" state="needs_review" hash="792896333"><b>சக்தி சேமிப்பு</b> இருப்பிடப் பகிர்வு முறை</string>
 	<string name="label_sharing_location_until" state="needs_review" hash="187977459">%1$s வரை இருப்பிடத்தைப் பகிர்கிறது</string>
 	<string name="label_location_sharing_ended" state="needs_review" hash="1028490137">இருப்பிடப் பகிர்வு முடிந்தது</string>
 	<string name="label_gps_coordinates" state="needs_review" hash="-1537356414">ஜிபிஎஸ் ஆயத்தொலைவுகள்</string>
@@ -2018,7 +2034,7 @@
 	<string name="button_label_restore_my_profile" state="needs_review" hash="418284480">எனது சுயவிவரத்தை மீட்டமை</string>
 	<string name="button_label_keep_all_with_olvid_plus" state="needs_review" hash="622534541">ஒலிவிட்+ மூலம் அனைத்தையும் பாதுகாப்பாக வைத்திருங்கள்</string>
 	<string name="explanation_backup_v2_choose_device_after_restore" state="needs_review" hash="292969815">உங்கள் சுயவிவரம் மீட்டமைக்கப்பட்டதும், உங்கள் சுயவிவரத்தின் அமைப்புகளிலிருந்து எந்த சாதனத்தை தொடர்ந்து பயன்படுத்த வேண்டும் என்பதை நீங்கள் தேர்ந்தெடுக்கலாம்.</string>
-	<string name="explanation_backup_v2_device_expiration_start" state="needs_review" hash="-147053489">உங்கள் சுயவிவரத்தை மீட்டெடுப்பதன் மூலம் \\"</string>
+	<string name="explanation_backup_v2_device_expiration_start" state="needs_review" hash="-147053489">உங்கள் சுயவிவரத்தை மீட்டெடுப்பதன் மூலம் \"</string>
 	<string name="explanation_backup_v2_device_expiration_nickname" state="needs_review" hash="2093353377">(%1$s)</string>
 	<string name="toast_message_no_key_found" state="needs_review" hash="-1984410678">காப்புப் பிரதி சாவி எதுவும் கிடைக்கவில்லை</string>
 	<string name="label_backup_headers_title" state="needs_review" hash="-846183546">உங்கள் காப்புப்பிரதிகள்</string>
@@ -2040,11 +2056,14 @@
 	<string name="button_label_configure_backups" state="needs_review" hash="-990646398">காப்பு பிரதிகளை இயக்கவும்</string>
 	<string name="tip_write_backup_key_title" state="needs_review" hash="-1652757003">உங்கள் காப்புப் பிரதியை மறக்காமல் குறித்துக் கொள்ளுங்கள் 😇</string>
 	<string name="tip_write_backup_key_message" state="needs_review" hash="931018791">இந்த சாதனத்திற்கான அணுகலை நீங்கள் இழந்தால், உங்கள் சுயவிவரங்களை மீட்டெடுப்பதற்கு உங்கள் காப்புப் பிரதி சாவி அவசியம்.</string>
+	<string name="tip_legacy_backup_end_of_life_title" state="needs_review" hash="810495149">நீங்கள் பயன்படுத்தும் பழைய காப்புப்பிரதிகள் காலாவதியாகிவிட்டன.</string>
+	<string name="tip_legacy_backup_end_of_life_message" state="needs_review" hash="-314257210">வரவிருக்கும் Olvid புதுப்பிப்பில் பழைய காப்புப்பிரதிகள் ஆதரிக்கப்படாது. உங்கள் கணக்கைப் பாதுகாப்பாக வைத்திருக்க, இப்போது புதிய காப்புப் பிரதி அம்சத்திற்கு மாறவும்.</string>
 	<string name="tip_troubleshooting_title" state="needs_review" hash="-393739108">உங்கள் Olvid அனுபவத்தை மேம்படுத்துங்கள் 🚀</string>
 	<string name="tip_troubleshooting_message" state="needs_review" hash="-935493349">உங்கள் சாதனத்தில் சில அளவுருக்கள் சரியாக கட்டமைக்கப்படவில்லை, மேலும் இது Olvid பயன்பாட்டைப் பயன்படுத்தும் உங்கள் அனுபவத்தை பாதிக்கலாம்.</string>
 	<string name="button_label_this_way" state="needs_review" hash="747183939">இந்த வழியில்</string>
 	<string name="toast_code_copied" state="needs_review" hash="-1522785848">குறியீடு நகலெடுக்கப்பட்டது</string>
 	<string name="explanation_choose_members" state="needs_review" hash="-1385158706">இந்த குழுவில் யாரை சேர்க்க வேண்டும் என்பதைத் தேர்ந்தெடுக்கவும்.</string>
+	<string name="explanation_choose_share_recipients" state="needs_review" hash="-1406265940">தயவுசெய்து யாருடன் பகிர வேண்டும் என்பதைத் தேர்ந்தெடுக்கவும்.</string>
 	<string name="explanation_choose_contact_introduction" state="needs_review" hash="1113777517">தயவுசெய்து %1$s ஐ யாருக்கு அறிமுகப்படுத்த வேண்டும் என்பதைத் தேர்ந்தெடுக்கவும்.</string>
 	<string name="label_group_administration" state="needs_review" hash="871355986">குழு நிர்வாகம்</string>
 	<string name="dialog_title_call_blocked" state="needs_review" hash="1594606530">அழைப்பு தடுக்கப்பட்டது</string>
@@ -2170,7 +2189,7 @@
 	<string name="store_link_olvid_store" state="needs_review" hash="-1825630369">ஒலிவிட் ஸ்டோரை பார்வையிடவும்</string>
 	<string name="toast_message_reminder_set" state="needs_review" hash="-961055414">நினைவூட்டல் அமைக்கப்பட்டது</string>
 	<string name="dialog_title_keycloak_authentication_impossible" state="needs_review" hash="325273853">அங்கீகாரம் சாத்தியமில்லை</string>
-	<string name="dialog_message_keycloak_authentication_impossible" state="needs_review" hash="390830785">உங்கள் சுயவிவரம் தற்போது உங்கள் நிறுவனத்தால் நிர்வகிக்கப்படுகிறது, மேலும் மீண்டும் அங்கீகாரம் தேவை. இருப்பினும், எந்தவொரு ஆதரவுள்ள அங்கீகார முறையும் கிடைக்கவில்லை. கூடுதல் விவரங்களுக்கு உங்கள் நிர்வாகியைத் தொடர்பு கொள்ளவும்.</string>
+	<string name="dialog_message_keycloak_authentication_impossible" state="needs_review" hash="-2031322232">உங்கள் சுயவிவரம் தற்போது உங்கள் நிறுவனத்தால் நிர்வகிக்கப்படுகிறது, மேலும் மீண்டும் அங்கீகாரம் தேவை. இருப்பினும், எந்தவொரு ஆதரவுள்ள அங்கீகார முறையும் கிடைக்கவில்லை.\n\nமேலும் விவரங்களுக்கு உங்கள் நிர்வாகியைத் தொடர்பு கொள்ளவும்.</string>
 	<string name="onboarding_transfer_keycloak_error_message_authentication_impossible" state="needs_review" hash="-1891385979">எந்தவொரு ஆதரவுள்ள அங்கீகார முறையும் கிடைக்கவில்லை.</string>
 	<string name="pref_use_alt_turn_servers_title" state="needs_review" hash="-1956132776">மாற்று TURN சேவையகங்களைப் பயன்படுத்தவும்</string>
 	<string name="pref_use_alt_turn_servers_summary" state="needs_review" hash="357427162">சுழலும் ஐபி முகவரிகளுடன் கூடிய டர்ன் சேவையகங்களைப் பயன்படுத்த இந்த விருப்பத்தை இயக்கவும். உங்களுக்குத் தெரியாவிட்டால், இந்த விருப்பத்தை முடக்கியே வைத்திருங்கள். 😁</string>
@@ -2281,5 +2300,45 @@
 	<string name="label_error_loading_openstreetmap_style_file" state="needs_review" hash="-2596045">OpenStreetMap பாணி கோப்பை ஏற்றும் போது பிழை ஏற்பட்டது</string>
 	<string name="dialog_title_subscriptions_not_available" state="needs_review" hash="336174241">பயன்பாட்டில் சந்தாக்கள் கிடைக்கவில்லை</string>
 	<string name="dialog_message_subscriptions_not_available" state="needs_review" hash="2093768678">நீங்கள் நிறுவிய Olvid பதிப்பில் கூகிள் பில்லிங் நூலகம் இல்லை, மேலும் இது பயன்பாட்டு கொள்முதல் வசதியை ஆதரிக்காது.\n\nமேலும் தகவலுக்கு, தயவுசெய்து **feedback@olvid.io** என்ற முகவரிக்கு எங்களை தொடர்பு கொள்ளவும்.</string>
+	<string name="ftux_next" state="needs_review" hash="1158639077">அடுத்தது</string>
+	<string name="ftux_start" state="needs_review" hash="646298532">தொடங்கு</string>
+	<string name="ftux_page_indicator" state="needs_review" hash="1987610035">%1$d வது பக்கம், மொத்தம் %2$d பக்கங்கள்</string>
+	<string name="ftux_page_welcome_title" state="needs_review" hash="1173832630"><b>Olvid</b>-க்கு வருக</string>
+	<string name="ftux_page_welcome_body" state="needs_review" hash="-2085198139">எல்லோருக்கும் தனிப்பட்ட செய்தியிடல்.</string>
+	<string name="ftux_page_private_title" state="needs_review" hash="1815927819"><b>தனிப்பட்ட</b> செய்தி பரிமாற்றம்</string>
+	<string name="ftux_page_private_body" state="needs_review" hash="-590644231">%1$s-இல், நீங்கள் யாருடன் அரட்டை அடிக்க விரும்புகிறீர்களோ அவர்களைத் தேர்ந்தெடுக்கலாம். ஸ்பேம் செய்திகள், பரிந்துரைகள், தேவையற்ற அறிவிப்புகள் அல்லது அறிமுகமில்லாதவர்களிடமிருந்து வரும் செய்திகள் எதுவும் இருக்காது.\n\nஉங்கள் அனுமதியின்றி யாரும் உங்களைத் தொடர்பு கொள்ள முடியாது.\n%1$s என்பது உங்களுடைய டிஜிட்டல் உலகம்.</string>
+	<string name="ftux_page_everyone_title" state="needs_review" hash="1506796386"><b>எல்லோருக்கும்</b> செய்தியிடல்</string>
+	<string name="ftux_page_everyone_body" state="needs_review" hash="-586100377">நீங்கள் யார் என்பதைப் பொருட்படுத்தாமல், %1$s உங்களுக்கு சிறந்த பாதுகாப்பை வழங்குகிறது. மின்னஞ்சல் அல்லது தொலைபேசி எண் தேவையில்லை.\n\n%1$s உங்களிடம் எதையும் கேட்காது, அது எல்லாவற்றையும் மாற்றும்.</string>
+	<string name="ftux_page_protect_title" state="needs_review" hash="1969120191">ஒல்விட் உங்களைப் பாதுகாக்கிறது. ஒல்விட் உங்களுக்கு முக்கியமானவர்களைப் பாதுகாக்கிறது.</string>
+	<string name="ftux_page_protect_body" state="needs_review" hash="881847930">இது வெறும் வாக்குறுதி மட்டுமல்ல - %1$s கிரிப்டோகிராஃபிக் ஆதாரத்தை வழங்குகிறது.\n\nநீங்கள் தொடர்புகளை தொலைவிலிருந்து அல்லது நேருக்கு நேர் சேர்த்தாலும், உங்கள் உரையாடல்கள் முறையானதாகவும், முழுமையாக என்க்ரிப்ட் செய்யப்பட்டும் இருக்கும்.</string>
+	<string name="ftux_page_pricing_title" state="needs_review" hash="-1948277889"><b>வெளிப்படையான</b> வணிக மாதிரி</string>
+	<string name="ftux_page_pricing_body" state="needs_review" hash="-1064278870">%1$s உங்கள் தனிப்பட்ட தரவைப் பயன்படுத்தி நிதி திரட்டாது - ஏனெனில் அது எதையும் கேட்கவில்லை!\n\nஇலவசமானது இலவசம். பணம் செலுத்துவது விலை கொண்டது.</string>
+	<string name="ftux_page_media_title" state="needs_review" hash="558110518">ஒல்விட் எல்லாவற்றையும் வைத்திருக்கிறார்</string>
+	<string name="ftux_page_media_body" state="needs_review" hash="1807247240">இணைப்புகளுக்கு அளவு வரம்பு இல்லை, உயர் தெளிவுத்திறன் கொண்ட புகைப்படங்களைப் பகிரலாம், கருத்துக்கணிப்புகளை உருவாக்கலாம், ஆடியோ மற்றும் வீடியோ அழைப்புகளை மேற்கொள்ளலாம், பல சாதனங்களில் பயன்படுத்தலாம், புவியியல் இருப்பிடத்தைப் பகிரலாம் - இவை அனைத்தும் இதில் உள்ளன!</string>
 	<string name="menu_action_cancel_upload" state="needs_review" hash="1672681586">பதிவேற்றத்தை ரத்து செய்</string>
+	<string name="label_suggested_contacts" state="needs_review" hash="816810770">பரிந்துரைக்கப்பட்ட தொடர்புகள்</string>
+	<string name="label_suggested_contacts_subtitle" state="needs_review" hash="131522501">பயனர்களை எளிதாக அழைக்கவும்</string>
+	<string name="label_suggested_contact_already_a_contact" state="needs_review" hash="-1177848651">ஏற்கனவே தொடர்பில் உள்ளவர்</string>
+	<string name="label_suggested_contact_invitation_received" state="needs_review" hash="2100924901">அழைப்பு பெறப்பட்டது</string>
+	<string name="label_suggested_contact_invitation_sent" state="needs_review" hash="310679275">அழைப்பு அனுப்பப்பட்டது</string>
+	<string name="label_suggested_contacts_all_done" state="needs_review" hash="-127525104">நீங்கள் சமீபத்திய பதிப்பைப் பயன்படுத்துகிறீர்கள்!\nமேலும் பரிந்துரைக்க வேண்டிய தொடர்புகள் இல்லை.</string>
+	<string name="button_label_suggested_contact_later" state="needs_review" hash="-1933816039">பின்னர்</string>
+	<string name="button_label_close" state="needs_review" hash="1454843231">மூடு</string>
+	<string name="button_label_skip" state="needs_review" hash="2056258301">தவிர்க்கவும்</string>
+	<string name="button_label_understood" state="needs_review" hash="829780875">புரிந்து கொண்டேன்</string>
+	<string name="label_suggested_contacts_onboarding_title_1" state="needs_review" hash="491881039">ஒரு ஸ்வைப் மூலம் அழைக்கவும்</string>
+	<string name="label_suggested_contacts_onboarding_message_1" state="needs_review" hash="331320806">பயனரை அழைக்க கார்டை வலதுபுறம் ஸ்வைப் செய்யவும், அல்லது அடுத்தவருக்கு செல்ல இடதுபுறம் ஸ்வைப் செய்யவும்.</string>
+	<string name="label_suggested_contacts_onboarding_title_2" state="needs_review" hash="-788798380">இந்த தொடர்புகள் எங்கிருந்து வந்தன?</string>
+	<string name="label_suggested_contacts_onboarding_message_2" state="needs_review" hash="1536681696">இவை நீங்கள் இன்னும் உங்கள் தொடர்புகளில் சேர்க்காத Olvid பயனர்களின் கணக்குகள்.</string>
+	<string name="label_suggested_contacts_onboarding_caption" state="needs_review" hash="-1299179969">உங்களுக்குள் ஒரு பொதுவான தொடர்பு உள்ளது: நீங்கள் குறைந்தது ஒரு குழுவில் உறுப்பினராக இருக்கிறீர்கள்.</string>
+	<string name="label_suggested_contacts_you" state="needs_review" hash="672009142">நீங்கள்</string>
+	<string name="label_suggested_contacts_common_group" state="needs_review" hash="-1739793963">பொதுவான குழு</string>
+	<string name="explanation_suggested_contacts_others_tab" state="needs_review" hash="852096678">கீழே உள்ள பயனர்கள் உங்கள் தொடர்புகளில் இல்லை, எனவே அவர்களுடன் நீங்கள் தனிப்பட்ட முறையில் உரையாட முடியாது. ஆனால் அவர்களை எளிதாக அழைக்கலாம்! 🚀</string>
+	<string name="label_suggested_contacts_invite_in_one_gesture" state="needs_review" hash="438220313">இந்த பயனர்களை ஒரு ஸ்வைப் மூலம் அழைக்கவும்</string>
+	<string name="menu_action_suggested_contacts_see_full_list" state="needs_review" hash="603082500">முழு பட்டியலைப் பார்க்கவும்</string>
+	<string name="menu_action_suggested_contacts_replay_onboarding" state="needs_review" hash="-1552704243">மீண்டும் பயிற்சிப் பாருங்கள்</string>
+	<string name="button_label_uninvite" state="needs_review" hash="771825501">அழைப்பை ரத்து செய்</string>
+	<string name="button_label_accept_invitation" state="needs_review" hash="-1778405034">அழைப்பை ஏற்கவும்</string>
+	<string name="label_suggested_contacts_already_swiped" state="needs_review" hash="427042318">ஏற்கனவே ஸ்வைப் செய்யப்பட்டது</string>
+	<string name="label_suggested_contacts_not_swiped_yet" state="needs_review" hash="310924358">இன்னும் பார்க்கப்படவில்லை</string>
 </resources>

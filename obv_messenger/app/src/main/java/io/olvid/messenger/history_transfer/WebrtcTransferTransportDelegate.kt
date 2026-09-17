@@ -487,8 +487,8 @@ class WebRTCTransferTransportDelegate(
 
         AppSingleton.getEngine().postToSpecificDevices(
             messagePayload,
-            listOf(bytesOwnedIdentity),
-            listOf(bytesOtherDeviceUid),
+            mutableListOf(bytesOwnedIdentity),
+            mutableListOf(bytesOtherDeviceUid),
             bytesOwnedIdentity,
             false,
             false
@@ -725,23 +725,21 @@ class WebRTCTransferTransportDelegate(
             var out: Triple<String, String, List<String>>? = null
 
             val successListener = object : SimpleEngineNotificationListener(EngineNotifications.TURN_CREDENTIALS_RECEIVED) {
-                override fun callback(userInfo: HashMap<String?, in Any>?) {
+                override fun callback(userInfo: HashMap<String, Any?>) {
                     Logger.d("\uD83E\uDDF6 WebRTCTransferTransportDelegate: turn credentials request to engine success")
-                    userInfo?.let {
+                    @Suppress("UNCHECKED_CAST")
+                    var turnServers = userInfo[EngineNotifications.TURN_CREDENTIALS_RECEIVED_SERVERS_KEY] as List<String>
+                    if (SettingsActivity.useAltTurnServers) {
                         @Suppress("UNCHECKED_CAST")
-                        var turnServers = it[EngineNotifications.TURN_CREDENTIALS_RECEIVED_SERVERS_KEY] as List<String>
-                        if (SettingsActivity.useAltTurnServers) {
-                            @Suppress("UNCHECKED_CAST")
-                            val altTurnServers = it[EngineNotifications.TURN_CREDENTIALS_RECEIVED_ALT_SERVERS_KEY] as List<String>?
-                            if (altTurnServers != null) {
-                                turnServers = altTurnServers
-                            }
+                        val altTurnServers = userInfo[EngineNotifications.TURN_CREDENTIALS_RECEIVED_ALT_SERVERS_KEY] as List<String>?
+                        if (altTurnServers != null) {
+                            turnServers = altTurnServers
                         }
-
-                        out = Triple(it[EngineNotifications.TURN_CREDENTIALS_RECEIVED_USERNAME_1_KEY] as String,
-                            it[EngineNotifications.TURN_CREDENTIALS_RECEIVED_PASSWORD_1_KEY] as String,
-                            turnServers)
                     }
+
+                    out = Triple(userInfo[EngineNotifications.TURN_CREDENTIALS_RECEIVED_USERNAME_1_KEY] as String,
+                        userInfo[EngineNotifications.TURN_CREDENTIALS_RECEIVED_PASSWORD_1_KEY] as String,
+                        turnServers)
                     synchronized(lock) {
                         lock.notify()
                     }
@@ -749,7 +747,7 @@ class WebRTCTransferTransportDelegate(
             }
 
             val failListener = object : SimpleEngineNotificationListener(EngineNotifications.TURN_CREDENTIALS_FAILED) {
-                override fun callback(userInfo: HashMap<String?, in Any>?) {
+                override fun callback(userInfo: HashMap<String, Any?>) {
                     Logger.d("\uD83E\uDDF6 WebRTCTransferTransportDelegate: turn credentials request to engine failed")
                     synchronized(lock) {
                         lock.notify()

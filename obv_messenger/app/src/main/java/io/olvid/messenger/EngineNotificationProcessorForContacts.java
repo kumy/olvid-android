@@ -81,10 +81,14 @@ public class EngineNotificationProcessorForContacts implements EngineNotificatio
 
     @Override
     public void callback(String notificationName, final HashMap<String, Object> userInfo) {
+        if (notificationName == null) {
+            return;
+        }
         switch (notificationName) {
             case EngineNotifications.CHANNEL_CONFIRMED_OR_DELETED: {
                 byte[] bytesOwnedIdentity = (byte[]) userInfo.get(EngineNotifications.CHANNEL_CONFIRMED_OR_DELETED_OWNED_IDENTITY_KEY);
                 byte[] bytesContactIdentity = (byte[]) userInfo.get(EngineNotifications.CHANNEL_CONFIRMED_OR_DELETED_CONTACT_IDENTITY_KEY);
+                byte[] bytesContactDeviceUid = (byte[]) userInfo.get(EngineNotifications.CHANNEL_CONFIRMED_OR_DELETED_CONTACT_DEVICE_UID_KEY);
                 if (bytesOwnedIdentity != null && Arrays.equals(bytesOwnedIdentity, bytesContactIdentity)) {
                     new OwnedDevicesSynchronisationWithEngineTask(bytesOwnedIdentity).run();
                 } else if (bytesOwnedIdentity != null && bytesContactIdentity != null) {
@@ -97,7 +101,8 @@ public class EngineNotificationProcessorForContacts implements EngineNotificatio
                             contact.preKeyCount = contactDeviceCount.preKeyCount;
                             db.contactDao().updateCounts(contact.bytesOwnedIdentity, contact.bytesContactIdentity, contact.deviceCount, contact.establishedChannelCount, contact.preKeyCount);
 
-                            if (contact.hasChannelOrPreKey()) {
+                            // bytesContactDeviceUid is non-null only for channel creations
+                            if (contact.hasChannelOrPreKey() && bytesContactDeviceUid != null) {
                                 // Search for MessageRecipientInfo indicating a message was not sent to this user
                                 App.runThread(() -> db.runInTransaction(() -> {
                                     List<MessageRecipientInfoDao.MessageRecipientInfoAndMessage> messageRecipientInfoAndMessages = db.messageRecipientInfoDao().getAllUnsentForContact(contact.bytesOwnedIdentity, contact.bytesContactIdentity);
@@ -113,7 +118,6 @@ public class EngineNotificationProcessorForContacts implements EngineNotificatio
                                     }
                                 });
 
-                                // TODO: only post this to the device with a new channel, not to all the devices
                                 // resend all discussion shared ephemeral message settings
                                 List<Long> discussionIds = new ArrayList<>();
                                 // direct discussion
@@ -140,7 +144,7 @@ public class EngineNotificationProcessorForContacts implements EngineNotificatio
                                         // send the json to contact
                                         Message message = Message.createDiscussionSettingsUpdateMessage(db, discussionId, jsonSharedSettings, bytesOwnedIdentity, true, null);
                                         if (message != null) {
-                                            message.postSettingsMessage(true, bytesContactIdentity);
+                                            message.postSettingsMessage(true, bytesContactIdentity, bytesContactDeviceUid);
                                         }
                                     }
                                 }

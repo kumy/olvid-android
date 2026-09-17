@@ -21,6 +21,7 @@ package io.olvid.messenger.onboarding.flow.screens.transfer
 
 import androidx.compose.animation.AnimatedContentTransitionScope.SlideDirection
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.OutlinedTextField
@@ -38,6 +39,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import io.olvid.messenger.AppSingleton
@@ -84,6 +86,7 @@ fun NavGraphBuilder.targetDeviceName(onboardingFlowViewModel : OnboardingFlowVie
                     .fillMaxWidth()
                     .focusRequester(focusRequester),
                 value = onboardingFlowViewModel.deviceName,
+                shape = RoundedCornerShape(12.dp),
                 onValueChange = onboardingFlowViewModel::updateDeviceName,
                 textStyle = OlvidTypography.h2.copy(fontWeight = FontWeight.Normal),
                 label = {

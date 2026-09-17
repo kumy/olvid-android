@@ -282,4 +282,20 @@
 		<item quantity="one" state="needs_review" hash="-1393207312">%1$d 訊息已複製到剪貼簿</item>
 		<item quantity="other" state="needs_review" hash="-604999755">%1$d 則訊息已複製到剪貼簿</item>
 	</plurals>
+	<plurals name="label_share_destinations_count" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="423387012">%1$d 收件人</item>
+		<item quantity="other" state="needs_review" hash="-431979656">%1$d 位收件人</item>
+	</plurals>
+	<plurals name="label_share_to_recipients" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="-1217959784">與 %1$d 收件人分享</item>
+		<item quantity="other" state="needs_review" hash="1864148690">與 %1$d 位收件人分享</item>
+	</plurals>
+	<plurals name="toast_message_shared_to_recipients" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="-373807760">已與 %1$d 收件人共享</item>
+		<item quantity="other" state="needs_review" hash="-1412037000">已與 %1$d 位收件人共享</item>
+	</plurals>
+	<plurals name="button_label_add_to_groups" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="1622654043">加入到%1$d群組</item>
+		<item quantity="other" state="needs_review" hash="-1655824151">加入到%1$d個群組</item>
+	</plurals>
 </resources>

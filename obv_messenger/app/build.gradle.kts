@@ -1,4 +1,4 @@
-import com.android.build.api.variant.FilterConfiguration
+/**/import com.android.build.api.variant.FilterConfiguration
 import org.gradle.internal.os.OperatingSystem
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
@@ -14,8 +14,8 @@ plugins {
 
 val os: OperatingSystem? = OperatingSystem.current()
 
-val appVersionCode = 306
-val appVersionName = "4.4"
+val appVersionCode = 311
+val appVersionName = "4.5.1"
 
 ksp {
     arg("room.schemaLocation", "$projectDir/schemas")
@@ -33,13 +33,13 @@ ext {
 }
 
 android {
-    compileSdk = 36
+    compileSdk = 37
     namespace = "io.olvid.messenger"
 
     defaultConfig {
         applicationId = "io.olvid.messenger"
         minSdk = 23
-        targetSdk = 36
+        targetSdk = 37
         versionCode = appVersionCode
         versionName = appVersionName
         vectorDrawables.useSupportLibrary = true
@@ -177,7 +177,13 @@ androidComponents {
     }
 
     onVariants { variant ->
-        variant.packaging.resources.excludes.add("META-INF/*")
+        // when not in release mode we do not strip all META-INF files as it breaks the layout instpector.
+        // we still remove the META-INF/DEPENDENCIES which otherwise cause a problem to build
+        if (variant.buildType == "release") {
+            variant.packaging.resources.excludes.add("META-INF/*")
+        } else {
+            variant.packaging.resources.excludes.add("META-INF/DEPENDENCIES")
+        }
 
         if (variant.flavorName?.contains("zfdroid", ignoreCase = true) == true) {
             variant.outputs.forEach { output ->
@@ -217,7 +223,9 @@ dependencies {
     coreLibraryDesugaring(libs.desugar.jdk.libs)
 
     implementation(project(":sardine-android"))
-    implementation(project(":engine"))
+    // The engine is now an external published library (Olvid/kotlin-engine). Build against a local
+    // checkout for co-development with olvid.engineDir (see settings.gradle.kts / gradle.properties).
+    implementation(libs.olvid.engine)
     implementation(libs.olvid.webrtc.android)
 
     implementation(libs.google.material)
@@ -261,6 +269,9 @@ dependencies {
     implementation(libs.androidx.recyclerview)
     implementation(libs.bundles.room)
     implementation(libs.sqlcipher.android)
+    // SQLite/SQLCipher JDBC driver for the engine database (the engine declares it compileOnly so the
+    // consumer provides the runtime driver).
+    implementation(libs.olvid.sqlite.jdbc.android)
     implementation(libs.androidx.sharetarget)
     implementation(libs.androidx.swiperefreshlayout)
     implementation(libs.androidx.work.runtime)

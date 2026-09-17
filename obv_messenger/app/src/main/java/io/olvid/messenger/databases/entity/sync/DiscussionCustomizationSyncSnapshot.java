@@ -103,6 +103,11 @@ public class DiscussionCustomizationSyncSnapshot implements ObvSyncSnapshotNode 
                     || (newMute && !Objects.equals(local_settings.mute_timestamp, discussionCustomization.prefMuteNotificationsTimestamp))) {
                 discussionCustomization.prefMuteNotifications = newMute;
                 discussionCustomization.prefMuteNotificationsTimestamp = local_settings.mute_timestamp;
+                if (!newMute) {
+                    // clear any captured mute start: snapshot-applied unmutes emit no recap, and a
+                    // leftover start would make the next mute's recap window reach too far back
+                    discussionCustomization.prefMuteNotificationsStartTimestamp = null;
+                }
                 changed = true;
             }
         }

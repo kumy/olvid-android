@@ -20,12 +20,15 @@
 package io.olvid.messenger.group
 
 import androidx.annotation.StringRes
+import io.olvid.engine.datatypes.containers.GroupV2.Permission
 import io.olvid.engine.engine.types.JsonGroupType
 import io.olvid.messenger.R
 import io.olvid.messenger.group.GroupTypeModel.GroupType.CUSTOM
 import io.olvid.messenger.group.GroupTypeModel.GroupType.PRIVATE
 import io.olvid.messenger.group.GroupTypeModel.GroupType.READ_ONLY
 import io.olvid.messenger.group.GroupTypeModel.GroupType.SIMPLE
+import io.olvid.messenger.group.GroupTypeModel.RemoteDeleteSetting.ADMINS
+import io.olvid.messenger.group.GroupTypeModel.RemoteDeleteSetting.EVERYONE
 import io.olvid.messenger.group.GroupTypeModel.RemoteDeleteSetting.NOBODY
 
 open class GroupTypeModel(
@@ -114,6 +117,39 @@ fun GroupTypeModel.toJsonGroupType() : JsonGroupType {
         PRIVATE -> JsonGroupType.createPrivate()
         READ_ONLY -> JsonGroupType.createReadOnly()
         CUSTOM -> JsonGroupType.createCustom(readOnlySetting, remoteDeleteSetting.getJsonGroupTypeString())
+    }
+}
+
+fun GroupTypeModel.getDefaultPermissions(isAdmin: Boolean): HashSet<Permission> {
+    val result: HashSet<Permission> = when (type) {
+        SIMPLE -> HashSet(Permission.DEFAULT_ADMIN_PERMISSIONS.filterNotNull())
+        READ_ONLY -> if (isAdmin) HashSet(Permission.DEFAULT_ADMIN_PERMISSIONS.filterNotNull()) else hashSetOf(Permission.EDIT_OR_REMOTE_DELETE_OWN_MESSAGES)
+        CUSTOM -> {
+            if (isAdmin) {
+                HashSet(Permission.DEFAULT_ADMIN_PERMISSIONS.filterNotNull())
+            } else {
+                if (readOnlySetting) {
+                    hashSetOf(Permission.EDIT_OR_REMOTE_DELETE_OWN_MESSAGES)
+                } else {
+                    HashSet(Permission.DEFAULT_MEMBER_PERMISSIONS.filterNotNull())
+                }
+            }
+        }
+        PRIVATE -> if (isAdmin) HashSet(Permission.DEFAULT_ADMIN_PERMISSIONS.filterNotNull()) else HashSet(Permission.DEFAULT_MEMBER_PERMISSIONS.filterNotNull())
+    }
+    return result.apply {
+        if (type == CUSTOM) {// REMOTE_DELETE_ANYTHING
+            when (remoteDeleteSetting) {
+                ADMINS ->
+                    if (isAdmin) {
+                        add(Permission.REMOTE_DELETE_ANYTHING)
+                    } else {
+                        remove(Permission.REMOTE_DELETE_ANYTHING)
+                    }
+                NOBODY -> remove(Permission.REMOTE_DELETE_ANYTHING)
+                EVERYONE -> add(Permission.REMOTE_DELETE_ANYTHING)
+            }
+        }
     }
 }
 

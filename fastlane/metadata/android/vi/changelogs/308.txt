@@ -1,0 +1,3 @@
+- Tính năng mới cho phép mời các thành viên nhóm vào cuộc trò chuyện trực tiếp bằng cách vuốt.
+- Hướng dẫn mới giúp người dùng mới làm quen với Olvid.
+- Cải thiện trình xem ảnh/video, có thể phóng to video.

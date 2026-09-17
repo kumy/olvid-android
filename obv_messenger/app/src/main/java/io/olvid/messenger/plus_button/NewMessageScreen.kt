@@ -88,6 +88,7 @@ import io.olvid.messenger.App
 import io.olvid.messenger.AppSingleton
 import io.olvid.messenger.R
 import io.olvid.messenger.activities.ObvLinkActivity
+import io.olvid.messenger.databases.AppDatabase
 import io.olvid.messenger.databases.ContactCacheSingleton
 import io.olvid.messenger.designsystem.components.OlvidDropdownMenu
 import io.olvid.messenger.designsystem.components.OlvidDropdownMenuItem

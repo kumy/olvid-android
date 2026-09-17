@@ -39,8 +39,8 @@ fun DeviceDiscoveryListener(
         val discoveryListener =
             object : EngineNotificationListener {
                 override fun callback(
-                    notificationName: String,
-                    userInfo: HashMap<String, Any>
+                    notificationName: String?,
+                    userInfo: HashMap<String, Any?>
                 ) {
                     when (notificationName) {
                         EngineNotifications.OWNED_DEVICE_DISCOVERY_DONE -> {

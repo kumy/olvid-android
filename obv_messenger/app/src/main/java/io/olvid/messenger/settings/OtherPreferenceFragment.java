@@ -95,6 +95,7 @@ public class OtherPreferenceFragment extends PreferenceFragmentCompat {
                     editor.remove(SettingsActivity.USER_DIALOG_HIDE_OPEN_EXTERNAL_APP_LOCATION);
                     editor.remove(SettingsActivity.USER_DIALOG_HIDE_ADD_DEVICE_EXPLANATION);
                     editor.remove(SettingsActivity.USER_DIALOG_HIDE_UNARCHIVE_SETTINGS);
+                    editor.remove(SettingsActivity.PREF_KEY_SUGGESTED_CONTACTS_ONBOARDING_SEEN);
                     editor.remove(SettingsActivity.PREF_KEY_FIRST_CALL_AUDIO_PERMISSION_REQUESTED);
                     editor.remove(SettingsActivity.PREF_KEY_LAST_TROUBLESHOOTING_TIP_TIMESTAMP);
                     editor.remove(SettingsActivity.PREF_KEY_LAST_EXPIRING_DEVICE_TIP_TIMESTAMP);
@@ -180,6 +181,11 @@ public class OtherPreferenceFragment extends PreferenceFragmentCompat {
         SwitchPreference useLegacyZxingScannerPreference = screen.findPreference(SettingsActivity.PREF_KEY_USE_LEGACY_ZXING_SCANNER);
         if (useLegacyZxingScannerPreference != null && !BuildConfig.USE_GOOGLE_LIBS) {
             screen.removePreference(useLegacyZxingScannerPreference);
+        }
+
+        SwitchPreference imageTextRecognitionPreference = screen.findPreference(SettingsActivity.PREF_KEY_IMAGE_TEXT_RECOGNITION);
+        if (imageTextRecognitionPreference != null && !BuildConfig.USE_GOOGLE_LIBS) {
+            screen.removePreference(imageTextRecognitionPreference);
         }
 
         Preference engineDbTimings = screen.findPreference(SettingsActivity.PREF_KEY_SHOW_ENGINE_DATABASE_STATISTICS);

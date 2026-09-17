@@ -488,7 +488,7 @@ public class CreateOrUpdateGroupV2Task implements Runnable {
                                         if (sharedSettings != null) {
                                             Message message = Message.createDiscussionSettingsUpdateMessage(db, discussionId, sharedSettings, contact.bytesOwnedIdentity, true, groupUpdateTimestamp + 2);
                                             if (message != null) {
-                                                message.postSettingsMessage(true, contact.bytesContactIdentity);
+                                                message.postSettingsMessage(true, contact.bytesContactIdentity, null);
                                             }
                                         }
                                     }
@@ -538,14 +538,22 @@ public class CreateOrUpdateGroupV2Task implements Runnable {
                 for (Map.Entry<BytesKey, ObvGroupV2.ObvGroupV2PendingMember> mapEntry : pendingToAdd.entrySet()) {
                     BytesKey key = mapEntry.getKey();
                     ObvGroupV2.ObvGroupV2PendingMember obvGroupV2PendingMember = mapEntry.getValue();
+                    boolean movedFromMemberToPending = membersToRemove.containsKey(key);
 
-                    Group2PendingMember group2PendingMember = new Group2PendingMember(groupV2.bytesOwnedIdentity, bytesGroupIdentifier, obvGroupV2PendingMember.bytesIdentity, obvGroupV2PendingMember.serializedDetails, obvGroupV2PendingMember.permissions, groupUpdateTimestamp);
+                    // When a current member is moved to pending (a Keycloak "demotion"), the pending member creation
+                    // timestamp must be the demotion time, so that a later promotion only replays reactions/poll votes
+                    // posted since the demotion (and not since the member originally joined). The engine's local
+                    // de-certification path (IdentityManager.moveKeycloakMemberToPendingMember) does not refresh the
+                    // group's lastModificationTimestamp, so groupUpdateTimestamp may be stale in that case --> use the
+                    // current time, which is the moment we learn about the demotion.
+                    long pendingMemberCreationTimestamp = movedFromMemberToPending ? System.currentTimeMillis() : groupUpdateTimestamp;
+                    Group2PendingMember group2PendingMember = new Group2PendingMember(groupV2.bytesOwnedIdentity, bytesGroupIdentifier, obvGroupV2PendingMember.bytesIdentity, obvGroupV2PendingMember.serializedDetails, obvGroupV2PendingMember.permissions, pendingMemberCreationTimestamp);
                     db.group2PendingMemberDao().insert(group2PendingMember);
                     if (Arrays.equals(AppSingleton.getBytesCurrentIdentity(), groupV2.bytesOwnedIdentity)
                             && ContactCacheSingleton.INSTANCE.getContactCustomDisplayName(group2PendingMember.bytesContactIdentity) == null) {
                         ContactCacheSingleton.INSTANCE.updateCachedCustomDisplayName(group2PendingMember);
                     }
-                    if (!membersToRemove.containsKey(key)) {
+                    if (!movedFromMemberToPending) {
                         // for keycloak groups, only insert a joined group message if the user's keycloakUserId actually joined the group
                         if (!groupWasJoinedOrRejoined && (!keycloakGroup || !removedKeycloakUserIds.contains(pendingMemberBytesIdentityToKeycloakUserIdMap.get(key)))) {
                             messageInserted = true;
@@ -608,7 +616,7 @@ public class CreateOrUpdateGroupV2Task implements Runnable {
                         if (jsonSharedSettings != null) {
                             Message message = Message.createDiscussionSettingsUpdateMessage(db, discussion.id, jsonSharedSettings, group.bytesOwnedIdentity, true, null);
                             if (message != null) {
-                                message.postSettingsMessage(true, null);
+                                message.postSettingsMessage(true, null, null);
                             }
                         }
                     }

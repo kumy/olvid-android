@@ -73,7 +73,7 @@ import io.olvid.messenger.customClasses.ifNull
 import io.olvid.messenger.databases.ContactCacheSingleton
 import io.olvid.messenger.designsystem.components.OlvidActionButton
 import io.olvid.messenger.designsystem.components.SearchBar
-import io.olvid.messenger.designsystem.plus
+import androidx.compose.foundation.layout.plus
 import io.olvid.messenger.designsystem.theme.OlvidTypography
 import io.olvid.messenger.group.GroupCreationViewModel
 import io.olvid.messenger.group.GroupV2DetailsViewModel
@@ -416,7 +416,7 @@ fun GroupAdminsSelection(
                                     AdminEndLabel(
                                         admin = member.isAdmin,
                                         pending = member.pending,
-                                        nonAdminsReadOnly = nonAdminsReadOnly,
+                                        readOnly = member.isReadOnly(nonAdminsReadOnly),
                                     )
                                 }
                             }

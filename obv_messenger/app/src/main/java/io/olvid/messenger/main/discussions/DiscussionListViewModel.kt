@@ -55,7 +55,6 @@ import io.olvid.messenger.databases.dao.DiscussionDao.DiscussionAndLastMessage
 import io.olvid.messenger.databases.dao.DiscussionDao.SimpleDiscussionAndLastMessage
 import io.olvid.messenger.databases.entity.CallLogItem
 import io.olvid.messenger.databases.entity.Discussion
-import io.olvid.messenger.databases.entity.DiscussionCustomization
 import io.olvid.messenger.databases.entity.Message
 import io.olvid.messenger.databases.entity.OwnedIdentity
 import io.olvid.messenger.databases.tasks.DeleteMessagesTask
@@ -63,6 +62,7 @@ import io.olvid.messenger.databases.tasks.PropagateArchivedDiscussionsChangeTask
 import io.olvid.messenger.databases.tasks.PropagatePinnedDiscussionsChangeTask
 import io.olvid.messenger.databases.tasks.propagateMuteSettings
 import io.olvid.messenger.notifications.NotificationActionService
+import io.olvid.messenger.services.MuteExpirationService
 import io.olvid.messenger.settings.SettingsActivity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -318,26 +318,7 @@ class DiscussionListViewModel : ViewModel() {
                             onActionDone()
                             viewModelScope.launch(Dispatchers.IO) {
                                 discussionsAndLastMessage.forEach { selected ->
-                                    AppDatabase.getInstance()
-                                        .discussionCustomizationDao()[selected.discussion.id]?.let {
-                                        AppDatabase.getInstance().discussionCustomizationDao()
-                                            .update(it.apply {
-                                                prefMuteNotifications = true
-                                                prefMuteNotificationsTimestamp =
-                                                    muteExpirationTimestamp
-                                                prefMuteNotificationsExceptMentioned =
-                                                    muteExceptMentioned
-                                            })
-                                    } ifNull {
-                                        AppDatabase.getInstance().discussionCustomizationDao()
-                                            .insert(DiscussionCustomization(selected.discussion.id).apply {
-                                                prefMuteNotifications = true
-                                                prefMuteNotificationsTimestamp =
-                                                    muteExpirationTimestamp
-                                                prefMuteNotificationsExceptMentioned =
-                                                    muteExceptMentioned
-                                            })
-                                    }
+                                    MuteExpirationService.muteDiscussion(selected.discussion.id, muteExpirationTimestamp, muteExceptMentioned)
                                     AppSingleton.getEngine()
                                         .profileBackupNeeded(selected.discussion.bytesOwnedIdentity)
                                 }
@@ -363,13 +344,10 @@ class DiscussionListViewModel : ViewModel() {
                                 onActionDone()
                                 viewModelScope.launch(Dispatchers.IO) {
                                     discussionsAndLastMessage.forEach { selected ->
-                                        AppDatabase.getInstance()
-                                            .discussionCustomizationDao()[selected.discussion.id]?.let {
-                                            AppDatabase.getInstance().discussionCustomizationDao()
-                                                .update(it.apply {
-                                                    prefMuteNotifications = false
-                                                })
-                                        }
+                                        // manual unmute: atomically clear the mute (flag + timestamps) and
+                                        // recap missed notifications. Persisting through clearMuteNotifications()
+                                        // avoids racing a generic entity update that could re-write a stale start.
+                                        MuteExpirationService.clearAndEmitForDiscussionManualUnmute(selected.discussion.id)
                                         AppSingleton.getEngine()
                                             .profileBackupNeeded(selected.discussion.bytesOwnedIdentity)
                                     }

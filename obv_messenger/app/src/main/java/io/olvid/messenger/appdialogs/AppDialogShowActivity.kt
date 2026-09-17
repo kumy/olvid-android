@@ -333,13 +333,7 @@ class AppDialogShowActivity : LockableActivity() {
                                         continueWithNextDialog()
                                     }
                                 },
-                                content = {
-                                    Text(
-                                        text = stringResource(R.string.dialog_message_keycloak_authentication_impossible),
-                                        style = OlvidTypography.body1,
-                                        color = colorResource(R.color.greyTint)
-                                    )
-                                }
+                                message = stringResource(R.string.dialog_message_keycloak_authentication_impossible),
                             )
                         }
                     }

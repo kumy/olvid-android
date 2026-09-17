@@ -39,13 +39,15 @@ public class ContactSyncSnapshot implements ObvSyncSnapshotNode {
     public static final String CUSTOM_NAME = "custom_name";
     public static final String CUSTOM_HUE = "custom_hue";
     public static final String PERSONAL_NOTE = "personal_note";
+    public static final String STOP_SUGGESTING = "stop_suggesting";
     public static final String DISCUSSION_CUSTOMIZATION = "discussion_customization";
 
-    static HashSet<String> DEFAULT_DOMAIN = new HashSet<>(Arrays.asList(CUSTOM_NAME, CUSTOM_HUE, PERSONAL_NOTE, DISCUSSION_CUSTOMIZATION));
+    static HashSet<String> DEFAULT_DOMAIN = new HashSet<>(Arrays.asList(CUSTOM_NAME, CUSTOM_HUE, PERSONAL_NOTE, STOP_SUGGESTING, DISCUSSION_CUSTOMIZATION));
 
     public String custom_name;
     public Integer custom_hue;
     public String personal_note;
+    public Boolean stop_suggesting;
     public DiscussionCustomizationSyncSnapshot discussion_customization;
     public HashSet<String> domain;
 
@@ -54,6 +56,7 @@ public class ContactSyncSnapshot implements ObvSyncSnapshotNode {
         contactSyncSnapshot.custom_name = contact.customDisplayName;
         contactSyncSnapshot.custom_hue = contact.customNameHue;
         contactSyncSnapshot.personal_note = contact.personalNote;
+        contactSyncSnapshot.stop_suggesting = contact.stopSuggesting;
 
         // only store discussion customizations for one-to-one contacts. Locked discussions do not need to be synchronized
         if (contact.oneToOne) {
@@ -85,6 +88,9 @@ public class ContactSyncSnapshot implements ObvSyncSnapshotNode {
             }
             if (domain.contains(CUSTOM_HUE) && custom_hue != null) {
                 db.contactDao().updateCustomNameHue(bytesOwnedIdentity, bytesContactIdentity, custom_hue);
+            }
+            if (domain.contains(STOP_SUGGESTING) && stop_suggesting != null) {
+                db.contactDao().updateStopSuggesting(bytesOwnedIdentity, bytesContactIdentity, stop_suggesting);
             }
             if (discussion != null) {
                 if (domain.contains(DISCUSSION_CUSTOMIZATION) && discussion_customization != null) {
@@ -131,6 +137,12 @@ public class ContactSyncSnapshot implements ObvSyncSnapshotNode {
                 }
                 case PERSONAL_NOTE: {
                     if (!Objects.equals(personal_note, other.personal_note)) {
+                        return false;
+                    }
+                    break;
+                }
+                case STOP_SUGGESTING: {
+                    if (!Objects.equals(stop_suggesting, other.stop_suggesting)) {
                         return false;
                     }
                     break;

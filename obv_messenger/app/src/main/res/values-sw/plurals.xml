@@ -282,4 +282,20 @@
 		<item quantity="one" state="needs_review" hash="-1393207312">%1$d ujumbe ume nakiliwa kwenye klipbodi</item>
 		<item quantity="other" state="needs_review" hash="-604999755">%1$d ujumbe ume nakiliwa kwenye klipbodi</item>
 	</plurals>
+	<plurals name="label_share_destinations_count" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="423387012">%1$d mpokeaji</item>
+		<item quantity="other" state="needs_review" hash="-431979656">%1$d wapokeaji</item>
+	</plurals>
+	<plurals name="label_share_to_recipients" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="-1217959784">Shiriki na %1$d mpokeaji</item>
+		<item quantity="other" state="needs_review" hash="1864148690">Shiriki na %1$d wapokeaji</item>
+	</plurals>
+	<plurals name="toast_message_shared_to_recipients" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="-373807760">Imepelekwa kwa %1$d</item>
+		<item quantity="other" state="needs_review" hash="-1412037000">Imepelekwa kwa %1$d waliopewa</item>
+	</plurals>
+	<plurals name="button_label_add_to_groups" tools:ignore="MissingQuantity,UnusedQuantity">
+		<item quantity="one" state="needs_review" hash="1622654043">Ongeza kwenye kikundi cha %1$d</item>
+		<item quantity="other" state="needs_review" hash="-1655824151">Ongeza kwenye makundi ya %1$d</item>
+	</plurals>
 </resources>

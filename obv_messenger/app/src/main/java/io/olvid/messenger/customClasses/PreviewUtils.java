@@ -163,6 +163,24 @@ public class PreviewUtils {
         return Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
     }
 
+    // Cache-only variant of getBitmapPreview: never touches the disk, safe to call from the main thread.
+    // Returns null when no suitable preview is cached.
+    @Nullable
+    public static Bitmap getCachedBitmapPreview(Fyle fyle, FyleMessageJoinWithStatus fyleMessageJoinWithStatus, int previewPixelSize) {
+        if (fyle.sha256 == null || !fyle.isComplete()) {
+            return null;
+        }
+        if (previewPixelSize > MAX_PREVIEW_PIXEL_SIZE) {
+            previewPixelSize = MAX_PREVIEW_PIXEL_SIZE;
+        }
+        String cacheKey = Logger.toHexString(fyle.sha256) + "_" + fyleMessageJoinWithStatus.getNonNullMimeType();
+        SizeAndBitmap sizeAndBitmap = thumbnailCache.get(cacheKey);
+        if (sizeAndBitmap != null && sizeAndBitmap.size >= previewPixelSize) {
+            return sizeAndBitmap.bitmap;
+        }
+        return null;
+    }
+
     public static Bitmap getBitmapPreview(Fyle fyle, FyleMessageJoinWithStatus fyleMessageJoinWithStatus, int previewPixelSize) {
         if (fyle.sha256 == null) {
             return null;
@@ -341,19 +359,7 @@ public class PreviewUtils {
                         previewPixelSize = 256;
                     }
                     ParcelFileDescriptor fd = ParcelFileDescriptor.open(new File(filePath), ParcelFileDescriptor.MODE_READ_ONLY);
-                    try (PdfRenderer renderer = new PdfRenderer(fd)) {
-                        try (PdfRenderer.Page page = renderer.openPage(0)) {
-                            float ratio = (float) page.getWidth() / page.getHeight();
-                            if (ratio > 1) {
-                                bitmap = Bitmap.createBitmap(previewPixelSize, (int) (previewPixelSize / ratio), Bitmap.Config.ARGB_8888);
-                            } else {
-                                bitmap = Bitmap.createBitmap((int) (ratio * previewPixelSize), previewPixelSize, Bitmap.Config.ARGB_8888);
-                            }
-                            Canvas canvas = new Canvas(bitmap);
-                            canvas.drawColor(Color.WHITE);
-                            page.render(bitmap, null, null, PdfRenderer.Page.RENDER_MODE_FOR_DISPLAY);
-                        }
-                    }
+                    bitmap = renderPdfFirstPage(fd, previewPixelSize);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -375,6 +381,44 @@ public class PreviewUtils {
             }
         }
         return bitmap;
+    }
+
+    /**
+     * Renders the first page of a PDF into a white-backed bitmap whose short edge is {@code sizePx},
+     * preserving the page aspect ratio. Returns {@code null} for an empty PDF.
+     * <p>
+     * Single source of the first-page thumbnail render loop: {@link #getBitmapPreview} opens the
+     * descriptor from an on-disk {@code Fyle} path, while the share extension's
+     * {@code renderUriPdfFirstPage} opens it from a content URI. Only the {@link PdfRenderer} is
+     * closed here (it takes ownership of {@code fd}); callers that wrap {@code fd} in their own
+     * try-with-resources / {@code use} stay correct. {@code PdfBitmapConverter} is intentionally not
+     * a caller — it is a multi-page viewer with link extraction and password support, a different
+     * concern. Callers handle threading (PdfRenderer is not safe across overlapping instances) and
+     * exceptions.
+     */
+    public static Bitmap renderPdfFirstPage(@NonNull ParcelFileDescriptor fd, int sizePx) throws IOException {
+        try (PdfRenderer renderer = new PdfRenderer(fd)) {
+            if (renderer.getPageCount() == 0) {
+                return null;
+            }
+            try (PdfRenderer.Page page = renderer.openPage(0)) {
+                float ratio = (float) page.getWidth() / page.getHeight();
+                int width;
+                int height;
+                if (ratio > 1) {
+                    width = sizePx;
+                    height = (int) (sizePx / ratio);
+                } else {
+                    width = (int) (ratio * sizePx);
+                    height = sizePx;
+                }
+                Bitmap bitmap = Bitmap.createBitmap(Math.max(1, width), Math.max(1, height), Bitmap.Config.ARGB_8888);
+                Canvas canvas = new Canvas(bitmap);
+                canvas.drawColor(Color.WHITE);
+                page.render(bitmap, null, null, PdfRenderer.Page.RENDER_MODE_FOR_DISPLAY);
+                return bitmap;
+            }
+        }
     }
 
 

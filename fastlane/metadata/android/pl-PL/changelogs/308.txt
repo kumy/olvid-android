@@ -1,0 +1,3 @@
+- Nowy sposób zapraszania członków grupy do bezpośredniej rozmowy za pomocą prostego gestu.
+- Nowy proces wprowadzający, aby wyjaśnić działanie Olvid nowym użytkownikom.
+- Ulepszony podgląd zdjęć/filmów, możliwość powiększania filmów.
